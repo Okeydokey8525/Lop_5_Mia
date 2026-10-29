@@ -9,7 +9,7 @@ Cập nhật: 2026-10-29.
 - Tổng quan có chế độ đọc từng bài trên điện thoại/tablet; giữ chế độ poster để xem toàn cảnh/in. Nội dung hai chế độ được kiểm tra khớp nhau.
 - Mã câu hỏi, đáp án, engine chấm điểm và khóa lưu tiến độ không thay đổi.
 - Local đã đạt 704 tổ hợp responsive, 36/36 đề 100/100, 208 tham chiếu tĩnh đúng; đã xem ảnh sáng/tối, điện thoại/tablet/desktop và cả 6 poster PNG.
-- Online cho đợt giao diện mới: chờ deploy và kiểm chứng; bản build/QA trước đó ở các mục lịch sử bên dưới.
+- Online đã đạt lúc 29/10/2026 18:54:48 UTC+7: 704 tổ hợp responsive (44 trang × 8 chiều rộng × sáng/tối), reader/poster đủ nội dung, menu và cảm ứng đạt, câu cuối không bị che sau nộp. 36/36 đề 100/100 và lưu tiến độ đạt. 49 file HTML/CSS/JS online khớp local; 6 PNG tổng quan hợp lệ, rộng 1080px. Bản build/QA trước đó ở các mục lịch sử bên dưới.
 
 ## Đã xong: Toán 5 tập một (Kết nối tri thức với cuộc sống)
 6 chủ đề, mỗi chủ đề có 1 trang tổng quan (HTML + PNG) và 6 đề, tổng **36 đề**, 108 sao trên trang chủ.

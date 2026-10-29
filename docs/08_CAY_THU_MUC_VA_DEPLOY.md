@@ -77,3 +77,13 @@ Dùng `node tools/build.js --regenerate` từ gốc repo. Node gọi Python đ�
 Reader và poster dùng cùng một nguồn nội dung; reader được dựng từ cây poster, không có bộ văn bản riêng để lệch nhau. Nội dung bảng giá trị 7 hàng được giữ nguyên và cho cuộn bên trong bảng. Menu chọn đề thu gọn bằng `details`, thao tác được bằng bàn phím/cảm ứng.
 
 CI chạy thêm `node tools/responsive.js --no-shots`: toàn bộ 44 trang ở 320/360/390/400/768/820/1024/1366px, cả sáng/tối; so sánh đủ nội dung reader/poster, chuyển chế độ, mở menu và thao tác nộp bài cảm ứng.
+
+## Kiểm chứng online sau đổi màu
+
+Đã kiểm tra 29/10/2026 18:54:48 UTC+7, mã giao diện `5575173`, workflow: https://github.com/Okeydokey8525/Lop_5_Mia/actions/runs/40868615954.
+
+- GitHub Actions build và deploy đạt, bao gồm audit, link, 36 đề và 704 tổ hợp responsive trên Linux.
+- Chạy trực tiếp trên URL thật: 704 tổ hợp đều đạt, không tràn ngang; kiểm tra đủ nội dung reader, chuyển view, menu, cảm ứng và khoảng trống dưới câu cuối sau nộp. Không lỗi console/request trong bộ làm bài; 36/36 đề 100/100, điểm và thống kê còn sau tải lại.
+- 49/49 HTML/CSS/JS online khớp byte với build local. 6/6 PNG online hợp lệ, rộng 1080px. PNG được render trên Linux CI nên không yêu cầu khớp từng pixel/byte với bản Windows; nội dung lấy từ cùng HTML và font nhúng.
+- Báo cáo: `artifacts/responsive-online/report.json`, `artifacts/online/report.json`, `artifacts/online/files-sakura.json` (không commit). Ảnh kiểm tra thủ công ở `artifacts/responsive-local/`.
+- Đây là mô phỏng Chromium, chưa thay thế thử trực tiếp trên máy tính bảng/điện thoại thật của em; chưa làm nội dung Tiếng Anh.

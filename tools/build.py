@@ -64,7 +64,7 @@ def main():
         if resources["fonts.css"] in html:
             raise ValueError(f"Font extraction failed: {source}")
         target.write_text(html, encoding="utf-8", newline="\n")
-    # Preserve all delivered overview PNGs. Rendering fresh previews is a QA task.
+    # Keep PNGs for HTML-only builds; the Node entry point then regenerates them.
     for source in (site / "Toan5").rglob("*.png"):
         target = GEN / "out" / source.relative_to(site)
         target.parent.mkdir(parents=True, exist_ok=True)
