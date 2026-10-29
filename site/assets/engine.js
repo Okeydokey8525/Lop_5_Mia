@@ -97,12 +97,23 @@ function shuffled(n){
   return a;
 }
 var ordState={};
+function normalizeText(s,exactForm){
+  s=String(s).normalize('NFKC').toLowerCase().replace(/[‘’]/g,"'").trim().replace(/\s+/g,' ').replace(/[.!?]+$/,'').trim().replace(/\bfavorite\b/g,'favourite').replace(/\bcolor\b/g,'colour');
+  if(exactForm)return s;
+  return s.replace(/\bi'm\b/g,'i am').replace(/\bit's\b/g,'it is').replace(/\bwhat's\b/g,'what is').replace(/\bmy name's\b/g,'my name is').replace(/\bdon't\b/g,'do not');
+}
+function textIsCorrect(value,answers,exactForm){return answers.some(function(a){return normalizeText(value,exactForm)===normalizeText(a,exactForm)});}
+function buildMatch(q,host){
+  var perm=shuffled(q.pairs.length);
+  host.className='qa match-list';
+  host.innerHTML=q.pairs.map(function(pair,k){return '<label class="match-row"><span lang="en">'+esc(pair.left)+'</span><select class="in match-select" data-pair="'+k+'" aria-label="Nối ý '+(k+1)+'"><option value="">Chọn câu phù hợp</option>'+perm.map(function(j){return '<option value="'+j+'">'+esc(q.pairs[j].right)+'</option>'}).join('')+'</select></label>'}).join('');
+}
 function buildOrder(q,host){
   var n=q.items.length, perm=shuffled(n), chosen=[]; ordState[q.i]=chosen;
-  host.innerHTML='<div class="ord"><div class="lab">Bấm vào từng số theo thứ tự đúng:</div><div class="slots" data-slots></div><div class="lab">Các số cần sắp xếp:</div><div class="pool" data-pool></div><button type="button" class="clr" data-clr>Xóa làm lại</button></div>';
+  host.innerHTML='<div class="ord"><div class="lab">'+(q.type==='reorder'?'Bấm vào từng từ để tạo câu đúng:':'Bấm vào từng số theo thứ tự đúng:')+'</div><div class="slots" data-slots></div><div class="lab">'+(q.type==='reorder'?'Các từ cần sắp xếp:':'Các số cần sắp xếp:')+'</div><div class="pool" data-pool></div><button type="button" class="clr" data-clr>Xóa làm lại</button></div>';
   var slots=$('[data-slots]',host), pool=$('[data-pool]',host);
   function draw(){
-    slots.innerHTML=chosen.map(function(k,p){return (p?'<span class="sep">'+(q.sep||'<')+'</span>':'')+'<button type="button" class="chip pick" data-rm="'+p+'">'+fmt(q.items[k])+'</button>'}).join('')||'<span class="lab">(chưa chọn)</span>';
+    slots.innerHTML=chosen.map(function(k,p){return (p&&q.type!=='reorder'?'<span class="sep">'+(q.sep||'<')+'</span>':'')+'<button type="button" class="chip pick" data-rm="'+p+'">'+fmt(q.items[k])+'</button>'}).join('')||'<span class="lab">(chưa chọn)</span>';
     pool.innerHTML=perm.filter(function(k){return chosen.indexOf(k)<0}).map(function(k){return '<button type="button" class="chip" data-add="'+k+'">'+fmt(q.items[k])+'</button>'}).join('');
   }
   host.addEventListener('click',function(e){
@@ -110,17 +121,18 @@ function buildOrder(q,host){
     if(t.hasAttribute('data-add')) chosen.push(+t.getAttribute('data-add'));
     else if(t.hasAttribute('data-rm')) chosen.splice(+t.getAttribute('data-rm'),1);
     else if(t.hasAttribute('data-clr')) chosen.length=0; else return;
-    draw();
+    draw();progress();
   });
   draw();
 }
-function buildQ(q){
+function buildQ(q,passageRef){
   var el=document.createElement('article');
   el.className='q lv-'+q.level; el.id='q'+(q.i+1);
-  var h='<div class="qh"><span class="qn">Câu '+(q.i+1)+'</span><span class="qt">Bài '+q.lesson+'</span><span class="qp">'+pts(q.pts)+' điểm</span></div><p class="qstem">'+fmt(q.stem)+'</p>'+(q.fig||'')+'<div class="qa" data-qa></div><div class="fb" data-fb hidden></div>';
+  var passage=q.passage?(passageRef===null||passageRef===undefined?'<div class="passage" lang="en">'+esc(q.passage).replace(/\n/g,'<br>')+'</div>':'<a class="passage-ref" href="#q'+(passageRef+1)+'">↑ Xem lại hồ sơ dùng cho câu này</a>'):'';
+  var h='<div class="qh"><span class="qn">Câu '+(q.i+1)+'</span><span class="qt">'+esc(T.meta.lessonLabel||'Bài')+' '+q.lesson+'</span><span class="qp">'+pts(q.pts)+' điểm</span></div>'+passage+'<p class="qstem" lang="'+(T.meta.subject==='en'?'en':'vi')+'">'+fmt(q.stem)+'</p>'+(q.fig||'')+'<div class="qa" data-qa></div><div class="fb" data-fb hidden></div>';
   el.innerHTML=h;
   var host=$('[data-qa]',el), L='ABCD';
-  if(q.type==='mc'){
+  if(q.type==='mc'||q.type==='pic'){
     host.className='qa opts';
     host.innerHTML=q.opts.map(function(o,k){return '<label class="opt"><input type="radio" name="q'+q.i+'" value="'+k+'"><span class="ol">'+L[k]+'</span><span>'+fmt(o)+'</span></label>'}).join('');
   }else if(q.type==='tf'){
@@ -129,8 +141,12 @@ function buildQ(q){
   }else if(q.type==='fill'){
     host.className='qa blanks';
     host.innerHTML=q.blanks.map(function(b,bi){return blankHtml(b,q.i,bi)}).join('');
-  }else if(q.type==='order'){
+  }else if(q.type==='order'||q.type==='reorder'){
     buildOrder(q,host);
+  }else if(q.type==='text'){
+    host.className='qa text-answer';host.innerHTML='<label for="text'+q.i+'">Nhập đáp án bằng tiếng Anh</label><input class="in text-in" id="text'+q.i+'" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" lang="en">';
+  }else if(q.type==='match'){
+    buildMatch(q,host);
   }
   return el;
 }
@@ -164,14 +180,16 @@ function gradeBlank(b,v){
 }
 function isDone(q,el){
   var host=$('[data-qa]',el);
-  if(q.type==='mc') return !!$('input:checked',host);
+  if(q.type==='mc'||q.type==='pic') return !!$('input:checked',host);
+  if(q.type==='text')return $('.text-in',host).value.trim()!=='';
+  if(q.type==='match')return $$('select',host).every(function(s){return s.value!==''});
   if(q.type==='tf') return q.items.every(function(_,k){return !!$('input[name="q'+q.i+'_'+k+'"]:checked',host)});
-  if(q.type==='order') return ordState[q.i].length===q.items.length;
+  if(q.type==='order'||q.type==='reorder') return ordState[q.i].length===q.items.length;
   return $$('.in',host).every(function(x){return x.value.trim()!==''||x.getAttribute('data-p')==='w'});
 }
 function gradeQ(q,el){
   var host=$('[data-qa]',el), notes=[], frac=0, ansHtml='', L='ABCD';
-  if(q.type==='mc'){
+  if(q.type==='mc'||q.type==='pic'){
     var c=$('input:checked',host), pick=c?+c.value:-1;
     frac=pick===q.answer?1:0;
     $$('.opt',host).forEach(function(o,k){if(k===q.answer)o.classList.add('good');else if(k===pick)o.classList.add('bad')});
@@ -185,10 +203,18 @@ function gradeQ(q,el){
       ansHtml.push('<b>'+'abcdef'[k]+')</b> '+(it.a?'Đúng':'Sai'));
     });
     frac=ok/q.items.length; ansHtml=ansHtml.join(' &nbsp; ');
-  }else if(q.type==='order'){
+  }else if(q.type==='text'){
+    frac=textIsCorrect($('.text-in',host).value,q.answers,q.exactForm)?1:0;
+    ansHtml=q.answers.map(esc).join(' / ');$('.text-in',host).classList.add(frac?'answer-good':'answer-bad');
+  }else if(q.type==='match'){
+    var matched=0;ansHtml=[];
+    q.pairs.forEach(function(pair,k){var select=$('[data-pair="'+k+'"]',host),right=select.value!==''&&Number(select.value)===k;if(right)matched++;select.classList.add(right?'answer-good':'answer-bad');ansHtml.push(esc(pair.left)+' → '+esc(pair.right));});
+    frac=matched/q.pairs.length;ansHtml=ansHtml.join('<br>');
+  }else if(q.type==='order'||q.type==='reorder'){
     var s=ordState[q.i], right=s.length===q.items.length&&s.every(function(k,p){return k===p});
+    if(q.type==='reorder')right=s.length===q.items.length&&s.every(function(k,p){return q.items[k]===q.items[p]});
     frac=right?1:0; $('.slots',host).classList.add(right?'good':'bad');
-    ansHtml=q.items.map(fmt).join(' '+(q.sep||'<')+' ');
+    ansHtml=q.items.map(fmt).join(q.type==='reorder'?' ':' '+(q.sep||'<')+' ');
   }else{
     var ok2=0, rows=$$('.bl',host); ansHtml=[];
     q.blanks.forEach(function(b,bi){
@@ -220,7 +246,8 @@ function build(){
     var sec=document.createElement('section'); sec.className='lv lv-'+l.id;
     var qs=Q.filter(function(q){return q.level===l.id});
     sec.innerHTML='<div class="lvh"><span class="st" aria-hidden="true">'+'★'.repeat(l.stars)+'</span><div><h2>'+esc(l.name)+'</h2><p>'+esc(l.desc)+' · '+qs.length+' câu × '+pts(l.pts)+' điểm</p></div></div><div class="qs-wrap"></div>';
-    var wrap=$('.qs-wrap',sec); qs.forEach(function(q){wrap.appendChild(buildQ(q))});
+    var wrap=$('.qs-wrap',sec),previousPassage=null,passageQ=null;
+    qs.forEach(function(q){var ref=q.passage&&q.passage===previousPassage?passageQ:null;wrap.appendChild(buildQ(q,ref));if(q.passage&&ref===null)passageQ=q.i;previousPassage=q.passage||null;});
     main.appendChild(sec);
   });
   bar('run'); progress();
@@ -280,11 +307,11 @@ function submit(){
     return '<div class="row lv-'+l.id+'"><span class="nm">'+esc(l.name)+'</span><div class="bar-t"><i style="width:'+(e/mx*100)+'%"></i></div><span class="pt">'+pts(e)+'/'+pts(mx)+' · '+full+'/'+rs.length+' câu đúng</span></div>';
   }).join('');
   var weak={}; res.forEach(function(r){if(r.st!=='ok') weak[r.q.lesson]=1});
-  var wl=Object.keys(weak).sort(function(a,b){return a-b}).map(function(k){return '<b>Bài '+k+'</b> ('+esc(T.lessons[k])+')'});
+  var wl=Object.keys(weak).sort(function(a,b){return a-b}).map(function(k){return '<b>'+esc(T.meta.lessonLabel||'Bài')+' '+k+'</b> ('+esc(T.lessons[k])+')'});
   var lvPc={}; T.levels.forEach(function(l){var rs=res.filter(function(r){return r.q.level===l.id});lvPc[l.id]=rs.reduce(function(s,r){return s+r.earned},0)/rs.reduce(function(s,r){return s+r.q.pts},0)});
   var adv=lvPc[T.levels[0].id]<0.7?'Em nên ôn kĩ các câu mức Trung bình trước, vì đó là nền tảng cho các câu khó hơn.':
           lvPc[T.levels[1].id]<0.6?'Phần Trung bình em làm khá chắc. Hãy luyện thêm các câu mức Khá, nhất là những câu bị sai bên dưới.':
-          lvPc[T.levels[2].id]<0.6?'Em làm tốt hai mức đầu. Các bài toán có lời văn và tính thuận tiện ở mức Giỏi cần luyện thêm.':'Em nắm rất vững phần này. Em có thể sang chủ đề tiếp theo.';
+          lvPc[T.levels[2].id]<0.6?(T.meta.subject==='en'?'Em làm tốt hai mức đầu. Hãy luyện thêm đọc hiểu và viết câu ở mức Giỏi.':'Em làm tốt hai mức đầu. Các bài toán có lời văn và tính thuận tiện ở mức Giỏi cần luyện thêm.'):'Em nắm rất vững phần này. Em có thể sang chủ đề tiếp theo.';
   var mm=Math.floor(secs/60), ss=secs%60;
   $('#result').innerHTML='<section class="result" id="resultBox"><h2>'+(name?'Kết quả của '+esc(name):'Kết quả bài làm')+'</h2><div class="score"><b>'+pts(total)+'</b><span>/ '+pts(max)+' điểm</span><span class="rank">'+rank+'</span></div>'+
     '<p>Thời gian làm bài: '+mm+' phút '+ss+' giây (đề này dự kiến '+T.meta.minutes+' phút).</p><div class="lvr">'+rows+'</div>'+
@@ -306,5 +333,5 @@ function reserveBarSpace(){document.documentElement.style.setProperty('--bar-hei
 if(typeof ResizeObserver!=='undefined')new ResizeObserver(reserveBarSpace).observe($('#bar'));
 window.addEventListener('resize',reserveBarSpace);
 document.fonts.ready.then(reserveBarSpace);reserveBarSpace();
-window.__quiz={Q:Q,build:build,submit:submit};
+window.__quiz={Q:Q,build:build,submit:submit,normalizeText:normalizeText,textIsCorrect:textIsCorrect};
 })();

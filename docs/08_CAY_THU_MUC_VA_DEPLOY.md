@@ -87,3 +87,11 @@ CI chạy thêm `node tools/responsive.js --no-shots`: toàn bộ 44 trang ở 3
 - 49/49 HTML/CSS/JS online khớp byte với build local. 6/6 PNG online hợp lệ, rộng 1080px. PNG được render trên Linux CI nên không yêu cầu khớp từng pixel/byte với bản Windows; nội dung lấy từ cùng HTML và font nhúng.
 - Báo cáo: `artifacts/responsive-online/report.json`, `artifacts/online/report.json`, `artifacts/online/files-sakura.json` (không commit). Ảnh kiểm tra thủ công ở `artifacts/responsive-local/`.
 - Đây là mô phỏng Chromium, chưa thay thế thử trực tiếp trên máy tính bảng/điện thoại thật của em; chưa làm nội dung Tiếng Anh.
+
+## Cấu trúc sau mẫu Unit 1 Tiếng Anh
+
+- Nguồn: `generator/english/u01/{content.py,NOTES.md,common.js,tests/de01..06.js}` và `generator/gen_english.py`.
+- Sản phẩm: `site/TiengAnh5/index.html`, `Unit1_AllAboutMe/` gồm 6 đề + tổng quan HTML/PNG. Trang chủ chung có liên kết thật và tiến độ mỗi môn.
+- `site/catalog.json`: 42 đề nguồn để QA kiểm tra đầy đủ. Tổng 52 HTML, 7 PNG tổng quan.
+- Build Node sinh cả hai môn, renderer xuất 7 PNG. CI hiện kiểm tra 42 đề và 832 tổ hợp responsive trước khi deploy.
+- Trạng thái online của Unit 1: chờ triển khai và xác nhận trên URL thật.

@@ -59,3 +59,11 @@ Em gái chưa làm thử đề nào. Sau khi deploy, nhờ chủ repo cho em là
 `node tools/render_overviews.js` xuất lại 6 PNG 1080px ở `site/Toan5/` và bản sao trong `generator/out/Toan5/`. Dùng lệnh build Node đầy đủ để đảm bảo PNG khớp HTML. PNG cũ được giữ trong lịch sử Git.
 
 Kiểm tra bổ sung sau nộp ở 320/360/390/768px: cuộn xuống cuối trang và xác nhận câu cuối nằm phía trên thanh kết quả.
+
+## QA sau mẫu Unit 1
+
+Luồng mặc định hiện audit 36 Toán + 6 Anh. `generator/audit_english.js` xác nhận 144 câu, số mức/điểm, số phương án, dữ liệu chữ/nối/sắp từ/hình và độ đa dạng (ít nhất 4 dạng mỗi đề). QA browser đối chiếu `site/catalog.json`, làm đúng toàn bộ 42 đề và kiểm tra liên kết hồ sơ.
+
+Kiểm tra riêng Tiếng Anh: hoa/thường, nháy cong, rút gọn, yêu cầu dạng đầy đủ, colour/color, từ thừa/sai; thao tác xóa-sắp lại, chọn sai, điểm một phần khi nối; điểm tốt nhất còn sau làm sai; reset Anh không xóa 36 khóa Toán. `tall.js` cũng tự điền mọi dạng mới; có thể chạy `node generator/tall.js site` từ gốc repo.
+
+Responsive hiện 52 HTML × 8 kích thước × 2 chế độ = 832 tổ hợp, 7 tổng quan có reader/poster. Các con số 36/44/704 ở mục cũ là mốc trước khi thêm Anh. Chụp và xem hình mới trước khi giao.

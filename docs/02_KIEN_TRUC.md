@@ -46,3 +46,9 @@ Tiến độ **không đồng bộ** giữa trình duyệt hoặc thiết bị. 
 4. Bản web đã tách font/engine/CSS vào `site/assets/`; bản standalone tiếp tục nhúng toàn bộ. Không sửa trực tiếp file build trong `site/`.
 5. `shot.js` cũ đã bị loại; `qshot.js`, `figs.js`, `show.js` là công cụ phụ: chụp câu hỏi, chụp các câu có hình, in đáp án.
 6. Engine có chữ giao diện tiếng Việt cố định (nút, kết quả, xếp loại). Với Tiếng Anh: giữ giao diện (nút, hướng dẫn, kết quả) bằng tiếng Việt, nội dung câu hỏi bằng tiếng Anh.
+
+## Hai môn sau mẫu Unit 1
+
+`build_all.py`, `gen_overview.py`, `gen_index.py` có main guard và cung cấp hàm render dùng lại. `gen_english.py` gọi các hàm này với metadata, dữ liệu Unit 1, tiêu đề và tổng số riêng; không đổi cấu hình Toán. Build đầy đủ ghi cả `out/Toan5` và `out/TiengAnh5`, rồi xuất web hai môn; standalone nhúng engine/font cho cả hai.
+
+Nguồn Anh là `english/u01/content.py`; wrapper và `tests/de*.js` sinh tự động, được commit theo quy ước nguồn đã bàn giao. `site/catalog.json` sinh từ cấu hình nguồn: danh sách đường dẫn, ID và môn của 42 đề. QA so sánh danh sách thực tế với catalog, không chỉ đếm số HTML có sẵn.

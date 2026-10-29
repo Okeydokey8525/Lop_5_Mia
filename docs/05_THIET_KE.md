@@ -56,3 +56,7 @@ Giữ toàn bộ hệ thống thiết kế. Đã mở rộng khung SVG cho tam g
 Khung câu hỏi dùng cột grid `minmax(0,1fr)`, SVG bị giới hạn bởi chiều rộng thật của thẻ; xử lý chữ dài và đáp án ở 320–360px. Nút cảm ứng chính tối thiểu 44px. Liên kết chọn môn đặt trong hero, tránh bị khối hướng dẫn đè. Trang tổng quan thu gọn menu đề; bảng giá trị số giữ các cột và cuộn bên trong vùng bảng. Giữ font, hiệu ứng giảm chuyển động và khóa localStorage.
 
 Thanh nộp/kết quả được đo bằng ResizeObserver; khoảng trống cuối trang theo chiều cao thực tế, tránh che câu cuối ở màn hình 320–360px sau khi nộp.
+
+## Mẫu Tiếng Anh Unit 1
+
+Màu nhận diện Unit 1: `#8B4E84`, nền `#F2E4F1` (tím hoa); chế độ tối `#DAB1D5/#3F2B3D`. Giữ nền/hero hồng anh đào, font và hiệu ứng chung. Một poster 1080px/PNG và reader cho điện thoại/tablet như Toán. SVG từ vựng tự vẽ, không dùng ảnh SGK. Câu nối dùng select, sắp từ dùng nút bấm; không đòi kéo-thả. Hồ sơ đọc lặp chỉ hiển thị một lần theo nhóm và có liên kết quay lại.

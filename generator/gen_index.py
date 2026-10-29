@@ -173,6 +173,10 @@ document.getElementById('no').onclick=function(){document.getElementById('ask').
 document.getElementById('yes').onclick=function(){try{Object.keys(localStorage).filter(function(k){return k.indexOf('mia5:cd')===0}).forEach(function(k){localStorage.removeItem(k)})}catch(e){}document.getElementById('ask').classList.remove('on');render()};
 render();
 </script></body></html>'''
-html=html.replace('__FONTS__',fonts).replace('__DATA__',json.dumps(data,ensure_ascii=False))
-out=W/'out'/ROOT; out.mkdir(parents=True,exist_ok=True)
-(out/'index.html').write_text(html,encoding='utf-8',newline='\n'); print('index',len(html)//1024,'KB')
+def render_index(subject_data):
+    return html.replace('__FONTS__',fonts).replace('__DATA__',json.dumps(subject_data,ensure_ascii=False))
+
+if __name__ == '__main__':
+    result=render_index(data)
+    out=W/'out'/ROOT; out.mkdir(parents=True,exist_ok=True)
+    (out/'index.html').write_text(result,encoding='utf-8',newline='\n'); print('index',len(result)//1024,'KB')

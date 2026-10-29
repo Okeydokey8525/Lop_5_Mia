@@ -26,7 +26,7 @@ Bảng trên chép từ Book map; **phải đọc lại từng trang unit** đ�
 ## Cách đọc PDF scan
 1. Render trang: `pdftoppm -r 110 -f 10 -l 15 -png "<đường dẫn PDF>" trang` rồi xem ảnh.
 2. Có thể thử OCR (tesseract) nếu cài được, nhưng **luôn đối chiếu bằng mắt** với ảnh trang; không tin OCR 100%.
-3. Ghi vào `src/tieng-anh/uNN/NOTES.md` (không chứa nguyên văn đoạn dài của sách): từ vựng, mẫu câu, chủ điểm, số trang. Chỉ ghi ý và từ khóa.
+3. Ghi vào `generator/english/uNN/NOTES.md` (không chứa nguyên văn đoạn dài của sách): từ vựng, mẫu câu, chủ điểm, số trang. Chỉ ghi ý và từ khóa.
 
 ## Khung đề (giống Toán)
 - Mỗi đề 24 câu = 10 `tb` (3đ) + 8 `kha` (5đ) + 6 `gioi` (5đ) = 100 điểm; xếp loại như `docs/04_QUY_CACH_DE.md`.
@@ -34,7 +34,7 @@ Bảng trên chép từ Book map; **phải đọc lại từng trang unit** đ�
 - Giao diện, bài hướng dẫn, nút, kết quả: **bằng tiếng Việt**; nội dung câu hỏi: tiếng Anh, có chú thích tiếng Việt khi cần.
 - Mục tiêu theo sách: nghe, nói, đọc, viết. Trên web chỉ làm tốt đọc, viết (điền, sắp xếp, chọn), và nghe nếu kiểm chứng được giọng đọc.
 
-## Dạng câu hỏi mới cần thêm vào engine
+## Dạng câu hỏi (text/match/reorder/pic đã có trong mẫu Unit 1)
 | Dạng | Mô tả | Chấm |
 |---|---|---|
 | `text` | Điền từ/ chữ cái/ cả cụm | So khớp chuỗi, không phân biệt hoa thường, bỏ khoảng trắng thừa, chấp nhận danh sách đáp án thay thế |
@@ -63,3 +63,11 @@ Cùng khung poster 1080px (`docs/05_THIET_KE.md`), thay công thức bằng: t�
 2. Làm **E1 (Unit 1)** trước làm mẫu: engine dạng mới + 6 đề + tổng quan, QA đầy đủ, **trình chủ repo xem**.
 3. Chủ repo duyệt mẫu rồi mới làm các unit còn lại.
 4. Cập nhật trang chủ gộp: Toán + Tiếng Anh.
+
+## Mẫu Unit 1 đã thực hiện
+
+Đã đọc từng trang in 10–15 (trang PDF 12–17), đối chiếu Wordlist 78–79, ghi ý chính ở `generator/english/u01/NOTES.md`. Có sáu đề: Khởi động; Từ vựng và hình ảnh; Mẫu câu và hội thoại; Đọc hiểu; Viết câu; Tổng hợp. Tổng 144 câu tự soạn, đúng khung 10/8/6. Hồ sơ dùng dữ liệu giả định chung để sinh câu hỏi/đáp án/lời giải; không lấy bài đọc hoặc tranh trong sách.
+
+Nguồn: `generator/english/u01/content.py`. `gen_english.py` sinh wrapper, 6 JS đề, HTML tự chứa, tổng quan và trang chủ dùng chung thiết kế; build web tách assets như môn Toán. Không dựng `src/` riêng khi repo đã chốt giữ `generator/`.
+
+Đã thêm engine chữ, nối, sắp từ, chọn theo SVG, bài đọc. Chưa có nghe/chấm nói. Khóa tiến độ là `mia5:en-u01-de1..6`; trang chủ/reset của Anh chỉ đọc/xóa khóa Anh. Chỉ có Unit 1 trên web, Starter/Review và Unit 2–10 vẫn chưa làm. Chờ chủ repo xem mẫu rồi mới mở rộng.

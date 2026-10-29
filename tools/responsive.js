@@ -32,7 +32,7 @@ async function main(){
               await p.locator('.jump summary').click();
             }
           }
-          if(SHOTS&&[360,768,1366].includes(width)&&(!path.basename(file).startsWith('De')||relative.includes('De2_MaiNhaVaViKeo'))){
+          if(SHOTS&&[360,768,1366].includes(width)&&(!path.basename(file).startsWith('De')||relative.includes('De2_MaiNhaVaViKeo')||relative.includes('De2_TuVungVaHinhAnh'))){
             const name=relative.replaceAll('/','_').replace('.html','');
             await p.screenshot({path:path.join(OUT,`${scheme}-${width}-${name}.png`),fullPage:width===360&&path.basename(file).startsWith('TongQuan')});
           }

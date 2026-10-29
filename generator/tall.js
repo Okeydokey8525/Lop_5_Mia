@@ -17,9 +17,11 @@ function walk(d){return fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>e.isDi
       Q.forEach((q,i)=>{
         const el=document.getElementById('q'+(i+1));
         const set=(x,v)=>{x.value=v;x.dispatchEvent(new Event('input',{bubbles:true}));x.dispatchEvent(new Event('change',{bubbles:true}))};
-        if(q.type==='mc'){const r=el.querySelectorAll('input')[q.answer];r.checked=true;r.dispatchEvent(new Event('change',{bubbles:true}))}
+        if(q.type==='mc'||q.type==='pic'){const r=el.querySelectorAll('input')[q.answer];r.checked=true;r.dispatchEvent(new Event('change',{bubbles:true}))}
         else if(q.type==='tf'){q.items.forEach((it,k)=>{const r=el.querySelector(`input[name="q${i}_${k}"][value="${it.a?'d':'s'}"]`);r.checked=true;r.dispatchEvent(new Event('change',{bubbles:true}))})}
-        else if(q.type==='order'){q.items.forEach((_,k)=>{el.querySelector(`[data-add="${k}"]`).click()})}
+        else if(q.type==='order'||q.type==='reorder'){q.items.forEach((_,k)=>{el.querySelector(`[data-add="${k}"]`).click()})}
+        else if(q.type==='text')set(el.querySelector('.text-in'),q.answers[0]);
+        else if(q.type==='match')q.pairs.forEach((_,k)=>set(el.querySelector('[data-pair="'+k+'"]'),String(k)));
         else q.blanks.forEach((b,bi)=>{const row=el.querySelectorAll('.bl')[bi];
           if(b.kind==='num')set(row.querySelector('[data-p=v]'), String(b.ans).replace('.',','));
           else if(b.kind==='sel')set(row.querySelector('select'),b.ans);

@@ -7,11 +7,11 @@ Trả lời và viết nội dung cho học sinh **bằng tiếng Việt**. Ch�
 Bộ đề kiểm tra trực tuyến cho học sinh lớp 5, bản web dùng tài nguyên chung; có thể xuất mỗi đề thành **một file HTML tự chứa** (không cần server), tiến độ lưu bằng `localStorage`.
 - **Toán 5** (Kết nối tri thức với cuộc sống, tập một): Chủ đề 1–6, 36 đề, **đã xong**.
 - **Toán 5 học kì 2:** chủ repo sẽ đưa sách sau. Chưa làm. Xem mục "Chỗ trống" bên dưới.
-- **Tiếng Anh 5** (Global Success, Sách học sinh tập 1, 83 trang scan): **việc tiếp theo**. Đặc tả ở `docs/09_TIENG_ANH.md`.
+- **Tiếng Anh 5** (Global Success, tập 1): đã làm mẫu Unit 1, 1 tổng quan + 6 đề, chờ chủ repo xem trước khi mở rộng. Đặc tả ở `docs/09_TIENG_ANH.md`.
 
 ## Phạm vi đã chốt ngày 29/10/2026
 
-Chủ repo yêu cầu ưu tiên cấu trúc, chuẩn hóa build/QA, kiểm chứng bộ Toán, trang chủ chung và GitHub Pages. **Chưa làm Tiếng Anh hoặc Unit 1 mẫu ở đợt này.** Cây thư mục giữ `generator/`, `docs/`, `site/Toan5/`, thêm `tools/` và `site/assets/`; xem `docs/08`.
+Chủ repo yêu cầu ưu tiên cấu trúc, chuẩn hóa build/QA, kiểm chứng bộ Toán, trang chủ chung và GitHub Pages. Đợt giao diện đã hoàn tất. Sau đó chủ repo yêu cầu làm mẫu **Unit 1 Tiếng Anh** theo kế hoạch đã chốt; chưa làm các unit còn lại. Cây thư mục giữ `generator/`, `docs/`, `site/Toan5/`, thêm `tools/` và `site/assets/`; xem `docs/08`.
 
 Lệnh từ gốc repo: `node tools/build.js --regenerate`, `node generator/audit.js`, `python tools/check_links.py`, `python tools/serve.py` rồi `node tools/qa.js` ở terminal khác. Không sửa trực tiếp `site/`; trang chủ chung sinh từ `tools/templates/home.html`. PDF nằm ngoài repo.
 
@@ -23,6 +23,10 @@ Lệnh từ gốc repo: `node tools/build.js --regenerate`, `node generator/audi
 ## Giao diện đã được duyệt
 
 Ngày 29/10/2026, chủ repo duyệt đổi sang hồng anh đào và sửa responsive. Giữ font, nội dung, hiệu ứng và tiến độ; màu hiện hành ở `docs/05_THIET_KE.md`. Trang tổng quan có chế độ đọc từng bài cho màn hình ≤820px và poster 1080px cho màn hình lớn/in. `node tools/build.js` build cả HTML, tài nguyên và PNG; `python tools/build.py` chỉ là bước HTML/assets. Không gọi renderer Chromium từ Python Microsoft Store trên Windows vì tiến trình con có thể nhìn sai đường dẫn cache trình duyệt.
+
+## Tiếng Anh — cấu trúc hiện hành
+
+Nguồn Unit 1 ở `generator/english/u01/content.py`, ghi nhận trang đã đọc ở `NOTES.md`; `common.js` và `tests/*.js` sinh từ nguồn này. `generator/gen_english.py` dùng chung khung đề, tổng quan và trang chủ. Sản phẩm ở `site/TiengAnh5/`, ID `en-u01-de1..6`. `site/catalog.json` liệt kê chính xác 42 đề (36 Toán, 6 Anh) để QA đối chiếu đủ file. Không xóa điểm môn khác khi reset một môn. Giao diện bằng tiếng Việt, câu hỏi tiếng Anh. Chưa có nghe/nói. Dừng mở rộng sau Unit 1 để chủ repo xem mẫu.
 
 ## Quy tắc cứng
 1. **Giữ nguyên thiết kế** hiện có (`docs/05_THIET_KE.md`): màu, font, bố cục trang tổng quan, hiệu ứng trang chủ. Chỉ thêm, không đổi giao diện cũ trừ khi chủ repo yêu cầu.

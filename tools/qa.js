@@ -4,6 +4,7 @@ const {createRequire}=require('node:module');
 const requireGenerator=createRequire(path.resolve(__dirname,'../generator/package.json'));
 const {chromium}=requireGenerator('playwright');
 const ROOT=path.resolve(__dirname,'..'),SITE=path.join(ROOT,'site');
+const CATALOG=JSON.parse(fs.readFileSync(path.join(SITE,'catalog.json'),'utf8'));
 const BASE=(process.argv.slice(2).find(a=>!a.startsWith('--'))||'http://127.0.0.1:8765/Lop_5_Mia/').replace(/\/?$/,'/');
 const SHOTS=!process.argv.includes('--no-shots');
 const OUT=path.join(ROOT,'artifacts',BASE.includes('127.0.0.1')?'local':'online');
@@ -16,9 +17,11 @@ async function fillCorrect(page,mode='all'){
       if(mode==='half'&&i%2) return;
       const el=document.getElementById('q'+(i+1));
       const set=(x,v)=>{x.value=v;x.dispatchEvent(new Event('input',{bubbles:true}));x.dispatchEvent(new Event('change',{bubbles:true}));};
-      if(q.type==='mc'){const x=el.querySelectorAll('input')[q.answer];x.checked=true;x.dispatchEvent(new Event('change',{bubbles:true}));}
+      if(q.type==='mc'||q.type==='pic'){const x=el.querySelectorAll('input')[q.answer];x.checked=true;x.dispatchEvent(new Event('change',{bubbles:true}));}
       else if(q.type==='tf')q.items.forEach((it,k)=>{const x=el.querySelector(`input[name="q${i}_${k}"][value="${it.a?'d':'s'}"]`);x.checked=true;x.dispatchEvent(new Event('change',{bubbles:true}));});
-      else if(q.type==='order')q.items.forEach((_,k)=>el.querySelector(`[data-add="${k}"]`).click());
+      else if(q.type==='order'||q.type==='reorder')q.items.forEach((_,k)=>el.querySelector(`[data-add="${k}"]`).click());
+      else if(q.type==='text')set(el.querySelector('.text-in'),q.answers[0]);
+      else if(q.type==='match')q.pairs.forEach((_,k)=>set(el.querySelector(`[data-pair="${k}"]`),String(k)));
       else q.blanks.forEach((b,k)=>{const row=el.querySelectorAll('.bl')[k];
         if(b.kind==='num')set(row.querySelector('[data-p=v]'),String(b.ans).replace('.',','));
         else if(b.kind==='sel')set(row.querySelector('select'),b.ans);
@@ -50,6 +53,12 @@ async function main(){
       if(path.basename(f).startsWith('De')){
         const meta=await page.evaluate(()=>({count:window.__quiz.Q.length,points:window.__quiz.Q.reduce((s,q)=>s+q.pts,0)}));
         assert.deepEqual(meta,{count:24,points:100});
+        const missingPassages=await page.evaluate(()=>window.__quiz.Q.filter(q=>q.passage).flatMap(q=>{
+          const el=document.getElementById('q'+(q.i+1)),ref=el.querySelector('.passage-ref');
+          const box=ref?document.querySelector(ref.getAttribute('href')+' .passage'):el.querySelector('.passage');
+          const norm=s=>s.replace(/\s+/g,' ').trim();return !box||norm(box.innerText)!==norm(q.passage)?[q.i+1]:[];
+        }));
+        assert.deepEqual(missingPassages,[],`Passage reference mismatch: ${rel}`);
         const clipped=await page.locator('.fig svg text').evaluateAll(els=>els.flatMap(e=>{
           const b=e.getBBox(),svg=e.ownerSVGElement,v=svg.viewBox.baseVal;
           const matrix=svg.getScreenCTM().inverse().multiply(e.getScreenCTM());
@@ -85,16 +94,41 @@ async function main(){
         await page.setViewportSize({width:400,height:900});
       }
     }
-    assert.equal(results.length,36);
+    assert.deepEqual(results.map(r=>r.file).sort(),CATALOG.tests.map(t=>t.file).sort());
     await go('Toan5/index.html');assert.equal(await page.locator('#sDone').textContent(),'36');assert.equal(await page.locator('#sStar').textContent(),'108');assert.equal(await page.locator('#sBest').textContent(),'100');
     await go('index.html');assert.match(await page.locator('#math-progress').textContent(),/36\/36/);
     await page.reload();assert.match(await page.locator('#math-progress').textContent(),/108\/108/);
+    assert.match(await page.locator('#english-progress').textContent(),/6\/6/);
+    await go('TiengAnh5/index.html');assert.equal(await page.locator('#sDone').textContent(),'6');assert.equal(await page.locator('#sStar').textContent(),'18');
+    const enFirst=CATALOG.tests.find(t=>t.subject==='en').file;
+    await go(enFirst);
+    const normalized=await page.evaluate(()=>{
+      const eq=window.__quiz.textIsCorrect;
+      return [eq('  I’M   in Class 5A! ',['I am in Class 5A.']),eq('IT’S PINK',['It is pink.']),eq('im',['I am']),eq('city extra',['city']),eq('I’m',['I am'],true),eq('CITY',['city']),eq('', ['city'])];
+    });
+    assert.deepEqual(normalized,[true,true,false,false,false,true,false]);
+    await fillCorrect(page);
+    await page.locator('#q3 .text-in').fill('  CITY  ');await page.locator('#q12 .text-in').fill('COLOR');
+    await page.click('#goBtn');await page.locator('.score').waitFor();assert.match(await page.locator('.score').textContent(),/100\s*\/\s*100/);
+    await page.click('#again');await fillCorrect(page);
+    await page.locator('#q10 [data-clr]').click();assert.match(await page.locator('#prog').textContent(),/23\/24/);
+    for(let i=0;i<5;i++)await page.locator('#q10 [data-add="'+i+'"]').click();
+    await page.locator('#q3 .text-in').fill('wrong word');await page.locator('#q7 [data-pair="0"]').selectOption('1');
+    await page.locator('#q15 .text-in').fill('I’m');
+    await page.locator('#q10 [data-rm="0"]').click();await page.locator('#q10 [data-add="0"]').click();
+    await page.click('#goBtn');await page.locator('.score').waitFor();
+    assert.equal(await page.locator('#q3 .fb.no,#q10 .fb.no').count(),2);assert.equal(await page.locator('#q7 .fb.part').count(),1);
+    assert.equal(await page.locator('#q15 .fb.no').count(),1);
+    assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('mia5:en-u01-de1')).best),100);
     // Exercise incomplete submission, partial marking, retry and best-score retention.
-    const first=results[0].file;await go(first);await fillCorrect(page,'half');await page.click('#goBtn');await page.locator('#yes').waitFor();await page.click('#keep');assert.equal(await page.locator('.score').count(),0);
+    const first=CATALOG.tests.find(t=>t.subject==='math').file;await go(first);await fillCorrect(page,'half');await page.click('#goBtn');await page.locator('#yes').waitFor();await page.click('#keep');assert.equal(await page.locator('.score').count(),0);
     await page.click('#goBtn');await page.click('#yes');await page.locator('.score').waitFor();assert.doesNotMatch(await page.locator('.score').textContent(),/^100\s*\//);
     const storage=await page.evaluate(()=>JSON.parse(localStorage.getItem('mia5:cd1-de1')));assert.equal(storage.best,100);assert.ok(storage.last<100);assert.equal(storage.tries,2);
     await page.click('#again');assert.equal(await page.locator('.score').count(),0);await fillCorrect(page);await page.click('#goBtn');await page.locator('.score').waitFor();
     await page.reload();assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('mia5:cd1-de1')).tries),3);
+    await go('TiengAnh5/index.html');await page.click('#reset');await page.click('#yes');
+    assert.equal(await page.locator('#sDone').textContent(),'0');
+    assert.equal(await page.evaluate(()=>Object.keys(localStorage).filter(k=>k.startsWith('mia5:cd')).length),36);
     // Fresh visitor state and light/dark mode of the shared home page.
     const fresh=await browser.newContext({viewport:{width:400,height:900},colorScheme:'dark'}),p=await fresh.newPage();
     await p.goto(BASE);await overflow(p);assert.match(await p.locator('#math-progress').textContent(),/108 sao/);
@@ -103,7 +137,7 @@ async function main(){
     assert.deepEqual(errors,[]);
     const report={base:BASE,tests:results.length,htmlPages:walk(SITE).filter(f=>f.endsWith('.html')).length,viewport:400,errors,results,checkedAt:new Date().toISOString(),progress:'reload, home statistics, partial score, retry and best retained'};
     fs.writeFileSync(path.join(OUT,'report.json'),JSON.stringify(report,null,2)+'\n');
-    console.log(`QA PASS: ${results.length}/36 tests, 44 pages, no browser errors; progress persisted`);
+    console.log(`QA PASS: ${results.length}/${CATALOG.tests.length} tests, ${report.htmlPages} pages, no browser errors; English variants, wrong/partial answers and isolated reset passed`);
   }finally{await browser.close();}
 }
 main().catch(e=>{console.error(e);process.exitCode=1;});

@@ -23,13 +23,14 @@
   <main class="wrap">
     <div class="subjects">
       <section class="card"><span class="label">Sẵn sàng luyện tập</span><h2>Toán 5</h2><p>Kết nối tri thức với cuộc sống · Tập một</p><div class="facts"><span>6 chủ đề</span><span>36 đề</span><span>24 câu mỗi đề</span></div><a class="button" href="Toan5/index.html">Vào học Toán <span aria-hidden="true">&nbsp;→</span></a><div class="progress" id="math-progress" aria-live="polite">Bắt đầu hành trình chinh phục 108 sao.</div></section>
-      <section class="card english"><span class="label">Đang chuẩn bị</span><h2>Tiếng Anh 5</h2><p>Global Success · Tập một</p><div class="facts"><span>Từ vựng</span><span>Mẫu câu</span><span>Đọc và viết</span></div><span class="pending">Các bài luyện tập sẽ được bổ sung sau.</span><div class="progress">Hôm nay em có thể bắt đầu với môn Toán nhé!</div></section>
+      <section class="card english"><span class="label">Unit 1 đã sẵn sàng</span><h2>Tiếng Anh 5</h2><p>Global Success · Tập một</p><div class="facts"><span>Unit 1</span><span>6 đề</span><span>24 câu mỗi đề</span></div><a class="button" href="TiengAnh5/index.html">Vào học Tiếng Anh <span aria-hidden="true">&nbsp;→</span></a><div class="progress" id="english-progress">Bắt đầu Unit 1: All about me!</div></section>
     </div>
     <div class="guide" aria-label="Ba bước luyện tập"><div class="step"><span class="number">01</span><b>Xem tổng quan</b><p>Nhớ lại kiến thức qua bức tranh của từng chủ đề.</p></div><div class="step"><span class="number">02</span><b>Thử sức với một đề</b><p>Làm từng câu theo nhịp của em, câu khó có thể để sau.</p></div><div class="step"><span class="number">03</span><b>Đọc lời giải</b><p>Xem lại câu chưa đúng, rồi tiếp tục luyện tập.</p></div></div>
   </main>
   <footer class="wrap">Điểm được lưu trong trình duyệt trên thiết bị này.<br>Dùng cùng địa chỉ web và trình duyệt để xem lại tiến độ.</footer>
   <script>
     (function(){var done=0,stars=0;try{for(var c=1;c<=6;c++)for(var i=1;i<=6;i++){var r=JSON.parse(localStorage.getItem('mia5:cd'+c+'-de'+i)||'null');if(r&&r.max>0){done++;var p=r.best/r.max*100;stars+=p>=80?3:p>=60?2:p>=40?1:0}}}catch(e){}if(done)document.getElementById('math-progress').innerHTML='Em đã làm <b>'+done+'/36 đề</b> và đạt <b>'+stars+'/108 sao</b>.'})();
+  (function(){var done=0,stars=0;try{for(var i=1;i<=6;i++){var r=JSON.parse(localStorage.getItem('mia5:en-u01-de'+i)||'null');if(r&&r.max>0){done++;var p=r.best/r.max*100;stars+=p>=80?3:p>=60?2:p>=40?1:0}}}catch(e){}if(done)document.getElementById('english-progress').innerHTML='Em đã làm <b>'+done+'/6 đề</b> và đạt <b>'+stars+'/18 sao</b>.'})();
   </script>
 </body>
 </html>

@@ -293,7 +293,8 @@ def cd6_sheet():
     return gen_sheet(6,'ÔN TẬP HỌC KÌ 1','Sáu bài học từ Bài 30 đến Bài 35 · Toán 5, tập một','#955077','#F4E4EE',LESSONS6,['Số thập phân','Phép tính','Hình phẳng','Chu vi, diện tích','Đo lường','Ôn tập chung'],
      'Nhìn lại toàn bộ kiến thức học kì 1.','Số thập phân, các phép tính, hình phẳng, đo lường, phân số. Làm xong sáu đề này là em đã sẵn sàng cho bài kiểm tra cuối kì.','Theo sách Toán 5, tập một (Kết nối tri thức với cuộc sống), Chủ đề 6')
 
-for cd,sheet,color in [(CDS[0],cd1_sheet(),'#B83F6B'),(CDS[1],cd2_sheet(),'#94523F'),(CDS[2],cd3_sheet(),'#3E7266'),(CDS[3],cd4_sheet(),'#77528F'),(CDS[4],cd5_sheet(),'#4A6F9D'),(CDS[5],cd6_sheet(),'#955077')]:
-    d=W/'out'/ROOT/cd['dir']; d.mkdir(parents=True,exist_ok=True)
-    (d/(cd['overview']+'.html')).write_text(page(f"Toán 5 · Chủ đề {cd['n']} · Tổng quan",sheet,cd,color),encoding='utf-8',newline='\n')
-print('ok')
+if __name__ == '__main__':
+    for cd,sheet,color in [(CDS[0],cd1_sheet(),'#B83F6B'),(CDS[1],cd2_sheet(),'#94523F'),(CDS[2],cd3_sheet(),'#3E7266'),(CDS[3],cd4_sheet(),'#77528F'),(CDS[4],cd5_sheet(),'#4A6F9D'),(CDS[5],cd6_sheet(),'#955077')]:
+        d=W/'out'/ROOT/cd['dir']; d.mkdir(parents=True,exist_ok=True)
+        (d/(cd['overview']+'.html')).write_text(page(f"Toán 5 · Chủ đề {cd['n']} · Tổng quan",sheet,cd,color),encoding='utf-8',newline='\n')
+    print('ok')

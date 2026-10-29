@@ -1,0 +1,67 @@
+"""Build the approved Unit 1 sample; other English units await review."""
+import json
+from pathlib import Path
+from english.u01.content import TESTS, build_tests, picture
+from build_all import page as quiz_page
+from gen_overview import page as overview_page, gen_sheet, box
+from gen_index import render_index
+
+W=Path(__file__).resolve().parent
+OUT=W/'out'/'TiengAnh5'
+UNIT='Unit1_AllAboutMe'
+META=dict(subject='en',lessonLabel='Phần',book='Tiếng Anh 5 · Global Success · Tập một',
+          title='Unit 1 · All about me!',topic='Giới thiệu bản thân và điều em yêu thích',range='Trang 10–15',minutes=40,
+          tip='Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp.')
+LESSONS={1:'Thông tin bản thân',2:'Điều em yêu thích',3:'Đọc và viết'}
+LEVELS=[dict(id=lv,name=name,desc=desc,stars=k+1,pts=pts) for k,(lv,name,desc,pts) in enumerate([
+    ('tb','Mức 1 · Trung bình','Nhận biết từ và mẫu câu cơ bản',3),
+    ('kha','Mức 2 · Khá','Dùng mẫu câu, nối ý và tìm thông tin',5),
+    ('gioi','Mức 3 · Giỏi','Kết hợp đọc hiểu và viết câu theo dữ liệu',5)])]
+
+
+def main():
+    folder=OUT/UNIT;folder.mkdir(parents=True,exist_ok=True)
+    source=W/'english'/'u01';(source/'tests').mkdir(exist_ok=True)
+    wrapper='window.MKEN1=function(questions){return '+json.dumps(dict(decimal=False,meta=META,lessons=LESSONS,levels=LEVELS),ensure_ascii=False)[:-1]+',"questions":questions};};\n'
+    (source/'common.js').write_text(wrapper,encoding='utf-8',newline='\n')
+    for i,((slug,name,theme),questions) in enumerate(zip(TESTS,build_tests()),1):
+        data='window.TEST_FN=function(H){return MKEN1('+json.dumps(questions,ensure_ascii=False,indent=1)+');};\n'
+        (source/'tests'/f'de{i:02d}.js').write_text(data,encoding='utf-8',newline='\n')
+        extra=dict(id=f'en-u01-de{i}',title=f'Đề {i} · {name}',theme=theme,home='../index.html')
+        if i>1:extra['prev']=f'De{i-1}_{TESTS[i-2][0]}.html'
+        if i<6:extra['next']=f'De{i+1}_{TESTS[i][0]}.html'
+        (folder/f'De{i}_{slug}.html').write_text(quiz_page(f'Tiếng Anh 5 · Unit 1 · Đề {i} · {name}',data,extra,wrapper),encoding='utf-8',newline='\n')
+    cd=dict(n=1,dir=UNIT,name='All about me!',range='Unit 1 · Trang 10–15',overview='TongQuan_Unit1',tests=TESTS)
+    lessons=[
+      dict(n=1,col='#8B4E84',bg='#F2E4F1',dk='#65375F',title='Giới thiệu bản thân',pg='10–11',head='Nói tên, lớp và nơi em sống.',body=lambda c:
+        box(c['bg'],"<b>My name is Mai.</b> — Tên mình là Mai.<br><b>I am in Class 5D.</b> — Mình học lớp 5D.<br><b>I live in the countryside.</b> — Mình sống ở nông thôn.")+
+        '<div style="display:flex;flex-wrap:wrap;gap:20px">'+picture('city')+picture('countryside')+'</div>'+
+        box(c['bg'],'<b>Nhớ theo cụm:</b> in Class + tên lớp; in the city; in the countryside. Khi giới thiệu, I’m và I am có cùng nghĩa.')),
+      dict(n=2,col='#9A5545',bg='#FCE7DF',dk='#713C30',title='Điều em yêu thích',pg='12–13',head='Hỏi đúng nhóm: colour, sport, animal, food.',body=lambda c:
+        box(c['bg'],"<b>What is your favourite colour?</b> — My favourite colour is pink.<br><b>What is your favourite sport?</b> — It is table tennis.<br><b>What is your favourite animal?</b> — It is a dolphin.<br><b>What is your favourite food?</b> — It is a sandwich.")+
+        '<div style="display:flex;flex-wrap:wrap;gap:20px">'+picture('pink')+picture('table tennis')+picture('dolphin')+picture('sandwich')+'</div>'+
+        box(c['bg'],'<b>Từ khóa:</b> pink — màu hồng; table tennis — bóng bàn; dolphin — cá heo; sandwich — bánh mì kẹp. Chọn đúng nhóm trước khi trả lời.')),
+      dict(n=3,col='#4D7395',bg='#E5EFF8',dk='#35516B',title='Đọc và viết',pg='14–15',head='Tìm thông tin trong hồ sơ rồi viết theo mẫu.',body=lambda c:
+        box(c['bg'],'<b>Trọng âm đầu:</b> DOL-phin, TEN-nis. Đây là mẹo đọc bằng chữ, không phải bài nghe.')+
+        box(c['bg'],'<b>Thẻ tự soạn:</b> Name: An · Class: 5A · Home: city · Colour: pink · Sport: table tennis.<br><b>Viết từ thẻ:</b> My name is An. I am in Class 5A. I live in the city. My favourite sport is table tennis.')+
+        box(c['bg'],'<b>Tự kiểm tra:</b> câu có I am hoặc My… is chưa? Đã dùng in Class / in the… đúng chưa? Thông tin có khớp thẻ không?')),
+    ]
+    sheet=gen_sheet(1,'ALL ABOUT ME!','Unit 1 · Tiếng Anh 5 Global Success · Trang 10–15','#8B4E84','#F2E4F1',lessons,
+                    ['Thông tin bản thân','Điều yêu thích','Đọc và viết'],
+                    'Một chút về em, một bước làm quen với bạn.','Ôn tên, lớp, nơi sống và những điều yêu thích. Đọc từng bài, rồi thử sáu đề theo nhịp của em.',
+                    'Nội dung ôn tập tự soạn, bám Unit 1 · Global Success 5, tập một')
+    (folder/'TongQuan_Unit1.html').write_text(overview_page('Tiếng Anh 5 · Unit 1 · Tổng quan',sheet,cd,'#8B4E84'),encoding='utf-8',newline='\n')
+    data=[dict(n=1,dir=UNIT,name='All about me!',range='Unit 1 · Trang 10–15',overview='TongQuan_Unit1',
+               tests=[dict(id=f'en-u01-de{i}',file=f'De{i}_{slug}.html',name=name,theme=theme) for i,(slug,name,theme) in enumerate(TESTS,1)])]
+    index=render_index(data).replace('Toán 5','Tiếng Anh 5').replace('Kết nối tri thức với cuộc sống','Global Success')
+    index=index.replace('Mỗi đề làm xong là một bậc thang. Leo đủ 36 bậc là em đã chinh phục cả học kì 1 của Tiếng Anh 5.',
+                        'Bắt đầu với Unit 1: giới thiệu bản thân và những điều em yêu thích. Sáu đề để em luyện từng bước.')
+    index=index.replace('/ 36 đề','/ 6 đề').replace('/ 108 sao','/ 18 sao').replace("k.indexOf('mia5:cd')===0","k.indexOf('mia5:en-')===0")
+    for old,new in [('>9</text>','>2</text>'),('>18</text>','>3</text>'),('>27</text>','>4</text>'),('>36</text>','>6</text>')]:index=index.replace(old,new)
+    for symbol,letter in [('+','A'),('÷','B'),('×','C'),('=','?'),('%','!')]:index=index.replace('>'+symbol+'</span>','>'+letter+'</span>')
+    index=index.replace('</head>','<style>:root{--c1:#8B4E84;--c1s:#F2E4F1}@media(prefers-color-scheme:dark){:root{--c1:#DAB1D5;--c1s:#3F2B3D}}</style></head>')
+    (OUT/'index.html').write_text(index,encoding='utf-8',newline='\n')
+    print('English built: Unit 1 overview + 6 tests (144 questions)')
+
+
+if __name__=='__main__':main()

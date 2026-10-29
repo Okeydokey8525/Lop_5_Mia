@@ -2,6 +2,14 @@
 
 Cập nhật: 2026-10-29.
 
+## Mẫu Unit 1 Tiếng Anh — All about me!
+
+Chủ repo đã yêu cầu làm mẫu đầu tiên theo kế hoạch. Đã soạn 6 đề (144 câu) + tổng quan HTML/PNG và trang chủ Anh; giữ giao diện hồng anh đào. Chỉ Unit 1, chưa mở rộng Starter/Review/Unit 2–10 và chưa có nghe/nói.
+
+Nguồn nội dung: `generator/english/u01/content.py`, đối chiếu SGK trang 10–15; ghi nhận ở `NOTES.md`. Từ vựng/giới thiệu bản thân/nơi sống/điều yêu thích; câu và hồ sơ tự soạn. Thêm ô chữ, nối cặp, sắp từ và chọn theo SVG; chấm cả biến thể hợp lệ và dạng đầy đủ khi câu yêu cầu.
+
+Toàn site hiện 42 đề, 52 HTML, 7 tổng quan; QA mới so khớp `site/catalog.json`. Nội dung 36 đề Toán và khóa tiến độ cũ không đổi. Local đã đạt: 42/42 đề 100/100, 832 tổ hợp responsive, 245 tham chiếu tĩnh hợp lệ; kiểm tra đáp án chữ biến thể/sai, điểm một phần, sắp từ, hồ sơ và reset riêng từng môn đạt. 6/6 đề Anh standalone cũng 100/100. Kết quả triển khai Unit 1 sẽ ghi sau khi kiểm chứng URL thật.
+
 ## Đợt giao diện hồng anh đào (chủ repo đã duyệt)
 
 - Đổi màu đồng bộ trang chủ chung, trang Toán, đề, reader/poster và PNG tổng quan; chế độ tối dùng tím mận/hồng dịu.

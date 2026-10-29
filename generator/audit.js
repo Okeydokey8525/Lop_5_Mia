@@ -29,3 +29,7 @@ for(const cd of (process.argv[2]||'1,2,3,4,5,6').split(',').map(Number)) for(let
 }
 console.log('audit done, tests:',checked,'issues:',bad);
 if(bad||!checked)process.exitCode=1;
+if(!process.argv[2]){
+  const result=require('node:child_process').spawnSync(process.execPath,[require('node:path').join(__dirname,'audit_english.js')],{stdio:'inherit'});
+  if(result.status!==0)process.exitCode=1;
+}

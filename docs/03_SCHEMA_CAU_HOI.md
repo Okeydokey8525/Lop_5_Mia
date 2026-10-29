@@ -25,8 +25,20 @@ Dùng `n(x)` trong `g4lib.py`: dấu phẩy thập phân, nhóm nghìn bằng kh
 ## Hình vẽ
 `fig` là HTML với `<div class="fig"><figure><svg ...>...</svg><figcaption>...</figcaption></figure></div>`. Màu dùng biến của chủ đề (`var(--soft)`, `currentColor`) và màu nhấn `#e8741a`. Thư viện `fig_tri`, `fig_trap`, `fig_circ`, `fig_house`, `fig_pond` trong `g5lib.py`; `H.angles/table/rect/numline` trong `engine.js`.
 
-## Mở rộng cho Tiếng Anh (chưa có, cần làm)
-Engine chưa có: ô điền chữ (so khớp chuỗi), nối cặp, sắp xếp từ thành câu, chọn tranh, câu nghe. Xem `docs/09_TIENG_ANH.md`. Khi thêm dạng mới: thêm vào `engine.js`, thêm `audit.js` và `tall.js` hỗ trợ dạng đó (tự điền đáp án đúng), **không làm hỏng các dạng cũ** (chạy lại QA 36 đề Toán).
+## Các dạng Tiếng Anh đã có
+
+| `type` | Trường | Cách chấm |
+|---|---|---|
+| `text` | `answers: string[]`, `exactForm: boolean` | Một ô chữ, so với danh sách đáp án sau chuẩn hóa |
+| `match` | `pairs: [{left,right}]` | Ô chọn ở mỗi dòng; phương án đảo thứ tự; điểm theo tỷ lệ cặp đúng |
+| `reorder` | `items` theo thứ tự đúng | Bấm từng từ; chấm thứ tự từ, không dùng so sánh số |
+| `pic` | `fig` SVG tự vẽ, `opts`, `answer` | Chấm như `mc` |
+
+`passage` là hồ sơ/bài đọc tự soạn, có thể đi kèm mọi dạng. Các câu liên tiếp dùng chung bài đọc trong cùng mức độ chỉ hiển thị bài một lần; các câu sau có liên kết xem lại đúng bài. QA đối chiếu bài hiển thị/tham chiếu với dữ liệu từng câu.
+
+Ô chữ chuẩn hóa NFKC, hoa/thường, nháy cong/thẳng, khoảng trắng và dấu kết câu; chấp nhận colour/color và favourite/favorite. Các dạng I'm/I am, It's/It is, What's/What is, My name's/My name is và don't/do not tương đương, **trừ khi** câu đặt `exactForm:true` để yêu cầu viết dạng đầy đủ. Không bỏ qua từ thừa hoặc sửa chính tả theo suy đoán.
+
+`lesson` của Anh dùng 1/2/3 theo ba phần đã đọc; wrapper đặt `meta.subject='en'`, `lessonLabel='Phần'`. Câu nghe chưa triển khai. Sau khi sửa engine phải chạy lại cả Toán và Anh.
 
 ## Kiểm tra dạng sắp xếp
 

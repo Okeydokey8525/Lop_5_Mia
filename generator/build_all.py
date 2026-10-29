@@ -20,18 +20,19 @@ def page(title, data_js, extra, mk_js):
 window.TEST_EXTRA={json.dumps(extra,ensure_ascii=False)};
 {eng}
 </script></body></html>'''
-count=0
-for cd in CDS:
-    d=OUT/cd['dir']; d.mkdir(parents=True,exist_ok=True)
-    mk=(W/'common'/f"{cd['mk']}.js").read_text(encoding='utf-8')
-    for i,(slug,name,theme) in enumerate(cd['tests'],1):
-        src=W/'tests'/f"cd{cd['n']}"/f"de{i:02d}.js"
-        if not src.exists(): continue
-        fn=f"De{i}_{slug}.html"
-        nxt=f"De{i+1}_{cd['tests'][i][0]}.html" if i<len(cd['tests']) else None
-        prv=f"De{i-1}_{cd['tests'][i-2][0]}.html" if i>1 else None
-        extra={'id':f"cd{cd['n']}-de{i}",'title':f"Đề {i} · {name}",'theme':theme,'home':'../index.html','next':nxt,'prev':prv}
-        extra={k:v for k,v in extra.items() if v}
-        html=page(f"Toán 5 · Chủ đề {cd['n']} · Đề {i} · {name}", src.read_text(encoding='utf-8'), extra, mk)
-        (d/fn).write_text(html,encoding='utf-8',newline='\n'); count+=1
-print('built',count)
+if __name__ == '__main__':
+    count=0
+    for cd in CDS:
+        d=OUT/cd['dir']; d.mkdir(parents=True,exist_ok=True)
+        mk=(W/'common'/f"{cd['mk']}.js").read_text(encoding='utf-8')
+        for i,(slug,name,theme) in enumerate(cd['tests'],1):
+            src=W/'tests'/f"cd{cd['n']}"/f"de{i:02d}.js"
+            if not src.exists(): continue
+            fn=f"De{i}_{slug}.html"
+            nxt=f"De{i+1}_{cd['tests'][i][0]}.html" if i<len(cd['tests']) else None
+            prv=f"De{i-1}_{cd['tests'][i-2][0]}.html" if i>1 else None
+            extra={'id':f"cd{cd['n']}-de{i}",'title':f"Đề {i} · {name}",'theme':theme,'home':'../index.html','next':nxt,'prev':prv}
+            extra={k:v for k,v in extra.items() if v}
+            html=page(f"Toán 5 · Chủ đề {cd['n']} · Đề {i} · {name}", src.read_text(encoding='utf-8'), extra, mk)
+            (d/fn).write_text(html,encoding='utf-8',newline='\n'); count+=1
+    print('built',count)

@@ -1,4 +1,4 @@
-"""Build the web site or portable, self-contained Maths HTML files."""
+"""Build Maths and English practice as a web site or self-contained HTML."""
 import argparse
 import os
 from pathlib import Path
@@ -18,17 +18,17 @@ def run(script):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--standalone", action="store_true",
-                        help="Keep self-contained HTML in generator/out/Toan5; do not update site")
+                        help="Keep self-contained HTML in generator/out/{Toan5,TiengAnh5}; do not update site")
     parser.add_argument("--regenerate", action="store_true",
                         help="Regenerate available Python question sources (topics 4-6)")
     args = parser.parse_args()
     if args.regenerate:
         for script in sorted(GEN.glob("g[456]_de*.py")):
             run(script.name)
-    for script in ("build_all.py", "gen_overview.py", "gen_index.py"):
+    for script in ("build_all.py", "gen_overview.py", "gen_index.py", "gen_english.py"):
         run(script)
     if args.standalone:
-        print("Standalone:", GEN / "out" / "Toan5")
+        print("Standalone:", GEN / "out", "(Toan5, TiengAnh5)")
         return
     site = ROOT / "site"
     assets = site / "assets"
@@ -37,7 +37,8 @@ def main():
                  for name in ("fonts.css", "engine.css", "engine.js", "overview.css", "overview.js")}
     for name, data in resources.items():
         (assets / name).write_text(data, encoding="utf-8", newline="\n")
-    for source in (GEN / "out" / "Toan5").rglob("*.html"):
+    sources=[p for subject in ("Toan5", "TiengAnh5") for p in (GEN / "out" / subject).rglob("*.html")]
+    for source in sources:
         relative = source.relative_to(GEN / "out")
         target = site / relative
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -65,12 +66,21 @@ def main():
             raise ValueError(f"Font extraction failed: {source}")
         target.write_text(html, encoding="utf-8", newline="\n")
     # Keep PNGs for HTML-only builds; the Node entry point then regenerates them.
-    for source in (site / "Toan5").rglob("*.png"):
+    for source in site.rglob("*.png"):
         target = GEN / "out" / source.relative_to(site)
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, target)
     home = (ROOT / "tools" / "templates" / "home.html").read_text(encoding="utf-8")
     (site / "index.html").write_text(home, encoding="utf-8", newline="\n")
+    import json
+    sys.path.insert(0,str(GEN))
+    from cfg import CDS
+    from english.u01.content import TESTS
+    tests=[dict(file=f"Toan5/{cd['dir']}/De{i}_{slug}.html",id=f"cd{cd['n']}-de{i}",subject='math')
+           for cd in CDS for i,(slug,*_) in enumerate(cd['tests'],1)]
+    tests += [dict(file=f"TiengAnh5/Unit1_AllAboutMe/De{i}_{slug}.html",id=f"en-u01-de{i}",subject='en')
+              for i,(slug,*_) in enumerate(TESTS,1)]
+    (site / "catalog.json").write_text(json.dumps(dict(tests=tests),ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
     (site / ".nojekyll").touch()
     print("Web:", site)
     print("HTML/assets ready. Use node tools/build.js for a complete build including PNG posters.")

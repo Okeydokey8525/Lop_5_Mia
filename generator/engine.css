@@ -179,6 +179,13 @@ select.in{width:auto;min-width:70px;padding-inline:12px;appearance:auto}
 /* ----- bổ sung: nút về trang chủ, bảng số liệu, điều hướng ----- */
 .back{display:inline-block;color:var(--on-hero);text-decoration:none;font-weight:700;font-size:14px;background:var(--hero-soft);padding:4px 12px;border-radius:999px;margin-bottom:12px}
 .back:hover{background:rgba(255,255,255,.3)}
+.passage{background:var(--soft);border-radius:12px;padding:16px;margin:0 0 14px;line-height:1.75;font-size:18px;white-space:normal}
+.passage-ref{display:inline-flex;align-items:center;min-height:44px;margin-bottom:8px;color:var(--teal);font-size:14px;font-weight:600}
+.text-answer{display:grid;gap:8px}.text-answer label{font-size:14px;color:var(--muted)}.text-in{width:100%;max-width:650px;text-align:left}
+.match-list{display:grid;gap:12px}.match-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:center;gap:10px;padding:12px;border:1px solid var(--line);border-radius:12px}
+select.match-select{width:100%;min-width:0;max-width:100%;font-size:16px;text-align:left}
+.answer-good{border-color:var(--ok)!important;background:var(--ok-bg)!important}.answer-bad{border-color:var(--no)!important;background:var(--no-bg)!important}
+@media(max-width:600px){.match-row{grid-template-columns:minmax(0,1fr)}}
 .theme{margin:10px 0 0;font-size:16px;opacity:.95}
 a.btn{display:inline-flex;align-items:center;text-decoration:none}
 .tblw{overflow-x:auto;margin:6px 0 12px}
