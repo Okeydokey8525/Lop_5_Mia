@@ -2,7 +2,7 @@
 
 Hiện trạng: nguồn ở `generator/`, điều phối build/QA ở `tools/`, kết quả web ở `site/`. Cấu trúc chính thức và lệnh dùng từ gốc repo ở `08_CAY_THU_MUC_VA_DEPLOY.md`.
 
-`python tools/build.py --regenerate` gọi các generator với UTF-8, ghép HTML tự chứa vào `generator/out/Toan5/`, rồi tạo bản web dùng tài nguyên chung ở `site/assets/`. `--standalone` giữ bản tự chứa và không cập nhật site. Mẫu trang chủ chung ở `tools/templates/home.html`; trang chủ Toán vẫn sinh từ `gen_index.py`.
+`node tools/build.js --regenerate` gọi các generator với UTF-8, ghép HTML tự chứa vào `generator/out/Toan5/`, rồi tạo bản web dùng tài nguyên chung ở `site/assets/`. `--standalone` giữ bản tự chứa và không cập nhật site. `node tools/build.js` gọi bước Python rồi `tools/render_overviews.js` để sinh PNG. `overview.css/js` là giao diện và chế độ đọc tổng quan (nhúng vào standalone, tách ra assets cho web). Mẫu trang chủ chung ở `tools/templates/home.html`; trang chủ Toán vẫn sinh từ `gen_index.py`.
 
 ## Luồng chạy
 ```

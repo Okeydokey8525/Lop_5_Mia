@@ -24,7 +24,7 @@ jobs:
           cache-dependency-path: generator/package-lock.json
       - run: npm ci --prefix generator
       - run: npx --prefix generator playwright install --with-deps chromium
-      - run: python tools/build.py --regenerate
+      - run: node tools/build.js --regenerate
       - run: node generator/audit.js
       - run: python tools/check_links.py
       - name: Browser regression under the project URL prefix
@@ -38,6 +38,7 @@ jobs:
             sleep 1
           done
           node tools/qa.js --no-shots
+          node tools/responsive.js --no-shots
       - uses: actions/upload-artifact@v4
         if: always()
         with:

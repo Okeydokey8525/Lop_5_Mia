@@ -13,7 +13,9 @@ Lop_5_Mia/
 │  ├─ package.json, package-lock.json
 │  └─ out/Toan5/                 HTML tự chứa, không commit
 ├─ tools/
-│  ├─ build.py                   build web hoặc HTML tự chứa
+│  ├─ build.js, build.py         điều phối build + bước Python HTML/assets
+│  ├─ render_overviews.js        xuất 6 PNG đồng bộ với giao diện
+│  ├─ responsive.js              8 kích thước × sáng/tối, kiểm tra đọc/touch
 │  ├─ check_links.py             kiểm tra link đúng hoa/thường
 │  ├─ serve.py                   HTTP local tại /Lop_5_Mia/
 │  ├─ qa.js                      kiểm thử trình duyệt local/online
@@ -21,7 +23,7 @@ Lop_5_Mia/
 ├─ site/                         chỉ thư mục này được xuất bản
 │  ├─ index.html                 trang chọn môn; Tiếng Anh đang chuẩn bị
 │  ├─ .nojekyll
-│  ├─ assets/                    fonts.css, engine.css, engine.js dùng chung
+│  ├─ assets/                    fonts.css, engine.css/js, overview.css/js dùng chung
 │  └─ Toan5/                     36 đề + 6 tổng quan HTML/PNG + trang chủ Toán
 ├─ artifacts/                    ảnh và báo cáo QA, không commit
 └─ .github/workflows/pages.yml   build → QA → deploy
@@ -34,14 +36,14 @@ Chạy từ gốc repo:
 ```text
 npm ci --prefix generator
 npx --prefix generator playwright install chromium
-python tools/build.py --regenerate
+node tools/build.js --regenerate
 ```
 
 `--regenerate` sinh lại dữ liệu CĐ4–6 từ Python trước khi build. CĐ1–3 giữ nguồn JS đã bàn giao. Bản web tự cập nhật vào `site/`; không còn bước chép thủ công từ `generator/out/`.
 
 `python tools/build.py --standalone` chỉ xuất HTML tự chứa vào `generator/out/Toan5/` để gửi file lẻ; không cập nhật `site/`. Có thể dùng cùng `--regenerate`.
 
-Bản web chia sẻ font/engine/CSS ở `site/assets/`. CSS font vẫn nhúng dữ liệu base64 gốc, không đổi bộ font và không tải font từ bên thứ ba. Riêng tổng HTML và tài nguyên chung giảm từ 12.572.440 byte xuống khoảng 932.665 byte (không tính PNG). Giữ toàn bộ sáu PNG đã giao, QA xuất ảnh mới vào `artifacts/` để tránh ghi đè bản gốc.
+Bản web chia sẻ font/engine/CSS ở `site/assets/`. CSS font vẫn nhúng dữ liệu base64 gốc, không đổi bộ font và không tải font từ bên thứ ba. Riêng tổng HTML và tài nguyên chung giảm từ 12.572.440 byte xuống khoảng 932.665 byte (không tính PNG). Sau đợt đổi màu được chủ repo duyệt, cả sáu PNG được xuất lại từ HTML và font nhúng để trang chủ hiển thị đúng màu. Không xóa hoặc đổi tên PNG; bản giao ban đầu còn trong lịch sử Git (`db1d936`). QA lưu ảnh kiểm tra riêng trong `artifacts/`.
 
 ## Deploy
 
@@ -67,3 +69,11 @@ Online đã kiểm tra lúc **29/10/2026 18:22:52 UTC+7** tại https://okeydoke
 - Tải trực tiếp 53 file xuất bản (HTML, PNG, CSS, JS) và so sánh byte với build local: 53/53 khớp. `.nojekyll` là chỉ thị build, không nằm trong phép so sánh tài nguyên công khai này.
 - Báo cáo local: `artifacts/local/report.json`; online: `artifacts/online/report.json`, `artifacts/online/files.json` (không commit vì là kết quả QA sinh tự động).
 - Chưa có phản hồi làm thử của em gái; không dùng QA tự động để khẳng định độ khó phù hợp hoặc mọi đáp án đã được giải độc lập.
+
+## Build và responsive sau đợt hồng anh đào
+
+Dùng `node tools/build.js --regenerate` từ gốc repo. Node gọi Python để sinh HTML/assets, sau đó gọi Chromium trực tiếp để xuất PNG. `node tools/build.js --standalone` xuất HTML tự chứa; không cần render PNG. `python tools/build.py` vẫn dùng được cho riêng HTML/assets, nhưng không phải lệnh build web đầy đủ.
+
+Reader và poster dùng cùng một nguồn nội dung; reader được dựng từ cây poster, không có bộ văn bản riêng để lệch nhau. Nội dung bảng giá trị 7 hàng được giữ nguyên và cho cuộn bên trong bảng. Menu chọn đề thu gọn bằng `details`, thao tác được bằng bàn phím/cảm ứng.
+
+CI chạy thêm `node tools/responsive.js --no-shots`: toàn bộ 44 trang ở 320/360/390/400/768/820/1024/1366px, cả sáng/tối; so sánh đủ nội dung reader/poster, chuyển chế độ, mở menu và thao tác nộp bài cảm ứng.

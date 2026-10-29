@@ -1,21 +1,21 @@
-/* Layout: một cột như trang vở bài tập; dải tiêu đề màu xanh ngọc của sách, ba phần theo mức độ, thanh nộp bài dính đáy. */
+/* Layout: một cột như trang vở bài tập; dải tiêu đề hồng anh đào, ba phần theo mức độ, thanh nộp bài dính đáy. */
 :root{
-  --bg:#eef6f5; --paper:#ffffff; --ink:#15302f; --muted:#56706e; --line:#cde0dd; --soft:#e2f1ef;
-  --hero:#0a8b8f; --on-hero:#ffffff; --hero-soft:rgba(255,255,255,.18);
-  --teal:#087a7e; --focus:#f08a10;
+  --bg:#FFF5F8; --paper:#ffffff; --ink:#4A2433; --muted:#7A5363; --line:#EDCFDA; --soft:#FCE4EC;
+  --hero:#FCE4EC; --on-hero:#4A2433; --hero-soft:rgba(255,255,255,.18);
+  --teal:#B83F6B; --focus:#9D315A;
   --tb:#168a60; --tb-bg:#e0f4eb;
   --kha:#b9710a; --kha-bg:#fff0d4;
   --gioi:#b83a64; --gioi-bg:#fbe2eb;
   --ok:#1a7f45; --ok-bg:#e1f4e8; --no:#bf3434; --no-bg:#fde8e8; --part:#a8680c; --part-bg:#fff0d4;
-  --shadow:0 1px 0 rgba(10,60,60,.06),0 6px 18px -10px rgba(10,60,60,.25);
+  --shadow:0 1px 0 rgba(129,66,93,.06),0 6px 18px -10px rgba(129,66,93,.25);
   --f-disp:'Baloo 2','Be Vietnam Pro',system-ui,sans-serif;
   --f-body:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#0e1b1b; --paper:#162828; --ink:#e4f1ef; --muted:#92b0ad; --line:#2a4543; --soft:#1d3433;
-    --hero:#0d4f52; --on-hero:#e9fbfa; --hero-soft:rgba(255,255,255,.12);
-    --teal:#4fd0d4; --focus:#ffb04a;
+    --bg:#21161D; --paper:#2F2029; --ink:#F5E7EE; --muted:#D1AEBD; --line:#644352; --soft:#432A38;
+    --hero:#432A38; --on-hero:#F5E7EE; --hero-soft:rgba(255,255,255,.12);
+    --teal:#F1ABC8; --focus:#ffb04a;
     --tb:#4cd5a0; --tb-bg:#12382c; --kha:#f2b04a; --kha-bg:#3a2c10; --gioi:#f27aa0; --gioi-bg:#3d1a29;
     --ok:#62d68e; --ok-bg:#12351f; --no:#f28080; --no-bg:#3d1a1a; --part:#f0b24d; --part-bg:#3a2c0f;
     --shadow:0 1px 0 rgba(0,0,0,.3),0 6px 18px -10px rgba(0,0,0,.6);
@@ -23,9 +23,9 @@
   }
 }
 :root[data-theme="dark"]{
-  --bg:#0e1b1b; --paper:#162828; --ink:#e4f1ef; --muted:#92b0ad; --line:#2a4543; --soft:#1d3433;
-  --hero:#0d4f52; --on-hero:#e9fbfa; --hero-soft:rgba(255,255,255,.12);
-  --teal:#4fd0d4; --focus:#ffb04a;
+  --bg:#21161D; --paper:#2F2029; --ink:#F5E7EE; --muted:#D1AEBD; --line:#644352; --soft:#432A38;
+  --hero:#432A38; --on-hero:#F5E7EE; --hero-soft:rgba(255,255,255,.12);
+  --teal:#F1ABC8; --focus:#ffb04a;
   --tb:#4cd5a0; --tb-bg:#12382c; --kha:#f2b04a; --kha-bg:#3a2c10; --gioi:#f27aa0; --gioi-bg:#3d1a29;
   --ok:#62d68e; --ok-bg:#12351f; --no:#f28080; --no-bg:#3d1a1a; --part:#f0b24d; --part-bg:#3a2c0f;
   --shadow:0 1px 0 rgba(0,0,0,.3),0 6px 18px -10px rgba(0,0,0,.6);
@@ -33,7 +33,7 @@
 }
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 110px}
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 calc(var(--bar-height,136px) + 24px)}
 .page{max-width:760px;margin:0 auto}
 button,input,select{font:inherit;color:inherit}
 :focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
@@ -187,3 +187,13 @@ table.dt caption{caption-side:top;text-align:left;font-weight:700;color:var(--mu
 table.dt th,table.dt td{border:1px solid var(--line);padding:6px 12px;text-align:left}
 table.dt thead th{background:var(--soft);font-weight:700}
 table.dt tbody th{font-weight:600;background:var(--paper)}
+
+/* Fit the actual card width, including narrow phones and enlarged text. */
+.qs-wrap{grid-template-columns:minmax(0,1fr)}
+.q,.qa,.ord,.blanks,.tfs,.opts,.fig,.fig figure{min-width:0}
+.fig figure{max-width:100%}.fig svg{max-width:100%}
+.qstem,.opt,.chip,.fb,.bl .tx{overflow-wrap:anywhere}
+.opts{grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr))}
+.lvh>div{min-width:0}.chip{max-width:100%;white-space:normal}
+.sw span{min-height:44px;display:grid;place-items:center}
+@media(max-width:380px){.q{padding:14px 12px}.lvh{gap:8px;padding:12px}.lvh .st{font-size:16px;letter-spacing:0}.lvh h2{font-size:22px}.bar-in{gap:8px}.bar .stat{flex-basis:140px}.bar .go{padding-inline:16px}}

@@ -34,7 +34,7 @@ def main():
     assets = site / "assets"
     assets.mkdir(parents=True, exist_ok=True)
     resources = {name: (GEN / name).read_text(encoding="utf-8")
-                 for name in ("fonts.css", "engine.css", "engine.js")}
+                 for name in ("fonts.css", "engine.css", "engine.js", "overview.css", "overview.js")}
     for name, data in resources.items():
         (assets / name).write_text(data, encoding="utf-8", newline="\n")
     for source in (GEN / "out" / "Toan5").rglob("*.html"):
@@ -54,8 +54,13 @@ def main():
             html = html.replace("</script></body>",
                                 f'</script><script src="{prefix}engine.js"></script></body>')
         elif source.name == "index.html":
-            html = html.replace('<main class="wrap">',
-                                '<main class="wrap"><p><a href="../index.html">← Chọn môn học</a></p>')
+            html = html.replace('<p class="eyebrow">',
+                                '<a class="subject-back" href="../index.html">← Chọn môn học</a><p class="eyebrow">', 1)
+        else:
+            html = html.replace("<style>" + resources["overview.css"] + "</style>",
+                                f'<link rel="stylesheet" href="{prefix}overview.css">')
+            html = html.replace("<script>" + resources["overview.js"] + "</script>",
+                                f'<script src="{prefix}overview.js"></script>')
         if resources["fonts.css"] in html:
             raise ValueError(f"Font extraction failed: {source}")
         target.write_text(html, encoding="utf-8", newline="\n")
@@ -68,6 +73,7 @@ def main():
     (site / "index.html").write_text(home, encoding="utf-8", newline="\n")
     (site / ".nojekyll").touch()
     print("Web:", site)
+    print("HTML/assets ready. Use node tools/build.js for a complete build including PNG posters.")
 
 
 if __name__ == "__main__":

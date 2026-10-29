@@ -15,7 +15,7 @@ Cần Python 3.13+ và Node 24. Chạy từ gốc repo:
 ```text
 npm ci --prefix generator
 npx --prefix generator playwright install chromium
-python tools/build.py --regenerate
+node tools/build.js --regenerate
 node generator/audit.js
 python tools/check_links.py
 python tools/serve.py

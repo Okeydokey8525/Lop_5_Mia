@@ -1,0 +1,24 @@
+const fs=require('node:fs'),path=require('node:path'),{pathToFileURL}=require('node:url');
+const {createRequire}=require('node:module');
+const {chromium}=createRequire(path.resolve(__dirname,'../generator/package.json'))('playwright');
+const ROOT=path.resolve(__dirname,'..');
+async function main(){
+  const browser=await chromium.launch();
+  try{
+    const page=await browser.newPage({viewport:{width:1080,height:1000},colorScheme:'light',reducedMotion:'reduce'});
+    const math=path.join(ROOT,'site','Toan5');
+    for(const dir of fs.readdirSync(math,{withFileTypes:true}).filter(d=>d.isDirectory())){
+      const folder=path.join(math,dir.name);
+      const html=fs.readdirSync(folder).find(f=>/^TongQuan_.*\.html$/.test(f));
+      if(!html)throw Error('Missing overview: '+folder);
+      await page.goto(pathToFileURL(path.join(folder,html)).href);
+      await page.evaluate(()=>document.fonts.ready);
+      const png=path.join(folder,html.replace('.html','.png'));
+      await page.locator('#sheetw').screenshot({path:png});
+      const standalone=path.join(ROOT,'generator','out','Toan5',dir.name,path.basename(png));
+      fs.mkdirSync(path.dirname(standalone),{recursive:true});fs.copyFileSync(png,standalone);
+      console.log('Poster:',path.relative(ROOT,png));
+    }
+  }finally{await browser.close();}
+}
+main().catch(e=>{console.error(e);process.exitCode=1;});

@@ -301,5 +301,10 @@ document.addEventListener('input',function(e){ if(e.target.closest&&e.target.clo
 document.addEventListener('change',function(e){ if(e.target.closest&&e.target.closest('#test')){startTimer();progress()} });
 document.addEventListener('click',function(e){ if(e.target.closest&&e.target.closest('#test .chip')){startTimer();progress()} });
 build();
+// Reserve the actual bar height in every mode, including wrapped mobile results.
+function reserveBarSpace(){document.documentElement.style.setProperty('--bar-height',Math.ceil($('#bar').getBoundingClientRect().height)+'px');}
+if(typeof ResizeObserver!=='undefined')new ResizeObserver(reserveBarSpace).observe($('#bar'));
+window.addEventListener('resize',reserveBarSpace);
+document.fonts.ready.then(reserveBarSpace);reserveBarSpace();
 window.__quiz={Q:Q,build:build,submit:submit};
 })();

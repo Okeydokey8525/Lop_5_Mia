@@ -4,31 +4,32 @@
 <link rel="stylesheet" href="../assets/fonts.css">
 <style>
 :root{
-  --bg:#eef6f5;--paper:#fff;--ink:#15302f;--muted:#56706e;--line:#cde0dd;--soft:#e2f1ef;--shadow:0 1px 0 rgba(10,60,60,.06),0 10px 24px -14px rgba(10,60,60,.35);
-  --c1:#0a6f73;--c1s:#dff3f2;--c2:#c4470a;--c2s:#fde9dc;--c3:#2e7d32;--c3s:#e4f4e5;--c4:#6a1b9a;--c4s:#f1e4f7;--c5:#1565c0;--c5s:#e3f0fc;--c6:#c2185b;--c6s:#fce4ec;--focus:#f08a10;
+  --bg:#FFF5F8;--paper:#fff;--ink:#4A2433;--muted:#7A5363;--line:#EDCFDA;--soft:#FCE4EC;--shadow:0 1px 0 rgba(129,66,93,.06),0 10px 24px -14px rgba(129,66,93,.35);
+  --c1:#B83F6B;--c1s:#FCE4EC;--c2:#94523F;--c2s:#FCE6DC;--c3:#3E7266;--c3s:#E3F0EB;--c4:#77528F;--c4s:#EEE5F5;--c5:#4A6F9D;--c5s:#E5EDF8;--c6:#955077;--c6s:#F4E4EE;--focus:#9D315A;
   --tb:#168a60;--kha:#b9710a;--gioi:#b83a64;--ok:#1a7f45;
   --f-disp:'Baloo 2','Be Vietnam Pro',system-ui,sans-serif;--f-body:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0e1b1b;--paper:#162828;--ink:#e4f1ef;--muted:#92b0ad;--line:#2a4543;--soft:#1d3433;--shadow:0 1px 0 rgba(0,0,0,.3),0 10px 24px -14px rgba(0,0,0,.7);
-  --c1:#4fd0d4;--c1s:#12383a;--c2:#ff9a5c;--c2s:#3d2314;--c3:#6fcf75;--c3s:#173a1a;--c4:#c58bf0;--c4s:#2e1a3d;--c5:#7fb2f5;--c5s:#14283f;--c6:#f48fb1;--c6s:#3d1a28;--focus:#ffb04a;--tb:#4cd5a0;--kha:#f2b04a;--gioi:#f27aa0;--ok:#62d68e;color-scheme:dark}}
+  --bg:#21161D;--paper:#2F2029;--ink:#F5E7EE;--muted:#D1AEBD;--line:#644352;--soft:#432A38;--shadow:0 1px 0 rgba(0,0,0,.3),0 10px 24px -14px rgba(0,0,0,.7);
+  --c1:#F1ABC8;--c1s:#432A38;--c2:#F2BDA6;--c2s:#463029;--c3:#A8D5C3;--c3s:#263C34;--c4:#D4B8EA;--c4s:#382941;--c5:#B6CDED;--c5s:#293544;--c6:#E5B8D3;--c6s:#432A38;--focus:#ffb04a;--tb:#4cd5a0;--kha:#f2b04a;--gioi:#f27aa0;--ok:#62d68e;color-scheme:dark}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55;padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px));padding-bottom:48px}
 .wrap{max-width:1040px;margin:0 auto}
 :focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:8px}
 a{color:inherit}
+.subject-back{display:inline-flex;align-items:center;min-height:44px;margin-bottom:12px;padding:8px 14px;border-radius:999px;background:#ffffff99;color:#4A2433;text-decoration:none;font-weight:700;font-size:14px}
 /* hero */
-.hero{position:relative;overflow:hidden;margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:34px max(16px,env(safe-area-inset-left,0px)) 56px;color:#fff;
-  background:linear-gradient(135deg,#0a6f73 0%,#0c8a86 45%,#e08a2c 120%);border-radius:0 0 36px 36px}
+.hero{position:relative;overflow:hidden;margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:34px max(16px,env(safe-area-inset-left,0px)) 56px;color:#4A2433;
+  background:linear-gradient(135deg,#FCE4EC 0%,#F8BBD0 100%);border-radius:0 0 36px 36px}
 .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:20px;align-items:center}
 .eyebrow{font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;opacity:.9;margin:0}
 h1{font-family:var(--f-disp);font-weight:800;font-size:clamp(40px,7vw,68px);line-height:1;margin:8px 0 10px}
 .hero p.lead{margin:0 0 18px;font-size:19px;max-width:34ch;opacity:.97}
 .hello{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px}
 .hello label{font-weight:700}
-.hello input{font:inherit;border:0;border-radius:12px;padding:8px 14px;min-width:0;width:200px;background:rgba(255,255,255,.95);color:#15302f}
-.cta{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#0a5d61;font-weight:800;font-size:18px;text-decoration:none;padding:12px 22px;border-radius:999px;box-shadow:0 8px 20px -8px rgba(0,0,0,.4);transition:transform .2s}
+.hello input{font:inherit;border:0;border-radius:12px;padding:8px 14px;min-width:0;width:200px;background:rgba(255,255,255,.95);color:#4A2433}
+.cta{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#9D315A;font-weight:800;font-size:18px;text-decoration:none;padding:12px 22px;border-radius:999px;box-shadow:0 8px 20px -8px rgba(0,0,0,.4);transition:transform .2s}
 .cta:hover{transform:translateY(-2px) scale(1.02)}
 .cta svg{width:20px;height:20px}
 .stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;padding:0;list-style:none}
@@ -46,15 +47,15 @@ h1{font-family:var(--f-disp);font-weight:800;font-size:clamp(40px,7vw,68px);line
 .topic{background:var(--paper);border-radius:28px;box-shadow:var(--shadow);margin:0 0 28px;overflow:hidden;opacity:0;transform:translateY(16px);animation:rise .6s ease forwards}
 .topic:nth-of-type(2){animation-delay:.12s}.topic:nth-of-type(3){animation-delay:.22s}.topic:nth-of-type(4){animation-delay:.32s}.topic:nth-of-type(5){animation-delay:.42s}.topic:nth-of-type(6){animation-delay:.52s}
 @keyframes rise{to{opacity:1;transform:none}}
-.th{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:22px 26px;color:#fff;background:var(--tc)}
-.th .no{flex:none;width:84px;height:84px;border-radius:50%;background:#fff3d6;color:var(--tc);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--f-disp);font-weight:800;line-height:1}
+.th{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:22px 26px;color:var(--ink);background:var(--ts)}
+.th .no{flex:none;width:84px;height:84px;border-radius:50%;background:var(--paper);color:var(--tc);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--f-disp);font-weight:800;line-height:1}
 .th .no small{font-size:13px}.th .no span{font-size:42px}
 .th h2{margin:0;font-family:var(--f-disp);font-weight:800;font-size:clamp(26px,4.4vw,38px);line-height:1.05}
 .th p{margin:2px 0 0;font-weight:600;opacity:.95}
 .th .grow{flex:1 1 220px;min-width:0}
 .meter{display:flex;flex-direction:column;align-items:flex-end;gap:6px;min-width:150px}
 .meter .bar{width:150px;height:10px;border-radius:99px;background:rgba(255,255,255,.3);overflow:hidden}
-.meter .bar i{display:block;height:100%;background:#fff;border-radius:99px;transition:width .8s ease}
+.meter .bar i{display:block;height:100%;background:var(--tc);border-radius:99px;transition:width .8s ease}
 .meter .st{display:flex;gap:2px;font-weight:700;font-size:14px;align-items:center}
 .meter svg{width:18px;height:18px;fill:#ffd24a}
 .tb2{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:22px;padding:22px 26px 26px}
@@ -75,12 +76,12 @@ h1{font-family:var(--f-disp);font-weight:800;font-size:clamp(40px,7vw,68px);line
 .stop .th2{font-size:14px;color:var(--muted);margin:0}
 .stop .res{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;font-weight:700;font-size:14px}
 .chip{border-radius:99px;padding:2px 12px;background:var(--soft);color:var(--muted)}
-.stop.done .num{background:var(--tc);color:#fff}
+.stop.done .num{background:var(--tc);color:var(--paper)}
 .stop.done a{background:var(--paper)}
 .stop.r-gioi .chip{background:var(--gioi);color:#fff}.stop.r-kha .chip{background:var(--kha);color:#fff}.stop.r-tb .chip{background:var(--tb);color:#fff}.stop.r-low .chip{background:var(--muted);color:var(--paper)}
 .stop .stars{display:flex;gap:1px}.stop .stars svg{width:18px;height:18px;fill:var(--line)}.stop .stars svg.on{fill:#f5b100}
 .stop.next a{border-color:var(--focus);box-shadow:0 0 0 4px rgba(240,138,16,.18)}
-.stop.next::before{content:"Làm tiếp";position:absolute;top:-10px;right:14px;background:var(--focus);color:#15302f;font-weight:800;font-size:12px;padding:2px 10px;border-radius:99px;z-index:2;animation:pulse 1.8s ease-in-out infinite}
+.stop.next::before{content:"Làm tiếp";position:absolute;top:-10px;right:14px;background:var(--focus);color:#4A2433;font-weight:800;font-size:12px;padding:2px 10px;border-radius:99px;z-index:2;animation:pulse 1.8s ease-in-out infinite}
 @keyframes pulse{50%{transform:scale(1.08)}}
 .badge{display:none;margin:0 26px 24px;padding:14px 18px;border-radius:18px;background:linear-gradient(90deg,#fff3d6,#ffe39a);color:#6b4300;font-weight:800;align-items:center;gap:12px}
 .badge.on{display:flex}.badge svg{width:30px;height:30px;fill:#f5b100;flex:none}
@@ -91,7 +92,9 @@ h1{font-family:var(--f-disp);font-weight:800;font-size:clamp(40px,7vw,68px);line
 .foot .ask button{background:var(--gioi);color:#fff;border-radius:10px;text-decoration:none;padding:6px 14px;font-weight:700}
 .foot .ask button.no{background:var(--soft);color:var(--ink)}
 @media (max-width:820px){.hero .wrap{grid-template-columns:1fr}.art{display:none}.how{grid-template-columns:1fr;margin-top:-22px}.tb2{grid-template-columns:1fr}.ov .crop{height:220px}}
+.topic,.grow,.stop,.stop a{min-width:0}.stop .nm,.th h2{overflow-wrap:anywhere}
 @media (max-width:520px){.path{grid-template-columns:1fr}.meter{align-items:flex-start}}
+@media(prefers-color-scheme:dark){.hero{background:linear-gradient(135deg,#432A38,#583347);color:#F5E7EE}.subject-back{background:#624052;color:#F5E7EE}.hello input{background:#2F2029;color:#F5E7EE}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.topic{opacity:1;transform:none}}
 </style></head><body>
 <header class="hero">
@@ -99,7 +102,7 @@ h1{font-family:var(--f-disp);font-weight:800;font-size:clamp(40px,7vw,68px);line
 <span class="float" style="left:58%;bottom:8%;font-size:72px;animation-delay:-5s">×</span><span class="float" style="left:90%;top:14%;font-size:56px;animation-delay:-2s">=</span><span class="float" style="left:22%;bottom:4%;font-size:52px;animation-delay:-7s">%</span>
 <div class="wrap">
 <div>
-<p class="eyebrow">Toán 5 · Kết nối tri thức với cuộc sống</p>
+<a class="subject-back" href="../index.html">← Chọn môn học</a><p class="eyebrow">Toán 5 · Kết nối tri thức với cuộc sống</p>
 <h1>Hành trình<br>chinh phục Toán 5</h1>
 <p class="lead">Mỗi đề làm xong là một bậc thang. Leo đủ 36 bậc là em đã chinh phục cả học kì 1 của Toán 5.</p>
 <div class="hello"><label for="nm">Tên của em</label><input id="nm" autocomplete="off" placeholder="Viết tên vào đây"><span id="greet" style="font-weight:800"></span></div>
@@ -107,12 +110,12 @@ h1{font-family:var(--f-disp);font-weight:800;font-size:clamp(40px,7vw,68px);line
 <ul class="stats"><li><b id="sDone">0</b> / 36 đề</li><li><b id="sStar">0</b> / 108 sao</li><li><b id="sBest">–</b> điểm cao nhất</li></ul>
 </div>
 <svg class="art" viewBox="0 0 340 300" role="img" aria-label="Những bậc thang dẫn lên ngôi sao">
-<g><rect x="20" y="236" width="300" height="46" rx="10" fill="#fff" opacity=".95"/><rect x="62" y="190" width="258" height="46" rx="10" fill="#ffe39a"/><rect x="104" y="144" width="216" height="46" rx="10" fill="#ffc15c"/><rect x="146" y="98" width="174" height="46" rx="10" fill="#ff9a5c"/><rect x="188" y="52" width="132" height="46" rx="10" fill="#e8741a"/></g>
-<g fill="#0a5d61" font-family="Baloo 2,Be Vietnam Pro,sans-serif" font-weight="800" font-size="28" text-anchor="middle"><text x="170" y="269">1</text><text x="212" y="223">9</text><text x="254" y="177" fill="#7a3e00">18</text><text x="296" y="131" fill="#fff">27</text><text x="254" y="85" fill="#fff">36</text></g>
+<g><rect x="20" y="236" width="300" height="46" rx="10" fill="#fff" opacity=".95"/><rect x="62" y="190" width="258" height="46" rx="10" fill="#FCE4EC"/><rect x="104" y="144" width="216" height="46" rx="10" fill="#F8BBD0"/><rect x="146" y="98" width="174" height="46" rx="10" fill="#E9B9D3"/><rect x="188" y="52" width="132" height="46" rx="10" fill="#E4D2F1"/></g>
+<g fill="#9D315A" font-family="Baloo 2,Be Vietnam Pro,sans-serif" font-weight="800" font-size="28" text-anchor="middle"><text x="170" y="269">1</text><text x="212" y="223">9</text><text x="254" y="177" fill="#4A2433">18</text><text x="296" y="131" fill="#4A2433">27</text><text x="254" y="85" fill="#4A2433">36</text></g>
 <g transform="translate(254 6)"><path d="M32 4l7.6 15.4 17 2.5-12.3 12 2.9 16.9L32 42.6 16.8 50.8l2.9-16.9-12.3-12 17-2.5z" fill="#ffd24a" stroke="#fff" stroke-width="3" stroke-linejoin="round"><animateTransform attributeName="transform" type="rotate" values="-6 32 28;6 32 28;-6 32 28" dur="3s" repeatCount="indefinite"/></path></g>
 </svg>
 </div></header>
-<main class="wrap"><p><a href="../index.html">← Chọn môn học</a></p>
+<main class="wrap">
 <div class="how"><div><i>1</i><p style="margin:0"><b>Xem bức tranh tổng quan</b><span>Nhớ lại nội dung từng bài trong chủ đề.</span></p></div><div><i>2</i><p style="margin:0"><b>Làm một đề kiểm tra</b><span>24 câu, ba mức Trung bình, Khá, Giỏi.</span></p></div><div><i>3</i><p style="margin:0"><b>Đọc lời giải, làm đề mới</b><span>Sai câu nào, xem kĩ câu đó rồi thử đề khác.</span></p></div></div>
 <div id="topics"></div>
 <div class="foot">Tiến trình được lưu ngay trên máy này, chỉ cần dùng cùng một trình duyệt.<br><button id="reset" type="button">Xóa tiến trình</button>
@@ -137,7 +140,7 @@ function render(){
     });
     if(nextHref===null&&firstNew>=0){nextHref=cd.dir+'/'+cd.tests[firstNew].file;nextTxt=(done===0&&ci===0)?'Bắt đầu thôi':'Làm đề tiếp theo'}
     var tc='var(--c'+(ci+1)+')';
-    html+='<section class="topic" id="cd'+cd.n+'" style="--tc:'+tc+'"><div class="th"><div class="no"><small>Chủ đề</small><span>'+cd.n+'</span></div><div class="grow"><h2>'+esc(cd.name)+'</h2><p>'+esc(cd.range)+' · 6 đề kiểm tra</p></div>'+
+    html+='<section class="topic" id="cd'+cd.n+'" style="--tc:'+tc+';--ts:var(--c'+(ci+1)+'s)"><div class="th"><div class="no"><small>Chủ đề</small><span>'+cd.n+'</span></div><div class="grow"><h2>'+esc(cd.name)+'</h2><p>'+esc(cd.range)+' · 6 đề kiểm tra</p></div>'+
       '<div class="meter"><div class="bar"><i style="width:'+(d/6*100)+'%"></i></div><div class="st">'+d+'/6 đề · '+s+'/18 '+STAR+'</div></div></div>'+
       '<div class="badge'+(d===6?' on':'')+'">'+STAR+'<span>Chúc mừng em! Em đã làm đủ 6 đề của chủ đề này.</span></div>'+
       '<div class="tb2"><a class="ov" href="'+cd.dir+'/'+cd.overview+'.html"><div class="crop"><img src="'+cd.dir+'/'+cd.overview+'.png" alt="Bức tranh tổng quan Chủ đề '+cd.n+'" loading="lazy"></div><span class="lab">Xem bức tranh tổng quan →</span></a>'+

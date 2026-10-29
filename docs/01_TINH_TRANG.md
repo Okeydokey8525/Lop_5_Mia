@@ -2,6 +2,15 @@
 
 Cập nhật: 2026-10-29.
 
+## Đợt giao diện hồng anh đào (chủ repo đã duyệt)
+
+- Đổi màu đồng bộ trang chủ chung, trang Toán, đề, reader/poster và PNG tổng quan; chế độ tối dùng tím mận/hồng dịu.
+- Sửa tràn ngang ở 360px; mở rộng QA tới 320px và 8 kích thước màn hình, cả sáng/tối.
+- Tổng quan có chế độ đọc từng bài trên điện thoại/tablet; giữ chế độ poster để xem toàn cảnh/in. Nội dung hai chế độ được kiểm tra khớp nhau.
+- Mã câu hỏi, đáp án, engine chấm điểm và khóa lưu tiến độ không thay đổi.
+- Local đã đạt 704 tổ hợp responsive, 36/36 đề 100/100, 208 tham chiếu tĩnh đúng; đã xem ảnh sáng/tối, điện thoại/tablet/desktop và cả 6 poster PNG.
+- Online cho đợt giao diện mới: chờ deploy và kiểm chứng; bản build/QA trước đó ở các mục lịch sử bên dưới.
+
 ## Đã xong: Toán 5 tập một (Kết nối tri thức với cuộc sống)
 6 chủ đề, mỗi chủ đề có 1 trang tổng quan (HTML + PNG) và 6 đề, tổng **36 đề**, 108 sao trên trang chủ.
 

@@ -13,12 +13,16 @@ Bộ đề kiểm tra trực tuyến cho học sinh lớp 5, bản web dùng tà
 
 Chủ repo yêu cầu ưu tiên cấu trúc, chuẩn hóa build/QA, kiểm chứng bộ Toán, trang chủ chung và GitHub Pages. **Chưa làm Tiếng Anh hoặc Unit 1 mẫu ở đợt này.** Cây thư mục giữ `generator/`, `docs/`, `site/Toan5/`, thêm `tools/` và `site/assets/`; xem `docs/08`.
 
-Lệnh từ gốc repo: `python tools/build.py --regenerate`, `node generator/audit.js`, `python tools/check_links.py`, `python tools/serve.py` rồi `node tools/qa.js` ở terminal khác. Không sửa trực tiếp `site/`; trang chủ chung sinh từ `tools/templates/home.html`. PDF nằm ngoài repo.
+Lệnh từ gốc repo: `node tools/build.js --regenerate`, `node generator/audit.js`, `python tools/check_links.py`, `python tools/serve.py` rồi `node tools/qa.js` ở terminal khác. Không sửa trực tiếp `site/`; trang chủ chung sinh từ `tools/templates/home.html`. PDF nằm ngoài repo.
 
 ## Việc của bạn (Codex)
 1. Làm tiếp Tiếng Anh 5 theo `docs/09_TIENG_ANH.md`, mỗi unit là một chủ đề, mỗi chủ đề có 1 trang tổng quan + 6 đề.
 2. Sắp xếp lại cây thư mục cho gọn và đưa site lên GitHub Pages (hoặc Vercel) theo `docs/08_CAY_THU_MUC_VA_DEPLOY.md`. Bạn được tự quyết cây cuối cùng, nhưng phải ghi quyết định vào file đó.
 3. Khi chủ repo đưa PDF Toán học kì 2: thêm các chủ đề Toán tiếp theo (`docs/06_THEM_CHU_DE_MOI.md`).
+
+## Giao diện đã được duyệt
+
+Ngày 29/10/2026, chủ repo duyệt đổi sang hồng anh đào và sửa responsive. Giữ font, nội dung, hiệu ứng và tiến độ; màu hiện hành ở `docs/05_THIET_KE.md`. Trang tổng quan có chế độ đọc từng bài cho màn hình ≤820px và poster 1080px cho màn hình lớn/in. `node tools/build.js` build cả HTML, tài nguyên và PNG; `python tools/build.py` chỉ là bước HTML/assets. Không gọi renderer Chromium từ Python Microsoft Store trên Windows vì tiến trình con có thể nhìn sai đường dẫn cache trình duyệt.
 
 ## Quy tắc cứng
 1. **Giữ nguyên thiết kế** hiện có (`docs/05_THIET_KE.md`): màu, font, bố cục trang tổng quan, hiệu ứng trang chủ. Chỉ thêm, không đổi giao diện cũ trừ khi chủ repo yêu cầu.

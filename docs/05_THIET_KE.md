@@ -8,21 +8,25 @@ Giao diện nằm trong `generator/engine.css`, `engine.js`, `fonts.css`, `gen_i
 ## Font
 `Baloo 2` (tiêu đề, số, nhấn) và `Be Vietnam Pro` (chữ thường), nhúng base64 trong `fonts.css`. Hỗ trợ đầy đủ tiếng Việt. Tiếng Anh dùng cùng font (kiểm tra hiển thị ký tự đặc biệt nếu có).
 
-## Màu mỗi chủ đề (màu nhấn của trang tổng quan và đầu trang đề)
-| CĐ | Màu |
-|---|---|
-| 1 | `#0a6f73` (xanh ngọc) |
-| 2 | `#c4470a` (cam đất) |
-| 3 | `#2e7d32` (xanh lá) |
-| 4 | `#6a1b9a` (tím) |
-| 5 | `#1565c0` (xanh dương) |
-| 6 | `#c2185b` (hồng đậm) |
+## Bảng màu hiện hành — hồng anh đào
 
-Chủ đề mới phải chọn màu **khác các màu trên** và không trùng màu nền các khối bài học bên trong cùng poster (đã từng lỗi: đầu trang CĐ5 trùng cam với CĐ2 và với màu bài học; đã sửa thành xanh dương và đổi bài 26 sang xanh ngọc).
-Màu nhấn chung cho nét gạch/đường cao: `#e8741a`.
+Chủ repo duyệt thay màu và cải thiện responsive ngày 29/10/2026. Bộ xanh ngọc cũ được thay bằng:
+
+| Thành phần | Màu |
+|---|---|
+| Nền | `#FFF5F8` |
+| Thẻ nội dung | `#FFFFFF` |
+| Đầu trang sáng | `#FCE4EC` → `#F8BBD0` |
+| Nút/chọn chính | `#B83F6B` |
+| Chữ chính / chữ phụ | `#4A2433` / `#7A5363` |
+| Viền | `#EDCFDA` |
+| Nền tối / thẻ tối | `#21161D` / `#2F2029` |
+| Đầu trang tối | `#432A38` → `#583347` |
+
+Sáu chủ đề có màu chữ/nhấn trầm và nền pastel đi kèm: hồng `#B83F6B/#FCE4EC`, đào `#94523F/#FCE6DC`, bạc hà `#3E7266/#E3F0EB`, lavender `#77528F/#EEE5F5`, xanh trời `#4A6F9D/#E5EDF8`, tím hồng `#955077/#F4E4EE`. Giữ phân biệt đúng/sai/đúng một phần bằng xanh lá/đỏ/vàng cùng nhãn chữ.
 
 ## Trang tổng quan (poster)
-- Rộng **1080px**, xuất PNG 1080px bằng `png.js`; cũng là trang HTML xem được trên điện thoại (không tràn ngang ở 400px).
+- Bản poster rộng **1080px**, xuất PNG bằng `tools/render_overviews.js`; trên màn hình ≤820px mặc định đọc từng bài, chữ thân bài 17px và bố cục dọc. Có nút chuyển giữa hai cách xem. Không thu nhỏ toàn bộ poster để làm chế độ đọc mặc định nữa.
 - Bố cục: tiêu đề chủ đề + màu chủ đề, lời mở đầu, các khối bài học (tên bài, số trang SGK nếu biết, ý chính, ví dụ, hình SVG), đường dẫn tới 6 đề.
 - Hình minh họa là **SVG tự vẽ**, hình học phải đúng thật (xem lỗi bên dưới).
 
@@ -46,3 +50,9 @@ Giữ nguyên bộ khung/màu/hiệu ứng; trang tổng quan Tiếng Anh thay c
 ## Sửa lỗi hiển thị ngày 29/10/2026
 
 Giữ toàn bộ hệ thống thiết kế. Đã mở rộng khung SVG cho tam giác vuông và ao trong khu đất để nhãn dài không bị cắt; dịch nhẹ nhãn chiều rộng của hình chữ nhật và dải cây xanh vào trong khung. Không đổi số liệu hay đáp án. QA tự động kiểm tra biên nhãn bằng tọa độ SVG sau biến đổi, đồng thời đã xem ảnh render.
+
+## Responsive đã chuẩn hóa
+
+Khung câu hỏi dùng cột grid `minmax(0,1fr)`, SVG bị giới hạn bởi chiều rộng thật của thẻ; xử lý chữ dài và đáp án ở 320–360px. Nút cảm ứng chính tối thiểu 44px. Liên kết chọn môn đặt trong hero, tránh bị khối hướng dẫn đè. Trang tổng quan thu gọn menu đề; bảng giá trị số giữ các cột và cuộn bên trong vùng bảng. Giữ font, hiệu ứng giảm chuyển động và khóa localStorage.
+
+Thanh nộp/kết quả được đo bằng ResizeObserver; khoảng trống cuối trang theo chiều cao thực tế, tránh che câu cuối ở màn hình 320–360px sau khi nộp.

@@ -5,7 +5,7 @@
 Cần Python 3.13+ và Node.js 24. Cài phụ thuộc: `npm ci --prefix generator`, sau đó `npx --prefix generator playwright install chromium` (Linux CI dùng thêm `--with-deps`).
 
 ```text
-python tools/build.py --regenerate
+node tools/build.js --regenerate
 node generator/audit.js
 python tools/check_links.py
 python tools/serve.py
@@ -15,6 +15,7 @@ Giữ server chạy, mở terminal thứ hai:
 
 ```text
 node tools/qa.js
+node tools/responsive.js
 ```
 
 Server ở `http://127.0.0.1:8765/Lop_5_Mia/`, kiểm tra hoa/thường giống Pages. QA đọc toàn bộ HTML trong `site/`, kiểm tra 44 trang, 36 đề, link và tài nguyên dựng từ JavaScript, 24 câu/100 điểm, tự điền đúng đạt 100/100, lỗi console/request, tràn ngang ở 400px, biên nhãn SVG (có tính phép xoay/biến đổi), thống kê hai trang chủ và lưu tiến độ sau tải lại. Có kiểm tra nộp thiếu câu, hủy xác nhận, điểm một phần, làm lại và giữ điểm cao nhất. Báo cáo/ảnh ở `artifacts/local/`.
@@ -50,3 +51,11 @@ Audit mặc định đủ 6 chủ đề, phát hiện file đề thiếu và tr�
 
 ## Việc cần người thật
 Em gái chưa làm thử đề nào. Sau khi deploy, nhờ chủ repo cho em làm thử và ghi lại câu nào khó hiểu, rồi sửa đề. Đừng khẳng định "đề dễ/khó phù hợp" khi chưa có phản hồi này.
+
+## Kiểm tra responsive và hình ảnh sau đổi màu
+
+`node tools/responsive.js` kiểm tra 704 tổ hợp (44 trang × 8 chiều rộng × 2 chế độ sáng/tối), không chấp nhận tràn ngang toàn trang. Bảng 7 hàng trong tổng quan có cuộn nội bộ, không thu nhỏ chữ. Kiểm tra nội dung reader/poster khớp nhau, cỡ chữ đoạn văn ≥16px, nút chuyển view, menu đề và nút nộp bài cảm ứng. Kết quả/ảnh ở `artifacts/responsive-local/` hoặc `artifacts/responsive-online/` theo URL truyền vào. Thiết bị là mô phỏng Chromium; vẫn cần thử máy thật của em nếu dùng trình duyệt khác.
+
+`node tools/render_overviews.js` xuất lại 6 PNG 1080px ở `site/Toan5/` và bản sao trong `generator/out/Toan5/`. Dùng lệnh build Node đầy đủ để đảm bảo PNG khớp HTML. PNG cũ được giữ trong lịch sử Git.
+
+Kiểm tra bổ sung sau nộp ở 320/360/390/768px: cuộn xuống cuối trang và xác nhận câu cuối nằm phía trên thanh kết quả.

@@ -1,111 +1,99 @@
 <!doctype html>
 <html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Toán 5 · Chủ đề 4 · Tổng quan</title>
-<link rel="stylesheet" href="../../assets/fonts.css">
-<style>
-:root{--c:#6a1b9a}
-body{margin:0;background:#dff1f2;font-family:'Be Vietnam Pro',system-ui,sans-serif}
-.nav{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:8px;align-items:center;justify-content:flex-start;padding:12px max(16px,env(safe-area-inset-left,0px));background:#fff;border-bottom:1px solid #b8d6d8}
-.nav a{flex:none;white-space:nowrap;color:#fff;background:var(--c);text-decoration:none;font-weight:700;font-size:15px;padding:6px 14px;border-radius:999px}
-.nav a.home{background:#17303a}
-.nav a:focus-visible{outline:3px solid #f08a10;outline-offset:2px}
-#sheetw{margin:0 auto;width:1080px;transform-origin:top left}
-.foot{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:6px 16px 36px}
-.foot a{color:#fff;background:var(--c);text-decoration:none;font-weight:700;font-size:16px;padding:8px 16px;border-radius:999px}
-</style></head><body>
-<nav class="nav"><a class="home" href="../index.html">← Trang chủ</a><a href="De1_KhoiDong.html">Đề 1 · Khởi động</a><a href="De2_DiChoCungMe.html">Đề 2 · Đi chợ cùng mẹ</a><a href="De3_BepNhaVaLamBanh.html">Đề 3 · Bếp nhà và làm bánh</a><a href="De4_TheThaoVaGiaoThong.html">Đề 4 · Thể thao và giao thông</a><a href="De5_XayNhaVaThietKe.html">Đề 5 · Xây nhà và thiết kế</a><a href="De6_KhoaHocVaThiNghiem.html">Đề 6 · Khoa học và thí nghiệm</a></nav>
-<div id="clip" style="overflow:hidden"><div id="sheetw"><div style="width:1080px;box-sizing:border-box;padding:40px;background:#f1e4f7;color:#17303a;font-family:'Be Vietnam Pro',system-ui,sans-serif;font-size:26px;line-height:1.4;display:flex;flex-direction:column;gap:28px">
-<div style="display:flex;align-items:center;gap:32px;background:#6a1b9a;color:#ffffff;border-radius:32px;padding:34px 40px">
-<div style="flex:none;width:160px;height:160px;border-radius:50%;background:#fff3d6;color:#6a1b9a;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Baloo 2','Be Vietnam Pro',sans-serif;font-weight:800;line-height:1"><span style="font-size:28px">Chủ đề</span><span style="font-size:96px">4</span></div>
+<title>Toán 5 · Chủ đề 4 · Tổng quan</title><link rel="stylesheet" href="../../assets/fonts.css"><link rel="stylesheet" href="../../assets/overview.css"><style>:root{--c:#77528F}</style></head><body>
+<nav class="nav" aria-label="Điều hướng chủ đề"><a class="home" href="../index.html">← Trang chủ</a><button class="view-toggle" id="view-toggle" type="button" aria-pressed="false">Đọc từng bài</button><details class="jump"><summary>Chọn đề</summary><div><a href="De1_KhoiDong.html">Đề 1 · Khởi động</a><a href="De2_DiChoCungMe.html">Đề 2 · Đi chợ cùng mẹ</a><a href="De3_BepNhaVaLamBanh.html">Đề 3 · Bếp nhà và làm bánh</a><a href="De4_TheThaoVaGiaoThong.html">Đề 4 · Thể thao và giao thông</a><a href="De5_XayNhaVaThietKe.html">Đề 5 · Xây nhà và thiết kế</a><a href="De6_KhoaHocVaThiNghiem.html">Đề 6 · Khoa học và thí nghiệm</a></div></details></nav>
+<div id="clip"><div id="sheetw"><div style="width:1080px;box-sizing:border-box;padding:40px;background:#EEE5F5;color:#4A2433;font-family:'Be Vietnam Pro',system-ui,sans-serif;font-size:26px;line-height:1.4;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;align-items:center;gap:32px;background:#77528F;color:#ffffff;border-radius:32px;padding:34px 40px">
+<div style="flex:none;width:160px;height:160px;border-radius:50%;background:#fff3d6;color:#77528F;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Baloo 2','Be Vietnam Pro',sans-serif;font-weight:800;line-height:1"><span style="font-size:28px">Chủ đề</span><span style="font-size:96px">4</span></div>
 <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
 <h1 style="margin:0;font-family:'Baloo 2','Be Vietnam Pro',sans-serif;font-weight:800;font-size:60px;line-height:1.05">CÁC PHÉP TÍNH VỚI SỐ THẬP PHÂN</h1>
 <p style="margin:0;font-size:26px;font-weight:600">Sáu bài học từ Bài 19 đến Bài 24 · Toán 5, tập một</p>
 </div></div>
-<div style="display:flex;flex-wrap:wrap;gap:12px"><span style="background:#c2185b;color:#ffffff;border-radius:999px;padding:6px 20px;font-size:22px;font-weight:700">Bài 19 · Cộng</span><span style="background:#1565c0;color:#ffffff;border-radius:999px;padding:6px 20px;font-size:22px;font-weight:700">Bài 20 · Trừ</span><span style="background:#2e7d32;color:#ffffff;border-radius:999px;padding:6px 20px;font-size:22px;font-weight:700">Bài 21 · Nhân</span><span style="background:#c4470a;color:#ffffff;border-radius:999px;padding:6px 20px;font-size:22px;font-weight:700">Bài 22 · Chia</span><span style="background:#6a1b9a;color:#ffffff;border-radius:999px;padding:6px 20px;font-size:22px;font-weight:700">Bài 23 · Nhân, chia 10; 100;…</span><span style="background:#b71c1c;color:#ffffff;border-radius:999px;padding:6px 20px;font-size:22px;font-weight:700">Bài 24 · Luyện tập chung</span></div>
+<div style="display:flex;flex-wrap:wrap;gap:12px"><span style="background:#955077;color:#ffffff;border-radius:999px;padding:6px 20px;font-size:22px;font-weight:700">Bài 19 · Cộng</span><span style="background:#4A6F9D;color:#ffffff;border-radius:999px;padding:6px 20px;font-size:22px;font-weight:700">Bài 20 · Trừ</span><span style="background:#3E7266;color:#ffffff;border-radius:999px;padding:6px 20px;font-size:22px;font-weight:700">Bài 21 · Nhân</span><span style="background:#94523F;color:#ffffff;border-radius:999px;padding:6px 20px;font-size:22px;font-weight:700">Bài 22 · Chia</span><span style="background:#77528F;color:#ffffff;border-radius:999px;padding:6px 20px;font-size:22px;font-weight:700">Bài 23 · Nhân, chia 10; 100;…</span><span style="background:#b71c1c;color:#ffffff;border-radius:999px;padding:6px 20px;font-size:22px;font-weight:700">Bài 24 · Luyện tập chung</span></div>
 <div style="background:#ffffff;border-radius:32px;padding:30px 40px;display:flex;flex-direction:column;gap:10px">
-<p style="margin:0;font-size:30px;font-weight:700;color:#6a1b9a">Số thập phân cũng cộng, trừ, nhân, chia như số tự nhiên.</p>
+<p style="margin:0;font-size:30px;font-weight:700;color:#77528F">Số thập phân cũng cộng, trừ, nhân, chia như số tự nhiên.</p>
 <p style="margin:0">Điều cần chú ý nhất là vị trí của dấu phẩy: thẳng cột khi cộng trừ, đếm chữ số thập phân khi nhân, và dời dấu phẩy khi nhân chia với 10; 100; 1 000;…</p>
 </div>
 <div style="display:flex;background:#ffffff;border-radius:32px;overflow:hidden">
-<div style="flex:none;width:210px;box-sizing:border-box;background:#c2185b;color:#ffffff;padding:28px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
+<div style="flex:none;width:210px;box-sizing:border-box;background:#F4E4EE;color:#8e0f43;padding:28px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
 <span style="font-size:26px;font-weight:700">Bài</span>
 <span style="font-family:'Baloo 2','Be Vietnam Pro',sans-serif;font-weight:800;font-size:104px;line-height:.9">19</span>
 <span style="font-size:24px;font-weight:700;line-height:1.25">Phép cộng số thập phân</span>
 <span style="margin-top:auto;font-size:20px;font-weight:600">SGK trang 65</span>
 </div>
 <div style="flex:1;min-width:0;padding:28px 32px;display:flex;flex-direction:column;gap:16px">
-<p style="margin:0;font-size:30px;font-weight:700;line-height:1.3;color:#c2185b">Viết các số sao cho dấu phẩy thẳng cột rồi cộng như số tự nhiên.</p>
+<p style="margin:0;font-size:30px;font-weight:700;line-height:1.3;color:#955077">Viết các số sao cho dấu phẩy thẳng cột rồi cộng như số tự nhiên.</p>
 
-<div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center"><div style="display:inline-block;background:#ffffff;border:3px solid #8e0f43;border-radius:14px;padding:10px 20px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:28px;font-weight:700;line-height:1.35;white-space:pre;text-align:right;color:#17303a"> 35,60
+<div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center"><div style="display:inline-block;background:#ffffff;border:3px solid #8e0f43;border-radius:14px;padding:10px 20px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:28px;font-weight:700;line-height:1.35;white-space:pre;text-align:right;color:#4A2433"> 35,60
 + 4,87
 <span style="display:block;border-top:3px solid #8e0f43"></span><span style="color:#8e0f43">40,47</span></div>
 <div style="flex:1 1 300px;font-size:24px"><b>35,6 + 4,87:</b> viết 35,6 thành 35,60 cho đủ hai chữ số ở phần thập phân. Cộng từ phải sang trái, đặt dấu phẩy thẳng cột.</div></div>
-<div style="background:#fce4ec;color:inherit;border-radius:16px;padding:12px 18px;font-size:24px">Kết quả: 35,6 + 4,87 = <b>40,47</b>.</div>
+<div style="background:#F4E4EE;color:inherit;border-radius:16px;padding:12px 18px;font-size:24px">Kết quả: 35,6 + 4,87 = <b>40,47</b>.</div>
 </div></div>
 
 <div style="display:flex;background:#ffffff;border-radius:32px;overflow:hidden">
-<div style="flex:none;width:210px;box-sizing:border-box;background:#1565c0;color:#ffffff;padding:28px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
+<div style="flex:none;width:210px;box-sizing:border-box;background:#E5EDF8;color:#0d47a1;padding:28px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
 <span style="font-size:26px;font-weight:700">Bài</span>
 <span style="font-family:'Baloo 2','Be Vietnam Pro',sans-serif;font-weight:800;font-size:104px;line-height:.9">20</span>
 <span style="font-size:24px;font-weight:700;line-height:1.25">Phép trừ số thập phân</span>
 <span style="margin-top:auto;font-size:20px;font-weight:600">SGK trang 68</span>
 </div>
 <div style="flex:1;min-width:0;padding:28px 32px;display:flex;flex-direction:column;gap:16px">
-<p style="margin:0;font-size:30px;font-weight:700;line-height:1.3;color:#1565c0">Cũng viết dấu phẩy thẳng cột, thêm chữ số 0 nếu cần.</p>
+<p style="margin:0;font-size:30px;font-weight:700;line-height:1.3;color:#4A6F9D">Cũng viết dấu phẩy thẳng cột, thêm chữ số 0 nếu cần.</p>
 
-<div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center"><div style="display:inline-block;background:#ffffff;border:3px solid #0d47a1;border-radius:14px;padding:10px 20px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:28px;font-weight:700;line-height:1.35;white-space:pre;text-align:right;color:#17303a">12,50
+<div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center"><div style="display:inline-block;background:#ffffff;border:3px solid #0d47a1;border-radius:14px;padding:10px 20px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:28px;font-weight:700;line-height:1.35;white-space:pre;text-align:right;color:#4A2433">12,50
 − 4,68
 <span style="display:block;border-top:3px solid #0d47a1"></span><span style="color:#0d47a1"> 7,82</span></div>
 <div style="flex:1 1 300px;font-size:24px"><b>12,5 − 4,68:</b> viết 12,5 thành 12,50 rồi trừ từ phải sang trái, nhớ khi cần mượn.</div></div>
-<div style="background:#e3f0fc;color:inherit;border-radius:16px;padding:12px 18px;font-size:24px">Kiểm tra bằng phép cộng: 7,82 + 4,68 = 12,50 <b>đúng</b>.</div>
+<div style="background:#E5EDF8;color:inherit;border-radius:16px;padding:12px 18px;font-size:24px">Kiểm tra bằng phép cộng: 7,82 + 4,68 = 12,50 <b>đúng</b>.</div>
 </div></div>
 
 <div style="display:flex;background:#ffffff;border-radius:32px;overflow:hidden">
-<div style="flex:none;width:210px;box-sizing:border-box;background:#2e7d32;color:#ffffff;padding:28px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
+<div style="flex:none;width:210px;box-sizing:border-box;background:#E3F0EB;color:#1b5e20;padding:28px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
 <span style="font-size:26px;font-weight:700">Bài</span>
 <span style="font-family:'Baloo 2','Be Vietnam Pro',sans-serif;font-weight:800;font-size:104px;line-height:.9">21</span>
 <span style="font-size:24px;font-weight:700;line-height:1.25">Phép nhân số thập phân</span>
 <span style="margin-top:auto;font-size:20px;font-weight:600">SGK trang 71</span>
 </div>
 <div style="flex:1;min-width:0;padding:28px 32px;display:flex;flex-direction:column;gap:16px">
-<p style="margin:0;font-size:30px;font-weight:700;line-height:1.3;color:#2e7d32">Nhân như số tự nhiên rồi đếm số chữ số ở phần thập phân.</p>
+<p style="margin:0;font-size:30px;font-weight:700;line-height:1.3;color:#3E7266">Nhân như số tự nhiên rồi đếm số chữ số ở phần thập phân.</p>
 
-<div style="display:flex;flex-wrap:wrap;gap:12px"><div style="background:#e4f4e5;color:#17303a;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">2,4 × 1,5: tính 24 × 15 = 360</div><div style="background:#e4f4e5;color:#17303a;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">Hai thừa số có 2 chữ số thập phân</div><div style="background:#e4f4e5;color:#17303a;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">2,4 × 1,5 = 3,60 = <b>3,6</b></div></div>
-<div style="background:#e4f4e5;color:inherit;border-radius:16px;padding:12px 18px;font-size:24px"><b>Quy tắc:</b> nhân như số tự nhiên, rồi tách ở tích bao nhiêu chữ số thập phân bằng tổng số chữ số thập phân của hai thừa số.</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px"><div style="background:#E3F0EB;color:#4A2433;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">2,4 × 1,5: tính 24 × 15 = 360</div><div style="background:#E3F0EB;color:#4A2433;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">Hai thừa số có 2 chữ số thập phân</div><div style="background:#E3F0EB;color:#4A2433;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">2,4 × 1,5 = 3,60 = <b>3,6</b></div></div>
+<div style="background:#E3F0EB;color:inherit;border-radius:16px;padding:12px 18px;font-size:24px"><b>Quy tắc:</b> nhân như số tự nhiên, rồi tách ở tích bao nhiêu chữ số thập phân bằng tổng số chữ số thập phân của hai thừa số.</div>
 </div></div>
 
 <div style="display:flex;background:#ffffff;border-radius:32px;overflow:hidden">
-<div style="flex:none;width:210px;box-sizing:border-box;background:#c4470a;color:#ffffff;padding:28px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
+<div style="flex:none;width:210px;box-sizing:border-box;background:#FCE6DC;color:#8a2f05;padding:28px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
 <span style="font-size:26px;font-weight:700">Bài</span>
 <span style="font-family:'Baloo 2','Be Vietnam Pro',sans-serif;font-weight:800;font-size:104px;line-height:.9">22</span>
 <span style="font-size:24px;font-weight:700;line-height:1.25">Phép chia số thập phân</span>
 <span style="margin-top:auto;font-size:20px;font-weight:600">SGK trang 76</span>
 </div>
 <div style="flex:1;min-width:0;padding:28px 32px;display:flex;flex-direction:column;gap:16px">
-<p style="margin:0;font-size:30px;font-weight:700;line-height:1.3;color:#c4470a">Chia một số thập phân cho số tự nhiên và cho số thập phân.</p>
+<p style="margin:0;font-size:30px;font-weight:700;line-height:1.3;color:#94523F">Chia một số thập phân cho số tự nhiên và cho số thập phân.</p>
 
-<div style="display:flex;flex-wrap:wrap;gap:12px"><div style="background:#fde9dc;color:#17303a;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">17,5 : 4 = <b>4,375</b></div><div style="background:#fde9dc;color:#17303a;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">4,2 : 0,6 = 42 : 6 = <b>7</b></div></div>
-<div style="background:#fde9dc;color:inherit;border-radius:16px;padding:12px 18px;font-size:24px"><b>Chia cho số tự nhiên:</b> chia phần nguyên, đặt dấu phẩy ở thương khi hạ chữ số đầu tiên của phần thập phân. Dư thì thêm 0 và chia tiếp.</div>
-<div style="background:#fde9dc;color:inherit;border-radius:16px;padding:12px 18px;font-size:24px"><b>Chia cho số thập phân:</b> chuyển dấu phẩy của số chia và số bị chia sang phải cùng số chữ số như nhau rồi chia.</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px"><div style="background:#FCE6DC;color:#4A2433;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">17,5 : 4 = <b>4,375</b></div><div style="background:#FCE6DC;color:#4A2433;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">4,2 : 0,6 = 42 : 6 = <b>7</b></div></div>
+<div style="background:#FCE6DC;color:inherit;border-radius:16px;padding:12px 18px;font-size:24px"><b>Chia cho số tự nhiên:</b> chia phần nguyên, đặt dấu phẩy ở thương khi hạ chữ số đầu tiên của phần thập phân. Dư thì thêm 0 và chia tiếp.</div>
+<div style="background:#FCE6DC;color:inherit;border-radius:16px;padding:12px 18px;font-size:24px"><b>Chia cho số thập phân:</b> chuyển dấu phẩy của số chia và số bị chia sang phải cùng số chữ số như nhau rồi chia.</div>
 </div></div>
 
 <div style="display:flex;background:#ffffff;border-radius:32px;overflow:hidden">
-<div style="flex:none;width:210px;box-sizing:border-box;background:#6a1b9a;color:#ffffff;padding:28px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
+<div style="flex:none;width:210px;box-sizing:border-box;background:#EEE5F5;color:#4a148c;padding:28px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
 <span style="font-size:26px;font-weight:700">Bài</span>
 <span style="font-family:'Baloo 2','Be Vietnam Pro',sans-serif;font-weight:800;font-size:104px;line-height:.9">23</span>
 <span style="font-size:24px;font-weight:700;line-height:1.25">Nhân, chia với 10; 100; 1 000;… hoặc 0,1; 0,01; 0,001</span>
 <span style="margin-top:auto;font-size:20px;font-weight:600">SGK trang 83</span>
 </div>
 <div style="flex:1;min-width:0;padding:28px 32px;display:flex;flex-direction:column;gap:16px">
-<p style="margin:0;font-size:30px;font-weight:700;line-height:1.3;color:#6a1b9a">Chỉ cần dời dấu phẩy.</p>
+<p style="margin:0;font-size:30px;font-weight:700;line-height:1.3;color:#77528F">Chỉ cần dời dấu phẩy.</p>
 
-<div style="display:flex;flex-wrap:wrap;gap:12px"><div style="background:#f1e4f7;color:#17303a;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">3,45 × 10 = <b>34,5</b></div><div style="background:#f1e4f7;color:#17303a;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">3,45 × 100 = <b>345</b></div><div style="background:#f1e4f7;color:#17303a;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">3,45 × 1 000 = <b>3 450</b></div></div>
-<div style="display:flex;flex-wrap:wrap;gap:12px"><div style="background:#f1e4f7;color:#17303a;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">56,7 : 10 = <b>5,67</b></div><div style="background:#f1e4f7;color:#17303a;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">56,7 : 100 = <b>0,567</b></div></div>
-<div style="background:#f1e4f7;color:inherit;border-radius:16px;padding:12px 18px;font-size:24px"><b>Nhân</b> với 10; 100; 1 000: dấu phẩy sang <b>phải</b>. <b>Chia</b> cho 10; 100; 1 000: dấu phẩy sang <b>trái</b>. Nhân với 0,1 giống chia cho 10; chia cho 0,1 giống nhân với 10.</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px"><div style="background:#EEE5F5;color:#4A2433;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">3,45 × 10 = <b>34,5</b></div><div style="background:#EEE5F5;color:#4A2433;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">3,45 × 100 = <b>345</b></div><div style="background:#EEE5F5;color:#4A2433;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">3,45 × 1 000 = <b>3 450</b></div></div>
+<div style="display:flex;flex-wrap:wrap;gap:12px"><div style="background:#EEE5F5;color:#4A2433;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">56,7 : 10 = <b>5,67</b></div><div style="background:#EEE5F5;color:#4A2433;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">56,7 : 100 = <b>0,567</b></div></div>
+<div style="background:#EEE5F5;color:inherit;border-radius:16px;padding:12px 18px;font-size:24px"><b>Nhân</b> với 10; 100; 1 000: dấu phẩy sang <b>phải</b>. <b>Chia</b> cho 10; 100; 1 000: dấu phẩy sang <b>trái</b>. Nhân với 0,1 giống chia cho 10; chia cho 0,1 giống nhân với 10.</div>
 </div></div>
 
 <div style="display:flex;background:#ffffff;border-radius:32px;overflow:hidden">
-<div style="flex:none;width:210px;box-sizing:border-box;background:#b71c1c;color:#ffffff;padding:28px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
+<div style="flex:none;width:210px;box-sizing:border-box;background:#fde4e4;color:#7f1313;padding:28px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
 <span style="font-size:26px;font-weight:700">Bài</span>
 <span style="font-family:'Baloo 2','Be Vietnam Pro',sans-serif;font-weight:800;font-size:104px;line-height:.9">24</span>
 <span style="font-size:24px;font-weight:700;line-height:1.25">Luyện tập chung</span>
@@ -114,16 +102,12 @@ body{margin:0;background:#dff1f2;font-family:'Be Vietnam Pro',system-ui,sans-ser
 <div style="flex:1;min-width:0;padding:28px 32px;display:flex;flex-direction:column;gap:16px">
 <p style="margin:0;font-size:30px;font-weight:700;line-height:1.3;color:#b71c1c">Biểu thức, tính thuận tiện và bài toán có lời văn.</p>
 
-<div style="display:flex;flex-wrap:wrap;gap:12px"><div style="background:#fde4e4;color:#17303a;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">(4,5 + 1,5) × 2,5 − 3,2 = 6 × 2,5 − 3,2 = 15 − 3,2 = <b>11,8</b></div><div style="background:#fde4e4;color:#17303a;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">0,25 × 6,3 × 4 = (0,25 × 4) × 6,3 = <b>6,3</b></div></div>
+<div style="display:flex;flex-wrap:wrap;gap:12px"><div style="background:#fde4e4;color:#4A2433;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">(4,5 + 1,5) × 2,5 − 3,2 = 6 × 2,5 − 3,2 = 15 − 3,2 = <b>11,8</b></div><div style="background:#fde4e4;color:#4A2433;border-radius:16px;padding:10px 18px;font-size:26px;font-weight:600">0,25 × 6,3 × 4 = (0,25 × 4) × 6,3 = <b>6,3</b></div></div>
 <div style="background:#fde4e4;color:inherit;border-radius:16px;padding:12px 18px;font-size:24px"><b>Bài toán:</b> mua 2,5 kg táo, mỗi ki-lô-gam 36 000 đồng, đưa 100 000 đồng. Tiền táo 2,5 × 36 000 = 90 000 đồng; được trả lại 100 000 − 90 000 = <b>10 000 đồng</b>.</div>
 <div style="background:#fde4e4;color:inherit;border-radius:16px;padding:12px 18px;font-size:24px"><b>Mẹo:</b> trong ngoặc trước, nhân chia trước, cộng trừ sau. Ước lượng kết quả trước để biết dấu phẩy có hợp lí không.</div>
 </div></div>
 <p style="margin:0;font-size:20px;font-weight:600;text-align:center">Theo sách Toán 5, tập một (Kết nối tri thức với cuộc sống), Chủ đề 4</p>
 </div></div></div>
-<p style="text-align:center;font-weight:700;color:#17303a;margin:18px 16px 8px">Em đã xem xong rồi? Làm bài kiểm tra nhé!</p>
-<div class="foot"><a href="De1_KhoiDong.html">Đề 1 · Khởi động</a><a href="De2_DiChoCungMe.html">Đề 2 · Đi chợ cùng mẹ</a><a href="De3_BepNhaVaLamBanh.html">Đề 3 · Bếp nhà và làm bánh</a><a href="De4_TheThaoVaGiaoThong.html">Đề 4 · Thể thao và giao thông</a><a href="De5_XayNhaVaThietKe.html">Đề 5 · Xây nhà và thiết kế</a><a href="De6_KhoaHocVaThiNghiem.html">Đề 6 · Khoa học và thí nghiệm</a></div>
-<script>
-(function(){var w=document.getElementById('sheetw'),c=document.getElementById('clip');
-function fit(){var s=Math.min(1,document.documentElement.clientWidth/1080);w.style.transform='scale('+s+')';c.style.height=(w.offsetHeight*s)+'px';c.style.width='100%';c.style.display='block';w.style.marginLeft=Math.max(0,(document.documentElement.clientWidth-1080*s)/2)+'px';}
-window.addEventListener('resize',fit);window.addEventListener('load',fit);fit();})();
-</script></body></html>
+<div id="reader" aria-label="Tổng quan theo từng bài"></div>
+<p class="ready">Em đã xem xong rồi? Làm bài kiểm tra nhé!</p><div class="foot"><a href="De1_KhoiDong.html">Đề 1 · Khởi động</a><a href="De2_DiChoCungMe.html">Đề 2 · Đi chợ cùng mẹ</a><a href="De3_BepNhaVaLamBanh.html">Đề 3 · Bếp nhà và làm bánh</a><a href="De4_TheThaoVaGiaoThong.html">Đề 4 · Thể thao và giao thông</a><a href="De5_XayNhaVaThietKe.html">Đề 5 · Xây nhà và thiết kế</a><a href="De6_KhoaHocVaThiNghiem.html">Đề 6 · Khoa học và thí nghiệm</a></div>
+<script src="../../assets/overview.js"></script></body></html>
