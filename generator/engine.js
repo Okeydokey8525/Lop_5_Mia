@@ -48,7 +48,7 @@ H.rect=function(a,b,note){
   return '<div class="fig"><figure><svg viewBox="0 0 190 100" role="img" aria-label="Hình chữ nhật dài '+esc(a)+', rộng '+esc(b)+'" style="width:190px">'+
     '<rect x="18" y="14" width="150" height="66" rx="3" fill="var(--soft)" stroke="currentColor" stroke-width="2.4"/>'+
     '<text x="93" y="95" text-anchor="middle" font-size="12" fill="currentColor" font-family="inherit" font-weight="700">'+esc(a)+'</text>'+
-    '<text x="10" y="50" text-anchor="middle" font-size="12" fill="currentColor" font-family="inherit" font-weight="700" transform="rotate(-90 10 50)">'+esc(b)+'</text>'+
+    '<text x="14" y="50" text-anchor="middle" font-size="12" fill="currentColor" font-family="inherit" font-weight="700" transform="rotate(-90 14 50)">'+esc(b)+'</text>'+
     '</svg>'+(note?'<figcaption>'+esc(note)+'</figcaption>':'')+'</figure></div>';
 };
 /* Tia số có vạch chia: H.numline(0,1,10,[['A',0.3],['B',0.75]],2) */

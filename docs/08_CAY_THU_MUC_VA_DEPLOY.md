@@ -58,6 +58,6 @@ Chỉ `site/` được đưa vào Pages artifact. Không xuất bản `generator
 
 ## Kiểm chứng
 
-Local: 36/36 đề đạt 100/100, 44 trang không tràn ngang ở 400px, 196 tham chiếu tĩnh hợp lệ; đã kiểm tra liên kết dựng bằng JavaScript, giữ điểm tốt nhất, nộp thiếu câu, làm lại và tải lại tiến độ. Bản HTML tự chứa tái tạo khớp nội dung 43/43 HTML đã giao (chuẩn hóa xuống dòng).
+Local: 36/36 đề đạt 100/100, 44 trang không tràn ngang ở 400px, 196 tham chiếu tĩnh hợp lệ; đã kiểm tra liên kết dựng bằng JavaScript, giữ điểm tốt nhất, nộp thiếu câu, làm lại và tải lại tiến độ. Trước sửa nhãn SVG, bản HTML tự chứa tái tạo khớp nội dung 43/43 HTML đã giao (chuẩn hóa xuống dòng). Sau đó chỉ chỉnh khung/nhãn hình để tránh cắt chữ; đã đối chiếu 864/864 câu với commit bàn giao, nội dung, dữ liệu, đáp án và lời giải không đổi.
 
 Trạng thái online: đang chuẩn bị triển khai; chỉ cập nhật mục này sau khi kiểm tra địa chỉ thật.

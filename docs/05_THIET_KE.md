@@ -42,3 +42,7 @@ Có hiệu ứng thu hút (cầu thang tiến độ 1/9/18/27/36 sao, thống k�
 
 ## Tiếng Anh
 Giữ nguyên bộ khung/màu/hiệu ứng; trang tổng quan Tiếng Anh thay công thức bằng **từ vựng, mẫu câu, hình minh họa** của unit. Cách trình bày cụ thể ở `docs/09_TIENG_ANH.md`.
+
+## Sửa lỗi hiển thị ngày 29/10/2026
+
+Giữ toàn bộ hệ thống thiết kế. Đã mở rộng khung SVG cho tam giác vuông và ao trong khu đất để nhãn dài không bị cắt; dịch nhẹ nhãn chiều rộng của hình chữ nhật và dải cây xanh vào trong khung. Không đổi số liệu hay đáp án. QA tự động kiểm tra biên nhãn bằng tọa độ SVG sau biến đổi, đồng thời đã xem ảnh render.

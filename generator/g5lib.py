@@ -43,9 +43,10 @@ def fig_tri(kind,base,hh,cap=None,name='tam giác'):
     else:
         shape=f'<polygon points="40,16 90,100 190,100" {S}/><line x1="40" y1="16" x2="40" y2="100" {D_}/><line x1="40" y1="100" x2="90" y2="100" stroke="#e8741a" stroke-width="2" stroke-dasharray="5 4"/>'+ra(40,100,1,-1)
         base_x=140; hx,hy,anc=46,62,'start'
-    svg=(f'<svg viewBox="0 0 230 124" role="img" aria-label="Hình {name}, đáy {base}, chiều cao {hh}">{shape}'
+    viewbox='-65 0 295 124' if kind=='right' else '0 0 230 124'
+    svg=(f'<svg viewBox="{viewbox}" role="img" aria-label="Hình {name}, đáy {base}, chiều cao {hh}">{shape}'
      f'<text x="{base_x}" y="118" text-anchor="middle" {T}>{base}</text><text x="{hx}" y="{hy}" text-anchor="{anc}" {T}>{hh}</text></svg>')
-    return _w(svg,cap)
+    return _w(svg,cap,308 if kind=='right' else 240)
 def fig_trap(a,b,hh,cap=None):
     S='fill="var(--soft)" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"'
     svg=(f'<svg viewBox="0 0 230 124" role="img" aria-label="Hình thang, đáy lớn {a}, đáy bé {b}, chiều cao {hh}">'
@@ -68,10 +69,10 @@ def fig_house(w,hw,hr,cap=None):
     return _w(svg,cap,250)
 def fig_pond(L,Wd,r,cap=None):
     S='fill="var(--soft)" stroke="currentColor" stroke-width="2.4"'
-    svg=(f'<svg viewBox="0 0 250 150" role="img" aria-label="Khu đất hình chữ nhật dài {L}, rộng {Wd}, có một ao tròn bán kính {r}">'
+    svg=(f'<svg viewBox="-30 0 280 150" role="img" aria-label="Khu đất hình chữ nhật dài {L}, rộng {Wd}, có một ao tròn bán kính {r}">'
      f'<rect x="30" y="14" width="190" height="106" {S}/><circle cx="125" cy="67" r="34" fill="#b7dcf2" stroke="currentColor" stroke-width="2.4"/><line x1="125" y1="67" x2="159" y2="67" stroke="#e8741a" stroke-width="2.4"/>'
      f'<circle cx="125" cy="67" r="2.6" fill="currentColor"/><text x="143" y="61" text-anchor="middle" {T}>{r}</text><text x="125" y="140" text-anchor="middle" {T}>{L}</text><text x="24" y="70" text-anchor="end" {T}>{Wd}</text></svg>')
-    return _w(svg,cap,250)
+    return _w(svg,cap,280)
 from decimal import ROUND_HALF_UP
 def rnd(x,places=0):
     return d(x).quantize(D(1).scaleb(-places),rounding=ROUND_HALF_UP)

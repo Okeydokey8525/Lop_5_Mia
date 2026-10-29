@@ -50,6 +50,13 @@ async function main(){
       if(path.basename(f).startsWith('De')){
         const meta=await page.evaluate(()=>({count:window.__quiz.Q.length,points:window.__quiz.Q.reduce((s,q)=>s+q.pts,0)}));
         assert.deepEqual(meta,{count:24,points:100});
+        const clipped=await page.locator('.fig svg text').evaluateAll(els=>els.flatMap(e=>{
+          const b=e.getBBox(),svg=e.ownerSVGElement,v=svg.viewBox.baseVal;
+          const matrix=svg.getScreenCTM().inverse().multiply(e.getScreenCTM());
+          const points=[[b.x,b.y],[b.x+b.width,b.y],[b.x,b.y+b.height],[b.x+b.width,b.y+b.height]].map(([x,y])=>new DOMPoint(x,y).matrixTransform(matrix));
+          return points.some(p=>p.x<v.x-1||p.y<v.y-1||p.x>v.x+v.width+1||p.y>v.y+v.height+1)?[e.textContent]:[];
+        }));
+        assert.deepEqual(clipped,[],`SVG labels outside viewBox: ${rel}`);
         if(SHOTS){
           // Capture every actual illustration, not only a sample of topics.
           const figs=page.locator('[id^=q] .fig');

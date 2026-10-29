@@ -17,7 +17,7 @@ Giữ server chạy, mở terminal thứ hai:
 node tools/qa.js
 ```
 
-Server ở `http://127.0.0.1:8765/Lop_5_Mia/`, kiểm tra hoa/thường giống Pages. QA đọc toàn bộ HTML trong `site/`, kiểm tra 44 trang, 36 đề, link và tài nguyên dựng từ JavaScript, 24 câu/100 điểm, tự điền đúng đạt 100/100, lỗi console/request, tràn ngang ở 400px, thống kê hai trang chủ và lưu tiến độ sau tải lại. Có kiểm tra nộp thiếu câu, hủy xác nhận, điểm một phần, làm lại và giữ điểm cao nhất. Báo cáo/ảnh ở `artifacts/local/`.
+Server ở `http://127.0.0.1:8765/Lop_5_Mia/`, kiểm tra hoa/thường giống Pages. QA đọc toàn bộ HTML trong `site/`, kiểm tra 44 trang, 36 đề, link và tài nguyên dựng từ JavaScript, 24 câu/100 điểm, tự điền đúng đạt 100/100, lỗi console/request, tràn ngang ở 400px, biên nhãn SVG (có tính phép xoay/biến đổi), thống kê hai trang chủ và lưu tiến độ sau tải lại. Có kiểm tra nộp thiếu câu, hủy xác nhận, điểm một phần, làm lại và giữ điểm cao nhất. Báo cáo/ảnh ở `artifacts/local/`.
 
 Online chạy cùng bộ: `node tools/qa.js https://okeydokey8525.github.io/Lop_5_Mia/ --no-shots`; báo cáo ở `artifacts/online/`. Dữ liệu thử chỉ nằm trong browser context riêng, không ảnh hưởng tiến độ trình duyệt của em.
 

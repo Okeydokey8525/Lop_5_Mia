@@ -19,7 +19,7 @@ Trang tổng quan CĐ3 và CĐ4 hiển thị số trang SGK.
 ### Kiểm chứng local ngày 29/10/2026 (Codex)
 
 - Đã chốt cây thư mục ở `docs/08`; giữ `generator/`, `docs/`, `site/Toan5/`, thêm `tools/`, tài nguyên chung và trang chủ chọn môn.
-- Build UTF-8 trên Windows; sinh lại CĐ4–6 không thay đổi dữ liệu JS. Bản standalone khớp 43/43 nội dung HTML đã giao (chuẩn hóa xuống dòng).
+- Build UTF-8 trên Windows; sinh lại CĐ4–6 không thay đổi dữ liệu JS. Trước sửa SVG, bản standalone khớp 43/43 nội dung HTML đã giao (chuẩn hóa xuống dòng). Sau sửa nhãn hình, đã đối chiếu 864/864 câu: nội dung, dữ liệu, đáp án và lời giải không đổi.
 - Audit đủ 36 đề: 0 lỗi, đã sửa cảnh báo giảm dần và bổ sung kiểm tra các câu sắp xếp có đơn vị/phép tính/hình học/bảng.
 - Chromium qua HTTP với tiền tố `/Lop_5_Mia/`: 36/36 đề 100/100, 44 trang không tràn ngang ở 400px, không lỗi console/request; kiểm tra link động và 196 tham chiếu tĩnh.
 - Kiểm tra nộp thiếu câu, hủy xác nhận, điểm một phần, làm lại, giữ điểm tốt nhất, tiến độ và thống kê sau tải lại. Đã xem ảnh 6 poster và hình minh họa; giữ nguyên các PNG nguồn đã giao.
@@ -35,6 +35,7 @@ Trang tổng quan CĐ3 và CĐ4 hiển thị số trang SGK.
 ### Chưa kiểm tra / chưa làm
 - Em gái **chưa làm thử** các đề thật, nên câu nào khó hiểu thì chưa biết.
 - GitHub Pages đang chờ triển khai/kiểm tra trên địa chỉ thật; local đã chạy dưới `/Lop_5_Mia/`.
+- Đã sửa khung/nhãn SVG tam giác vuông, ao trong khu đất và nhãn chiều rộng để chữ không bị cắt. QA kiểm tra biên nhãn SVG ở mọi hình câu hỏi.
 - Đã có `tools/check_links.py` kiểm tra hoa/thường trên Windows và Linux.
 - `generator/fonts.css` là file sinh sẵn từ `@fontsource/baloo-2` và `@fontsource/be-vietnam-pro` (nhúng base64); script sinh file này **không còn trong repo**. Nếu cần đổi font phải tự tạo lại.
 - `gen_overview.py` cho CĐ2 đọc `generator/assets/poster_cd2.html` (áp phích dựng sẵn). CĐ1, CĐ3–6 sinh từ code.
