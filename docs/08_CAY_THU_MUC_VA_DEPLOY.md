@@ -94,4 +94,9 @@ CI chạy thêm `node tools/responsive.js --no-shots`: toàn bộ 44 trang ở 3
 - Sản phẩm: `site/TiengAnh5/index.html`, `Unit1_AllAboutMe/` gồm 6 đề + tổng quan HTML/PNG. Trang chủ chung có liên kết thật và tiến độ mỗi môn.
 - `site/catalog.json`: 42 đề nguồn để QA kiểm tra đầy đủ. Tổng 52 HTML, 7 PNG tổng quan.
 - Build Node sinh cả hai môn, renderer xuất 7 PNG. CI hiện kiểm tra 42 đề và 832 tổ hợp responsive trước khi deploy.
-- Trạng thái online của Unit 1: chờ triển khai và xác nhận trên URL thật.
+- Unit 1 online đã đạt lúc 29/10/2026 20:08:05 UTC+7: https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/.
+- Mã giao diện `c0ae972`, workflow build/deploy thành công: https://github.com/Okeydokey8525/Lop_5_Mia/actions/runs/40878450105.
+- QA trên URL thật: 42/42 đề 100/100, 52 HTML, không lỗi console/request; 832 tổ hợp responsive đều đạt. Kiểm tra nhận biến thể chữ, từ sai/thừa, dạng đầy đủ, nối sai/điểm phần, sắp/xóa lại, tham chiếu hồ sơ và reset tách môn đều đạt.
+- 58 HTML/CSS/JS/JSON online khớp byte với local. 7 PNG online hợp lệ, rộng 1080px; PNG do Linux CI render nên không yêu cầu byte trùng bản Windows.
+- Báo cáo ở `artifacts/online/report.json`, `artifacts/responsive-online/report.json`, `artifacts/online/files-unit1.json`. Hình đã xem ở `artifacts/english-review/`, `artifacts/local/`, `artifacts/responsive-local/`.
+- Đã kiểm tra 6 đề Anh standalone qua file URL cũng 100/100, không lỗi. Chưa thử trên máy thật của em, chưa xác nhận độ khó phù hợp; chưa có nghe/chấm nói. Dừng ở Unit 1 để chủ repo xem mẫu trước khi làm các unit khác.

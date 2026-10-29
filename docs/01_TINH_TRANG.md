@@ -8,7 +8,7 @@ Chủ repo đã yêu cầu làm mẫu đầu tiên theo kế hoạch. Đã soạ
 
 Nguồn nội dung: `generator/english/u01/content.py`, đối chiếu SGK trang 10–15; ghi nhận ở `NOTES.md`. Từ vựng/giới thiệu bản thân/nơi sống/điều yêu thích; câu và hồ sơ tự soạn. Thêm ô chữ, nối cặp, sắp từ và chọn theo SVG; chấm cả biến thể hợp lệ và dạng đầy đủ khi câu yêu cầu.
 
-Toàn site hiện 42 đề, 52 HTML, 7 tổng quan; QA mới so khớp `site/catalog.json`. Nội dung 36 đề Toán và khóa tiến độ cũ không đổi. Local đã đạt: 42/42 đề 100/100, 832 tổ hợp responsive, 245 tham chiếu tĩnh hợp lệ; kiểm tra đáp án chữ biến thể/sai, điểm một phần, sắp từ, hồ sơ và reset riêng từng môn đạt. 6/6 đề Anh standalone cũng 100/100. Kết quả triển khai Unit 1 sẽ ghi sau khi kiểm chứng URL thật.
+Toàn site hiện 42 đề, 52 HTML, 7 tổng quan; QA mới so khớp `site/catalog.json`. Nội dung 36 đề Toán và khóa tiến độ cũ không đổi. Local đã đạt: 42/42 đề 100/100, 832 tổ hợp responsive, 245 tham chiếu tĩnh hợp lệ; kiểm tra đáp án chữ biến thể/sai, điểm một phần, sắp từ, hồ sơ và reset riêng từng môn đạt. 6/6 đề Anh standalone cũng 100/100. Online đã đạt lúc 29/10/2026 20:08:05 UTC+7: 42/42 đề 100/100, 832 tổ hợp responsive không tràn ngang, không lỗi trình duyệt; kiểm tra chữ biến thể/sai, điểm một phần, hồ sơ và reset tách môn đều đạt. 58 file HTML/CSS/JS/JSON khớp byte với local, 7 PNG hợp lệ. Unit 1 đã sẵn sàng để chủ repo xem mẫu; chưa mở rộng unit khác.
 
 ## Đợt giao diện hồng anh đào (chủ repo đã duyệt)
 
