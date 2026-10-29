@@ -60,4 +60,10 @@ Chỉ `site/` được đưa vào Pages artifact. Không xuất bản `generator
 
 Local: 36/36 đề đạt 100/100, 44 trang không tràn ngang ở 400px, 196 tham chiếu tĩnh hợp lệ; đã kiểm tra liên kết dựng bằng JavaScript, giữ điểm tốt nhất, nộp thiếu câu, làm lại và tải lại tiến độ. Trước sửa nhãn SVG, bản HTML tự chứa tái tạo khớp nội dung 43/43 HTML đã giao (chuẩn hóa xuống dòng). Sau đó chỉ chỉnh khung/nhãn hình để tránh cắt chữ; đã đối chiếu 864/864 câu với commit bàn giao, nội dung, dữ liệu, đáp án và lời giải không đổi.
 
-Trạng thái online: đang chuẩn bị triển khai; chỉ cập nhật mục này sau khi kiểm tra địa chỉ thật.
+Online đã kiểm tra lúc **29/10/2026 18:22:52 UTC+7** tại https://okeydokey8525.github.io/Lop_5_Mia/.
+
+- GitHub Actions build và deploy thành công cho commit mã nguồn `5d9dcde`: https://github.com/Okeydokey8525/Lop_5_Mia/actions/runs/40864588679.
+- Chạy `node tools/qa.js https://okeydokey8525.github.io/Lop_5_Mia/ --no-shots`: 36/36 đề đạt 100/100, 44 trang không tràn ngang ở 400px, không lỗi console/request; link động, nhãn SVG, nộp thiếu câu, làm lại, giữ điểm cao nhất và tiến độ sau tải lại đều đạt.
+- Tải trực tiếp 53 file xuất bản (HTML, PNG, CSS, JS) và so sánh byte với build local: 53/53 khớp. `.nojekyll` là chỉ thị build, không nằm trong phép so sánh tài nguyên công khai này.
+- Báo cáo local: `artifacts/local/report.json`; online: `artifacts/online/report.json`, `artifacts/online/files.json` (không commit vì là kết quả QA sinh tự động).
+- Chưa có phản hồi làm thử của em gái; không dùng QA tự động để khẳng định độ khó phù hợp hoặc mọi đáp án đã được giải độc lập.

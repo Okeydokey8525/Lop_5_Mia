@@ -8,7 +8,7 @@ Mỗi đề là mảng 24 câu truyền vào `MKn([...])`. Trường chung: `lev
 | `mc` | `opts` (đúng 4, không trùng), `answer` (chỉ số 0–3) | Trắc nghiệm |
 | `tf` | `items: [{t:'câu', a:true/false}, ...]` | Đúng/Sai nhiều ý; tạo bằng `tf(lv,ls,stem,[(text,True/False),...],why)` |
 | `fill` | `blanks: [...]` | Điền nhiều ô, mỗi ô có `pre`, `kind`, `ans`, `post` |
-| `order` | `items`, `sep` (`<` hoặc `>`) | Sắp xếp số; engine so sánh số nên `items` phải là số hợp lệ |
+| `order` | `items`, `sep` (`<` hoặc `>`) | Sắp xếp theo thứ tự đáp án khai báo trong `items`; có thể là số, số đo, phép tính hoặc nhãn theo bảng |
 
 ### Các `kind` của ô điền (`fill`)
 - `num`: số (`ans` kiểu số thực). Với `decimal:true`, nhập `,` hoặc `.` đều được, dung sai 1e-9.
@@ -27,3 +27,7 @@ Dùng `n(x)` trong `g4lib.py`: dấu phẩy thập phân, nhóm nghìn bằng kh
 
 ## Mở rộng cho Tiếng Anh (chưa có, cần làm)
 Engine chưa có: ô điền chữ (so khớp chuỗi), nối cặp, sắp xếp từ thành câu, chọn tranh, câu nghe. Xem `docs/09_TIENG_ANH.md`. Khi thêm dạng mới: thêm vào `engine.js`, thêm `audit.js` và `tall.js` hỗ trợ dạng đó (tự điền đáp án đúng), **không làm hỏng các dạng cũ** (chạy lại QA 36 đề Toán).
+
+## Kiểm tra dạng sắp xếp
+
+Engine so sánh thứ tự chỉ số, không tự tính giá trị của chuỗi. `items` phải được khai báo theo đáp án đúng; thứ tự hiển thị được xáo trước khi làm. `generator/audit_order.js` tính độc lập giá trị số, phân số, số đo, phép tính và diện tích/chu vi của các mẫu đang dùng; câu sắp tên học sinh được đối chiếu bảng chiều cao. Mẫu chưa được hỗ trợ phải báo lỗi để bổ sung validator, không tự bỏ qua.

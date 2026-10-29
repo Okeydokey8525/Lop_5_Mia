@@ -24,7 +24,7 @@ Trang tổng quan CĐ3 và CĐ4 hiển thị số trang SGK.
 - Chromium qua HTTP với tiền tố `/Lop_5_Mia/`: 36/36 đề 100/100, 44 trang không tràn ngang ở 400px, không lỗi console/request; kiểm tra link động và 196 tham chiếu tĩnh.
 - Kiểm tra nộp thiếu câu, hủy xác nhận, điểm một phần, làm lại, giữ điểm tốt nhất, tiến độ và thống kê sau tải lại. Đã xem ảnh 6 poster và hình minh họa; giữ nguyên các PNG nguồn đã giao.
 - Trang chủ chung đã có; Tiếng Anh chỉ hiển thị đang chuẩn bị. Chưa làm Unit 1 theo phạm vi chủ repo chốt.
-- Online: đang chuẩn bị triển khai, chưa xác nhận hoạt động trên địa chỉ thật.
+- Online đã đạt lúc 29/10/2026 18:22:52 UTC+7: https://okeydokey8525.github.io/Lop_5_Mia/ — 36/36 đề 100/100, 44 trang không tràn ngang ở 400px, không lỗi console/request; lưu điểm và tải lại đạt. 53/53 file công khai khớp byte với local. Chi tiết và workflow ở `docs/08`.
 
 ### QA từ bản bàn giao (trước đợt chuẩn hóa)
 - 36/36 đề: `audit.js` không lỗi; `tall.js` tự điền đúng hết ra 100/100, không lỗi console.
@@ -34,7 +34,7 @@ Trang tổng quan CĐ3 và CĐ4 hiển thị số trang SGK.
 
 ### Chưa kiểm tra / chưa làm
 - Em gái **chưa làm thử** các đề thật, nên câu nào khó hiểu thì chưa biết.
-- GitHub Pages đang chờ triển khai/kiểm tra trên địa chỉ thật; local đã chạy dưới `/Lop_5_Mia/`.
+- GitHub Pages đã bật nguồn GitHub Actions và kiểm tra trên URL thật; local dùng cùng tiền tố `/Lop_5_Mia/`.
 - Đã sửa khung/nhãn SVG tam giác vuông, ao trong khu đất và nhãn chiều rộng để chữ không bị cắt. QA kiểm tra biên nhãn SVG ở mọi hình câu hỏi.
 - Đã có `tools/check_links.py` kiểm tra hoa/thường trên Windows và Linux.
 - `generator/fonts.css` là file sinh sẵn từ `@fontsource/baloo-2` và `@fontsource/be-vietnam-pro` (nhúng base64); script sinh file này **không còn trong repo**. Nếu cần đổi font phải tự tạo lại.
@@ -42,7 +42,7 @@ Trang tổng quan CĐ3 và CĐ4 hiển thị số trang SGK.
 - Tiến độ lưu theo trình duyệt và theo địa chỉ web: khi chuyển từ `file://` sang `https://` thì tiến độ cũ không mang theo.
 
 ## Việc kế tiếp (theo thứ tự)
-1. **Hoàn tất kiểm chứng Pages** (cấu trúc và local QA đã xong) — `docs/08_CAY_THU_MUC_VA_DEPLOY.md`.
+1. **Cấu trúc, build/QA, trang chủ chung và Pages đã hoàn tất** — `docs/08_CAY_THU_MUC_VA_DEPLOY.md`.
 2. **Tiếng Anh 5 tập 1** (Starter, Unit 1–10, Review 1–2) — `docs/09_TIENG_ANH.md`.
 3. **Toán học kì 2** — chờ chủ repo đưa sách.
 
