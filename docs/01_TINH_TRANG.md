@@ -16,7 +16,17 @@ Cập nhật: 2026-10-29.
 
 Trang tổng quan CĐ3 và CĐ4 hiển thị số trang SGK.
 
-### Đã kiểm tra
+### Kiểm chứng local ngày 29/10/2026 (Codex)
+
+- Đã chốt cây thư mục ở `docs/08`; giữ `generator/`, `docs/`, `site/Toan5/`, thêm `tools/`, tài nguyên chung và trang chủ chọn môn.
+- Build UTF-8 trên Windows; sinh lại CĐ4–6 không thay đổi dữ liệu JS. Bản standalone khớp 43/43 nội dung HTML đã giao (chuẩn hóa xuống dòng).
+- Audit đủ 36 đề: 0 lỗi, đã sửa cảnh báo giảm dần và bổ sung kiểm tra các câu sắp xếp có đơn vị/phép tính/hình học/bảng.
+- Chromium qua HTTP với tiền tố `/Lop_5_Mia/`: 36/36 đề 100/100, 44 trang không tràn ngang ở 400px, không lỗi console/request; kiểm tra link động và 196 tham chiếu tĩnh.
+- Kiểm tra nộp thiếu câu, hủy xác nhận, điểm một phần, làm lại, giữ điểm tốt nhất, tiến độ và thống kê sau tải lại. Đã xem ảnh 6 poster và hình minh họa; giữ nguyên các PNG nguồn đã giao.
+- Trang chủ chung đã có; Tiếng Anh chỉ hiển thị đang chuẩn bị. Chưa làm Unit 1 theo phạm vi chủ repo chốt.
+- Online: đang chuẩn bị triển khai, chưa xác nhận hoạt động trên địa chỉ thật.
+
+### QA từ bản bàn giao (trước đợt chuẩn hóa)
 - 36/36 đề: `audit.js` không lỗi; `tall.js` tự điền đúng hết ra 100/100, không lỗi console.
 - Trang chủ: 36 đề trong `DATA`, mọi link tới file có thật.
 - Trang tổng quan và trang chủ không bị tràn ngang ở màn hình 400px.
@@ -24,14 +34,14 @@ Trang tổng quan CĐ3 và CĐ4 hiển thị số trang SGK.
 
 ### Chưa kiểm tra / chưa làm
 - Em gái **chưa làm thử** các đề thật, nên câu nào khó hiểu thì chưa biết.
-- Chưa bật GitHub Pages, chưa thử site chạy dưới đường dẫn `/Lop_5_Mia/`.
-- Chưa kiểm tra link phân biệt hoa thường (Windows không phân biệt, Pages thì có).
+- GitHub Pages đang chờ triển khai/kiểm tra trên địa chỉ thật; local đã chạy dưới `/Lop_5_Mia/`.
+- Đã có `tools/check_links.py` kiểm tra hoa/thường trên Windows và Linux.
 - `generator/fonts.css` là file sinh sẵn từ `@fontsource/baloo-2` và `@fontsource/be-vietnam-pro` (nhúng base64); script sinh file này **không còn trong repo**. Nếu cần đổi font phải tự tạo lại.
 - `gen_overview.py` cho CĐ2 đọc `generator/assets/poster_cd2.html` (áp phích dựng sẵn). CĐ1, CĐ3–6 sinh từ code.
 - Tiến độ lưu theo trình duyệt và theo địa chỉ web: khi chuyển từ `file://` sang `https://` thì tiến độ cũ không mang theo.
 
 ## Việc kế tiếp (theo thứ tự)
-1. **Dọn cây thư mục và đưa lên Pages** — `docs/08_CAY_THU_MUC_VA_DEPLOY.md`.
+1. **Hoàn tất kiểm chứng Pages** (cấu trúc và local QA đã xong) — `docs/08_CAY_THU_MUC_VA_DEPLOY.md`.
 2. **Tiếng Anh 5 tập 1** (Starter, Unit 1–10, Review 1–2) — `docs/09_TIENG_ANH.md`.
 3. **Toán học kì 2** — chờ chủ repo đưa sách.
 

@@ -1,71 +1,63 @@
-# 08 — Cây thư mục và deploy (GitHub Pages / Vercel)
+# 08 — Cây thư mục và GitHub Pages
 
-Bạn (Codex) được **tự quyết cây thư mục cuối cùng**. Ghi quyết định ở mục "Quyết định" bên dưới. Ràng buộc ở cuối file.
+## Quyết định ngày 29/10/2026
 
-## Hiện trạng (khi bàn giao)
-```
+Giữ `generator/` làm nguồn sinh đề và `docs/` làm tài liệu. Giữ nguyên `site/Toan5/`, tên các đề và khóa `mia5:cd{n}-de{i}`. Không chuyển hàng loạt sang `src/` vì chưa cần thiết cho phạm vi hiện tại và có thể làm hỏng đường dẫn cũ. Không xóa bản `Toan5/` ngoài repo.
+
+```text
 Lop_5_Mia/
-├─ AGENTS.md, README.md, .gitignore
-├─ docs/                      các file tài liệu này
-├─ generator/                 bộ nguồn sinh đề (Python + Node)
-│  ├─ cfg.py, g4lib.py, g5lib.py, g4_de*.py, g5_de*.py, g6_de*.py
-│  ├─ common/cd1..cd6.js      wrapper meta + mức độ
-│  ├─ tests/cd1..cd6/de01..06.js
-│  ├─ engine.js, engine.css, fonts.css
-│  ├─ build_all.py, gen_overview.py, gen_index.py, ov34.py, ov56.py
-│  ├─ audit.js, tall.js, png.js, idx.js, figs.js, qshot.js, show.js
-│  └─ assets/poster_cd2.html
-└─ site/Toan5/                kết quả đã build: index.html + 6 thư mục chủ đề
+├─ AGENTS.md, README.md, .gitignore, .gitattributes
+├─ docs/                         tài liệu bàn giao và quyết định
+├─ generator/                    nguồn Python/JS, engine, font, dữ liệu câu hỏi
+│  ├─ common/, tests/, assets/   giữ nguyên các nguồn đang có
+│  ├─ package.json, package-lock.json
+│  └─ out/Toan5/                 HTML tự chứa, không commit
+├─ tools/
+│  ├─ build.py                   build web hoặc HTML tự chứa
+│  ├─ check_links.py             kiểm tra link đúng hoa/thường
+│  ├─ serve.py                   HTTP local tại /Lop_5_Mia/
+│  ├─ qa.js                      kiểm thử trình duyệt local/online
+│  └─ templates/home.html        nguồn trang chủ chung
+├─ site/                         chỉ thư mục này được xuất bản
+│  ├─ index.html                 trang chọn môn; Tiếng Anh đang chuẩn bị
+│  ├─ .nojekyll
+│  ├─ assets/                    fonts.css, engine.css, engine.js dùng chung
+│  └─ Toan5/                     36 đề + 6 tổng quan HTML/PNG + trang chủ Toán
+├─ artifacts/                    ảnh và báo cáo QA, không commit
+└─ .github/workflows/pages.yml   build → QA → deploy
 ```
-Vấn đề cần giải: nguồn và sản phẩm lẫn kiểu đặt tên theo môn (`Toan5`), `generator` ghi ra `generator/out/` (đã `.gitignore`) rồi phải chép sang `site/`, font nhúng lặp 36 lần.
 
-## Đề xuất (nháp, được phép thay đổi)
+## Build và tài nguyên chung
+
+Chạy từ gốc repo:
+
+```text
+npm ci --prefix generator
+npx --prefix generator playwright install chromium
+python tools/build.py --regenerate
 ```
-Lop_5_Mia/
-├─ AGENTS.md, README.md
-├─ docs/
-├─ tools/                     build_all, gen_*, audit, tall, png, idx, check_links
-├─ src/
-│  ├─ engine/                 engine.js, engine.css, fonts (font tách file riêng)
-│  ├─ toan/cd01..cdNN/        cdN.js + generator + tests
-│  └─ tieng-anh/u00..u12/     cùng cấu trúc
-└─ site/                      sản phẩm build, thư mục được xuất lên Pages
-   ├─ index.html              (trang chủ gộp: Toán, Tiếng Anh)
-   ├─ toan/…                  các chủ đề Toán
-   ├─ tieng-anh/…             các chủ đề Tiếng Anh
-   └─ assets/                 font + engine dùng chung (cache được)
-```
-Gợi ý nhưng không bắt buộc. Nếu đổi tên thư mục Toán thì **giữ nguyên tên file đề** hoặc cập nhật mọi link; giữ khóa `localStorage` (`mia5:cd{n}-de{i}`) để không mất tiến độ nội bộ của chủ đề đã dùng. Khóa cho Tiếng Anh nên có tiền tố môn, ví dụ `mia5:en-u01-de1`.
 
-## Triển khai lên GitHub Pages (khuyến nghị)
-Địa chỉ dự kiến: `https://okeydokey8525.github.io/Lop_5_Mia/`.
-Cách làm (chọn một):
-1. **GitHub Actions** (sạch nhất): workflow dùng `actions/upload-pages-artifact` + `actions/deploy-pages`, build `site/` trong CI. Bật Pages nguồn "GitHub Actions" trong Settings → Pages.
-2. **Nhánh/thư mục**: để site trong `docs/` hoặc nhánh `gh-pages` rồi chọn trong Settings → Pages. Nếu chọn `docs/`, chuyển tài liệu markdown sang thư mục khác (ví dụ `notes/`) để tránh lẫn.
+`--regenerate` sinh lại dữ liệu CĐ4–6 từ Python trước khi build. CĐ1–3 giữ nguồn JS đã bàn giao. Bản web tự cập nhật vào `site/`; không còn bước chép thủ công từ `generator/out/`.
 
-Lưu ý:
-- Pages miễn phí yêu cầu repo **public** (repo đang public). **Không đưa SGK vào repo.**
-- Đường dẫn trong HTML phải **tương đối**, vì site nằm dưới `/Lop_5_Mia/`. Link kiểu `/abc.html` sẽ hỏng.
-- Pages **phân biệt hoa thường**; Windows thì không. Phải chạy kiểm tra link (xem `docs/07_KIEM_TRA.md`).
-- `localStorage` theo địa chỉ web. Tiến độ đã làm trên máy (file://) không sang bản online; thiết bị khác cũng không đồng bộ. Chủ repo đã được báo; không tự thêm backend.
-- Mỗi lần push, Pages mất 1–2 phút để cập nhật; kiểm tra bằng cách mở link thật.
-- Cân nhắc đặt tên file Pages không dấu (đã vậy), tránh khoảng trắng.
+`python tools/build.py --standalone` chỉ xuất HTML tự chứa vào `generator/out/Toan5/` để gửi file lẻ; không cập nhật `site/`. Có thể dùng cùng `--regenerate`.
 
-## Phương án thay thế: Vercel
-Vercel host được site tĩnh (không cần build framework): import repo, đặt Output Directory = `site`, Framework = Other. Ưu điểm: preview theo nhánh, repo private vẫn deploy được. Nhược: thêm một nền tảng. Chỉ dùng nếu Pages có vấn đề hoặc chủ repo muốn.
+Bản web chia sẻ font/engine/CSS ở `site/assets/`. CSS font vẫn nhúng dữ liệu base64 gốc, không đổi bộ font và không tải font từ bên thứ ba. Riêng tổng HTML và tài nguyên chung giảm từ 12.572.440 byte xuống khoảng 932.665 byte (không tính PNG). Giữ toàn bộ sáu PNG đã giao, QA xuất ảnh mới vào `artifacts/` để tránh ghi đè bản gốc.
 
-## Kích thước
-Hiện mỗi đề ≈ 300 KB (font 248 KB + engine), 36 đề ≈ 11 MB; thêm 78 đề Tiếng Anh sẽ ≈ 35 MB nếu giữ cách nhúng. Nên **tách font/engine/css thành `assets/` dùng chung**; việc này làm thay đổi `build_all.py` và phải chạy lại toàn bộ QA 36 đề Toán. Giữ lựa chọn "nhúng tất cả vào 1 file" làm cờ build (`--standalone`) nếu chủ repo muốn gửi file lẻ cho em qua Zalo/USB.
+## Deploy
 
-## Quyết định (Codex điền)
-- Cây thư mục chọn: _chưa điền_
-- Cách deploy: _chưa điền_
-- Có tách `assets/` không: _chưa điền_
-- Ngày/giờ kiểm tra bản online: _chưa điền_
+Địa chỉ: https://okeydokey8525.github.io/Lop_5_Mia/
 
-## Ràng buộc (không thương lượng)
-1. Không làm mất đề, chủ đề, hay file PNG tổng quan.
-2. Sau khi dọn thư mục: `tall.js` cho 36 đề Toán vẫn 100/100, mọi link đúng hoa/thường.
-3. Không commit SGK; `.gitignore` đã chặn PDF/ảnh thư mục sách.
-4. Không làm hỏng khóa `localStorage` hiện có mà không thông báo (hoặc có bước chuyển).
-5. Tài liệu `docs/` luôn khớp với cấu trúc thật; sửa file này khi đổi cây.
+Chọn GitHub Pages với nguồn **GitHub Actions**. Workflow `.github/workflows/pages.yml` chạy khi push `main`, kiểm tra PR hoặc chạy thủ công. CI dùng Python 3.13, Node 24, cài phụ thuộc bằng lockfile, sinh lại đề, build web, audit, kiểm tra link và chạy hồi quy 36 đề trên Chromium dưới đúng tiền tố `/Lop_5_Mia/`. Chỉ deploy khi toàn bộ bước trước đạt. PR chỉ kiểm tra, không deploy.
+
+Chỉ `site/` được đưa vào Pages artifact. Không xuất bản `generator/`, `docs/`, PDF hoặc ảnh scan. Trong trường hợp CI thất bại, bản Pages trước đó vẫn được giữ.
+
+- Mọi đường dẫn nội bộ tương đối; công cụ link kiểm tra chính xác hoa/thường cả trên Windows.
+- Không đổi khóa tiến độ. `localStorage` theo origin và trình duyệt; tiến độ từ file/local không tự chuyển lên GitHub Pages, cũng không đồng bộ thiết bị.
+- Giữ giao diện Toán cũ; chỉ thêm liên kết về trang chọn môn.
+- Tiếng Anh chưa có đề, không tạo liên kết giả hoặc trang lỗi.
+
+## Kiểm chứng
+
+Local: 36/36 đề đạt 100/100, 44 trang không tràn ngang ở 400px, 196 tham chiếu tĩnh hợp lệ; đã kiểm tra liên kết dựng bằng JavaScript, giữ điểm tốt nhất, nộp thiếu câu, làm lại và tải lại tiến độ. Bản HTML tự chứa tái tạo khớp nội dung 43/43 HTML đã giao (chuẩn hóa xuống dòng).
+
+Trạng thái online: đang chuẩn bị triển khai; chỉ cập nhật mục này sau khi kiểm tra địa chỉ thật.

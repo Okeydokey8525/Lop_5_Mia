@@ -4,10 +4,16 @@ Repo: https://github.com/Okeydokey8525/Lop_5_Mia (public). Chủ repo: Lê Đứ
 Trả lời và viết nội dung cho học sinh **bằng tiếng Việt**. Chủ repo thích: nói thẳng, đúng sự thật, không bịa, kiểm tra kỹ rồi mới báo xong.
 
 ## Dự án là gì
-Bộ đề kiểm tra trực tuyến cho học sinh lớp 5, mỗi đề là **một file HTML tự chứa** (không cần server), tiến độ lưu bằng `localStorage`.
+Bộ đề kiểm tra trực tuyến cho học sinh lớp 5, bản web dùng tài nguyên chung; có thể xuất mỗi đề thành **một file HTML tự chứa** (không cần server), tiến độ lưu bằng `localStorage`.
 - **Toán 5** (Kết nối tri thức với cuộc sống, tập một): Chủ đề 1–6, 36 đề, **đã xong**.
 - **Toán 5 học kì 2:** chủ repo sẽ đưa sách sau. Chưa làm. Xem mục "Chỗ trống" bên dưới.
 - **Tiếng Anh 5** (Global Success, Sách học sinh tập 1, 83 trang scan): **việc tiếp theo**. Đặc tả ở `docs/09_TIENG_ANH.md`.
+
+## Phạm vi đã chốt ngày 29/10/2026
+
+Chủ repo yêu cầu ưu tiên cấu trúc, chuẩn hóa build/QA, kiểm chứng bộ Toán, trang chủ chung và GitHub Pages. **Chưa làm Tiếng Anh hoặc Unit 1 mẫu ở đợt này.** Cây thư mục giữ `generator/`, `docs/`, `site/Toan5/`, thêm `tools/` và `site/assets/`; xem `docs/08`.
+
+Lệnh từ gốc repo: `python tools/build.py --regenerate`, `node generator/audit.js`, `python tools/check_links.py`, `python tools/serve.py` rồi `node tools/qa.js` ở terminal khác. Không sửa trực tiếp `site/`; trang chủ chung sinh từ `tools/templates/home.html`. PDF nằm ngoài repo.
 
 ## Việc của bạn (Codex)
 1. Làm tiếp Tiếng Anh 5 theo `docs/09_TIENG_ANH.md`, mỗi unit là một chủ đề, mỗi chủ đề có 1 trang tổng quan + 6 đề.

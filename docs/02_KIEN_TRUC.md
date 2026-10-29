@@ -1,6 +1,8 @@
 # 02 — Kiến trúc và pipeline
 
-Hiện trạng (trước khi dọn thư mục): bộ nguồn nằm ở `generator/`, kết quả đã build nằm ở `site/Toan5/`.
+Hiện trạng: nguồn ở `generator/`, điều phối build/QA ở `tools/`, kết quả web ở `site/`. Cấu trúc chính thức và lệnh dùng từ gốc repo ở `08_CAY_THU_MUC_VA_DEPLOY.md`.
+
+`python tools/build.py --regenerate` gọi các generator với UTF-8, ghép HTML tự chứa vào `generator/out/Toan5/`, rồi tạo bản web dùng tài nguyên chung ở `site/assets/`. `--standalone` giữ bản tự chứa và không cập nhật site. Mẫu trang chủ chung ở `tools/templates/home.html`; trang chủ Toán vẫn sinh từ `gen_index.py`.
 
 ## Luồng chạy
 ```
@@ -39,8 +41,8 @@ Tiến độ **không đồng bộ** giữa trình duyệt hoặc thiết bị. 
 
 ## Điểm cần nhớ khi mở rộng (nợ kỹ thuật đã biết)
 1. `build_all.py` hardcode tiêu đề `Toán 5 · Chủ đề ...`, `lang="vi"`, ROOT `Toan5`. Tiếng Anh cần tham số hóa môn học.
-2. `audit.js` mặc định chạy `1,2,3,4` nếu không truyền tham số; `png.js`, `idx.js` hardcode `out/Toan5` và danh sách 6 chủ đề.
-3. `png.js`, `idx.js` ghi ảnh tạm vào `/tmp/...` (Linux). Trên Windows cần đổi.
-4. Mỗi file đề nhúng ~250 KB font base64 + engine (~300 KB/đề). 36 đề ≈ 11 MB. Nên tách `assets/` dùng chung (font + engine + css) khi dọn thư mục.
+2. `audit.js` mặc định kiểm tra cả 6 chủ đề và trả exit code lỗi khi không đạt. `tools/qa.js` là luồng QA web chính thức; các tiện ích `png.js`, `idx.js` vẫn dành riêng Toán.
+3. Đã đổi URL file bằng `pathToFileURL`; ảnh phụ của `png.js`, `idx.js` nằm ở `generator/out/qa/`, dùng được trên Windows.
+4. Bản web đã tách font/engine/CSS vào `site/assets/`; bản standalone tiếp tục nhúng toàn bộ. Không sửa trực tiếp file build trong `site/`.
 5. `shot.js` cũ đã bị loại; `qshot.js`, `figs.js`, `show.js` là công cụ phụ: chụp câu hỏi, chụp các câu có hình, in đáp án.
 6. Engine có chữ giao diện tiếng Việt cố định (nút, kết quả, xếp loại). Với Tiếng Anh: giữ giao diện (nút, hướng dẫn, kết quả) bằng tiếng Việt, nội dung câu hỏi bằng tiếng Anh.

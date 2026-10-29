@@ -2,7 +2,7 @@ import json, pathlib, sys
 sys.path.insert(0,'.')
 from cfg import *
 W=pathlib.Path(__file__).parent
-fonts=(W/'fonts.css').read_text()
+fonts=(W/'fonts.css').read_text(encoding='utf-8')
 data=[]
 for cd in CDS:
     data.append({'n':cd['n'],'dir':cd['dir'],'name':cd['name'],'range':cd['range'],'overview':cd['overview'],
@@ -172,4 +172,4 @@ render();
 </script></body></html>'''
 html=html.replace('__FONTS__',fonts).replace('__DATA__',json.dumps(data,ensure_ascii=False))
 out=W/'out'/ROOT; out.mkdir(parents=True,exist_ok=True)
-(out/'index.html').write_text(html); print('index',len(html)//1024,'KB')
+(out/'index.html').write_text(html,encoding='utf-8',newline='\n'); print('index',len(html)//1024,'KB')

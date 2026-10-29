@@ -43,5 +43,5 @@ def write(num_,qs,cd=4):
     assert [q['level'] for q in qs]==['tb']*10+['kha']*8+['gioi']*6
     out=pathlib.Path(__file__).parent/'tests'/f'cd{cd}'; out.mkdir(parents=True,exist_ok=True)
     js='window.TEST_FN=function(H){\nreturn MK%d([\n'%cd+',\n'.join(json.dumps(q,ensure_ascii=False) for q in qs)+'\n]);};\n'
-    (out/f'de0{num_}.js').write_text(js)
+    (out/f'de0{num_}.js').write_text(js,encoding='utf-8',newline='\n')
     print('wrote de0%d'%num_,len(js))

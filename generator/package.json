@@ -1,10 +1,12 @@
 {
-  "name": "w",
+  "name": "lop-5-mia-generator",
+  "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node audit.js",
+    "qa": "node ../tools/qa.js"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +14,8 @@
   "dependencies": {
     "@fontsource/baloo-2": "^5.3.0",
     "@fontsource/be-vietnam-pro": "^5.3.0"
+  },
+  "devDependencies": {
+    "playwright": "1.64.1"
   }
 }

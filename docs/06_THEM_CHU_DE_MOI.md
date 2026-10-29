@@ -19,6 +19,9 @@ Viết `g{n}_de01.py ... de06.py`, dùng chung thư viện `g4lib/g5lib` (hoặc
 Viết `LESSONS{n}` + `cd{n}_sheet()` trong `gen_overview.py`, thêm màu mới vào danh sách vòng lặp cuối file. Màu khác 6 màu đã dùng (`docs/05_THIET_KE.md`).
 
 ## 5. Build, QA, giao
+
+Luồng hiện hành từ gốc repo: `python tools/build.py --regenerate`, `node generator/audit.js`, `python tools/check_links.py`, khởi động `python tools/serve.py` rồi chạy `node tools/qa.js` ở terminal khác. Khi tăng số đề, phải cập nhật kiểm tra số lượng đang kỳ vọng 36 trong `tools/qa.js`, nội dung trang chủ chung và tài liệu. Các lệnh bên dưới là công cụ riêng của pipeline Toán cũ; lệnh wildcard Python không tự chạy nhiều script, cần gọi từng file hoặc dùng bộ điều phối mới.
+
 ```
 cd generator
 python3 g{n}_de0*.py

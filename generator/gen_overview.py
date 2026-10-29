@@ -2,7 +2,7 @@ import re, pathlib, sys
 sys.path.insert(0,'.')
 from cfg import *
 W=pathlib.Path(__file__).parent
-fonts=(W/'fonts.css').read_text()
+fonts=(W/'fonts.css').read_text(encoding='utf-8')
 DISP="font-family:'Baloo 2','Be Vietnam Pro',sans-serif"
 def fr(n,d,big=False):
     fs='.82em'
@@ -309,5 +309,5 @@ def cd6_sheet():
 
 for cd,sheet,color in [(CDS[0],cd1_sheet(),'#0a6f73'),(CDS[1],cd2_sheet(),'#c4470a'),(CDS[2],cd3_sheet(),'#2e7d32'),(CDS[3],cd4_sheet(),'#6a1b9a'),(CDS[4],cd5_sheet(),'#1565c0'),(CDS[5],cd6_sheet(),'#c2185b')]:
     d=W/'out'/ROOT/cd['dir']; d.mkdir(parents=True,exist_ok=True)
-    (d/(cd['overview']+'.html')).write_text(page(f"Toán 5 · Chủ đề {cd['n']} · Tổng quan",sheet,cd,color))
+    (d/(cd['overview']+'.html')).write_text(page(f"Toán 5 · Chủ đề {cd['n']} · Tổng quan",sheet,cd,color),encoding='utf-8',newline='\n')
 print('ok')

@@ -1,17 +1,34 @@
 # Lớp 5 Mia
 
-Bộ đề kiểm tra trực tuyến cho học sinh lớp 5 (Toán và Tiếng Anh), thiết kế đẹp, chạy ngay trên trình duyệt, không cần cài đặt. Mỗi đề là một file HTML tự chứa; tiến độ và điểm cao nhất lưu trong trình duyệt.
+Góc luyện tập lớp 5 cho Mia, chạy bằng website tĩnh và lưu điểm trong trình duyệt.
 
-- **Toán 5** (Kết nối tri thức với cuộc sống, tập một): 6 chủ đề, 36 đề — xong.
-- **Tiếng Anh 5** (Global Success, tập 1): đang chuẩn bị.
-- **Toán học kì 2:** sẽ thêm sau.
+- Toán 5, Kết nối tri thức với cuộc sống, tập một: 6 chủ đề, 36 đề; mỗi đề 24 câu, 100 điểm.
+- Tiếng Anh 5, Global Success, tập một: đang chuẩn bị, chưa có đề.
+- Toán học kì 2: chờ sách.
 
-Mỗi đề có 24 câu (10 Trung bình, 8 Khá, 6 Giỏi), 100 điểm; xếp loại Giỏi / Khá / Trung bình.
+## Xem và phát triển
 
-## Xem
-Mở `site/Toan5/index.html` bằng Chrome hoặc Edge. Khi bật GitHub Pages, địa chỉ dự kiến là https://okeydokey8525.github.io/Lop_5_Mia/ (chưa bật).
+Địa chỉ Pages: https://okeydokey8525.github.io/Lop_5_Mia/ (trạng thái triển khai ở `docs/01_TINH_TRANG.md`).
 
-## Cho người phát triển / agent
-Đọc `AGENTS.md` trước, rồi `docs/`. Bộ nguồn sinh đề ở `generator/`; đề được sinh bằng Python (đáp án tính từ cùng số liệu của đề).
+Cần Python 3.13+ và Node 24. Chạy từ gốc repo:
 
-Sách giáo khoa không nằm trong repo này. Đề, hình vẽ và bài toán là tự soạn, bám theo mục lục sách.
+```text
+npm ci --prefix generator
+npx --prefix generator playwright install chromium
+python tools/build.py --regenerate
+node generator/audit.js
+python tools/check_links.py
+python tools/serve.py
+```
+
+Mở http://127.0.0.1:8765/Lop_5_Mia/ để xem. Giữ server chạy và dùng terminal khác: `node tools/qa.js`.
+
+Bản web ở `site/` dùng tài nguyên chung. Muốn gửi đề dưới dạng một file HTML tự chứa: `python tools/build.py --standalone`, lấy file trong `generator/out/Toan5/`.
+
+## Tài liệu và deploy
+
+Đọc `AGENTS.md` trước, sau đó `docs/`. Cấu trúc chính thức và GitHub Actions: `docs/08_CAY_THU_MUC_VA_DEPLOY.md`; hướng dẫn QA: `docs/07_KIEM_TRA.md`.
+
+Workflow chỉ xuất bản `site/` sau khi build và QA đạt. Không đưa PDF sách, ảnh scan hoặc bản trích dài vào repo public. Không sửa trực tiếp HTML đã build; sửa nguồn rồi build lại.
+
+Tiến độ không đồng bộ thiết bị, trình duyệt hoặc từ bản mở file/local sang Pages. Chưa có phản hồi làm thử của học sinh để đánh giá độ khó.
