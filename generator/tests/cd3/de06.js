@@ -1,0 +1,79 @@
+window.TEST_FN=function(H){
+var FIG_BORDER='<div class="fig"><figure><svg viewBox="0 0 270 186" role="img" aria-label="Khu đất hình chữ nhật dài 240 m, rộng 150 m, có dải cây xanh rộng 30 m chạy quanh, phần giữa tô vàng" style="width:290px">'+
+ '<rect x="26" y="12" width="216" height="135" fill="#7bc47f" stroke="currentColor" stroke-width="2.4"/>'+
+ '<rect x="53" y="39" width="162" height="81" fill="#ffe08a" stroke="currentColor" stroke-width="2"/>'+
+ '<text x="134" y="30" text-anchor="middle" font-size="12" font-weight="700" fill="#15302f" font-family="inherit">30 m</text>'+
+ '<text x="134" y="84" text-anchor="middle" font-size="13" font-weight="700" fill="#15302f" font-family="inherit">Khu nhà máy</text>'+
+ '<text x="134" y="166" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor" font-family="inherit">240 m</text>'+
+ '<text x="12" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor" font-family="inherit" transform="rotate(-90 12 80)">150 m</text>'+
+ '</svg><figcaption>Dải màu xanh là cây xanh, rộng 30 m ở cả bốn phía</figcaption></figure></div>';
+return MK3([
+/* ===== TRUNG BÌNH ===== */
+{level:'tb',lesson:18,type:'mc',stem:'Công viên hình chữ nhật dài 200 m, rộng 100 m. Diện tích công viên là bao nhiêu héc-ta?',opts:['2 ha','20 ha','0,2 ha','200 ha'],answer:0,
+ why:'Diện tích: 200 × 100 = 20 000 m². Vì 10 000 m² = 1 ha nên 20 000 m² = 2 ha.'},
+{level:'tb',lesson:15,type:'fill',stem:'Số?',
+ blanks:[{pre:'6 ha =',kind:'num',ans:60000,post:'m²'},{pre:'400 ha =',kind:'num',ans:4,post:'km²'},{pre:'2 km² =',kind:'num',ans:2000000,post:'m²'}],
+ why:'6 ha = 6 × 10 000 = 60 000 m². 400 ha = 400 : 100 = 4 km². 1 km² = 1 000 000 m² nên 2 km² = 2 000 000 m².'},
+{level:'tb',lesson:17,type:'mc',stem:'Số đo nào phù hợp nhất với diện tích khu vui chơi dành cho trẻ em trong một công viên?',opts:['1 500 cm²','1 500 m²','1 500 mm²','1 500 km²'],answer:1,
+ why:'Khu vui chơi trẻ em rộng khoảng vài nghìn mét vuông. 1 500 cm² hay 1 500 mm² quá bé, còn 1 500 km² thì rộng bằng cả một tỉnh.'},
+{level:'tb',lesson:15,type:'fill',stem:'Chọn dấu &gt;, &lt;, = thích hợp.',
+ blanks:[{pre:'2 ha',kind:'sel',opts:['>','<','='],ans:'=',post:'20 000 m²'},{pre:'5 km²',kind:'sel',opts:['>','<','='],ans:'>',post:'400 ha'},{pre:'3 000 m²',kind:'sel',opts:['>','<','='],ans:'<',post:'1 ha'}],
+ why:'2 ha = 20 000 m² nên hai số đo bằng nhau. 5 km² = 500 ha, mà 500 > 400. 1 ha = 10 000 m², mà 3 000 < 10 000.'},
+{level:'tb',lesson:18,type:'fill',stem:'Khu đất hình chữ nhật có chiều dài 80 m và chiều rộng 50 m.',
+ blanks:[{pre:'Diện tích khu đất là',kind:'num',ans:4000,post:'m²'},{pre:'Đổi ra héc-ta:',kind:'num',ans:0.4,post:'ha'}],
+ why:'Diện tích = 80 × 50 = 4 000 m². Vì 1 ha = 10 000 m² nên 4 000 m² = 0,4 ha.'},
+{level:'tb',lesson:15,type:'mc',stem:'1 héc-ta bằng bao nhiêu mét vuông?',opts:['100 m²','1 000 m²','10 000 m²','100 000 m²'],answer:2,
+ why:'Héc-ta là diện tích hình vuông cạnh 100 m nên 1 ha = 100 × 100 = 10 000 m².'},
+{level:'tb',lesson:15,type:'fill',stem:'Số?',
+ blanks:[{pre:'25 000 m² =',kind:'num',ans:2.5,post:'ha'},{pre:'0,75 ha =',kind:'num',ans:7500,post:'m²'},{pre:'120 ha =',kind:'num',ans:1.2,post:'km²'}],
+ why:'25 000 m² = 25 000 : 10 000 = 2,5 ha. 0,75 ha = 0,75 × 10 000 = 7 500 m². 120 ha = 120 : 100 = 1,2 km².'},
+{level:'tb',lesson:18,type:'mc',stem:'Nhà máy được xây trên khu đất hình vuông có cạnh dài 500 m. Diện tích khu đất là:',opts:['25 ha','250 ha','2,5 ha','2 500 ha'],answer:0,
+ why:'Diện tích: 500 × 500 = 250 000 m². Đổi ra héc-ta: 250 000 : 10 000 = 25 ha.'},
+{level:'tb',lesson:15,type:'fill',stem:'Số?',
+ blanks:[{pre:'1 km² =',kind:'num',ans:100,post:'ha'},{pre:'1 m² =',kind:'num',ans:10000,post:'cm²'},{pre:'1 ha =',kind:'num',ans:10000,post:'m²'}],
+ why:'1 km² = 100 ha. 1 m² = 100 dm² = 10 000 cm². 1 ha = 10 000 m².'},
+{level:'tb',lesson:15,type:'mc',stem:'Ki-lô-mét vuông được viết tắt là:',opts:['km','km²','ha','m²'],answer:1,
+ why:'Ki-lô-mét vuông viết tắt là km². Chú ý số 2 nhỏ ở phía trên bên phải, vì đây là đơn vị đo diện tích.'},
+/* ===== KHÁ ===== */
+{level:'kha',lesson:18,type:'fill',stem:'Một khu đất hình chữ nhật dài 240 m, rộng 150 m. Xung quanh khu đất có dải cây xanh rộng 30 m, phần ở giữa dùng để xây nhà máy (tô vàng trong hình).',
+ fig:FIG_BORDER,
+ blanks:[{pre:'Diện tích cả khu đất là',kind:'num',ans:36000,post:'m²'},{pre:'Diện tích khu nhà máy là',kind:'num',ans:16200,post:'m²'},{pre:'Diện tích dải cây xanh là',kind:'num',ans:19800,post:'m²'}],
+ why:'Cả khu đất: 240 × 150 = 36 000 m². Dải cây xanh rộng 30 m ở cả hai phía nên phần giữa dài 240 − 60 = 180 m và rộng 150 − 60 = 90 m. Khu nhà máy: 180 × 90 = 16 200 m². Dải cây xanh: 36 000 − 16 200 = 19 800 m².'},
+{level:'kha',lesson:16,type:'fill',stem:'Số?',
+ blanks:[{pre:'3 ha 500 m² =',kind:'num',ans:30500,post:'m²'},{pre:'45 000 m² =',kind:'num',ans:4.5,post:'ha'},{pre:'2 km² 30 ha =',kind:'num',ans:230,post:'ha'}],
+ why:'3 ha = 30 000 m² nên 3 ha 500 m² = 30 500 m². 45 000 m² = 4,5 ha. 2 km² = 200 ha nên 2 km² 30 ha = 230 ha.'},
+{level:'kha',lesson:15,type:'tf',stem:'Chọn Đúng hoặc Sai cho mỗi câu.',
+ items:[{t:'Khu vui chơi rộng 2 000 m² chiếm {1/5} diện tích của khu đất rộng 1 ha.',a:true},{t:'1 km² = 10 000 ha.',a:false},{t:'8 ha = 80 000 m².',a:true},{t:'2 ha 5 000 m² = 2,5 ha.',a:true}],
+ why:'a) Đúng: 1 ha = 10 000 m², {1/5} của 10 000 là 2 000. b) Sai: 1 km² = 100 ha. c) Đúng: 8 × 10 000 = 80 000 m². d) Đúng: 5 000 m² = 0,5 ha nên 2 ha 5 000 m² = 2,5 ha.'},
+{level:'kha',lesson:16,type:'mc',stem:'Công viên A rộng 12 ha. Công viên B rộng 95 000 m². Câu nào sau đây đúng?',
+ opts:['Công viên A rộng hơn công viên B 2,5 ha.','Công viên B rộng hơn công viên A 2,5 ha.','Công viên A rộng hơn công viên B 25 ha.','Hai công viên rộng bằng nhau.'],answer:0,
+ why:'Đổi cùng đơn vị: 12 ha = 120 000 m². Vì 120 000 − 95 000 = 25 000 m² = 2,5 ha nên công viên A rộng hơn công viên B 2,5 ha.'},
+{level:'kha',lesson:18,type:'fill',stem:'Một khu đất rộng 3 ha. Người ta dành {2/3} diện tích để làm khu vui chơi, phần còn lại làm khu cắm trại.',
+ blanks:[{pre:'Khu vui chơi rộng',kind:'num',ans:2,post:'ha'},{pre:'Khu cắm trại rộng',kind:'num',ans:10000,post:'m²'}],
+ why:'Khu vui chơi: 3 : 3 × 2 = 2 ha. Khu cắm trại: 3 − 2 = 1 ha = 10 000 m².'},
+{level:'kha',lesson:16,type:'order',stem:'Sắp xếp diện tích bốn khu đất sau theo thứ tự từ rộng nhất đến hẹp nhất.',items:['4 ha','35 000 m²','0,03 km²','2 ha'],sep:'>',
+ why:'Đổi cùng ra mét vuông: 4 ha = 40 000 m²; 35 000 m²; 0,03 km² = 30 000 m²; 2 ha = 20 000 m². Vì 40 000 > 35 000 > 30 000 > 20 000 nên thứ tự từ rộng nhất đến hẹp nhất là như trên.'},
+{level:'kha',lesson:18,type:'fill',stem:'Hồ nước hình chữ nhật có chiều dài 300 m và chiều rộng 200 m. Người ta trồng cây quanh bờ hồ, hai cây liên tiếp cách nhau 5 m.',
+ blanks:[{pre:'Diện tích mặt hồ là',kind:'num',ans:60000,post:'m²'},{pre:'Đổi ra héc-ta:',kind:'num',ans:6,post:'ha'},{pre:'Cần trồng',kind:'num',ans:200,post:'cây'}],
+ why:'Diện tích mặt hồ: 300 × 200 = 60 000 m² = 6 ha. Chu vi bờ hồ: (300 + 200) × 2 = 1 000 m. Số cây cần trồng: 1 000 : 5 = 200 cây.'},
+{level:'kha',lesson:15,type:'mc',stem:'Một mảnh đất hình vuông có cạnh dài 2 km. Diện tích mảnh đất đó là:',opts:['4 ha','40 ha','400 ha','4 000 ha'],answer:2,
+ why:'Diện tích: 2 × 2 = 4 km². Vì 1 km² = 100 ha nên 4 km² = 400 ha.'},
+/* ===== GIỎI ===== */
+{level:'gioi',lesson:18,type:'fill',stem:'Một khu đô thị rộng 12 ha. Người ta dùng {1/4} diện tích làm đường đi, {1/3} diện tích làm công viên, phần còn lại xây nhà ở.',
+ blanks:[{pre:'Đường đi rộng',kind:'num',ans:3,post:'ha'},{pre:'Công viên rộng',kind:'num',ans:4,post:'ha'},{pre:'Khu nhà ở rộng',kind:'num',ans:50000,post:'m²'}],
+ why:'Đường đi: 12 : 4 = 3 ha. Công viên: 12 : 3 = 4 ha. Khu nhà ở: 12 − 3 − 4 = 5 ha = 5 × 10 000 = 50 000 m².'},
+{level:'gioi',lesson:18,type:'fill',stem:'Một nhà máy xây trên khu đất hình chữ nhật có chiều rộng 400 m, chiều dài gấp đôi chiều rộng. Nhà xưởng chiếm {3/8} diện tích khu đất.',
+ blanks:[{pre:'Chiều dài khu đất là',kind:'num',ans:800,post:'m'},{pre:'Diện tích khu đất là',kind:'num',ans:32,post:'ha'},{pre:'Nhà xưởng chiếm',kind:'num',ans:12,post:'ha'}],
+ why:'Chiều dài: 400 × 2 = 800 m. Diện tích: 800 × 400 = 320 000 m² = 32 ha. Nhà xưởng: 32 : 8 × 3 = 12 ha.'},
+{level:'gioi',lesson:18,type:'fill',stem:'Một khu đất hình chữ nhật dài 200 m, rộng 150 m. Người ta đào một cái hồ hình chữ nhật dài 120 m, rộng 50 m trên khu đất đó, phần còn lại trồng cỏ.',
+ blanks:[{pre:'Diện tích khu đất là',kind:'num',ans:30000,post:'m²'},{pre:'Diện tích mặt hồ là',kind:'num',ans:6000,post:'m²'},{pre:'Diện tích trồng cỏ là',kind:'num',ans:2.4,post:'ha'}],
+ why:'Khu đất: 200 × 150 = 30 000 m². Mặt hồ: 120 × 50 = 6 000 m². Phần trồng cỏ: 30 000 − 6 000 = 24 000 m² = 2,4 ha.'},
+{level:'gioi',lesson:18,type:'mc',stem:'Người ta trồng cỏ trên khu đất rộng 0,2 ha. Giá trồng cỏ là 18 000 đồng cho mỗi mét vuông. Tổng số tiền trồng cỏ là:',opts:['3 600 000 đồng','36 000 000 đồng','360 000 000 đồng','9 000 000 đồng'],answer:1,
+ why:'0,2 ha = 0,2 × 10 000 = 2 000 m². Tổng tiền: 2 000 × 18 000 = 36 000 000 đồng.'},
+{level:'gioi',lesson:18,type:'fill',stem:'Một khu đất rộng 1,2 ha được chia thành các lô đất hình chữ nhật giống nhau, mỗi lô dài 20 m và rộng 10 m.',
+ blanks:[{pre:'Khu đất rộng',kind:'num',ans:12000,post:'m²'},{pre:'Mỗi lô đất rộng',kind:'num',ans:200,post:'m²'},{pre:'Chia được',kind:'num',ans:60,post:'lô đất'}],
+ why:'1,2 ha = 1,2 × 10 000 = 12 000 m². Mỗi lô: 20 × 10 = 200 m². Số lô đất: 12 000 : 200 = 60 lô.'},
+{level:'gioi',lesson:18,type:'fill',stem:'Người ta trồng rừng trên mảnh đất hình chữ nhật dài 300 m, rộng 200 m. Mỗi héc-ta trồng được 1 600 cây, mỗi cây giống giá 5 000 đồng.',
+ blanks:[{pre:'Mảnh đất rộng',kind:'num',ans:6,post:'ha'},{pre:'Trồng được',kind:'num',ans:9600,post:'cây'},{pre:'Tiền mua cây giống là',kind:'num',ans:48000000,post:'đồng'}],
+ why:'Diện tích: 300 × 200 = 60 000 m² = 6 ha. Số cây: 1 600 × 6 = 9 600 cây. Tiền cây giống: 9 600 × 5 000 = 48 000 000 đồng.'}
+]);};

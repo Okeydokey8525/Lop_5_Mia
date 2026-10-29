@@ -1,0 +1,58 @@
+# Cấu hình: thư mục, tên file, tiêu đề, chủ đề từng đề
+ROOT='Toan5'
+CDS=[
+ {'n':1,'dir':'ChuDe1_OnTapVaBoSung','name':'Ôn tập và bổ sung','range':'Bài 1 đến Bài 9','mk':'cd1','overview':'TongQuan_ChuDe1',
+  'tests':[
+   ('KhoiDong','Khởi động','Ôn tập tổng hợp bài 1 đến bài 9, làm nóng người trước khi vào các đề khác.'),
+   ('MotNgayOTruong','Một ngày ở trường','Các bài toán quen thuộc quanh lớp học, thư viện, sân trường.'),
+   ('DiChoSieuThi','Đi chợ và siêu thị','Tiền, cân nặng, giá cả khi đi mua sắm cùng gia đình.'),
+   ('SanBongNgayHoiTheThao','Ngày hội thể thao','Sân bóng, đường chạy, số liệu của giải đấu và cổ động viên.'),
+   ('GocBepCuaGiaDinh','Góc bếp của gia đình','Nấu ăn, chia bánh, pha nước, đong gạo.'),
+   ('ChuyenDuLich','Chuyến du lịch','Quãng đường, vé tàu, khách sạn và những con số lớn.'),
+  ]},
+ {'n':2,'dir':'ChuDe2_SoThapPhan','name':'Số thập phân','range':'Bài 10 đến Bài 14','mk':'cd2','overview':'TongQuan_ChuDe2',
+  'tests':[
+   ('KhoiDong','Khởi động','Làm quen số thập phân: đọc, viết, so sánh, đổi đơn vị, làm tròn.'),
+   ('DoDacVaCanNang','Đo đạc và cân nặng','Chiều cao, cân nặng, chiều dài của các bạn trong lớp.'),
+   ('TrenDuongChay','Trên đường chạy','Thành tích điền kinh, thời gian chạy và nhảy xa.'),
+   ('SieuThiVaNhaBep','Siêu thị và nhà bếp','Ki-lô-gam, lít, giá tiền khi mua thực phẩm.'),
+   ('ThienNhienVaThoiTiet','Thiên nhiên và thời tiết','Nhiệt độ, lượng mưa, chiều cao của cây.'),
+   ('KhamPhaVongQuanh','Khám phá vòng quanh','Quãng đường, thể tích nước, bản đồ và những chuyến đi.'),
+  ]},
+ {'n':3,'dir':'ChuDe3_DonViDoDienTich','name':'Đơn vị đo diện tích','range':'Bài 15 đến Bài 18','mk':'cd3','overview':'TongQuan_ChuDe3',
+  'tests':[
+   ('KhoiDong','Khởi động','Làm quen ki-lô-mét vuông, héc-ta và đổi giữa các đơn vị đo diện tích.'),
+   ('BanDoVaDiaDanh','Bản đồ và địa danh','Diện tích tỉnh thành, vườn quốc gia và khu bảo tồn.'),
+   ('VuonRauVaNongTrai','Vườn rau và nông trại','Thửa ruộng, mảnh vườn, trang trại tính bằng héc-ta và mét vuông.'),
+   ('NhaCuaVaLatSan','Nhà cửa và lát sàn','Gạch lát nền, sàn gỗ, ô cửa và tiền mua vật liệu.'),
+   ('LopHocVaSanTruong','Lớp học và sân trường','Mặt bàn, bảng đen, phòng học, sân trường và khuôn viên.'),
+   ('QuyHoachKhuDat','Quy hoạch khu đất','Chia đất xây công viên, khu vui chơi, nhà máy và khu cắm trại.'),
+  ]},
+ {'n':4,'dir':'ChuDe4_PhepTinhSoThapPhan','name':'Các phép tính với số thập phân','range':'Bài 19 đến Bài 24','mk':'cd4','overview':'TongQuan_ChuDe4',
+  'tests':[
+   ('KhoiDong','Khởi động','Cộng, trừ, nhân, chia số thập phân cơ bản.'),
+   ('DiChoCungMe','Đi chợ cùng mẹ','Cân rau củ, trả tiền và tìm số tiền thối lại.'),
+   ('BepNhaVaLamBanh','Bếp nhà và làm bánh','Đong bột, pha nước, chia đều nguyên liệu.'),
+   ('TheThaoVaGiaoThong','Thể thao và giao thông','Quãng đường, thành tích chạy, nhảy xa và đổ xăng.'),
+   ('XayNhaVaThietKe','Xây nhà và thiết kế','Chu vi, diện tích, sơn tường và lát sàn với số thập phân.'),
+   ('KhoaHocVaThiNghiem','Khoa học và thí nghiệm','Nhân, chia với 10; 100; 0,1; 0,01 và đo đạc chính xác.'),
+  ]},
+ {'n':5,'dir':'ChuDe5_HinhPhangChuViDienTich','name':'Một số hình phẳng, chu vi và diện tích','range':'Bài 25 đến Bài 29','mk':'cd5','overview':'TongQuan_ChuDe5',
+  'tests':[
+   ('KhoiDong','Khởi động','Nhận biết hình tam giác, hình thang, hình tròn và tính nhanh diện tích, chu vi.'),
+   ('MaiNhaVaViKeo','Mái nhà và vì kèo','Tấm kính, mái hiên, cánh buồm hình tam giác và diện tích cần sơn.'),
+   ('RuongBacThang','Ruộng bậc thang','Thửa ruộng hình thang, mảnh đất và số tiền thu hoạch.'),
+   ('BanhXeVaSanChoi','Bánh xe và sân chơi','Chu vi, diện tích hình tròn: bánh xe lăn, bể bơi tròn, bàn tròn.'),
+   ('GhepHinhSangTao','Ghép hình sáng tạo','Ngôi nhà ghép từ hình tam giác, hình chữ nhật và khu đất có ao tròn.'),
+   ('KhuVuonTongHop','Khu vườn tổng hợp','Bài toán nhiều bước kết hợp các hình, tiền công và vật liệu.'),
+  ]},
+ {'n':6,'dir':'ChuDe6_OnTapHocKi1','name':'Ôn tập học kì 1','range':'Bài 30 đến Bài 35','mk':'cd6','overview':'TongQuan_ChuDe6',
+  'tests':[
+   ('KhoiDong','Khởi động','Ôn nhanh số thập phân, các phép tính, hình phẳng và đo lường.'),
+   ('SoThapPhanQuanhEm','Số thập phân quanh em','Đọc, viết, so sánh, làm tròn và đổi đơn vị trong cuộc sống.'),
+   ('TinhToanVaMuaSam','Tính toán và mua sắm','Cộng, trừ, nhân, chia số thập phân với tiền, cân nặng và thể tích.'),
+   ('HinhVaDienTich','Hình và diện tích','Tam giác, hình thang, hình tròn, chu vi và diện tích.'),
+   ('DoLuongVaDoiDonVi','Đo lường và đổi đơn vị','Chiều dài, khối lượng, diện tích và các phép tính với số đo.'),
+   ('TongOnCuoiKi','Tổng ôn cuối kì','Đề tổng hợp: phân số, hỗn số, số thập phân, hình học và bài toán thực tế.'),
+  ]},
+]

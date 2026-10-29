@@ -1,0 +1,175 @@
+import json, pathlib, sys
+sys.path.insert(0,'.')
+from cfg import *
+W=pathlib.Path(__file__).parent
+fonts=(W/'fonts.css').read_text()
+data=[]
+for cd in CDS:
+    data.append({'n':cd['n'],'dir':cd['dir'],'name':cd['name'],'range':cd['range'],'overview':cd['overview'],
+      'tests':[{'id':f"cd{cd['n']}-de{i}",'file':f"De{i}_{slug}.html",'name':name,'theme':theme} for i,(slug,name,theme) in enumerate(cd['tests'],1)]})
+html=r'''<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Toán 5 · Hành trình chinh phục</title>
+<style>__FONTS__</style>
+<style>
+:root{
+  --bg:#eef6f5;--paper:#fff;--ink:#15302f;--muted:#56706e;--line:#cde0dd;--soft:#e2f1ef;--shadow:0 1px 0 rgba(10,60,60,.06),0 10px 24px -14px rgba(10,60,60,.35);
+  --c1:#0a6f73;--c1s:#dff3f2;--c2:#c4470a;--c2s:#fde9dc;--c3:#2e7d32;--c3s:#e4f4e5;--c4:#6a1b9a;--c4s:#f1e4f7;--c5:#1565c0;--c5s:#e3f0fc;--c6:#c2185b;--c6s:#fce4ec;--focus:#f08a10;
+  --tb:#168a60;--kha:#b9710a;--gioi:#b83a64;--ok:#1a7f45;
+  --f-disp:'Baloo 2','Be Vietnam Pro',system-ui,sans-serif;--f-body:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1b1b;--paper:#162828;--ink:#e4f1ef;--muted:#92b0ad;--line:#2a4543;--soft:#1d3433;--shadow:0 1px 0 rgba(0,0,0,.3),0 10px 24px -14px rgba(0,0,0,.7);
+  --c1:#4fd0d4;--c1s:#12383a;--c2:#ff9a5c;--c2s:#3d2314;--c3:#6fcf75;--c3s:#173a1a;--c4:#c58bf0;--c4s:#2e1a3d;--c5:#7fb2f5;--c5s:#14283f;--c6:#f48fb1;--c6s:#3d1a28;--focus:#ffb04a;--tb:#4cd5a0;--kha:#f2b04a;--gioi:#f27aa0;--ok:#62d68e;color-scheme:dark}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55;padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px));padding-bottom:48px}
+.wrap{max-width:1040px;margin:0 auto}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:8px}
+a{color:inherit}
+/* hero */
+.hero{position:relative;overflow:hidden;margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:34px max(16px,env(safe-area-inset-left,0px)) 56px;color:#fff;
+  background:linear-gradient(135deg,#0a6f73 0%,#0c8a86 45%,#e08a2c 120%);border-radius:0 0 36px 36px}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:20px;align-items:center}
+.eyebrow{font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;opacity:.9;margin:0}
+h1{font-family:var(--f-disp);font-weight:800;font-size:clamp(40px,7vw,68px);line-height:1;margin:8px 0 10px}
+.hero p.lead{margin:0 0 18px;font-size:19px;max-width:34ch;opacity:.97}
+.hello{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px}
+.hello label{font-weight:700}
+.hello input{font:inherit;border:0;border-radius:12px;padding:8px 14px;min-width:0;width:200px;background:rgba(255,255,255,.95);color:#15302f}
+.cta{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#0a5d61;font-weight:800;font-size:18px;text-decoration:none;padding:12px 22px;border-radius:999px;box-shadow:0 8px 20px -8px rgba(0,0,0,.4);transition:transform .2s}
+.cta:hover{transform:translateY(-2px) scale(1.02)}
+.cta svg{width:20px;height:20px}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;padding:0;list-style:none}
+.stats li{background:rgba(255,255,255,.18);border-radius:16px;padding:8px 16px;font-weight:700;display:flex;gap:8px;align-items:baseline}
+.stats b{font-family:var(--f-disp);font-size:26px;font-weight:800;line-height:1}
+.art{display:block;width:100%;max-width:340px;justify-self:end;filter:drop-shadow(0 14px 22px rgba(0,0,0,.25))}
+.float{position:absolute;z-index:1;font-family:var(--f-disp);font-weight:800;color:rgba(255,255,255,.2);user-select:none;animation:drift 9s ease-in-out infinite}
+@keyframes drift{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-16px) rotate(8deg)}}
+/* steps */
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:-28px 0 30px;position:relative;z-index:3}
+.how div{background:var(--paper);border-radius:18px;padding:14px 16px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:flex-start}
+.how i{flex:none;width:34px;height:34px;border-radius:50%;background:var(--c1);color:var(--paper);display:grid;place-items:center;font:800 18px var(--f-disp);font-style:normal}
+.how b{display:block;font-size:16px}.how span{font-size:14.5px;color:var(--muted)}
+/* topic cards */
+.topic{background:var(--paper);border-radius:28px;box-shadow:var(--shadow);margin:0 0 28px;overflow:hidden;opacity:0;transform:translateY(16px);animation:rise .6s ease forwards}
+.topic:nth-of-type(2){animation-delay:.12s}.topic:nth-of-type(3){animation-delay:.22s}.topic:nth-of-type(4){animation-delay:.32s}.topic:nth-of-type(5){animation-delay:.42s}.topic:nth-of-type(6){animation-delay:.52s}
+@keyframes rise{to{opacity:1;transform:none}}
+.th{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:22px 26px;color:#fff;background:var(--tc)}
+.th .no{flex:none;width:84px;height:84px;border-radius:50%;background:#fff3d6;color:var(--tc);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--f-disp);font-weight:800;line-height:1}
+.th .no small{font-size:13px}.th .no span{font-size:42px}
+.th h2{margin:0;font-family:var(--f-disp);font-weight:800;font-size:clamp(26px,4.4vw,38px);line-height:1.05}
+.th p{margin:2px 0 0;font-weight:600;opacity:.95}
+.th .grow{flex:1 1 220px;min-width:0}
+.meter{display:flex;flex-direction:column;align-items:flex-end;gap:6px;min-width:150px}
+.meter .bar{width:150px;height:10px;border-radius:99px;background:rgba(255,255,255,.3);overflow:hidden}
+.meter .bar i{display:block;height:100%;background:#fff;border-radius:99px;transition:width .8s ease}
+.meter .st{display:flex;gap:2px;font-weight:700;font-size:14px;align-items:center}
+.meter svg{width:18px;height:18px;fill:#ffd24a}
+.tb2{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:22px;padding:22px 26px 26px}
+.ov{display:block;text-decoration:none;border-radius:18px;overflow:hidden;position:relative;background:var(--soft);border:2px solid var(--line);transition:transform .25s,box-shadow .25s}
+.ov:hover{transform:translateY(-3px) rotate(-.4deg);box-shadow:var(--shadow)}
+.ov .crop{height:300px;overflow:hidden;position:relative}
+.ov img{width:100%;display:block}
+.ov .crop::after{content:"";position:absolute;inset:auto 0 0;height:90px;background:linear-gradient(transparent,var(--soft))}
+.ov span.lab{display:flex;align-items:center;gap:8px;justify-content:center;padding:12px;font-weight:800;color:var(--tc)}
+/* journey */
+.path{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.stop{position:relative}
+.stop a{display:flex;flex-direction:column;gap:6px;height:100%;text-decoration:none;background:var(--bg);border:2px solid var(--line);border-radius:18px;padding:14px 16px;transition:transform .2s,border-color .2s,box-shadow .2s}
+.stop a:hover{transform:translateY(-3px);border-color:var(--tc);box-shadow:var(--shadow)}
+.stop .top{display:flex;align-items:center;gap:10px}
+.stop .num{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font:800 18px var(--f-disp);background:var(--soft);color:var(--ink)}
+.stop .nm{font-weight:800;line-height:1.2}
+.stop .th2{font-size:14px;color:var(--muted);margin:0}
+.stop .res{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;font-weight:700;font-size:14px}
+.chip{border-radius:99px;padding:2px 12px;background:var(--soft);color:var(--muted)}
+.stop.done .num{background:var(--tc);color:#fff}
+.stop.done a{background:var(--paper)}
+.stop.r-gioi .chip{background:var(--gioi);color:#fff}.stop.r-kha .chip{background:var(--kha);color:#fff}.stop.r-tb .chip{background:var(--tb);color:#fff}.stop.r-low .chip{background:var(--muted);color:var(--paper)}
+.stop .stars{display:flex;gap:1px}.stop .stars svg{width:18px;height:18px;fill:var(--line)}.stop .stars svg.on{fill:#f5b100}
+.stop.next a{border-color:var(--focus);box-shadow:0 0 0 4px rgba(240,138,16,.18)}
+.stop.next::before{content:"Làm tiếp";position:absolute;top:-10px;right:14px;background:var(--focus);color:#15302f;font-weight:800;font-size:12px;padding:2px 10px;border-radius:99px;z-index:2;animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.08)}}
+.badge{display:none;margin:0 26px 24px;padding:14px 18px;border-radius:18px;background:linear-gradient(90deg,#fff3d6,#ffe39a);color:#6b4300;font-weight:800;align-items:center;gap:12px}
+.badge.on{display:flex}.badge svg{width:30px;height:30px;fill:#f5b100;flex:none}
+.foot{text-align:center;color:var(--muted);font-size:14px;margin-top:10px}
+.foot button{font:inherit;background:none;border:0;color:var(--muted);text-decoration:underline;cursor:pointer;padding:4px 8px}
+.foot .ask{display:none;gap:8px;justify-content:center;align-items:center;margin-top:6px}
+.foot .ask.on{display:flex}
+.foot .ask button{background:var(--gioi);color:#fff;border-radius:10px;text-decoration:none;padding:6px 14px;font-weight:700}
+.foot .ask button.no{background:var(--soft);color:var(--ink)}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr}.art{display:none}.how{grid-template-columns:1fr;margin-top:-22px}.tb2{grid-template-columns:1fr}.ov .crop{height:220px}}
+@media (max-width:520px){.path{grid-template-columns:1fr}.meter{align-items:flex-start}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.topic{opacity:1;transform:none}}
+</style></head><body>
+<header class="hero">
+<span class="float" style="left:4%;top:18%;font-size:64px">+</span><span class="float" style="left:44%;top:6%;font-size:48px;animation-delay:-3s">÷</span>
+<span class="float" style="left:58%;bottom:8%;font-size:72px;animation-delay:-5s">×</span><span class="float" style="left:90%;top:14%;font-size:56px;animation-delay:-2s">=</span><span class="float" style="left:22%;bottom:4%;font-size:52px;animation-delay:-7s">%</span>
+<div class="wrap">
+<div>
+<p class="eyebrow">Toán 5 · Kết nối tri thức với cuộc sống</p>
+<h1>Hành trình<br>chinh phục Toán 5</h1>
+<p class="lead">Mỗi đề làm xong là một bậc thang. Leo đủ 36 bậc là em đã chinh phục cả học kì 1 của Toán 5.</p>
+<div class="hello"><label for="nm">Tên của em</label><input id="nm" autocomplete="off" placeholder="Viết tên vào đây"><span id="greet" style="font-weight:800"></span></div>
+<a class="cta" id="go" href="#cd1"><span id="goTxt">Bắt đầu thôi</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<ul class="stats"><li><b id="sDone">0</b> / 36 đề</li><li><b id="sStar">0</b> / 108 sao</li><li><b id="sBest">–</b> điểm cao nhất</li></ul>
+</div>
+<svg class="art" viewBox="0 0 340 300" role="img" aria-label="Những bậc thang dẫn lên ngôi sao">
+<g><rect x="20" y="236" width="300" height="46" rx="10" fill="#fff" opacity=".95"/><rect x="62" y="190" width="258" height="46" rx="10" fill="#ffe39a"/><rect x="104" y="144" width="216" height="46" rx="10" fill="#ffc15c"/><rect x="146" y="98" width="174" height="46" rx="10" fill="#ff9a5c"/><rect x="188" y="52" width="132" height="46" rx="10" fill="#e8741a"/></g>
+<g fill="#0a5d61" font-family="Baloo 2,Be Vietnam Pro,sans-serif" font-weight="800" font-size="28" text-anchor="middle"><text x="170" y="269">1</text><text x="212" y="223">9</text><text x="254" y="177" fill="#7a3e00">18</text><text x="296" y="131" fill="#fff">27</text><text x="254" y="85" fill="#fff">36</text></g>
+<g transform="translate(254 6)"><path d="M32 4l7.6 15.4 17 2.5-12.3 12 2.9 16.9L32 42.6 16.8 50.8l2.9-16.9-12.3-12 17-2.5z" fill="#ffd24a" stroke="#fff" stroke-width="3" stroke-linejoin="round"><animateTransform attributeName="transform" type="rotate" values="-6 32 28;6 32 28;-6 32 28" dur="3s" repeatCount="indefinite"/></path></g>
+</svg>
+</div></header>
+<main class="wrap">
+<div class="how"><div><i>1</i><p style="margin:0"><b>Xem bức tranh tổng quan</b><span>Nhớ lại nội dung từng bài trong chủ đề.</span></p></div><div><i>2</i><p style="margin:0"><b>Làm một đề kiểm tra</b><span>24 câu, ba mức Trung bình, Khá, Giỏi.</span></p></div><div><i>3</i><p style="margin:0"><b>Đọc lời giải, làm đề mới</b><span>Sai câu nào, xem kĩ câu đó rồi thử đề khác.</span></p></div></div>
+<div id="topics"></div>
+<div class="foot">Tiến trình được lưu ngay trên máy này, chỉ cần dùng cùng một trình duyệt.<br><button id="reset" type="button">Xóa tiến trình</button>
+<div class="ask" id="ask"><span>Xóa hết điểm đã lưu?</span><button type="button" id="yes">Xóa</button><button type="button" class="no" id="no">Thôi</button></div></div>
+</main>
+<script>
+var DATA=__DATA__;
+var STAR='<svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 1-5.1 4.9 1.2 7L12 18l-6.1 3.4 1.2-7L2 9.5l7-1z"/></svg>';
+function rd(id){try{return JSON.parse(localStorage.getItem('mia5:'+id)||'null')}catch(e){return null}}
+function rank(pc){return pc>=80?['Giỏi','gioi',3]:pc>=60?['Khá','kha',2]:pc>=40?['Trung bình','tb',1]:['Cần cố gắng','low',0]}
+function fmt(v){return String(Math.round(v*10)/10).replace('.',',')}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function render(){
+  var root=document.getElementById('topics'),html='',done=0,stars=0,best=0,nextHref=null,nextTxt='Bắt đầu thôi';
+  DATA.forEach(function(cd,ci){
+    var d=0,s=0,firstNew=-1;
+    var items=cd.tests.map(function(t,i){
+      var r=rd(t.id),rk=null;
+      if(r){d++;rk=rank(r.best/r.max*100);s+=rk[2];done++;stars+=rk[2];best=Math.max(best,r.best)}
+      else if(firstNew<0) firstNew=i;
+      return {t:t,r:r,rk:rk,i:i};
+    });
+    if(nextHref===null&&firstNew>=0){nextHref=cd.dir+'/'+cd.tests[firstNew].file;nextTxt=(done===0&&ci===0)?'Bắt đầu thôi':'Làm đề tiếp theo'}
+    var tc='var(--c'+(ci+1)+')';
+    html+='<section class="topic" id="cd'+cd.n+'" style="--tc:'+tc+'"><div class="th"><div class="no"><small>Chủ đề</small><span>'+cd.n+'</span></div><div class="grow"><h2>'+esc(cd.name)+'</h2><p>'+esc(cd.range)+' · 6 đề kiểm tra</p></div>'+
+      '<div class="meter"><div class="bar"><i style="width:'+(d/6*100)+'%"></i></div><div class="st">'+d+'/6 đề · '+s+'/18 '+STAR+'</div></div></div>'+
+      '<div class="badge'+(d===6?' on':'')+'">'+STAR+'<span>Chúc mừng em! Em đã làm đủ 6 đề của chủ đề này.</span></div>'+
+      '<div class="tb2"><a class="ov" href="'+cd.dir+'/'+cd.overview+'.html"><div class="crop"><img src="'+cd.dir+'/'+cd.overview+'.png" alt="Bức tranh tổng quan Chủ đề '+cd.n+'" loading="lazy"></div><span class="lab">Xem bức tranh tổng quan →</span></a>'+
+      '<ol class="path">'+items.map(function(x){
+        var cls='stop'+(x.r?' done r-'+x.rk[1]:'')+(x.i===firstNew?' next':'');
+        var res=x.r?'<span class="chip">'+x.rk[0]+'</span><span>'+fmt(x.r.best)+'/'+fmt(x.r.max)+'</span>':'<span class="chip">Chưa làm</span><span></span>';
+        var st='';for(var k=0;k<3;k++)st+=(x.r&&k<x.rk[2]?STAR.replace('<svg','<svg class="on"'):STAR);
+        return '<li class="'+cls+'"><a href="'+cd.dir+'/'+x.t.file+'"><div class="top"><span class="num">'+(x.i+1)+'</span><span class="nm">'+esc(x.t.name)+'</span></div><p class="th2">'+esc(x.t.theme)+'</p><div class="res">'+res+'</div><div class="stars" aria-label="'+(x.r?x.rk[2]:0)+' sao">'+st+'</div></a></li>';
+      }).join('')+'</ol></div></section>';
+  });
+  root.innerHTML=html;
+  document.getElementById('sDone').textContent=done;document.getElementById('sStar').textContent=stars;document.getElementById('sBest').textContent=best?fmt(best):'–';
+  var go=document.getElementById('go');go.href=nextHref||'#cd1';document.getElementById('goTxt').textContent=nextHref?nextTxt:'Ôn lại các đề';
+}
+var nm=document.getElementById('nm'),greet=document.getElementById('greet');
+function hello(){var v=(nm.value||'').trim();greet.textContent=v?'Chào '+v+'!':''}
+try{nm.value=localStorage.getItem('mia5:name')||''}catch(e){}
+nm.addEventListener('input',function(){try{localStorage.setItem('mia5:name',nm.value)}catch(e){}hello()});hello();
+document.getElementById('reset').onclick=function(){document.getElementById('ask').classList.add('on')};
+document.getElementById('no').onclick=function(){document.getElementById('ask').classList.remove('on')};
+document.getElementById('yes').onclick=function(){try{Object.keys(localStorage).filter(function(k){return k.indexOf('mia5:cd')===0}).forEach(function(k){localStorage.removeItem(k)})}catch(e){}document.getElementById('ask').classList.remove('on');render()};
+render();
+</script></body></html>'''
+html=html.replace('__FONTS__',fonts).replace('__DATA__',json.dumps(data,ensure_ascii=False))
+out=W/'out'/ROOT; out.mkdir(parents=True,exist_ok=True)
+(out/'index.html').write_text(html); print('index',len(html)//1024,'KB')

@@ -1,0 +1,14 @@
+# Sách giáo khoa: KHÔNG đưa lên repo public
+*.pdf
+SGK*/
+sach*/
+book*/
+src/pg/
+src/rd/
+# Kết quả build tạm và công cụ
+generator/out/
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
