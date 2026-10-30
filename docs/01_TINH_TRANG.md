@@ -6,7 +6,7 @@ Cập nhật 30/10/2026. Bản lịch sử trước khi gom tài liệu nằm tr
 
 - Website: https://okeydokey8525.github.io/Lop_5_Mia/ — GitHub Pages qua Actions.
 - Toán 5 tập một: 6 chủ đề, 36 đề, mỗi đề 24 câu/100 điểm; ID `cd{n}-de{i}` giữ nguyên.
-- Tiếng Anh 5 tập một: Unit 1 — All about me!, 1 tổng quan HTML/PNG + 6 đề (144 câu). Các hồ sơ và câu hỏi tự soạn, bám trang 10–15 đã đọc. Có mẫu nghe riêng để thử, chưa tích hợp nghe vào 6 đề và chưa có chấm nói.
+- Tiếng Anh 5 tập một: Unit 1 — All about me!, 1 tổng quan HTML/PNG + 6 đề (144 câu). Các hồ sơ và câu hỏi tự soạn, bám trang 10–15 đã đọc. Đã tích hợp nghe vào 6 đề (6 câu nghe/đề), vẫn có mẫu nghe riêng, chưa có chấm nói.
 - Toàn site: 42 đề chính thức, 53 HTML, 7 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
 - Giao diện hồng anh đào, tối màu tím mận; reader trên màn hình ≤820px, poster để xem/in. Tiến độ theo origin/trình duyệt, không đồng bộ thiết bị.
 - Chủ repo đã xem Unit 1, phản hồi hình khó nhận diện và duyệt mẫu cá heo. Ngày 30/10 đã áp dụng phong cách mới cho đủ 6 tranh ở tổng quan/câu hỏi, giữ nguyên 144 câu và đáp án. Không suy rộng việc duyệt tranh thành giao làm unit tiếp theo.
@@ -48,3 +48,11 @@ Theo yêu cầu xem mẫu trước, bổ sung `TiengAnh5/Unit1_AllAboutMe/LuyenN
 Có chọn giọng tiếng Anh, thử giọng, nghe bình thường/chậm, dừng, xem lời nghe/nghĩa, kiểm tra từng câu/cả mẫu, làm lại. Nguồn: `generator/english/u01/listening.py` và `listening.html`; lời nghe và đáp án sinh từ cùng dữ kiện. Chỉ dùng giọng thiết bị, không dùng audio SGK hoặc tạo file thu âm. Phụ thuộc giọng cài sẵn/dịch vụ của trình duyệt; bản HTML tự chứa không bảo đảm phát offline trên mọi máy.
 
 QA chuyên biệt mô phỏng speech để kiểm tra điều khiển, lỗi, giọng đến trễ, timeout, chấm sai/thiếu/đúng và reset. Microsoft Edge trên máy hiện tại đã phát sinh sự kiện bắt đầu/kết thúc với Microsoft Zira en-US; đây không phải đánh giá phát âm bằng tai. Cần chủ repo nghe cả ba cấp trên thiết bị dùng thật trước khi triển khai hàng loạt. Tổng responsive hiện 53×8×2 = 848 trường hợp; các bằng chứng 832 ở trên là lịch sử trước mẫu nghe.
+
+## Unit 1 có nghe và hồng sáng — đợt triển khai đã được duyệt
+
+Chủ repo duyệt mẫu ba cấp và yêu cầu áp dụng cho Unit 1, đồng thời duyệt bảng hồng sáng. Mỗi đề hiện 24 câu = 10 TB/8 Khá/6 Giỏi, 100 điểm; thay 6 câu (vị trí 1/2, 11/14, 21/24) bằng 2 câu nghe mỗi cấp. Cộng 36 câu nghe trong 6 đề. Nội dung nghe/đáp án sinh từ cùng dữ kiện trong exam_listening.py. Không tự triển khai unit khác.
+
+ID lưu điểm mới `en-u01-de1-v2` đến `en-u01-de6-v2`; điểm cũ không nhập vào thống kê mới và không bị reset khi xóa tiến độ bộ mới. Kết quả lưu phiên bản và các câu đã dùng hỗ trợ xem lời nghe; không trừ điểm vì nghe lại/chậm/xem chữ. Sau nộp tự mở lời nghe, vẫn nghe lại được.
+
+Theme Tiếng Anh dùng chung theme.css/js ở generator/english, mặc định hồng sáng ngay cả khi OS tối; nút Sáng/Tối lưu lựa chọn riêng. Áp dụng trang chủ Anh, tổng quan/reader/PNG, sáu đề và mẫu. Màu và khóa tiến độ Toán giữ nguyên. QA chuyên biệt: tools/qa_english_unit1.js. Các mục mẫu/thống kê trước đây là lịch sử của giai đoạn trước tích hợp.

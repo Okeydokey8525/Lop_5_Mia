@@ -16,6 +16,7 @@ Giữ server chạy, mở terminal thứ hai:
 ```text
 node tools/qa.js
 node tools/qa_listening.js
+node tools/qa_english_unit1.js
 node tools/responsive.js
 ```
 
@@ -78,3 +79,7 @@ Bổ sung kiểm tra ảnh giải mã được (768×512) trong `qa.js`, giữ t
 `node tools/qa_listening.js [baseURL]` kiểm tra 6 câu/3 cấp/8 ý, phát/chậm/dừng, callback cũ sau chuyển câu, lỗi dịch vụ, giọng tải trễ, không có giọng Anh, thiếu API, timeout khi dịch vụ không bắt đầu, điểm phần/câu thiếu/biến thể chữ, làm lại và giữ nguyên storage đề. Mười trường hợp giao diện (5 chiều rộng × 2 theme) và nút tối thiểu 44px. Báo cáo trong artifacts/listening-local hoặc listening-online. Speech trong bộ này được mô phỏng để CI Linux không cần loa/giọng cài sẵn; không dùng kết quả ấy để khẳng định phát âm hay âm thanh thật đạt.
 
 Kiểm tra dịch vụ thật riêng: thao tác nút ở trình duyệt có giọng Anh, xác nhận start/end; sau đó chủ repo nghe thử bằng tai trên máy/điện thoại. Không tự thêm câu nghe vào sáu đề trước khi duyệt mẫu. Responsive toàn site sau thêm mẫu: 53 trang × 8 chiều rộng × 2 theme = 848.
+
+### Unit 1 chính thức có nghe, phiên bản 2
+
+Audit đếm đủ 6 listen/đề và 2 listen/cấp; main qa và tall hỗ trợ điền các field để kiểm tra 100/100. Chạy thêm node tools/qa_english_unit1.js [baseURL]: 36 câu nghe, điểm phần 2,5/5, mở lời nghe trước/sau nộp, hỗ trợ lưu vào kết quả, replay sau nộp, làm lại không nhân đôi listener, theme mặc định sáng khi OS tối, chuyển và lưu theme giữa các trang, thống kê/reset chỉ dùng ID -v2 và giữ dữ liệu cũ/Toán. 32 trường hợp trang/chiều rộng/theme chủ động, ngoài 848 trường hợp theo OS của responsive chung. Speech QA dùng fixture; vẫn kiểm tra phát thật bằng Edge và nghe đánh giá trên thiết bị học sinh.

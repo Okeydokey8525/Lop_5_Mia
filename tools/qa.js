@@ -17,7 +17,8 @@ async function fillCorrect(page,mode='all'){
       if(mode==='half'&&i%2) return;
       const el=document.getElementById('q'+(i+1));
       const set=(x,v)=>{x.value=v;x.dispatchEvent(new Event('input',{bubbles:true}));x.dispatchEvent(new Event('change',{bubbles:true}));};
-      if(q.type==='mc'||q.type==='pic'){const x=el.querySelectorAll('input')[q.answer];x.checked=true;x.dispatchEvent(new Event('change',{bubbles:true}));}
+      if(q.type==='listen')q.fields.forEach((f,k)=>set(el.querySelector('[data-listen-field="'+k+'"]'),f.answer));
+      else if(q.type==='mc'||q.type==='pic'){const x=el.querySelectorAll('input')[q.answer];x.checked=true;x.dispatchEvent(new Event('change',{bubbles:true}));}
       else if(q.type==='tf')q.items.forEach((it,k)=>{const x=el.querySelector(`input[name="q${i}_${k}"][value="${it.a?'d':'s'}"]`);x.checked=true;x.dispatchEvent(new Event('change',{bubbles:true}));});
       else if(q.type==='order'||q.type==='reorder')q.items.forEach((_,k)=>el.querySelector(`[data-add="${k}"]`).click());
       else if(q.type==='text')set(el.querySelector('.text-in'),q.answers[0]);
@@ -124,7 +125,7 @@ async function main(){
     await page.click('#goBtn');await page.locator('.score').waitFor();
     assert.equal(await page.locator('#q3 .fb.no,#q10 .fb.no').count(),2);assert.equal(await page.locator('#q7 .fb.part').count(),1);
     assert.equal(await page.locator('#q15 .fb.no').count(),1);
-    assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('mia5:en-u01-de1')).best),100);
+    assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('mia5:en-u01-de1-v2')).best),100);
     // Exercise incomplete submission, partial marking, retry and best-score retention.
     const first=CATALOG.tests.find(t=>t.subject==='math').file;await go(first);await fillCorrect(page,'half');await page.click('#goBtn');await page.locator('#yes').waitFor();await page.click('#keep');assert.equal(await page.locator('.score').count(),0);
     await page.click('#goBtn');await page.click('#yes');await page.locator('.score').waitFor();assert.doesNotMatch(await page.locator('.score').textContent(),/^100\s*\//);

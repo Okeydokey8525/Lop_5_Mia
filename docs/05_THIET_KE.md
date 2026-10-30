@@ -64,3 +64,7 @@ Màu nhận diện Unit 1: `#8B4E84`, nền `#F2E4F1` (tím hoa); chế độ t�
 ## Phong cách tranh từ vựng đã duyệt — 30/10/2026
 
 Unit 1 dùng minh họa nét mềm, đổ bóng nhẹ, màu dịu theo mẫu cá heo chủ repo duyệt. Tranh phải rõ chủ thể ở kích thước câu hỏi, không ghi đáp án lên hình. Thành phố/đồng quê cần bối cảnh dễ phân biệt; hình học Toán vẫn dùng SVG chính xác. Thực hiện theo `docs/playbooks/TRANH_MINH_HOA.md`; nguồn/prompt ở `generator/english/u01/images/`.
+
+## Hồng sáng Tiếng Anh — chủ repo duyệt 30/10/2026
+
+Nguồn generator/english/theme.css và theme.js. Nền #FFF0F6, thẻ #FFF8FC, đầu trang #FFE0EE → #FFC2DD, nút #FFB3D1 với chữ #702344, viền #F2A7C7, chữ chính #54233D. Mặc định sáng độc lập prefers-color-scheme. Nút Sáng/Tối lưu riêng bằng mia5:ui-en-theme, dùng chung các trang Anh; Math vẫn theo thiết kế cũ. Không thêm bộ lọc CSS phủ lên tranh; PNG tổng quan được sinh lại từ cùng HTML.

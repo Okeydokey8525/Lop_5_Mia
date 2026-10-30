@@ -10,9 +10,9 @@ from english.u01.listening import render_listening
 W=Path(__file__).resolve().parent
 OUT=W/'out'/'TiengAnh5'
 UNIT='Unit1_AllAboutMe'
-META=dict(subject='en',lessonLabel='Phần',book='Tiếng Anh 5 · Global Success · Tập một',
+META=dict(subject='en',version=2,lessonLabel='Phần',book='Tiếng Anh 5 · Global Success · Tập một',
           title='Unit 1 · All about me!',topic='Giới thiệu bản thân và điều em yêu thích',range='Trang 10–15',minutes=40,
-          tip='Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp.')
+          tip='Mỗi đề có 6 câu nghe, chia đều ba mức. Xem lời nghe sẽ ghi nhận đã dùng hỗ trợ, không trừ điểm. Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp.')
 LESSONS={1:'Thông tin bản thân',2:'Điều em yêu thích',3:'Đọc và viết'}
 LEVELS=[dict(id=lv,name=name,desc=desc,stars=k+1,pts=pts) for k,(lv,name,desc,pts) in enumerate([
     ('tb','Mức 1 · Trung bình','Nhận biết từ và mẫu câu cơ bản',3),
@@ -29,7 +29,7 @@ def main():
     for i,((slug,name,theme),questions) in enumerate(zip(TESTS,build_tests()),1):
         data='window.TEST_FN=function(H){return MKEN1('+json.dumps(questions,ensure_ascii=False,indent=1)+');};\n'
         (source/'tests'/f'de{i:02d}.js').write_text(data,encoding='utf-8',newline='\n')
-        extra=dict(id=f'en-u01-de{i}',title=f'Đề {i} · {name}',theme=theme,home='../index.html')
+        extra=dict(id=f'en-u01-de{i}-v2',title=f'Đề {i} · {name}',theme=theme,home='../index.html')
         if i>1:extra['prev']=f'De{i-1}_{TESTS[i-2][0]}.html'
         if i<6:extra['next']=f'De{i+1}_{TESTS[i][0]}.html'
         (folder/f'De{i}_{slug}.html').write_text(quiz_page(f'Tiếng Anh 5 · Unit 1 · Đề {i} · {name}',data,extra,wrapper),encoding='utf-8',newline='\n')
@@ -52,9 +52,10 @@ def main():
                     ['Thông tin bản thân','Điều yêu thích','Đọc và viết'],
                     'Một chút về em, một bước làm quen với bạn.','Ôn tên, lớp, nơi sống và những điều yêu thích. Đọc từng bài, rồi thử sáu đề theo nhịp của em.',
                     'Nội dung ôn tập tự soạn, bám Unit 1 · Global Success 5, tập một')
+    for old,new in {'#FFF5F8':'#FFF0F6','#4A2433':'#54233D','#FCE4EC':'#FFE0EE','#F8BBD0':'#FFC2DD','#8B4E84':'#A33163','#F2E4F1':'#FFE0EE','#65375F':'#702344','#9A5545':'#A33163','#FCE7DF':'#FFE5F0','#713C30':'#702344','#4D7395':'#A33163','#E5EFF8':'#FFEAF4','#35516B':'#702344'}.items():sheet=sheet.replace(old,new)
     (folder/'TongQuan_Unit1.html').write_text(overview_page('Tiếng Anh 5 · Unit 1 · Tổng quan',sheet,cd,'#8B4E84'),encoding='utf-8',newline='\n')
     data=[dict(n=1,dir=UNIT,name='All about me!',range='Unit 1 · Trang 10–15',overview='TongQuan_Unit1',
-               tests=[dict(id=f'en-u01-de{i}',file=f'De{i}_{slug}.html',name=name,theme=theme) for i,(slug,name,theme) in enumerate(TESTS,1)])]
+               tests=[dict(id=f'en-u01-de{i}-v2',file=f'De{i}_{slug}.html',name=name,theme=theme) for i,(slug,name,theme) in enumerate(TESTS,1)])]
     index=render_index(data).replace('Toán 5','Tiếng Anh 5').replace('Kết nối tri thức với cuộc sống','Global Success')
     index=index.replace('Mỗi đề làm xong là một bậc thang. Leo đủ 36 bậc là em đã chinh phục cả học kì 1 của Tiếng Anh 5.',
                         'Bắt đầu với Unit 1: giới thiệu bản thân và những điều em yêu thích. Sáu đề để em luyện từng bước.')
@@ -62,8 +63,14 @@ def main():
     for old,new in [('>9</text>','>2</text>'),('>18</text>','>3</text>'),('>27</text>','>4</text>'),('>36</text>','>6</text>')]:index=index.replace(old,new)
     for symbol,letter in [('+','A'),('÷','B'),('×','C'),('=','?'),('%','!')]:index=index.replace('>'+symbol+'</span>','>'+letter+'</span>')
     index=index.replace('</head>','<style>:root{--c1:#8B4E84;--c1s:#F2E4F1}@media(prefers-color-scheme:dark){:root{--c1:#DAB1D5;--c1s:#3F2B3D}}</style></head>')
-    index=index.replace('</div></header>', '</div></header><section class="wrap" style="margin-top:24px;margin-bottom:36px"><a class="cta" href="Unit1_AllAboutMe/LuyenNghe_Mau.html">🔊 Thử luyện nghe Unit 1 · 3 cấp độ</a><p>Bản mẫu 6 câu nghe để thử giọng và cách làm, chưa tính vào điểm sáu đề.</p></section>',1)
+    index=index.replace("k.indexOf('mia5:en-')===0","/^mia5:en-u01-de[1-6]-v2$/.test(k)")
+    index=index.replace('</div></header>', '</div></header><section class="wrap" style="margin-top:24px;margin-bottom:36px"><a class="cta" href="Unit1_AllAboutMe/LuyenNghe_Mau.html">🔊 Thử luyện nghe Unit 1 · 3 cấp độ</a><p>Mỗi đề bên dưới đã có 6 câu nghe. Bản mẫu riêng vẫn dùng để thử giọng. Điểm bộ đề có nghe được tính lại; điểm cũ vẫn được giữ trên trình duyệt.</p></section>',1)
     (OUT/'index.html').write_text(index,encoding='utf-8',newline='\n')
+    # Shared English-only theme and speech module, embedded for standalone export.
+    for target in OUT.rglob('*.html'):
+        html=target.read_text(encoding='utf-8')
+        extra=''.join('<style>'+ (W/'english'/name).read_text(encoding='utf-8-sig')+'</style>' if name.endswith('.css') else '<script>'+(W/'english'/name).read_text(encoding='utf-8-sig')+'</script>' for name in ['theme.css','theme.js','speech.js'])
+        target.write_text(html.replace('</head>',extra+'</head>'),encoding='utf-8',newline='\n')
     print('English built: Unit 1 overview + 6 tests (144 questions)')
 
 

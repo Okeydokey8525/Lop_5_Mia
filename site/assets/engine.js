@@ -96,7 +96,7 @@ function shuffled(n){
   do{ for(i=n-1;i>0;i--){j=Math.floor(Math.random()*(i+1));t=a[i];a[i]=a[j];a[j]=t;} }while(n>1&&a.every(function(x,k){return x===k}));
   return a;
 }
-var ordState={};
+var ordState={}, speechController=null, supportUsed=new Set();
 function normalizeText(s,exactForm){
   s=String(s).normalize('NFKC').toLowerCase().replace(/[‘’]/g,"'").trim().replace(/\s+/g,' ').replace(/[.!?]+$/,'').trim().replace(/\bfavorite\b/g,'favourite').replace(/\bcolor\b/g,'colour');
   if(exactForm)return s;
@@ -132,6 +132,13 @@ function buildQ(q,passageRef){
   var h='<div class="qh"><span class="qn">Câu '+(q.i+1)+'</span><span class="qt">'+esc(T.meta.lessonLabel||'Bài')+' '+q.lesson+'</span><span class="qp">'+pts(q.pts)+' điểm</span></div>'+passage+'<p class="qstem" lang="'+(T.meta.subject==='en'?'en':'vi')+'">'+fmt(q.stem)+'</p>'+(q.fig||'')+'<div class="qa" data-qa></div><div class="fb" data-fb hidden></div>';
   el.innerHTML=h;
   var host=$('[data-qa]',el), L='ABCD';
+  if(q.type==='listen'){
+    var block=document.createElement('div');block.className='listen-block';block._speechText=q.speech;
+    block.innerHTML='<div class="speech-controls"><button type="button" data-speech-play>🔊 Nghe</button><button type="button" data-speech-play data-slow>🐢 Nghe chậm</button><button type="button" data-speech-stop disabled>■ Dừng</button></div><p class="speech-state" role="status"></p><details class="listen-transcript"><summary>Xem lời nghe (hỗ trợ)</summary><p lang="en">'+esc(q.transcript)+'</p></details><p class="listen-support" role="status"></p>';
+    block.querySelector('details').addEventListener('toggle',function(){if(this.open&&!submitted){supportUsed.add(q.i);block.querySelector('.listen-support').textContent='Đã dùng hỗ trợ xem lời nghe; không trừ điểm.';}});
+    host.before(block);host.className='qa listen-fields';
+    host.innerHTML=q.fields.map(function(f,k){return '<fieldset><legend>'+esc(f.label)+'</legend>'+(f.options?'<select class="in" data-listen-field="'+k+'" aria-label="'+esc(f.label)+'"><option value="">Chọn đáp án</option>'+f.options.map(function(v){return '<option>'+esc(v)+'</option>'}).join('')+'</select>':'<input class="in text-in" data-listen-field="'+k+'" aria-label="'+esc(f.label)+'" autocomplete="off" spellcheck="false" autocapitalize="off">')+'</fieldset>';}).join('');
+  }else
   if(q.type==='mc'||q.type==='pic'){
     host.className='qa opts';
     host.innerHTML=q.opts.map(function(o,k){return '<label class="opt"><input type="radio" name="q'+q.i+'" value="'+k+'"><span class="ol">'+L[k]+'</span><span>'+fmt(o)+'</span></label>'}).join('');
@@ -180,6 +187,7 @@ function gradeBlank(b,v){
 }
 function isDone(q,el){
   var host=$('[data-qa]',el);
+  if(q.type==='listen')return $$('[data-listen-field]',host).every(function(x){return x.value.trim()!==''});
   if(q.type==='mc'||q.type==='pic') return !!$('input:checked',host);
   if(q.type==='text')return $('.text-in',host).value.trim()!=='';
   if(q.type==='match')return $$('select',host).every(function(s){return s.value!==''});
@@ -189,6 +197,9 @@ function isDone(q,el){
 }
 function gradeQ(q,el){
   var host=$('[data-qa]',el), notes=[], frac=0, ansHtml='', L='ABCD';
+  if(q.type==='listen'){
+    var correct=0;ansHtml=q.fields.map(function(f,k){var input=$('[data-listen-field="'+k+'"]',host),right=textIsCorrect(input.value,[f.answer].concat(f.alternatives||[]));if(right)correct++;input.classList.add(right?'answer-good':'answer-bad');return esc(f.label)+' '+esc(f.answer);}).join('<br>');frac=correct/q.fields.length;
+  }else
   if(q.type==='mc'||q.type==='pic'){
     var c=$('input:checked',host), pick=c?+c.value:-1;
     frac=pick===q.answer?1:0;
@@ -232,6 +243,7 @@ function gradeQ(q,el){
 /* ---------- trang ---------- */
 var root=$('#app'), submitted=false, startedAt=0, timerId=0;
 function build(){
+  if(speechController){speechController.dispose();speechController=null;}supportUsed=new Set();
   submitted=false; startedAt=0; clearInterval(timerId); ordState={};
   var m=T.meta, total=Q.reduce(function(s,q){return s+q.pts},0);
   var html='<header class="hero"><div class="hero-in">'+(m.home?'<a class="back" href="'+esc(m.home)+'">← Trang chủ</a>':'')+'<p class="eyebrow">'+esc(m.book)+'</p><h1>'+esc(m.title)+'</h1><p class="sub">'+esc(m.topic)+' · '+esc(m.range)+'</p>'+(m.theme?'<p class="theme">'+esc(m.theme)+'</p>':'')+
@@ -250,6 +262,7 @@ function build(){
     qs.forEach(function(q){var ref=q.passage&&q.passage===previousPassage?passageQ:null;wrap.appendChild(buildQ(q,ref));if(q.passage&&ref===null)passageQ=q.i;previousPassage=q.passage||null;});
     main.appendChild(sec);
   });
+  if(Q.some(function(q){return q.type==='listen'})){var panel=document.createElement('section');panel.className='exam-voice-panel';$('.intro').after(panel);speechController=window.MiaSpeech.mount(panel,main,startTimer);}
   bar('run'); progress();
 }
 function bar(mode,extra){
@@ -284,11 +297,12 @@ function save(score,max,rank,secs){
   try{
     var k='mia5:'+T.meta.id, old=JSON.parse(localStorage.getItem(k)||'null')||{tries:0,best:0};
     var sc=Math.round(score*10)/10;
-    localStorage.setItem(k,JSON.stringify({tries:old.tries+1,best:Math.max(old.best,sc),last:sc,max:max,rank:rank,secs:secs,at:Date.now()}));
+    localStorage.setItem(k,JSON.stringify({tries:old.tries+1,best:Math.max(old.best,sc),last:sc,max:max,rank:rank,secs:secs,at:Date.now(),version:T.meta.version||1,supportUsed:Array.from(supportUsed)}));
   }catch(e){}
 }
 function submit(){
-  if(submitted) return; submitted=true; clearInterval(timerId);
+  if(submitted) return; if(speechController)speechController.stop();submitted=true; clearInterval(timerId);
+  $$('.listen-transcript[open]').forEach(function(d){var article=d.closest('.q');supportUsed.add(Number(article.id.slice(1))-1)});
   var secs=startedAt?Math.round((Date.now()-startedAt)/1000):0;
   var res=Q.map(function(q){
     var el=$('#q'+(q.i+1)), g=gradeQ(q,el), earned=Math.round(q.pts*g.frac*10)/10;
@@ -298,6 +312,7 @@ function submit(){
     fb.innerHTML='<p class="vd">'+vd+'</p><p class="ans">'+(st==='ok'?'Đáp án: ':'Đáp án đúng: ')+g.ansHtml+'</p>'+(g.notes.length?'<p class="note">'+esc(g.notes[0])+'</p>':'')+'<p class="why">'+fmt(q.why)+'</p>';
     return {q:q,earned:earned,st:st};
   });
+  Q.filter(function(q){return q.type==='listen'}).forEach(function(q){var d=$('#q'+(q.i+1)+' .listen-transcript');d.open=true;});if(speechController)speechController.refresh();
   var total=res.reduce(function(s,r){return s+r.earned},0), max=Q.reduce(function(s,q){return s+q.pts},0), pc=total/max*100;
   var rank=pc>=80?'Giỏi':pc>=60?'Khá':pc>=40?'Trung bình':'Cần cố gắng thêm';
   var name=($('#stuName').value||'').trim();
@@ -314,7 +329,7 @@ function submit(){
           lvPc[T.levels[2].id]<0.6?(T.meta.subject==='en'?'Em làm tốt hai mức đầu. Hãy luyện thêm đọc hiểu và viết câu ở mức Giỏi.':'Em làm tốt hai mức đầu. Các bài toán có lời văn và tính thuận tiện ở mức Giỏi cần luyện thêm.'):'Em nắm rất vững phần này. Em có thể sang chủ đề tiếp theo.';
   var mm=Math.floor(secs/60), ss=secs%60;
   $('#result').innerHTML='<section class="result" id="resultBox"><h2>'+(name?'Kết quả của '+esc(name):'Kết quả bài làm')+'</h2><div class="score"><b>'+pts(total)+'</b><span>/ '+pts(max)+' điểm</span><span class="rank">'+rank+'</span></div>'+
-    '<p>Thời gian làm bài: '+mm+' phút '+ss+' giây (đề này dự kiến '+T.meta.minutes+' phút).</p><div class="lvr">'+rows+'</div>'+
+    (T.meta.subject==='en'?'<p>Bản đề có nghe · Đã dùng hỗ trợ xem lời nghe: '+supportUsed.size+' câu. Điểm được giữ nguyên.</p>':'')+'<p>Thời gian làm bài: '+mm+' phút '+ss+' giây (đề này dự kiến '+T.meta.minutes+' phút).</p><div class="lvr">'+rows+'</div>'+
     '<p>'+adv+'</p>'+(wl.length?'<p class="review">Phần cần xem lại: '+wl.join('; ')+'.</p>':'<p class="review">Em đã làm đúng tất cả các câu.</p>')+
     '<div class="actions"><button class="btn" type="button" id="firstWrong">Xem các câu chưa đúng</button><button class="btn alt" type="button" id="redo">Làm lại bài</button></div></section>';
   $('#firstWrong').onclick=function(){var w=res.filter(function(r){return r.st!=='ok'})[0]; var t=w?$('#q'+(w.q.i+1)):$('#test'); t.scrollIntoView({behavior:'smooth',block:'start'})};

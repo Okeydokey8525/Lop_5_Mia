@@ -43,3 +43,9 @@ Dùng `n(x)` trong `g4lib.py`: dấu phẩy thập phân, nhóm nghìn bằng kh
 ## Kiểm tra dạng sắp xếp
 
 Engine so sánh thứ tự chỉ số, không tự tính giá trị của chuỗi. `items` phải được khai báo theo đáp án đúng; thứ tự hiển thị được xáo trước khi làm. `generator/audit_order.js` tính độc lập giá trị số, phân số, số đo, phép tính và diện tích/chu vi của các mẫu đang dùng; câu sắp tên học sinh được đối chiếu bảng chiều cao. Mẫu chưa được hỗ trợ phải báo lỗi để bổ sung validator, không tự bỏ qua.
+
+## listen — câu nghe trong Unit 1 phiên bản 2
+
+`type: 'listen'`, `speech` (lời đọc), `transcript` (lời nghe hiển thị), `fields: [{label, answer, options: [...]/null, alternatives: [...]}]`. Có thể có fig minh họa. Mỗi field được chấm một phần bằng nhau của điểm câu; ví dụ 1/2 ý của câu 5 điểm = 2,5 điểm. Cùng dữ kiện sinh lời nghe và đáp án, không gõ hai nguồn độc lập. Lớp 5A có thể đọc thành “Class five A” nhưng transcript vẫn là “Class 5A”.
+
+Engine dùng speech.js chỉ khi có câu listen. Lời nghe ẩn trước nộp, mở thủ công ghi supportUsed; sau nộp tự mở. Replay sau nộp được phép, các ô trả lời khóa. Làm lại reset hỗ trợ và giải phóng speech controller cũ. ID đề Anh đổi hậu tố -v2; bản cũ giữ trong localStorage và không được cộng vào thống kê bản mới.

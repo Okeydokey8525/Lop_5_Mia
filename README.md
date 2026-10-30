@@ -38,3 +38,5 @@ Trang Tiếng Anh: https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/. Toàn s
 Bài học sau sửa Unit 1 và kế hoạch tiếp theo nằm trong `docs/breakdowns/`; quy trình tranh ở `docs/playbooks/TRANH_MINH_HOA.md`; skill dự án ở `.agents/skills/mia-learning-illustrations/SKILL.md`. Cây máy/repo hiện hành nằm trong docs/08, snapshot cũ ở docs/history.
 
 Mẫu nghe Unit 1 (6 câu, 3 cấp, chờ nghe thử): https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/Unit1_AllAboutMe/LuyenNghe_Mau.html. Chạy kiểm tra riêng: `node tools/qa_listening.js`; chưa tính vào điểm/sao sáu đề.
+
+Unit 1 hiện đã có 6 câu nghe trong mỗi đề (2 mỗi cấp), vẫn 24 câu/100 điểm. Phần Anh mặc định hồng sáng, có nút Sáng/Tối. Điểm bộ có nghe dùng phiên bản mới, dữ liệu cũ vẫn giữ. Kiểm tra thêm: node tools/qa_english_unit1.js.

@@ -30,7 +30,7 @@
   <footer class="wrap">Điểm được lưu trong trình duyệt trên thiết bị này.<br>Dùng cùng địa chỉ web và trình duyệt để xem lại tiến độ.</footer>
   <script>
     (function(){var done=0,stars=0;try{for(var c=1;c<=6;c++)for(var i=1;i<=6;i++){var r=JSON.parse(localStorage.getItem('mia5:cd'+c+'-de'+i)||'null');if(r&&r.max>0){done++;var p=r.best/r.max*100;stars+=p>=80?3:p>=60?2:p>=40?1:0}}}catch(e){}if(done)document.getElementById('math-progress').innerHTML='Em đã làm <b>'+done+'/36 đề</b> và đạt <b>'+stars+'/108 sao</b>.'})();
-  (function(){var done=0,stars=0;try{for(var i=1;i<=6;i++){var r=JSON.parse(localStorage.getItem('mia5:en-u01-de'+i)||'null');if(r&&r.max>0){done++;var p=r.best/r.max*100;stars+=p>=80?3:p>=60?2:p>=40?1:0}}}catch(e){}if(done)document.getElementById('english-progress').innerHTML='Em đã làm <b>'+done+'/6 đề</b> và đạt <b>'+stars+'/18 sao</b>.'})();
+  (function(){var done=0,stars=0;try{for(var i=1;i<=6;i++){var r=JSON.parse(localStorage.getItem('mia5:en-u01-de'+i+'-v2')||'null');if(r&&r.max>0){done++;var p=r.best/r.max*100;stars+=p>=80?3:p>=60?2:p>=40?1:0}}}catch(e){}if(done)document.getElementById('english-progress').innerHTML='Em đã làm <b>'+done+'/6 đề</b> và đạt <b>'+stars+'/18 sao</b>.'})();
   </script>
 </body>
 </html>

@@ -2,41 +2,57 @@
 <html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Tiếng Anh 5 · Unit 1 · Đề 1 · Khởi động</title>
 <link rel="stylesheet" href="../../assets/fonts.css">
-<link rel="stylesheet" href="../../assets/engine.css"></head><body>
+<link rel="stylesheet" href="../../assets/engine.css"><link rel="stylesheet" href="../../assets/english/theme.css"><script src="../../assets/english/theme.js"></script><script src="../../assets/english/speech.js"></script></head><body>
 <div class="page"><div id="app"></div></div>
 <div class="bar" id="bar" data-mode="run"><div class="bar-in"></div></div>
 <script>
-window.MKEN1=function(questions){return {"decimal": false, "meta": {"subject": "en", "lessonLabel": "Phần", "book": "Tiếng Anh 5 · Global Success · Tập một", "title": "Unit 1 · All about me!", "topic": "Giới thiệu bản thân và điều em yêu thích", "range": "Trang 10–15", "minutes": 40, "tip": "Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp."}, "lessons": {"1": "Thông tin bản thân", "2": "Điều em yêu thích", "3": "Đọc và viết"}, "levels": [{"id": "tb", "name": "Mức 1 · Trung bình", "desc": "Nhận biết từ và mẫu câu cơ bản", "stars": 1, "pts": 3}, {"id": "kha", "name": "Mức 2 · Khá", "desc": "Dùng mẫu câu, nối ý và tìm thông tin", "stars": 2, "pts": 5}, {"id": "gioi", "name": "Mức 3 · Giỏi", "desc": "Kết hợp đọc hiểu và viết câu theo dữ liệu", "stars": 3, "pts": 5}],"questions":questions};};
+window.MKEN1=function(questions){return {"decimal": false, "meta": {"subject": "en", "version": 2, "lessonLabel": "Phần", "book": "Tiếng Anh 5 · Global Success · Tập một", "title": "Unit 1 · All about me!", "topic": "Giới thiệu bản thân và điều em yêu thích", "range": "Trang 10–15", "minutes": 40, "tip": "Mỗi đề có 6 câu nghe, chia đều ba mức. Xem lời nghe sẽ ghi nhận đã dùng hỗ trợ, không trừ điểm. Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp."}, "lessons": {"1": "Thông tin bản thân", "2": "Điều em yêu thích", "3": "Đọc và viết"}, "levels": [{"id": "tb", "name": "Mức 1 · Trung bình", "desc": "Nhận biết từ và mẫu câu cơ bản", "stars": 1, "pts": 3}, {"id": "kha", "name": "Mức 2 · Khá", "desc": "Dùng mẫu câu, nối ý và tìm thông tin", "stars": 2, "pts": 5}, {"id": "gioi", "name": "Mức 3 · Giỏi", "desc": "Kết hợp đọc hiểu và viết câu theo dữ liệu", "stars": 3, "pts": 5}],"questions":questions};};
 
 window.TEST_FN=function(H){return MKEN1([
  {
-  "type": "mc",
-  "stem": "Which word means “lớp học”?",
-  "why": "Class nghĩa là lớp học.",
+  "type": "listen",
+  "level": "tb",
   "lesson": 1,
-  "opts": [
-   "class",
-   "colour",
-   "food",
-   "sport"
+  "stem": "Listen and choose the name.",
+  "speech": "My name is An.",
+  "transcript": "My name is An.",
+  "fields": [
+   {
+    "label": "name",
+    "answer": "An",
+    "options": [
+     "An",
+     "Linh",
+     "Minh",
+     "Mai",
+     "Nam",
+     "Hoa"
+    ],
+    "alternatives": []
+   }
   ],
-  "answer": 0,
-  "level": "tb"
+  "why": "Thông tin trong lời nghe: name An."
  },
  {
-  "type": "pic",
-  "stem": "Choose the word for this colour.",
-  "why": "Mảng màu là màu hồng: pink.",
-  "lesson": 2,
-  "opts": [
-   "blue",
-   "pink",
-   "green",
-   "red"
+  "type": "listen",
+  "level": "tb",
+  "lesson": 1,
+  "stem": "Listen and choose the place to live.",
+  "speech": "I live in the countryside.",
+  "transcript": "I live in the countryside.",
+  "fields": [
+   {
+    "label": "Home:",
+    "answer": "countryside",
+    "options": [
+     "city",
+     "countryside"
+    ],
+    "alternatives": []
+   }
   ],
-  "answer": 1,
-  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u01/pink.webp\" alt=\"Mảng màu hồng\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
-  "level": "tb"
+  "why": "Thông tin trong lời nghe: Home: countryside.",
+  "fig": "<div style=\"display:flex;flex-wrap:wrap;gap:12px\"><div class=\"fig en-figure\"><img src=\"../../assets/english/u01/city.webp\" alt=\"Đường phố và các tòa nhà trong thành phố\" width=\"768\" height=\"512\" style=\"width:220px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div><div class=\"fig en-figure\"><img src=\"../../assets/english/u01/countryside.webp\" alt=\"Ngôi nhà giữa cánh đồng quê\" width=\"768\" height=\"512\" style=\"width:220px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div></div>"
  },
  {
   "type": "text",
@@ -156,18 +172,26 @@ window.TEST_FN=function(H){return MKEN1([
   "level": "tb"
  },
  {
-  "type": "mc",
-  "stem": "A: What is your favourite animal? B: ___.",
-  "why": "Câu hỏi hỏi con vật; a dolphin là cá heo.",
+  "type": "listen",
+  "level": "kha",
   "lesson": 2,
-  "opts": [
-   "It's pink.",
-   "It's a dolphin.",
-   "I'm in Class 5B.",
-   "It's table tennis."
+  "stem": "What is Linh’s favourite sport?",
+  "speech": "My name is Linh. My favourite sport is swimming.",
+  "transcript": "My name is Linh. My favourite sport is swimming.",
+  "fields": [
+   {
+    "label": "Sport:",
+    "answer": "swimming",
+    "options": [
+     "table tennis",
+     "swimming",
+     "football",
+     "basketball"
+    ],
+    "alternatives": []
+   }
   ],
-  "answer": 1,
-  "level": "kha"
+  "why": "Thông tin trong lời nghe: Sport: swimming."
  },
  {
   "type": "text",
@@ -207,19 +231,26 @@ window.TEST_FN=function(H){return MKEN1([
   "level": "kha"
  },
  {
-  "type": "reorder",
-  "stem": "Put the words in order.",
-  "why": "My favourite food is… giới thiệu đồ ăn yêu thích.",
+  "type": "listen",
+  "level": "kha",
   "lesson": 2,
-  "items": [
-   "My",
-   "favourite",
-   "food",
-   "is",
-   "a",
-   "sandwich."
+  "stem": "Listen and choose the favourite colour.",
+  "speech": "My name is Minh. My favourite colour is green.",
+  "transcript": "My name is Minh. My favourite colour is green.",
+  "fields": [
+   {
+    "label": "Colour:",
+    "answer": "green",
+    "options": [
+     "pink",
+     "blue",
+     "green",
+     "red"
+    ],
+    "alternatives": []
+   }
   ],
-  "level": "kha"
+  "why": "Thông tin trong lời nghe: Colour: green."
  },
  {
   "type": "text",
@@ -307,19 +338,33 @@ window.TEST_FN=function(H){return MKEN1([
   "level": "gioi"
  },
  {
-  "type": "reorder",
-  "stem": "Put the words in order.",
-  "why": "Thứ tự câu hỏi là Can you tell me about yourself?",
-  "lesson": 1,
-  "items": [
-   "Can",
-   "you",
-   "tell",
-   "me",
-   "about",
-   "yourself?"
+  "type": "listen",
+  "level": "gioi",
+  "lesson": 3,
+  "stem": "Listen to An. Choose the home and favourite animal.",
+  "speech": "My name is An. I am in Class five A. I live in the city. My favourite animal is a dolphin.",
+  "transcript": "My name is An. I am in Class 5A. I live in the city. My favourite animal is a dolphin.",
+  "fields": [
+   {
+    "label": "Home:",
+    "answer": "city",
+    "options": [
+     "city",
+     "countryside"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Animal:",
+    "answer": "a dolphin",
+    "options": [
+     "a dolphin",
+     "a panda"
+    ],
+    "alternatives": []
+   }
   ],
-  "level": "gioi"
+  "why": "Thông tin trong lời nghe: Home: city; Animal: a dolphin."
  },
  {
   "type": "mc",
@@ -358,20 +403,30 @@ window.TEST_FN=function(H){return MKEN1([
   "level": "gioi"
  },
  {
-  "type": "text",
-  "stem": "Write a full sentence about the favourite colour. Start with “My”.",
-  "why": "Thẻ ghi Colour: red; ghép mẫu My favourite colour is…",
+  "type": "listen",
+  "level": "gioi",
   "lesson": 3,
-  "answers": [
-   "My favourite colour is red.",
-   "My favorite color is red."
+  "stem": "Listen to Minh. Write the favourite colour and sport.",
+  "speech": "My name is Minh. I live in the city. My favourite colour is green. My favourite sport is football.",
+  "transcript": "My name is Minh. I live in the city. My favourite colour is green. My favourite sport is football.",
+  "fields": [
+   {
+    "label": "Colour:",
+    "answer": "green",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Sport:",
+    "answer": "football",
+    "options": null,
+    "alternatives": []
+   }
   ],
-  "exactForm": false,
-  "passage": "Name: Mai\nClass: 5B\nHome: countryside\nColour: red\nSport: basketball\nFood: a sandwich\nAnimal: a panda",
-  "level": "gioi"
+  "why": "Thông tin trong lời nghe: Colour: green; Sport: football."
  }
 ]);};
 
-window.TEST_EXTRA={"id": "en-u01-de1", "title": "Đề 1 · Khởi động", "theme": "Làm quen từ vựng, tên, lớp và nơi sống.", "home": "../index.html", "next": "De2_TuVungVaHinhAnh.html"};
+window.TEST_EXTRA={"id": "en-u01-de1-v2", "title": "Đề 1 · Khởi động", "theme": "Làm quen từ vựng, tên, lớp và nơi sống.", "home": "../index.html", "next": "De2_TuVungVaHinhAnh.html"};
 
 </script><script src="../../assets/engine.js"></script></body></html>

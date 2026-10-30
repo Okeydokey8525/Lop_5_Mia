@@ -14,8 +14,11 @@ for(let i=1;i<=6;i++){
     const kinds=new Set();
     questions.forEach((q,k)=>{
       assert.equal(q.level,expected[k],`q${k+1}`);assert.ok(q.stem&&q.why&&t.lessons[q.lesson]);kinds.add(q.type);
-      assert.ok(['mc','pic','tf','text','match','reorder'].includes(q.type));
-      if(q.type==='mc'||q.type==='pic'){
+      assert.ok(['mc','pic','tf','text','match','reorder','listen'].includes(q.type));
+      if(q.type==='listen'){
+        assert.ok(q.speech&&q.transcript&&q.fields.length);
+        q.fields.forEach(f=>{assert.ok(f.answer&&f.label);if(f.options){assert.ok(f.options.includes(f.answer));assert.equal(new Set(f.options).size,f.options.length)}});
+      }else if(q.type==='mc'||q.type==='pic'){
         assert.equal(q.opts.length,4);assert.equal(new Set(q.opts).size,4);assert.ok(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<4);
         if(q.type==='pic')assert.ok(q.fig.includes('<img')&&q.fig.includes('alt="'));
       }else if(q.type==='text')assert.ok(q.answers.length&&q.answers.every(a=>typeof a==='string'&&a.trim()));
@@ -24,6 +27,8 @@ for(let i=1;i<=6;i++){
       else {assert.ok(q.items.length>=2);assert.ok(q.items.every(it=>typeof it.a==='boolean'));}
       for(const src of JSON.stringify(q).match(/data:image\/[^"\\]+/g)||[])assert.ok(approvedImages.has(src),'Unknown embedded image; book scans are forbidden');
     });
+    assert.equal(questions.filter(q=>q.type==='listen').length,6);
+    for(const lv of ['tb','kha','gioi'])assert.equal(questions.filter(q=>q.type==='listen'&&q.level===lv).length,2);
     assert.ok(kinds.size>=4,'Too little variation');count++;
   }catch(e){bad++;console.error('English Unit1 de'+i,e.message);}
 }

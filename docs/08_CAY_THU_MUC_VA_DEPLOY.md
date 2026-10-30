@@ -76,3 +76,7 @@ Website: https://okeydokey8525.github.io/Lop_5_Mia/. Nguồn Pages là GitHub Ac
 Chỉ site/ được upload; không xuất bản nguồn, docs hay sách. Giữ URL tương đối và đúng hoa/thường. Tiến độ local/file không chuyển sang origin online; không đổi ID nếu chỉ sửa tranh/giao diện.
 
 Khi được giao xuất bản: push thay đổi đã kiểm tra, chờ workflow và deploy thành công, rồi kiểm tra chính URL thật và tài nguyên mới. Không dùng build local hoặc trạng thái push thành công để báo website đã chạy đúng. Nếu chỉ được giao tài liệu thì kiểm tra tài liệu, không cần chạy lại toàn bộ render/test sản phẩm.
+
+### Tài nguyên dùng chung cho Anh và phiên bản đề có nghe
+
+Nguồn generator/english/{theme.css,theme.js,speech.js}, được nhúng vào standalone và trích ra site/assets/english khi build web. Module speech dùng riêng các đề có nghe, quản lý một luồng phát và cleanup khi làm lại/rời trang. Nguồn câu nghe generator/english/u01/exam_listening.py thay đúng sáu vị trí trong content.build_tests(); không thêm trang đề mới hoặc đổi URL. Catalog, trang chủ Anh và thống kê ở trang chủ chung cùng đọc ID en-u01-deN-v2, không trộn điểm bộ trước.

@@ -39,6 +39,7 @@ jobs:
           done
           node tools/qa.js --no-shots
           node tools/qa_listening.js
+          node tools/qa_english_unit1.js
           node tools/responsive.js --no-shots
       - uses: actions/upload-artifact@v4
         if: always()

@@ -257,7 +257,10 @@ def build_tests():
       text('An is speaking. Write a full sentence about the favourite food. Start with “My”.',f"My favourite food is {PROFILES[0]['food']}.",'Chọn đúng thẻ của An, đọc Food rồi viết theo mẫu My favourite food is…',3),
     ]:reading.append(based(question,passage))
     tests=[warmup(),vocabulary(),dialogue(),reading,writing(),mixed()]
-    for questions in tests:
+    from english.u01.exam_listening import make_listening
+    for test_index,questions in enumerate(tests):
+        for position,question in zip([0,1,10,13,20,23],make_listening(test_index)):
+            questions[position]=question
         assert len(questions)==24,len(questions)
         for i,question in enumerate(questions):
             question['level']='tb' if i<10 else 'kha' if i<18 else 'gioi'

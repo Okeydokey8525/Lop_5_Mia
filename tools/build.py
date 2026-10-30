@@ -38,6 +38,11 @@ def main():
                  for name in ("fonts.css", "engine.css", "engine.js", "overview.css", "overview.js")}
     for name, data in resources.items():
         (assets / name).write_text(data, encoding="utf-8", newline="\n")
+    english_resources={name:(GEN/'english'/name).read_text(encoding='utf-8-sig') for name in ['theme.css','theme.js','speech.js']}
+    for name,data in english_resources.items():
+        target=assets/'english'/name
+        target.parent.mkdir(parents=True,exist_ok=True)
+        target.write_text(data,encoding='utf-8',newline='\n')
     illustrations = {}
     for source in sorted((GEN / "english" / "u01" / "images").glob("*.webp")):
         relative = Path("english") / "u01" / source.name
@@ -70,6 +75,10 @@ def main():
                                 f'<link rel="stylesheet" href="{prefix}overview.css">')
             html = html.replace("<script>" + resources["overview.js"] + "</script>",
                                 f'<script src="{prefix}overview.js"></script>')
+        for name,data in english_resources.items():
+            embedded=('<style>'+data+'</style>') if name.endswith('.css') else ('<script>'+data+'</script>')
+            external=f'<link rel="stylesheet" href="{prefix}english/{name}">' if name.endswith('.css') else f'<script src="{prefix}english/{name}"></script>'
+            html=html.replace(embedded,external)
         for embedded, image_path in illustrations.items():
             html = html.replace(embedded, prefix + image_path)
         if resources["fonts.css"] in html:
@@ -88,7 +97,7 @@ def main():
     from english.u01.content import TESTS
     tests=[dict(file=f"Toan5/{cd['dir']}/De{i}_{slug}.html",id=f"cd{cd['n']}-de{i}",subject='math')
            for cd in CDS for i,(slug,*_) in enumerate(cd['tests'],1)]
-    tests += [dict(file=f"TiengAnh5/Unit1_AllAboutMe/De{i}_{slug}.html",id=f"en-u01-de{i}",subject='en')
+    tests += [dict(file=f"TiengAnh5/Unit1_AllAboutMe/De{i}_{slug}.html",id=f"en-u01-de{i}-v2",subject='en')
               for i,(slug,*_) in enumerate(TESTS,1)]
     (site / "catalog.json").write_text(json.dumps(dict(tests=tests),ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
     (site / ".nojekyll").touch()
