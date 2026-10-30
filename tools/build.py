@@ -1,5 +1,6 @@
 """Build Maths and English practice as a web site or self-contained HTML."""
 import argparse
+import base64
 import os
 from pathlib import Path
 import shutil
@@ -37,6 +38,13 @@ def main():
                  for name in ("fonts.css", "engine.css", "engine.js", "overview.css", "overview.js")}
     for name, data in resources.items():
         (assets / name).write_text(data, encoding="utf-8", newline="\n")
+    illustrations = {}
+    for source in sorted((GEN / "english" / "u01" / "images").glob("*.webp")):
+        relative = Path("english") / "u01" / source.name
+        target = assets / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(source, target)
+        illustrations["data:image/webp;base64," + base64.b64encode(source.read_bytes()).decode("ascii")] = relative.as_posix()
     sources=[p for subject in ("Toan5", "TiengAnh5") for p in (GEN / "out" / subject).rglob("*.html")]
     for source in sources:
         relative = source.relative_to(GEN / "out")
@@ -62,6 +70,8 @@ def main():
                                 f'<link rel="stylesheet" href="{prefix}overview.css">')
             html = html.replace("<script>" + resources["overview.js"] + "</script>",
                                 f'<script src="{prefix}overview.js"></script>')
+        for embedded, image_path in illustrations.items():
+            html = html.replace(embedded, prefix + image_path)
         if resources["fonts.css"] in html:
             raise ValueError(f"Font extraction failed: {source}")
         target.write_text(html, encoding="utf-8", newline="\n")

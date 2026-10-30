@@ -1,5 +1,7 @@
 """Original Unit 1 practice, based on verified scope in NOTES.md."""
 import html
+import base64
+from pathlib import Path
 
 TESTS = [
     ('KhoiDong', 'Khởi động', 'Làm quen từ vựng, tên, lớp và nơi sống.'),
@@ -64,18 +66,14 @@ def based(question, passage):
     return question
 
 
-def picture(kind):
-    art={
-      'pink':'<rect x="35" y="20" width="150" height="90" rx="24" fill="#F19CBF" stroke="#8B4E84" stroke-width="3"/>',
-      'sandwich':'<path d="M35 92 110 25 185 92z" fill="#F7D7A6" stroke="#855D3A" stroke-width="4"/><path d="M39 96h142" stroke="#63A474" stroke-width="9"/><path d="M39 106h142" stroke="#DB837E" stroke-width="7"/><path d="M35 113h150" stroke="#F7D7A6" stroke-width="10"/>',
-      'table tennis':'<rect x="25" y="38" width="170" height="70" rx="5" fill="#B9DDD4" stroke="#3E7266" stroke-width="3"/><path d="M110 38v70M25 73h170" stroke="#fff" stroke-width="3"/><path d="M30 64h160" stroke="#77528F" stroke-width="5"/><circle cx="72" cy="30" r="10" fill="#F6C96A"/><path d="m58 102-10 18m112-29 13 17" stroke="#94523F" stroke-width="7"/><ellipse cx="63" cy="94" rx="14" ry="18" fill="#E8A8C3" stroke="#955077" stroke-width="2"/><ellipse cx="153" cy="83" rx="14" ry="18" fill="#B2CBE7" stroke="#4A6F9D" stroke-width="2"/>',
-      'city':'<path d="M25 112V40h45v72M82 112V18h55v94M150 112V52h45v60" fill="#D9C9EA" stroke="#77528F" stroke-width="3"/><path d="M38 53h16m-16 20h16m42-42h26m-26 22h26m-26 22h26m42-7h18m-18 20h18" stroke="#fff" stroke-width="7"/>',
-      'countryside':'<path d="M12 112 60 58l50 54 43-60 55 60" fill="#CFE8D8"/><path d="M67 115V70h63v45" fill="#F5D7B7" stroke="#94523F" stroke-width="3"/><path d="m57 70 42-38 42 38z" fill="#E9AEC3" stroke="#94523F" stroke-width="3"/><path d="M89 115V88h20v27" fill="#fff"/><circle cx="175" cy="25" r="15" fill="#F7D67C"/>',
-      'dolphin':'<path d="M29 86c25-48 72-65 117-42l28 9 22-3-13 16-25 3c-17 28-42 42-70 29l-21 19 2-27-40 4z" fill="#AECDE6" stroke="#4A6F9D" stroke-width="3"/><path d="m103 39 9-23 18 27m-32 40 19 24 4-24" fill="#AECDE6" stroke="#4A6F9D" stroke-width="3"/><circle cx="151" cy="55" r="3" fill="#4A2433"/>',
-    }[kind]
-    # Vietnamese accessibility text does not expose the English word being tested.
-    labels={'pink':'Mảng màu hồng','sandwich':'Bánh mì kẹp','table tennis':'Bàn bóng bàn','city':'Các tòa nhà trong thành phố','countryside':'Ngôi nhà giữa đồng quê','dolphin':'Con cá heo'}
-    return f'<div class="fig en-figure"><svg viewBox="0 0 220 135" role="img" aria-label="{html.escape(labels[kind])}" style="width:220px">{art}</svg></div>'
+def picture(kind, width=320):
+    # Embed for standalone HTML; web build extracts the same bytes to shared assets.
+    name=kind.replace(' ','-')
+    image=Path(__file__).parent/'images'/f'{name}.webp'
+    src='data:image/webp;base64,'+base64.b64encode(image.read_bytes()).decode('ascii')
+    labels={'pink':'Mảng màu hồng','sandwich':'Bánh mì kẹp','table tennis':'Bàn, lưới, vợt và bóng bàn','city':'Đường phố và các tòa nhà trong thành phố','countryside':'Ngôi nhà giữa cánh đồng quê','dolphin':'Con cá heo'}
+    return (f'<div class="fig en-figure"><img src="{src}" alt="{html.escape(labels[kind])}" '
+            f'width="768" height="512" style="width:{width}px;max-width:100%;height:auto;display:block;border-radius:12px" decoding="async"></div>')
 
 
 def warmup():

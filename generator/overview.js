@@ -12,6 +12,7 @@
     if(s.padding)s.padding=s.padding.replace(/([\d.]+)px/g,(_,n)=>Math.min(18,Math.round(Number(n)*.55))+'px');
     if(s.gap)s.gap='12px';
     s.minWidth='0';
+    if(el.tagName==='IMG'){s.maxWidth='100%';s.height='auto';continue;}
     if(s.width.endsWith('px')){s.removeProperty('width');s.removeProperty('height');}
     if(oldWidth===210){el.classList.add('reader-lesson-label');s.flex='none';s.alignItems='flex-start';s.textAlign='left';s.gap='6px';el.parentElement.classList.add('reader-lesson');el.parentElement.style.flexDirection='column';}
     if(oldWidth===160){el.classList.add('reader-badge');s.width='88px';s.height='88px';el.parentElement.classList.add('reader-header');el.parentElement.style.flexDirection='column';el.parentElement.style.alignItems='flex-start';}

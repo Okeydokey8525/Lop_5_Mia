@@ -100,3 +100,7 @@ CI chạy thêm `node tools/responsive.js --no-shots`: toàn bộ 44 trang ở 3
 - 58 HTML/CSS/JS/JSON online khớp byte với local. 7 PNG online hợp lệ, rộng 1080px; PNG do Linux CI render nên không yêu cầu byte trùng bản Windows.
 - Báo cáo ở `artifacts/online/report.json`, `artifacts/responsive-online/report.json`, `artifacts/online/files-unit1.json`. Hình đã xem ở `artifacts/english-review/`, `artifacts/local/`, `artifacts/responsive-local/`.
 - Đã kiểm tra 6 đề Anh standalone qua file URL cũng 100/100, không lỗi. Chưa thử trên máy thật của em, chưa xác nhận độ khó phù hợp; chưa có nghe/chấm nói. Dừng ở Unit 1 để chủ repo xem mẫu trước khi làm các unit khác.
+
+### Tài nguyên tranh Unit 1 (30/10/2026)
+
+`generator/english/u01/images/*.webp` là nguồn, kèm `PROMPTS.md`. `content.picture()` nhúng ảnh để standalone hoạt động ngoại tuyến. Bước web trong `tools/build.py` trích cùng byte ảnh ra `site/assets/english/u01/`, đổi sang URL tương đối; không sửa trực tiếp site. Renderer chờ giải mã tất cả ảnh trước khi chụp PNG.

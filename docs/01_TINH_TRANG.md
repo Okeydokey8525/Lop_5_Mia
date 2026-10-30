@@ -69,3 +69,7 @@ Trang tổng quan CĐ3 và CĐ4 hiển thị số trang SGK.
 
 ## Tiếng Anh 5 tập 2 (chỗ trống)
 - _chưa có sách_
+
+## Cập nhật tranh Unit 1 — 30/10/2026
+
+Đã thay cả sáu hình SVG đơn giản bằng tranh minh họa theo mẫu cá heo chủ repo duyệt. Dùng ở tổng quan, poster PNG và các câu hỏi có hình trong 6 đề; không thay câu hỏi, đáp án hay ID lưu tiến độ. Nguồn ảnh: `generator/english/u01/images/`; web: `site/assets/english/u01/`; standalone nhúng ảnh. Bổ sung QA giải mã ảnh và chờ tải ảnh trước khi xuất poster.

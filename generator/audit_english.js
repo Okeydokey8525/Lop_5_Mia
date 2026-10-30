@@ -1,5 +1,9 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 let count=0,bad=0;
+// Only our six generated, reviewed illustrations may be embedded in standalone output.
+const images=path.join(__dirname,'english','u01','images');
+const approvedImages=new Set(fs.readdirSync(images).filter(f=>f.endsWith('.webp')).map(f=>'data:image/webp;base64,'+fs.readFileSync(path.join(images,f)).toString('base64')));
+assert.equal(approvedImages.size,6);
 for(let i=1;i<=6;i++){
   try{
     const dir=path.join(__dirname,'english','u01'),ctx={};ctx.window=ctx;vm.createContext(ctx);
@@ -13,12 +17,12 @@ for(let i=1;i<=6;i++){
       assert.ok(['mc','pic','tf','text','match','reorder'].includes(q.type));
       if(q.type==='mc'||q.type==='pic'){
         assert.equal(q.opts.length,4);assert.equal(new Set(q.opts).size,4);assert.ok(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<4);
-        if(q.type==='pic')assert.ok(q.fig.includes('<svg')&&q.fig.includes('aria-label'));
+        if(q.type==='pic')assert.ok(q.fig.includes('<img')&&q.fig.includes('alt="'));
       }else if(q.type==='text')assert.ok(q.answers.length&&q.answers.every(a=>typeof a==='string'&&a.trim()));
       else if(q.type==='match'){assert.ok(q.pairs.length>=3);assert.equal(new Set(q.pairs.map(p=>p.right)).size,q.pairs.length);assert.equal(new Set(q.pairs.map(p=>p.left)).size,q.pairs.length);}
       else if(q.type==='reorder')assert.ok(q.items.length>=3&&q.items.every(w=>typeof w==='string'&&w.trim()));
       else {assert.ok(q.items.length>=2);assert.ok(q.items.every(it=>typeof it.a==='boolean'));}
-      assert.ok(!JSON.stringify(q).includes('data:image'),'Book images must not be embedded');
+      for(const src of JSON.stringify(q).match(/data:image\/[^"\\]+/g)||[])assert.ok(approvedImages.has(src),'Unknown embedded image; book scans are forbidden');
     });
     assert.ok(kinds.size>=4,'Too little variation');count++;
   }catch(e){bad++;console.error('English Unit1 de'+i,e.message);}

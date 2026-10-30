@@ -67,3 +67,7 @@ Luồng mặc định hiện audit 36 Toán + 6 Anh. `generator/audit_english.js
 Kiểm tra riêng Tiếng Anh: hoa/thường, nháy cong, rút gọn, yêu cầu dạng đầy đủ, colour/color, từ thừa/sai; thao tác xóa-sắp lại, chọn sai, điểm một phần khi nối; điểm tốt nhất còn sau làm sai; reset Anh không xóa 36 khóa Toán. `tall.js` cũng tự điền mọi dạng mới; có thể chạy `node generator/tall.js site` từ gốc repo.
 
 Responsive hiện 52 HTML × 8 kích thước × 2 chế độ = 832 tổ hợp, 7 tổng quan có reader/poster. Các con số 36/44/704 ở mục cũ là mốc trước khi thêm Anh. Chụp và xem hình mới trước khi giao.
+
+### Tranh Unit 1 — 30/10/2026
+
+Bổ sung kiểm tra ảnh giải mã được (768×512) trong `qa.js`, giữ tỷ lệ 3:2 ở mọi viewport/theme trong `responsive.js`. `audit_english.js` chỉ cho nhúng đúng sáu WebP đã duyệt từ thư mục nguồn, không cho ảnh lạ. Renderer chờ `img.decode()` trước khi xuất PNG; reader giữ chiều cao tự động của ảnh. Đã đối chiếu 144 câu trước/sau bằng dữ liệu (bỏ trường fig): nội dung và đáp án giữ nguyên. Đã xem cả 6 tranh ở kích thước thực và poster xuất lại; standalone Tiếng Anh 6/6 đề đạt 100/100.

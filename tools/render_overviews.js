@@ -16,6 +16,7 @@ async function main(){
       if(!html)throw Error('Missing overview: '+folder);
       await page.goto(pathToFileURL(path.join(folder,html)).href);
       await page.evaluate(()=>document.fonts.ready);
+      await page.locator('#sheetw img').evaluateAll(imgs=>Promise.all(imgs.map(img=>img.decode())));
       const png=path.join(folder,html.replace('.html','.png'));
       await page.locator('#sheetw').screenshot({path:png});
       const standalone=path.join(ROOT,'generator','out',dir.subject,dir.name,path.basename(png));

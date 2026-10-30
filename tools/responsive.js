@@ -17,6 +17,10 @@ async function main(){
         for(const file of files){
           const relative=path.relative(SITE,file).split(path.sep).join('/');
           const response=await p.goto(BASE+relative);assert.equal(response.status(),200,relative);await p.evaluate(()=>document.fonts.ready);
+          const distorted=await p.locator('.en-figure img').evaluateAll(async imgs=>{
+            await Promise.all(imgs.map(img=>img.decode()));
+            return imgs.flatMap(img=>{const r=img.getBoundingClientRect();return r.width&&Math.abs(r.width/r.height-1.5)>.01?[img.src]:[];});
+          });assert.deepEqual(distorted,[],`Distorted English illustration: ${relative}`);
           const size=await p.evaluate(()=>({w:innerWidth,scroll:document.documentElement.scrollWidth}));
           assert.ok(size.scroll<=size.w,`${scheme} ${width}px ${relative}: scrollWidth ${size.scroll}`);
           if(path.basename(file).startsWith('TongQuan')){

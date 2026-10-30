@@ -47,7 +47,12 @@ async function main(){
     const context=await browser.newContext({viewport:{width:400,height:900},reducedMotion:'reduce'});
     context.on('page',p=>{p.on('pageerror',e=>errors.push(`${p.url()}: ${e.message}`));p.on('console',m=>{if(m.type()==='error')errors.push(`${p.url()}: ${m.text()}`);});p.on('requestfailed',r=>errors.push(`${r.url()}: ${r.failure()?.errorText}`));});
     const page=await context.newPage();
-    const go=async file=>{const r=await page.goto(BASE+file);assert.equal(r.status(),200,file);await page.evaluate(()=>document.fonts.ready);};
+    const go=async file=>{const r=await page.goto(BASE+file);assert.equal(r.status(),200,file);await page.evaluate(()=>document.fonts.ready);
+      const broken=await page.locator('.en-figure img').evaluateAll(async imgs=>{
+        await Promise.all(imgs.map(img=>img.decode().catch(()=>{})));
+        return imgs.filter(img=>!img.complete||img.naturalWidth!==768||img.naturalHeight!==512).map(img=>img.src);
+      });assert.deepEqual(broken,[],`English illustration failed to decode: ${file}`);
+    };
     for(const f of walk(SITE).filter(f=>f.endsWith('.html'))){
       const rel=relative(f);await go(rel);await overflow(page);await links(page);
       if(path.basename(f).startsWith('De')){

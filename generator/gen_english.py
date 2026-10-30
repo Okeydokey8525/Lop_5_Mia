@@ -35,11 +35,11 @@ def main():
     lessons=[
       dict(n=1,col='#8B4E84',bg='#F2E4F1',dk='#65375F',title='Giới thiệu bản thân',pg='10–11',head='Nói tên, lớp và nơi em sống.',body=lambda c:
         box(c['bg'],"<b>My name is Mai.</b> — Tên mình là Mai.<br><b>I am in Class 5D.</b> — Mình học lớp 5D.<br><b>I live in the countryside.</b> — Mình sống ở nông thôn.")+
-        '<div style="display:flex;flex-wrap:wrap;gap:20px">'+picture('city')+picture('countryside')+'</div>'+
+        '<div style="display:flex;flex-wrap:wrap;gap:20px">'+picture('city',220)+picture('countryside',220)+'</div>'+
         box(c['bg'],'<b>Nhớ theo cụm:</b> in Class + tên lớp; in the city; in the countryside. Khi giới thiệu, I’m và I am có cùng nghĩa.')),
       dict(n=2,col='#9A5545',bg='#FCE7DF',dk='#713C30',title='Điều em yêu thích',pg='12–13',head='Hỏi đúng nhóm: colour, sport, animal, food.',body=lambda c:
         box(c['bg'],"<b>What is your favourite colour?</b> — My favourite colour is pink.<br><b>What is your favourite sport?</b> — It is table tennis.<br><b>What is your favourite animal?</b> — It is a dolphin.<br><b>What is your favourite food?</b> — It is a sandwich.")+
-        '<div style="display:flex;flex-wrap:wrap;gap:20px">'+picture('pink')+picture('table tennis')+picture('dolphin')+picture('sandwich')+'</div>'+
+        '<div style="display:flex;flex-wrap:wrap;gap:20px">'+picture('pink',220)+picture('table tennis',220)+picture('dolphin',220)+picture('sandwich',220)+'</div>'+
         box(c['bg'],'<b>Từ khóa:</b> pink — màu hồng; table tennis — bóng bàn; dolphin — cá heo; sandwich — bánh mì kẹp. Chọn đúng nhóm trước khi trả lời.')),
       dict(n=3,col='#4D7395',bg='#E5EFF8',dk='#35516B',title='Đọc và viết',pg='14–15',head='Tìm thông tin trong hồ sơ rồi viết theo mẫu.',body=lambda c:
         box(c['bg'],'<b>Trọng âm đầu:</b> DOL-phin, TEN-nis. Đây là mẹo đọc bằng chữ, không phải bài nghe.')+
