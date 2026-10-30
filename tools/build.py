@@ -104,7 +104,6 @@ def main():
         shutil.copyfile(source, target)
     home = (ROOT / "tools" / "templates" / "home.html").read_text(encoding="utf-8")
     home=home.replace('</head>','<link rel="stylesheet" href="assets/theme.css"><script src="assets/theme.js"></script></head>')
-    (site / "index.html").write_text(home, encoding="utf-8", newline="\n")
     import json
     sys.path.insert(0,str(GEN))
     from cfg import CDS
@@ -114,6 +113,10 @@ def main():
     tests += [dict(file=f"TiengAnh5/Unit1_AllAboutMe/De{i}_{slug}.html",id=f"en-u01-de{i}-v2",subject='en')
               for i,(slug,*_) in enumerate(TESTS,1)]
     (site / "catalog.json").write_text(json.dumps(dict(tests=tests),ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
+    home=home.replace('__HOME_TESTS__',json.dumps(tests,ensure_ascii=False).replace('</',r'<\/'))
+    (site/'index.html').write_text(home,encoding='utf-8',newline='\n')
+    for name in ['home.css','home.js']:
+        (assets/name).write_text((ROOT/'tools'/'templates'/name).read_text(encoding='utf-8-sig'),encoding='utf-8',newline='\n')
     (site / ".nojekyll").touch()
     print("Web:", site)
     print("HTML/assets ready. Use node tools/build.js for a complete build including PNG posters.")

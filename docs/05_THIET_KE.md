@@ -72,3 +72,9 @@ Nguồn generator/english/theme.css và theme.js. Nền #FFF0F6, thẻ #FFF8FC, 
 ## Mở rộng hồng sáng ra toàn website — yêu cầu tiếp theo ngày 30/10/2026
 
 Bảng màu hồng sáng và nút Sáng/Tối nay dùng chung cho toàn bộ 53 trang, cả Toán và Anh, trang chủ chung, reader, poster và HTML tự chứa. Hai file nguồn chuyển từ generator/english/theme.* sang generator/theme.css và theme.js; web dùng site/assets/theme.css/js. Khóa lựa chọn chung mia5:ui-theme; khi chưa có khóa mới, kế thừa lựa chọn chủ động cũ mia5:ui-en-theme. Chọn Sáng ghi rõ khóa mới nên không bị khóa cũ ép về Tối. Không có lựa chọn trước đó thì luôn sáng, độc lập hệ điều hành. Quy định “chỉ đổi Anh/Toán giữ màu cũ” trong mục trước là phạm vi giai đoạn trước, đã được yêu cầu mới thay thế.
+
+## Trang chủ chọn môn — hiệu ứng được duyệt ngày 30/10/2026
+
+Chỉ trang chủ chung: lời chào theo tên đã lưu (mặc định Mia), sách/ngôi sao trên cả điện thoại, đầu trang gọn, thẻ hiện nhẹ/nhún khi bấm và thanh tiến độ thật. Ngôi sao đầu trang chỉ lắc hai lượt rồi dừng; phản hồi khi rê chuột chỉ dùng cho thiết bị có hover. Chuyển động không che nội dung/nút. Hỗ trợ prefers-reduced-motion: tắt hiệu ứng, giữ đầy đủ nội dung và lời động viên tĩnh.
+
+Khi quay lại sau một lượt làm đề mới, hiện lời động viên có thể đóng và 8 ngôi sao bay trong khoảng một giây. Không cộng sao thưởng ngoài hệ thống điểm, không âm thanh tự phát hoặc chuỗi ngày gây áp lực. Lần đầu truy cập chỉ ghi mốc điểm hiện tại, không chúc mừng từ điểm lịch sử. Theo dõi cả làm lại đề bằng tries/at. Mẫu UI này chưa phải bằng chứng tăng động lực học; vẫn cần phản hồi của em gái.

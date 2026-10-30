@@ -13,7 +13,7 @@ Bộ đề kiểm tra trực tuyến cho học sinh lớp 5, bản web dùng tà
 
 Chủ repo yêu cầu ưu tiên cấu trúc, chuẩn hóa build/QA, kiểm chứng bộ Toán, trang chủ chung và GitHub Pages. Đợt giao diện đã hoàn tất. Sau đó chủ repo yêu cầu làm mẫu **Unit 1 Tiếng Anh** theo kế hoạch đã chốt; chưa làm các unit còn lại. Cây thư mục giữ `generator/`, `docs/`, `site/Toan5/`, thêm `tools/` và `site/assets/`; xem `docs/08`.
 
-Lệnh từ gốc repo: `node tools/build.js --regenerate`, `node generator/audit.js`, `python tools/check_links.py`, `python tools/serve.py` rồi `node tools/qa.js` ở terminal khác. Không sửa trực tiếp `site/`; trang chủ chung sinh từ `tools/templates/home.html`. PDF nằm ngoài repo.
+Lệnh từ gốc repo: `node tools/build.js --regenerate`, `node generator/audit.js`, `python tools/check_links.py`, `python tools/serve.py` rồi `node tools/qa.js` ở terminal khác. Không sửa trực tiếp `site/`; trang chủ chung sinh từ `tools/templates/home.html`, `home.css`, `home.js`; build nhúng danh sách đề từ catalog. Hiệu ứng/động viên mới chỉ ở trang chủ chọn môn theo phạm vi đã duyệt, không lan sang đề hoặc trang tổng quan. PDF nằm ngoài repo.
 
 ## Việc của bạn (Codex)
 1. Làm tiếp Tiếng Anh 5 theo `docs/09_TIENG_ANH.md`, mỗi unit là một chủ đề, mỗi chủ đề có 1 trang tổng quan + 6 đề.

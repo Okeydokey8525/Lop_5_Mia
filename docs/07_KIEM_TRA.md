@@ -18,6 +18,7 @@ node tools/qa.js
 node tools/qa_listening.js
 node tools/qa_english_unit1.js
 node tools/qa_theme.js
+node tools/qa_home.js
 node tools/responsive.js
 ```
 
@@ -88,3 +89,7 @@ Audit đếm đủ 6 listen/đề và 2 listen/cấp; main qa và tall hỗ tr�
 ### Theme dùng chung toàn site
 
 node tools/qa_theme.js [baseURL]: đủ 53 trang mặc định hồng sáng khi OS tối, đúng một toggle mỗi trang, chọn Tối/Sáng giữ giữa trang chủ chung/Toán/Anh/tổng quan/đề, kế thừa tùy chọn Anh cũ, hoạt động khi localStorage bị chặn, không đổi dữ liệu điểm. responsive.js chủ động ghi theme sáng/tối trước mỗi lượt, vì theme hiện không theo OS: 848 trường hợp là 53 trang × 8 chiều rộng × 2 theme thực. Không diễn giải chỉ thay prefers-color-scheme thành đã kiểm tra theme tối. CI chạy thêm qa_theme.js; xem ảnh render sau khi font tải và hiệu ứng ổn định.
+
+### Trang chủ tạo hứng thú
+
+node tools/qa_home.js [baseURL]: thanh tiến độ/sao theo điểm thật, bỏ bản ghi hỏng/âm và Anh phiên bản cũ, tên không trở thành HTML, lần đầu không chúc mừng điểm lịch sử, một lời động viên cho mỗi lượt mới kể cả làm lại, đóng/tải lại không lặp, trở lại bằng bfcache, storage bị chặn, giảm chuyển động và 10 tổ hợp kích thước/theme. Ảnh/báo cáo trong artifacts/home-local hoặc home-online. Kiểm tra mặc định sáng/tối và toàn bộ 53 trang/42 đề vẫn theo bộ QA chung.

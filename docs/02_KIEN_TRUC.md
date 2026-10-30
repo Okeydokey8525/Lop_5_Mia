@@ -52,3 +52,9 @@ Tiến độ **không đồng bộ** giữa trình duyệt hoặc thiết bị. 
 `build_all.py`, `gen_overview.py`, `gen_index.py` có main guard và cung cấp hàm render dùng lại. `gen_english.py` gọi các hàm này với metadata, dữ liệu Unit 1, tiêu đề và tổng số riêng; không đổi cấu hình Toán. Build đầy đủ ghi cả `out/Toan5` và `out/TiengAnh5`, rồi xuất web hai môn; standalone nhúng engine/font cho cả hai.
 
 Nguồn Anh là `english/u01/content.py`; wrapper và `tests/de*.js` sinh tự động, được commit theo quy ước nguồn đã bàn giao. `site/catalog.json` sinh từ cấu hình nguồn: danh sách đường dẫn, ID và môn của 42 đề. QA so sánh danh sách thực tế với catalog, không chỉ đếm số HTML có sẵn.
+
+## Trang chủ động viên và tiến độ
+
+Nguồn tools/templates/home.html + home.css/js; tools/build.py sinh site/index.html và site/assets/home.css/js. Danh sách đề được nhúng từ đúng registry sinh site/catalog.json, không thêm danh sách khóa/ID riêng trong JS. Điểm đọc từ mia5:{id} hiện hành, kiểm tra best/max là số hợp lệ và xử lý từng bản ghi hỏng riêng; bản Anh trước -v2 không tính vào bộ hiện tại. Sao theo các ngưỡng đã có, không sửa điểm gốc.
+
+Khóa mia5:home-celebrated lưu snapshot tries/at mỗi đề. Khi chưa có snapshot: ghi mốc, không chúc mừng. Khi lượt làm tăng hoặc có thời gian nộp mới: hiện động viên một lần rồi cập nhật mốc. Tải lại hoặc back-forward không lặp lời chúc mừng cùng lượt; pageshow persisted cập nhật tiến độ khi quay lại từ bộ nhớ trang. Khi storage bị chặn vẫn mở được môn và không hiển thị lời chúc mừng lặp. Đây là trạng thái UI, không phải kết quả học tập.

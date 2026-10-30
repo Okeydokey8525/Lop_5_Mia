@@ -60,3 +60,7 @@ Theme Tiếng Anh dùng chung theme.css/js ở generator/english, mặc định 
 ## Hồng sáng và Sáng/Tối toàn site
 
 Theo yêu cầu tiếp theo của chủ repo, đã mở rộng theme sang trang chủ chung và toàn bộ Toán, không chỉ Anh. Cả 53 trang dùng một nguồn theme và khóa mia5:ui-theme; dữ liệu điểm không đổi. Giữ lựa chọn chủ động trước đây ở Anh khi chưa có lựa chọn chung. Cập nhật build cả standalone và bảy PNG; thêm qa_theme.js và kiểm tra responsive theo theme thực. Những mục trên ghi màu chỉ áp dụng Anh là lịch sử của giai đoạn trước yêu cầu này.
+
+## Trang chủ chọn môn có phản hồi động viên
+
+Đã thực hiện đúng bốn phần chủ repo duyệt: lời chào và hình sách/ngôi sao cả trên điện thoại, thẻ môn phản hồi nhẹ, thanh tiến độ/sao thật, động viên một lần khi quay lại sau lượt luyện tập mới. Giữ phạm vi chỉ trang chọn môn; không thêm hiệu ứng vào đề hoặc trang tổng quan. Tên lấy từ tên đã lưu hoặc Mia; không thêm tài khoản. Có hỗ trợ giảm chuyển động; không đổi nội dung, điểm hay ID đề. Nguồn và cơ chế mốc chúc mừng trong docs02, kiểm tra trong docs07.

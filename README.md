@@ -42,3 +42,5 @@ Mẫu nghe Unit 1 (6 câu, 3 cấp, chờ nghe thử): https://okeydokey8525.git
 Unit 1 hiện đã có 6 câu nghe trong mỗi đề (2 mỗi cấp), vẫn 24 câu/100 điểm. Phần Anh mặc định hồng sáng, có nút Sáng/Tối. Điểm bộ có nghe dùng phiên bản mới, dữ liệu cũ vẫn giữ. Kiểm tra thêm: node tools/qa_english_unit1.js.
 
 Toàn website nay dùng hồng sáng và nút Sáng/Tối chung, giữ lựa chọn khi chuyển Toán/Anh. Nguồn: generator/theme.css/js. Kiểm tra: node tools/qa_theme.js.
+
+Trang chủ chọn môn có lời chào, thanh tiến độ thật và động viên khi hoàn thành thêm lượt luyện tập. Nguồn tools/templates/home.{html,css,js}; kiểm tra node tools/qa_home.js.

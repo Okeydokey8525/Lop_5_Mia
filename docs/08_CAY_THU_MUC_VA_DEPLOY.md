@@ -84,3 +84,7 @@ Nguồn generator/english/{theme.css,theme.js,speech.js}, được nhúng vào s
 ### Theme toàn website
 
 Nguồn theme dùng chung tại generator/theme.css và generator/theme.js, xuất ra site/assets/theme.css/js. tools/build.py nhúng vào toàn bộ HTML cả hai môn trước khi xử lý --standalone; bản web tách ra liên kết tương đối. Trang chủ chung cũng được gắn đúng hai tài nguyên này. gen_english.py chỉ nhúng module speech riêng của Anh; không còn nhúng theme theo môn. Mỗi trang có đúng một nút chuyển màu. Hai file theme cũ trong english đã được đổi vị trí bằng Git, không giữ hai nguồn cạnh tranh. Bảy PNG tổng quan được xuất lại sau build.
+
+### Nguồn trang chủ chọn môn
+
+Bộ nguồn tools/templates/home.{html,css,js}; CSS/JS xuất riêng ra site/assets/home.{css,js}. Build thay __HOME_TESTS__ bằng đúng danh sách sinh catalog.json trước khi viết HTML. Chỉ root index và hai tài nguyên home đổi khi điều chỉnh hiệu ứng trang chọn môn; không sửa nguồn câu hỏi.
