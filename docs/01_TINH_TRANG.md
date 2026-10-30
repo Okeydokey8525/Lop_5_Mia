@@ -24,7 +24,9 @@ Cập nhật 30/10/2026. Bản lịch sử trước khi gom tài liệu nằm tr
 
 Thêm Unit 4 Our free-time activities và Unit 5 My future job: 12 đề/288 câu, trong đó 72 nghe, hai tổng quan HTML/PNG và tám tranh tự tạo. Đã xem đủ trang sách 28–39; NOTES trong u04/u05, quyết định/bài học ở `breakdowns/2026-10-30_UNIT4_UNIT5.md`. ID mới en-u04-deN-v1 và en-u05-deN-v1; Unit 1–3 và Toán không đổi.
 
-Local audit đủ 66 đề, 0 lỗi; tự làm đúng 66/66 đề 100/100, 81 HTML không lỗi trình duyệt; 602 tham chiếu tĩnh đúng hoa/thường. Responsive 1296 trường hợp; runner riêng kiểm tra 12 đề mới, 72 nghe, nháp/điểm phần/reset, biến thể would/I’d và full form, 32 trường hợp trang mới/chọn môn, hai standalone có ảnh. Chưa coi đây là kiểm chứng live hoặc đánh giá phát âm/độ khó bằng học sinh; cập nhật live sau khi Actions triển khai đạt.
+Local audit đủ 66 đề, 0 lỗi; tự làm đúng 66/66 đề 100/100, 81 HTML không lỗi trình duyệt; 602 tham chiếu tĩnh đúng hoa/thường. Responsive 1296 trường hợp; runner riêng kiểm tra 12 đề mới, 72 nghe, nháp/điểm phần/reset, biến thể would/I’d và full form, 32 trường hợp trang mới/chọn môn, hai standalone có ảnh.
+
+Đã xuất bản commit `56a179e`; [Actions build/deploy đạt](https://github.com/Okeydokey8525/Lop_5_Mia/actions/runs/41079470268), gồm 66 đề và 1296 trường hợp responsive trên Linux. Trên Pages thật, `qa_english_units.js --units=4,5` đã kiểm tra đủ 12/12 đề 100/100, lưu điểm sau tải lại, 72 câu nghe (speech mô phỏng), nháp/tên/hỗ trợ, điểm phần, thống kê 5 Unit và reset cách ly; 32 trường hợp trang mới/chọn môn. Tám ảnh live khớp byte nguồn. Báo cáo ở artifacts/units45-online/report.json và asset-report.json. Lần này chỉ kiểm chứng trực tiếp 12 đề mới trên live; toàn bộ 66 đề đã kiểm tra local và CI. Chưa đánh giá phát âm bằng tai hoặc độ khó bởi học sinh.
 
 ## Unit 2–3 — bằng chứng trước khi thêm Unit 4–5
 

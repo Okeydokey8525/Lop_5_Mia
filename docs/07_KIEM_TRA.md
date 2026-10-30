@@ -101,7 +101,7 @@ node tools/qa_drafts.js [baseURL]: ca gốc 3.9/4 phải sai; kiểm tra tử/m�
 
 Điền đúng rồi tải lại cả Toán/Anh, khôi phục đủ dạng mc/pic/tf/fill/order/text/match/reorder/listen để nộp vẫn 100/100; giữ tên, thời gian và hỗ trợ nghe. Không cộng thời gian nghỉ sau reload; bỏ/giữ nháp, xóa sau nộp, giữ điểm cao nhất, reset hai môn riêng biệt, chặn nháp khác nội dung/lượt nộp, xử lý storage bị chặn. Trang môn có nhãn đang làm dở và CTA mở đúng nháp. Dữ liệu thử nằm trong context riêng. Báo cáo/ảnh ở artifacts/draft-local hoặc draft-online.
 
-## Mốc hiện hành: Unit 1–3
+## Mốc Unit 1–3 (trước khi thêm Unit 4–5)
 
 54 đề (36 Toán + 18 Anh), 67 HTML, 9 tổng quan; responsive 67×8×2 = 1072. Các số thấp hơn ở trên là lịch sử. Audit Anh có danh sách ảnh cho phép riêng u01/u02/u03, giữ chặn ảnh lạ. Chạy thêm `node tools/qa_english_units23.js [baseURL]`: 12 đề mới, 72 câu nghe, lời đọc khớp đáp án, phát đủ ba cấp, khôi phục nháp/điểm, chấm phần, tổng tiến độ và reset cách ly; standalone local. Speech được mô phỏng, không coi là đánh giá phát âm bằng tai.
 
