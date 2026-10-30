@@ -104,3 +104,5 @@ node tools/qa_drafts.js [baseURL]: ca gốc 3.9/4 phải sai; kiểm tra tử/m�
 ## Mốc hiện hành: Unit 1–3
 
 54 đề (36 Toán + 18 Anh), 67 HTML, 9 tổng quan; responsive 67×8×2 = 1072. Các số thấp hơn ở trên là lịch sử. Audit Anh có danh sách ảnh cho phép riêng u01/u02/u03, giữ chặn ảnh lạ. Chạy thêm `node tools/qa_english_units23.js [baseURL]`: 12 đề mới, 72 câu nghe, lời đọc khớp đáp án, phát đủ ba cấp, khôi phục nháp/điểm, chấm phần, tổng tiến độ và reset cách ly; standalone local. Speech được mô phỏng, không coi là đánh giá phát âm bằng tai.
+
+Trong lượt quét Pages đã gặp 503 tạm thời khi API kiểm tra tham chiếu tải engine.css; ba lần kiểm tra trực tiếp sau đó đều 200, đúng CSS. `qa.js` thử lại tối đa ba lần chỉ cho 502/503/504, có log mỗi lần; 404/sai hoa thường và lỗi kéo dài vẫn fail. Không coi lần quét bị ngắt là toàn bộ live đã đạt; ghi kết quả lần chạy lại riêng.

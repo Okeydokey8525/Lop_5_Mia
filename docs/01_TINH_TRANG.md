@@ -26,6 +26,8 @@ Cập nhật 30/10/2026. Bản lịch sử trước khi gom tài liệu nằm tr
 
 Đã xuất bản commit `5c8e225`; [Actions build/deploy đạt](https://github.com/Okeydokey8525/Lop_5_Mia/actions/runs/41037419914), gồm hồi quy 54 đề và 1072 trường hợp responsive trên Linux. Trên địa chỉ Pages thật, `qa_english_units23.js` đã đạt: đủ 12 đề mới/72 câu nghe, lời đọc đúng câu (speech mô phỏng), nháp/điểm giữ sau tải lại, chấm phần, tổng tiến độ và reset cách ly; 32 trường hợp trang mới/chọn môn ở sáng/tối. Tám ảnh live khớp byte nguồn. Báo cáo: artifacts/units23-online/report.json và asset-report.json. Không coi kiểm tra tự động này là học sinh đã nghe/đánh giá độ khó.
 
+Lượt kiểm tra toàn site live đầu tiên bị ngắt vì một phản hồi 503 khi tải CSS; tài nguyên kiểm tra lại ba lần đều 200. Sau khi thêm retry giới hạn cho lỗi máy chủ tạm thời vào công cụ kiểm tra, lượt chạy lại toàn bộ đã đạt 54/54 đề 100/100, 67 HTML, không lỗi trình duyệt; thống kê sau tải lại, câu sai/điểm phần và reset riêng từng môn đạt. Báo cáo hoàn chỉnh: artifacts/online/report.json.
+
 ## Bằng chứng lịch sử trước Unit 2–3
 
 Mã thay tranh `4798597`; [workflow build và deploy đạt](https://github.com/Okeydokey8525/Lop_5_Mia/actions/runs/40976976768).

@@ -39,7 +39,14 @@ async function links(page){
   const urls=await page.locator('a[href],img[src],script[src],link[rel=stylesheet]').evaluateAll(els=>els.map(e=>e.href||e.src));
   for(const url of new Set(urls)){
     if(!url.startsWith(BASE)||new URL(url).hash)continue;
-    const response=await page.request.get(url);assert.equal(response.status(),200,`Broken rendered reference ${url}`);
+    let response;
+    for(let attempt=0;attempt<3;attempt++){
+      response=await page.request.get(url);
+      if(![502,503,504].includes(response.status())||attempt===2)break;
+      console.warn(`Temporary HTTP ${response.status()}, retry ${attempt+1}: ${url}`);
+      await page.waitForTimeout(400*(attempt+1));
+    }
+    assert.equal(response.status(),200,`Broken rendered reference ${url}`);
   }
 }
 async function main(){
