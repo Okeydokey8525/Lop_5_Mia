@@ -68,3 +68,7 @@ Unit 1 dùng minh họa nét mềm, đổ bóng nhẹ, màu dịu theo mẫu cá
 ## Hồng sáng Tiếng Anh — chủ repo duyệt 30/10/2026
 
 Nguồn generator/english/theme.css và theme.js. Nền #FFF0F6, thẻ #FFF8FC, đầu trang #FFE0EE → #FFC2DD, nút #FFB3D1 với chữ #702344, viền #F2A7C7, chữ chính #54233D. Mặc định sáng độc lập prefers-color-scheme. Nút Sáng/Tối lưu riêng bằng mia5:ui-en-theme, dùng chung các trang Anh; Math vẫn theo thiết kế cũ. Không thêm bộ lọc CSS phủ lên tranh; PNG tổng quan được sinh lại từ cùng HTML.
+
+## Mở rộng hồng sáng ra toàn website — yêu cầu tiếp theo ngày 30/10/2026
+
+Bảng màu hồng sáng và nút Sáng/Tối nay dùng chung cho toàn bộ 53 trang, cả Toán và Anh, trang chủ chung, reader, poster và HTML tự chứa. Hai file nguồn chuyển từ generator/english/theme.* sang generator/theme.css và theme.js; web dùng site/assets/theme.css/js. Khóa lựa chọn chung mia5:ui-theme; khi chưa có khóa mới, kế thừa lựa chọn chủ động cũ mia5:ui-en-theme. Chọn Sáng ghi rõ khóa mới nên không bị khóa cũ ép về Tối. Không có lựa chọn trước đó thì luôn sáng, độc lập hệ điều hành. Quy định “chỉ đổi Anh/Toán giữ màu cũ” trong mục trước là phạm vi giai đoạn trước, đã được yêu cầu mới thay thế.

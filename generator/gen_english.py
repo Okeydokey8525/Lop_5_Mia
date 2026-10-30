@@ -69,7 +69,7 @@ def main():
     # Shared English-only theme and speech module, embedded for standalone export.
     for target in OUT.rglob('*.html'):
         html=target.read_text(encoding='utf-8')
-        extra=''.join('<style>'+ (W/'english'/name).read_text(encoding='utf-8-sig')+'</style>' if name.endswith('.css') else '<script>'+(W/'english'/name).read_text(encoding='utf-8-sig')+'</script>' for name in ['theme.css','theme.js','speech.js'])
+        extra=''.join('<style>'+ (W/'english'/name).read_text(encoding='utf-8-sig')+'</style>' if name.endswith('.css') else '<script>'+(W/'english'/name).read_text(encoding='utf-8-sig')+'</script>' for name in ['speech.js'])
         target.write_text(html.replace('</head>',extra+'</head>'),encoding='utf-8',newline='\n')
     print('English built: Unit 1 overview + 6 tests (144 questions)')
 

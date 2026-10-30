@@ -12,6 +12,8 @@ async function main(){
     const p=await browser.newPage({reducedMotion:'reduce'});p.on('pageerror',e=>errors.push(e.message));p.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
     for(const scheme of ['light','dark']){
       await p.emulateMedia({colorScheme:scheme});
+      await p.goto(BASE);
+      await p.evaluate(theme=>localStorage.setItem('mia5:ui-theme',theme),scheme);
       for(const width of [320,360,390,400,768,820,1024,1366]){
         await p.setViewportSize({width,height:900});
         for(const file of files){

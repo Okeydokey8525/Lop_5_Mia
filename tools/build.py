@@ -28,6 +28,13 @@ def main():
             run(script.name)
     for script in ("build_all.py", "gen_overview.py", "gen_index.py", "gen_english.py"):
         run(script)
+    theme_resources={name:(GEN/name).read_text(encoding='utf-8-sig') for name in ['theme.css','theme.js']}
+    def with_theme(html):
+        markup='<style>'+theme_resources['theme.css']+'</style><script>'+theme_resources['theme.js']+'</script>'
+        return html.replace('</head>',markup+'</head>')
+    for subject in ('Toan5','TiengAnh5'):
+        for source in (GEN/'out'/subject).rglob('*.html'):
+            source.write_text(with_theme(source.read_text(encoding='utf-8')),encoding='utf-8',newline='\n')
     if args.standalone:
         print("Standalone:", GEN / "out", "(Toan5, TiengAnh5)")
         return
@@ -38,7 +45,9 @@ def main():
                  for name in ("fonts.css", "engine.css", "engine.js", "overview.css", "overview.js")}
     for name, data in resources.items():
         (assets / name).write_text(data, encoding="utf-8", newline="\n")
-    english_resources={name:(GEN/'english'/name).read_text(encoding='utf-8-sig') for name in ['theme.css','theme.js','speech.js']}
+    for name,data in theme_resources.items():
+        (assets/name).write_text(data,encoding='utf-8',newline='\n')
+    english_resources={name:(GEN/'english'/name).read_text(encoding='utf-8-sig') for name in ['speech.js']}
     for name,data in english_resources.items():
         target=assets/'english'/name
         target.parent.mkdir(parents=True,exist_ok=True)
@@ -75,6 +84,10 @@ def main():
                                 f'<link rel="stylesheet" href="{prefix}overview.css">')
             html = html.replace("<script>" + resources["overview.js"] + "</script>",
                                 f'<script src="{prefix}overview.js"></script>')
+        for name,data in theme_resources.items():
+            tag='<style>'+data+'</style>' if name.endswith('.css') else '<script>'+data+'</script>'
+            external=f'<link rel="stylesheet" href="{prefix}{name}">' if name.endswith('.css') else f'<script src="{prefix}{name}"></script>'
+            html=html.replace(tag,external)
         for name,data in english_resources.items():
             embedded=('<style>'+data+'</style>') if name.endswith('.css') else ('<script>'+data+'</script>')
             external=f'<link rel="stylesheet" href="{prefix}english/{name}">' if name.endswith('.css') else f'<script src="{prefix}english/{name}"></script>'
@@ -90,6 +103,7 @@ def main():
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, target)
     home = (ROOT / "tools" / "templates" / "home.html").read_text(encoding="utf-8")
+    home=home.replace('</head>','<link rel="stylesheet" href="assets/theme.css"><script src="assets/theme.js"></script></head>')
     (site / "index.html").write_text(home, encoding="utf-8", newline="\n")
     import json
     sys.path.insert(0,str(GEN))

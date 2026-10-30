@@ -22,7 +22,7 @@ Lệnh từ gốc repo: `node tools/build.js --regenerate`, `node generator/audi
 
 ## Giao diện đã được duyệt
 
-Ngày 29/10/2026, chủ repo duyệt đổi sang hồng anh đào và sửa responsive. Ngày 30/10, chủ repo duyệt hồng sáng cho toàn bộ phần Tiếng Anh; mặc định sáng kể cả hệ điều hành tối, có nút chuyển Sáng/Tối riêng, không đổi màu môn Toán. Giữ font, nội dung, hiệu ứng và tiến độ; màu hiện hành ở `docs/05_THIET_KE.md`. Trang tổng quan có chế độ đọc từng bài cho màn hình ≤820px và poster 1080px cho màn hình lớn/in. `node tools/build.js` build cả HTML, tài nguyên và PNG; `python tools/build.py` chỉ là bước HTML/assets. Không gọi renderer Chromium từ Python Microsoft Store trên Windows vì tiến trình con có thể nhìn sai đường dẫn cache trình duyệt.
+Ngày 29/10/2026, chủ repo duyệt đổi sang hồng anh đào và sửa responsive. Ngày 30/10, chủ repo duyệt hồng sáng rồi yêu cầu áp dụng toàn website: trang chủ chung, Toán, Anh, đề và tổng quan. Mặc định sáng kể cả hệ điều hành tối, có nút Sáng/Tối và lựa chọn chung giữa các môn. Nguồn dùng chung generator/theme.css và theme.js, khóa mia5:ui-theme; không đặt theme riêng trong generator/english nữa. Giữ font, nội dung, hiệu ứng và tiến độ; màu hiện hành ở `docs/05_THIET_KE.md`. Trang tổng quan có chế độ đọc từng bài cho màn hình ≤820px và poster 1080px cho màn hình lớn/in. `node tools/build.js` build cả HTML, tài nguyên và PNG; `python tools/build.py` chỉ là bước HTML/assets. Không gọi renderer Chromium từ Python Microsoft Store trên Windows vì tiến trình con có thể nhìn sai đường dẫn cache trình duyệt.
 
 ## Tiếng Anh — cấu trúc hiện hành
 

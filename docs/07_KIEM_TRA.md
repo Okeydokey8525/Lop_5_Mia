@@ -17,6 +17,7 @@ Giữ server chạy, mở terminal thứ hai:
 node tools/qa.js
 node tools/qa_listening.js
 node tools/qa_english_unit1.js
+node tools/qa_theme.js
 node tools/responsive.js
 ```
 
@@ -83,3 +84,7 @@ Kiểm tra dịch vụ thật riêng: thao tác nút ở trình duyệt có gi�
 ### Unit 1 chính thức có nghe, phiên bản 2
 
 Audit đếm đủ 6 listen/đề và 2 listen/cấp; main qa và tall hỗ trợ điền các field để kiểm tra 100/100. Chạy thêm node tools/qa_english_unit1.js [baseURL]: 36 câu nghe, điểm phần 2,5/5, mở lời nghe trước/sau nộp, hỗ trợ lưu vào kết quả, replay sau nộp, làm lại không nhân đôi listener, theme mặc định sáng khi OS tối, chuyển và lưu theme giữa các trang, thống kê/reset chỉ dùng ID -v2 và giữ dữ liệu cũ/Toán. 32 trường hợp trang/chiều rộng/theme chủ động, ngoài 848 trường hợp theo OS của responsive chung. Speech QA dùng fixture; vẫn kiểm tra phát thật bằng Edge và nghe đánh giá trên thiết bị học sinh.
+
+### Theme dùng chung toàn site
+
+node tools/qa_theme.js [baseURL]: đủ 53 trang mặc định hồng sáng khi OS tối, đúng một toggle mỗi trang, chọn Tối/Sáng giữ giữa trang chủ chung/Toán/Anh/tổng quan/đề, kế thừa tùy chọn Anh cũ, hoạt động khi localStorage bị chặn, không đổi dữ liệu điểm. responsive.js chủ động ghi theme sáng/tối trước mỗi lượt, vì theme hiện không theo OS: 848 trường hợp là 53 trang × 8 chiều rộng × 2 theme thực. Không diễn giải chỉ thay prefers-color-scheme thành đã kiểm tra theme tối. CI chạy thêm qa_theme.js; xem ảnh render sau khi font tải và hiệu ứng ổn định.

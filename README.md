@@ -40,3 +40,5 @@ Bài học sau sửa Unit 1 và kế hoạch tiếp theo nằm trong `docs/break
 Mẫu nghe Unit 1 (6 câu, 3 cấp, chờ nghe thử): https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/Unit1_AllAboutMe/LuyenNghe_Mau.html. Chạy kiểm tra riêng: `node tools/qa_listening.js`; chưa tính vào điểm/sao sáu đề.
 
 Unit 1 hiện đã có 6 câu nghe trong mỗi đề (2 mỗi cấp), vẫn 24 câu/100 điểm. Phần Anh mặc định hồng sáng, có nút Sáng/Tối. Điểm bộ có nghe dùng phiên bản mới, dữ liệu cũ vẫn giữ. Kiểm tra thêm: node tools/qa_english_unit1.js.
+
+Toàn website nay dùng hồng sáng và nút Sáng/Tối chung, giữ lựa chọn khi chuyển Toán/Anh. Nguồn: generator/theme.css/js. Kiểm tra: node tools/qa_theme.js.

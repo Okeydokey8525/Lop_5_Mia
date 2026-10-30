@@ -83,7 +83,7 @@ def nb(html):
 def cd1_sheet():
     chips=''.join(f'<span style="background:{L["col"]};color:#ffffff;border-radius:999px;padding:6px 20px;font-size:22px;font-weight:700">Bài {L["n"]} · {s}</span>' for L,s in zip(LESSONS1,['Số tự nhiên','Phép tính','Phân số','Thập phân','Phép tính phân số','Khác mẫu số','Hỗn số','Hình và đo lường','Luyện tập chung']))
     blocks='\n\n'.join(lesson_block(L) for L in LESSONS1)
-    return nb(f'''<div style="width:1080px;box-sizing:border-box;padding:40px;background:#FFF5F8;color:#4A2433;font-family:'Be Vietnam Pro',system-ui,sans-serif;font-size:26px;line-height:1.4;display:flex;flex-direction:column;gap:28px">
+    return nb(f'''<div style="width:1080px;box-sizing:border-box;padding:40px;background:#FFF0F6;color:#54233D;font-family:'Be Vietnam Pro',system-ui,sans-serif;font-size:26px;line-height:1.4;display:flex;flex-direction:column;gap:28px">
 <div style="display:flex;align-items:center;gap:32px;background:#B83F6B;color:#ffffff;border-radius:32px;padding:34px 40px">
 <div style="flex:none;width:160px;height:160px;border-radius:50%;background:#fff3d6;color:#B83F6B;display:flex;flex-direction:column;align-items:center;justify-content:center;{DISP};font-weight:800;line-height:1"><span style="font-size:28px">Chủ đề</span><span style="font-size:96px">1</span></div>
 <div style="display:flex;flex-direction:column;gap:6px;min-width:0">

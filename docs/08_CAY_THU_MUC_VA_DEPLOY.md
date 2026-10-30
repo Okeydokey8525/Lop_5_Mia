@@ -80,3 +80,7 @@ Khi được giao xuất bản: push thay đổi đã kiểm tra, chờ workflow
 ### Tài nguyên dùng chung cho Anh và phiên bản đề có nghe
 
 Nguồn generator/english/{theme.css,theme.js,speech.js}, được nhúng vào standalone và trích ra site/assets/english khi build web. Module speech dùng riêng các đề có nghe, quản lý một luồng phát và cleanup khi làm lại/rời trang. Nguồn câu nghe generator/english/u01/exam_listening.py thay đúng sáu vị trí trong content.build_tests(); không thêm trang đề mới hoặc đổi URL. Catalog, trang chủ Anh và thống kê ở trang chủ chung cùng đọc ID en-u01-deN-v2, không trộn điểm bộ trước.
+
+### Theme toàn website
+
+Nguồn theme dùng chung tại generator/theme.css và generator/theme.js, xuất ra site/assets/theme.css/js. tools/build.py nhúng vào toàn bộ HTML cả hai môn trước khi xử lý --standalone; bản web tách ra liên kết tương đối. Trang chủ chung cũng được gắn đúng hai tài nguyên này. gen_english.py chỉ nhúng module speech riêng của Anh; không còn nhúng theme theo môn. Mỗi trang có đúng một nút chuyển màu. Hai file theme cũ trong english đã được đổi vị trí bằng Git, không giữ hai nguồn cạnh tranh. Bảy PNG tổng quan được xuất lại sau build.
