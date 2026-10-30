@@ -26,7 +26,7 @@ Ngày 29/10/2026, chủ repo duyệt đổi sang hồng anh đào và sửa resp
 
 ## Tiếng Anh — cấu trúc hiện hành
 
-Nguồn Unit 1 ở `generator/english/u01/content.py`, ghi nhận trang đã đọc ở `NOTES.md`; `common.js` và `tests/*.js` sinh từ nguồn này. `generator/gen_english.py` dùng chung khung đề, tổng quan và trang chủ. Sản phẩm ở `site/TiengAnh5/`, ID `en-u01-de1..6`. `site/catalog.json` liệt kê chính xác 42 đề (36 Toán, 6 Anh) để QA đối chiếu đủ file. Không xóa điểm môn khác khi reset một môn. Giao diện bằng tiếng Việt, câu hỏi tiếng Anh. Chưa có nghe/nói. Chưa mở rộng ngoài Unit 1; chờ chủ repo giao chủ đề tiếp theo.
+Nguồn Unit 1 ở `generator/english/u01/content.py`, ghi nhận trang đã đọc ở `NOTES.md`; `common.js` và `tests/*.js` sinh từ nguồn này. `generator/gen_english.py` dùng chung khung đề, tổng quan và trang chủ. Sản phẩm ở `site/TiengAnh5/`, ID `en-u01-de1..6`. `site/catalog.json` liệt kê chính xác 42 đề (36 Toán, 6 Anh) để QA đối chiếu đủ file. Không xóa điểm môn khác khi reset một môn. Giao diện bằng tiếng Việt, câu hỏi tiếng Anh. Có mẫu nghe riêng 6 câu/3 cấp để chủ repo thử; sáu đề chưa tích hợp nghe, chưa có chấm nói. Chưa mở rộng ngoài Unit 1; chờ chủ repo giao chủ đề tiếp theo.
 
 ## Bài học và quy trình dùng lại
 

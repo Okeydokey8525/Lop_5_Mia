@@ -5,6 +5,7 @@ from english.u01.content import TESTS, build_tests, picture
 from build_all import page as quiz_page
 from gen_overview import page as overview_page, gen_sheet, box
 from gen_index import render_index
+from english.u01.listening import render_listening
 
 W=Path(__file__).resolve().parent
 OUT=W/'out'/'TiengAnh5'
@@ -21,6 +22,7 @@ LEVELS=[dict(id=lv,name=name,desc=desc,stars=k+1,pts=pts) for k,(lv,name,desc,pt
 
 def main():
     folder=OUT/UNIT;folder.mkdir(parents=True,exist_ok=True)
+    (folder/'LuyenNghe_Mau.html').write_text(render_listening(),encoding='utf-8',newline='\n')
     source=W/'english'/'u01';(source/'tests').mkdir(exist_ok=True)
     wrapper='window.MKEN1=function(questions){return '+json.dumps(dict(decimal=False,meta=META,lessons=LESSONS,levels=LEVELS),ensure_ascii=False)[:-1]+',"questions":questions};};\n'
     (source/'common.js').write_text(wrapper,encoding='utf-8',newline='\n')
@@ -60,6 +62,7 @@ def main():
     for old,new in [('>9</text>','>2</text>'),('>18</text>','>3</text>'),('>27</text>','>4</text>'),('>36</text>','>6</text>')]:index=index.replace(old,new)
     for symbol,letter in [('+','A'),('÷','B'),('×','C'),('=','?'),('%','!')]:index=index.replace('>'+symbol+'</span>','>'+letter+'</span>')
     index=index.replace('</head>','<style>:root{--c1:#8B4E84;--c1s:#F2E4F1}@media(prefers-color-scheme:dark){:root{--c1:#DAB1D5;--c1s:#3F2B3D}}</style></head>')
+    index=index.replace('</div></header>', '</div></header><section class="wrap" style="margin-top:24px;margin-bottom:36px"><a class="cta" href="Unit1_AllAboutMe/LuyenNghe_Mau.html">🔊 Thử luyện nghe Unit 1 · 3 cấp độ</a><p>Bản mẫu 6 câu nghe để thử giọng và cách làm, chưa tính vào điểm sáu đề.</p></section>',1)
     (OUT/'index.html').write_text(index,encoding='utf-8',newline='\n')
     print('English built: Unit 1 overview + 6 tests (144 questions)')
 

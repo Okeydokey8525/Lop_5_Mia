@@ -34,6 +34,7 @@ Lop_5_Mia/
 │  ├─ english/u01/
 │  │  ├─ content.py, NOTES.md      nội dung gốc + trang sách đã đối chiếu
 │  │  ├─ images/*.webp, PROMPTS.md tranh nguồn + prompt (PROMPTS ở images/)
+│  │  ├─ listening.py, listening.html  nguồn mẫu nghe 3 cấp
 │  │  └─ common.js, tests/         dữ liệu JS sinh từ content.py
 │  ├─ package.json, package-lock.json
 │  └─ out/{Toan5,TiengAnh5}/       HTML tự chứa, không commit
@@ -42,7 +43,7 @@ Lop_5_Mia/
 │  ├─ index.html, catalog.json, .nojekyll
 │  ├─ assets/                     font/engine/overview, english/u01/*.webp
 │  ├─ Toan5/                      36 đề, 6 tổng quan HTML/PNG, trang chủ
-│  └─ TiengAnh5/                   Unit 1: 6 đề, tổng quan HTML/PNG, trang chủ
+│  └─ TiengAnh5/                   Unit 1: 6 đề, mẫu nghe, tổng quan HTML/PNG, trang chủ
 ├─ artifacts/                     ảnh/báo cáo QA tự sinh, không commit
 └─ .github/workflows/pages.yml
 ```
@@ -70,7 +71,7 @@ Terminal khác: `node tools/qa.js --no-shots`, `node tools/responsive.js --no-sh
 
 ## GitHub Pages
 
-Website: https://okeydokey8525.github.io/Lop_5_Mia/. Nguồn Pages là GitHub Actions. Workflow chạy khi push main, PR hoặc dispatch; build, audit, kiểm tra link, 42 đề và 832 tổ hợp responsive. Chỉ deploy sau khi các bước đạt; PR chỉ kiểm tra. Số lượng hiện tại phải cập nhật theo catalog khi thêm unit.
+Website: https://okeydokey8525.github.io/Lop_5_Mia/. Nguồn Pages là GitHub Actions. Workflow chạy khi push main, PR hoặc dispatch; build, audit, kiểm tra link, 42 đề, QA mẫu nghe và 848 tổ hợp responsive. Chỉ deploy sau khi các bước đạt; PR chỉ kiểm tra. Số lượng hiện tại phải cập nhật theo catalog khi thêm unit.
 
 Chỉ site/ được upload; không xuất bản nguồn, docs hay sách. Giữ URL tương đối và đúng hoa/thường. Tiến độ local/file không chuyển sang origin online; không đổi ID nếu chỉ sửa tranh/giao diện.
 

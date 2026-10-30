@@ -70,4 +70,10 @@ Cùng khung poster 1080px (`docs/05_THIET_KE.md`), thay công thức bằng: t�
 
 Nguồn: `generator/english/u01/content.py`. `gen_english.py` sinh wrapper, 6 JS đề, HTML tự chứa, tổng quan và trang chủ dùng chung thiết kế; build web tách assets như môn Toán. Không dựng `src/` riêng khi repo đã chốt giữ `generator/`.
 
-Đã thêm engine chữ, nối, sắp từ, chọn theo hình, bài đọc. Chưa có nghe/chấm nói. Khóa tiến độ là `mia5:en-u01-de1..6`; trang chủ/reset của Anh chỉ đọc/xóa khóa Anh. Chỉ có Unit 1 trên web, Starter/Review và Unit 2–10 vẫn chưa làm. Chủ repo đã xem mẫu và duyệt thay đủ sáu tranh theo mẫu cá heo ngày 30/10/2026; các unit tiếp theo chờ được giao. Luồng build và trang chủ gộp trong bước 1/4 của kế hoạch gốc đã hoàn tất.
+Đã thêm engine chữ, nối, sắp từ, chọn theo hình, bài đọc. Sáu đề chính thức chưa tích hợp nghe/chấm nói; mẫu nghe riêng xem mục dưới. Khóa tiến độ là `mia5:en-u01-de1..6`; trang chủ/reset của Anh chỉ đọc/xóa khóa Anh. Chỉ có Unit 1 trên web, Starter/Review và Unit 2–10 vẫn chưa làm. Chủ repo đã xem mẫu và duyệt thay đủ sáu tranh theo mẫu cá heo ngày 30/10/2026; các unit tiếp theo chờ được giao. Luồng build và trang chủ gộp trong bước 1/4 của kế hoạch gốc đã hoàn tất.
+
+## Mẫu nghe phân cấp (đã được giao làm thử ngày 30/10/2026)
+
+Mẫu riêng 6 câu, mỗi cấp 2 câu: Trung bình một câu/thông tin trực tiếp; Khá hai câu/chọn thông tin; Giỏi đoạn 4 câu/kết hợp hai thông tin. Cùng giọng/tốc độ rõ cho mọi cấp (rate 0.9, nghe chậm 0.72), không tăng khó bằng đọc nhanh. Có nút chọn/thử giọng, dừng, nghe lại, xem lời nghe/nghĩa, chấm từng câu/cả mẫu. Hỗ trợ không bị trừ điểm. Chấm 8 ý; không nằm trong 24 câu/100 điểm và không làm đổi 6 đề cũ.
+
+Giọng lấy từ Web Speech API, lọc tiếng Anh, chờ voiceschanged và có thông báo nếu thiếu giọng/lỗi/timeout. Không ghi âm/chấm nói, không sao chép audio sách. API trả giọng có sẵn trên thiết bị ([MDN getVoices](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/getVoices)); tham số rate và các sự kiện theo [MDN SpeechSynthesisUtterance](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance). Khả năng tự động kiểm tra hoạt động khác với nghe đánh giá chất lượng giọng; đợi chủ repo duyệt sau khi thử mẫu trước khi mở rộng.

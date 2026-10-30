@@ -6,8 +6,8 @@ Cập nhật 30/10/2026. Bản lịch sử trước khi gom tài liệu nằm tr
 
 - Website: https://okeydokey8525.github.io/Lop_5_Mia/ — GitHub Pages qua Actions.
 - Toán 5 tập một: 6 chủ đề, 36 đề, mỗi đề 24 câu/100 điểm; ID `cd{n}-de{i}` giữ nguyên.
-- Tiếng Anh 5 tập một: Unit 1 — All about me!, 1 tổng quan HTML/PNG + 6 đề (144 câu). Các hồ sơ và câu hỏi tự soạn, bám trang 10–15 đã đọc. Chưa có nghe/chấm nói.
-- Toàn site: 42 đề, 52 HTML, 7 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
+- Tiếng Anh 5 tập một: Unit 1 — All about me!, 1 tổng quan HTML/PNG + 6 đề (144 câu). Các hồ sơ và câu hỏi tự soạn, bám trang 10–15 đã đọc. Có mẫu nghe riêng để thử, chưa tích hợp nghe vào 6 đề và chưa có chấm nói.
+- Toàn site: 42 đề chính thức, 53 HTML, 7 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
 - Giao diện hồng anh đào, tối màu tím mận; reader trên màn hình ≤820px, poster để xem/in. Tiến độ theo origin/trình duyệt, không đồng bộ thiết bị.
 - Chủ repo đã xem Unit 1, phản hồi hình khó nhận diện và duyệt mẫu cá heo. Ngày 30/10 đã áp dụng phong cách mới cho đủ 6 tranh ở tổng quan/câu hỏi, giữ nguyên 144 câu và đáp án. Không suy rộng việc duyệt tranh thành giao làm unit tiếp theo.
 
@@ -40,3 +40,11 @@ Chỉ tiếp tục Starter/Unit/Review khác khi chủ repo giao. Pipeline Anh h
 - Toán học kì 2: chưa có PDF, danh sách chủ đề/bài/số trang; chưa làm chủ đề 7–8.
 - Tiếng Anh 5 tập hai: chưa có sách.
 - Phản hồi học sinh về mức độ khó và câu chưa rõ: chưa có.
+
+## Mẫu nghe ba cấp — 30/10/2026
+
+Theo yêu cầu xem mẫu trước, bổ sung `TiengAnh5/Unit1_AllAboutMe/LuyenNghe_Mau.html`, liên kết từ trang chủ Anh. 6 câu: 2 Trung bình (tên/nơi sống), 2 Khá (môn thể thao/màu), 2 Giỏi (đoạn 4 câu, tìm 2 thông tin). Chấm 8 ý trong 6 câu, không tính điểm/sao đề chính thức và không ghi localStorage.
+
+Có chọn giọng tiếng Anh, thử giọng, nghe bình thường/chậm, dừng, xem lời nghe/nghĩa, kiểm tra từng câu/cả mẫu, làm lại. Nguồn: `generator/english/u01/listening.py` và `listening.html`; lời nghe và đáp án sinh từ cùng dữ kiện. Chỉ dùng giọng thiết bị, không dùng audio SGK hoặc tạo file thu âm. Phụ thuộc giọng cài sẵn/dịch vụ của trình duyệt; bản HTML tự chứa không bảo đảm phát offline trên mọi máy.
+
+QA chuyên biệt mô phỏng speech để kiểm tra điều khiển, lỗi, giọng đến trễ, timeout, chấm sai/thiếu/đúng và reset. Microsoft Edge trên máy hiện tại đã phát sinh sự kiện bắt đầu/kết thúc với Microsoft Zira en-US; đây không phải đánh giá phát âm bằng tai. Cần chủ repo nghe cả ba cấp trên thiết bị dùng thật trước khi triển khai hàng loạt. Tổng responsive hiện 53×8×2 = 848 trường hợp; các bằng chứng 832 ở trên là lịch sử trước mẫu nghe.

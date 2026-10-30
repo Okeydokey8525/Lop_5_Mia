@@ -15,10 +15,11 @@ Giữ server chạy, mở terminal thứ hai:
 
 ```text
 node tools/qa.js
+node tools/qa_listening.js
 node tools/responsive.js
 ```
 
-Server ở `http://127.0.0.1:8765/Lop_5_Mia/`, kiểm tra hoa/thường giống Pages. QA đọc toàn bộ HTML trong `site/`, kiểm tra 52 trang, 42 đề (36 Toán + 6 Anh), link và tài nguyên dựng từ JavaScript, 24 câu/100 điểm, tự điền đúng đạt 100/100, lỗi console/request, tràn ngang ở 400px, biên nhãn SVG (có tính phép xoay/biến đổi), thống kê hai trang chủ và lưu tiến độ sau tải lại. Có kiểm tra nộp thiếu câu, hủy xác nhận, điểm một phần, làm lại và giữ điểm cao nhất. Báo cáo/ảnh ở `artifacts/local/`.
+Server ở `http://127.0.0.1:8765/Lop_5_Mia/`, kiểm tra hoa/thường giống Pages. QA đọc toàn bộ HTML trong `site/`, kiểm tra 53 trang, 42 đề (36 Toán + 6 Anh), link và tài nguyên dựng từ JavaScript, 24 câu/100 điểm, tự điền đúng đạt 100/100, lỗi console/request, tràn ngang ở 400px, biên nhãn SVG (có tính phép xoay/biến đổi), thống kê hai trang chủ và lưu tiến độ sau tải lại. Có kiểm tra nộp thiếu câu, hủy xác nhận, điểm một phần, làm lại và giữ điểm cao nhất. Báo cáo/ảnh ở `artifacts/local/`.
 
 Online chạy cùng bộ: `node tools/qa.js https://okeydokey8525.github.io/Lop_5_Mia/ --no-shots`; báo cáo ở `artifacts/online/`. Dữ liệu thử chỉ nằm trong browser context riêng, không ảnh hưởng tiến độ trình duyệt của em.
 
@@ -71,3 +72,9 @@ Responsive hiện 52 HTML × 8 kích thước × 2 chế độ = 832 tổ hợp,
 ### Tranh Unit 1 — 30/10/2026
 
 Bổ sung kiểm tra ảnh giải mã được (768×512) trong `qa.js`, giữ tỷ lệ 3:2 ở mọi viewport/theme trong `responsive.js`. `audit_english.js` chỉ cho nhúng đúng sáu WebP đã duyệt từ thư mục nguồn, không cho ảnh lạ. Renderer chờ `img.decode()` trước khi xuất PNG; reader giữ chiều cao tự động của ảnh. Đã đối chiếu 144 câu trước/sau bằng dữ liệu (bỏ trường fig): nội dung và đáp án giữ nguyên. Đã xem cả 6 tranh ở kích thước thực và poster xuất lại; standalone Tiếng Anh 6/6 đề đạt 100/100.
+
+### Mẫu nghe ba cấp
+
+`node tools/qa_listening.js [baseURL]` kiểm tra 6 câu/3 cấp/8 ý, phát/chậm/dừng, callback cũ sau chuyển câu, lỗi dịch vụ, giọng tải trễ, không có giọng Anh, thiếu API, timeout khi dịch vụ không bắt đầu, điểm phần/câu thiếu/biến thể chữ, làm lại và giữ nguyên storage đề. Mười trường hợp giao diện (5 chiều rộng × 2 theme) và nút tối thiểu 44px. Báo cáo trong artifacts/listening-local hoặc listening-online. Speech trong bộ này được mô phỏng để CI Linux không cần loa/giọng cài sẵn; không dùng kết quả ấy để khẳng định phát âm hay âm thanh thật đạt.
+
+Kiểm tra dịch vụ thật riêng: thao tác nút ở trình duyệt có giọng Anh, xác nhận start/end; sau đó chủ repo nghe thử bằng tai trên máy/điện thoại. Không tự thêm câu nghe vào sáu đề trước khi duyệt mẫu. Responsive toàn site sau thêm mẫu: 53 trang × 8 chiều rộng × 2 theme = 848.
