@@ -64,3 +64,11 @@ Theo yêu cầu tiếp theo của chủ repo, đã mở rộng theme sang trang 
 ## Trang chủ chọn môn có phản hồi động viên
 
 Đã thực hiện đúng bốn phần chủ repo duyệt: lời chào và hình sách/ngôi sao cả trên điện thoại, thẻ môn phản hồi nhẹ, thanh tiến độ/sao thật, động viên một lần khi quay lại sau lượt luyện tập mới. Giữ phạm vi chỉ trang chọn môn; không thêm hiệu ứng vào đề hoặc trang tổng quan. Tên lấy từ tên đã lưu hoặc Mia; không thêm tài khoản. Có hỗ trợ giảm chuyển động; không đổi nội dung, điểm hay ID đề. Nguồn và cơ chế mốc chúc mừng trong docs02, kiểm tra trong docs07.
+
+## Sau kiểm tra chéo: sửa chấm phân số, đồng hồ và lưu nháp
+
+Đã sửa hai lỗi tái hiện trên website: nhập 3.9 hoặc 3abc ở tử không còn được hiểu thành 3; thao tác sắp xếp số/từ khởi động đồng hồ trước khi dựng lại nút. So sánh phân số/hỗn số bằng số nguyên chính xác sau kiểm tra chuỗi và giới hạn số nguyên an toàn.
+
+Đã thêm nháp cho toàn bộ 42 đề: các ô, lựa chọn, thứ tự số/từ, tên, thời gian và hỗ trợ nghe. Rời/tải lại trang rồi mở đúng đề sẽ khôi phục; đồng hồ chỉ chạy lại sau tương tác, không cộng thời gian đóng/ẩn trang. Nút Bỏ bản nháp có xác nhận, không xóa điểm đã nộp. Trang môn hiển thị Đang làm dở và ưu tiên nút Tiếp tục bài đang làm cho nháp mới nhất. Nháp không tính là đề đã hoàn thành. Sau nộp thành công xóa nháp, điểm/sao vẫn lưu như trước. Không có đồng bộ thiết bị; khi storage bị chặn báo không lưu được.
+
+Nguồn engine.js/css và gen_index.py; QA hồi quy tools/qa_drafts.js. Nội dung/đáp án đề và ID kết quả giữ nguyên.

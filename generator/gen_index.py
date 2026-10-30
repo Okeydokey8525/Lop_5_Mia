@@ -28,6 +28,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);fo
 :focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:8px}
 a{color:inherit}
 .subject-back{display:inline-flex;align-items:center;min-height:44px;margin-bottom:12px;padding:8px 14px;border-radius:999px;background:#ffffff99;color:#4A2433;text-decoration:none;font-weight:700;font-size:14px}
+.draft-note{font-size:13px;font-weight:700;color:var(--ink);background:var(--soft);padding:5px 9px;border-radius:10px}.has-draft a{border-color:var(--focus)}
 /* hero */
 .hero{position:relative;overflow:hidden;margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:34px max(16px,env(safe-area-inset-left,0px)) 56px;color:#4A2433;
   background:linear-gradient(135deg,#FCE4EC 0%,#F8BBD0 100%);border-radius:0 0 36px 36px}
@@ -134,18 +135,19 @@ h1{font-family:var(--f-disp);font-weight:800;font-size:clamp(40px,7vw,68px);line
 var DATA=__DATA__;
 var STAR='<svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 1-5.1 4.9 1.2 7L12 18l-6.1 3.4 1.2-7L2 9.5l7-1z"/></svg>';
 function rd(id){try{return JSON.parse(localStorage.getItem('mia5:'+id)||'null')}catch(e){return null}}
+function draft(id){try{var d=JSON.parse(localStorage.getItem('mia5:draft:'+id)||'null');return d&&d.schema===1&&typeof d.signature==='string'&&Array.isArray(d.answers)&&d.answers.length===24&&d.baseResult===(localStorage.getItem('mia5:'+id)||'')?d:null;}catch(e){return null}}
 function rank(pc){return pc>=80?['Giỏi','gioi',3]:pc>=60?['Khá','kha',2]:pc>=40?['Trung bình','tb',1]:['Cần cố gắng','low',0]}
 function fmt(v){return String(Math.round(v*10)/10).replace('.',',')}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function render(){
-  var root=document.getElementById('topics'),html='',done=0,stars=0,best=0,nextHref=null,nextTxt='Bắt đầu thôi';
+  var root=document.getElementById('topics'),html='',done=0,stars=0,best=0,nextHref=null,nextTxt='Bắt đầu thôi',resume=null;
   DATA.forEach(function(cd,ci){
     var d=0,s=0,firstNew=-1;
     var items=cd.tests.map(function(t,i){
-      var r=rd(t.id),rk=null;
+      var r=rd(t.id),rk=null,draftData=draft(t.id);if(draftData&&(!resume||draftData.updatedAt>resume.at))resume={at:draftData.updatedAt,href:cd.dir+'/'+t.file};
       if(r){d++;rk=rank(r.best/r.max*100);s+=rk[2];done++;stars+=rk[2];best=Math.max(best,r.best)}
       else if(firstNew<0) firstNew=i;
-      return {t:t,r:r,rk:rk,i:i};
+      return {t:t,r:r,rk:rk,i:i,draft:draftData};
     });
     if(nextHref===null&&firstNew>=0){nextHref=cd.dir+'/'+cd.tests[firstNew].file;nextTxt=(done===0&&ci===0)?'Bắt đầu thôi':'Làm đề tiếp theo'}
     var tc='var(--c'+(ci+1)+')';
@@ -154,15 +156,15 @@ function render(){
       '<div class="badge'+(d===6?' on':'')+'">'+STAR+'<span>Chúc mừng em! Em đã làm đủ 6 đề của chủ đề này.</span></div>'+
       '<div class="tb2"><a class="ov" href="'+cd.dir+'/'+cd.overview+'.html"><div class="crop"><img src="'+cd.dir+'/'+cd.overview+'.png" alt="Bức tranh tổng quan Chủ đề '+cd.n+'" loading="lazy"></div><span class="lab">Xem bức tranh tổng quan →</span></a>'+
       '<ol class="path">'+items.map(function(x){
-        var cls='stop'+(x.r?' done r-'+x.rk[1]:'')+(x.i===firstNew?' next':'');
+        var cls='stop'+(x.draft?' has-draft':'')+(x.r?' done r-'+x.rk[1]:'')+(x.i===firstNew?' next':'');
         var res=x.r?'<span class="chip">'+x.rk[0]+'</span><span>'+fmt(x.r.best)+'/'+fmt(x.r.max)+'</span>':'<span class="chip">Chưa làm</span><span></span>';
         var st='';for(var k=0;k<3;k++)st+=(x.r&&k<x.rk[2]?STAR.replace('<svg','<svg class="on"'):STAR);
-        return '<li class="'+cls+'"><a href="'+cd.dir+'/'+x.t.file+'"><div class="top"><span class="num">'+(x.i+1)+'</span><span class="nm">'+esc(x.t.name)+'</span></div><p class="th2">'+esc(x.t.theme)+'</p><div class="res">'+res+'</div><div class="stars" aria-label="'+(x.r?x.rk[2]:0)+' sao">'+st+'</div></a></li>';
+        return '<li class="'+cls+'"><a href="'+cd.dir+'/'+x.t.file+'"><div class="top"><span class="num">'+(x.i+1)+'</span><span class="nm">'+esc(x.t.name)+'</span></div><p class="th2">'+esc(x.t.theme)+'</p><div class="res">'+res+'</div><div class="stars" aria-label="'+(x.r?x.rk[2]:0)+' sao">'+st+'</div>'+(x.draft?'<span class="draft-note">✎ Đang làm dở · Bấm để tiếp tục</span>':'')+'</a></li>';
       }).join('')+'</ol></div></section>';
   });
   root.innerHTML=html;
   document.getElementById('sDone').textContent=done;document.getElementById('sStar').textContent=stars;document.getElementById('sBest').textContent=best?fmt(best):'–';
-  var go=document.getElementById('go');go.href=nextHref||'#cd1';document.getElementById('goTxt').textContent=nextHref?nextTxt:'Ôn lại các đề';
+  var go=document.getElementById('go');go.href=resume?resume.href:(nextHref||'#cd1');document.getElementById('goTxt').textContent=resume?'Tiếp tục bài đang làm':nextHref?nextTxt:'Ôn lại các đề';
 }
 var nm=document.getElementById('nm'),greet=document.getElementById('greet');
 function hello(){var v=(nm.value||'').trim();greet.textContent=v?'Chào '+v+'!':''}
@@ -170,7 +172,7 @@ try{nm.value=localStorage.getItem('mia5:name')||''}catch(e){}
 nm.addEventListener('input',function(){try{localStorage.setItem('mia5:name',nm.value)}catch(e){}hello()});hello();
 document.getElementById('reset').onclick=function(){document.getElementById('ask').classList.add('on')};
 document.getElementById('no').onclick=function(){document.getElementById('ask').classList.remove('on')};
-document.getElementById('yes').onclick=function(){try{Object.keys(localStorage).filter(function(k){return k.indexOf('mia5:cd')===0}).forEach(function(k){localStorage.removeItem(k)})}catch(e){}document.getElementById('ask').classList.remove('on');render()};
+document.getElementById('yes').onclick=function(){try{DATA.forEach(function(cd){cd.tests.forEach(function(t){localStorage.removeItem('mia5:'+t.id);localStorage.removeItem('mia5:draft:'+t.id)})})}catch(e){}document.getElementById('ask').classList.remove('on');render()};
 render();
 </script></body></html>'''
 def render_index(subject_data):

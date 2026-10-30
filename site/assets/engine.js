@@ -96,7 +96,7 @@ function shuffled(n){
   do{ for(i=n-1;i>0;i--){j=Math.floor(Math.random()*(i+1));t=a[i];a[i]=a[j];a[j]=t;} }while(n>1&&a.every(function(x,k){return x===k}));
   return a;
 }
-var ordState={}, speechController=null, supportUsed=new Set();
+var ordState={}, ordDraw={}, speechController=null, supportUsed=new Set();
 function normalizeText(s,exactForm){
   s=String(s).normalize('NFKC').toLowerCase().replace(/[‘’]/g,"'").trim().replace(/\s+/g,' ').replace(/[.!?]+$/,'').trim().replace(/\bfavorite\b/g,'favourite').replace(/\bcolor\b/g,'colour');
   if(exactForm)return s;
@@ -121,9 +121,9 @@ function buildOrder(q,host){
     if(t.hasAttribute('data-add')) chosen.push(+t.getAttribute('data-add'));
     else if(t.hasAttribute('data-rm')) chosen.splice(+t.getAttribute('data-rm'),1);
     else if(t.hasAttribute('data-clr')) chosen.length=0; else return;
-    draw();progress();
+    startTimer();draw();progress();queueDraft();
   });
-  draw();
+  ordDraw[q.i]=draw;draw();
 }
 function buildQ(q,passageRef){
   var el=document.createElement('article');
@@ -135,7 +135,7 @@ function buildQ(q,passageRef){
   if(q.type==='listen'){
     var block=document.createElement('div');block.className='listen-block';block._speechText=q.speech;
     block.innerHTML='<div class="speech-controls"><button type="button" data-speech-play>🔊 Nghe</button><button type="button" data-speech-play data-slow>🐢 Nghe chậm</button><button type="button" data-speech-stop disabled>■ Dừng</button></div><p class="speech-state" role="status"></p><details class="listen-transcript"><summary>Xem lời nghe (hỗ trợ)</summary><p lang="en">'+esc(q.transcript)+'</p></details><p class="listen-support" role="status"></p>';
-    block.querySelector('details').addEventListener('toggle',function(){if(this.open&&!submitted){supportUsed.add(q.i);block.querySelector('.listen-support').textContent='Đã dùng hỗ trợ xem lời nghe; không trừ điểm.';}});
+    block.querySelector('details').addEventListener('toggle',function(){if(this.open&&!submitted){supportUsed.add(q.i);block.querySelector('.listen-support').textContent='Đã dùng hỗ trợ xem lời nghe; không trừ điểm.';startTimer();queueDraft();}});
     host.before(block);host.className='qa listen-fields';
     host.innerHTML=q.fields.map(function(f,k){return '<fieldset><legend>'+esc(f.label)+'</legend>'+(f.options?'<select class="in" data-listen-field="'+k+'" aria-label="'+esc(f.label)+'"><option value="">Chọn đáp án</option>'+f.options.map(function(v){return '<option>'+esc(v)+'</option>'}).join('')+'</select>':'<input class="in text-in" data-listen-field="'+k+'" aria-label="'+esc(f.label)+'" autocomplete="off" spellcheck="false" autocapitalize="off">')+'</fieldset>';}).join('');
   }else
@@ -162,24 +162,29 @@ function buildQ(q,passageRef){
 function readBlank(row){
   var v={}; $$('[data-p]',row).forEach(function(x){v[x.getAttribute('data-p')]=x.value.trim()}); return v;
 }
+function parseInteger(raw){
+  var s=String(raw===undefined?'':raw).trim();
+  if(!/^\d+$/.test(s))return NaN;
+  var n=Number(s);return Number.isSafeInteger(n)?n:NaN;
+}
 function gradeBlank(b,v){
   var n,d,w,an,ad,aw;
   if(b.kind==='num'){var x=parseNum(v.v);return {ok:!isNaN(x)&&Math.abs(x-b.ans)<1e-9};}
   if(b.kind==='sel') return {ok:v.v===b.ans};
-  n=parseInt(v.n,10); d=parseInt(v.d,10);
-  if(!(n>=0&&d>0)) return {ok:false};
+  n=parseInteger(v.n); d=parseInteger(v.d);
+  if(!(n>=0&&d>0)) return {ok:false,note:'Tử số phải là số nguyên không âm; mẫu số phải là số nguyên lớn hơn 0.'};
   if(b.kind==='frac'){
     an=b.ans[0]; ad=b.ans[1];
     if(b.exact||b.reduced){
       if(n===an&&d===ad) return {ok:true};
-      if(n*ad===an*d) return {ok:false,note:b.note||'Giá trị đúng nhưng phân số chưa tối giản.'};
+      if(BigInt(n)*BigInt(ad)===BigInt(an)*BigInt(d)) return {ok:false,note:b.note||'Giá trị đúng nhưng phân số chưa tối giản.'};
       return {ok:false};
     }
-    return {ok:n*ad===an*d};
+    return {ok:BigInt(n)*BigInt(ad)===BigInt(an)*BigInt(d)};
   }
-  w=v.w===''||v.w===undefined?0:parseInt(v.w,10); if(isNaN(w)) return {ok:false};
+  w=v.w===''||v.w===undefined?0:parseInteger(v.w); if(isNaN(w)) return {ok:false,note:'Phần nguyên cần là số nguyên không âm.'};
   aw=b.ans[0]; an=b.ans[1]; ad=b.ans[2];
-  if((w*d+n)*ad===(aw*ad+an)*d){
+  if((BigInt(w)*BigInt(d)+BigInt(n))*BigInt(ad)===(BigInt(aw)*BigInt(ad)+BigInt(an))*BigInt(d)){
     if(n>=d) return {ok:false,note:'Phần phân số của hỗn số phải bé hơn 1.'};
     return {ok:true};
   }
@@ -241,10 +246,56 @@ function gradeQ(q,el){
 }
 
 /* ---------- trang ---------- */
-var root=$('#app'), submitted=false, startedAt=0, timerId=0;
+var root=$('#app'), submitted=false, startedAt=0, timerId=0, elapsedMs=0, draftTimer=0, lastDraftSave=0, hasDraftActivity=false, baseResultRevision='';
+var draftKey='mia5:draft:'+T.meta.id;
+var draftSignature=(function(){
+  var text=JSON.stringify({version:T.meta.version||1,decimal:T.decimal,questions:Q.map(function(q){var c=Object.assign({},q);delete c.fig;delete c.i;return c;})}),h=2166136261;
+  for(var i=0;i<text.length;i++){h^=text.charCodeAt(i);h=Math.imul(h,16777619);}return (h>>>0).toString(16);
+})();
+function resultRevision(){try{return localStorage.getItem('mia5:'+T.meta.id)||'';}catch(e){return '';}}
+function clockMs(){return elapsedMs+(startedAt?Math.max(0,Date.now()-startedAt):0);}
+function draftMessage(message){var status=$('#draftStatus');if(status)status.textContent=message;}
+function saveDraft(){
+  clearTimeout(draftTimer);
+  if(submitted||!hasDraftActivity||!T.meta.id)return;
+  var draft={schema:1,signature:draftSignature,baseResult:baseResultRevision,updatedAt:Date.now(),completed:done(),elapsedMs:clockMs(),name:$('#stuName').value,
+    answers:Q.map(function(q){var el=$('#q'+(q.i+1));return {controls:$$('[data-qa] input,[data-qa] select',el).map(function(input){return {value:input.value,checked:input.checked===true};}),order:(ordState[q.i]||[]).slice()};}),supportUsed:Array.from(supportUsed)};
+  $('#discardDraft').disabled=false;lastDraftSave=Date.now();
+  try{localStorage.setItem(draftKey,JSON.stringify(draft));draftMessage('Đã lưu nháp trên trình duyệt này. Em có thể quay lại để làm tiếp.');}
+  catch(e){draftMessage('Chưa lưu được bản nháp trên trình duyệt này. Em hãy giữ trang mở để làm tiếp.');}
+}
+function queueDraft(){if(submitted)return;hasDraftActivity=true;clearTimeout(draftTimer);draftTimer=setTimeout(saveDraft,250);}
+function restoreDraft(){
+  var draft;try{draft=JSON.parse(localStorage.getItem(draftKey)||'null');}catch(e){draftMessage('Không đọc được bản nháp cũ. Em có thể bắt đầu bài mới.');return;}
+  if(!draft)return;
+  if(draft.schema!==1||draft.signature!==draftSignature||draft.baseResult!==baseResultRevision||!Array.isArray(draft.answers)||draft.answers.length!==Q.length){
+    try{localStorage.removeItem(draftKey);}catch(e){}draftMessage('Bản nháp cũ không khớp phiên bản hoặc lượt nộp hiện tại. Em bắt đầu lượt mới nhé.');return;
+  }
+  // Validate the complete shape before restoring any field. Values go into controls, never HTML.
+  var valid=Number.isFinite(draft.elapsedMs)&&draft.elapsedMs>=0&&draft.elapsedMs<31536000000&&typeof draft.name==='string'&&draft.name.length<=500&&Array.isArray(draft.supportUsed)&&draft.supportUsed.every(function(i){return Number.isInteger(i)&&Q[i]&&Q[i].type==='listen';});
+  Q.forEach(function(q,i){var a=draft.answers[i],inputs=$$('[data-qa] input,[data-qa] select',$('#q'+(i+1)));
+    if(!a||!Array.isArray(a.controls)||a.controls.length!==inputs.length||!Array.isArray(a.order)){valid=false;return;}
+    a.controls.forEach(function(c,k){var input=inputs[k];if(!c||typeof c.value!=='string'||c.value.length>10000||typeof c.checked!=='boolean'){valid=false;return;}
+      if(input.type==='radio'&&c.value!==input.value)valid=false;
+      if(input.tagName==='SELECT'&&!Array.from(input.options).some(function(o){return o.value===c.value;}))valid=false;});
+    if(q.type==='order'||q.type==='reorder'){if(a.order.length>q.items.length||new Set(a.order).size!==a.order.length||a.order.some(function(k){return !Number.isInteger(k)||k<0||k>=q.items.length;}))valid=false;}else if(a.order.length)valid=false;
+  });
+  if(!valid){draftMessage('Bản nháp cũ bị lỗi nên chưa khôi phục. Em có thể bỏ bản nháp để làm mới.');$('#discardDraft').disabled=false;return;}
+  Q.forEach(function(q,i){var a=draft.answers[i],el=$('#q'+(i+1));$$('[data-qa] input,[data-qa] select',el).forEach(function(input,k){if(input.type==='radio')input.checked=a.controls[k].checked;else input.value=a.controls[k].value;});
+    if(ordState[i]){a.order.forEach(function(k){ordState[i].push(k);});ordDraw[i]();}});
+  $('#stuName').value=draft.name;elapsedMs=draft.elapsedMs;supportUsed=new Set(draft.supportUsed);hasDraftActivity=true;
+  supportUsed.forEach(function(i){$('#q'+(i+1)+' .listen-support').textContent='Đã dùng hỗ trợ xem lời nghe; không trừ điểm.';});
+  $('#discardDraft').disabled=false;draftMessage('Đã khôi phục bản nháp: '+done()+'/'+Q.length+' câu đã làm. Đồng hồ tiếp tục khi em làm bài.');progress();tick();
+}
+function pauseClock(){if(startedAt){elapsedMs=clockMs();startedAt=0;clearInterval(timerId);}tick();}
+function discardDraft(){
+  try{localStorage.removeItem(draftKey);}catch(e){draftMessage('Chưa xóa được bản nháp trên trình duyệt này. Bài hiện tại vẫn được giữ.');return;}
+  clearTimeout(draftTimer);build();draftMessage('Đã bỏ bản nháp. Em bắt đầu lượt mới; điểm đã nộp vẫn giữ nguyên.');
+}
+
 function build(){
   if(speechController){speechController.dispose();speechController=null;}supportUsed=new Set();
-  submitted=false; startedAt=0; clearInterval(timerId); ordState={};
+  submitted=false; startedAt=0; elapsedMs=0; hasDraftActivity=false; lastDraftSave=0;clearTimeout(draftTimer);clearInterval(timerId); ordState={};ordDraw={};baseResultRevision=resultRevision();
   var m=T.meta, total=Q.reduce(function(s,q){return s+q.pts},0);
   var html='<header class="hero"><div class="hero-in">'+(m.home?'<a class="back" href="'+esc(m.home)+'">← Trang chủ</a>':'')+'<p class="eyebrow">'+esc(m.book)+'</p><h1>'+esc(m.title)+'</h1><p class="sub">'+esc(m.topic)+' · '+esc(m.range)+'</p>'+(m.theme?'<p class="theme">'+esc(m.theme)+'</p>':'')+
     '<ul class="chips"><li>'+Q.length+' câu</li><li>'+pts(total)+' điểm</li><li>'+m.minutes+' phút</li><li>3 mức: Trung bình · Khá · Giỏi</li></ul></div></header>'+
@@ -253,6 +304,9 @@ function build(){
     (m.tip?'<li>'+m.tip+'</li>':'<li>Ô phân số: số trên là tử số, số dưới là mẫu số.</li>')+
     '<li>Làm xong bấm <b>Nộp bài</b> ở thanh phía dưới để xem điểm và lời giải.</li></ul></section><div id="result"></div><main id="test"></main>';
   root.innerHTML=html;
+  var draftPanel=document.createElement('section');draftPanel.className='draft-panel';draftPanel.innerHTML='<p id="draftStatus" role="status">Bài đang làm sẽ tự lưu nháp trên trình duyệt này.</p><button class="btn alt" id="discardDraft" type="button" disabled>Bỏ bản nháp</button><div id="draftConfirm" hidden><p>Bỏ các câu đang làm dở và bắt đầu lại? Điểm đã nộp vẫn được giữ.</p><button class="btn alt" type="button" id="keepDraft">Giữ bài đang làm</button> <button class="btn" type="button" id="confirmDiscard">Bỏ và làm mới</button></div>';
+  $('.intro').after(draftPanel);$('#discardDraft').onclick=function(){$('#draftConfirm').hidden=false;};$('#keepDraft').onclick=function(){$('#draftConfirm').hidden=true;};$('#confirmDiscard').onclick=discardDraft;
+  $('#stuName').addEventListener('input',queueDraft);
   var main=$('#test');
   T.levels.forEach(function(l){
     var sec=document.createElement('section'); sec.className='lv lv-'+l.id;
@@ -262,8 +316,8 @@ function build(){
     qs.forEach(function(q){var ref=q.passage&&q.passage===previousPassage?passageQ:null;wrap.appendChild(buildQ(q,ref));if(q.passage&&ref===null)passageQ=q.i;previousPassage=q.passage||null;});
     main.appendChild(sec);
   });
-  if(Q.some(function(q){return q.type==='listen'})){var panel=document.createElement('section');panel.className='exam-voice-panel';$('.intro').after(panel);speechController=window.MiaSpeech.mount(panel,main,startTimer);}
-  bar('run'); progress();
+  if(Q.some(function(q){return q.type==='listen'})){var panel=document.createElement('section');panel.className='exam-voice-panel';$('.intro').after(panel);speechController=window.MiaSpeech.mount(panel,main,function(){startTimer();queueDraft();});}
+  bar('run');restoreDraft();progress();
 }
 function bar(mode,extra){
   var b=$('#bar'); b.setAttribute('data-mode',mode);
@@ -287,23 +341,26 @@ function progress(){
 }
 function tick(){
   var t=$('#timer'); if(!t||submitted) return;
-  var s=startedAt?Math.floor((Date.now()-startedAt)/1000):0;
+  var s=Math.floor(clockMs()/1000);
+  if(startedAt&&hasDraftActivity&&Date.now()-lastDraftSave>=5000)saveDraft();
   t.textContent=('0'+Math.floor(s/60)).slice(-2)+':'+('0'+s%60).slice(-2);
 }
-function startTimer(){ if(startedAt||submitted) return; startedAt=Date.now(); timerId=setInterval(tick,1000); }
+function startTimer(){if(submitted)return;hasDraftActivity=true;if(startedAt)return;startedAt=Date.now();timerId=setInterval(tick,1000);}
 function trySubmit(){ var n=Q.length-done(); if(n>0) bar('confirm',n); else submit(); }
 function save(score,max,rank,secs){
   if(!T.meta.id) return;
   try{
-    var k='mia5:'+T.meta.id, old=JSON.parse(localStorage.getItem(k)||'null')||{tries:0,best:0};
+    var k='mia5:'+T.meta.id, old;try{old=JSON.parse(localStorage.getItem(k)||'null');}catch(e){}
+    if(!old||!Number.isFinite(old.best)||old.best<0||old.best>max||!Number.isInteger(old.tries)||old.tries<0)old={tries:0,best:0};
     var sc=Math.round(score*10)/10;
     localStorage.setItem(k,JSON.stringify({tries:old.tries+1,best:Math.max(old.best,sc),last:sc,max:max,rank:rank,secs:secs,at:Date.now(),version:T.meta.version||1,supportUsed:Array.from(supportUsed)}));
-  }catch(e){}
+    return true;
+  }catch(e){return false;}
 }
 function submit(){
-  if(submitted) return; if(speechController)speechController.stop();submitted=true; clearInterval(timerId);
+  if(submitted)return;if(speechController)speechController.stop();saveDraft();pauseClock();submitted=true;clearTimeout(draftTimer);clearInterval(timerId);
   $$('.listen-transcript[open]').forEach(function(d){var article=d.closest('.q');supportUsed.add(Number(article.id.slice(1))-1)});
-  var secs=startedAt?Math.round((Date.now()-startedAt)/1000):0;
+  var secs=Math.round(clockMs()/1000);
   var res=Q.map(function(q){
     var el=$('#q'+(q.i+1)), g=gradeQ(q,el), earned=Math.round(q.pts*g.frac*10)/10;
     var st=g.frac===1?'ok':(g.frac===0?'no':'part'), fb=$('[data-fb]',el);
@@ -334,19 +391,23 @@ function submit(){
     '<div class="actions"><button class="btn" type="button" id="firstWrong">Xem các câu chưa đúng</button><button class="btn alt" type="button" id="redo">Làm lại bài</button></div></section>';
   $('#firstWrong').onclick=function(){var w=res.filter(function(r){return r.st!=='ok'})[0]; var t=w?$('#q'+(w.q.i+1)):$('#test'); t.scrollIntoView({behavior:'smooth',block:'start'})};
   $('#redo').onclick=function(){build();window.scrollTo(0,0)};
-  save(total,max,rank,secs);
+  if(save(total,max,rank,secs)){try{localStorage.removeItem(draftKey);}catch(e){}draftMessage('Đã nộp bài và lưu kết quả. Bản nháp của lượt này đã hoàn tất.');}
+  else draftMessage('Bài đã chấm nhưng chưa lưu được kết quả trên trình duyệt này. Em hãy giữ trang mở.');
+  $('#discardDraft').disabled=true;$('#draftConfirm').hidden=true;
   var nav=(T.meta.prev?'<a class="btn alt" href="'+esc(T.meta.prev)+'">← Đề trước</a>':'')+(T.meta.next?'<a class="btn" href="'+esc(T.meta.next)+'">Đề tiếp theo →</a>':'')+(T.meta.home?'<a class="btn alt" href="'+esc(T.meta.home)+'">Về trang chủ</a>':'');
   if(nav) $('#resultBox .actions').insertAdjacentHTML('beforeend',nav);
   bar('done'); $('#resultBox').scrollIntoView({block:'start'});
 }
-document.addEventListener('input',function(e){ if(e.target.closest&&e.target.closest('#test')){startTimer();progress()} });
-document.addEventListener('change',function(e){ if(e.target.closest&&e.target.closest('#test')){startTimer();progress()} });
-document.addEventListener('click',function(e){ if(e.target.closest&&e.target.closest('#test .chip')){startTimer();progress()} });
+document.addEventListener('input',function(e){ if(e.target.closest&&e.target.closest('#test')){startTimer();progress();queueDraft()} });
+document.addEventListener('change',function(e){ if(e.target.closest&&e.target.closest('#test')){startTimer();progress();queueDraft()} });
+document.addEventListener('click',function(e){ if(e.target.closest&&e.target.closest('#test .chip')){startTimer();progress();queueDraft()} });
+document.addEventListener('visibilitychange',function(){if(document.hidden&&!submitted){pauseClock();saveDraft();}});
+window.addEventListener('pagehide',function(){if(!submitted){pauseClock();saveDraft();}});
 build();
 // Reserve the actual bar height in every mode, including wrapped mobile results.
 function reserveBarSpace(){document.documentElement.style.setProperty('--bar-height',Math.ceil($('#bar').getBoundingClientRect().height)+'px');}
 if(typeof ResizeObserver!=='undefined')new ResizeObserver(reserveBarSpace).observe($('#bar'));
 window.addEventListener('resize',reserveBarSpace);
 document.fonts.ready.then(reserveBarSpace);reserveBarSpace();
-window.__quiz={Q:Q,build:build,submit:submit,normalizeText:normalizeText,textIsCorrect:textIsCorrect};
+window.__quiz={Q:Q,build:build,submit:submit,normalizeText:normalizeText,textIsCorrect:textIsCorrect,gradeBlank:gradeBlank};
 })();

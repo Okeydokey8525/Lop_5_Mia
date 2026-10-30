@@ -204,3 +204,5 @@ table.dt tbody th{font-weight:600;background:var(--paper)}
 .lvh>div{min-width:0}.chip{max-width:100%;white-space:normal}
 .sw span{min-height:44px;display:grid;place-items:center}
 @media(max-width:380px){.q{padding:14px 12px}.lvh{gap:8px;padding:12px}.lvh .st{font-size:16px;letter-spacing:0}.lvh h2{font-size:22px}.bar-in{gap:8px}.bar .stat{flex-basis:140px}.bar .go{padding-inline:16px}}
+
+.draft-panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:16px 0;font-size:14px;color:var(--muted)}.draft-panel p{margin:0 0 10px}.draft-panel .btn{min-height:44px;padding:8px 14px;font-size:14px}.draft-panel button:disabled{opacity:.5;cursor:default}.draft-panel [hidden]{display:none!important}#draftConfirm{margin-top:12px;border-top:1px solid var(--line);padding-top:12px}#draftConfirm button{margin:4px 0}

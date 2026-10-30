@@ -78,3 +78,7 @@ Bảng màu hồng sáng và nút Sáng/Tối nay dùng chung cho toàn bộ 53 
 Chỉ trang chủ chung: lời chào theo tên đã lưu (mặc định Mia), sách/ngôi sao trên cả điện thoại, đầu trang gọn, thẻ hiện nhẹ/nhún khi bấm và thanh tiến độ thật. Ngôi sao đầu trang chỉ lắc hai lượt rồi dừng; phản hồi khi rê chuột chỉ dùng cho thiết bị có hover. Chuyển động không che nội dung/nút. Hỗ trợ prefers-reduced-motion: tắt hiệu ứng, giữ đầy đủ nội dung và lời động viên tĩnh.
 
 Khi quay lại sau một lượt làm đề mới, hiện lời động viên có thể đóng và 8 ngôi sao bay trong khoảng một giây. Không cộng sao thưởng ngoài hệ thống điểm, không âm thanh tự phát hoặc chuỗi ngày gây áp lực. Lần đầu truy cập chỉ ghi mốc điểm hiện tại, không chúc mừng từ điểm lịch sử. Theo dõi cả làm lại đề bằng tries/at. Mẫu UI này chưa phải bằng chứng tăng động lực học; vẫn cần phản hồi của em gái.
+
+## Trạng thái nháp
+
+Đề có khung thông báo tự lưu/khôi phục gần đầu bài, nút Bỏ bản nháp và xác nhận ngay trong khung. Khi lưu lỗi phải báo đúng, không vẫn hiện “đã lưu”. Trang danh sách đề có nhãn Đang làm dở và ưu tiên tiếp tục nháp mới nhất; không dùng dấu hoàn thành hoặc sao cho bài chưa nộp. Màu theo theme dùng chung.

@@ -32,6 +32,10 @@ Nguồn Unit 1 ở `generator/english/u01/content.py`, ghi nhận trang đã đ�
 
 Khi làm tranh bài học, đọc `.agents/skills/mia-learning-illustrations/SKILL.md` và `docs/playbooks/TRANH_MINH_HOA.md`. Bài học thực tế ở `docs/breakdowns/2026-10-30_BAI_HOC_UNIT1.md`; công việc tiếp theo ở `docs/breakdowns/KE_HOACH_TIEP_THEO.md`. Mục lục ở `docs/README.md`; `docs/history/` là snapshot cũ, không phải trạng thái hiện hành. Tranh Unit 1 đã được chủ repo duyệt và cập nhật đủ sáu hình ngày 30/10/2026. Sách trên máy này nay ở `../tai_lieu/sach/`, bản bàn giao cũ ở `../luu_tru/`; không dùng bản cũ làm nguồn sửa.
 
+## Lưu nháp và chấm phân số
+
+Engine lưu nháp đáp án/thứ tự/tên/thời gian/hỗ trợ nghe theo `mia5:draft:{id}`; khác khóa kết quả `mia5:{id}`. Tự khôi phục khi cùng nội dung và cùng lượt kết quả nền, không cộng thời gian đóng/ẩn trang. Có nút bỏ nháp và dấu Đang làm dở ở trang môn. Nộp thành công xóa nháp; reset môn xóa kết quả/nháp của đúng các ID môn đó. Không đổi ID điểm đã nộp trong đợt này. Phân số/hỗn số phải nhập số nguyên hợp lệ, so sánh giá trị bằng số nguyên chính xác; không dùng parseInt cắt phần dư. Chạy `node tools/qa_drafts.js` khi sửa các luồng này.
+
 ## Quy tắc cứng
 1. **Giữ nguyên thiết kế** hiện có (`docs/05_THIET_KE.md`): màu, font, bố cục trang tổng quan, hiệu ứng trang chủ. Chỉ thêm, không đổi giao diện cũ trừ khi chủ repo yêu cầu.
 2. **Đáp án phải do code tính ra** từ cùng số liệu của đề (Python `Decimal`/`Fraction`). Không gõ tay đáp án và lời giải riêng rẽ.

@@ -58,3 +58,11 @@ Nguồn Anh là `english/u01/content.py`; wrapper và `tests/de*.js` sinh tự �
 Nguồn tools/templates/home.html + home.css/js; tools/build.py sinh site/index.html và site/assets/home.css/js. Danh sách đề được nhúng từ đúng registry sinh site/catalog.json, không thêm danh sách khóa/ID riêng trong JS. Điểm đọc từ mia5:{id} hiện hành, kiểm tra best/max là số hợp lệ và xử lý từng bản ghi hỏng riêng; bản Anh trước -v2 không tính vào bộ hiện tại. Sao theo các ngưỡng đã có, không sửa điểm gốc.
 
 Khóa mia5:home-celebrated lưu snapshot tries/at mỗi đề. Khi chưa có snapshot: ghi mốc, không chúc mừng. Khi lượt làm tăng hoặc có thời gian nộp mới: hiện động viên một lần rồi cập nhật mốc. Tải lại hoặc back-forward không lặp lời chúc mừng cùng lượt; pageshow persisted cập nhật tiến độ khi quay lại từ bộ nhớ trang. Khi storage bị chặn vẫn mở được môn và không hiển thị lời chúc mừng lặp. Đây là trạng thái UI, không phải kết quả học tập.
+
+## Nháp bài đang làm
+
+Khóa `mia5:draft:{id}` tách khỏi kết quả `mia5:{id}`. Dữ liệu gồm schema=1, hash nội dung có ý nghĩa (bỏ hình minh họa/index runtime), bản ghi kết quả nền, updatedAt, số câu đã làm, elapsedMs, tên, trạng thái input/select theo câu, thứ tự token, supportUsed. Không lưu DOM, không nhúng đáp án đúng vào nháp, không tự phát lại âm thanh khi khôi phục. Giá trị được gán vào control, không thành HTML.
+
+Lưu sau khoảng 250ms ngừng nhập, định kỳ 5 giây khi đồng hồ chạy, và đồng bộ lúc pagehide/visibility hidden. Đóng/ẩn trang tạm dừng đồng hồ; khôi phục giữ thời gian tích lũy và chỉ tiếp tục khi tương tác. Không lưu kết quả nộp dưới dạng nháp; nộp thành công xóa nháp, nộp nhưng lưu kết quả lỗi thì giữ bản nháp gần nhất. Nháp phải khớp schema, nội dung, hình dạng input/token và kết quả nền; nháp thuộc lượt trước khi có kết quả mới không được phục hồi lại. Nháp hỏng/không tương thích có thông báo; không áp dụng một phần trạng thái sai.
+
+Nút bỏ nháp chỉ xóa khóa nháp của đúng đề; reset môn duyệt các ID trong DATA rồi xóa hai khóa kết quả/nháp tương ứng, giữ môn khác và kết quả Anh phiên bản cũ. Tiến độ trên trang chủ vẫn chỉ dựa vào đề đã nộp. Nháp ở trang môn có nhãn riêng và nút đi tiếp, không cộng sao.

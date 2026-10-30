@@ -19,6 +19,7 @@ node tools/qa_listening.js
 node tools/qa_english_unit1.js
 node tools/qa_theme.js
 node tools/qa_home.js
+node tools/qa_drafts.js
 node tools/responsive.js
 ```
 
@@ -93,3 +94,9 @@ node tools/qa_theme.js [baseURL]: đủ 53 trang mặc định hồng sáng khi 
 ### Trang chủ tạo hứng thú
 
 node tools/qa_home.js [baseURL]: thanh tiến độ/sao theo điểm thật, bỏ bản ghi hỏng/âm và Anh phiên bản cũ, tên không trở thành HTML, lần đầu không chúc mừng điểm lịch sử, một lời động viên cho mỗi lượt mới kể cả làm lại, đóng/tải lại không lặp, trở lại bằng bfcache, storage bị chặn, giảm chuyển động và 10 tổ hợp kích thước/theme. Ảnh/báo cáo trong artifacts/home-local hoặc home-online. Kiểm tra mặc định sáng/tối và toàn bộ 53 trang/42 đề vẫn theo bộ QA chung.
+
+### Hồi quy sau kiểm tra chéo
+
+node tools/qa_drafts.js [baseURL]: ca gốc 3.9/4 phải sai; kiểm tra tử/mẫu/phần nguyên có chữ, thập phân, số âm, mẫu 0, số mũ, số vượt giới hạn, phân số tương đương và yêu cầu tối giản. Kiểm tra bắt đầu bằng order/reorder làm đồng hồ chạy.
+
+Điền đúng rồi tải lại cả Toán/Anh, khôi phục đủ dạng mc/pic/tf/fill/order/text/match/reorder/listen để nộp vẫn 100/100; giữ tên, thời gian và hỗ trợ nghe. Không cộng thời gian nghỉ sau reload; bỏ/giữ nháp, xóa sau nộp, giữ điểm cao nhất, reset hai môn riêng biệt, chặn nháp khác nội dung/lượt nộp, xử lý storage bị chặn. Trang môn có nhãn đang làm dở và CTA mở đúng nháp. Dữ liệu thử nằm trong context riêng. Báo cáo/ảnh ở artifacts/draft-local hoặc draft-online.

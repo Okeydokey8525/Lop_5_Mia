@@ -44,3 +44,5 @@ Unit 1 hiện đã có 6 câu nghe trong mỗi đề (2 mỗi cấp), vẫn 24 c
 Toàn website nay dùng hồng sáng và nút Sáng/Tối chung, giữ lựa chọn khi chuyển Toán/Anh. Nguồn: generator/theme.css/js. Kiểm tra: node tools/qa_theme.js.
 
 Trang chủ chọn môn có lời chào, thanh tiến độ thật và động viên khi hoàn thành thêm lượt luyện tập. Nguồn tools/templates/home.{html,css,js}; kiểm tra node tools/qa_home.js.
+
+Các đề nay tự lưu nháp trên cùng trình duyệt để làm tiếp khi quay lại, gồm đáp án và thời gian đã làm. Danh sách đề ghi Đang làm dở; có nút bỏ nháp, tách khỏi điểm đã nộp. Khi đóng/ẩn trang đồng hồ tạm dừng. Kiểm tra hồi quy: node tools/qa_drafts.js.

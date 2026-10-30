@@ -49,3 +49,7 @@ Engine so sánh thứ tự chỉ số, không tự tính giá trị của chuỗ
 `type: 'listen'`, `speech` (lời đọc), `transcript` (lời nghe hiển thị), `fields: [{label, answer, options: [...]/null, alternatives: [...]}]`. Có thể có fig minh họa. Mỗi field được chấm một phần bằng nhau của điểm câu; ví dụ 1/2 ý của câu 5 điểm = 2,5 điểm. Cùng dữ kiện sinh lời nghe và đáp án, không gõ hai nguồn độc lập. Lớp 5A có thể đọc thành “Class five A” nhưng transcript vẫn là “Class 5A”.
 
 Engine dùng speech.js chỉ khi có câu listen. Lời nghe ẩn trước nộp, mở thủ công ghi supportUsed; sau nộp tự mở. Replay sau nộp được phép, các ô trả lời khóa. Làm lại reset hỗ trợ và giải phóng speech controller cũ. ID đề Anh đổi hậu tố -v2; bản cũ giữ trong localStorage và không được cộng vào thống kê bản mới.
+
+## Nhập phân số/hỗn số
+
+Tử, mẫu và phần nguyên chỉ nhận toàn bộ chuỗi chữ số sau khi trim; tử/phần nguyên không âm, mẫu lớn hơn 0. Từ chối phần thập phân, dấu phẩy, ký tự dư, số mũ và số vượt Number.MAX_SAFE_INTEGER. Ô phần nguyên để trống vẫn hiểu là 0 theo quy ước cũ. So sánh chéo bằng BigInt để không mất chính xác ở tích lớn; điều kiện tối giản/đúng dạng vẫn giữ nguyên. Không đổi quy ước ô số thập phân hoặc định dạng số nguyên thông thường của dạng num.
