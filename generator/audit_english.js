@@ -1,7 +1,7 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 let count=0,bad=0;
 // Explicit per-unit inventories: unrelated images or book scans cannot enter output.
-const inventories={u01:['city','countryside','dolphin','pink','sandwich','table-tennis'],u02:['house','flat','building','tower'],u03:['friendly','helpful','clever','active']};
+const inventories={u01:['city','countryside','dolphin','pink','sandwich','table-tennis'],u02:['house','flat','building','tower'],u03:['friendly','helpful','clever','active'],u04:['play-the-violin','surf-the-internet','go-for-a-walk','water-the-flowers'],u05:['firefighter','reporter','gardener','writer']};
 for(const [unit,names] of Object.entries(inventories)){
 const images=path.join(__dirname,'english',unit,'images');
 assert.deepEqual(fs.readdirSync(images).filter(f=>f.endsWith('.webp')).sort(),names.map(n=>n+'.webp').sort());
@@ -35,5 +35,5 @@ for(let i=1;i<=6;i++){
   }catch(e){bad++;console.error('English '+unit+' de'+i,e.message);}
 }
 }
-console.log(`English audit: ${count}/18 tests, ${count*24} questions, ${bad} issues`);
+console.log(`English audit: ${count}/${Object.keys(inventories).length*6} tests, ${count*24} questions, ${bad} issues`);
 if(bad)process.exitCode=1;

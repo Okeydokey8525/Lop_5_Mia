@@ -51,7 +51,7 @@ Tiến độ **không đồng bộ** giữa trình duyệt hoặc thiết bị. 
 
 `build_all.py`, `gen_overview.py`, `gen_index.py` có main guard và cung cấp hàm render dùng lại. `gen_english.py` gọi các hàm này với metadata, dữ liệu Unit 1, tiêu đề và tổng số riêng; không đổi cấu hình Toán. Build đầy đủ ghi cả `out/Toan5` và `out/TiengAnh5`, rồi xuất web hai môn; standalone nhúng engine/font cho cả hai.
 
-Nguồn Anh là `english/u01/content.py`; wrapper và `tests/de*.js` sinh tự động, được commit theo quy ước nguồn đã bàn giao. `site/catalog.json` sinh từ cấu hình nguồn: danh sách đường dẫn, ID và môn của 54 đề. QA so sánh danh sách thực tế với catalog, không chỉ đếm số HTML có sẵn.
+Nguồn Anh là `english/u01/content.py`; wrapper và `tests/de*.js` sinh tự động, được commit theo quy ước nguồn đã bàn giao. `site/catalog.json` sinh từ cấu hình nguồn: danh sách đường dẫn, ID và môn của 66 đề. QA so sánh danh sách thực tế với catalog, không chỉ đếm số HTML có sẵn.
 
 ## Trang chủ động viên và tiến độ
 
@@ -70,3 +70,7 @@ Nút bỏ nháp chỉ xóa khóa nháp của đúng đề; reset môn duyệt c�
 ## Unit 2–3
 
 Registry `generator/english/units.py` sinh danh mục đề và dữ liệu trang môn từ cùng cấu hình. `practice.py` tái dùng các dạng câu và nhúng WebP; `overviews.py` dựng tổng quan mới. Mỗi thư mục u02/u03 chứa content.py, NOTES.md, tranh/prompt và JS sinh ra. Build trích ảnh của u01/u02/u03 thành tài nguyên web, standalone nhúng cùng byte. ID mới en-u02-deN-v1 và en-u03-deN-v1; không đổi ID/nội dung/điểm Unit 1 hoặc Toán.
+
+## Mở rộng đến Unit 5
+
+Registry `english/units.py` có thêm DETAILS chứa topic, lessons và màu từng Unit 2–5; gen_english.py không dùng điều kiện Unit 2/else Unit 3 cho Unit mới. Mô tả sáu đề khai báo theo từng Unit. Hàm text của practice.py hỗ trợ các biến thể I would/I’d, He would/He’d, She would/She’d khi không bắt buộc dạng đầy đủ; engine và dữ liệu Unit 1–3/Toán không thay đổi. `tools/qa_english_units.js --units=4,5` dùng chung luồng kiểm chứng với wrapper Unit 2–3; tổng số chủ đề/đề lấy từ catalog.

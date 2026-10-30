@@ -41,6 +41,7 @@ jobs:
           node tools/qa_listening.js
           node tools/qa_english_unit1.js
           node tools/qa_english_units23.js
+          node tools/qa_english_units.js --units=4,5
           node tools/qa_theme.js
           node tools/qa_home.js
           node tools/qa_drafts.js

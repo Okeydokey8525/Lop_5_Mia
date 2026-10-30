@@ -86,3 +86,7 @@ Khi quay lại sau một lượt làm đề mới, hiện lời động viên c�
 ## Unit 2–3
 
 Giữ theme hồng sáng chung. Accent tổng quan Unit 2 #AD4278 / nền #FFE3F1; Unit 3 #AF4771 / nền #FFE8F1. Tranh theo phong cách thiếu nhi đã duyệt, WebP 768×512, có caption ở tổng quan, lưới tự xuống một cột trên màn hình nhỏ. Tranh building/tower không làm hai đáp án cạnh tranh chỉ dựa hình; tính cách luôn kèm hành động/ngữ cảnh.
+
+## Unit 4–5
+
+Giữ hồng sáng chung. Accent Unit 4 #A13D79 / nền #FFE5F4; Unit 5 #B03D70 / nền #FFE4EE. Tranh 3:2, caption ở tổng quan và lưới hai cột/thu về một cột; giữ font và thiết kế cũ. Violin có đàn/cần vĩ rõ; Internet có máy tính/trang web; nghề có hành động/dụng cụ cụ thể. Không lấy việc tưới hoa của trẻ để hỏi nghề gardener; tranh nghề là người lớn trong bối cảnh công việc.

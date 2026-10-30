@@ -36,16 +36,16 @@ Lop_5_Mia/
 │  │  ├─ images/*.webp, PROMPTS.md tranh nguồn + prompt (PROMPTS ở images/)
 │  │  ├─ listening.py, listening.html  nguồn mẫu nghe 3 cấp
 │  │  └─ common.js, tests/         dữ liệu JS sinh từ content.py
-│  ├─ english/u02/, english/u03/   content.py, NOTES.md, images/, common.js, tests/
-│  ├─ english/units.py             registry Unit 1–3, catalog/ID
+│  ├─ english/u02/..u05/   content.py, NOTES.md, images/, common.js, tests/
+│  ├─ english/units.py             registry Unit 1–5, catalog/ID
 │  ├─ package.json, package-lock.json
 │  └─ out/{Toan5,TiengAnh5}/       HTML tự chứa, không commit
 ├─ tools/                         build, serve, QA, templates/home.html
 ├─ site/                          chỉ thư mục này được xuất bản
 │  ├─ index.html, catalog.json, .nojekyll
-│  ├─ assets/                     font/engine/overview, english/u01..u03/*.webp
+│  ├─ assets/                     font/engine/overview, english/u01..u05/*.webp
 │  ├─ Toan5/                      36 đề, 6 tổng quan HTML/PNG, trang chủ
-│  └─ TiengAnh5/                   Unit 1–3: 18 đề, mẫu nghe, 3 tổng quan HTML/PNG, trang chủ
+│  └─ TiengAnh5/                   Unit 1–5: 30 đề, mẫu nghe, 5 tổng quan HTML/PNG, trang chủ
 ├─ artifacts/                     ảnh/báo cáo QA tự sinh, không commit
 └─ .github/workflows/pages.yml
 ```
@@ -67,13 +67,13 @@ python tools/serve.py
 
 Terminal khác: `node tools/qa.js --no-shots`, `node tools/responsive.js --no-shots`. Có thể bỏ `--no-shots` để lưu ảnh. HTTP local ở `http://127.0.0.1:8765/Lop_5_Mia/`. Chi tiết/giới hạn kiểm tra ở [07](07_KIEM_TRA.md).
 
-`--regenerate` sinh lại dữ liệu Toán CĐ4–6; Anh luôn sinh từ content.py. Node gọi Python để tạo HTML/assets, rồi gọi Chromium trực tiếp để render 9 PNG. Trên Windows không đưa Chromium thành tiến trình con của Python Microsoft Store vì từng gặp lệch filesystem/cache trình duyệt.
+`--regenerate` sinh lại dữ liệu Toán CĐ4–6; Anh luôn sinh từ content.py. Node gọi Python để tạo HTML/assets, rồi gọi Chromium trực tiếp để render 11 PNG. Trên Windows không đưa Chromium thành tiến trình con của Python Microsoft Store vì từng gặp lệch filesystem/cache trình duyệt.
 
 `node tools/build.js --standalone` xuất HTML tự chứa cho cả hai môn trong generator/out, không cập nhật site. Web dùng CSS/JS/ảnh chung; standalone nhúng cùng tài nguyên. Với tranh Anh, picture() nhúng WebP, bước web trích đúng byte vào assets và đổi URL tương đối. Renderer chờ font và giải mã ảnh trước chụp poster. Nguồn fonts.css vẫn dùng được nhưng script tạo lại font gốc chưa có trong repo.
 
 ## GitHub Pages
 
-Website: https://okeydokey8525.github.io/Lop_5_Mia/. Nguồn Pages là GitHub Actions. Workflow chạy khi push main, PR hoặc dispatch; build, audit, kiểm tra link, 54 đề, QA mẫu nghe/Unit 1/Unit 2–3 và 1072 tổ hợp responsive. Chỉ deploy sau khi các bước đạt; PR chỉ kiểm tra. Số lượng hiện tại phải cập nhật theo catalog khi thêm unit.
+Website: https://okeydokey8525.github.io/Lop_5_Mia/. Nguồn Pages là GitHub Actions. Workflow chạy khi push main, PR hoặc dispatch; build, audit, kiểm tra link, 66 đề, QA mẫu nghe/Unit 1/Unit 2–3/Unit 4–5 và 1296 tổ hợp responsive. Chỉ deploy sau khi các bước đạt; PR chỉ kiểm tra. Số lượng hiện tại phải cập nhật theo catalog khi thêm unit.
 
 Chỉ site/ được upload; không xuất bản nguồn, docs hay sách. Giữ URL tương đối và đúng hoa/thường. Tiến độ local/file không chuyển sang origin online; không đổi ID nếu chỉ sửa tranh/giao diện.
 

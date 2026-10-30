@@ -16,7 +16,7 @@ def text(stem, answer, why, lesson=1, alternatives=()):
     accepted=list(alternatives)
     if 'full form' not in stem.lower() and 'rewrite in full' not in stem.lower():
         short=answer
-        for full,contracted in [('He is',"He's"),('She is',"She's"),('It is',"It's"),('I am',"I'm"),('What is',"What's"),('do not',"don't")]:
+        for full,contracted in [('He is',"He's"),('She is',"She's"),('It is',"It's"),('I am',"I'm"),('What is',"What's"),('do not',"don't"),('I would',"I'd"),('He would',"He'd"),('She would',"She'd")]:
             short=short.replace(full,contracted)
         if short!=answer:accepted.append(short)
     return original_text(stem,answer,why,lesson,accepted)

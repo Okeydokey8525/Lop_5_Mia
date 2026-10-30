@@ -6,10 +6,10 @@ Cập nhật 30/10/2026. Bản lịch sử trước khi gom tài liệu nằm tr
 
 - Website: https://okeydokey8525.github.io/Lop_5_Mia/ — GitHub Pages qua Actions.
 - Toán 5 tập một: 6 chủ đề, 36 đề, mỗi đề 24 câu/100 điểm; ID `cd{n}-de{i}` giữ nguyên.
-- Tiếng Anh 5 tập một: Unit 1–3 — All about me!, Our homes, My foreign friends; 3 tổng quan HTML/PNG + 18 đề (432 câu). Unit 2–3 bám trang 16–27 đã xem đủ; thêm 288 câu, 72 câu nghe và 8 tranh mới. Mỗi đề có 6 câu nghe (2 mỗi cấp), 24 câu/100 điểm. Vẫn có mẫu nghe riêng, chưa chấm nói.
-- Toàn site: 54 đề chính thức, 67 HTML, 9 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
+- Tiếng Anh 5 tập một: Unit 1–5 — All about me!, Our homes, My foreign friends, Our free-time activities, My future job; 5 tổng quan HTML/PNG + 30 đề (720 câu). Unit 4–5 bám trang 28–39 đã xem đủ; thêm 288 câu, 72 câu nghe và 8 tranh mới. Mỗi đề có 6 câu nghe (2 mỗi cấp), 24 câu/100 điểm. Vẫn có mẫu nghe riêng, chưa chấm nói.
+- Toàn site: 66 đề chính thức, 81 HTML, 11 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
 - Giao diện hồng anh đào, tối màu tím mận; reader trên màn hình ≤820px, poster để xem/in. Tiến độ theo origin/trình duyệt, không đồng bộ thiết bị.
-- Chủ repo đã xem Unit 1, phản hồi hình khó nhận diện và duyệt mẫu cá heo. Ngày 30/10 đã áp dụng phong cách mới cho đủ 6 tranh ở tổng quan/câu hỏi, giữ nguyên 144 câu và đáp án. Sau đó chủ repo giao rõ Unit 2–3; các unit còn lại chưa được giao.
+- Chủ repo đã xem Unit 1, phản hồi hình khó nhận diện và duyệt mẫu cá heo. Ngày 30/10 đã áp dụng phong cách mới cho đủ 6 tranh ở tổng quan/câu hỏi, giữ nguyên 144 câu và đáp án. Sau đó chủ repo giao rõ Unit 2–3 rồi Unit 4–5; Starter/Review và Unit 6 trở đi chưa được giao.
 
 | CĐ Toán | Thư mục | Nội dung | Bài |
 |---|---|---|---|
@@ -20,7 +20,13 @@ Cập nhật 30/10/2026. Bản lịch sử trước khi gom tài liệu nằm tr
 | 5 | `ChuDe5_HinhPhangChuViDienTich` | Một số hình phẳng, chu vi và diện tích | 25–29 |
 | 6 | `ChuDe6_OnTapHocKi1` | Ôn tập học kì 1 | 30–35 |
 
-## Unit 2–3 — kiểm chứng hiện hành
+## Unit 4–5 — kiểm chứng hiện hành
+
+Thêm Unit 4 Our free-time activities và Unit 5 My future job: 12 đề/288 câu, trong đó 72 nghe, hai tổng quan HTML/PNG và tám tranh tự tạo. Đã xem đủ trang sách 28–39; NOTES trong u04/u05, quyết định/bài học ở `breakdowns/2026-10-30_UNIT4_UNIT5.md`. ID mới en-u04-deN-v1 và en-u05-deN-v1; Unit 1–3 và Toán không đổi.
+
+Local audit đủ 66 đề, 0 lỗi; tự làm đúng 66/66 đề 100/100, 81 HTML không lỗi trình duyệt; 602 tham chiếu tĩnh đúng hoa/thường. Responsive 1296 trường hợp; runner riêng kiểm tra 12 đề mới, 72 nghe, nháp/điểm phần/reset, biến thể would/I’d và full form, 32 trường hợp trang mới/chọn môn, hai standalone có ảnh. Chưa coi đây là kiểm chứng live hoặc đánh giá phát âm/độ khó bằng học sinh; cập nhật live sau khi Actions triển khai đạt.
+
+## Unit 2–3 — bằng chứng trước khi thêm Unit 4–5
 
 Đã thêm 12 đề/288 câu, 72 câu nghe và 8 tranh tự tạo; xem `breakdowns/2026-10-30_UNIT2_UNIT3.md`. Local audit 54 đề không lỗi; tự làm đúng 54/54 đề đạt 100/100, 67 HTML; responsive 1072 trường hợp. Kiểm tra thêm hai tổng quan/trang môn/trang chủ sau chỉnh lưới: 32 trường hợp. Kiểm tra 486 tham chiếu tĩnh đúng hoa/thường, 0 lỗi. Luồng nghe, nháp, điểm phần, reset và hai bản standalone mới đạt. Phát âm/độ khó chưa được học sinh đánh giá.
 

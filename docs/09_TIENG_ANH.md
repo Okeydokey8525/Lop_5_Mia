@@ -9,7 +9,7 @@ Sách của chủ repo: `C:\LeDucLuong\Mia\tai_lieu\sach\SHS Tiếng anh 5 Globa
 | E1 | Unit 1 – All about me! | 10 | Can you tell me about yourself? / I'm in… / I live in the… / What's your favourite…? |
 | E2 | Unit 2 – Our homes | 16 | Do you live in this…? / What's your address? / It's… |
 | E3 | Unit 3 – My foreign friends | 22 | What nationality…? / What's he/she like? / He's/She's… |
-| E4 | Unit 4 – Our free-time activities | 28 | What does he/she do in his/her free time? / What do you do at the weekend? |
+| E4 | Unit 4 – Our free-time activities | 28 | What do you like doing in your free time? / I like… / What do you do at the weekend? |
 | E5 | Unit 5 – My future job | 34 | What would you like to be in the future? / I'd like to be a… / Why would you like to be a…? |
 | E6 | Review 1 | 40 | Ôn Unit 1–5 |
 | E7 | Unit 6 – Our school rooms | 44 | Where's the…? / It's on the… / Could you tell me the way to the computer room, please? |
@@ -85,3 +85,7 @@ Chủ repo đã duyệt mẫu và giao áp dụng đủ 6 đề. Mỗi đề có
 ## Unit 2–3 — được giao tiếp ngày 30/10/2026
 
 Đã xem trực tiếp trang in 16–21 cho Our homes và 22–27 cho My foreign friends, đối chiếu Wordlist 78–79. Ghi phạm vi vào NOTES.md riêng của u02/u03. Mỗi Unit có 6 đề/144 câu, 36 câu nghe, 1 tổng quan HTML/PNG và 4 tranh gốc. Địa chỉ và nhân vật giả định; không chép bài đọc/tranh/audio sách. Nguồn english/units.py, practice.py, overviews.py và u02/u03/content.py. ID mới en-u02-deN-v1, en-u03-deN-v1; Unit 1 tiếp tục phiên bản 2. Các ghi chú chỉ có Unit 1 ở phần trên là lịch sử.
+
+## Unit 4–5 — được giao tiếp ngày 30/10/2026
+
+Đã xem đủ Unit 4 trang in 28–33 (PDF 30–35), Unit 5 trang 34–39 (PDF 36–41), Wordlist 78–80. NOTES ở u04/u05. Bảng mục lục trên đã sửa mẫu Unit 4 sau khi đọc trực tiếp: What do you like doing…? / I like + V-ing; cuối tuần dùng động từ nguyên dạng sau từ tần suất với I, thêm s/es với he/she. Unit 5 dùng would like to be + a + nghề và Because… nêu lý do. Mỗi Unit thêm 144 câu/6 đề, 36 nghe, 4 tranh và tổng quan HTML/PNG; giữ 24 câu/100 điểm, nghe 2 câu/cấp. Unit 1–3 và khóa điểm cũ giữ nguyên; ID mới en-u04-deN-v1 và en-u05-deN-v1. Chưa làm Review 1 hoặc Unit 6.

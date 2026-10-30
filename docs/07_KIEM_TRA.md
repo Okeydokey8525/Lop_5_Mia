@@ -106,3 +106,7 @@ node tools/qa_drafts.js [baseURL]: ca gốc 3.9/4 phải sai; kiểm tra tử/m�
 54 đề (36 Toán + 18 Anh), 67 HTML, 9 tổng quan; responsive 67×8×2 = 1072. Các số thấp hơn ở trên là lịch sử. Audit Anh có danh sách ảnh cho phép riêng u01/u02/u03, giữ chặn ảnh lạ. Chạy thêm `node tools/qa_english_units23.js [baseURL]`: 12 đề mới, 72 câu nghe, lời đọc khớp đáp án, phát đủ ba cấp, khôi phục nháp/điểm, chấm phần, tổng tiến độ và reset cách ly; standalone local. Speech được mô phỏng, không coi là đánh giá phát âm bằng tai.
 
 Trong lượt quét Pages đã gặp 503 tạm thời khi API kiểm tra tham chiếu tải engine.css; ba lần kiểm tra trực tiếp sau đó đều 200, đúng CSS. `qa.js` thử lại tối đa ba lần chỉ cho 502/503/504, có log mỗi lần; 404/sai hoa thường và lỗi kéo dài vẫn fail. Không coi lần quét bị ngắt là toàn bộ live đã đạt; ghi kết quả lần chạy lại riêng.
+
+## Mốc hiện hành: Unit 1–5
+
+66 đề (36 Toán + 30 Anh), 81 HTML, 11 tổng quan; responsive 81×8×2 = 1296. Audit ảnh có danh sách riêng u01..u05. Chạy thêm `node tools/qa_english_units.js --units=4,5 [baseURL]`; wrapper qa_english_units23.js vẫn chạy Unit 2–3 qua cùng runner, tổng thống kê lấy từ catalog. Runner kiểm tra 12 đề mới/72 câu nghe, mức 2/2/2, speech khớp lời, nháp/kết quả/điểm phần/reset, 32 trường hợp trang ở hai theme, standalone khi local. Riêng Unit 5 kiểm tra nháy cong I’d, I would và yêu cầu full form; không nhận từ thừa. Speech được mô phỏng, không đánh giá chất lượng giọng bằng tai.
