@@ -11,7 +11,7 @@
    const box=document.getElementById(subject==='math'?'math-progress':'english-progress'),count=tests.length,maxStars=count*3;
    box.querySelector('.progress-text').textContent='Hành trình '+(subject==='math'?'Toán':'Tiếng Anh')+': '+done+'/'+count+' đề · '+stars+'/'+maxStars+' sao';
    const bar=box.querySelector('[role=progressbar]');bar.setAttribute('aria-valuenow',String(done));bar.setAttribute('aria-valuemax',String(count));bar.setAttribute('aria-valuetext',done+'/'+count+' đề đã hoàn thành');bar.style.setProperty('--progress',(count?done/count*100:0)+'%');
-   box.querySelector('.encourage').textContent=done===count?'Em đã luyện đủ các đề! Có thể ôn lại theo nhịp của mình.':done?'Từng bước một, em đang tiến lên!':subject==='math'?'Bắt đầu với một đề nhỏ nhé!':'Khám phá Unit 1 cùng một chút luyện nghe!';
+   box.querySelector('.encourage').textContent=done===count?'Em đã luyện đủ các đề! Có thể ôn lại theo nhịp của mình.':done?'Từng bước một, em đang tiến lên!':subject==='math'?'Bắt đầu với một đề nhỏ nhé!':'Khám phá Unit 1–3 cùng một chút luyện nghe!';
   }
   let saved=false;try{localStorage.setItem(marker,JSON.stringify(snapshot));saved=true}catch(e){}
   const banner=document.getElementById('celebration');banner.hidden=!(completedAgain&&saved);

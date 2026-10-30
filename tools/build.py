@@ -53,8 +53,8 @@ def main():
         target.parent.mkdir(parents=True,exist_ok=True)
         target.write_text(data,encoding='utf-8',newline='\n')
     illustrations = {}
-    for source in sorted((GEN / "english" / "u01" / "images").glob("*.webp")):
-        relative = Path("english") / "u01" / source.name
+    for source in sorted((GEN / "english").glob("u[0-9][0-9]/images/*.webp")):
+        relative = Path("english") / source.parent.parent.name / source.name
         target = assets / relative
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, target)
@@ -107,11 +107,10 @@ def main():
     import json
     sys.path.insert(0,str(GEN))
     from cfg import CDS
-    from english.u01.content import TESTS
+    from english.units import catalog as english_catalog
     tests=[dict(file=f"Toan5/{cd['dir']}/De{i}_{slug}.html",id=f"cd{cd['n']}-de{i}",subject='math')
            for cd in CDS for i,(slug,*_) in enumerate(cd['tests'],1)]
-    tests += [dict(file=f"TiengAnh5/Unit1_AllAboutMe/De{i}_{slug}.html",id=f"en-u01-de{i}-v2",subject='en')
-              for i,(slug,*_) in enumerate(TESTS,1)]
+    tests += english_catalog()
     (site / "catalog.json").write_text(json.dumps(dict(tests=tests),ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
     home=home.replace('__HOME_TESTS__',json.dumps(tests,ensure_ascii=False).replace('</',r'<\/'))
     (site/'index.html').write_text(home,encoding='utf-8',newline='\n')

@@ -1,4 +1,4 @@
-"""Build the approved Unit 1 sample; other English units await review."""
+"""Build the approved Unit 1 and the assigned Units 2–3."""
 import json
 from pathlib import Path
 from english.u01.content import TESTS, build_tests, picture
@@ -20,7 +20,7 @@ LEVELS=[dict(id=lv,name=name,desc=desc,stars=k+1,pts=pts) for k,(lv,name,desc,pt
     ('gioi','Mức 3 · Giỏi','Kết hợp đọc hiểu và viết câu theo dữ liệu',5)])]
 
 
-def main():
+def build_unit1():
     folder=OUT/UNIT;folder.mkdir(parents=True,exist_ok=True)
     (folder/'LuyenNghe_Mau.html').write_text(render_listening(),encoding='utf-8',newline='\n')
     source=W/'english'/'u01';(source/'tests').mkdir(exist_ok=True)
@@ -54,24 +54,49 @@ def main():
                     'Nội dung ôn tập tự soạn, bám Unit 1 · Global Success 5, tập một')
     for old,new in {'#FFF5F8':'#FFF0F6','#4A2433':'#54233D','#FCE4EC':'#FFE0EE','#F8BBD0':'#FFC2DD','#8B4E84':'#A33163','#F2E4F1':'#FFE0EE','#65375F':'#702344','#9A5545':'#A33163','#FCE7DF':'#FFE5F0','#713C30':'#702344','#4D7395':'#A33163','#E5EFF8':'#FFEAF4','#35516B':'#702344'}.items():sheet=sheet.replace(old,new)
     (folder/'TongQuan_Unit1.html').write_text(overview_page('Tiếng Anh 5 · Unit 1 · Tổng quan',sheet,cd,'#8B4E84'),encoding='utf-8',newline='\n')
-    data=[dict(n=1,dir=UNIT,name='All about me!',range='Unit 1 · Trang 10–15',overview='TongQuan_Unit1',
-               tests=[dict(id=f'en-u01-de{i}-v2',file=f'De{i}_{slug}.html',name=name,theme=theme) for i,(slug,name,theme) in enumerate(TESTS,1)])]
-    index=render_index(data).replace('Toán 5','Tiếng Anh 5').replace('Kết nối tri thức với cuộc sống','Global Success')
-    index=index.replace('Mỗi đề làm xong là một bậc thang. Leo đủ 36 bậc là em đã chinh phục cả học kì 1 của Tiếng Anh 5.',
-                        'Bắt đầu với Unit 1: giới thiệu bản thân và những điều em yêu thích. Sáu đề để em luyện từng bước.')
-    index=index.replace('/ 36 đề','/ 6 đề').replace('/ 108 sao','/ 18 sao').replace("k.indexOf('mia5:cd')===0","k.indexOf('mia5:en-')===0")
-    for old,new in [('>9</text>','>2</text>'),('>18</text>','>3</text>'),('>27</text>','>4</text>'),('>36</text>','>6</text>')]:index=index.replace(old,new)
-    for symbol,letter in [('+','A'),('÷','B'),('×','C'),('=','?'),('%','!')]:index=index.replace('>'+symbol+'</span>','>'+letter+'</span>')
-    index=index.replace('</head>','<style>:root{--c1:#8B4E84;--c1s:#F2E4F1}@media(prefers-color-scheme:dark){:root{--c1:#DAB1D5;--c1s:#3F2B3D}}</style></head>')
-    index=index.replace("k.indexOf('mia5:en-')===0","/^mia5:en-u01-de[1-6]-v2$/.test(k)")
-    index=index.replace('</div></header>', '</div></header><section class="wrap" style="margin-top:24px;margin-bottom:36px"><a class="cta" href="Unit1_AllAboutMe/LuyenNghe_Mau.html">🔊 Thử luyện nghe Unit 1 · 3 cấp độ</a><p>Mỗi đề bên dưới đã có 6 câu nghe. Bản mẫu riêng vẫn dùng để thử giọng. Điểm bộ đề có nghe được tính lại; điểm cũ vẫn được giữ trên trình duyệt.</p></section>',1)
-    (OUT/'index.html').write_text(index,encoding='utf-8',newline='\n')
-    # Shared English-only theme and speech module, embedded for standalone export.
-    for target in OUT.rglob('*.html'):
+    # Speech module embedded for standalone export; global theme is injected by tools/build.py.
+    for target in folder.glob('*.html'):
         html=target.read_text(encoding='utf-8')
         extra=''.join('<style>'+ (W/'english'/name).read_text(encoding='utf-8-sig')+'</style>' if name.endswith('.css') else '<script>'+(W/'english'/name).read_text(encoding='utf-8-sig')+'</script>' for name in ['speech.js'])
         target.write_text(html.replace('</head>',extra+'</head>'),encoding='utf-8',newline='\n')
-    print('English built: Unit 1 overview + 6 tests (144 questions)')
+
+
+def main():
+    import importlib
+    from english.units import UNITS, index_data, test_id, tests_for
+    from english.overviews import sheet
+    build_unit1()
+    for unit in UNITS[1:]:
+        n=unit['n'];unit_tests=tests_for(unit);content=importlib.import_module(f"english.{unit['key']}.content")
+        folder=OUT/unit['dir'];folder.mkdir(parents=True,exist_ok=True)
+        source=W/'english'/unit['key'];(source/'tests').mkdir(exist_ok=True)
+        meta={**META,'version':unit['version'],'title':f"Unit {n} · {unit['name']}",
+              'topic':'Nhà ở và địa chỉ' if n==2 else 'Quốc tịch và tính cách của bạn bè','range':f"Trang {unit['pages']}"}
+        lessons={1:'Loại nhà',2:'Địa chỉ và khoảng cách',3:'Đọc và viết'} if n==2 else {1:'Quốc gia và quốc tịch',2:'Tính cách',3:'Đọc và viết'}
+        wrapper=f'window.MKEN{n}=function(questions){{return '+json.dumps(dict(decimal=False,meta=meta,lessons=lessons,levels=LEVELS),ensure_ascii=False)[:-1]+',"questions":questions};};\n'
+        (source/'common.js').write_text(wrapper,encoding='utf-8',newline='\n')
+        for i,((slug,name,theme),questions) in enumerate(zip(unit_tests,content.build_tests()),1):
+            data=f'window.TEST_FN=function(H){{return MKEN{n}('+json.dumps(questions,ensure_ascii=False,indent=1)+');};\n'
+            (source/'tests'/f'de{i:02d}.js').write_text(data,encoding='utf-8',newline='\n')
+            extra=dict(id=test_id(unit,i),title=f'Đề {i} · {name}',theme=theme,home='../index.html')
+            if i>1:extra['prev']=f'De{i-1}_{TESTS[i-2][0]}.html'
+            if i<6:extra['next']=f'De{i+1}_{TESTS[i][0]}.html'
+            html=quiz_page(f'Tiếng Anh 5 · Unit {n} · Đề {i} · {name}',data,extra,wrapper)
+            speech='<script>'+(W/'english'/'speech.js').read_text(encoding='utf-8-sig')+'</script>'
+            (folder/f'De{i}_{slug}.html').write_text(html.replace('</head>',speech+'</head>'),encoding='utf-8',newline='\n')
+        cd=dict(n=n,dir=unit['dir'],name=unit['name'],range=f"Unit {n} · Trang {unit['pages']}",overview=f'TongQuan_Unit{n}',tests=unit_tests)
+        (folder/f'TongQuan_Unit{n}.html').write_text(overview_page(f'Tiếng Anh 5 · Unit {n} · Tổng quan',sheet(unit,content),cd,'#AD4278' if n==2 else '#AF4771'),encoding='utf-8',newline='\n')
+    count=len(UNITS)*6
+    index=render_index(index_data()).replace('Toán 5','Tiếng Anh 5').replace('Kết nối tri thức với cuộc sống','Global Success')
+    index=index.replace('Mỗi đề làm xong là một bậc thang. Leo đủ 36 bậc là em đã chinh phục cả học kì 1 của Tiếng Anh 5.',
+                        'Unit 1–3 đã sẵn sàng: giới thiệu bản thân, ngôi nhà và bạn bè. Mỗi Unit có sáu đề, gồm nghe ở cả ba mức độ.')
+    index=index.replace('/ 36 đề',f'/ {count} đề').replace('/ 108 sao',f'/ {count*3} sao')
+    for old,new in [('>9</text>','>5</text>'),('>18</text>','>9</text>'),('>27</text>','>14</text>'),('>36</text>','>18</text>')]:index=index.replace(old,new)
+    for symbol,letter in [('+','A'),('÷','B'),('×','C'),('=','?'),('%','!')]:index=index.replace('>'+symbol+'</span>','>'+letter+'</span>')
+    index=index.replace('</head>','<style>:root[data-theme="light"]{--c2:#AD4278;--c2s:#FFE3F1;--c3:#AF4771;--c3s:#FFE8F1}:root[data-theme="dark"]{--c2:#FFB3D1;--c2s:#513447;--c3:#FFC2DD;--c3s:#513447}</style></head>')
+    index=index.replace('</div></header>','</div></header><section class="wrap" style="margin-top:24px;margin-bottom:36px"><a class="cta" href="Unit1_AllAboutMe/LuyenNghe_Mau.html">🔊 Thử giọng nghe · 3 cấp độ</a><p>Mỗi đề Unit 1–3 có 6 câu nghe, chia đều ba mức. Em có thể nghe lại hoặc xem lời nghe khi cần hỗ trợ.</p></section>',1)
+    (OUT/'index.html').write_text(index,encoding='utf-8',newline='\n')
+    print(f'English built: {len(UNITS)} overviews + {count} tests ({count*24} questions)')
 
 
 if __name__=='__main__':main()

@@ -104,8 +104,9 @@ async function main(){
     await go('Toan5/index.html');assert.equal(await page.locator('#sDone').textContent(),'36');assert.equal(await page.locator('#sStar').textContent(),'108');assert.equal(await page.locator('#sBest').textContent(),'100');
     await go('index.html');assert.match(await page.locator('#math-progress').textContent(),/36\/36/);
     await page.reload();assert.match(await page.locator('#math-progress').textContent(),/108\/108/);
-    assert.match(await page.locator('#english-progress').textContent(),/6\/6/);
-    await go('TiengAnh5/index.html');assert.equal(await page.locator('#sDone').textContent(),'6');assert.equal(await page.locator('#sStar').textContent(),'18');
+    const enCount=CATALOG.tests.filter(t=>t.subject==='en').length;
+    assert.ok((await page.locator('#english-progress').textContent()).includes(`${enCount}/${enCount} đề`));
+    await go('TiengAnh5/index.html');assert.equal(await page.locator('#sDone').textContent(),String(enCount));assert.equal(await page.locator('#sStar').textContent(),String(enCount*3));
     const enFirst=CATALOG.tests.find(t=>t.subject==='en').file;
     await go(enFirst);
     const normalized=await page.evaluate(()=>{

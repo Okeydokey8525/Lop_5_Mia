@@ -3,7 +3,7 @@
 Góc luyện tập lớp 5 cho Mia, chạy bằng website tĩnh và lưu điểm trong trình duyệt.
 
 - Toán 5, Kết nối tri thức với cuộc sống, tập một: 6 chủ đề, 36 đề; mỗi đề 24 câu, 100 điểm.
-- Tiếng Anh 5, Global Success, tập một: mẫu Unit 1 — All about me!, 1 tổng quan + 6 đề (144 câu); các unit khác chưa triển khai.
+- Tiếng Anh 5, Global Success, tập một: Unit 1–3 (All about me!, Our homes, My foreign friends), 3 tổng quan + 18 đề (432 câu), có nghe ở ba cấp.
 - Toán học kì 2: chờ sách.
 
 ## Xem và phát triển
@@ -33,13 +33,13 @@ Workflow chỉ xuất bản `site/` sau khi build và QA đạt. Không đưa PD
 
 Tiến độ không đồng bộ thiết bị, trình duyệt hoặc từ bản mở file/local sang Pages. Chưa có phản hồi làm thử của học sinh để đánh giá độ khó.
 
-Trang Tiếng Anh: https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/. Toàn site hiện 42 đề chính thức và 53 trang HTML; QA dùng `site/catalog.json` để phát hiện thiếu hoặc thừa đề.
+Trang Tiếng Anh: https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/. Toàn site hiện 54 đề chính thức và 67 trang HTML; QA dùng `site/catalog.json` để phát hiện thiếu hoặc thừa đề.
 
 Bài học sau sửa Unit 1 và kế hoạch tiếp theo nằm trong `docs/breakdowns/`; quy trình tranh ở `docs/playbooks/TRANH_MINH_HOA.md`; skill dự án ở `.agents/skills/mia-learning-illustrations/SKILL.md`. Cây máy/repo hiện hành nằm trong docs/08, snapshot cũ ở docs/history.
 
-Mẫu nghe Unit 1 (6 câu, 3 cấp, chờ nghe thử): https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/Unit1_AllAboutMe/LuyenNghe_Mau.html. Chạy kiểm tra riêng: `node tools/qa_listening.js`; chưa tính vào điểm/sao sáu đề.
+Mẫu nghe Unit 1 (6 câu, 3 cấp, đã duyệt): https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/Unit1_AllAboutMe/LuyenNghe_Mau.html. Chạy kiểm tra riêng: `node tools/qa_listening.js`; chưa tính vào điểm/sao sáu đề.
 
-Unit 1 hiện đã có 6 câu nghe trong mỗi đề (2 mỗi cấp), vẫn 24 câu/100 điểm. Phần Anh mặc định hồng sáng, có nút Sáng/Tối. Điểm bộ có nghe dùng phiên bản mới, dữ liệu cũ vẫn giữ. Kiểm tra thêm: node tools/qa_english_unit1.js.
+Unit 1 hiện đã có 6 câu nghe trong mỗi đề (2 mỗi cấp), vẫn 24 câu/100 điểm. Phần Anh mặc định hồng sáng, có nút Sáng/Tối. Điểm bộ có nghe dùng phiên bản mới, dữ liệu cũ vẫn giữ. Kiểm tra thêm: node tools/qa_english_unit1.js; node tools/qa_english_units23.js.
 
 Toàn website nay dùng hồng sáng và nút Sáng/Tối chung, giữ lựa chọn khi chuyển Toán/Anh. Nguồn: generator/theme.css/js. Kiểm tra: node tools/qa_theme.js.
 

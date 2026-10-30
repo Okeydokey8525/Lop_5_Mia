@@ -6,10 +6,10 @@ Cập nhật 30/10/2026. Bản lịch sử trước khi gom tài liệu nằm tr
 
 - Website: https://okeydokey8525.github.io/Lop_5_Mia/ — GitHub Pages qua Actions.
 - Toán 5 tập một: 6 chủ đề, 36 đề, mỗi đề 24 câu/100 điểm; ID `cd{n}-de{i}` giữ nguyên.
-- Tiếng Anh 5 tập một: Unit 1 — All about me!, 1 tổng quan HTML/PNG + 6 đề (144 câu). Các hồ sơ và câu hỏi tự soạn, bám trang 10–15 đã đọc. Đã tích hợp nghe vào 6 đề (6 câu nghe/đề), vẫn có mẫu nghe riêng, chưa có chấm nói.
-- Toàn site: 42 đề chính thức, 53 HTML, 7 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
+- Tiếng Anh 5 tập một: Unit 1–3 — All about me!, Our homes, My foreign friends; 3 tổng quan HTML/PNG + 18 đề (432 câu). Unit 2–3 bám trang 16–27 đã xem đủ; thêm 288 câu, 72 câu nghe và 8 tranh mới. Mỗi đề có 6 câu nghe (2 mỗi cấp), 24 câu/100 điểm. Vẫn có mẫu nghe riêng, chưa chấm nói.
+- Toàn site: 54 đề chính thức, 67 HTML, 9 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
 - Giao diện hồng anh đào, tối màu tím mận; reader trên màn hình ≤820px, poster để xem/in. Tiến độ theo origin/trình duyệt, không đồng bộ thiết bị.
-- Chủ repo đã xem Unit 1, phản hồi hình khó nhận diện và duyệt mẫu cá heo. Ngày 30/10 đã áp dụng phong cách mới cho đủ 6 tranh ở tổng quan/câu hỏi, giữ nguyên 144 câu và đáp án. Không suy rộng việc duyệt tranh thành giao làm unit tiếp theo.
+- Chủ repo đã xem Unit 1, phản hồi hình khó nhận diện và duyệt mẫu cá heo. Ngày 30/10 đã áp dụng phong cách mới cho đủ 6 tranh ở tổng quan/câu hỏi, giữ nguyên 144 câu và đáp án. Sau đó chủ repo giao rõ Unit 2–3; các unit còn lại chưa được giao.
 
 | CĐ Toán | Thư mục | Nội dung | Bài |
 |---|---|---|---|
@@ -20,7 +20,11 @@ Cập nhật 30/10/2026. Bản lịch sử trước khi gom tài liệu nằm tr
 | 5 | `ChuDe5_HinhPhangChuViDienTich` | Một số hình phẳng, chu vi và diện tích | 25–29 |
 | 6 | `ChuDe6_OnTapHocKi1` | Ôn tập học kì 1 | 30–35 |
 
-## Bằng chứng gần nhất cho sản phẩm
+## Unit 2–3 — kiểm chứng hiện hành
+
+Đã thêm 12 đề/288 câu, 72 câu nghe và 8 tranh tự tạo; xem `breakdowns/2026-10-30_UNIT2_UNIT3.md`. Local audit 54 đề không lỗi; tự làm đúng 54/54 đề đạt 100/100, 67 HTML; responsive 1072 trường hợp. Kiểm tra thêm hai tổng quan/trang môn/trang chủ sau chỉnh lưới: 32 trường hợp. Kiểm tra 486 tham chiếu tĩnh đúng hoa/thường, 0 lỗi. Luồng nghe, nháp, điểm phần, reset và hai bản standalone mới đạt. Trạng thái live ghi sau khi Actions triển khai thành công. Phát âm/độ khó chưa được học sinh đánh giá.
+
+## Bằng chứng lịch sử trước Unit 2–3
 
 Mã thay tranh `4798597`; [workflow build và deploy đạt](https://github.com/Okeydokey8525/Lop_5_Mia/actions/runs/40976976768).
 

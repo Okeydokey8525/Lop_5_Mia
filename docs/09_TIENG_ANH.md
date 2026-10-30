@@ -81,3 +81,7 @@ Giọng lấy từ Web Speech API, lọc tiếng Anh, chờ voiceschanged và c�
 ## Sau khi duyệt mẫu: triển khai nghe toàn Unit 1
 
 Chủ repo đã duyệt mẫu và giao áp dụng đủ 6 đề. Mỗi đề có 6 listen (2 mỗi cấp), giữ tổng 24 câu/100 điểm, khung 10/8/6. Hai cấp đầu chọn thông tin trực tiếp hoặc từ hai câu; cấp Giỏi nghe đoạn bốn câu và trả lời hai ý (chọn/điền). Nội dung các đề dùng dữ kiện phù hợp Unit 1, không tăng tốc độ để làm khó. Xem lời nghe trước nộp ghi đã dùng hỗ trợ, sau nộp tự mở. Giữ mẫu riêng để thử giọng. Chưa có chấm nói. Các ghi chú “mẫu chờ duyệt/chưa tích hợp” ở mục lịch sử phía trên mô tả giai đoạn trước triển khai này.
+
+## Unit 2–3 — được giao tiếp ngày 30/10/2026
+
+Đã xem trực tiếp trang in 16–21 cho Our homes và 22–27 cho My foreign friends, đối chiếu Wordlist 78–79. Ghi phạm vi vào NOTES.md riêng của u02/u03. Mỗi Unit có 6 đề/144 câu, 36 câu nghe, 1 tổng quan HTML/PNG và 4 tranh gốc. Địa chỉ và nhân vật giả định; không chép bài đọc/tranh/audio sách. Nguồn english/units.py, practice.py, overviews.py và u02/u03/content.py. ID mới en-u02-deN-v1, en-u03-deN-v1; Unit 1 tiếp tục phiên bản 2. Các ghi chú chỉ có Unit 1 ở phần trên là lịch sử.

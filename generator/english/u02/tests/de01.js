@@ -1,0 +1,404 @@
+window.TEST_FN=function(H){return MKEN2([
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the type of home.",
+  "transcript": "I live in a house.",
+  "speech": "I live in a house.",
+  "fields": [
+   {
+    "label": "Home:",
+    "answer": "house",
+    "options": [
+     "house",
+     "flat",
+     "building",
+     "tower"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Home: house.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the house number.",
+  "transcript": "My house number is 26.",
+  "speech": "My house number is 26.",
+  "fields": [
+   {
+    "label": "Number:",
+    "answer": "26",
+    "options": [
+     "14",
+     "26",
+     "18",
+     "32",
+     "16",
+     "19"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Number: 26.",
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Which word means “ngôi nhà”?",
+  "why": "House nghĩa là ngôi nhà.",
+  "lesson": 1,
+  "opts": [
+   "tower",
+   "house",
+   "flat",
+   "building"
+  ],
+  "answer": 1,
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: f l _ t. Write the whole word.",
+  "why": "Căn hộ là flat.",
+  "lesson": 1,
+  "answers": [
+   "flat"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Do you ___ in this house?",
+  "why": "Do you đi với động từ live.",
+  "lesson": 1,
+  "opts": [
+   "is",
+   "live",
+   "lives",
+   "living"
+  ],
+  "answer": 1,
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: Yes, I ___.",
+  "why": "Trả lời Do you…? bằng Yes, I do.",
+  "lesson": 1,
+  "answers": [
+   "do"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "House: ngôi nhà; flat: căn hộ; building: tòa nhà.",
+  "lesson": 2,
+  "pairs": [
+   {
+    "left": "house",
+    "right": "ngôi nhà"
+   },
+   {
+    "left": "flat",
+    "right": "căn hộ"
+   },
+   {
+    "left": "building",
+    "right": "tòa nhà"
+   }
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Which word means “địa chỉ”?",
+  "why": "Address nghĩa là địa chỉ.",
+  "lesson": 2,
+  "opts": [
+   "address",
+   "animal",
+   "colour",
+   "sport"
+  ],
+  "answer": 0,
+  "level": "tb"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Flat là căn hộ; street là đường phố.",
+  "lesson": 2,
+  "items": [
+   {
+    "t": "A flat is a home.",
+    "a": true
+   },
+   {
+    "t": "Street means “màu sắc”.",
+    "a": false
+   }
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "I live in + a house.",
+  "lesson": 1,
+  "items": [
+   "I",
+   "live",
+   "in",
+   "a",
+   "house."
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen. Which street does Linh live in?",
+  "transcript": "My name is Linh. I live at 26 Oxford Street.",
+  "speech": "My name is Linh. I live at 26 Oxford Street.",
+  "fields": [
+   {
+    "label": "Street:",
+    "answer": "Oxford Street",
+    "options": [
+     "Queen Street",
+     "Oxford Street",
+     "King Street",
+     "London Street"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Street: Oxford Street.",
+  "level": "kha"
+ },
+ {
+  "type": "mc",
+  "stem": "What is your ___? It is 14 Queen Street.",
+  "why": "Số nhà và tên đường trả lời câu hỏi về address.",
+  "lesson": 2,
+  "opts": [
+   "address",
+   "name",
+   "class",
+   "food"
+  ],
+  "answer": 0,
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: I live ___ 26 Oxford Street.",
+  "why": "Dùng at trước địa chỉ cụ thể.",
+  "lesson": 2,
+  "answers": [
+   "at"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen. Is the home near or far from school?",
+  "transcript": "My name is Minh. My home is near my school.",
+  "speech": "My name is Minh. My home is near my school.",
+  "fields": [
+   {
+    "label": "School:",
+    "answer": "near",
+    "options": [
+     "near",
+     "far from"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: School: near.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "An is speaking. Write the house number only.",
+  "why": "Địa chỉ ghi 14 Queen Street.",
+  "lesson": 2,
+  "answers": [
+   "14"
+  ],
+  "exactForm": false,
+  "passage": "Name: An\nHome: house\nAddress: 14 Queen Street\nSchool: near the home",
+  "level": "kha"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Do you live in + that flat?",
+  "lesson": 1,
+  "items": [
+   "Do",
+   "you",
+   "live",
+   "in",
+   "that",
+   "flat?"
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Linh: flat; 26 Oxford Street.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "Linh lives in a flat.",
+    "a": true
+   },
+   {
+    "t": "Linh lives in Queen Street.",
+    "a": false
+   }
+  ],
+  "passage": "Hello! My name is Linh. I live in a flat. My address is 26 Oxford Street. My home is far from my school.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the full form of “don’t”.",
+  "why": "Don’t là dạng rút gọn của do not.",
+  "lesson": 1,
+  "answers": [
+   "do not"
+  ],
+  "exactForm": true,
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Minh is speaking. Answer “What is your address?”. Start with “It”.",
+  "why": "Thẻ của Minh ghi 18 King Street.",
+  "lesson": 3,
+  "answers": [
+   "It is 18 King Street.",
+   "It's 18 King Street."
+  ],
+  "exactForm": false,
+  "passage": "Name: Minh\nHome: tower\nAddress: 18 King Street\nSchool: near the home",
+  "level": "gioi"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Ghép tên và địa chỉ từ đúng thẻ của từng bạn.",
+  "lesson": 3,
+  "pairs": [
+   {
+    "left": "An",
+    "right": "14 Queen Street"
+   },
+   {
+    "left": "Linh",
+    "right": "26 Oxford Street"
+   },
+   {
+    "left": "Minh",
+    "right": "18 King Street"
+   }
+  ],
+  "passage": "Name: An\nHome: house\nAddress: 14 Queen Street\nSchool: near the home\n\nName: Linh\nHome: flat\nAddress: 26 Oxford Street\nSchool: far from the home\n\nName: Minh\nHome: tower\nAddress: 18 King Street\nSchool: near the home",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and choose the home and street.",
+  "transcript": "Hello! My name is An. I live in a house. My address is 14 Queen Street. My home is near my school.",
+  "speech": "Hello! My name is An. I live in a house. My address is 14 Queen Street. My home is near my school.",
+  "fields": [
+   {
+    "label": "Home:",
+    "answer": "house",
+    "options": [
+     "house",
+     "flat",
+     "building",
+     "tower"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Street:",
+    "answer": "Queen Street",
+    "options": [
+     "Queen Street",
+     "Oxford Street",
+     "King Street",
+     "London Street"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Home: house; Street: Queen Street.",
+  "level": "gioi"
+ },
+ {
+  "type": "mc",
+  "stem": "Choose the correct address sentence.",
+  "why": "Dùng at trước số nhà và tên đường.",
+  "lesson": 3,
+  "opts": [
+   "I live on a house.",
+   "I live at a flat.",
+   "I live in at Queen Street.",
+   "I live at 14 Queen Street."
+  ],
+  "answer": 3,
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Mai is speaking. Write a sentence about the home. Start with “I live”.",
+  "why": "Home trong thẻ là building.",
+  "lesson": 3,
+  "answers": [
+   "I live in a building."
+  ],
+  "exactForm": false,
+  "passage": "Name: Mai\nHome: building\nAddress: 32 London Street\nSchool: far from the home",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and write the house number and type of home.",
+  "transcript": "Hello! My name is Minh. I live in a tower. My address is 18 King Street. My home is near my school.",
+  "speech": "Hello! My name is Minh. I live in a tower. My address is 18 King Street. My home is near my school.",
+  "fields": [
+   {
+    "label": "Number:",
+    "answer": "18",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Home:",
+    "answer": "tower",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Number: 18; Home: tower.",
+  "level": "gioi"
+ }
+]);};

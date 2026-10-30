@@ -1,12 +1,14 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 let count=0,bad=0;
-// Only our six generated, reviewed illustrations may be embedded in standalone output.
-const images=path.join(__dirname,'english','u01','images');
-const approvedImages=new Set(fs.readdirSync(images).filter(f=>f.endsWith('.webp')).map(f=>'data:image/webp;base64,'+fs.readFileSync(path.join(images,f)).toString('base64')));
-assert.equal(approvedImages.size,6);
+// Explicit per-unit inventories: unrelated images or book scans cannot enter output.
+const inventories={u01:['city','countryside','dolphin','pink','sandwich','table-tennis'],u02:['house','flat','building','tower'],u03:['friendly','helpful','clever','active']};
+for(const [unit,names] of Object.entries(inventories)){
+const images=path.join(__dirname,'english',unit,'images');
+assert.deepEqual(fs.readdirSync(images).filter(f=>f.endsWith('.webp')).sort(),names.map(n=>n+'.webp').sort());
+const approvedImages=new Set(names.map(n=>'data:image/webp;base64,'+fs.readFileSync(path.join(images,n+'.webp')).toString('base64')));
 for(let i=1;i<=6;i++){
   try{
-    const dir=path.join(__dirname,'english','u01'),ctx={};ctx.window=ctx;vm.createContext(ctx);
+    const dir=path.join(__dirname,'english',unit),ctx={};ctx.window=ctx;vm.createContext(ctx);
     vm.runInContext(fs.readFileSync(path.join(dir,'common.js'),'utf8')+fs.readFileSync(path.join(dir,'tests',`de0${i}.js`),'utf8'),ctx);
     const t=ctx.TEST_FN({}),questions=t.questions;assert.equal(questions.length,24);
     assert.equal(t.meta.subject,'en');assert.equal(t.levels.reduce((s,l)=>s+l.pts*questions.filter(q=>q.level===l.id).length,0),100);
@@ -30,7 +32,8 @@ for(let i=1;i<=6;i++){
     assert.equal(questions.filter(q=>q.type==='listen').length,6);
     for(const lv of ['tb','kha','gioi'])assert.equal(questions.filter(q=>q.type==='listen'&&q.level===lv).length,2);
     assert.ok(kinds.size>=4,'Too little variation');count++;
-  }catch(e){bad++;console.error('English Unit1 de'+i,e.message);}
+  }catch(e){bad++;console.error('English '+unit+' de'+i,e.message);}
 }
-console.log(`English audit: ${count}/6 tests, ${count*24} questions, ${bad} issues`);
+}
+console.log(`English audit: ${count}/18 tests, ${count*24} questions, ${bad} issues`);
 if(bad)process.exitCode=1;

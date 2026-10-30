@@ -82,3 +82,7 @@ Khi quay lại sau một lượt làm đề mới, hiện lời động viên c�
 ## Trạng thái nháp
 
 Đề có khung thông báo tự lưu/khôi phục gần đầu bài, nút Bỏ bản nháp và xác nhận ngay trong khung. Khi lưu lỗi phải báo đúng, không vẫn hiện “đã lưu”. Trang danh sách đề có nhãn Đang làm dở và ưu tiên tiếp tục nháp mới nhất; không dùng dấu hoàn thành hoặc sao cho bài chưa nộp. Màu theo theme dùng chung.
+
+## Unit 2–3
+
+Giữ theme hồng sáng chung. Accent tổng quan Unit 2 #AD4278 / nền #FFE3F1; Unit 3 #AF4771 / nền #FFE8F1. Tranh theo phong cách thiếu nhi đã duyệt, WebP 768×512, có caption ở tổng quan, lưới tự xuống một cột trên màn hình nhỏ. Tranh building/tower không làm hai đáp án cạnh tranh chỉ dựa hình; tính cách luôn kèm hành động/ngữ cảnh.

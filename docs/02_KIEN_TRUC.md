@@ -51,7 +51,7 @@ Tiến độ **không đồng bộ** giữa trình duyệt hoặc thiết bị. 
 
 `build_all.py`, `gen_overview.py`, `gen_index.py` có main guard và cung cấp hàm render dùng lại. `gen_english.py` gọi các hàm này với metadata, dữ liệu Unit 1, tiêu đề và tổng số riêng; không đổi cấu hình Toán. Build đầy đủ ghi cả `out/Toan5` và `out/TiengAnh5`, rồi xuất web hai môn; standalone nhúng engine/font cho cả hai.
 
-Nguồn Anh là `english/u01/content.py`; wrapper và `tests/de*.js` sinh tự động, được commit theo quy ước nguồn đã bàn giao. `site/catalog.json` sinh từ cấu hình nguồn: danh sách đường dẫn, ID và môn của 42 đề. QA so sánh danh sách thực tế với catalog, không chỉ đếm số HTML có sẵn.
+Nguồn Anh là `english/u01/content.py`; wrapper và `tests/de*.js` sinh tự động, được commit theo quy ước nguồn đã bàn giao. `site/catalog.json` sinh từ cấu hình nguồn: danh sách đường dẫn, ID và môn của 54 đề. QA so sánh danh sách thực tế với catalog, không chỉ đếm số HTML có sẵn.
 
 ## Trang chủ động viên và tiến độ
 
@@ -66,3 +66,7 @@ Khóa `mia5:draft:{id}` tách khỏi kết quả `mia5:{id}`. Dữ liệu gồm 
 Lưu sau khoảng 250ms ngừng nhập, định kỳ 5 giây khi đồng hồ chạy, và đồng bộ lúc pagehide/visibility hidden. Đóng/ẩn trang tạm dừng đồng hồ; khôi phục giữ thời gian tích lũy và chỉ tiếp tục khi tương tác. Không lưu kết quả nộp dưới dạng nháp; nộp thành công xóa nháp, nộp nhưng lưu kết quả lỗi thì giữ bản nháp gần nhất. Nháp phải khớp schema, nội dung, hình dạng input/token và kết quả nền; nháp thuộc lượt trước khi có kết quả mới không được phục hồi lại. Nháp hỏng/không tương thích có thông báo; không áp dụng một phần trạng thái sai.
 
 Nút bỏ nháp chỉ xóa khóa nháp của đúng đề; reset môn duyệt các ID trong DATA rồi xóa hai khóa kết quả/nháp tương ứng, giữ môn khác và kết quả Anh phiên bản cũ. Tiến độ trên trang chủ vẫn chỉ dựa vào đề đã nộp. Nháp ở trang môn có nhãn riêng và nút đi tiếp, không cộng sao.
+
+## Unit 2–3
+
+Registry `generator/english/units.py` sinh danh mục đề và dữ liệu trang môn từ cùng cấu hình. `practice.py` tái dùng các dạng câu và nhúng WebP; `overviews.py` dựng tổng quan mới. Mỗi thư mục u02/u03 chứa content.py, NOTES.md, tranh/prompt và JS sinh ra. Build trích ảnh của u01/u02/u03 thành tài nguyên web, standalone nhúng cùng byte. ID mới en-u02-deN-v1 và en-u03-deN-v1; không đổi ID/nội dung/điểm Unit 1 hoặc Toán.

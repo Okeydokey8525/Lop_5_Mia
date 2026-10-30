@@ -7,11 +7,11 @@ Trả lời và viết nội dung cho học sinh **bằng tiếng Việt**. Ch�
 Bộ đề kiểm tra trực tuyến cho học sinh lớp 5, bản web dùng tài nguyên chung; có thể xuất mỗi đề thành **một file HTML tự chứa** (không cần server), tiến độ lưu bằng `localStorage`.
 - **Toán 5** (Kết nối tri thức với cuộc sống, tập một): Chủ đề 1–6, 36 đề, **đã xong**.
 - **Toán 5 học kì 2:** chủ repo sẽ đưa sách sau. Chưa làm. Xem mục "Chỗ trống" bên dưới.
-- **Tiếng Anh 5** (Global Success, tập 1): đã làm mẫu Unit 1, 1 tổng quan + 6 đề, chủ repo đã xem và duyệt bộ tranh sửa; các unit khác chưa triển khai. Đặc tả ở `docs/09_TIENG_ANH.md`.
+- **Tiếng Anh 5** (Global Success, tập 1): đã làm Unit 1–3, mỗi unit 1 tổng quan + 6 đề; Unit 2–3 được giao tiếp ngày 30/10/2026. Đặc tả ở `docs/09_TIENG_ANH.md`.
 
 ## Phạm vi đã chốt ngày 29/10/2026
 
-Chủ repo yêu cầu ưu tiên cấu trúc, chuẩn hóa build/QA, kiểm chứng bộ Toán, trang chủ chung và GitHub Pages. Đợt giao diện đã hoàn tất. Sau đó chủ repo yêu cầu làm mẫu **Unit 1 Tiếng Anh** theo kế hoạch đã chốt; chưa làm các unit còn lại. Cây thư mục giữ `generator/`, `docs/`, `site/Toan5/`, thêm `tools/` và `site/assets/`; xem `docs/08`.
+Chủ repo yêu cầu ưu tiên cấu trúc, chuẩn hóa build/QA, kiểm chứng bộ Toán, trang chủ chung và GitHub Pages. Đợt giao diện đã hoàn tất. Sau đó chủ repo yêu cầu làm mẫu **Unit 1 Tiếng Anh** theo kế hoạch đã chốt; nay được giao tiếp Unit 2–3. Cây thư mục giữ `generator/`, `docs/`, `site/Toan5/`, thêm `tools/` và `site/assets/`; xem `docs/08`.
 
 Lệnh từ gốc repo: `node tools/build.js --regenerate`, `node generator/audit.js`, `python tools/check_links.py`, `python tools/serve.py` rồi `node tools/qa.js` ở terminal khác. Không sửa trực tiếp `site/`; trang chủ chung sinh từ `tools/templates/home.html`, `home.css`, `home.js`; build nhúng danh sách đề từ catalog. Hiệu ứng/động viên mới chỉ ở trang chủ chọn môn theo phạm vi đã duyệt, không lan sang đề hoặc trang tổng quan. PDF nằm ngoài repo.
 
@@ -26,7 +26,7 @@ Ngày 29/10/2026, chủ repo duyệt đổi sang hồng anh đào và sửa resp
 
 ## Tiếng Anh — cấu trúc hiện hành
 
-Nguồn Unit 1 ở `generator/english/u01/content.py`, ghi nhận trang đã đọc ở `NOTES.md`; `common.js` và `tests/*.js` sinh từ nguồn này. `generator/gen_english.py` dùng chung khung đề, tổng quan và trang chủ. Sản phẩm ở `site/TiengAnh5/`, ID bản có nghe `en-u01-de1-v2..en-u01-de6-v2`. `site/catalog.json` liệt kê chính xác 42 đề (36 Toán, 6 Anh) để QA đối chiếu đủ file. Không xóa điểm môn khác khi reset một môn. Giao diện bằng tiếng Việt, câu hỏi tiếng Anh. Đã tích hợp 6 câu nghe/đề (2 mỗi cấp), giữ 24 câu/100 điểm; mẫu nghe riêng vẫn có, chưa có chấm nói. Chưa mở rộng ngoài Unit 1; chờ chủ repo giao chủ đề tiếp theo.
+Nguồn Unit 1 ở `generator/english/u01/content.py`, ghi nhận trang đã đọc ở `NOTES.md`; `common.js` và `tests/*.js` sinh từ nguồn này. `generator/gen_english.py` dùng chung khung đề, tổng quan và trang chủ. Sản phẩm ở `site/TiengAnh5/`, ID bản có nghe `en-u01-de1-v2..en-u01-de6-v2`. `site/catalog.json` liệt kê chính xác 54 đề (36 Toán, 18 Anh) để QA đối chiếu đủ file. Không xóa điểm môn khác khi reset một môn. Giao diện bằng tiếng Việt, câu hỏi tiếng Anh. Đã tích hợp 6 câu nghe/đề (2 mỗi cấp), giữ 24 câu/100 điểm; mẫu nghe riêng vẫn có, chưa có chấm nói. Unit 2–3 có nguồn english/u02 và u03, giữ nghe 2 câu/cấp, ID en-u02-deN-v1 và en-u03-deN-v1. Registry english/units.py dùng chung cho catalog/trang môn. Chưa làm Starter/Unit 4 trở đi.
 
 ## Bài học và quy trình dùng lại
 
