@@ -22,7 +22,9 @@ Cập nhật 30/10/2026. Bản lịch sử trước khi gom tài liệu nằm tr
 
 ## Unit 2–3 — kiểm chứng hiện hành
 
-Đã thêm 12 đề/288 câu, 72 câu nghe và 8 tranh tự tạo; xem `breakdowns/2026-10-30_UNIT2_UNIT3.md`. Local audit 54 đề không lỗi; tự làm đúng 54/54 đề đạt 100/100, 67 HTML; responsive 1072 trường hợp. Kiểm tra thêm hai tổng quan/trang môn/trang chủ sau chỉnh lưới: 32 trường hợp. Kiểm tra 486 tham chiếu tĩnh đúng hoa/thường, 0 lỗi. Luồng nghe, nháp, điểm phần, reset và hai bản standalone mới đạt. Trạng thái live ghi sau khi Actions triển khai thành công. Phát âm/độ khó chưa được học sinh đánh giá.
+Đã thêm 12 đề/288 câu, 72 câu nghe và 8 tranh tự tạo; xem `breakdowns/2026-10-30_UNIT2_UNIT3.md`. Local audit 54 đề không lỗi; tự làm đúng 54/54 đề đạt 100/100, 67 HTML; responsive 1072 trường hợp. Kiểm tra thêm hai tổng quan/trang môn/trang chủ sau chỉnh lưới: 32 trường hợp. Kiểm tra 486 tham chiếu tĩnh đúng hoa/thường, 0 lỗi. Luồng nghe, nháp, điểm phần, reset và hai bản standalone mới đạt. Phát âm/độ khó chưa được học sinh đánh giá.
+
+Đã xuất bản commit `5c8e225`; [Actions build/deploy đạt](https://github.com/Okeydokey8525/Lop_5_Mia/actions/runs/41037419914), gồm hồi quy 54 đề và 1072 trường hợp responsive trên Linux. Trên địa chỉ Pages thật, `qa_english_units23.js` đã đạt: đủ 12 đề mới/72 câu nghe, lời đọc đúng câu (speech mô phỏng), nháp/điểm giữ sau tải lại, chấm phần, tổng tiến độ và reset cách ly; 32 trường hợp trang mới/chọn môn ở sáng/tối. Tám ảnh live khớp byte nguồn. Báo cáo: artifacts/units23-online/report.json và asset-report.json. Không coi kiểm tra tự động này là học sinh đã nghe/đánh giá độ khó.
 
 ## Bằng chứng lịch sử trước Unit 2–3
 
