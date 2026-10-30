@@ -7,7 +7,7 @@ Trả lời và viết nội dung cho học sinh **bằng tiếng Việt**. Ch�
 Bộ đề kiểm tra trực tuyến cho học sinh lớp 5, bản web dùng tài nguyên chung; có thể xuất mỗi đề thành **một file HTML tự chứa** (không cần server), tiến độ lưu bằng `localStorage`.
 - **Toán 5** (Kết nối tri thức với cuộc sống, tập một): Chủ đề 1–6, 36 đề, **đã xong**.
 - **Toán 5 học kì 2:** chủ repo sẽ đưa sách sau. Chưa làm. Xem mục "Chỗ trống" bên dưới.
-- **Tiếng Anh 5** (Global Success, tập 1): đã làm mẫu Unit 1, 1 tổng quan + 6 đề, chờ chủ repo xem trước khi mở rộng. Đặc tả ở `docs/09_TIENG_ANH.md`.
+- **Tiếng Anh 5** (Global Success, tập 1): đã làm mẫu Unit 1, 1 tổng quan + 6 đề, chủ repo đã xem và duyệt bộ tranh sửa; các unit khác chưa triển khai. Đặc tả ở `docs/09_TIENG_ANH.md`.
 
 ## Phạm vi đã chốt ngày 29/10/2026
 
@@ -26,7 +26,11 @@ Ngày 29/10/2026, chủ repo duyệt đổi sang hồng anh đào và sửa resp
 
 ## Tiếng Anh — cấu trúc hiện hành
 
-Nguồn Unit 1 ở `generator/english/u01/content.py`, ghi nhận trang đã đọc ở `NOTES.md`; `common.js` và `tests/*.js` sinh từ nguồn này. `generator/gen_english.py` dùng chung khung đề, tổng quan và trang chủ. Sản phẩm ở `site/TiengAnh5/`, ID `en-u01-de1..6`. `site/catalog.json` liệt kê chính xác 42 đề (36 Toán, 6 Anh) để QA đối chiếu đủ file. Không xóa điểm môn khác khi reset một môn. Giao diện bằng tiếng Việt, câu hỏi tiếng Anh. Chưa có nghe/nói. Dừng mở rộng sau Unit 1 để chủ repo xem mẫu.
+Nguồn Unit 1 ở `generator/english/u01/content.py`, ghi nhận trang đã đọc ở `NOTES.md`; `common.js` và `tests/*.js` sinh từ nguồn này. `generator/gen_english.py` dùng chung khung đề, tổng quan và trang chủ. Sản phẩm ở `site/TiengAnh5/`, ID `en-u01-de1..6`. `site/catalog.json` liệt kê chính xác 42 đề (36 Toán, 6 Anh) để QA đối chiếu đủ file. Không xóa điểm môn khác khi reset một môn. Giao diện bằng tiếng Việt, câu hỏi tiếng Anh. Chưa có nghe/nói. Chưa mở rộng ngoài Unit 1; chờ chủ repo giao chủ đề tiếp theo.
+
+## Bài học và quy trình dùng lại
+
+Khi làm tranh bài học, đọc `.agents/skills/mia-learning-illustrations/SKILL.md` và `docs/playbooks/TRANH_MINH_HOA.md`. Bài học thực tế ở `docs/breakdowns/2026-10-30_BAI_HOC_UNIT1.md`; công việc tiếp theo ở `docs/breakdowns/KE_HOACH_TIEP_THEO.md`. Mục lục ở `docs/README.md`; `docs/history/` là snapshot cũ, không phải trạng thái hiện hành. Tranh Unit 1 đã được chủ repo duyệt và cập nhật đủ sáu hình ngày 30/10/2026. Sách trên máy này nay ở `../tai_lieu/sach/`, bản bàn giao cũ ở `../luu_tru/`; không dùng bản cũ làm nguồn sửa.
 
 ## Quy tắc cứng
 1. **Giữ nguyên thiết kế** hiện có (`docs/05_THIET_KE.md`): màu, font, bố cục trang tổng quan, hiệu ứng trang chủ. Chỉ thêm, không đổi giao diện cũ trừ khi chủ repo yêu cầu.

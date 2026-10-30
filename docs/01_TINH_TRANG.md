@@ -1,28 +1,17 @@
-# 01 — Tình trạng dự án
+# 01 — Tình trạng hiện hành
 
-Cập nhật: 2026-10-29.
+Cập nhật 30/10/2026. Bản lịch sử trước khi gom tài liệu nằm trong `history/`; không dùng những số liệu cũ làm trạng thái hiện tại.
 
-## Mẫu Unit 1 Tiếng Anh — All about me!
+## Đã bàn giao
 
-Chủ repo đã yêu cầu làm mẫu đầu tiên theo kế hoạch. Đã soạn 6 đề (144 câu) + tổng quan HTML/PNG và trang chủ Anh; giữ giao diện hồng anh đào. Chỉ Unit 1, chưa mở rộng Starter/Review/Unit 2–10 và chưa có nghe/nói.
+- Website: https://okeydokey8525.github.io/Lop_5_Mia/ — GitHub Pages qua Actions.
+- Toán 5 tập một: 6 chủ đề, 36 đề, mỗi đề 24 câu/100 điểm; ID `cd{n}-de{i}` giữ nguyên.
+- Tiếng Anh 5 tập một: Unit 1 — All about me!, 1 tổng quan HTML/PNG + 6 đề (144 câu). Các hồ sơ và câu hỏi tự soạn, bám trang 10–15 đã đọc. Chưa có nghe/chấm nói.
+- Toàn site: 42 đề, 52 HTML, 7 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
+- Giao diện hồng anh đào, tối màu tím mận; reader trên màn hình ≤820px, poster để xem/in. Tiến độ theo origin/trình duyệt, không đồng bộ thiết bị.
+- Chủ repo đã xem Unit 1, phản hồi hình khó nhận diện và duyệt mẫu cá heo. Ngày 30/10 đã áp dụng phong cách mới cho đủ 6 tranh ở tổng quan/câu hỏi, giữ nguyên 144 câu và đáp án. Không suy rộng việc duyệt tranh thành giao làm unit tiếp theo.
 
-Nguồn nội dung: `generator/english/u01/content.py`, đối chiếu SGK trang 10–15; ghi nhận ở `NOTES.md`. Từ vựng/giới thiệu bản thân/nơi sống/điều yêu thích; câu và hồ sơ tự soạn. Thêm ô chữ, nối cặp, sắp từ và chọn theo SVG; chấm cả biến thể hợp lệ và dạng đầy đủ khi câu yêu cầu.
-
-Toàn site hiện 42 đề, 52 HTML, 7 tổng quan; QA mới so khớp `site/catalog.json`. Nội dung 36 đề Toán và khóa tiến độ cũ không đổi. Local đã đạt: 42/42 đề 100/100, 832 tổ hợp responsive, 245 tham chiếu tĩnh hợp lệ; kiểm tra đáp án chữ biến thể/sai, điểm một phần, sắp từ, hồ sơ và reset riêng từng môn đạt. 6/6 đề Anh standalone cũng 100/100. Online đã đạt lúc 29/10/2026 20:08:05 UTC+7: 42/42 đề 100/100, 832 tổ hợp responsive không tràn ngang, không lỗi trình duyệt; kiểm tra chữ biến thể/sai, điểm một phần, hồ sơ và reset tách môn đều đạt. 58 file HTML/CSS/JS/JSON khớp byte với local, 7 PNG hợp lệ. Unit 1 đã sẵn sàng để chủ repo xem mẫu; chưa mở rộng unit khác.
-
-## Đợt giao diện hồng anh đào (chủ repo đã duyệt)
-
-- Đổi màu đồng bộ trang chủ chung, trang Toán, đề, reader/poster và PNG tổng quan; chế độ tối dùng tím mận/hồng dịu.
-- Sửa tràn ngang ở 360px; mở rộng QA tới 320px và 8 kích thước màn hình, cả sáng/tối.
-- Tổng quan có chế độ đọc từng bài trên điện thoại/tablet; giữ chế độ poster để xem toàn cảnh/in. Nội dung hai chế độ được kiểm tra khớp nhau.
-- Mã câu hỏi, đáp án, engine chấm điểm và khóa lưu tiến độ không thay đổi.
-- Local đã đạt 704 tổ hợp responsive, 36/36 đề 100/100, 208 tham chiếu tĩnh đúng; đã xem ảnh sáng/tối, điện thoại/tablet/desktop và cả 6 poster PNG.
-- Online đã đạt lúc 29/10/2026 18:54:48 UTC+7: 704 tổ hợp responsive (44 trang × 8 chiều rộng × sáng/tối), reader/poster đủ nội dung, menu và cảm ứng đạt, câu cuối không bị che sau nộp. 36/36 đề 100/100 và lưu tiến độ đạt. 49 file HTML/CSS/JS online khớp local; 6 PNG tổng quan hợp lệ, rộng 1080px. Bản build/QA trước đó ở các mục lịch sử bên dưới.
-
-## Đã xong: Toán 5 tập một (Kết nối tri thức với cuộc sống)
-6 chủ đề, mỗi chủ đề có 1 trang tổng quan (HTML + PNG) và 6 đề, tổng **36 đề**, 108 sao trên trang chủ.
-
-| CĐ | Thư mục | Tên | Bài |
+| CĐ Toán | Thư mục | Nội dung | Bài |
 |---|---|---|---|
 | 1 | `ChuDe1_OnTapVaBoSung` | Ôn tập và bổ sung | 1–9 |
 | 2 | `ChuDe2_SoThapPhan` | Số thập phân | 10–14 |
@@ -31,45 +20,23 @@ Toàn site hiện 42 đề, 52 HTML, 7 tổng quan; QA mới so khớp `site/cat
 | 5 | `ChuDe5_HinhPhangChuViDienTich` | Một số hình phẳng, chu vi và diện tích | 25–29 |
 | 6 | `ChuDe6_OnTapHocKi1` | Ôn tập học kì 1 | 30–35 |
 
-Trang tổng quan CĐ3 và CĐ4 hiển thị số trang SGK.
+## Bằng chứng gần nhất cho sản phẩm
 
-### Kiểm chứng local ngày 29/10/2026 (Codex)
+Mã thay tranh `4798597`; [workflow build và deploy đạt](https://github.com/Okeydokey8525/Lop_5_Mia/actions/runs/40976976768).
 
-- Đã chốt cây thư mục ở `docs/08`; giữ `generator/`, `docs/`, `site/Toan5/`, thêm `tools/`, tài nguyên chung và trang chủ chọn môn.
-- Build UTF-8 trên Windows; sinh lại CĐ4–6 không thay đổi dữ liệu JS. Trước sửa SVG, bản standalone khớp 43/43 nội dung HTML đã giao (chuẩn hóa xuống dòng). Sau sửa nhãn hình, đã đối chiếu 864/864 câu: nội dung, dữ liệu, đáp án và lời giải không đổi.
-- Audit đủ 36 đề: 0 lỗi, đã sửa cảnh báo giảm dần và bổ sung kiểm tra các câu sắp xếp có đơn vị/phép tính/hình học/bảng.
-- Chromium qua HTTP với tiền tố `/Lop_5_Mia/`: 36/36 đề 100/100, 44 trang không tràn ngang ở 400px, không lỗi console/request; kiểm tra link động và 196 tham chiếu tĩnh.
-- Kiểm tra nộp thiếu câu, hủy xác nhận, điểm một phần, làm lại, giữ điểm tốt nhất, tiến độ và thống kê sau tải lại. Đã xem ảnh 6 poster và hình minh họa; giữ nguyên các PNG nguồn đã giao.
-- Trang chủ chung đã có; Tiếng Anh chỉ hiển thị đang chuẩn bị. Chưa làm Unit 1 theo phạm vi chủ repo chốt.
-- Online đã đạt lúc 29/10/2026 18:22:52 UTC+7: https://okeydokey8525.github.io/Lop_5_Mia/ — 36/36 đề 100/100, 44 trang không tràn ngang ở 400px, không lỗi console/request; lưu điểm và tải lại đạt. 53/53 file công khai khớp byte với local. Chi tiết và workflow ở `docs/08`.
+- Local và CI: audit 36 Toán + 6 Anh không lỗi; làm đúng theo đáp án khai báo 42/42 đề đạt 100/100; 832 tổ hợp responsive (52 trang × 8 chiều rộng × 2 theme). Local kiểm tra 251 tham chiếu tĩnh, 0 lỗi; 6 đề Anh standalone đạt.
+- Live sau sửa tranh: 6 ảnh khớp byte với nguồn; 7 trang Unit 1 × 3 chiều rộng × 2 theme = 42 trường hợp, đủ ảnh, đúng tỷ lệ, không tràn ngang/lỗi trình duyệt. Báo cáo: `artifacts/online/artwork-live-report.json`.
+- Lần kiểm tra toàn bộ live trước đó, 29/10/2026 20:08:05 UTC+7: 42/42 đề đạt, 832 tổ hợp responsive; kiểm tra biến thể chữ, câu sai, điểm phần, hồ sơ, reset riêng từng môn đạt. Báo cáo trong artifacts không phải nguồn nội dung.
+- Chưa có dữ liệu em gái làm bài; mô phỏng Chromium chưa thay thế thử thiết bị thật, và tự điền đúng không phải giải độc lập toàn bộ đáp án.
 
-### QA từ bản bàn giao (trước đợt chuẩn hóa)
-- 36/36 đề: `audit.js` không lỗi; `tall.js` tự điền đúng hết ra 100/100, không lỗi console.
-- Trang chủ: 36 đề trong `DATA`, mọi link tới file có thật.
-- Trang tổng quan và trang chủ không bị tràn ngang ở màn hình 400px.
-- Rebuild từ bộ nguồn `generator/` cho ra file **giống hệt** `site/Toan5/` (đã so sánh từng file HTML).
+## Nguồn và việc tiếp theo
 
-### Chưa kiểm tra / chưa làm
-- Em gái **chưa làm thử** các đề thật, nên câu nào khó hiểu thì chưa biết.
-- GitHub Pages đã bật nguồn GitHub Actions và kiểm tra trên URL thật; local dùng cùng tiền tố `/Lop_5_Mia/`.
-- Đã sửa khung/nhãn SVG tam giác vuông, ao trong khu đất và nhãn chiều rộng để chữ không bị cắt. QA kiểm tra biên nhãn SVG ở mọi hình câu hỏi.
-- Đã có `tools/check_links.py` kiểm tra hoa/thường trên Windows và Linux.
-- `generator/fonts.css` là file sinh sẵn từ `@fontsource/baloo-2` và `@fontsource/be-vietnam-pro` (nhúng base64); script sinh file này **không còn trong repo**. Nếu cần đổi font phải tự tạo lại.
-- `gen_overview.py` cho CĐ2 đọc `generator/assets/poster_cd2.html` (áp phích dựng sẵn). CĐ1, CĐ3–6 sinh từ code.
-- Tiến độ lưu theo trình duyệt và theo địa chỉ web: khi chuyển từ `file://` sang `https://` thì tiến độ cũ không mang theo.
+Nguồn Anh: `generator/english/u01/content.py`, `NOTES.md`, `images/`. Nguồn sách ở thư mục ngoài repo `../tai_lieu/sach/`. Mở [08](08_CAY_THU_MUC_VA_DEPLOY.md) để tìm cây và lệnh; mở [bản đồ tài liệu](README.md) để tiếp nhận.
 
-## Việc kế tiếp (theo thứ tự)
-1. **Cấu trúc, build/QA, trang chủ chung và Pages đã hoàn tất** — `docs/08_CAY_THU_MUC_VA_DEPLOY.md`.
-2. **Tiếng Anh 5 tập 1** (Starter, Unit 1–10, Review 1–2) — `docs/09_TIENG_ANH.md`.
-3. **Toán học kì 2** — chờ chủ repo đưa sách.
+Chỉ tiếp tục Starter/Unit/Review khác khi chủ repo giao. Pipeline Anh hiện còn chỗ đăng ký riêng u01, cần tổng quát hóa khi mở rộng; xem [phân rã công việc](breakdowns/KE_HOACH_TIEP_THEO.md).
 
-## Toán học kì 2 (chỗ trống, chủ repo điền)
-- File sách: _chưa có_
-- Danh sách chủ đề/bài/số trang: _chưa có_
+## Đầu vào còn thiếu
 
-## Tiếng Anh 5 tập 2 (chỗ trống)
-- _chưa có sách_
-
-## Cập nhật tranh Unit 1 — 30/10/2026
-
-Đã thay cả sáu hình SVG đơn giản bằng tranh minh họa theo mẫu cá heo chủ repo duyệt. Dùng ở tổng quan, poster PNG và các câu hỏi có hình trong 6 đề; không thay câu hỏi, đáp án hay ID lưu tiến độ. Nguồn ảnh: `generator/english/u01/images/`; web: `site/assets/english/u01/`; standalone nhúng ảnh. Bổ sung QA giải mã ảnh và chờ tải ảnh trước khi xuất poster.
+- Toán học kì 2: chưa có PDF, danh sách chủ đề/bài/số trang; chưa làm chủ đề 7–8.
+- Tiếng Anh 5 tập hai: chưa có sách.
+- Phản hồi học sinh về mức độ khó và câu chưa rõ: chưa có.

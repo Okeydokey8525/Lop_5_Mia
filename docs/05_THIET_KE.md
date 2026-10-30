@@ -60,3 +60,7 @@ Thanh nộp/kết quả được đo bằng ResizeObserver; khoảng trống cu�
 ## Mẫu Tiếng Anh Unit 1
 
 Màu nhận diện Unit 1: `#8B4E84`, nền `#F2E4F1` (tím hoa); chế độ tối `#DAB1D5/#3F2B3D`. Giữ nền/hero hồng anh đào, font và hiệu ứng chung. Một poster 1080px/PNG và reader cho điện thoại/tablet như Toán. SVG từ vựng tự vẽ, không dùng ảnh SGK. Câu nối dùng select, sắp từ dùng nút bấm; không đòi kéo-thả. Hồ sơ đọc lặp chỉ hiển thị một lần theo nhóm và có liên kết quay lại.
+
+## Phong cách tranh từ vựng đã duyệt — 30/10/2026
+
+Unit 1 dùng minh họa nét mềm, đổ bóng nhẹ, màu dịu theo mẫu cá heo chủ repo duyệt. Tranh phải rõ chủ thể ở kích thước câu hỏi, không ghi đáp án lên hình. Thành phố/đồng quê cần bối cảnh dễ phân biệt; hình học Toán vẫn dùng SVG chính xác. Thực hiện theo `docs/playbooks/TRANH_MINH_HOA.md`; nguồn/prompt ở `generator/english/u01/images/`.

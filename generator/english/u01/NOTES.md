@@ -1,4 +1,4 @@
-# Unit 1 — All about me! (mẫu chờ chủ repo xem)
+# Unit 1 — All about me! (mẫu đã sửa tranh theo phản hồi chủ repo)
 
 Đã đọc trực tiếp SGK Global Success 5, tập một, trang in 10–15 (trang PDF 12–17), đối chiếu Wordlist trang 78–79. PDF/ảnh scan được giữ ngoài repo.
 
@@ -10,7 +10,7 @@
 - 6 đề × 24 câu; 10 TB + 8 Khá + 6 Giỏi, 100 điểm, dự kiến 40 phút. Chữ hoa/thường, khoảng trắng, nháy cong/thẳng và các dạng rút gọn tương đương được xử lý khi chấm chữ. Không tự chấp nhận từ sai chính tả.
 - Chưa có câu nghe hoặc chấm nói. Từ có trọng âm được kiểm tra qua chữ, không giả lập thành bài nghe.
 
-Đề 1 Khởi động; 2 Từ vựng và hình ảnh; 3 Mẫu câu và hội thoại; 4 Đọc hiểu; 5 Viết câu; 6 Tổng hợp. Mẫu cần được chủ repo xem trước khi mở rộng các unit khác.
+Đề 1 Khởi động; 2 Từ vựng và hình ảnh; 3 Mẫu câu và hội thoại; 4 Đọc hiểu; 5 Viết câu; 6 Tổng hợp. Chủ repo đã xem mẫu và duyệt bộ tranh sửa ngày 30/10/2026; chưa giao mở rộng các unit khác.
 
 Chấp nhận colour/color và favourite/favorite. Câu yêu cầu dạng đầy đủ (`exactForm`) không chấp nhận câu trả lời vẫn rút gọn; chữ hoa/thường và dấu nháy vẫn được chuẩn hóa. Hồ sơ lặp liên tiếp chỉ hiển thị một lần trong mỗi nhóm, câu sau có liên kết xem lại đúng hồ sơ.
 

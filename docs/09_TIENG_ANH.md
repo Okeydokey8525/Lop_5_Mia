@@ -1,6 +1,6 @@
 # 09 — Đặc tả Tiếng Anh 5 (Global Success, Sách học sinh tập 1)
 
-Sách của chủ repo: `C:\LeDucLuong\Mia\SHS Tiếng anh 5 Global Success - Tập 1.pdf` (83 trang, bản **scan ảnh**, không có lớp chữ; nhà xuất bản Giáo dục Việt Nam & Macmillan Education). File này **không** nằm trong repo. Tập 2 chưa có.
+Sách của chủ repo: `C:\LeDucLuong\Mia\tai_lieu\sach\SHS Tiếng anh 5 Global Success - Tập 1.pdf` (83 trang, bản **scan ảnh**, không có lớp chữ; nhà xuất bản Giáo dục Việt Nam & Macmillan Education). File này **không** nằm trong repo. Tập 2 chưa có.
 
 ## Mục lục (đọc từ trang "Book map", trang 4–5)
 | Chủ đề (đề xuất) | Tên | Trang | Cấu trúc câu nổi bật (theo Book map) |
@@ -56,9 +56,9 @@ Sách không có file âm thanh trong PDF (audio nằm trong ứng dụng Hoclie
 5. Phải có bộ kiểm tra tự động: `tall.js` điền đáp án đúng cho **mọi dạng** mới và đạt 100/100.
 
 ## Trang tổng quan Tiếng Anh
-Cùng khung poster 1080px (`docs/05_THIET_KE.md`), thay công thức bằng: từ vựng chủ điểm (kèm hình SVG tự vẽ), 3–5 mẫu câu hội thoại mẫu, mẹo nhớ, số trang sách; màu riêng cho từng chủ đề (không trùng 6 màu Toán, mở rộng bảng màu và ghi lại ở `05_THIET_KE.md`).
+Cùng khung poster 1080px (`docs/05_THIET_KE.md`), thay công thức bằng: từ vựng chủ điểm (kèm tranh rõ chủ thể; theo docs/playbooks/TRANH_MINH_HOA.md), 3–5 mẫu câu hội thoại mẫu, mẹo nhớ, số trang sách; màu riêng cho từng chủ đề (không trùng 6 màu Toán, mở rộng bảng màu và ghi lại ở `05_THIET_KE.md`).
 
-## Việc cần làm (thứ tự)
+## Kế hoạch gốc và kết quả hiện tại
 1. Chủ repo xác nhận kế hoạch/đã duyệt cây thư mục (`08`), rồi tham số hóa `build_all.py`/`gen_index.py`/`png.js` theo môn.
 2. Làm **E1 (Unit 1)** trước làm mẫu: engine dạng mới + 6 đề + tổng quan, QA đầy đủ, **trình chủ repo xem**.
 3. Chủ repo duyệt mẫu rồi mới làm các unit còn lại.
@@ -70,4 +70,4 @@ Cùng khung poster 1080px (`docs/05_THIET_KE.md`), thay công thức bằng: t�
 
 Nguồn: `generator/english/u01/content.py`. `gen_english.py` sinh wrapper, 6 JS đề, HTML tự chứa, tổng quan và trang chủ dùng chung thiết kế; build web tách assets như môn Toán. Không dựng `src/` riêng khi repo đã chốt giữ `generator/`.
 
-Đã thêm engine chữ, nối, sắp từ, chọn theo SVG, bài đọc. Chưa có nghe/chấm nói. Khóa tiến độ là `mia5:en-u01-de1..6`; trang chủ/reset của Anh chỉ đọc/xóa khóa Anh. Chỉ có Unit 1 trên web, Starter/Review và Unit 2–10 vẫn chưa làm. Chờ chủ repo xem mẫu rồi mới mở rộng.
+Đã thêm engine chữ, nối, sắp từ, chọn theo hình, bài đọc. Chưa có nghe/chấm nói. Khóa tiến độ là `mia5:en-u01-de1..6`; trang chủ/reset của Anh chỉ đọc/xóa khóa Anh. Chỉ có Unit 1 trên web, Starter/Review và Unit 2–10 vẫn chưa làm. Chủ repo đã xem mẫu và duyệt thay đủ sáu tranh theo mẫu cá heo ngày 30/10/2026; các unit tiếp theo chờ được giao. Luồng build và trang chủ gộp trong bước 1/4 của kế hoạch gốc đã hoàn tất.
