@@ -1,5 +1,6 @@
 """Build assigned English units from the published unit registry."""
 import json
+import re
 from pathlib import Path
 from english.u01.content import TESTS, build_tests, picture
 from build_all import page as quiz_page
@@ -98,8 +99,9 @@ def main():
     index=index.replace('Mỗi đề làm xong là một bậc thang. Leo đủ 36 bậc là em đã chinh phục cả học kì 1 của Tiếng Anh 5.',
                         'Unit 1–9 đã sẵn sàng: từ giới thiệu bản thân đến lớp học và kể hoạt động đã qua. Mỗi Unit có sáu đề, gồm nghe ở cả ba mức độ; Units 2–9 có trang học từ và phát âm.')
     index=index.replace('/ 36 đề',f'/ {count} đề').replace('/ 108 sao',f'/ {count*3} sao')
-    for quarter,old in enumerate([9,18,27,36],1):
-        index=index.replace(f'>{old}</text>',f'>{int(count*quarter/4+0.5)}</text>')
+    milestones={str(old):str(int(count*quarter/4+0.5)) for quarter,old in enumerate([9,18,27,36],1)}
+    # One pass: a new milestone (27 for 54 exams) can equal an old label.
+    index=re.sub(r'(?<=>)(9|18|27|36)(?=</text>)',lambda m:milestones[m[0]],index)
     for symbol,letter in [('+','A'),('÷','B'),('×','C'),('=','?'),('%','!')]:index=index.replace('>'+symbol+'</span>','>'+letter+'</span>')
     light=''.join(f"--c{n}:{d['colour']};--c{n}s:{d['bg']};" for n,d in DETAILS.items())
     dark=''.join(f'--c{n}:#FFC2DD;--c{n}s:#513447;' for n in DETAILS)

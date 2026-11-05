@@ -41,6 +41,7 @@ async function fill(p){await p.evaluate(()=>__quiz.Q.forEach((q,i)=>{const e=doc
   await p.click('#q21 [data-listen-field="0"]');await p.evaluate(()=>{const q=__quiz.Q[20],e=document.querySelector('#q21 [data-listen-field="0"]');e.value=q.fields[0].answer;e.dispatchEvent(new Event('change',{bubbles:true}))});await p.click('#goBtn');await p.click('#yes');assert.match(await p.locator('#q21 .fb').textContent(),/2,5\/5/);
  }
  await p.goto(BASE+'TiengAnh5/index.html');assert.equal(await p.locator('#sDone').textContent(),String(KEYS.length));assert.equal(await p.locator('#sStar').textContent(),String(KEYS.length*3));assert.equal(await p.locator('.topic').count(),unitCount);
+ assert.deepEqual(await p.locator('.art text').allTextContents(),['1',...[1,2,3,4].map(k=>String(Math.floor(english.length*k/4+0.5)))],'English staircase milestones must match the current exam count');
  await p.goto(BASE);assert.ok((await p.locator('#english-progress').textContent()).includes(`${KEYS.length}/${english.length} đề · ${KEYS.length*3}/${english.length*3} sao`));
  // Reset English must clear new IDs/drafts, while preserving maths and legacy results.
  await p.evaluate(()=>{localStorage.setItem('mia5:cd1-de1','math');localStorage.setItem('mia5:en-u01-de1','legacy');localStorage.setItem('mia5:draft:en-u02-de1-v1','draft')});await p.goto(BASE+'TiengAnh5/index.html');await p.click('#reset');await p.click('#yes');
