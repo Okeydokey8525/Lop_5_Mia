@@ -26,3 +26,5 @@ Nguồn nội dung và ghi nhận trang sách của từng unit nằm cạnh nha
 - [Học từ/phát âm Units 2–5](breakdowns/2026-11-05_HOC_TU_UNIT2_UNIT5.md): mở rộng mẫu đã duyệt, phạm vi và kiểm chứng.
 
 - [Unit 8–9](breakdowns/2026-11-05_UNIT8_UNIT9.md): phạm vi sách, tranh gốc, đề/nghe/học từ và bằng chứng kiểm chứng.
+
+- [Unit 10 và Review 1–2](breakdowns/2026-11-06_UNIT10_REVIEW1_REVIEW2.md): đọc sách, nội dung tổng hợp, registry Review, lưu bài và QA.

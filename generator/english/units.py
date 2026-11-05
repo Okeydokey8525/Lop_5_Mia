@@ -11,9 +11,21 @@ UNITS=[
  dict(n=7,key='u07',dir='Unit7_OurFavouriteSchoolActivities',name='Our favourite school activities',pages='50–55',version=1),
  dict(n=8,key='u08',dir='Unit8_InOurClassroom',name='In our classroom',pages='56–61',version=1),
  dict(n=9,key='u09',dir='Unit9_OurOutdoorActivities',name='Our outdoor activities',pages='62–67',version=1),
+ dict(n=10,key='u10',dir='Unit10_OurSchoolTrip',name='Our school trip',pages='68–73',version=1),
 ]
 
+REVIEWS=[dict(n='R1',key='r01',dir='Review1_Units1_5',name='Review 1 · Ôn Unit 1–5',label='Review 1',pages='40–43',version=1,kind='review',overview='TongQuan_Review1'),
+         dict(n='R2',key='r02',dir='Review2_Units6_10',name='Review 2 · Ôn Unit 6–10',label='Review 2',pages='74–77',version=1,kind='review',overview='TongQuan_Review2')]
+TOPICS=UNITS[:5]+[REVIEWS[0]]+UNITS[5:]+[REVIEWS[1]]
+
+
+def label(unit):return unit.get('label',f"Unit {unit['n']}")
+def overview_name(unit):return unit.get('overview',f"TongQuan_Unit{unit['n']}")
+
 DETAILS={
+ 'R1':dict(topic='Ôn tổng hợp Units 1–5',lessons={1:'Bản thân, nhà ở và bạn bè',2:'Sở thích và nghề nghiệp',3:'Đọc và viết tổng hợp'},colour='#A63C70',bg='#FFE4F0'),
+ 'R2':dict(topic='Ôn tổng hợp Units 6–10',lessons={1:'Trường lớp và sở thích',2:'Đồ dùng và chuyến đi',3:'Đọc và viết tổng hợp'},colour='#A33876',bg='#FFE5F2'),
+ 10:dict(topic='Chuyến đi của trường, địa điểm, hoạt động và thời gian',lessons={1:'Đã đi đến đâu?',2:'Đã làm gì?',3:'Tháng, đọc và viết'},colour='#A83A71',bg='#FFE5F0'),
  8:dict(topic='Vị trí và chủ sở hữu đồ dùng trong lớp',lessons={1:'Vị trí đồ dùng',2:'Đồ dùng của ai?',3:'Đọc góc học tập và viết'},colour='#A33372',bg='#FFE3F2'),
  9:dict(topic='Địa điểm đã đến và hoạt động đã làm',lessons={1:'Địa điểm trong quá khứ',2:'Hoạt động đã làm',3:'Đọc và kể chuyến đi'},colour='#AC3A68',bg='#FFE6EF'),
  6:dict(topic='Phòng học, tầng và chỉ đường trong trường',lessons={1:'Phòng học và tầng',2:'Hỏi và chỉ đường',3:'Đọc sơ đồ và viết'},colour='#A53E78',bg='#FFE6F2'),
@@ -31,6 +43,9 @@ def test_id(unit,index):
 
 def tests_for(unit):
     descriptions={
+      'R1':['Ôn bản thân, nhà ở, bạn bè, sở thích và nghề nghiệp.','Phân biệt từ vựng qua tranh và ngữ cảnh các Unit 1–5.','Ghép đúng loại câu hỏi và câu trả lời theo hồ sơ.','Đọc hồ sơ mới kết hợp địa chỉ, quốc tịch, sở thích và ước mơ.','Viết câu về nhiều thông tin từ cùng hồ sơ giả định.','Kết hợp nghe, đọc và viết trong phạm vi Review 1.'],
+      'R2':['Ôn trường lớp, sở thích, đồ dùng và những chuyến đi.','Nhận biết từ vựng và các dạng động từ trong Unit 6–10.','Hỏi đáp vị trí, chủ sở hữu và các chuyến đi đã qua.','Đọc hồ sơ mới, phân biệt yesterday với school trip.','Viết câu vị trí, sở thích, sở hữu và chuyến đi theo thẻ.','Kết hợp nghe, đọc và viết trong phạm vi Review 2.'],
+      10:['Làm quen địa điểm, hoạt động và thời gian chuyến đi.','Nhận biết hoạt động qua tranh và các dạng quá khứ.','Hỏi Did they go…?/What did they do…? theo thẻ.','Đọc chuyến đi, phân biệt cùng nơi nhưng khác tháng hoặc hoạt động.','Viết với did/go/went và động từ quá khứ theo thẻ.','Kết hợp nghe, nơi, tháng, hoạt động, đọc và viết.'],
       8:['Làm quen đồ dùng, vị trí và chủ sở hữu.','Nhận biết đồ dùng qua tranh, số ít/số nhiều và giới từ.','Hỏi Where/Whose, đáp vị trí và chủ sở hữu.','Đọc góc học tập, khớp đồ vật, người sở hữu và vị trí.','Viết câu vị trí và sở hữu theo thẻ dữ kiện.','Kết hợp nghe, từ vựng, vị trí, sở hữu, đọc và viết.'],
       9:['Làm quen địa điểm và hoạt động đã qua.','Nhận biết địa điểm, động từ quá khứ và thời gian.','Hỏi Were you…?/What did you do…? và đáp theo thẻ.','Đọc chuyến đi, phân biệt địa điểm giống nhưng hoạt động khác.','Viết với was/were và động từ quá khứ theo thẻ.','Kết hợp nghe, nơi chốn, thời gian, hoạt động, đọc và viết.'],
       6:['Làm quen tên phòng học và cách gọi tầng.','Nhận biết phòng qua đồ dùng; từ chỉ tầng và hướng đi.','Hỏi vị trí và hỏi đường lịch sự trong trường.','Đọc kế hoạch phòng học và đối chiếu tầng, hướng đi.','Viết câu xác định vị trí và sắp xếp chỉ dẫn.','Kết hợp nghe, tên phòng, tầng, hội thoại và chỉ đường.'],
@@ -44,10 +59,10 @@ def tests_for(unit):
 
 
 def catalog():
-    return [dict(file=f"TiengAnh5/{u['dir']}/De{i}_{slug}.html",id=test_id(u,i),subject='en')
-            for u in UNITS for i,(slug,*_) in enumerate(TESTS,1)]
+    return [dict(file=f"TiengAnh5/{u['dir']}/De{i}_{slug}.html",id=test_id(u,i),subject='en',kind=u.get('kind','unit'),topic=u['key'],
+                 overview=f"TiengAnh5/{u['dir']}/{overview_name(u)}.html") for u in TOPICS for i,(slug,*_) in enumerate(TESTS,1)]
 
 
 def index_data():
-    return [dict(n=u['n'],dir=u['dir'],name=u['name'],range=f"Unit {u['n']} · Trang {u['pages']}",overview=f"TongQuan_Unit{u['n']}",
-                 tests=[dict(id=test_id(u,i),file=f'De{i}_{slug}.html',name=name,theme=theme) for i,(slug,name,theme) in enumerate(tests_for(u),1)]) for u in UNITS]
+    return [dict(n=u['n'],badgeLabel='Review' if u.get('kind')=='review' else 'Unit',badge=str(u['n'])[1:] if u.get('kind')=='review' else str(u['n']),dir=u['dir'],name=u['name'],range=f"{label(u)} · Trang {u['pages']}",overview=overview_name(u),
+                 tests=[dict(id=test_id(u,i),file=f'De{i}_{slug}.html',name=name,theme=theme) for i,(slug,name,theme) in enumerate(tests_for(u),1)]) for u in TOPICS]

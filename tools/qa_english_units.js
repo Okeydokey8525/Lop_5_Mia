@@ -3,9 +3,11 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const {chromium}=require('../generator/node_modules/playwright');
 const NUMBERS=(process.argv.find(a=>a.startsWith('--units='))||'--units=2,3').split('=')[1].split(',').map(Number);
 assert.ok(NUMBERS.length&&NUMBERS.every(n=>Number.isInteger(n)&&n>=2)&&new Set(NUMBERS).size===NUMBERS.length);
-const KEYS=NUMBERS.map(n=>'u'+String(n).padStart(2,'0'));
+const topicArg=process.argv.find(a=>a.startsWith('--topics='));
+const KEYS=topicArg?topicArg.split('=')[1].split(','):NUMBERS.map(n=>'u'+String(n).padStart(2,'0'));
+assert.ok(KEYS.length&&KEYS.every(k=>/^(u[0-9]{2}|r0[12])$/.test(k))&&new Set(KEYS).size===KEYS.length);
 const BASE=(process.argv.slice(2).find(a=>!a.startsWith('--'))||'http://127.0.0.1:8765/Lop_5_Mia/').replace(/\/?$/,'/');
-const OUT=path.resolve(__dirname,'../artifacts','units'+NUMBERS.join('')+(BASE.includes('127.0.0.1')?'-local':'-online'));fs.mkdirSync(OUT,{recursive:true});
+const OUT=path.resolve(__dirname,'../artifacts','topics-'+KEYS.join('-')+(BASE.includes('127.0.0.1')?'-local':'-online'));fs.mkdirSync(OUT,{recursive:true});
 function fixture(){const voice={name:'English fixture',lang:'en-GB',voiceURI:'fixture'};window.__speech={calls:[],getVoices:()=>[voice],addEventListener(){},removeEventListener(){},cancel(){},speak(u){this.calls.push({text:u.text,rate:u.rate});u.onstart?.()}};Object.defineProperty(window,'speechSynthesis',{value:__speech});window.SpeechSynthesisUtterance=class{constructor(t){this.text=t}};}
 async function fill(p){await p.evaluate(()=>__quiz.Q.forEach((q,i)=>{const e=document.getElementById('q'+(i+1)),set=(x,v)=>{x.value=v;x.dispatchEvent(new Event('input',{bubbles:true}));x.dispatchEvent(new Event('change',{bubbles:true}))};if(q.type==='listen')q.fields.forEach((f,k)=>set(e.querySelector('[data-listen-field="'+k+'"]'),f.answer));else if(['mc','pic'].includes(q.type)){const x=e.querySelectorAll('input')[q.answer];x.checked=true;x.dispatchEvent(new Event('change',{bubbles:true}))}else if(q.type==='text')set(e.querySelector('.text-in'),q.answers[0]);else if(q.type==='match')q.pairs.forEach((_,k)=>set(e.querySelector('[data-pair="'+k+'"]'),String(k)));else if(q.type==='reorder')q.items.forEach((_,k)=>e.querySelector('[data-add="'+k+'"]').click());else if(q.type==='tf')q.items.forEach((it,k)=>{const x=e.querySelector(`input[name="q${i}_${k}"][value="${it.a?'d':'s'}"]`);x.checked=true;x.dispatchEvent(new Event('change',{bubbles:true}))});}));}
 (async()=>{const b=await chromium.launch();const errors=[];try{
@@ -20,6 +22,12 @@ async function fill(p){await p.evaluate(()=>__quiz.Q.forEach((q,i)=>{const e=doc
   }
   if(t.id==='en-u07-de3-v1'){
    const variants=await p.evaluate(()=>{const normal=__quiz.Q.find(q=>q.type==='text'&&!q.exactForm&&q.answers[0].includes('it is')),full=__quiz.Q.find(q=>q.type==='text'&&q.exactForm&&q.answers[0].includes('it is'));return [__quiz.textIsCorrect(normal.answers[0].replace('it is','it’s'),normal.answers),__quiz.textIsCorrect(full.answers[0].replace('it is','it’s'),full.answers,true),__quiz.textIsCorrect(normal.answers[0]+' extra',normal.answers)]});assert.deepEqual(variants,[true,false,false]);
+  }
+  if(t.id==='en-u10-de3-v1'){
+   const values=await p.evaluate(()=>{const q=__quiz.Q.find(q=>q.type==='text'&&!q.exactForm&&q.answers[0]==='did not');return [__quiz.textIsCorrect('didn’t',q.answers),__quiz.textIsCorrect('went',q.answers)]});assert.deepEqual(values,[true,false]);
+  }
+  if(t.id.startsWith('en-r')){
+   const scope=await p.evaluate(()=>[...new Set(__quiz.Q.flatMap(q=>q.sourceUnits||[]))].sort((a,b)=>a-b));assert.deepEqual(scope,t.id.startsWith('en-r01')?[1,2,3,4,5]:[6,7,8,9,10]);assert.ok(!(await p.title()).includes('Unit R'));
   }
   if(t.id==='en-u08-de3-v1'){
    const forms=await p.evaluate(()=>{const owner=__quiz.Q.find(q=>q.type==='text'&&q.answers[0]==="It is An's."),full=__quiz.Q.find(q=>q.type==='text'&&q.exactForm&&q.answers[0].startsWith('They are'));return [__quiz.textIsCorrect('It’s An’s.',owner.answers),__quiz.textIsCorrect('It is An.',owner.answers),__quiz.textIsCorrect(full.answers[0].replace('They are','They’re'),full.answers,true)]});assert.deepEqual(forms,[true,false,false]);
@@ -42,6 +50,10 @@ async function fill(p){await p.evaluate(()=>__quiz.Q.forEach((q,i)=>{const e=doc
  }
  await p.goto(BASE+'TiengAnh5/index.html');assert.equal(await p.locator('#sDone').textContent(),String(KEYS.length));assert.equal(await p.locator('#sStar').textContent(),String(KEYS.length*3));assert.equal(await p.locator('.topic').count(),unitCount);
  assert.deepEqual(await p.locator('.art text').allTextContents(),['1',...[1,2,3,4].map(k=>String(Math.floor(english.length*k/4+0.5)))],'English staircase milestones must match the current exam count');
+ if(KEYS.includes('r01')||KEYS.includes('r02')){
+  assert.deepEqual(await p.locator('.topic').evaluateAll(nodes=>nodes.map(n=>n.id)),['cd1','cd2','cd3','cd4','cd5','cdR1','cd6','cd7','cd8','cd9','cd10','cdR2'],'Reviews must appear in textbook order');
+  assert.equal(await p.locator('.topic .no small').filter({hasText:'Review'}).count(),2);
+ }
  await p.goto(BASE);assert.ok((await p.locator('#english-progress').textContent()).includes(`${KEYS.length}/${english.length} đề · ${KEYS.length*3}/${english.length*3} sao`));
  // Reset English must clear new IDs/drafts, while preserving maths and legacy results.
  await p.evaluate(()=>{localStorage.setItem('mia5:cd1-de1','math');localStorage.setItem('mia5:en-u01-de1','legacy');localStorage.setItem('mia5:draft:en-u02-de1-v1','draft')});await p.goto(BASE+'TiengAnh5/index.html');await p.click('#reset');await p.click('#yes');
@@ -51,13 +63,13 @@ async function fill(p){await p.evaluate(()=>__quiz.Q.forEach((q,i)=>{const e=doc
   await p.evaluate(t=>localStorage.setItem('mia5:ui-theme',t),theme);
   for(const width of [320,390,768,1366]){
    await p.setViewportSize({width,height:844});
-   for(const file of ['index.html','TiengAnh5/index.html',...NUMBERS.map(n=>tests.find(t=>t.id.startsWith('en-u'+String(n).padStart(2,'0')+'-')).file.replace(/De[^/]+$/,`TongQuan_Unit${n}.html`))]){
+   for(const file of ['index.html','TiengAnh5/index.html',...KEYS.map(key=>{const t=tests.find(t=>t.id.startsWith('en-'+key+'-'));return t.overview||t.file.replace(/De[^/]+$/,'TongQuan_Unit'+Number(key.slice(1))+'.html')})]){
     await p.goto(BASE+file);await p.evaluate(()=>document.fonts.ready);await p.locator('.en-figure img').evaluateAll(imgs=>Promise.all(imgs.map(i=>i.decode())));assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),file);
     if(width===390&&theme==='light')await p.screenshot({path:path.join(OUT,file.replaceAll('/','_')+'-mobile.png'),fullPage:true});
    }
   }
  }
  // Verify both standalone exports include images and the same grading behavior.
- if(BASE.includes('127.0.0.1'))for(const folder of NUMBERS.map(n=>tests.find(t=>t.id.startsWith('en-u'+String(n).padStart(2,'0')+'-')).file.split('/')[1])){await p.goto(require('node:url').pathToFileURL(path.resolve(__dirname,'../generator/out/TiengAnh5',folder,'De2_TuVungVaHinhAnh.html')).href);await p.locator('.en-figure img').evaluateAll(imgs=>Promise.all(imgs.map(i=>i.decode())));assert.ok(await p.locator('.en-figure img').first().getAttribute('src').then(s=>s.startsWith('data:image/webp')));await fill(p);await p.click('#goBtn');assert.match(await p.locator('.score').textContent(),/100\s*\/\s*100/);}
- assert.deepEqual(errors,[]);fs.writeFileSync(path.join(OUT,'report.json'),JSON.stringify({base:BASE,tests:tests.length,allFullMarks:true,listeningQuestions:tests.length*6,layoutCases:(NUMBERS.length+2)*8,levels:[2,2,2],draftsAndResults:true,partialPoints:true,resetIsolated:true,standalone:BASE.includes('127.0.0.1'),errors},null,2));console.log(`Units ${NUMBERS.join(',')} QA PASS: ${tests.length} exams at 100/100, ${tests.length*6} listening questions, speech text, drafts, retained best scores, partial grading, aggregate progress, isolated reset${BASE.includes('127.0.0.1')?' and standalone exports':''}. Speech mocked.`);
+ if(BASE.includes('127.0.0.1'))for(const folder of KEYS.map(key=>tests.find(t=>t.id.startsWith('en-'+key+'-')).file.split('/')[1])){await p.goto(require('node:url').pathToFileURL(path.resolve(__dirname,'../generator/out/TiengAnh5',folder,'De2_TuVungVaHinhAnh.html')).href);await p.locator('.en-figure img').evaluateAll(imgs=>Promise.all(imgs.map(i=>i.decode())));assert.ok(await p.locator('.en-figure img').first().getAttribute('src').then(s=>s.startsWith('data:image/webp')));await fill(p);await p.click('#goBtn');assert.match(await p.locator('.score').textContent(),/100\s*\/\s*100/);}
+ assert.deepEqual(errors,[]);fs.writeFileSync(path.join(OUT,'report.json'),JSON.stringify({base:BASE,tests:tests.length,allFullMarks:true,listeningQuestions:tests.length*6,layoutCases:(KEYS.length+2)*8,levels:[2,2,2],draftsAndResults:true,partialPoints:true,resetIsolated:true,standalone:BASE.includes('127.0.0.1'),errors},null,2));console.log(`Topics ${KEYS.join(',')} QA PASS: ${tests.length} exams at 100/100, ${tests.length*6} listening questions, speech text, drafts, retained best scores, partial grading, aggregate progress, isolated reset${BASE.includes('127.0.0.1')?' and standalone exports':''}. Speech mocked.`);
  }finally{await b.close()}})().catch(e=>{console.error(e);process.exitCode=1});

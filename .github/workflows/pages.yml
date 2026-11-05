@@ -44,12 +44,14 @@ jobs:
           node tools/qa_english_units.js --units=4,5
           node tools/qa_english_units.js --units=6,7
           node tools/qa_english_units.js --units=8,9
+          node tools/qa_english_units.js --topics=u10,r01,r02
           node tools/qa_theme.js
           node tools/qa_home.js
           node tools/qa_drafts.js
           node tools/qa_persistence.js
           node tools/qa_persistence.js --units=6,7
           node tools/qa_persistence.js --units=8,9
+          node tools/qa_persistence.js --topics=u10,r01,r02
           node tools/qa_study.js
           node tools/responsive.js --no-shots
       - uses: actions/upload-artifact@v4

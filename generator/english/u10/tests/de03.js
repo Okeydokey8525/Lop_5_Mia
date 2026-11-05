@@ -1,0 +1,387 @@
+window.TEST_FN=function(H){return MKEN10([
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the destination.",
+  "transcript": "They went to Suoi Tien Theme Park last November.",
+  "speech": "They went to Suoi Tien Theme Park last November.",
+  "fields": [
+   {
+    "label": "Destination:",
+    "answer": "Suoi Tien Theme Park",
+    "options": [
+     "Ba Na Hills",
+     "Hoan Kiem Lake",
+     "Suoi Tien Theme Park",
+     "Bai Dinh Pagoda"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Destination: Suoi Tien Theme Park.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the activity.",
+  "transcript": "They visited the old buildings.",
+  "speech": "They visited the old buildings.",
+  "fields": [
+   {
+    "label": "Activity:",
+    "answer": "visited the old buildings",
+    "options": [
+     "visited the old buildings",
+     "planted trees",
+     "played games",
+     "walked around the lake"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Activity: visited the old buildings.",
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "A: Did they go to Bai Dinh Pagoda? B: ___.",
+  "why": "Did they…? → Yes, they did.",
+  "lesson": 1,
+  "opts": [
+   "Yes, they did.",
+   "Yes, they do.",
+   "Yes, they were.",
+   "Yes, they went."
+  ],
+  "answer": 0,
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: What ___ they do there?",
+  "why": "Hỏi việc đã làm bằng did.",
+  "lesson": 1,
+  "answers": [
+   "did"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Where did they go…?",
+  "lesson": 3,
+  "items": [
+   "Where",
+   "did",
+   "they",
+   "go",
+   "last",
+   "November?"
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "What did this class do?",
+  "why": "Theo thẻ lớp Linh.",
+  "lesson": 1,
+  "opts": [
+   "planted trees",
+   "played games",
+   "walked around the lake",
+   "visited the old buildings"
+  ],
+  "answer": 2,
+  "passage": "Class: Linh's class · Place: Hoan Kiem Lake · Time: last December · Activity: walked around the lake.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: Did they go to the lake? No, they ___.",
+  "why": "No, they did not; cũng viết didn’t.",
+  "lesson": 1,
+  "answers": [
+   "did not",
+   "didn't"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: They ___ to Ba Na Hills. Use go.",
+  "why": "Câu kể quá khứ: went.",
+  "lesson": 1,
+  "answers": [
+   "went"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Give the location sentence including the month.",
+  "why": "Dùng They went to và tháng trong thẻ.",
+  "lesson": 2,
+  "answers": [
+   "They went to Ba Na Hills last November."
+  ],
+  "exactForm": false,
+  "passage": "Class: An's class · Place: Ba Na Hills · Time: last November · Activity: visited the old buildings.",
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Which month was the trip?",
+  "why": "Lớp Minh đi tháng November.",
+  "lesson": 3,
+  "opts": [
+   "December",
+   "September",
+   "October",
+   "November"
+  ],
+  "answer": 3,
+  "passage": "Class: Minh's class · Place: Suoi Tien Theme Park · Time: last November · Activity: played games.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and find the month.",
+  "transcript": "This is Mai's class. They went to Bai Dinh Pagoda last December. They visited the old buildings. They enjoyed the trip.",
+  "speech": "This is Mai's class. They went to Bai Dinh Pagoda last December. They visited the old buildings. They enjoyed the trip.",
+  "fields": [
+   {
+    "label": "Month:",
+    "answer": "December",
+    "options": [
+     "September",
+     "October",
+     "November",
+     "December"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Month: December.",
+  "level": "kha"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Sau did dùng visit nguyên mẫu.",
+  "lesson": 2,
+  "items": [
+   "Did",
+   "they",
+   "visit",
+   "the",
+   "old",
+   "buildings?"
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Rewrite in full: They didn’t go to the lake.",
+  "why": "Didn’t = did not.",
+  "lesson": 2,
+  "answers": [
+   "They did not go to the lake."
+  ],
+  "exactForm": true,
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and find the destination.",
+  "transcript": "This is Nam's class. They went to Ba Na Hills last September. They planted trees. They enjoyed the trip.",
+  "speech": "This is Nam's class. They went to Ba Na Hills last September. They planted trees. They enjoyed the trip.",
+  "fields": [
+   {
+    "label": "Destination:",
+    "answer": "Ba Na Hills",
+    "options": [
+     "Ba Na Hills",
+     "Hoan Kiem Lake",
+     "Suoi Tien Theme Park",
+     "Bai Dinh Pagoda"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Destination: Ba Na Hills.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: What did they ___ there?",
+  "why": "Did…do, không dùng did…did.",
+  "lesson": 2,
+  "answers": [
+   "do"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Ghép câu hỏi nơi, việc làm, có/không.",
+  "lesson": 2,
+  "pairs": [
+   {
+    "left": "Where did they go?",
+    "right": "They went to Ba Na Hills."
+   },
+   {
+    "left": "What did they do?",
+    "right": "They planted trees."
+   },
+   {
+    "left": "Did they play games?",
+    "right": "Yes, they did."
+   }
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Give the activity sentence, starting with They.",
+  "why": "Theo thẻ: visited the old buildings.",
+  "lesson": 2,
+  "answers": [
+   "They visited the old buildings."
+  ],
+  "exactForm": false,
+  "passage": "Class: Mai's class · Place: Bai Dinh Pagoda · Time: last December · Activity: visited the old buildings.",
+  "level": "kha"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Sau did dùng go nguyên mẫu.",
+  "lesson": 2,
+  "items": [
+   {
+    "t": "Did they go…? asks about a past trip.",
+    "a": true
+   },
+   {
+    "t": "After did, use went in this question.",
+    "a": false
+   }
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write both location and activity sentences from the card.",
+  "why": "Giữ last December và walked.",
+  "lesson": 3,
+  "answers": [
+   "They went to Hoan Kiem Lake last December. They walked around the lake."
+  ],
+  "exactForm": false,
+  "passage": "Class: Linh's class · Place: Hoan Kiem Lake · Time: last December · Activity: walked around the lake.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Give the location sentence with the month.",
+  "why": "Lớp Nam đi last September.",
+  "lesson": 3,
+  "answers": [
+   "They went to Ba Na Hills last September."
+  ],
+  "exactForm": false,
+  "passage": "Class: Nam's class · Place: Ba Na Hills · Time: last September · Activity: planted trees.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and choose destination and activity.",
+  "transcript": "This is Minh's class. They went to Suoi Tien Theme Park last November. They played games. They enjoyed the trip.",
+  "speech": "This is Minh's class. They went to Suoi Tien Theme Park last November. They played games. They enjoyed the trip.",
+  "fields": [
+   {
+    "label": "Destination:",
+    "answer": "Suoi Tien Theme Park",
+    "options": [
+     "Ba Na Hills",
+     "Hoan Kiem Lake",
+     "Suoi Tien Theme Park",
+     "Bai Dinh Pagoda"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Activity:",
+    "answer": "played games",
+    "options": [
+     "visited the old buildings",
+     "planted trees",
+     "played games",
+     "walked around the lake"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Destination: Suoi Tien Theme Park; Activity: played games.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Rewrite in full: No, they didn’t.",
+  "why": "Didn’t = did not.",
+  "lesson": 3,
+  "answers": [
+   "No, they did not."
+  ],
+  "exactForm": true,
+  "level": "gioi"
+ },
+ {
+  "type": "mc",
+  "stem": "Choose the correct past sentence.",
+  "why": "Câu kể dùng visited, không thêm did/were.",
+  "lesson": 3,
+  "opts": [
+   "They visits the old buildings yesterday.",
+   "They visited the old buildings.",
+   "They did visited the old buildings.",
+   "They were visit the old buildings."
+  ],
+  "answer": 1,
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and write month and activity.",
+  "transcript": "This is Nam's class. They went to Ba Na Hills last September. They planted trees. They enjoyed the trip.",
+  "speech": "This is Nam's class. They went to Ba Na Hills last September. They planted trees. They enjoyed the trip.",
+  "fields": [
+   {
+    "label": "Month:",
+    "answer": "September",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Activity:",
+    "answer": "planted trees",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Month: September; Activity: planted trees.",
+  "level": "gioi"
+ }
+]);};

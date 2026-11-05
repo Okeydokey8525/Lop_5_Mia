@@ -88,7 +88,7 @@
  });
  function changed(event){const el=event.target.closest('[data-exercise]');if(!el)return;const q=byQuestion[el.dataset.exercise],value={answer:answer(q),checked:false,signature:q.signature};state.practice[q.id]=value;pending.set(q.id,value);$('#feedback-'+q.id).textContent='';progress();clearTimeout(saveTimer);saveTimer=setTimeout(()=>flush(),250);}
  document.addEventListener('input',changed);document.addEventListener('change',changed);
- $('#demo').onclick=()=>speak([{text:data.unit===6?'Hello! Let us learn about our school rooms.':'Hello! Let us talk about our favourite school activities.'}],false);
+ $('#demo').onclick=()=>speak([{text:data.unit===6?'Hello! Let us learn about our school rooms.':data.unit===7?'Hello! Let us talk about our favourite school activities.':'Hello! Let us listen and learn English.'}],false);
  $('#stop').onclick=()=>stop('Đã dừng. Em có thể bấm nghe lại.');$('#refresh').onclick=()=>{stop('Em chọn giọng rồi bấm Nghe nhé.');populate();};select.onchange=()=>{stop('Đã đổi giọng. Em bấm nghe để thử nhé.');$('#voice-status').textContent='Đang chọn: '+select.selectedOptions[0].textContent;};
  if(available)synth.addEventListener('voiceschanged',populate);
  document.addEventListener('visibilitychange',()=>{if(document.hidden){flush();stop('Đã dừng khi trang ẩn. Bấm Nghe để tiếp tục.');}});window.addEventListener('pagehide',()=>{flush();stop();});

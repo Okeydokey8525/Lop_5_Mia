@@ -143,7 +143,7 @@ function render(){
     });
     if(nextHref===null&&firstNew>=0){nextHref=cd.dir+'/'+cd.tests[firstNew].file;nextTxt=(done===0&&ci===0)?'Bắt đầu thôi':'Làm đề tiếp theo'}
     var tc='var(--c'+(ci+1)+')';
-    html+='<section class="topic" id="cd'+cd.n+'" style="--tc:'+tc+';--ts:var(--c'+(ci+1)+'s)"><div class="th"><div class="no"><small>Chủ đề</small><span>'+cd.n+'</span></div><div class="grow"><h2>'+esc(cd.name)+'</h2><p>'+esc(cd.range)+' · 6 đề kiểm tra</p></div>'+
+    html+='<section class="topic" id="cd'+cd.n+'" style="--tc:'+tc+';--ts:var(--c'+(ci+1)+'s)"><div class="th"><div class="no"><small>'+esc(cd.badgeLabel||'Chủ đề')+'</small><span>'+esc(cd.badge||String(cd.n))+'</span></div><div class="grow"><h2>'+esc(cd.name)+'</h2><p>'+esc(cd.range)+' · 6 đề kiểm tra</p></div>'+
       '<div class="meter"><div class="bar"><i style="width:'+(d/6*100)+'%"></i></div><div class="st">'+d+'/6 đề · '+s+'/18 '+STAR+'</div></div></div>'+
       '<div class="badge'+(d===6?' on':'')+'">'+STAR+'<span>Chúc mừng em! Em đã làm đủ 6 đề của chủ đề này.</span></div>'+
       '<div class="tb2"><a class="ov" href="'+cd.dir+'/'+cd.overview+'.html"><div class="crop"><img src="'+cd.dir+'/'+cd.overview+'.png" alt="Bức tranh tổng quan Chủ đề '+cd.n+'" loading="lazy"></div><span class="lab">Xem bức tranh tổng quan →</span></a>'+

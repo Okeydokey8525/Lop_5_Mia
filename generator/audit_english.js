@@ -1,11 +1,11 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 let count=0,bad=0;
 // Explicit per-unit inventories: unrelated images or book scans cannot enter output.
-const inventories={u01:['city','countryside','dolphin','pink','sandwich','table-tennis'],u02:['house','flat','building','tower'],u03:['friendly','helpful','clever','active'],u04:['play-the-violin','surf-the-internet','go-for-a-walk','water-the-flowers'],u05:['firefighter','reporter','gardener','writer'],u06:['library','computer-room','music-room','art-room'],u07:['do-projects','read-books','play-games','solve-maths-problems'],u08:['glue-stick','crayon','set-square','pencil-sharpener'],u09:['theatre','aquarium','campsite','funfair']};
+const inventories={u01:['city','countryside','dolphin','pink','sandwich','table-tennis'],u02:['house','flat','building','tower'],u03:['friendly','helpful','clever','active'],u04:['play-the-violin','surf-the-internet','go-for-a-walk','water-the-flowers'],u05:['firefighter','reporter','gardener','writer'],u06:['library','computer-room','music-room','art-room'],u07:['do-projects','read-books','play-games','solve-maths-problems'],u08:['glue-stick','crayon','set-square','pencil-sharpener'],u09:['theatre','aquarium','campsite','funfair'],u10:['visit-the-old-buildings','plant-trees','play-games','walk-around-the-lake'],r01:['u01/dolphin','u02/house','u03/friendly','u05/writer'],r02:['u06/library','u07/do-projects','u08/glue-stick','u09/aquarium']};
 for(const [unit,names] of Object.entries(inventories)){
 const images=path.join(__dirname,'english',unit,'images');
-assert.deepEqual(fs.readdirSync(images).filter(f=>f.endsWith('.webp')).sort(),names.map(n=>n+'.webp').sort());
-const approvedImages=new Set(names.map(n=>'data:image/webp;base64,'+fs.readFileSync(path.join(images,n+'.webp')).toString('base64')));
+if(!unit.startsWith('r'))assert.deepEqual(fs.readdirSync(images).filter(f=>f.endsWith('.webp')).sort(),names.map(n=>n+'.webp').sort());
+const approvedImages=new Set(names.map(n=>'data:image/webp;base64,'+fs.readFileSync(unit.startsWith('r')?path.join(__dirname,'english',n.split('/')[0],'images',n.split('/')[1]+'.webp'):path.join(images,n+'.webp')).toString('base64')));
 for(let i=1;i<=6;i++){
   try{
     const dir=path.join(__dirname,'english',unit),ctx={};ctx.window=ctx;vm.createContext(ctx);
@@ -29,6 +29,7 @@ for(let i=1;i<=6;i++){
       else {assert.ok(q.items.length>=2);assert.ok(q.items.every(it=>typeof it.a==='boolean'));}
       for(const src of JSON.stringify(q).match(/data:image\/[^"\\]+/g)||[])assert.ok(approvedImages.has(src),'Unknown embedded image; book scans are forbidden');
     });
+    if(unit.startsWith('r'))assert.deepEqual([...new Set(questions.flatMap(q=>q.sourceUnits||[]))].sort((a,b)=>a-b),unit==='r01'?[1,2,3,4,5]:[6,7,8,9,10],'Review must cover exactly its five source units');
     assert.equal(questions.filter(q=>q.type==='listen').length,6);
     for(const lv of ['tb','kha','gioi'])assert.equal(questions.filter(q=>q.type==='listen'&&q.level===lv).length,2);
     assert.ok(kinds.size>=4,'Too little variation');count++;

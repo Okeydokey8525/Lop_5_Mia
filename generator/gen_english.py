@@ -64,15 +64,15 @@ def build_unit1():
 
 def main():
     import importlib
-    from english.units import UNITS, DETAILS, index_data, test_id, tests_for
+    from english.units import TOPICS, DETAILS, index_data, test_id, tests_for, label, overview_name
     from english.overviews import sheet
     build_unit1()
-    for unit in UNITS[1:]:
+    for unit in TOPICS[1:]:
         n=unit['n'];unit_tests=tests_for(unit);content=importlib.import_module(f"english.{unit['key']}.content")
         folder=OUT/unit['dir'];folder.mkdir(parents=True,exist_ok=True)
         source=W/'english'/unit['key'];(source/'tests').mkdir(exist_ok=True)
         details=DETAILS[n]
-        meta={**META,'version':unit['version'],'title':f"Unit {n} · {unit['name']}",
+        meta={**META,'version':unit['version'],'title':unit['name'] if unit.get('kind')=='review' else f"{label(unit)} · {unit['name']}",
               'topic':details['topic'],'range':f"Trang {unit['pages']}"}
         lessons=details['lessons']
         wrapper=f'window.MKEN{n}=function(questions){{return '+json.dumps(dict(decimal=False,meta=meta,lessons=lessons,levels=LEVELS),ensure_ascii=False)[:-1]+',"questions":questions};};\n'
@@ -83,32 +83,32 @@ def main():
             extra=dict(id=test_id(unit,i),title=f'Đề {i} · {name}',theme=theme,home='../index.html')
             if i>1:extra['prev']=f'De{i-1}_{TESTS[i-2][0]}.html'
             if i<6:extra['next']=f'De{i+1}_{TESTS[i][0]}.html'
-            html=quiz_page(f'Tiếng Anh 5 · Unit {n} · Đề {i} · {name}',data,extra,wrapper)
+            html=quiz_page(f'Tiếng Anh 5 · {label(unit)} · Đề {i} · {name}',data,extra,wrapper)
             speech='<script>'+(W/'english'/'speech.js').read_text(encoding='utf-8-sig')+'</script>'
             (folder/f'De{i}_{slug}.html').write_text(html.replace('</head>',speech+'</head>'),encoding='utf-8',newline='\n')
-        cd=dict(n=n,dir=unit['dir'],name=unit['name'],range=f"Unit {n} · Trang {unit['pages']}",overview=f'TongQuan_Unit{n}',tests=unit_tests,test_ids=[test_id(unit,i) for i in range(1,7)])
-        overview=overview_page(f'Tiếng Anh 5 · Unit {n} · Tổng quan',sheet(unit,content),cd,details['colour'])
-        if n in (2,3,4,5,6,7,8,9):
+        cd=dict(n=n,dir=unit['dir'],name=unit['name'],range=f"{label(unit)} · Trang {unit['pages']}",overview=overview_name(unit),tests=unit_tests,test_ids=[test_id(unit,i) for i in range(1,7)])
+        overview=overview_page(f'Tiếng Anh 5 · {label(unit)} · Tổng quan',sheet(unit,content),cd,details['colour'])
+        if n!=1:
             study=importlib.import_module(f"english.{unit['key']}.study").render_study()
             (folder/'HocTuVaPhatAm.html').write_text(study,encoding='utf-8',newline='\n')
             if n==6:(folder/'HocTuVaPhatAm_Mau.html').write_text(study,encoding='utf-8',newline='\n')
-            overview=overview.replace('</nav>','</nav><div class="nav"><a href="HocTuVaPhatAm.html">🌸 Học từ, đánh vần và phát âm · Unit '+str(n)+'</a></div>',1)
-        (folder/f'TongQuan_Unit{n}.html').write_text(overview,encoding='utf-8',newline='\n')
-    count=len(UNITS)*6
+            overview=overview.replace('</nav>','</nav><div class="nav"><a href="HocTuVaPhatAm.html">🌸 Học từ, đánh vần và phát âm · '+label(unit)+'</a></div>',1)
+        (folder/(overview_name(unit)+'.html')).write_text(overview,encoding='utf-8',newline='\n')
+    count=len(TOPICS)*6
     index=render_index(index_data()).replace('Toán 5','Tiếng Anh 5').replace('Kết nối tri thức với cuộc sống','Global Success')
     index=index.replace('Mỗi đề làm xong là một bậc thang. Leo đủ 36 bậc là em đã chinh phục cả học kì 1 của Tiếng Anh 5.',
-                        'Unit 1–9 đã sẵn sàng: từ giới thiệu bản thân đến lớp học và kể hoạt động đã qua. Mỗi Unit có sáu đề, gồm nghe ở cả ba mức độ; Units 2–9 có trang học từ và phát âm.')
+                        'Unit 1–10 và Review 1–2 đã sẵn sàng theo thứ tự sách tập một. Mỗi phần có sáu đề và nghe ở ba mức độ. Starter chưa triển khai; Units 2–10 và hai Review có trang học từ/phát âm.')
     index=index.replace('/ 36 đề',f'/ {count} đề').replace('/ 108 sao',f'/ {count*3} sao')
     milestones={str(old):str(int(count*quarter/4+0.5)) for quarter,old in enumerate([9,18,27,36],1)}
     # One pass: a new milestone (27 for 54 exams) can equal an old label.
     index=re.sub(r'(?<=>)(9|18|27|36)(?=</text>)',lambda m:milestones[m[0]],index)
     for symbol,letter in [('+','A'),('÷','B'),('×','C'),('=','?'),('%','!')]:index=index.replace('>'+symbol+'</span>','>'+letter+'</span>')
-    light=''.join(f"--c{n}:{d['colour']};--c{n}s:{d['bg']};" for n,d in DETAILS.items())
-    dark=''.join(f'--c{n}:#FFC2DD;--c{n}s:#513447;' for n in DETAILS)
+    light=''.join(f"--c{i}:{DETAILS[u['n']]['colour']};--c{i}s:{DETAILS[u['n']]['bg']};" for i,u in enumerate(TOPICS,1) if u['n'] in DETAILS)
+    dark=''.join(f'--c{i}:#FFC2DD;--c{i}s:#513447;' for i in range(1,len(TOPICS)+1))
     index=index.replace('</head>','<style>:root[data-theme="light"]{'+light+'}:root[data-theme="dark"]{'+dark+'}</style></head>')
-    index=index.replace('</div></header>','</div></header><section class="wrap" style="margin-top:24px;margin-bottom:36px"><a class="cta" href="Unit1_AllAboutMe/LuyenNghe_Mau.html">🔊 Thử giọng nghe · 3 cấp độ</a><p>Mỗi đề Unit 1–7 có 6 câu nghe, chia đều ba mức. Em có thể nghe lại hoặc xem lời nghe khi cần hỗ trợ.</p></section>',1)
+    index=index.replace('</div></header>','</div></header><section class="wrap" style="margin-top:24px;margin-bottom:36px"><a class="cta" href="Unit1_AllAboutMe/LuyenNghe_Mau.html">🔊 Thử giọng nghe · 3 cấp độ</a><p>Mỗi đề có 6 câu nghe, chia đều ba mức. Em có thể nghe lại hoặc xem lời nghe khi cần hỗ trợ.</p></section>',1)
     (OUT/'index.html').write_text(index,encoding='utf-8',newline='\n')
-    print(f'English built: {len(UNITS)} overviews + {count} tests ({count*24} questions)')
+    print(f'English built: {len(TOPICS)} overviews + {count} tests ({count*24} questions)')
 
 
 if __name__=='__main__':main()

@@ -7,6 +7,8 @@ let fixtures=[{subject:'Toan5',file:'ChuDe1_OnTapVaBoSung/De1_KhoiDong.html',ove
 {subject:'TiengAnh5',file:'Unit1_AllAboutMe/De1_KhoiDong.html',overview:'Unit1_AllAboutMe/TongQuan_Unit1.html',id:'en-u01-de1-v2'}];
 const selection=process.argv.find(a=>a.startsWith('--units='));
 if(selection){const tests=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../site/catalog.json'),'utf8')).tests;fixtures=selection.split('=')[1].split(',').map(Number).map(n=>{assert.ok(Number.isInteger(n)&&n>=1);const t=tests.find(t=>t.id.startsWith('en-u'+String(n).padStart(2,'0')+'-de1-'));assert.ok(t,'Unknown unit '+n);const [subject,dir,file]=t.file.split('/');return {subject,file:dir+'/'+file,overview:dir+'/TongQuan_Unit'+n+'.html',id:t.id};});}
+const topics=process.argv.find(a=>a.startsWith('--topics='));
+if(topics){const tests=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../site/catalog.json'),'utf8')).tests;fixtures=topics.split('=')[1].split(',').map(key=>{const t=tests.find(t=>t.id.startsWith('en-'+key+'-de1-'));assert.ok(t,'Unknown topic '+key);const [subject,dir,file]=t.file.split('/');return {subject,file:dir+'/'+file,overview:t.overview.split('/').slice(1).join('/'),id:t.id};});}
 async function fillCorrect(page,mode='all'){
   await page.evaluate(mode=>{
     window.__quiz.Q.forEach((q,i)=>{

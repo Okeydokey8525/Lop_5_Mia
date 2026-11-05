@@ -73,7 +73,8 @@ def render_study(config,picture):
     data={**config,'words':[{k:v for k,v in w.items() if k not in ('image','direction','floor')} for w in words]}
     group_buttons=''.join(f'<button type="button" data-group-select="{g["id"]}" aria-pressed="false">{e(g["name"])}</button>' for g in config['groups'])
     tips=''.join(f'<aside class="tip" data-group="{g["id"]}"><h3>Mẹo nhớ</h3><p>{e(g["tip"])}</p></aside>' for g in config['groups'])
-    replace={'__TITLE__':f'Unit {config["unit"]} · Học từ và phát âm','__UNIT__':str(config['unit']),'__INTRO__':config['intro'],'__GROUPS__':group_buttons,'__WORDS__':''.join(cards),'__DIALOGUES__':''.join(dialogs),'__EXERCISES__':''.join(exercises),'__TIPS__':tips,'__FONTS__':(ROOT/'fonts.css').read_text(encoding='utf-8'),'__CSS__':(HERE/'study.css').read_text(encoding='utf-8'),'__JS__':(HERE/'study.js').read_text(encoding='utf-8'),'__DATA__':json.dumps(data,ensure_ascii=False).replace('</',r'<\/')}
+    label=config.get('label',f'Unit {config["unit"]}')
+    replace={'__TITLE__':label+' · Học từ và phát âm','__LABEL__':label,'__OVERVIEW__':config.get('overview',f'TongQuan_Unit{config["unit"]}.html'),'__UNIT__':str(config['unit']),'__INTRO__':config['intro'],'__GROUPS__':group_buttons,'__WORDS__':''.join(cards),'__DIALOGUES__':''.join(dialogs),'__EXERCISES__':''.join(exercises),'__TIPS__':tips,'__FONTS__':(ROOT/'fonts.css').read_text(encoding='utf-8'),'__CSS__':(HERE/'study.css').read_text(encoding='utf-8'),'__JS__':(HERE/'study.js').read_text(encoding='utf-8'),'__DATA__':json.dumps(data,ensure_ascii=False).replace('</',r'<\/')}
     result=(HERE/'template.html').read_text(encoding='utf-8')
     for old,new in replace.items():result=result.replace(old,new)
     return result

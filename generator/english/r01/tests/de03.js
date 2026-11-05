@@ -1,0 +1,471 @@
+window.TEST_FN=function(H){return MKENR1([
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the favourite colour.",
+  "transcript": "My favourite colour is red.",
+  "speech": "My favourite colour is red.",
+  "fields": [
+   {
+    "label": "Colour:",
+    "answer": "red",
+    "options": [
+     "pink",
+     "blue",
+     "red",
+     "yellow"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Colour: red.",
+  "sourceUnits": [
+   1
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the home.",
+  "transcript": "I live in a flat at 42 Hill Street.",
+  "speech": "I live in a flat at 42 Hill Street.",
+  "fields": [
+   {
+    "label": "Home:",
+    "answer": "flat",
+    "options": [
+     "house",
+     "flat",
+     "building",
+     "tower"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Home: flat.",
+  "sourceUnits": [
+   2
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Can you tell me your name?",
+  "why": "Đọc tên trong thẻ.",
+  "lesson": 1,
+  "opts": [
+   "I am Linh.",
+   "I am Minh.",
+   "I am Mai.",
+   "I am An."
+  ],
+  "answer": 1,
+  "passage": "Name: Minh · Grade: 5 · Country: Malaysia · Home: house · Address: 18 Lake Street · Colour: red · Personality: clever · Free time: surfing the Internet · Future job: reporter · Reason: report the news.",
+  "sourceUnits": [
+   1
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "What is your address? Start with It is.",
+  "why": "It is + địa chỉ.",
+  "lesson": 1,
+  "answers": [
+   "It is 18 Lake Street.",
+   "It's 18 Lake Street."
+  ],
+  "exactForm": false,
+  "passage": "Name: Minh · Grade: 5 · Country: Malaysia · Home: house · Address: 18 Lake Street · Colour: red · Personality: clever · Free time: surfing the Internet · Future job: reporter · Reason: report the news.",
+  "sourceUnits": [
+   2
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Do you live in…?",
+  "lesson": 1,
+  "items": [
+   "Do",
+   "you",
+   "live",
+   "in",
+   "a",
+   "flat?"
+  ],
+  "sourceUnits": [
+   2
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "What nationality are you? Start with I am.",
+  "why": "Phân biệt tên nước và quốc tịch.",
+  "lesson": 1,
+  "answers": [
+   "I am American.",
+   "I'm American."
+  ],
+  "exactForm": false,
+  "passage": "Name: Mai · Grade: 5 · Country: America · Home: flat · Address: 42 Hill Street · Colour: yellow · Personality: active · Free time: going for a walk · Future job: teacher · Reason: teach children.",
+  "sourceUnits": [
+   3
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "What are you like? Start with I am.",
+  "why": "Hỏi tính cách, không hỏi sở thích.",
+  "lesson": 1,
+  "answers": [
+   "I am clever.",
+   "I'm clever."
+  ],
+  "exactForm": false,
+  "passage": "Name: Minh · Grade: 5 · Country: Malaysia · Home: house · Address: 18 Lake Street · Colour: red · Personality: clever · Free time: surfing the Internet · Future job: reporter · Reason: report the news.",
+  "sourceUnits": [
+   3
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "What do you like doing? Start with I like.",
+  "why": "Sau like dùng V-ing.",
+  "lesson": 1,
+  "answers": [
+   "I like going for a walk."
+  ],
+  "exactForm": false,
+  "passage": "Name: Mai · Grade: 5 · Country: America · Home: flat · Address: 42 Hill Street · Colour: yellow · Personality: active · Free time: going for a walk · Future job: teacher · Reason: teach children.",
+  "sourceUnits": [
+   4
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Which question asks about a future job?",
+  "why": "Would like to be hỏi ước mơ.",
+  "lesson": 1,
+  "opts": [
+   "What nationality is he?",
+   "What is she like?",
+   "What would you like to be?",
+   "What is your address?"
+  ],
+  "answer": 2,
+  "sourceUnits": [
+   5
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Why would you like this job? Start with Because.",
+  "why": "Lý do nghề nghiệp trong thẻ.",
+  "lesson": 1,
+  "answers": [
+   "Because I would like to write stories.",
+   "Because I'd like to write stories."
+  ],
+  "exactForm": false,
+  "passage": "Name: Nam · Grade: 5 · Country: Japan · Home: house · Address: 15 Green Street · Colour: pink · Personality: active · Free time: watering the flowers · Future job: writer · Reason: write stories.",
+  "sourceUnits": [
+   5
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the personality.",
+  "transcript": "My friend is active.",
+  "speech": "My friend is active.",
+  "fields": [
+   {
+    "label": "Personality:",
+    "answer": "active",
+    "options": [
+     "friendly",
+     "helpful",
+     "clever",
+     "active"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Personality: active.",
+  "sourceUnits": [
+   3
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: Do you live in a house? Yes, I ___.",
+  "why": "Yes, I do.",
+  "lesson": 2,
+  "answers": [
+   "do"
+  ],
+  "exactForm": false,
+  "sourceUnits": [
+   2
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "What do you like doing…?",
+  "lesson": 2,
+  "items": [
+   "What",
+   "do",
+   "you",
+   "like",
+   "doing",
+   "in",
+   "your",
+   "free",
+   "time?"
+  ],
+  "sourceUnits": [
+   4
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the free-time activity.",
+  "transcript": "I like surfing the Internet in my free time.",
+  "speech": "I like surfing the Internet in my free time.",
+  "fields": [
+   {
+    "label": "Activity:",
+    "answer": "surfing the Internet",
+    "options": [
+     "playing the violin",
+     "watering the flowers",
+     "surfing the Internet",
+     "going for a walk"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Activity: surfing the Internet.",
+  "sourceUnits": [
+   4
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Rewrite in full: I’d like to be a writer.",
+  "why": "I’d = I would trong ngữ cảnh này.",
+  "lesson": 2,
+  "answers": [
+   "I would like to be a writer."
+  ],
+  "exactForm": true,
+  "sourceUnits": [
+   5
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Ghép đúng chủ đề hỏi.",
+  "lesson": 2,
+  "pairs": [
+   {
+    "left": "Where do you live?",
+    "right": "In a flat."
+   },
+   {
+    "left": "What is he like?",
+    "right": "He is helpful."
+   },
+   {
+    "left": "What is your favourite animal?",
+    "right": "It is a dolphin."
+   }
+  ],
+  "sourceUnits": [
+   1,
+   2,
+   3
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Answer about colour, starting with It is.",
+  "why": "Đúng màu trong thẻ.",
+  "lesson": 2,
+  "answers": [
+   "It is pink.",
+   "It's pink."
+  ],
+  "exactForm": false,
+  "passage": "Name: Nam · Grade: 5 · Country: Japan · Home: house · Address: 15 Green Street · Colour: pink · Personality: active · Free time: watering the flowers · Future job: writer · Reason: write stories.",
+  "sourceUnits": [
+   1
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Phân biệt tính cách, quốc tịch và địa chỉ.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "What is she like? asks about personality.",
+    "a": true
+   },
+   {
+    "t": "What nationality is she? asks for an address.",
+    "a": false
+   }
+  ],
+  "sourceUnits": [
+   2,
+   3
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write two sentences: home then address. Start each with I live.",
+  "why": "In + loại nhà; at + địa chỉ.",
+  "lesson": 3,
+  "answers": [
+   "I live in a house. I live at 18 Lake Street."
+  ],
+  "exactForm": false,
+  "passage": "Name: Minh · Grade: 5 · Country: Malaysia · Home: house · Address: 18 Lake Street · Colour: red · Personality: clever · Free time: surfing the Internet · Future job: reporter · Reason: report the news.",
+  "sourceUnits": [
+   2
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write two sentences: free time then future job. Start with I like and then I would.",
+  "why": "Giữ V-ing và would like to be.",
+  "lesson": 3,
+  "answers": [
+   "I like going for a walk. I would like to be a teacher.",
+   "I like going for a walk. I'd like to be a teacher."
+  ],
+  "exactForm": false,
+  "passage": "Name: Mai · Grade: 5 · Country: America · Home: flat · Address: 42 Hill Street · Colour: yellow · Personality: active · Free time: going for a walk · Future job: teacher · Reason: teach children.",
+  "sourceUnits": [
+   4,
+   5
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen for the future job and reason.",
+  "transcript": "I am Mai. I would like to be a teacher because I would like to teach children.",
+  "speech": "I am Mai. I would like to be a teacher because I would like to teach children.",
+  "fields": [
+   {
+    "label": "Job:",
+    "answer": "teacher",
+    "options": [
+     "writer",
+     "reporter",
+     "gardener",
+     "teacher"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Reason:",
+    "answer": "teach children",
+    "options": [
+     "write stories",
+     "report the news",
+     "grow flowers",
+     "teach children"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Job: teacher; Reason: teach children.",
+  "sourceUnits": [
+   5
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Rewrite in full: He’s Japanese.",
+  "why": "He’s = He is.",
+  "lesson": 3,
+  "answers": [
+   "He is Japanese."
+  ],
+  "exactForm": true,
+  "sourceUnits": [
+   3
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write one sentence about the future job and reason. Start with I would and use because.",
+  "why": "Kết hợp đúng nghề và lý do trong cùng thẻ.",
+  "lesson": 3,
+  "answers": [
+   "I would like to be a writer because I would like to write stories.",
+   "I'd like to be a writer because I'd like to write stories."
+  ],
+  "exactForm": false,
+  "passage": "Name: Nam · Grade: 5 · Country: Japan · Home: house · Address: 15 Green Street · Colour: pink · Personality: active · Free time: watering the flowers · Future job: writer · Reason: write stories.",
+  "sourceUnits": [
+   5
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and write nationality and address.",
+  "transcript": "I am Nam. I am Japanese. I live at 15 Green Street.",
+  "speech": "I am Nam. I am Japanese. I live at 15 Green Street.",
+  "fields": [
+   {
+    "label": "Nationality:",
+    "answer": "Japanese",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Address:",
+    "answer": "15 Green Street",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Nationality: Japanese; Address: 15 Green Street.",
+  "sourceUnits": [
+   2,
+   3
+  ],
+  "level": "gioi"
+ }
+]);};

@@ -99,3 +99,7 @@ Giữ poster 1080px, reader điện thoại và theme hồng sáng dùng chung. 
 ### Unit 8–9 (05/11/2026)
 
 Giữ theme hồng sáng và reader/poster. Unit 8 accent #A33372 / nền #FFE3F2; Unit 9 #AC3A68 / #FFE6EF. Tám tranh ImageGen WebP 768×512, chủ thể rõ và không chữ đáp án; prompt cạnh ảnh, PNG gốc ngoài repo. Tranh ê-ke có góc vuông; nhà hát có sân khấu/khán giả để phân biệt cinema; aquarium có bể kính; campsite có lều; funfair có vòng quay/ngựa gỗ. Học từ dùng cơ chế chung, nút Dừng nổi và nhóm nhỏ như các Unit trước.
+
+### Unit 10 và hai Review (06/11/2026)
+
+Giữ hồng sáng. Unit 10 #A83A71/#FFE5F0; Review 1 #A63C70/#FFE4F0; Review 2 #A33876/#FFE5F2. Badge Review 1/2, không gọi Unit 11/12. Màu thẻ lấy thứ tự TOPICS để chèn Review 1 sau Unit 5 không làm lệch màu các Unit sau. Bốn tranh hoạt động mới WebP 768×512, prompt cạnh nguồn; Review tái dùng ảnh. Các trang học dùng label/overview tùy chủ đề, không tạo link TongQuan_UnitR1/R2.

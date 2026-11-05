@@ -1,15 +1,15 @@
 # 01 — Tình trạng hiện hành
 
-Cập nhật 05/11/2026. Bản lịch sử trước khi gom tài liệu nằm trong `history/`; không dùng những số liệu cũ làm trạng thái hiện tại.
+Cập nhật 06/11/2026. Bản lịch sử trước khi gom tài liệu nằm trong `history/`; không dùng những số liệu cũ làm trạng thái hiện tại.
 
 ## Đã bàn giao
 
 - Website: https://okeydokey8525.github.io/Lop_5_Mia/ — GitHub Pages qua Actions.
 - Toán 5 tập một: 6 chủ đề, 36 đề, mỗi đề 24 câu/100 điểm; ID `cd{n}-de{i}` giữ nguyên.
-- Tiếng Anh 5 tập một: Unit 1–9, gồm In our classroom (Unit 8, trang 56–61) và Our outdoor activities (Unit 9, 62–67); 9 tổng quan HTML/PNG + 54 đề (1296 câu). Mỗi đề 24 câu/100 điểm, sáu nghe chia hai mỗi cấp. Units 2–9 có học từ/phát âm và bài luyện tự lưu, vẫn có mẫu nghe Unit 1; chưa chấm nói.
-- Toàn site: 90 đề chính thức, 118 HTML, 15 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
+- Tiếng Anh 5 tập một: Unit 1–10 và Review 1–2, đặt đúng thứ tự sách. Có 12 tổng quan HTML/PNG +72 đề (1728 câu); mỗi đề 24 câu/100 điểm và sáu nghe (hai mỗi cấp). Units 2–10 và hai Review có học từ/phát âm tự lưu; Unit 1 có mẫu nghe. Chưa chấm nói.
+- Toàn site: 108 đề chính thức, 142 HTML, 18 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
 - Giao diện hồng anh đào, tối màu tím mận; reader trên màn hình ≤820px, poster để xem/in. Tiến độ theo origin/trình duyệt, không đồng bộ thiết bị.
-- Chủ repo đã xem Unit 1, phản hồi hình khó nhận diện và duyệt mẫu cá heo. Ngày 30/10 đã áp dụng phong cách mới cho đủ 6 tranh ở tổng quan/câu hỏi, giữ nguyên 144 câu và đáp án. Sau đó chủ repo giao Unit 2–3, Unit 4–5 rồi Unit 6–7; đã bổ sung Unit 8–9 theo yêu cầu tiếp theo. Starter/Review và Unit 10 chưa được giao.
+- Chủ repo đã xem Unit 1, phản hồi hình khó nhận diện và duyệt mẫu cá heo. Ngày 30/10 đã áp dụng phong cách mới cho đủ 6 tranh ở tổng quan/câu hỏi, giữ nguyên 144 câu và đáp án. Sau đó chủ repo giao Unit 2–3, Unit 4–5 rồi Unit 6–7; đã bổ sung Unit 8–9 theo yêu cầu tiếp theo. đã tiếp tục giao Unit 10, Review 1 và Review 2 ngày 06/11. Chỉ còn Starter trong tập một; chưa triển khai tập hai.
 
 | CĐ Toán | Thư mục | Nội dung | Bài |
 |---|---|---|---|
@@ -136,3 +136,7 @@ Kiểm chứng local: audit 78 đề/1008 vị trí câu Tiếng Anh không lỗ
 Local toàn site đạt: 90/90 đề 100/100, 118 HTML không lỗi trình duyệt, theme 118 trang và responsive 1888 trường hợp. Edge native: từ và chuỗi ABC ở hai Unit hoàn tất, không lỗi start/end; chưa nghe đánh giá phát âm bằng tai.
 
 Đã xuất bản bản hoàn chỉnh `a3551a4` (nội dung ở `42c4089`, sửa mốc tiến độ ở `a3551a4`); [Actions/Pages đạt](https://github.com/Okeydokey8525/Lop_5_Mia/actions/runs/42042821444). CI chạy đủ 90 đề/118 HTML và 1888 trường hợp responsive, nghe/nháp/tiến độ/học từ. Trên URL Pages thật: `qa_english_units.js --units=8,9` đạt 12/12 đề 100/100, 72 nghe, nháp, best, chấm phần, reset cách ly và mốc bậc thang đúng 1/14/27/41/54. `qa_persistence.js --units=8,9` đạt đóng/mở browser, xem lại bài đã nộp, best/last, Back/cross-tab. `qa_study.js` live đạt đủ Units 2–9: 118 từ/chuỗi ABC, 49 hội thoại, 96 bài luyện, lưu sau browser restart và 192 layout/theme. Speech trong các runner là mô phỏng. 28 tài nguyên live (16 HTML mới, tám WebP, trang chủ/môn, catalog và home.js) khớp byte bản nguồn; không so byte PNG giữa hệ render Windows/Linux. Native Edge local có 18 utterance start/end, không lỗi; chưa đánh giá phát âm bằng tai hoặc độ khó với học sinh. Báo cáo artifacts/units89-online/{report,assets}.json, persistence-online và study-full-online/report.json.
+
+## Unit 10 và hai Review (06/11/2026)
+
+Đã đọc đủ 40–43 và 68–77, giữ scan ngoài repo. Thêm 18 đề/432 câu/108 nghe; Unit 10 thêm bốn tranh hoạt động ImageGen, Review tái dùng tranh đã duyệt. Review 1 ôn 1–5, Review 2 ôn 6–10; mỗi câu gắn sourceUnits và audit bắt buộc đúng năm Unit mỗi đề. Học từ mới: Unit 10 có 16 từ/cụm; mỗi Review 14; mỗi phần sáu hội thoại, 12 bài luyện. Metadata kind/topic/overview phân biệt Review với Unit, không tạo Unit 11/12; điểm/nháp cũ giữ nguyên. Xem breakdown 2026-11-06_UNIT10_REVIEW1_REVIEW2.md.
