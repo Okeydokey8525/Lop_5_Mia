@@ -33,7 +33,7 @@ Workflow chỉ xuất bản `site/` sau khi build và QA đạt. Không đưa PD
 
 Tiến độ không đồng bộ thiết bị, trình duyệt hoặc từ bản mở file/local sang Pages. Chưa có phản hồi làm thử của học sinh để đánh giá độ khó.
 
-Trang Tiếng Anh: https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/. Toàn site hiện 78 đề chính thức và 96 trang HTML; QA dùng `site/catalog.json` để phát hiện thiếu hoặc thừa đề.
+Trang Tiếng Anh: https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/. Toàn site hiện 78 đề chính thức và 98 trang HTML; QA dùng `site/catalog.json` để phát hiện thiếu hoặc thừa đề.
 
 Bài học sau sửa Unit 1 và kế hoạch tiếp theo nằm trong `docs/breakdowns/`; quy trình tranh ở `docs/playbooks/TRANH_MINH_HOA.md`; skill dự án ở `.agents/skills/mia-learning-illustrations/SKILL.md`. Cây máy/repo hiện hành nằm trong docs/08, snapshot cũ ở docs/history.
 
@@ -50,4 +50,4 @@ Các đề nay tự lưu nháp trên cùng trình duyệt để làm tiếp khi 
 Unit 6–7: `node tools/qa_english_units.js --units=6,7`. Kiểm tra giữ kết quả qua đóng/mở browser và xem lại bài mới nhất: `node tools/qa_persistence.js --units=6,7`. Dữ liệu cũ chỉ có điểm vẫn hiển thị hoàn thành; câu trả lời chi tiết được lưu cho các lượt nộp từ bản cập nhật lưu/xem lại.
 
 
-Mẫu học từ/phát âm Unit 6: [mở mẫu](https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/Unit6_OurSchoolRooms/HocTuVaPhatAm_Mau.html). Bốn thẻ từ/cụm, nghe thường/chậm, đánh vần, hai hội thoại và ba bài luyện nhỏ; lựa chọn tự đánh dấu lưu riêng, chưa mở rộng các Unit khác. Kiểm tra: `node tools/qa_study_preview.js`.
+Học từ/phát âm đầy đủ: [Unit 6](https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/Unit6_OurSchoolRooms/HocTuVaPhatAm.html) (14 từ/cụm, phòng học/tầng/chỉ đường) và [Unit 7](https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/Unit7_OurFavouriteSchoolActivities/HocTuVaPhatAm.html) (12 từ/cụm, hoạt động/V-ing/lý do). Mỗi Unit có ba nhóm nhỏ, nghe/đánh vần/câu ví dụ, hội thoại và 12 bài luyện tự lưu. Từ cần ôn và bài luyện tách khỏi điểm đề. Link mẫu Unit 6 cũ và các dấu từ cũ vẫn dùng được. Kiểm tra: `node tools/qa_study.js`; nguồn chung ở `generator/english/study/`, dữ kiện riêng ở `u06/study.py`, `u07/study.py`.

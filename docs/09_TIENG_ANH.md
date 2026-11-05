@@ -96,3 +96,10 @@ Chủ repo đã duyệt mẫu và giao áp dụng đủ 6 đề. Mỗi đề có
 Đã đọc đủ trang in 44–55 và Wordlist 79–80, thêm 6 đề/144 câu mỗi Unit, 36 nghe và 4 tranh mỗi Unit. Unit 6: phòng học, ground/first/second/third floor, Where is…?/It is on the…floor, hỏi đường lịch sự và chỉ dẫn upstairs/downstairs/along/past/left/right. Mỗi đề dùng thẻ kế hoạch riêng, không đoán tầng từ tranh. Unit 7: hoạt động do projects/read books/play games/solve maths problems; does…like, likes + V-ing, Why…?/Because…thinks it is…, lý do fun/interesting/useful/good for group work. Cùng hoạt động có thể khác lý do theo hồ sơ.
 
 Đáp án/lời giải lấy cùng dữ kiện, nhận dạng viết tắt khi phù hợp, full form giữ yêu cầu viết đầy đủ. Bài đọc, lời nghe và tranh đều tự soạn/tạo. Tổng hiện hành 7 Unit/42 đề/1008 câu; Starter, Review 1–2 và Unit 8–10 chưa làm. Không đưa sách scan lên repo. Ghi chú chỉ có Unit 1–5 ở trên là trạng thái lịch sử.
+
+
+## Sau duyệt mẫu: học từ/phát âm đầy đủ Units 6–7
+
+Trang học đi kèm tổng quan: Unit 6 bao phủ phòng học, tầng, chỉ đường; Unit 7 bao phủ cụm hoạt động, dạng V-ing và lý do. Nghe từ/cụm, nghe chậm, ABC, câu ví dụ, hội thoại cả đoạn/chỉ A và bài luyện. Đây là học/luyện tự do, không thêm vào 24 câu/100 điểm của đề. ABC đọc tên chữ cái, không gọi là phonics; giọng thiết bị không được coi là đã nghe duyệt chỉ vì API phát xong. Sơ đồ tầng/tay trái/phải là SVG có kiểm soát, tranh từ vựng dùng lại ảnh gốc.
+
+Bài luyện riêng cũng lưu câu đang làm và trạng thái kiểm tra; khi câu đổi nội dung, signature cũ không được khôi phục như đã đúng. Đã luyện/Cần ôn là tự đánh dấu và lưu theo Unit. Unit 6 giữ dữ liệu mẫu và URL mẫu, Unit 7 độc lập. Không mở rộng Unit 1–5 hoặc Unit 8 khi chưa được giao.
