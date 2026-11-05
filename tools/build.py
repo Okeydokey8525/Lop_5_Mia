@@ -47,7 +47,7 @@ def main():
         (assets / name).write_text(data, encoding="utf-8", newline="\n")
     for name,data in theme_resources.items():
         (assets/name).write_text(data,encoding='utf-8',newline='\n')
-    english_resources={name:(GEN/'english'/name).read_text(encoding='utf-8-sig') for name in ['speech.js']}
+    english_resources={name:(GEN/'english'/name).read_text(encoding='utf-8-sig') for name in ['speech.js','u06/study.css','u06/study.js']}
     for name,data in english_resources.items():
         target=assets/'english'/name
         target.parent.mkdir(parents=True,exist_ok=True)

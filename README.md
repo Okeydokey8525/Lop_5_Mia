@@ -33,7 +33,7 @@ Workflow chỉ xuất bản `site/` sau khi build và QA đạt. Không đưa PD
 
 Tiến độ không đồng bộ thiết bị, trình duyệt hoặc từ bản mở file/local sang Pages. Chưa có phản hồi làm thử của học sinh để đánh giá độ khó.
 
-Trang Tiếng Anh: https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/. Toàn site hiện 78 đề chính thức và 95 trang HTML; QA dùng `site/catalog.json` để phát hiện thiếu hoặc thừa đề.
+Trang Tiếng Anh: https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/. Toàn site hiện 78 đề chính thức và 96 trang HTML; QA dùng `site/catalog.json` để phát hiện thiếu hoặc thừa đề.
 
 Bài học sau sửa Unit 1 và kế hoạch tiếp theo nằm trong `docs/breakdowns/`; quy trình tranh ở `docs/playbooks/TRANH_MINH_HOA.md`; skill dự án ở `.agents/skills/mia-learning-illustrations/SKILL.md`. Cây máy/repo hiện hành nằm trong docs/08, snapshot cũ ở docs/history.
 
@@ -48,3 +48,6 @@ Trang chủ chọn môn có lời chào, thanh tiến độ thật và động v
 Các đề nay tự lưu nháp trên cùng trình duyệt để làm tiếp khi quay lại, gồm đáp án và thời gian đã làm. Danh sách đề ghi Đang làm dở; có nút bỏ nháp, tách khỏi điểm đã nộp. Khi đóng/ẩn trang đồng hồ tạm dừng. Kiểm tra hồi quy: node tools/qa_drafts.js.
 
 Unit 6–7: `node tools/qa_english_units.js --units=6,7`. Kiểm tra giữ kết quả qua đóng/mở browser và xem lại bài mới nhất: `node tools/qa_persistence.js --units=6,7`. Dữ liệu cũ chỉ có điểm vẫn hiển thị hoàn thành; câu trả lời chi tiết được lưu cho các lượt nộp từ bản cập nhật lưu/xem lại.
+
+
+Mẫu học từ/phát âm Unit 6: [mở mẫu](https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/Unit6_OurSchoolRooms/HocTuVaPhatAm_Mau.html). Bốn thẻ từ/cụm, nghe thường/chậm, đánh vần, hai hội thoại và ba bài luyện nhỏ; lựa chọn tự đánh dấu lưu riêng, chưa mở rộng các Unit khác. Kiểm tra: `node tools/qa_study_preview.js`.

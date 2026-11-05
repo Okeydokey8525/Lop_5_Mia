@@ -122,3 +122,10 @@ Bản ghi kết quả dùng nguyên khóa/ID, bổ sung `review` cho câu trả 
 ### Unit 6–7
 
 Chạy `node tools/qa_english_units.js --units=6,7 [baseURL]`; ngoài khung kiểm tra chung, xác nhận it’s/it is được chấp nhận khi phù hợp và bị từ chối ở câu yêu cầu full form. Chạy `node tools/qa_persistence.js --units=6,7 [baseURL]` để dùng hồ sơ thử riêng nộp → đóng browser → mở lại, xem lại đủ câu nhưng không tăng lượt, giữ điểm cao nhất, nháp mới, Back và tab khác. Có thể dùng `--units=` với các Unit đã đăng ký; bỏ tham số vẫn kiểm tra Toán/Unit 1 như trước. Toàn site hiện 78 đề/95 HTML; responsive 95×8×2 = 1520 trường hợp. CI chạy cả hai bộ mới, không thay thế kiểm tra Unit cũ. Speech được mô phỏng; phát âm cần người nghe thử trên thiết bị học sinh.
+
+
+### Mẫu học từ/phát âm Unit 6
+
+`node tools/qa_study_preview.js [baseURL]`: 4 thẻ, 2 hội thoại, 3 bài luyện; đúng thứ tự tất cả chữ cái của từng từ/cụm (không đọc chuỗi như một từ), tốc độ thường/chậm, highlight/dừng/callback muộn, không autoplay/tự nhận đã thuộc, đánh dấu và đóng/mở hồ sơ riêng, không đổi điểm/nháp, thiếu giọng và storage bị chặn. Kiểm tra 320/390/768/1366px × hai theme, nút >=44px, player Dừng trong viewport, standalone giải mã đủ ảnh. Báo cáo/ảnh ở artifacts/study-local hoặc study-online. Speech được mô phỏng. Một kiểm tra Edge thật riêng có sự kiện start/end cho 4 cụm +12 chữ computer room; vẫn phải nghe đánh giá giọng bởi người dùng. Toàn site từ 96 HTML tương ứng 1536 trường hợp responsive.
+
+Server local dùng backlog 128 thay mặc định 5 của Python để đáp ứng đợt tải đồng thời của browser. Không thêm retry để bỏ qua ERR_CONNECTION_REFUSED; nếu xuất hiện phải kiểm tra server và chạy lại lượt lỗi. Cổng khác có thể dùng `python tools/serve.py --port 8766` rồi truyền đúng baseURL cho QA.

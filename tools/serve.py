@@ -32,9 +32,15 @@ class Handler(SimpleHTTPRequestHandler):
         super().do_GET()
 
 
+class Server(ThreadingHTTPServer):
+    # Chromium fetches fonts, scripts and images concurrently; Python's default
+    # backlog of five can reject local connections during browser QA bursts.
+    request_queue_size = 128
+
+
 if __name__ == "__main__":
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--port",type=int,default=8765)
     args=parser.parse_args()
     print(f"Local: http://127.0.0.1:{args.port}/Lop_5_Mia/",flush=True)
-    ThreadingHTTPServer(("127.0.0.1",args.port),Handler).serve_forever()
+    Server(("127.0.0.1",args.port),Handler).serve_forever()

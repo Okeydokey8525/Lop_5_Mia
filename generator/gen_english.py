@@ -86,7 +86,12 @@ def main():
             speech='<script>'+(W/'english'/'speech.js').read_text(encoding='utf-8-sig')+'</script>'
             (folder/f'De{i}_{slug}.html').write_text(html.replace('</head>',speech+'</head>'),encoding='utf-8',newline='\n')
         cd=dict(n=n,dir=unit['dir'],name=unit['name'],range=f"Unit {n} · Trang {unit['pages']}",overview=f'TongQuan_Unit{n}',tests=unit_tests,test_ids=[test_id(unit,i) for i in range(1,7)])
-        (folder/f'TongQuan_Unit{n}.html').write_text(overview_page(f'Tiếng Anh 5 · Unit {n} · Tổng quan',sheet(unit,content),cd,details['colour']),encoding='utf-8',newline='\n')
+        overview=overview_page(f'Tiếng Anh 5 · Unit {n} · Tổng quan',sheet(unit,content),cd,details['colour'])
+        if n==6:
+            from english.u06.study import render_study
+            (folder/'HocTuVaPhatAm_Mau.html').write_text(render_study(),encoding='utf-8',newline='\n')
+            overview=overview.replace('</nav>','</nav><div class="nav"><a href="HocTuVaPhatAm_Mau.html">🌸 Thử mẫu học từ, đánh vần và phát âm</a></div>',1)
+        (folder/f'TongQuan_Unit{n}.html').write_text(overview,encoding='utf-8',newline='\n')
     count=len(UNITS)*6
     index=render_index(index_data()).replace('Toán 5','Tiếng Anh 5').replace('Kết nối tri thức với cuộc sống','Global Success')
     index=index.replace('Mỗi đề làm xong là một bậc thang. Leo đủ 36 bậc là em đã chinh phục cả học kì 1 của Tiếng Anh 5.',
