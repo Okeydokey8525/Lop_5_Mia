@@ -88,3 +88,10 @@ Theo yêu cầu tiếp theo của chủ repo, đã mở rộng theme sang trang 
 Đã thêm nháp cho toàn bộ 42 đề: các ô, lựa chọn, thứ tự số/từ, tên, thời gian và hỗ trợ nghe. Rời/tải lại trang rồi mở đúng đề sẽ khôi phục; đồng hồ chỉ chạy lại sau tương tác, không cộng thời gian đóng/ẩn trang. Nút Bỏ bản nháp có xác nhận, không xóa điểm đã nộp. Trang môn hiển thị Đang làm dở và ưu tiên nút Tiếp tục bài đang làm cho nháp mới nhất. Nháp không tính là đề đã hoàn thành. Sau nộp thành công xóa nháp, điểm/sao vẫn lưu như trước. Không có đồng bộ thiết bị; khi storage bị chặn báo không lưu được.
 
 Nguồn engine.js/css và gen_index.py; QA hồi quy tools/qa_drafts.js. Nội dung/đáp án đề và ID kết quả giữ nguyên.
+
+
+## Cải thiện nhận biết bài đã lưu (2026-11-05)
+
+Đã sửa nguồn: danh sách môn cập nhật khi trở về bằng Back/bfcache hoặc khi tab khác lưu điểm; nhãn hoàn thành có điểm cao nhất, điểm gần nhất và ngày làm. Tổng quan của cả 11 chủ đề/Unit đánh dấu các đề đã nộp. Mở đề đã làm có bảng kết quả cũ và nút xem lại đáp án của lượt nộp mới nhất (áp dụng từ bản cập nhật này); dữ liệu điểm cũ giữ nguyên nhưng không tự suy đoán câu trả lời cũ. Xem lại không tăng lượt làm. Thông báo lưu thành công/thất bại hiện ngay trong bảng điểm.
+
+Chưa thể khẳng định nguyên nhân mất dấu trên phiên học thực tế của bé vì chưa có dữ liệu trình duyệt đó. Nguồn trước đã lưu điểm bằng localStorage nhưng mở đề vẫn hiện bài trống, tổng quan không có trạng thái và danh sách môn thiếu cập nhật bfcache. Tiến độ vẫn theo trình duyệt/thiết bị/địa chỉ; chưa đồng bộ tài khoản hoặc phục hồi dữ liệu đã bị xóa. Kiểm chứng local: build, audit 66 đề, 602 link; QA 66/66 đề đạt 100/100 khi điền đúng; bộ lưu bền qua đóng/mở browser ở cả hai môn, xem lại không ghi lượt mới, giữ điểm cao nhất, nháp, bản ghi cũ và quota đạt. QA Unit 1, Units 4–5 và trang chọn môn đạt. Chưa triển khai bản sửa này lên Pages tại thời điểm ghi mục này.

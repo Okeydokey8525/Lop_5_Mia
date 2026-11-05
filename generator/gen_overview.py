@@ -105,7 +105,8 @@ def cd2_sheet():
 def page(title,sheet,cd,color):
     css=(W/'overview.css').read_text(encoding='utf-8')
     js=(W/'overview.js').read_text(encoding='utf-8')
-    links=''.join(f'<a href="De{i}_{slug}.html">Đề {i} · {name}</a>' for i,(slug,name,_) in enumerate(cd['tests'],1))
+    ids=cd.get('test_ids',[f"cd{cd['n']}-de{i}" for i in range(1,7)])
+    links=''.join(f'<a href="De{i}_{slug}.html" data-test-id="{ids[i-1]}"><span>Đề {i} · {name}</span><small class="test-status"></small></a>' for i,(slug,name,_) in enumerate(cd['tests'],1))
     return f'''<!doctype html>
 <html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{title}</title><style>{fonts}</style><style>{css}</style><style>:root{{--c:{color}}}</style></head><body>

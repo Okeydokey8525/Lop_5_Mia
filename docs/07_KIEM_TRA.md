@@ -110,3 +110,10 @@ Trong lượt quét Pages đã gặp 503 tạm thời khi API kiểm tra tham ch
 ## Mốc hiện hành: Unit 1–5
 
 66 đề (36 Toán + 30 Anh), 81 HTML, 11 tổng quan; responsive 81×8×2 = 1296. Audit ảnh có danh sách riêng u01..u05. Chạy thêm `node tools/qa_english_units.js --units=4,5 [baseURL]`; wrapper qa_english_units23.js vẫn chạy Unit 2–3 qua cùng runner, tổng thống kê lấy từ catalog. Runner kiểm tra 12 đề mới/72 câu nghe, mức 2/2/2, speech khớp lời, nháp/kết quả/điểm phần/reset, 32 trường hợp trang ở hai theme, standalone khi local. Riêng Unit 5 kiểm tra nháy cong I’d, I would và yêu cầu full form; không nhận từ thừa. Speech được mô phỏng, không đánh giá chất lượng giọng bằng tai.
+
+
+### Lưu kết quả sau khi đóng trình duyệt
+
+`node tools/qa_persistence.js [baseURL]` dùng hồ sơ Chromium riêng trên đĩa, nộp bài Toán và Anh, đóng browser rồi mở lại cùng hồ sơ. Kiểm tra điểm/câu trả lời gần nhất, xem lại không ghi thêm lượt, giữ điểm cao nhất khi lượt sau thấp hơn, dấu hoàn thành trong tổng quan và danh sách môn, Back/pageshow và cập nhật từ tab khác. Kiểm tra nháp mới không bị bài đã nộp ghi đè, tương thích bản ghi cũ chỉ có điểm, lỗi quota không báo lưu thành công hoặc xóa điểm cũ, bảng kết quả ở 320/390/768/1280px và hai theme. Hồ sơ thử được giữ trong thư mục tạm `mia-persistence-*`, không dùng dữ liệu của học sinh. Báo cáo/ảnh: `artifacts/persistence-local/` hoặc `persistence-online/`. CI chạy bộ này trước deploy.
+
+Bản ghi kết quả dùng nguyên khóa/ID, bổ sung `review` cho câu trả lời của **lượt nộp gần nhất**, cùng signature nội dung. Không giữ chuỗi kết quả lồng nhau hoặc toàn bộ lịch sử đáp án. Bản ghi cũ vẫn tính hoàn thành nhưng không có câu trả lời để xem lại. Xem lại không tăng `tries`, không đổi `at` hay điểm, không phát nghe tự động. Chỉ Nộp bài mới tính hoàn thành; nháp vẫn có trạng thái riêng.

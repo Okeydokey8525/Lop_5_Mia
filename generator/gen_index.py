@@ -84,7 +84,8 @@ h1{font-family:var(--f-disp);font-weight:800;font-size:clamp(40px,7vw,68px);line
 .stop .num{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font:800 18px var(--f-disp);background:var(--soft);color:var(--ink)}
 .stop .nm{font-weight:800;line-height:1.2}
 .stop .th2{font-size:14px;color:var(--muted);margin:0}
-.stop .res{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;font-weight:700;font-size:14px}
+.stop .res{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;font-weight:700;font-size:14px}
+.stop .res .chip{white-space:normal;overflow-wrap:anywhere}.attempt-note{font-size:13px;color:var(--muted);margin:6px 0;overflow-wrap:anywhere}
 .chip{border-radius:99px;padding:2px 12px;background:var(--soft);color:var(--muted)}
 .stop.done .num{background:var(--tc);color:var(--paper)}
 .stop.done a{background:var(--paper)}
@@ -128,13 +129,13 @@ h1{font-family:var(--f-disp);font-weight:800;font-size:clamp(40px,7vw,68px);line
 <main class="wrap">
 <div class="how"><div><i>1</i><p style="margin:0"><b>Xem bức tranh tổng quan</b><span>Nhớ lại nội dung từng bài trong chủ đề.</span></p></div><div><i>2</i><p style="margin:0"><b>Làm một đề kiểm tra</b><span>24 câu, ba mức Trung bình, Khá, Giỏi.</span></p></div><div><i>3</i><p style="margin:0"><b>Đọc lời giải, làm đề mới</b><span>Sai câu nào, xem kĩ câu đó rồi thử đề khác.</span></p></div></div>
 <div id="topics"></div>
-<div class="foot">Tiến trình được lưu ngay trên máy này, chỉ cần dùng cùng một trình duyệt.<br><button id="reset" type="button">Xóa tiến trình</button>
+<div class="foot">Bấm Nộp bài để lưu điểm và đánh dấu hoàn thành; bài chưa nộp được lưu nháp.<br>Dùng cùng địa chỉ web và trình duyệt trên thiết bị này. Chế độ ẩn danh hoặc xóa dữ liệu trình duyệt có thể làm mất tiến độ.<br><button id="reset" type="button">Xóa tiến trình</button>
 <div class="ask" id="ask"><span>Xóa hết điểm đã lưu?</span><button type="button" id="yes">Xóa</button><button type="button" class="no" id="no">Thôi</button></div></div>
 </main>
 <script>
 var DATA=__DATA__;
 var STAR='<svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 1-5.1 4.9 1.2 7L12 18l-6.1 3.4 1.2-7L2 9.5l7-1z"/></svg>';
-function rd(id){try{return JSON.parse(localStorage.getItem('mia5:'+id)||'null')}catch(e){return null}}
+function rd(id){try{var r=JSON.parse(localStorage.getItem('mia5:'+id)||'null');return r&&Number.isFinite(r.best)&&Number.isFinite(r.max)&&r.max>0&&r.best>=0&&r.best<=r.max?r:null;}catch(e){return null}}
 function draft(id){try{var d=JSON.parse(localStorage.getItem('mia5:draft:'+id)||'null');return d&&d.schema===1&&typeof d.signature==='string'&&Array.isArray(d.answers)&&d.answers.length===24&&d.baseResult===(localStorage.getItem('mia5:'+id)||'')?d:null;}catch(e){return null}}
 function rank(pc){return pc>=80?['Giỏi','gioi',3]:pc>=60?['Khá','kha',2]:pc>=40?['Trung bình','tb',1]:['Cần cố gắng','low',0]}
 function fmt(v){return String(Math.round(v*10)/10).replace('.',',')}
@@ -157,9 +158,10 @@ function render(){
       '<div class="tb2"><a class="ov" href="'+cd.dir+'/'+cd.overview+'.html"><div class="crop"><img src="'+cd.dir+'/'+cd.overview+'.png" alt="Bức tranh tổng quan Chủ đề '+cd.n+'" loading="lazy"></div><span class="lab">Xem bức tranh tổng quan →</span></a>'+
       '<ol class="path">'+items.map(function(x){
         var cls='stop'+(x.draft?' has-draft':'')+(x.r?' done r-'+x.rk[1]:'')+(x.i===firstNew?' next':'');
-        var res=x.r?'<span class="chip">'+x.rk[0]+'</span><span>'+fmt(x.r.best)+'/'+fmt(x.r.max)+'</span>':'<span class="chip">Chưa làm</span><span></span>';
+        var res=x.r?'<span class="chip">✓ Đã hoàn thành · '+x.rk[0]+'</span><span>Cao nhất: '+fmt(x.r.best)+'/'+fmt(x.r.max)+'</span>':'<span class="chip">Chưa làm</span><span></span>';
+        var recent=x.r&&Number.isFinite(x.r.last)?'<p class="attempt-note">Gần nhất: '+fmt(x.r.last)+'/'+fmt(x.r.max)+(Number.isFinite(x.r.at)&&x.r.at>0?' · '+esc(new Date(x.r.at).toLocaleDateString('vi-VN')):'')+'</p>':'';
         var st='';for(var k=0;k<3;k++)st+=(x.r&&k<x.rk[2]?STAR.replace('<svg','<svg class="on"'):STAR);
-        return '<li class="'+cls+'"><a href="'+cd.dir+'/'+x.t.file+'"><div class="top"><span class="num">'+(x.i+1)+'</span><span class="nm">'+esc(x.t.name)+'</span></div><p class="th2">'+esc(x.t.theme)+'</p><div class="res">'+res+'</div><div class="stars" aria-label="'+(x.r?x.rk[2]:0)+' sao">'+st+'</div>'+(x.draft?'<span class="draft-note">✎ Đang làm dở · Bấm để tiếp tục</span>':'')+'</a></li>';
+        return '<li class="'+cls+'"><a href="'+cd.dir+'/'+x.t.file+'"><div class="top"><span class="num">'+(x.i+1)+'</span><span class="nm">'+esc(x.t.name)+'</span></div><p class="th2">'+esc(x.t.theme)+'</p><div class="res">'+res+'</div>'+recent+'<div class="stars" aria-label="'+(x.r?x.rk[2]:0)+' sao">'+st+'</div>'+(x.draft?'<span class="draft-note">✎ Đang làm dở · Bấm để tiếp tục</span>':'')+'</a></li>';
       }).join('')+'</ol></div></section>';
   });
   root.innerHTML=html;
@@ -174,6 +176,8 @@ document.getElementById('reset').onclick=function(){document.getElementById('ask
 document.getElementById('no').onclick=function(){document.getElementById('ask').classList.remove('on')};
 document.getElementById('yes').onclick=function(){try{DATA.forEach(function(cd){cd.tests.forEach(function(t){localStorage.removeItem('mia5:'+t.id);localStorage.removeItem('mia5:draft:'+t.id)})})}catch(e){}document.getElementById('ask').classList.remove('on');render()};
 render();
+window.addEventListener('pageshow',function(e){if(e.persisted)render();});
+window.addEventListener('storage',function(e){if(e.key===null||e.key.indexOf('mia5:')===0)render();});
 </script></body></html>'''
 def render_index(subject_data):
     return html.replace('__FONTS__',fonts).replace('__DATA__',json.dumps(subject_data,ensure_ascii=False))

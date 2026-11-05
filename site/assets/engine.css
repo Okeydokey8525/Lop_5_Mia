@@ -176,6 +176,8 @@ select.in{width:auto;min-width:70px;padding-inline:12px;appearance:auto}
 @media (prefers-reduced-motion:reduce){.bar .pg i{transition:none}}
 @media (max-width:480px){.lvr .row{grid-template-columns:1fr auto}.lvr .bar-t{grid-column:1/-1;order:3}.qp{margin-left:0}.score b{font-size:54px}.rank{margin-left:0}}
 
+.saved-result{background:var(--soft);border:2px solid var(--line);border-radius:18px;padding:18px;margin:20px 0;overflow-wrap:anywhere}.saved-result h2{font-size:22px;margin:0 0 12px}.saved-result p{margin:8px 0}.saved-result .btn{min-height:44px;margin-top:8px;white-space:normal}
+
 /* ----- bổ sung: nút về trang chủ, bảng số liệu, điều hướng ----- */
 .back{display:inline-block;color:var(--on-hero);text-decoration:none;font-weight:700;font-size:14px;background:var(--hero-soft);padding:4px 12px;border-radius:999px;margin-bottom:12px}
 .back:hover{background:rgba(255,255,255,.3)}

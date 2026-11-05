@@ -33,7 +33,7 @@ def build_unit1():
         if i>1:extra['prev']=f'De{i-1}_{TESTS[i-2][0]}.html'
         if i<6:extra['next']=f'De{i+1}_{TESTS[i][0]}.html'
         (folder/f'De{i}_{slug}.html').write_text(quiz_page(f'Tiếng Anh 5 · Unit 1 · Đề {i} · {name}',data,extra,wrapper),encoding='utf-8',newline='\n')
-    cd=dict(n=1,dir=UNIT,name='All about me!',range='Unit 1 · Trang 10–15',overview='TongQuan_Unit1',tests=TESTS)
+    cd=dict(n=1,dir=UNIT,name='All about me!',range='Unit 1 · Trang 10–15',overview='TongQuan_Unit1',tests=TESTS,test_ids=[f'en-u01-de{i}-v2' for i in range(1,7)])
     lessons=[
       dict(n=1,col='#8B4E84',bg='#F2E4F1',dk='#65375F',title='Giới thiệu bản thân',pg='10–11',head='Nói tên, lớp và nơi em sống.',body=lambda c:
         box(c['bg'],"<b>My name is Mai.</b> — Tên mình là Mai.<br><b>I am in Class 5D.</b> — Mình học lớp 5D.<br><b>I live in the countryside.</b> — Mình sống ở nông thôn.")+
@@ -85,7 +85,7 @@ def main():
             html=quiz_page(f'Tiếng Anh 5 · Unit {n} · Đề {i} · {name}',data,extra,wrapper)
             speech='<script>'+(W/'english'/'speech.js').read_text(encoding='utf-8-sig')+'</script>'
             (folder/f'De{i}_{slug}.html').write_text(html.replace('</head>',speech+'</head>'),encoding='utf-8',newline='\n')
-        cd=dict(n=n,dir=unit['dir'],name=unit['name'],range=f"Unit {n} · Trang {unit['pages']}",overview=f'TongQuan_Unit{n}',tests=unit_tests)
+        cd=dict(n=n,dir=unit['dir'],name=unit['name'],range=f"Unit {n} · Trang {unit['pages']}",overview=f'TongQuan_Unit{n}',tests=unit_tests,test_ids=[test_id(unit,i) for i in range(1,7)])
         (folder/f'TongQuan_Unit{n}.html').write_text(overview_page(f'Tiếng Anh 5 · Unit {n} · Tổng quan',sheet(unit,content),cd,details['colour']),encoding='utf-8',newline='\n')
     count=len(UNITS)*6
     index=render_index(index_data()).replace('Toán 5','Tiếng Anh 5').replace('Kết nối tri thức với cuộc sống','Global Success')

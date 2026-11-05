@@ -255,21 +255,24 @@ var draftSignature=(function(){
 function resultRevision(){try{return localStorage.getItem('mia5:'+T.meta.id)||'';}catch(e){return '';}}
 function clockMs(){return elapsedMs+(startedAt?Math.max(0,Date.now()-startedAt):0);}
 function draftMessage(message){var status=$('#draftStatus');if(status)status.textContent=message;}
+function answerSnapshot(){
+  return {schema:1,signature:draftSignature,baseResult:baseResultRevision,updatedAt:Date.now(),completed:done(),elapsedMs:clockMs(),name:$('#stuName').value,
+    answers:Q.map(function(q){var el=$('#q'+(q.i+1));return {controls:$$('[data-qa] input,[data-qa] select',el).map(function(input){return {value:input.value,checked:input.checked===true};}),order:(ordState[q.i]||[]).slice()};}),supportUsed:Array.from(supportUsed)};
+}
 function saveDraft(){
   clearTimeout(draftTimer);
   if(submitted||!hasDraftActivity||!T.meta.id)return;
-  var draft={schema:1,signature:draftSignature,baseResult:baseResultRevision,updatedAt:Date.now(),completed:done(),elapsedMs:clockMs(),name:$('#stuName').value,
-    answers:Q.map(function(q){var el=$('#q'+(q.i+1));return {controls:$$('[data-qa] input,[data-qa] select',el).map(function(input){return {value:input.value,checked:input.checked===true};}),order:(ordState[q.i]||[]).slice()};}),supportUsed:Array.from(supportUsed)};
+  var draft=answerSnapshot();
   $('#discardDraft').disabled=false;lastDraftSave=Date.now();
   try{localStorage.setItem(draftKey,JSON.stringify(draft));draftMessage('Đã lưu nháp trên trình duyệt này. Em có thể quay lại để làm tiếp.');}
   catch(e){draftMessage('Chưa lưu được bản nháp trên trình duyệt này. Em hãy giữ trang mở để làm tiếp.');}
 }
 function queueDraft(){if(submitted)return;hasDraftActivity=true;clearTimeout(draftTimer);draftTimer=setTimeout(saveDraft,250);}
-function restoreDraft(){
-  var draft;try{draft=JSON.parse(localStorage.getItem(draftKey)||'null');}catch(e){draftMessage('Không đọc được bản nháp cũ. Em có thể bắt đầu bài mới.');return;}
+function restoreDraft(snapshot){
+  var draft=snapshot;try{if(!draft)draft=JSON.parse(localStorage.getItem(draftKey)||'null');}catch(e){draftMessage('Không đọc được bản nháp cũ. Em có thể bắt đầu bài mới.');return;}
   if(!draft)return;
   if(draft.schema!==1||draft.signature!==draftSignature||draft.baseResult!==baseResultRevision||!Array.isArray(draft.answers)||draft.answers.length!==Q.length){
-    try{localStorage.removeItem(draftKey);}catch(e){}draftMessage('Bản nháp cũ không khớp phiên bản hoặc lượt nộp hiện tại. Em bắt đầu lượt mới nhé.');return;
+    if(!snapshot)try{localStorage.removeItem(draftKey);}catch(e){}draftMessage('Bản nháp cũ không khớp phiên bản hoặc lượt nộp hiện tại. Em bắt đầu lượt mới nhé.');return;
   }
   // Validate the complete shape before restoring any field. Values go into controls, never HTML.
   var valid=Number.isFinite(draft.elapsedMs)&&draft.elapsedMs>=0&&draft.elapsedMs<31536000000&&typeof draft.name==='string'&&draft.name.length<=500&&Array.isArray(draft.supportUsed)&&draft.supportUsed.every(function(i){return Number.isInteger(i)&&Q[i]&&Q[i].type==='listen';});
@@ -286,6 +289,21 @@ function restoreDraft(){
   $('#stuName').value=draft.name;elapsedMs=draft.elapsedMs;supportUsed=new Set(draft.supportUsed);hasDraftActivity=true;
   supportUsed.forEach(function(i){$('#q'+(i+1)+' .listen-support').textContent='Đã dùng hỗ trợ xem lời nghe; không trừ điểm.';});
   $('#discardDraft').disabled=false;draftMessage('Đã khôi phục bản nháp: '+done()+'/'+Q.length+' câu đã làm. Đồng hồ tiếp tục khi em làm bài.');progress();tick();
+  return true;
+}
+function savedResult(){
+  var r;try{r=JSON.parse(resultRevision()||'null');}catch(e){}
+  return r&&Number.isFinite(r.best)&&Number.isFinite(r.max)&&r.max>0&&r.best>=0&&r.best<=r.max?r:null;
+}
+function savedSummary(){
+  var r=savedResult();if(!r)return;
+  var panel=document.createElement('section');panel.className='saved-result';panel.setAttribute('aria-label','Kết quả đã lưu');
+  panel.innerHTML='<h2>✓ Em đã hoàn thành bài này!</h2><p>Điểm cao nhất: <b>'+pts(r.best)+'/'+pts(r.max)+'</b>'+(Number.isFinite(r.last)?' · Gần nhất: <b>'+pts(r.last)+'/'+pts(r.max)+'</b>':'')+'</p><p>'+(Number.isInteger(r.tries)&&r.tries>0?'Đã luyện '+r.tries+' lượt. ':'')+(Number.isFinite(r.at)&&r.at>0?'Lần gần nhất: '+esc(new Date(r.at).toLocaleString('vi-VN'))+'.':'')+'</p><p>Thành quả của em vẫn được giữ. Bài bên dưới là lượt luyện mới để em tiếp tục tiến bộ.</p>';
+  if(r.review&&r.review.signature===draftSignature&&!hasDraftActivity){
+    var button=document.createElement('button');button.className='btn alt';button.type='button';button.id='reviewSaved';button.textContent='Xem lại bài đã nộp';
+    button.onclick=function(){if(hasDraftActivity){draftMessage('Em đang làm lượt mới. Hãy giữ hoặc bỏ bản nháp trước khi xem bài đã nộp.');return;}var snapshot=Object.assign({},r.review,{baseResult:baseResultRevision});if(restoreDraft(snapshot))submit(true);};panel.appendChild(button);
+  }
+  $('.intro').before(panel);
 }
 function pauseClock(){if(startedAt){elapsedMs=clockMs();startedAt=0;clearInterval(timerId);}tick();}
 function discardDraft(){
@@ -317,7 +335,7 @@ function build(){
     main.appendChild(sec);
   });
   if(Q.some(function(q){return q.type==='listen'})){var panel=document.createElement('section');panel.className='exam-voice-panel';$('.intro').after(panel);speechController=window.MiaSpeech.mount(panel,main,function(){startTimer();queueDraft();});}
-  bar('run');restoreDraft();progress();
+  bar('run');restoreDraft();savedSummary();progress();
 }
 function bar(mode,extra){
   var b=$('#bar'); b.setAttribute('data-mode',mode);
@@ -353,12 +371,14 @@ function save(score,max,rank,secs){
     var k='mia5:'+T.meta.id, old;try{old=JSON.parse(localStorage.getItem(k)||'null');}catch(e){}
     if(!old||!Number.isFinite(old.best)||old.best<0||old.best>max||!Number.isInteger(old.tries)||old.tries<0)old={tries:0,best:0};
     var sc=Math.round(score*10)/10;
-    localStorage.setItem(k,JSON.stringify({tries:old.tries+1,best:Math.max(old.best,sc),last:sc,max:max,rank:rank,secs:secs,at:Date.now(),version:T.meta.version||1,supportUsed:Array.from(supportUsed)}));
+    var review=answerSnapshot();review.baseResult='';
+    localStorage.setItem(k,JSON.stringify({tries:old.tries+1,best:Math.max(old.best,sc),last:sc,max:max,rank:rank,secs:secs,at:Date.now(),version:T.meta.version||1,supportUsed:Array.from(supportUsed),review:review}));
     return true;
   }catch(e){return false;}
 }
-function submit(){
-  if(submitted)return;if(speechController)speechController.stop();saveDraft();pauseClock();submitted=true;clearTimeout(draftTimer);clearInterval(timerId);
+function submit(reviewOnly){
+  reviewOnly=reviewOnly===true;
+  if(submitted)return;if(speechController)speechController.stop();if(!reviewOnly)saveDraft();pauseClock();submitted=true;clearTimeout(draftTimer);clearInterval(timerId);
   $$('.listen-transcript[open]').forEach(function(d){var article=d.closest('.q');supportUsed.add(Number(article.id.slice(1))-1)});
   var secs=Math.round(clockMs()/1000);
   var res=Q.map(function(q){
@@ -388,11 +408,14 @@ function submit(){
   $('#result').innerHTML='<section class="result" id="resultBox"><h2>'+(name?'Kết quả của '+esc(name):'Kết quả bài làm')+'</h2><div class="score"><b>'+pts(total)+'</b><span>/ '+pts(max)+' điểm</span><span class="rank">'+rank+'</span></div>'+
     (T.meta.subject==='en'?'<p>Bản đề có nghe · Đã dùng hỗ trợ xem lời nghe: '+supportUsed.size+' câu. Điểm được giữ nguyên.</p>':'')+'<p>Thời gian làm bài: '+mm+' phút '+ss+' giây (đề này dự kiến '+T.meta.minutes+' phút).</p><div class="lvr">'+rows+'</div>'+
     '<p>'+adv+'</p>'+(wl.length?'<p class="review">Phần cần xem lại: '+wl.join('; ')+'.</p>':'<p class="review">Em đã làm đúng tất cả các câu.</p>')+
-    '<div class="actions"><button class="btn" type="button" id="firstWrong">Xem các câu chưa đúng</button><button class="btn alt" type="button" id="redo">Làm lại bài</button></div></section>';
+    '<p id="saveStatus" role="status"></p><div class="actions"><button class="btn" type="button" id="firstWrong">Xem các câu chưa đúng</button><button class="btn alt" type="button" id="redo">Làm lại bài</button></div></section>';
   $('#firstWrong').onclick=function(){var w=res.filter(function(r){return r.st!=='ok'})[0]; var t=w?$('#q'+(w.q.i+1)):$('#test'); t.scrollIntoView({behavior:'smooth',block:'start'})};
   $('#redo').onclick=function(){build();window.scrollTo(0,0)};
-  if(save(total,max,rank,secs)){try{localStorage.removeItem(draftKey);}catch(e){}draftMessage('Đã nộp bài và lưu kết quả. Bản nháp của lượt này đã hoàn tất.');}
+  if(reviewOnly)draftMessage('Đang xem lại bài đã nộp. Điểm và số lượt luyện được giữ nguyên.');
+  else if(save(total,max,rank,secs)){try{localStorage.removeItem(draftKey);}catch(e){}draftMessage('✓ Đã lưu kết quả trên trình duyệt này. Em có thể đóng trang và quay lại sau.');}
   else draftMessage('Bài đã chấm nhưng chưa lưu được kết quả trên trình duyệt này. Em hãy giữ trang mở.');
+  $('#saveStatus').textContent=$('#draftStatus').textContent;
+  if($('.saved-result'))$('.saved-result').remove();
   $('#discardDraft').disabled=true;$('#draftConfirm').hidden=true;
   var nav=(T.meta.prev?'<a class="btn alt" href="'+esc(T.meta.prev)+'">← Đề trước</a>':'')+(T.meta.next?'<a class="btn" href="'+esc(T.meta.next)+'">Đề tiếp theo →</a>':'')+(T.meta.home?'<a class="btn alt" href="'+esc(T.meta.home)+'">Về trang chủ</a>':'');
   if(nav) $('#resultBox .actions').insertAdjacentHTML('beforeend',nav);

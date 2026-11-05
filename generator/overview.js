@@ -1,4 +1,15 @@
 (function(){
+  function progress(){
+    document.querySelectorAll('[data-test-id]').forEach(function(link){
+      var r;try{r=JSON.parse(localStorage.getItem('mia5:'+link.dataset.testId)||'null');}catch(e){}
+      var valid=r&&Number.isFinite(r.best)&&Number.isFinite(r.max)&&r.max>0&&r.best>=0&&r.best<=r.max;
+      link.classList.toggle('completed',!!valid);
+      link.querySelector('.test-status').textContent=valid?'✓ Đã hoàn thành · '+String(r.best).replace('.',',')+'/'+r.max:'';
+    });
+  }
+  progress();window.addEventListener('pageshow',progress);window.addEventListener('storage',progress);
+})();
+(function(){
   const sheet=document.querySelector('#sheetw > div'),reader=document.getElementById('reader');
   const copy=sheet.cloneNode(true);copy.classList.add('reader-sheet');
   const all=[copy,...copy.querySelectorAll('*')];

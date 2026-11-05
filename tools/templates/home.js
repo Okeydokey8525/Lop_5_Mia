@@ -21,5 +21,6 @@
  document.getElementById('dismiss-celebration').onclick=()=>document.getElementById('celebration').hidden=true;
  reduce.addEventListener('change',()=>{if(reduce.matches)document.querySelector('.sparkles').replaceChildren()});
  window.addEventListener('pageshow',e=>{if(e.persisted)update()});
+ window.addEventListener('storage',e=>{if(e.key===null||(e.key.startsWith('mia5:')&&e.key!==marker))update()});
  update();
 })();
