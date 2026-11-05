@@ -18,7 +18,7 @@ Bài luyện lưu giá trị và đã kiểm tra, debounce 250ms và flush khi �
 
 `qa_study.js`: mọi chuỗi ABC/giọng đọc ví dụ, 13 hội thoại, 24 bài đúng/sai, không tự nhận thuộc, lọc cần ôn, kế thừa mẫu, URL mẫu, đóng/mở browser, flush ngay trước debounce, signature, tách Unit/điểm/nháp, thiếu giọng, storage bị chặn, standalone và 48 layout/theme. Wrapper tên cũ gọi bộ mới; CI dùng tên chính thức. Speech trong QA là mô phỏng, không chứng minh chất lượng phát âm.
 
-Native Edge thật: 6 cụm từ ở 6 nhóm và 2 chuỗi ABC (turn left, doing projects), 27 utterance có start/end, không error, giọng David en-US. Chưa nghe đánh giá bằng tai hoặc có phản hồi làm thử của học sinh. Local toàn bộ 78 đề/98 HTML, 776 link, theme 98 trang và responsive 1568 trường hợp đạt; kết quả CI/live ghi trong docs/01_TINH_TRANG.md.
+Native Edge thật: 6 cụm từ ở 6 nhóm và 2 chuỗi ABC (turn left, doing projects), 27 utterance có start/end, không error, giọng David en-US. Chưa nghe đánh giá bằng tai hoặc có phản hồi làm thử của học sinh. Local toàn bộ 78 đề/98 HTML, 776 link, theme 98 trang và responsive 1568 trường hợp đạt; CI/Pages đã đạt ở commit ed48e0c; `qa_study.js` live đạt cả hai Unit, gồm khôi phục sau đóng/mở và không bị tab mẫu cũ ghi đè. Chi tiết và liên kết ở docs/01_TINH_TRANG.md.
 
 ## Bài học và việc sau
 
