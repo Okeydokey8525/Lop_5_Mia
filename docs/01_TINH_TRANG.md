@@ -1,15 +1,15 @@
 # 01 — Tình trạng hiện hành
 
-Cập nhật 30/10/2026. Bản lịch sử trước khi gom tài liệu nằm trong `history/`; không dùng những số liệu cũ làm trạng thái hiện tại.
+Cập nhật 05/11/2026. Bản lịch sử trước khi gom tài liệu nằm trong `history/`; không dùng những số liệu cũ làm trạng thái hiện tại.
 
 ## Đã bàn giao
 
 - Website: https://okeydokey8525.github.io/Lop_5_Mia/ — GitHub Pages qua Actions.
 - Toán 5 tập một: 6 chủ đề, 36 đề, mỗi đề 24 câu/100 điểm; ID `cd{n}-de{i}` giữ nguyên.
-- Tiếng Anh 5 tập một: Unit 1–5 — All about me!, Our homes, My foreign friends, Our free-time activities, My future job; 5 tổng quan HTML/PNG + 30 đề (720 câu). Unit 4–5 bám trang 28–39 đã xem đủ; thêm 288 câu, 72 câu nghe và 8 tranh mới. Mỗi đề có 6 câu nghe (2 mỗi cấp), 24 câu/100 điểm. Vẫn có mẫu nghe riêng, chưa chấm nói.
-- Toàn site: 66 đề chính thức, 81 HTML, 11 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
+- Tiếng Anh 5 tập một: Unit 1–7 — All about me!, Our homes, My foreign friends, Our free-time activities, My future job, Our school rooms, Our favourite school activities; 7 tổng quan HTML/PNG + 42 đề (1008 câu). Unit 6–7 bám trang 44–55 đã xem đủ; thêm 288 câu, 72 câu nghe và 8 tranh mới. Mỗi đề có 6 câu nghe (2 mỗi cấp), 24 câu/100 điểm. Vẫn có mẫu nghe riêng, chưa chấm nói.
+- Toàn site: 78 đề chính thức, 95 HTML, 13 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
 - Giao diện hồng anh đào, tối màu tím mận; reader trên màn hình ≤820px, poster để xem/in. Tiến độ theo origin/trình duyệt, không đồng bộ thiết bị.
-- Chủ repo đã xem Unit 1, phản hồi hình khó nhận diện và duyệt mẫu cá heo. Ngày 30/10 đã áp dụng phong cách mới cho đủ 6 tranh ở tổng quan/câu hỏi, giữ nguyên 144 câu và đáp án. Sau đó chủ repo giao rõ Unit 2–3 rồi Unit 4–5; Starter/Review và Unit 6 trở đi chưa được giao.
+- Chủ repo đã xem Unit 1, phản hồi hình khó nhận diện và duyệt mẫu cá heo. Ngày 30/10 đã áp dụng phong cách mới cho đủ 6 tranh ở tổng quan/câu hỏi, giữ nguyên 144 câu và đáp án. Sau đó chủ repo giao Unit 2–3, Unit 4–5 rồi Unit 6–7; Starter/Review và Unit 8 trở đi chưa được giao.
 
 | CĐ Toán | Thư mục | Nội dung | Bài |
 |---|---|---|---|
@@ -95,3 +95,10 @@ Nguồn engine.js/css và gen_index.py; QA hồi quy tools/qa_drafts.js. Nội d
 Đã sửa nguồn: danh sách môn cập nhật khi trở về bằng Back/bfcache hoặc khi tab khác lưu điểm; nhãn hoàn thành có điểm cao nhất, điểm gần nhất và ngày làm. Tổng quan của cả 11 chủ đề/Unit đánh dấu các đề đã nộp. Mở đề đã làm có bảng kết quả cũ và nút xem lại đáp án của lượt nộp mới nhất (áp dụng từ bản cập nhật này); dữ liệu điểm cũ giữ nguyên nhưng không tự suy đoán câu trả lời cũ. Xem lại không tăng lượt làm. Thông báo lưu thành công/thất bại hiện ngay trong bảng điểm.
 
 Chưa thể khẳng định nguyên nhân mất dấu trên phiên học thực tế của bé vì chưa có dữ liệu trình duyệt đó. Nguồn trước đã lưu điểm bằng localStorage nhưng mở đề vẫn hiện bài trống, tổng quan không có trạng thái và danh sách môn thiếu cập nhật bfcache. Tiến độ vẫn theo trình duyệt/thiết bị/địa chỉ; chưa đồng bộ tài khoản hoặc phục hồi dữ liệu đã bị xóa. Kiểm chứng local: build, audit 66 đề, 602 link; QA 66/66 đề đạt 100/100 khi điền đúng; bộ lưu bền qua đóng/mở browser ở cả hai môn, xem lại không ghi lượt mới, giữ điểm cao nhất, nháp, bản ghi cũ và quota đạt. QA Unit 1, Units 4–5 và trang chọn môn đạt. Responsive toàn site đạt 1296 trường hợp, thêm 32 trường hợp danh sách/tổng quan có dữ liệu hoàn thành đạt. Đã triển khai commit `4d7cbe2`; [CI và Pages đạt](https://github.com/Okeydokey8525/Lop_5_Mia/actions/runs/41956125824). Trên địa chỉ thật, `qa_persistence.js` đạt ở cả hai môn với hồ sơ thử riêng: nộp → đóng browser → mở lại, xem bài không tăng lượt, Back, tab khác, nháp, điểm cũ và quota. Bốn tài nguyên JS/CSS được đối chiếu live khớp nguồn. Báo cáo `artifacts/persistence-online/report.json`; kiểm tra live lần này tập trung luồng lưu/xem lại ở hai đề đại diện, toàn bộ 66 đề và responsive đã qua local/CI. Không truy cập hoặc sửa dữ liệu trình duyệt của bé.
+
+
+## Unit 6–7 — bổ sung ngày 2026-11-05
+
+Hai Unit thêm 12 đề/288 câu, trong đó 72 nghe; hai tổng quan HTML/PNG và tám WebP tự tạo. Đã đọc trực tiếp trang in 44–49 và 50–55 (PDF 46–57), đối chiếu Wordlist 79–80; NOTES/PROMPTS nằm trong u06/u07. Unit 6 làm rõ ground floor khác first floor; Unit 7 phân biệt does…like với likes + V-ing và lý do theo từng hồ sơ. Không chép bài đọc hoặc sơ đồ của sách. ID en-u06-deN-v1 và en-u07-deN-v1; nội dung/ID Unit cũ không đổi.
+
+Local: audit 78 đề đạt, 718 liên kết đúng hoa/thường; browser QA 78/78 đề đạt 100/100 khi điền đúng, 95 HTML không lỗi. Bộ Unit 6–7 kiểm tra 12 đề, 72 câu nghe (speech mô phỏng), lưu nháp/tên/hỗ trợ, điểm phần, giữ điểm cao nhất, reset cách ly, thống kê 7 Unit và 32 trường hợp trang/kích thước/theme; standalone có ảnh và chấm đúng. Theme/homepage đã qua QA. Đóng/mở browser cùng hồ sơ riêng ở hai Unit mới đã đạt (xem lại không tăng lượt, giữ best/last, nháp và tab khác); responsive chạy lại riêng đạt 1520 trường hợp, không có lỗi trình duyệt. Lần chạy responsive đầu có một ERR_CONNECTION_REFUSED local và không được tính PASS. Chuẩn bị xuất bản; kết quả CI/live sẽ ghi sau deploy.

@@ -89,3 +89,10 @@ Chủ repo đã duyệt mẫu và giao áp dụng đủ 6 đề. Mỗi đề có
 ## Unit 4–5 — được giao tiếp ngày 30/10/2026
 
 Đã xem đủ Unit 4 trang in 28–33 (PDF 30–35), Unit 5 trang 34–39 (PDF 36–41), Wordlist 78–80. NOTES ở u04/u05. Bảng mục lục trên đã sửa mẫu Unit 4 sau khi đọc trực tiếp: What do you like doing…? / I like + V-ing; cuối tuần dùng động từ nguyên dạng sau từ tần suất với I, thêm s/es với he/she. Unit 5 dùng would like to be + a + nghề và Because… nêu lý do. Mỗi Unit thêm 144 câu/6 đề, 36 nghe, 4 tranh và tổng quan HTML/PNG; giữ 24 câu/100 điểm, nghe 2 câu/cấp. Unit 1–3 và khóa điểm cũ giữ nguyên; ID mới en-u04-deN-v1 và en-u05-deN-v1. Chưa làm Review 1 hoặc Unit 6.
+
+
+## Unit 6–7 — được giao tiếp ngày 05/11/2026
+
+Đã đọc đủ trang in 44–55 và Wordlist 79–80, thêm 6 đề/144 câu mỗi Unit, 36 nghe và 4 tranh mỗi Unit. Unit 6: phòng học, ground/first/second/third floor, Where is…?/It is on the…floor, hỏi đường lịch sự và chỉ dẫn upstairs/downstairs/along/past/left/right. Mỗi đề dùng thẻ kế hoạch riêng, không đoán tầng từ tranh. Unit 7: hoạt động do projects/read books/play games/solve maths problems; does…like, likes + V-ing, Why…?/Because…thinks it is…, lý do fun/interesting/useful/good for group work. Cùng hoạt động có thể khác lý do theo hồ sơ.
+
+Đáp án/lời giải lấy cùng dữ kiện, nhận dạng viết tắt khi phù hợp, full form giữ yêu cầu viết đầy đủ. Bài đọc, lời nghe và tranh đều tự soạn/tạo. Tổng hiện hành 7 Unit/42 đề/1008 câu; Starter, Review 1–2 và Unit 8–10 chưa làm. Không đưa sách scan lên repo. Ghi chú chỉ có Unit 1–5 ở trên là trạng thái lịch sử.

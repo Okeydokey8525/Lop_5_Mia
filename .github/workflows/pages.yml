@@ -42,10 +42,12 @@ jobs:
           node tools/qa_english_unit1.js
           node tools/qa_english_units23.js
           node tools/qa_english_units.js --units=4,5
+          node tools/qa_english_units.js --units=6,7
           node tools/qa_theme.js
           node tools/qa_home.js
           node tools/qa_drafts.js
           node tools/qa_persistence.js
+          node tools/qa_persistence.js --units=6,7
           node tools/responsive.js --no-shots
       - uses: actions/upload-artifact@v4
         if: always()

@@ -9,7 +9,7 @@ const walk=d=>fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>e.isDirectory()?
 async function main(){
   const browser=await chromium.launch(),errors=[],runs=[],files=walk(SITE).filter(f=>f.endsWith('.html'));
   try{
-    const p=await browser.newPage({reducedMotion:'reduce'});p.on('pageerror',e=>errors.push(e.message));p.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
+    const p=await browser.newPage({reducedMotion:'reduce'});p.on('pageerror',e=>errors.push(e.message));p.on('console',m=>{if(m.type()==='error')errors.push(m.text()+' '+(m.location().url||''));});
     for(const scheme of ['light','dark']){
       await p.emulateMedia({colorScheme:scheme});
       await p.goto(BASE);

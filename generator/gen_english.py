@@ -90,14 +90,14 @@ def main():
     count=len(UNITS)*6
     index=render_index(index_data()).replace('Toán 5','Tiếng Anh 5').replace('Kết nối tri thức với cuộc sống','Global Success')
     index=index.replace('Mỗi đề làm xong là một bậc thang. Leo đủ 36 bậc là em đã chinh phục cả học kì 1 của Tiếng Anh 5.',
-                        'Unit 1–5 đã sẵn sàng: bản thân, nhà ở, bạn bè, lúc rảnh và nghề nghiệp tương lai. Mỗi Unit có sáu đề, gồm nghe ở cả ba mức độ.')
+                        'Unit 1–7 đã sẵn sàng: bản thân, nhà ở, bạn bè, sở thích, nghề nghiệp, phòng học và hoạt động ở trường. Mỗi Unit có sáu đề, gồm nghe ở cả ba mức độ.')
     index=index.replace('/ 36 đề',f'/ {count} đề').replace('/ 108 sao',f'/ {count*3} sao')
-    for old,new in [('>9</text>','>8</text>'),('>18</text>','>15</text>'),('>27</text>','>23</text>'),('>36</text>','>30</text>')]:index=index.replace(old,new)
+    for old,new in [('>9</text>','>11</text>'),('>18</text>','>21</text>'),('>27</text>','>32</text>'),('>36</text>','>42</text>')]:index=index.replace(old,new)
     for symbol,letter in [('+','A'),('÷','B'),('×','C'),('=','?'),('%','!')]:index=index.replace('>'+symbol+'</span>','>'+letter+'</span>')
     light=''.join(f"--c{n}:{d['colour']};--c{n}s:{d['bg']};" for n,d in DETAILS.items())
     dark=''.join(f'--c{n}:#FFC2DD;--c{n}s:#513447;' for n in DETAILS)
     index=index.replace('</head>','<style>:root[data-theme="light"]{'+light+'}:root[data-theme="dark"]{'+dark+'}</style></head>')
-    index=index.replace('</div></header>','</div></header><section class="wrap" style="margin-top:24px;margin-bottom:36px"><a class="cta" href="Unit1_AllAboutMe/LuyenNghe_Mau.html">🔊 Thử giọng nghe · 3 cấp độ</a><p>Mỗi đề Unit 1–5 có 6 câu nghe, chia đều ba mức. Em có thể nghe lại hoặc xem lời nghe khi cần hỗ trợ.</p></section>',1)
+    index=index.replace('</div></header>','</div></header><section class="wrap" style="margin-top:24px;margin-bottom:36px"><a class="cta" href="Unit1_AllAboutMe/LuyenNghe_Mau.html">🔊 Thử giọng nghe · 3 cấp độ</a><p>Mỗi đề Unit 1–7 có 6 câu nghe, chia đều ba mức. Em có thể nghe lại hoặc xem lời nghe khi cần hỗ trợ.</p></section>',1)
     (OUT/'index.html').write_text(index,encoding='utf-8',newline='\n')
     print(f'English built: {len(UNITS)} overviews + {count} tests ({count*24} questions)')
 

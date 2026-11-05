@@ -2,7 +2,46 @@
 from gen_overview import gen_sheet,box
 
 
+def sheet67(unit,content):
+    from english.units import DETAILS
+    details=DETAILS[unit['n']];colour=details['colour'];bg=details['bg']
+    def lesson(n,title,pg,head,body):return dict(n=n,title=title,pg=pg,head=head,body=body,col=colour,bg=bg,dk='#702344')
+    def pictures():return '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px">'+''.join('<figure style="margin:0;min-width:0">'+content.picture(w,280)+f'<figcaption style="font-weight:700;margin-top:8px">{w}</figcaption></figure>' for w in content.CORE)+'</div>'
+    if unit['n']==6:
+        lessons=[
+          lesson(1,'Phòng nào, tầng nào?','44–45','Nhận biết phòng bằng đồ dùng, gọi đúng tên tầng.',lambda c:
+            pictures()+box(bg,'<b>library</b> — thư viện · <b>computer room</b> — phòng máy tính<br><b>music room</b> — phòng âm nhạc · <b>art room</b> — phòng mĩ thuật')+
+            box(bg,'<b>Where is the library?</b><br>It is <b>on the second floor</b>.<br><b>Where’s = Where is</b>; <b>It’s = It is</b>.')+
+            box(bg,'<b>ground floor</b> — tầng trệt → <b>first floor</b> — tầng ngay trên tầng trệt → <b>second floor</b> → <b>third floor</b>.<br>Dùng cách gọi của sách; không coi ground floor và first floor là cùng một tầng.')),
+          lesson(2,'Hỏi đường thật lịch sự','46–47','Đọc vị trí xuất phát rồi làm theo từng bước.',lambda c:
+            box(bg,'<b>Could you tell me the way to the art room, please?</b><br>Go along the corridor and turn left.<br>Thank you. — You are welcome.')+
+            box(bg,'<b>go upstairs</b> — đi lên tầng trên<br><b>go downstairs</b> — đi xuống tầng dưới<br><b>go along the corridor</b> — đi dọc hành lang<br><b>go past the library</b> — đi qua thư viện<br><b>turn left / right</b> — rẽ trái / phải')+
+            box(bg,'<b>Mẹo:</b> tìm tầng trước, tìm hướng sau. Đi lên hay xuống phụ thuộc nơi bắt đầu. Các kế hoạch phòng trong đề là giả định và có thể khác nhau; luôn đọc thẻ của câu hiện tại.')),
+          lesson(3,'Đọc kế hoạch và viết chỉ dẫn','48–49','Tách rõ tên phòng, tầng và hướng đi.',lambda c:
+            box(bg,'<b>up-STAIRS</b>, <b>down-STAIRS</b>: nhấn âm sau.<br>Dùng <b>on the + tầng + floor</b>.')+
+            box(bg,'<b>Thẻ tự soạn:</b> Start: ground floor · Room: art room · Floor: first · Turn: right.<br><b>Viết từ thẻ:</b> It is on the first floor. Go upstairs. Go along the corridor and turn right.')+
+            box(bg,'<b>Tự kiểm tra:</b> đã có is chưa? Có on the chưa? Đúng tầng, trái/phải chưa? Nghe Giỏi cần tìm đủ hai ý; được nghe lại hoặc xem lời nghe.')),
+        ];chips=['Phòng và tầng','Hỏi và chỉ đường','Đọc và viết'];intro='Khám phá từng góc nhỏ trong ngôi trường.'
+    else:
+        p=content.PROFILES[1]
+        lessons=[
+          lesson(1,'Hoạt động yêu thích ở trường','50–51','Hỏi does…like; trả lời He/She likes + V-ing.',lambda c:
+            pictures()+box(bg,'<b>do projects → doing projects</b> — làm dự án<br><b>read books → reading books</b> — đọc sách<br><b>play games → playing games</b> — chơi trò chơi<br><b>solve maths problems → solving maths problems</b> — giải toán')+
+            box(bg,'<b>What school activity does she like?</b><br>She <b>likes doing</b> projects.<br><b>Does he like reading books?</b> — Yes, he does. / No, he doesn’t.<br>Sau <b>does</b> dùng <b>like</b>; khi kể dùng <b>likes</b>.')),
+          lesson(2,'Vì sao bạn ấy thích?','52–53','Why hỏi lý do; Because mở đầu lời giải thích.',lambda c:
+            box(bg,'<b>Why does he like solving maths problems?</b><br>Because he <b>thinks it is useful</b>.')+
+            box(bg,'<b>fun</b> — vui · <b>interesting</b> — thú vị<br><b>useful</b> — hữu ích · <b>good for group work</b> — tốt cho làm việc nhóm')+
+            box(bg,'He/She <b>likes + V-ing</b> because he/she <b>thinks it is + lý do</b>.<br>Cùng một hoạt động, mỗi bạn có thể nêu lý do khác nhau. Đáp án theo thẻ/bài đọc, không có một lý do bắt buộc cho tất cả.')),
+          lesson(3,'Đọc hồ sơ và viết sở thích','54–55','Khớp đúng người, hoạt động và lý do.',lambda c:
+            box(bg,'<b>READ-ing</b>, <b>SOLV-ing</b>: nhấn âm đầu.<br><b>doesn’t = does not</b>; <b>it’s = it is</b>.')+
+            box(bg,f"<b>Thẻ tự soạn:</b> {content.card(p)}<br><b>Viết từ thẻ:</b> {content.full_sentence(p)}")+
+            box(bg,'<b>Tự kiểm tra:</b> he/she khớp thẻ chưa? Đã có likes + V-ing chưa? Đã thêm s ở thinks chưa? Nghe Giỏi lấy đủ hoạt động và lý do; không tăng độ khó bằng tốc độ.')),
+        ];chips=['Hoạt động ở trường','Sở thích và lý do','Đọc và viết'];intro='Mỗi hoạt động là một niềm vui khám phá.'
+    return gen_sheet(unit['n'],unit['name'].upper(),f"Unit {unit['n']} · Tiếng Anh 5 Global Success · Trang {unit['pages']}",colour,bg,lessons,chips,intro,'Ôn từ, đọc thẻ và luyện nghe ba cấp độ. Sáu đề giúp em tiến từng bước theo nhịp của mình.',f"Nội dung ôn tập tự soạn, bám Unit {unit['n']} · Global Success 5, tập một")
+
+
 def sheet(unit,content):
+    if unit['n'] in (6,7):return sheet67(unit,content)
     if unit['n'] in (4,5):return sheet45(unit,content)
     colour,bg,dk=('#AD4278','#FFE3F1','#702344') if unit['n']==2 else ('#AF4771','#FFE8F1','#702344')
     def lesson(n,title,pg,head,body):return dict(n=n,title=title,pg=pg,head=head,body=body,col=colour,bg=bg,dk=dk)

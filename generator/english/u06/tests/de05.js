@@ -1,0 +1,388 @@
+window.TEST_FN=function(H){return MKEN6([
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the room.",
+  "transcript": "This is the library.",
+  "speech": "This is the library.",
+  "fields": [
+   {
+    "label": "Room:",
+    "answer": "library",
+    "options": [
+     "library",
+     "computer room",
+     "music room",
+     "art room"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Room: library.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the floor.",
+  "transcript": "It is on the first floor.",
+  "speech": "It is on the first floor.",
+  "fields": [
+   {
+    "label": "Floor:",
+    "answer": "first",
+    "options": [
+     "ground",
+     "first",
+     "second",
+     "third"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Floor: first.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: Where ___ the art room?",
+  "why": "Where is…?",
+  "lesson": 1,
+  "answers": [
+   "is"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: It is on ___ first floor.",
+  "why": "On the first floor.",
+  "lesson": 1,
+  "answers": [
+   "the"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Giữ the ground floor.",
+  "lesson": 1,
+  "items": [
+   "The",
+   "library",
+   "is",
+   "on",
+   "the",
+   "ground",
+   "floor."
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Rewrite with spaces: Goalongthecorridor.",
+  "why": "Go / along / the / corridor.",
+  "lesson": 1,
+  "answers": [
+   "Go along the corridor."
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: ___ you tell me the way, please?",
+  "why": "Could you…? là lời nhờ lịch sự.",
+  "lesson": 1,
+  "answers": [
+   "Could"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Choose the correct sentence.",
+  "why": "Dùng is on the + third + floor.",
+  "lesson": 1,
+  "opts": [
+   "It is on floor the third.",
+   "It is on the third floor.",
+   "It is in third floor.",
+   "It on the third floor."
+  ],
+  "answer": 1,
+  "level": "tb"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Go upstairs, sau đó turn right.",
+  "lesson": 1,
+  "items": [
+   "Go",
+   "upstairs",
+   "and",
+   "turn",
+   "right."
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Ghép thành cụm đúng.",
+  "lesson": 2,
+  "pairs": [
+   {
+    "left": "go",
+    "right": "upstairs"
+   },
+   {
+    "left": "turn",
+    "right": "left"
+   },
+   {
+    "left": "on the",
+    "right": "ground floor"
+   }
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen. Which floor is the room on?",
+  "transcript": "We have a music room. It is on the second floor.",
+  "speech": "We have a music room. It is on the second floor.",
+  "fields": [
+   {
+    "label": "Floor:",
+    "answer": "second",
+    "options": [
+     "ground",
+     "first",
+     "second",
+     "third"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Floor: second.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Rewrite in full: Where’s the library?",
+  "why": "Where’s = Where is.",
+  "lesson": 2,
+  "answers": [
+   "Where is the library?"
+  ],
+  "exactForm": true,
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: The room is on the ___ floor. Use “thứ hai”.",
+  "why": "Second là thứ hai phía trên tầng trệt.",
+  "lesson": 2,
+  "answers": [
+   "second"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the turn.",
+  "transcript": "Go along the corridor. Turn right.",
+  "speech": "Go along the corridor. Turn right.",
+  "fields": [
+   {
+    "label": "Turn:",
+    "answer": "right",
+    "options": [
+     "left",
+     "right"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Turn: right.",
+  "level": "kha"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "The way to the music room.",
+  "lesson": 2,
+  "items": [
+   "Could",
+   "you",
+   "tell",
+   "me",
+   "the",
+   "way",
+   "to",
+   "the",
+   "music",
+   "room,",
+   "please?"
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write one word: the library is on the ___ floor.",
+  "why": "Chọn tầng theo thẻ.",
+  "lesson": 2,
+  "answers": [
+   "ground"
+  ],
+  "exactForm": false,
+  "passage": "School plan (start on the ground floor):\nlibrary: ground floor; turn left.\ncomputer room: first floor; turn right.\nmusic room: second floor; turn left.\nart room: third floor; turn right.",
+  "level": "kha"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Sắp xếp theo tầng trong thẻ.",
+  "lesson": 2,
+  "items": [
+   "It",
+   "is",
+   "on",
+   "the",
+   "first",
+   "floor."
+  ],
+  "passage": "School plan (start on the ground floor):\nlibrary: ground floor; turn left.\ncomputer room: first floor; turn right.\nmusic room: second floor; turn left.\nart room: third floor; turn right.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: Go ___ the library and turn left. Use “qua”.",
+  "why": "Go past the library.",
+  "lesson": 2,
+  "answers": [
+   "past"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write a full location sentence about the music room. Start with “It”.",
+  "why": "Dùng on the + tầng trong thẻ + floor.",
+  "lesson": 3,
+  "answers": [
+   "It is on the second floor.",
+   "It's on the second floor."
+  ],
+  "exactForm": false,
+  "passage": "School plan (start on the ground floor):\nlibrary: ground floor; turn left.\ncomputer room: first floor; turn right.\nmusic room: second floor; turn left.\nart room: third floor; turn right.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write the room on the third floor.",
+  "why": "Tìm tên phòng theo tầng, viết đủ tên.",
+  "lesson": 3,
+  "answers": [
+   "art room"
+  ],
+  "exactForm": false,
+  "passage": "School plan (start on the ground floor):\nlibrary: ground floor; turn left.\ncomputer room: first floor; turn right.\nmusic room: second floor; turn left.\nart room: third floor; turn right.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and choose the room and floor.",
+  "transcript": "This is our school. We have a library. The library is on the ground floor. Go along the corridor and turn left.",
+  "speech": "This is our school. We have a library. The library is on the ground floor. Go along the corridor and turn left.",
+  "fields": [
+   {
+    "label": "Room:",
+    "answer": "library",
+    "options": [
+     "library",
+     "computer room",
+     "music room",
+     "art room"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Floor:",
+    "answer": "ground",
+    "options": [
+     "ground",
+     "first",
+     "second",
+     "third"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Room: library; Floor: ground.",
+  "level": "gioi"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Giữ thứ tự chỉ dẫn: xuống → đi qua → rẽ trái.",
+  "lesson": 3,
+  "items": [
+   "Go",
+   "downstairs,",
+   "go",
+   "past",
+   "the",
+   "library",
+   "and",
+   "turn",
+   "left."
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Rewrite in full: It’s on the ground floor.",
+  "why": "It’s = It is; ground floor là tầng trệt.",
+  "lesson": 3,
+  "answers": [
+   "It is on the ground floor."
+  ],
+  "exactForm": true,
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and write the floor word and turn.",
+  "transcript": "This is our school. We have a music room. The music room is on the second floor. Go upstairs, go along the corridor and turn left.",
+  "speech": "This is our school. We have a music room. The music room is on the second floor. Go upstairs, go along the corridor and turn left.",
+  "fields": [
+   {
+    "label": "Floor:",
+    "answer": "second",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Turn:",
+    "answer": "left",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Floor: second; Turn: left.",
+  "level": "gioi"
+ }
+]);};

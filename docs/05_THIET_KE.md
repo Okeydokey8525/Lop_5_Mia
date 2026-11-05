@@ -90,3 +90,8 @@ Giữ theme hồng sáng chung. Accent tổng quan Unit 2 #AD4278 / nền #FFE3F
 ## Unit 4–5
 
 Giữ hồng sáng chung. Accent Unit 4 #A13D79 / nền #FFE5F4; Unit 5 #B03D70 / nền #FFE4EE. Tranh 3:2, caption ở tổng quan và lưới hai cột/thu về một cột; giữ font và thiết kế cũ. Violin có đàn/cần vĩ rõ; Internet có máy tính/trang web; nghề có hành động/dụng cụ cụ thể. Không lấy việc tưới hoa của trẻ để hỏi nghề gardener; tranh nghề là người lớn trong bối cảnh công việc.
+
+
+### Unit 6–7 (05/11/2026)
+
+Giữ poster 1080px, reader điện thoại và theme hồng sáng dùng chung. Unit 6 accent `#A53E78`, nền `#FFE6F2`; Unit 7 accent `#AC3F68`, nền `#FFE8F0`. Bốn ảnh/Unit dùng WebP 768×512, lưới 2 cột trong poster, co cột theo reader, ảnh không méo. Tiêu đề Unit 7 được xuống dòng trong header. Tranh không chứa chữ đáp án; chỉ dẫn chính xác dựa trên thẻ dữ kiện, không dựa vào bối cảnh trang trí. Nguồn prompt cạnh ảnh. Các trang đề dùng engine lưu kết quả/xem lại đã triển khai, không tự đổi khóa lưu.
