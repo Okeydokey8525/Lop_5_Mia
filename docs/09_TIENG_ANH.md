@@ -103,3 +103,7 @@ Chủ repo đã duyệt mẫu và giao áp dụng đủ 6 đề. Mỗi đề có
 Trang học đi kèm tổng quan: Unit 6 bao phủ phòng học, tầng, chỉ đường; Unit 7 bao phủ cụm hoạt động, dạng V-ing và lý do. Nghe từ/cụm, nghe chậm, ABC, câu ví dụ, hội thoại cả đoạn/chỉ A và bài luyện. Đây là học/luyện tự do, không thêm vào 24 câu/100 điểm của đề. ABC đọc tên chữ cái, không gọi là phonics; giọng thiết bị không được coi là đã nghe duyệt chỉ vì API phát xong. Sơ đồ tầng/tay trái/phải là SVG có kiểm soát, tranh từ vựng dùng lại ảnh gốc.
 
 Bài luyện riêng cũng lưu câu đang làm và trạng thái kiểm tra; khi câu đổi nội dung, signature cũ không được khôi phục như đã đúng. Đã luyện/Cần ôn là tự đánh dấu và lưu theo Unit. Unit 6 giữ dữ liệu mẫu và URL mẫu, Unit 7 độc lập. Không mở rộng Unit 1–5 hoặc Unit 8 khi chưa được giao.
+
+## Mở rộng học từ/phát âm Units 2–5
+
+Bốn Unit dùng chung cơ chế của Units 6–7. Nhóm Unit 2: nhà ở/địa chỉ và số/gần xa; Unit 3: nước và quốc tịch/tính cách/giới thiệu bạn; Unit 4: hoạt động/like + V-ing/cuối tuần và tần suất; Unit 5: nghề/ước mơ/lý do. Có lần lượt 12/18/17/15 từ/cụm, mỗi Unit sáu hội thoại, 12 bài luyện tự lưu. Tranh tái dùng bản đã duyệt, khái niệm không có tranh dùng thẻ chữ có nghĩa/ví dụ, không ghép tranh không liên quan. Không đoán quốc tịch theo mặt, không gán phần trăm tần suất, địa chỉ giả định; dạng đầy đủ/rút gọn chấm theo yêu cầu rõ. Không đổi đề chính thức.

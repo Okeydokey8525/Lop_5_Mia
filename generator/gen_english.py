@@ -87,7 +87,7 @@ def main():
             (folder/f'De{i}_{slug}.html').write_text(html.replace('</head>',speech+'</head>'),encoding='utf-8',newline='\n')
         cd=dict(n=n,dir=unit['dir'],name=unit['name'],range=f"Unit {n} · Trang {unit['pages']}",overview=f'TongQuan_Unit{n}',tests=unit_tests,test_ids=[test_id(unit,i) for i in range(1,7)])
         overview=overview_page(f'Tiếng Anh 5 · Unit {n} · Tổng quan',sheet(unit,content),cd,details['colour'])
-        if n in (6,7):
+        if n in (2,3,4,5,6,7):
             study=importlib.import_module(f"english.{unit['key']}.study").render_study()
             (folder/'HocTuVaPhatAm.html').write_text(study,encoding='utf-8',newline='\n')
             if n==6:(folder/'HocTuVaPhatAm_Mau.html').write_text(study,encoding='utf-8',newline='\n')

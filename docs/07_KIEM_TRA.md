@@ -134,3 +134,7 @@ Server local dùng backlog 128 thay mặc định 5 của Python để đáp ứ
 ### Học tương tác đầy đủ Units 6–7
 
 `node tools/qa_study.js [baseURL]` thay kiểm tra mẫu bằng hai trang đầy đủ: 26 từ/cụm, 13 hội thoại, 24 bài luyện; kiểm tra mọi chuỗi ABC và lời đọc ví dụ, hội thoại chỉ A, không autoplay/tự nhận đã thuộc, từ cần ôn, dấu mẫu Unit 6, URL mẫu cũ, đúng/sai, lưu ngay khi rời trước debounce, đóng/mở hồ sơ thật, signature theo câu, điểm/nháp cũ nguyên vẹn, storage bị chặn/giọng chưa có, standalone. Có 48 trường hợp = 2 Unit ×3 nhóm ×4 chiều rộng ×2 theme, player Dừng trong màn hình, nút >=44px. Wrapper cũ `qa_study_preview.js` vẫn gọi cùng bộ mới. Báo cáo artifacts/study-full-local hoặc study-full-online; speech mô phỏng. Toàn site 98 HTML ×8×2 =1568 trường hợp responsive.
+
+### Mở rộng kiểm tra học từ Units 2–7
+
+`node tools/qa_study.js [baseURL]` kiểm tra cả sáu Unit: 88 từ/cụm, 37 hội thoại, 72 bài luyện và 144 layout/theme. Có ca sai/đúng in/at (Unit 2), is/has (Unit 3), water/watering (Unit 4), I’d/I would khi bắt buộc đầy đủ (Unit 5). Giữ các ca kế thừa và chống ghi đè Unit 6, does/like Unit 7. Đóng/mở browser kiểm tra từng Unit, không tự nhận đã thuộc sau nghe, không đụng điểm/nháp. Toàn site hiện 102 HTML ×8×2 =1632 trường hợp responsive. Speech trong QA mô phỏng.

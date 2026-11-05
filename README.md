@@ -33,7 +33,7 @@ Workflow chỉ xuất bản `site/` sau khi build và QA đạt. Không đưa PD
 
 Tiến độ không đồng bộ thiết bị, trình duyệt hoặc từ bản mở file/local sang Pages. Chưa có phản hồi làm thử của học sinh để đánh giá độ khó.
 
-Trang Tiếng Anh: https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/. Toàn site hiện 78 đề chính thức và 98 trang HTML; QA dùng `site/catalog.json` để phát hiện thiếu hoặc thừa đề.
+Trang Tiếng Anh: https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/. Toàn site hiện 78 đề chính thức và 102 trang HTML; QA dùng `site/catalog.json` để phát hiện thiếu hoặc thừa đề.
 
 Bài học sau sửa Unit 1 và kế hoạch tiếp theo nằm trong `docs/breakdowns/`; quy trình tranh ở `docs/playbooks/TRANH_MINH_HOA.md`; skill dự án ở `.agents/skills/mia-learning-illustrations/SKILL.md`. Cây máy/repo hiện hành nằm trong docs/08, snapshot cũ ở docs/history.
 
@@ -51,3 +51,5 @@ Unit 6–7: `node tools/qa_english_units.js --units=6,7`. Kiểm tra giữ kết
 
 
 Học từ/phát âm đầy đủ: [Unit 6](https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/Unit6_OurSchoolRooms/HocTuVaPhatAm.html) (14 từ/cụm, phòng học/tầng/chỉ đường) và [Unit 7](https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/Unit7_OurFavouriteSchoolActivities/HocTuVaPhatAm.html) (12 từ/cụm, hoạt động/V-ing/lý do). Mỗi Unit có ba nhóm nhỏ, nghe/đánh vần/câu ví dụ, hội thoại và 12 bài luyện tự lưu. Từ cần ôn và bài luyện tách khỏi điểm đề. Link mẫu Unit 6 cũ và các dấu từ cũ vẫn dùng được. Kiểm tra: `node tools/qa_study.js`; nguồn chung ở `generator/english/study/`, dữ kiện riêng ở `u06/study.py`, `u07/study.py`.
+
+Học từ/phát âm đã mở rộng cho Units 2–5, truy cập từ nút “Học từ, đánh vần và phát âm” trên tổng quan từng Unit. Unit 2: 12 từ/cụm; Unit 3: 18; Unit 4: 17; Unit 5: 15. Mỗi Unit có ba nhóm, sáu hội thoại và 12 bài luyện tự lưu. Nguồn: `generator/english/u02/study.py` đến `u05/study.py`; dùng chung renderer/controller với Units 6–7.
