@@ -140,3 +140,9 @@ Local toàn site đạt: 90/90 đề 100/100, 118 HTML không lỗi trình duy�
 ## Unit 10 và hai Review (06/11/2026)
 
 Đã đọc đủ 40–43 và 68–77, giữ scan ngoài repo. Thêm 18 đề/432 câu/108 nghe; Unit 10 thêm bốn tranh hoạt động ImageGen, Review tái dùng tranh đã duyệt. Review 1 ôn 1–5, Review 2 ôn 6–10; mỗi câu gắn sourceUnits và audit bắt buộc đúng năm Unit mỗi đề. Học từ mới: Unit 10 có 16 từ/cụm; mỗi Review 14; mỗi phần sáu hội thoại, 12 bài luyện. Metadata kind/topic/overview phân biệt Review với Unit, không tạo Unit 11/12; điểm/nháp cũ giữ nguyên. Xem breakdown 2026-11-06_UNIT10_REVIEW1_REVIEW2.md.
+
+## Kiểm chứng sau xuất bản
+
+Đã xuất bản commit `5bba2eb`; [Actions/Pages đạt](https://github.com/Okeydokey8525/Lop_5_Mia/actions/runs/42103227242). CI kiểm toàn bộ bản cuối: 108 đề/142 HTML, 2272 trường hợp responsive, nghe/nháp/tiến độ/Review/học từ. Trên Pages thật, qa_english_units --topics=u10,r01,r02 đạt 18/18 đề 100/100, đủ 108 nghe, giữ nháp/best, chấm phần/reset cách ly, thứ tự thẻ đúng U1–5/R1/U6–10/R2 và nhãn Review. qa_persistence --topics=... đạt đóng/mở browser, xem lại bài nộp, best/last, Back/cross-tab. qa_study live đạt cả 11 trang: 162 chuỗi ABC, 67 hội thoại, 132 bài luyện, lưu sau browser restart và 264 layout/theme, gồm tương thích mẫu Unit 6. Speech trong runner là mô phỏng.
+
+34 tài nguyên live (24 HTML mới, bốn WebP, ba trang chủ/môn, catalog, home.js và study.js) khớp byte bản nguồn; không so byte PNG giữa Windows/Linux. Edge native local: 26 start/end, không error, chỉ chứng minh phát xong; chưa nghe duyệt phát âm bằng tai hay có đánh giá độ khó của học sinh. Báo cáo: artifacts/topics-u10-r01-r02-online/report.json, final-three-online/assets.json, study-full-online/report.json và persistence-online.

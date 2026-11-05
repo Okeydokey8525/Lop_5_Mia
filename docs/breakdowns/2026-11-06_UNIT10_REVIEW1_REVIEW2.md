@@ -54,3 +54,9 @@ Hai Review tái dùng tranh được duyệt của các Unit. Audit khai báo wh
 ## Phần chưa làm
 
 Starter là mục duy nhất chưa triển khai trong tập một. Chưa làm bộ đề giữa/cuối kỳ riêng, chưa có tập hai để soạn phần học kỳ II, chưa có chấm nói hoặc đồng bộ tài khoản. Lưu tiến độ vẫn theo thiết bị/trình duyệt/origin.
+
+## Kiểm chứng sau xuất bản
+
+Đã xuất bản commit `5bba2eb`; [Actions/Pages đạt](https://github.com/Okeydokey8525/Lop_5_Mia/actions/runs/42103227242). CI kiểm toàn bộ bản cuối: 108 đề/142 HTML, 2272 trường hợp responsive, nghe/nháp/tiến độ/Review/học từ. Trên Pages thật, qa_english_units --topics=u10,r01,r02 đạt 18/18 đề 100/100, đủ 108 nghe, giữ nháp/best, chấm phần/reset cách ly, thứ tự thẻ đúng U1–5/R1/U6–10/R2 và nhãn Review. qa_persistence --topics=... đạt đóng/mở browser, xem lại bài nộp, best/last, Back/cross-tab. qa_study live đạt cả 11 trang: 162 chuỗi ABC, 67 hội thoại, 132 bài luyện, lưu sau browser restart và 264 layout/theme, gồm tương thích mẫu Unit 6. Speech trong runner là mô phỏng.
+
+34 tài nguyên live (24 HTML mới, bốn WebP, ba trang chủ/môn, catalog, home.js và study.js) khớp byte bản nguồn; không so byte PNG giữa Windows/Linux. Edge native local: 26 start/end, không error, chỉ chứng minh phát xong; chưa nghe duyệt phát âm bằng tai hay có đánh giá độ khó của học sinh. Báo cáo: artifacts/topics-u10-r01-r02-online/report.json, final-three-online/assets.json, study-full-online/report.json và persistence-online.
