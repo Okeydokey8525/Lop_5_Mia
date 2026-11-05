@@ -15,6 +15,7 @@
 | Hiểu lỗi từng gặp và cách chặn | [Bài học sau Unit 1](breakdowns/2026-10-30_BAI_HOC_UNIT1.md) |
 | Tiếp nhận Unit 2–3 và các quyết định mới | [Bàn giao Unit 2–3](breakdowns/2026-10-30_UNIT2_UNIT3.md) |
 | Tiếp nhận Unit 4–5 và các quyết định mới | [Bàn giao Unit 4–5](breakdowns/2026-10-30_UNIT4_UNIT5.md) |
+| Tiếp nhận Unit 6–7, tầng học và lý do sở thích | [Bàn giao Unit 6–7](breakdowns/2026-11-05_UNIT6_UNIT7.md) |
 | Lập công việc tiếp theo | [Phân rã công việc](breakdowns/KE_HOACH_TIEP_THEO.md) |
 | Làm hoặc thay tranh minh họa | [Quy trình tranh](playbooks/TRANH_MINH_HOA.md), [skill dự án](../.agents/skills/mia-learning-illustrations/SKILL.md) |
 

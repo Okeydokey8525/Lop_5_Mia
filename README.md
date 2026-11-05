@@ -3,7 +3,7 @@
 Góc luyện tập lớp 5 cho Mia, chạy bằng website tĩnh và lưu điểm trong trình duyệt.
 
 - Toán 5, Kết nối tri thức với cuộc sống, tập một: 6 chủ đề, 36 đề; mỗi đề 24 câu, 100 điểm.
-- Tiếng Anh 5, Global Success, tập một: Unit 1–5 (bản thân, nhà ở, bạn bè, lúc rảnh, nghề tương lai), 5 tổng quan + 30 đề (720 câu), có nghe ở ba cấp.
+- Tiếng Anh 5, Global Success, tập một: Unit 1–7 (thêm phòng học và hoạt động ở trường), 7 tổng quan + 42 đề (1008 câu), có nghe ở ba cấp.
 - Toán học kì 2: chờ sách.
 
 ## Xem và phát triển
@@ -33,7 +33,7 @@ Workflow chỉ xuất bản `site/` sau khi build và QA đạt. Không đưa PD
 
 Tiến độ không đồng bộ thiết bị, trình duyệt hoặc từ bản mở file/local sang Pages. Chưa có phản hồi làm thử của học sinh để đánh giá độ khó.
 
-Trang Tiếng Anh: https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/. Toàn site hiện 66 đề chính thức và 81 trang HTML; QA dùng `site/catalog.json` để phát hiện thiếu hoặc thừa đề.
+Trang Tiếng Anh: https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/. Toàn site hiện 78 đề chính thức và 95 trang HTML; QA dùng `site/catalog.json` để phát hiện thiếu hoặc thừa đề.
 
 Bài học sau sửa Unit 1 và kế hoạch tiếp theo nằm trong `docs/breakdowns/`; quy trình tranh ở `docs/playbooks/TRANH_MINH_HOA.md`; skill dự án ở `.agents/skills/mia-learning-illustrations/SKILL.md`. Cây máy/repo hiện hành nằm trong docs/08, snapshot cũ ở docs/history.
 
@@ -46,3 +46,5 @@ Toàn website nay dùng hồng sáng và nút Sáng/Tối chung, giữ lựa ch�
 Trang chủ chọn môn có lời chào, thanh tiến độ thật và động viên khi hoàn thành thêm lượt luyện tập. Nguồn tools/templates/home.{html,css,js}; kiểm tra node tools/qa_home.js.
 
 Các đề nay tự lưu nháp trên cùng trình duyệt để làm tiếp khi quay lại, gồm đáp án và thời gian đã làm. Danh sách đề ghi Đang làm dở; có nút bỏ nháp, tách khỏi điểm đã nộp. Khi đóng/ẩn trang đồng hồ tạm dừng. Kiểm tra hồi quy: node tools/qa_drafts.js.
+
+Unit 6–7: `node tools/qa_english_units.js --units=6,7`. Kiểm tra giữ kết quả qua đóng/mở browser và xem lại bài mới nhất: `node tools/qa_persistence.js --units=6,7`. Dữ liệu cũ chỉ có điểm vẫn hiển thị hoàn thành; câu trả lời chi tiết được lưu cho các lượt nộp từ bản cập nhật lưu/xem lại.
