@@ -107,3 +107,9 @@ Bài luyện riêng cũng lưu câu đang làm và trạng thái kiểm tra; khi
 ## Mở rộng học từ/phát âm Units 2–5
 
 Bốn Unit dùng chung cơ chế của Units 6–7. Nhóm Unit 2: nhà ở/địa chỉ và số/gần xa; Unit 3: nước và quốc tịch/tính cách/giới thiệu bạn; Unit 4: hoạt động/like + V-ing/cuối tuần và tần suất; Unit 5: nghề/ước mơ/lý do. Có lần lượt 12/18/17/15 từ/cụm, mỗi Unit sáu hội thoại, 12 bài luyện tự lưu. Tranh tái dùng bản đã duyệt, khái niệm không có tranh dùng thẻ chữ có nghĩa/ví dụ, không ghép tranh không liên quan. Không đoán quốc tịch theo mặt, không gán phần trăm tần suất, địa chỉ giả định; dạng đầy đủ/rút gọn chấm theo yêu cầu rõ. Không đổi đề chính thức.
+
+## Unit 8–9 — triển khai ngày 05/11/2026
+
+Unit 8 In our classroom, trang 56–61: beside/under/above/in front of, Where are…?/They are…; Whose…is this?/It is + tên’s; glue stick, crayon, set square, pencil sharpener; a-BOVE/be-SIDE. Unit 9 Our outdoor activities, trang 62–67: theatre/aquarium/campsite/funfair, Were you…?/Yes, we were/No, we weren’t, I was/We were; What did you do…?, listened/watched/danced/played; CI-ne-ma/BA-ke-ry. Đã xem đủ các trang và Wordlist 80, giữ scan ngoài repo.
+
+Mỗi Unit sáu đề/144 câu/36 nghe và tổng quan HTML/PNG. Cả hai có học từ/phát âm ba nhóm, 15 từ/cụm, sáu hội thoại, 12 bài luyện tự lưu. Tranh đồ vật/địa điểm tự tạo; vị trí, chủ sở hữu, ngày và hoạt động lấy đúng thẻ/bài đọc, không suy đoán từ bối cảnh hình. Chủ sở hữu không mất ’s khi đổi It is/It’s. Bài yêu cầu full form không nhận viết tắt; weren’t/wasn’t được nhận khi không bắt buộc dạng đầy đủ. Tổng hiện hành 9 Unit/54 đề/1296 câu; Starter, Review 1–2, Unit 10 chưa làm.

@@ -24,3 +24,5 @@
 Nguồn nội dung và ghi nhận trang sách của từng unit nằm cạnh nhau trong `generator/english/uNN/`; prompt nằm cạnh ảnh trong `images/PROMPTS.md`. Không tạo thêm một bản nội dung cạnh tranh trong tài liệu bàn giao.
 
 - [Học từ/phát âm Units 2–5](breakdowns/2026-11-05_HOC_TU_UNIT2_UNIT5.md): mở rộng mẫu đã duyệt, phạm vi và kiểm chứng.
+
+- [Unit 8–9](breakdowns/2026-11-05_UNIT8_UNIT9.md): phạm vi sách, tranh gốc, đề/nghe/học từ và bằng chứng kiểm chứng.

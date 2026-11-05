@@ -21,6 +21,12 @@ async function fill(p){await p.evaluate(()=>__quiz.Q.forEach((q,i)=>{const e=doc
   if(t.id==='en-u07-de3-v1'){
    const variants=await p.evaluate(()=>{const normal=__quiz.Q.find(q=>q.type==='text'&&!q.exactForm&&q.answers[0].includes('it is')),full=__quiz.Q.find(q=>q.type==='text'&&q.exactForm&&q.answers[0].includes('it is'));return [__quiz.textIsCorrect(normal.answers[0].replace('it is','it’s'),normal.answers),__quiz.textIsCorrect(full.answers[0].replace('it is','it’s'),full.answers,true),__quiz.textIsCorrect(normal.answers[0]+' extra',normal.answers)]});assert.deepEqual(variants,[true,false,false]);
   }
+  if(t.id==='en-u08-de3-v1'){
+   const forms=await p.evaluate(()=>{const owner=__quiz.Q.find(q=>q.type==='text'&&q.answers[0]==="It is An's."),full=__quiz.Q.find(q=>q.type==='text'&&q.exactForm&&q.answers[0].startsWith('They are'));return [__quiz.textIsCorrect('It’s An’s.',owner.answers),__quiz.textIsCorrect('It is An.',owner.answers),__quiz.textIsCorrect(full.answers[0].replace('They are','They’re'),full.answers,true)]});assert.deepEqual(forms,[true,false,false]);
+  }
+  if(t.id==='en-u09-de3-v1'){
+   const forms=await p.evaluate(()=>{const negative=__quiz.Q.find(q=>q.type==='text'&&!q.exactForm&&q.answers[0]==='were not'),full=__quiz.Q.find(q=>q.type==='text'&&q.exactForm&&q.answers[0]==='We were not at the aquarium.');return [__quiz.textIsCorrect('weren’t',negative.answers),__quiz.textIsCorrect('We weren’t at the aquarium.',full.answers,true),__quiz.textIsCorrect('were not extra',negative.answers)]});assert.deepEqual(forms,[true,false,false]);
+  }
   for(const qid of [1,11,21]){await p.click(`#q${qid} [data-speech-play]:not([data-slow])`);assert.equal(await p.evaluate(()=>__speech.calls.at(-1).text),await p.evaluate(i=>__quiz.Q[i-1].speech,qid));}
   if(t.file.includes('De2_')){await p.evaluate(()=>document.fonts.ready);await p.addStyleTag({content:'#bar{visibility:hidden!important}'});for(const q of await p.locator('.q:has(.en-figure)').all()){await q.screenshot({path:path.join(OUT,t.id+'-'+await q.getAttribute('id')+'.png')});}}
   await p.addStyleTag({content:'#bar{visibility:visible!important}'});await fill(p);await p.click('#goBtn');assert.match(await p.locator('.score').textContent(),/100\s*\/\s*100/);await p.reload();assert.equal(await p.evaluate(id=>JSON.parse(localStorage.getItem('mia5:'+id)).best,t.id),100);

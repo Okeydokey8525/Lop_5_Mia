@@ -138,3 +138,7 @@ Server local dùng backlog 128 thay mặc định 5 của Python để đáp ứ
 ### Mở rộng kiểm tra học từ Units 2–7
 
 `node tools/qa_study.js [baseURL]` kiểm tra cả sáu Unit: 88 từ/cụm, 37 hội thoại, 72 bài luyện và 144 layout/theme. Có ca sai/đúng in/at (Unit 2), is/has (Unit 3), water/watering (Unit 4), I’d/I would khi bắt buộc đầy đủ (Unit 5). Giữ các ca kế thừa và chống ghi đè Unit 6, does/like Unit 7. Đóng/mở browser kiểm tra từng Unit, không tự nhận đã thuộc sau nghe, không đụng điểm/nháp. Toàn site hiện 102 HTML ×8×2 =1632 trường hợp responsive. Speech trong QA mô phỏng.
+
+### Unit 8–9
+
+Thêm `node tools/qa_english_units.js --units=8,9` và `node tools/qa_persistence.js --units=8,9` vào CI. Kiểm tra 12 đề/72 nghe, nháp, điểm phần, best/last, xem lại bài sau đóng browser, Back/cross-tab/reset cách ly, standalone, poster/reader và biến thể sở hữu/viết tắt/full form. `qa_study.js` nay kiểm tra Units 2–9: 118 từ/cụm, 49 hội thoại, 96 bài luyện, 192 layout/theme; thêm ca An/An’s và was/were. Toàn site 90 đề/118 HTML, responsive 118×8×2=1888 trường hợp. Speech trong bộ tự động là mô phỏng; phân biệt với API native và nghe đánh giá bằng tai.

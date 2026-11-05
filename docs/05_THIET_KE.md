@@ -95,3 +95,7 @@ Giữ hồng sáng chung. Accent Unit 4 #A13D79 / nền #FFE5F4; Unit 5 #B03D70 
 ### Unit 6–7 (05/11/2026)
 
 Giữ poster 1080px, reader điện thoại và theme hồng sáng dùng chung. Unit 6 accent `#A53E78`, nền `#FFE6F2`; Unit 7 accent `#AC3F68`, nền `#FFE8F0`. Bốn ảnh/Unit dùng WebP 768×512, lưới 2 cột trong poster, co cột theo reader, ảnh không méo. Tiêu đề Unit 7 được xuống dòng trong header. Tranh không chứa chữ đáp án; chỉ dẫn chính xác dựa trên thẻ dữ kiện, không dựa vào bối cảnh trang trí. Nguồn prompt cạnh ảnh. Các trang đề dùng engine lưu kết quả/xem lại đã triển khai, không tự đổi khóa lưu.
+
+### Unit 8–9 (05/11/2026)
+
+Giữ theme hồng sáng và reader/poster. Unit 8 accent #A33372 / nền #FFE3F2; Unit 9 #AC3A68 / #FFE6EF. Tám tranh ImageGen WebP 768×512, chủ thể rõ và không chữ đáp án; prompt cạnh ảnh, PNG gốc ngoài repo. Tranh ê-ke có góc vuông; nhà hát có sân khấu/khán giả để phân biệt cinema; aquarium có bể kính; campsite có lều; funfair có vòng quay/ngựa gỗ. Học từ dùng cơ chế chung, nút Dừng nổi và nhóm nhỏ như các Unit trước.

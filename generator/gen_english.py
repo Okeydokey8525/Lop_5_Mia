@@ -1,4 +1,4 @@
-"""Build the assigned English Units 1–5 from the published unit registry."""
+"""Build assigned English units from the published unit registry."""
 import json
 from pathlib import Path
 from english.u01.content import TESTS, build_tests, picture
@@ -87,7 +87,7 @@ def main():
             (folder/f'De{i}_{slug}.html').write_text(html.replace('</head>',speech+'</head>'),encoding='utf-8',newline='\n')
         cd=dict(n=n,dir=unit['dir'],name=unit['name'],range=f"Unit {n} · Trang {unit['pages']}",overview=f'TongQuan_Unit{n}',tests=unit_tests,test_ids=[test_id(unit,i) for i in range(1,7)])
         overview=overview_page(f'Tiếng Anh 5 · Unit {n} · Tổng quan',sheet(unit,content),cd,details['colour'])
-        if n in (2,3,4,5,6,7):
+        if n in (2,3,4,5,6,7,8,9):
             study=importlib.import_module(f"english.{unit['key']}.study").render_study()
             (folder/'HocTuVaPhatAm.html').write_text(study,encoding='utf-8',newline='\n')
             if n==6:(folder/'HocTuVaPhatAm_Mau.html').write_text(study,encoding='utf-8',newline='\n')
@@ -96,9 +96,10 @@ def main():
     count=len(UNITS)*6
     index=render_index(index_data()).replace('Toán 5','Tiếng Anh 5').replace('Kết nối tri thức với cuộc sống','Global Success')
     index=index.replace('Mỗi đề làm xong là một bậc thang. Leo đủ 36 bậc là em đã chinh phục cả học kì 1 của Tiếng Anh 5.',
-                        'Unit 1–7 đã sẵn sàng: bản thân, nhà ở, bạn bè, sở thích, nghề nghiệp, phòng học và hoạt động ở trường. Mỗi Unit có sáu đề, gồm nghe ở cả ba mức độ.')
+                        'Unit 1–9 đã sẵn sàng: từ giới thiệu bản thân đến lớp học và kể hoạt động đã qua. Mỗi Unit có sáu đề, gồm nghe ở cả ba mức độ; Units 2–9 có trang học từ và phát âm.')
     index=index.replace('/ 36 đề',f'/ {count} đề').replace('/ 108 sao',f'/ {count*3} sao')
-    for old,new in [('>9</text>','>11</text>'),('>18</text>','>21</text>'),('>27</text>','>32</text>'),('>36</text>','>42</text>')]:index=index.replace(old,new)
+    for quarter,old in enumerate([9,18,27,36],1):
+        index=index.replace(f'>{old}</text>',f'>{int(count*quarter/4+0.5)}</text>')
     for symbol,letter in [('+','A'),('÷','B'),('×','C'),('=','?'),('%','!')]:index=index.replace('>'+symbol+'</span>','>'+letter+'</span>')
     light=''.join(f"--c{n}:{d['colour']};--c{n}s:{d['bg']};" for n,d in DETAILS.items())
     dark=''.join(f'--c{n}:#FFC2DD;--c{n}s:#513447;' for n in DETAILS)

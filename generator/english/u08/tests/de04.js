@@ -1,0 +1,404 @@
+window.TEST_FN=function(H){return MKEN8([
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the object.",
+  "transcript": "This is a pencil sharpener.",
+  "speech": "This is a pencil sharpener.",
+  "fields": [
+   {
+    "label": "Object:",
+    "answer": "pencil sharpener",
+    "options": [
+     "glue stick",
+     "crayon",
+     "set square",
+     "pencil sharpener"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Object: pencil sharpener.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the position.",
+  "transcript": "It is above the bookcase.",
+  "speech": "It is above the bookcase.",
+  "fields": [
+   {
+    "label": "Position:",
+    "answer": "above",
+    "options": [
+     "beside",
+     "under",
+     "above",
+     "in front of"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Position: above.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Write the owner’s name.",
+  "why": "Tìm tên đứng trước dấu sở hữu.",
+  "lesson": 3,
+  "answers": [
+   "An"
+  ],
+  "exactForm": false,
+  "passage": "This is An's glue stick. It is beside the notebook. An has a tidy study corner.",
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Which object belongs to this pupil?",
+  "why": "Đọc tên đồ dùng trong bài.",
+  "lesson": 3,
+  "opts": [
+   "glue stick",
+   "crayon",
+   "set square",
+   "pencil sharpener"
+  ],
+  "answer": 0,
+  "passage": "This is An's glue stick. It is beside the notebook. An has a tidy study corner.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the position phrase, including the reference object.",
+  "why": "Vị trí là beside the notebook.",
+  "lesson": 3,
+  "answers": [
+   "beside the notebook"
+  ],
+  "exactForm": false,
+  "passage": "This is An's glue stick. It is beside the notebook. An has a tidy study corner.",
+  "level": "tb"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Đọc cả giới từ và vật làm mốc.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "The glue stick is beside the notebook.",
+    "a": true
+   },
+   {
+    "t": "The glue stick is under the desk.",
+    "a": false
+   }
+  ],
+  "passage": "This is An's glue stick. It is beside the notebook. An has a tidy study corner.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Write the owner’s name.",
+  "why": "Tìm tên đứng trước dấu sở hữu.",
+  "lesson": 3,
+  "answers": [
+   "Linh"
+  ],
+  "exactForm": false,
+  "passage": "This is Linh's crayon. It is under the desk. Linh has a tidy study corner.",
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Which object belongs to this pupil?",
+  "why": "Đọc tên đồ dùng trong bài.",
+  "lesson": 3,
+  "opts": [
+   "glue stick",
+   "crayon",
+   "set square",
+   "pencil sharpener"
+  ],
+  "answer": 1,
+  "passage": "This is Linh's crayon. It is under the desk. Linh has a tidy study corner.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the position phrase, including the reference object.",
+  "why": "Vị trí là under the desk.",
+  "lesson": 3,
+  "answers": [
+   "under the desk"
+  ],
+  "exactForm": false,
+  "passage": "This is Linh's crayon. It is under the desk. Linh has a tidy study corner.",
+  "level": "tb"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Đọc cả giới từ và vật làm mốc.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "The crayon is under the desk.",
+    "a": true
+   },
+   {
+    "t": "The crayon is beside the notebook.",
+    "a": false
+   }
+  ],
+  "passage": "This is Linh's crayon. It is under the desk. Linh has a tidy study corner.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen. Whose object is this?",
+  "transcript": "This is Nam's crayon. It is above the bookcase. Nam has a tidy study corner.",
+  "speech": "This is Nam's crayon. It is above the bookcase. Nam has a tidy study corner.",
+  "fields": [
+   {
+    "label": "Owner:",
+    "answer": "Nam",
+    "options": [
+     "An",
+     "Linh",
+     "Minh",
+     "Mai",
+     "Nam",
+     "Hoa"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Owner: Nam.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the owner’s name.",
+  "why": "Tìm tên đứng trước dấu sở hữu.",
+  "lesson": 3,
+  "answers": [
+   "Minh"
+  ],
+  "exactForm": false,
+  "passage": "This is Minh's set square. It is in front of the pencil case. Minh has a tidy study corner.",
+  "level": "kha"
+ },
+ {
+  "type": "mc",
+  "stem": "Which object belongs to this pupil?",
+  "why": "Đọc tên đồ dùng trong bài.",
+  "lesson": 3,
+  "opts": [
+   "glue stick",
+   "crayon",
+   "set square",
+   "pencil sharpener"
+  ],
+  "answer": 2,
+  "passage": "This is Minh's set square. It is in front of the pencil case. Minh has a tidy study corner.",
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and find the reference object.",
+  "transcript": "This is Hoa's glue stick. It is under the chair. Hoa has a tidy study corner.",
+  "speech": "This is Hoa's glue stick. It is under the chair. Hoa has a tidy study corner.",
+  "fields": [
+   {
+    "label": "Reference object:",
+    "answer": "chair",
+    "options": [
+     "notebook",
+     "desk",
+     "pencil case",
+     "book",
+     "bookcase",
+     "chair"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Reference object: chair.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the position phrase, including the reference object.",
+  "why": "Vị trí là in front of the pencil case.",
+  "lesson": 3,
+  "answers": [
+   "in front of the pencil case"
+  ],
+  "exactForm": false,
+  "passage": "This is Minh's set square. It is in front of the pencil case. Minh has a tidy study corner.",
+  "level": "kha"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Đọc cả giới từ và vật làm mốc.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "The set square is in front of the pencil case.",
+    "a": true
+   },
+   {
+    "t": "The set square is beside the notebook.",
+    "a": false
+   }
+  ],
+  "passage": "This is Minh's set square. It is in front of the pencil case. Minh has a tidy study corner.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the owner’s name.",
+  "why": "Tìm tên đứng trước dấu sở hữu.",
+  "lesson": 3,
+  "answers": [
+   "Mai"
+  ],
+  "exactForm": false,
+  "passage": "This is Mai's pencil sharpener. It is beside the book. Mai has a tidy study corner.",
+  "level": "kha"
+ },
+ {
+  "type": "mc",
+  "stem": "Which object belongs to this pupil?",
+  "why": "Đọc tên đồ dùng trong bài.",
+  "lesson": 3,
+  "opts": [
+   "glue stick",
+   "crayon",
+   "set square",
+   "pencil sharpener"
+  ],
+  "answer": 3,
+  "passage": "This is Mai's pencil sharpener. It is beside the book. Mai has a tidy study corner.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the position phrase, including the reference object.",
+  "why": "Vị trí là beside the book.",
+  "lesson": 3,
+  "answers": [
+   "beside the book"
+  ],
+  "exactForm": false,
+  "passage": "This is Mai's pencil sharpener. It is beside the book. Mai has a tidy study corner.",
+  "level": "gioi"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Đọc cả giới từ và vật làm mốc.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "The pencil sharpener is beside the book.",
+    "a": true
+   },
+   {
+    "t": "The pencil sharpener is under the desk.",
+    "a": false
+   }
+  ],
+  "passage": "This is Mai's pencil sharpener. It is beside the book. Mai has a tidy study corner.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and choose owner and position.",
+  "transcript": "This is Mai's pencil sharpener. It is beside the book. Mai has a tidy study corner.",
+  "speech": "This is Mai's pencil sharpener. It is beside the book. Mai has a tidy study corner.",
+  "fields": [
+   {
+    "label": "Owner:",
+    "answer": "Mai",
+    "options": [
+     "An",
+     "Linh",
+     "Minh",
+     "Mai",
+     "Nam",
+     "Hoa"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Position:",
+    "answer": "beside",
+    "options": [
+     "beside",
+     "under",
+     "above",
+     "in front of"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Owner: Mai; Position: beside.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Whose crayon is above the bookcase? Write the name.",
+  "why": "Linh và Nam đều có crayon nhưng vị trí khác nhau.",
+  "lesson": 3,
+  "answers": [
+   "Nam"
+  ],
+  "exactForm": false,
+  "passage": "Owner: Linh · One object: crayon · Position: under the desk.\nOwner: Nam · One object: crayon · Position: above the bookcase.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Whose glue stick is under the chair? Write the name.",
+  "why": "An và Hoa đều có glue stick; đọc đúng vị trí.",
+  "lesson": 3,
+  "answers": [
+   "Hoa"
+  ],
+  "exactForm": false,
+  "passage": "Owner: An · One object: glue stick · Position: beside the notebook.\nOwner: Hoa · One object: glue stick · Position: under the chair.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and write object and position phrase.",
+  "transcript": "This is Hoa's glue stick. It is under the chair. Hoa has a tidy study corner.",
+  "speech": "This is Hoa's glue stick. It is under the chair. Hoa has a tidy study corner.",
+  "fields": [
+   {
+    "label": "Object:",
+    "answer": "glue stick",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Position phrase:",
+    "answer": "under the chair",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Object: glue stick; Position phrase: under the chair.",
+  "level": "gioi"
+ }
+]);};

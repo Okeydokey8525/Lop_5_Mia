@@ -6,10 +6,10 @@ Cập nhật 05/11/2026. Bản lịch sử trước khi gom tài liệu nằm tr
 
 - Website: https://okeydokey8525.github.io/Lop_5_Mia/ — GitHub Pages qua Actions.
 - Toán 5 tập một: 6 chủ đề, 36 đề, mỗi đề 24 câu/100 điểm; ID `cd{n}-de{i}` giữ nguyên.
-- Tiếng Anh 5 tập một: Unit 1–7 — All about me!, Our homes, My foreign friends, Our free-time activities, My future job, Our school rooms, Our favourite school activities; 7 tổng quan HTML/PNG + 42 đề (1008 câu). Unit 6–7 bám trang 44–55 đã xem đủ; thêm 288 câu, 72 câu nghe và 8 tranh mới. Mỗi đề có 6 câu nghe (2 mỗi cấp), 24 câu/100 điểm. Vẫn có mẫu nghe riêng, chưa chấm nói.
-- Toàn site: 78 đề chính thức, 102 HTML, 13 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
+- Tiếng Anh 5 tập một: Unit 1–9, gồm In our classroom (Unit 8, trang 56–61) và Our outdoor activities (Unit 9, 62–67); 9 tổng quan HTML/PNG + 54 đề (1296 câu). Mỗi đề 24 câu/100 điểm, sáu nghe chia hai mỗi cấp. Units 2–9 có học từ/phát âm và bài luyện tự lưu, vẫn có mẫu nghe Unit 1; chưa chấm nói.
+- Toàn site: 90 đề chính thức, 118 HTML, 15 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
 - Giao diện hồng anh đào, tối màu tím mận; reader trên màn hình ≤820px, poster để xem/in. Tiến độ theo origin/trình duyệt, không đồng bộ thiết bị.
-- Chủ repo đã xem Unit 1, phản hồi hình khó nhận diện và duyệt mẫu cá heo. Ngày 30/10 đã áp dụng phong cách mới cho đủ 6 tranh ở tổng quan/câu hỏi, giữ nguyên 144 câu và đáp án. Sau đó chủ repo giao Unit 2–3, Unit 4–5 rồi Unit 6–7; Starter/Review và Unit 8 trở đi chưa được giao.
+- Chủ repo đã xem Unit 1, phản hồi hình khó nhận diện và duyệt mẫu cá heo. Ngày 30/10 đã áp dụng phong cách mới cho đủ 6 tranh ở tổng quan/câu hỏi, giữ nguyên 144 câu và đáp án. Sau đó chủ repo giao Unit 2–3, Unit 4–5 rồi Unit 6–7; đã bổ sung Unit 8–9 theo yêu cầu tiếp theo. Starter/Review và Unit 10 chưa được giao.
 
 | CĐ Toán | Thư mục | Nội dung | Bài |
 |---|---|---|---|
@@ -128,3 +128,9 @@ Local: audit 78 đề, 776 liên kết; bộ đầy đủ 78/78 đề 100/100 v�
 Kiểm chứng local: audit 78 đề/1008 vị trí câu Tiếng Anh không lỗi; 836 liên kết đúng; QA 78/78 đề đạt 100/100, 102 HTML không lỗi browser; theme 102 trang và responsive 1632 trường hợp đạt. Bộ học từ đạt 88 chuỗi ABC, 37 hội thoại, 72 bài luyện và 144 layout trên cả Units 2–7, gồm lưu sau đóng/mở browser và bảo toàn dữ liệu mẫu cũ. Báo cáo trong artifacts/study-full-local (speech mô phỏng).
 
 Đã xuất bản commit `766f4ed`; [Actions/Pages đạt](https://github.com/Okeydokey8525/Lop_5_Mia/actions/runs/41980190113), gồm kiểm tra đề, nghe, theme, tiến độ/nháp, học từ và responsive. Trên URL thật, `qa_study.js` đạt cả Units 2–7: 88 từ/chuỗi ABC, 37 hội thoại, 72 bài luyện, lưu sau đóng/mở browser, dấu mẫu cũ, tách dữ liệu và 144 layout/theme. 10 file live (bốn trang học, bốn tổng quan, CSS/JS chung) khớp byte bản local. Báo cáo artifacts/study-full-online/report.json và assets-2-5.json. Native Edge local: nghe từ và đánh vần mỗi Unit 2–5, 42 utterance có start/end, không error; chưa đánh giá bằng tai hay thử độ khó với học sinh.
+
+## Unit 8–9 (05/11/2026)
+
+Đọc trực tiếp đủ trang in 56–67 và Wordlist 80; NOTES cạnh nguồn. Thêm 12 đề/288 câu, 72 nghe, tám tranh ImageGen tự tạo, hai tổng quan HTML/PNG và hai trang học từ/phát âm. Mỗi trang học 15 từ/cụm, sáu hội thoại, 12 bài luyện. Unit 8: vị trí đồ dùng, số ít/nhiều, Whose và sở hữu; Unit 9: địa điểm/hoạt động đã qua, was/were, did + nguyên mẫu. ID mới en-u08-deN-v1/en-u09-deN-v1, key học riêng en-u08/en-u09; không đổi bài/điểm cũ. Xem breakdown 2026-11-05_UNIT8_UNIT9.md.
+
+Local toàn site đạt: 90/90 đề 100/100, 118 HTML không lỗi trình duyệt, theme 118 trang và responsive 1888 trường hợp. Edge native: từ và chuỗi ABC ở hai Unit hoàn tất, không lỗi start/end; chưa nghe đánh giá phát âm bằng tai.
