@@ -1,6 +1,6 @@
 # 01 — Tình trạng hiện hành
 
-Cập nhật bản nguồn 18/11/2026; tình trạng CI/live Unit 11 xem mục cuối. Bản lịch sử trước khi gom tài liệu nằm trong `history/`; không dùng những số liệu cũ làm trạng thái hiện tại.
+Cập nhật 18/11/2026; Unit 11 đã xuất bản và kiểm chứng CI/live, xem mục cuối. Bản lịch sử trước khi gom tài liệu nằm trong `history/`; không dùng những số liệu cũ làm trạng thái hiện tại.
 
 ## Đã bàn giao
 
@@ -151,3 +151,5 @@ Local toàn site đạt: 90/90 đề 100/100, 118 HTML không lỗi trình duy�
 ## Unit 11 tập hai (18/11/2026)
 
 Đã triển khai Unit 11 theo yêu cầu; nguồn trang in 6–11 và Wordlist 74–75. Có sáu đề/36 nghe, bốn tranh mới, tổng quan HTML/PNG, 16 từ/cụm, sáu hội thoại và 12 bài luyện tự lưu. 91 file WAV tự tạo đi kèm để nghe không cần Speech API; chỉ áp dụng mẫu này cho Unit 11. Người dùng xác nhận bé dùng iPad, nhưng chưa thử trên máy bé/chưa duyệt giọng bằng tai. Bằng chứng và trạng thái CI/live ở [bàn giao Unit 11](breakdowns/2026-11-18_UNIT11.md). Các đoạn ngày 06/11 trở về trước là lịch sử, không phải số liệu hiện hành.
+
+Unit 11 đã lên Pages ở commit `b1be9e1`; Actions `44242319906` thành công. Live: sáu đề, lưu bài qua browser restart, 12 bài luyện tự lưu và 91 file nghe thật trên Chromium/WebKit đều đạt; 109 tài nguyên khớp local. Chi tiết/giới hạn iPad ở bàn giao Unit 11.
