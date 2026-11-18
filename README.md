@@ -33,7 +33,7 @@ Workflow chỉ xuất bản `site/` sau khi build và QA đạt. Không đưa PD
 
 Tiến độ không đồng bộ thiết bị, trình duyệt hoặc từ bản mở file/local sang Pages. Chưa có phản hồi làm thử của học sinh để đánh giá độ khó.
 
-Trang Tiếng Anh: https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/. Toàn site hiện 108 đề chính thức và 142 trang HTML; QA dùng `site/catalog.json` để phát hiện thiếu hoặc thừa đề.
+Trang Tiếng Anh: https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/. Toàn site hiện 114 đề chính thức và 150 trang HTML; QA dùng `site/catalog.json` để phát hiện thiếu hoặc thừa đề.
 
 Bài học sau sửa Unit 1 và kế hoạch tiếp theo nằm trong `docs/breakdowns/`; quy trình tranh ở `docs/playbooks/TRANH_MINH_HOA.md`; skill dự án ở `.agents/skills/mia-learning-illustrations/SKILL.md`. Cây máy/repo hiện hành nằm trong docs/08, snapshot cũ ở docs/history.
 
@@ -57,3 +57,5 @@ Học từ/phát âm đã mở rộng cho Units 2–5, truy cập từ nút “H
 Unit 8 In our classroom (trang 56–61) và Unit 9 Our outdoor activities (62–67) có sáu đề mỗi Unit, sáu nghe mỗi đề, tranh/tổng quan HTML/PNG và trang học từ/phát âm tự lưu. Mỗi trang học có 15 từ/cụm, sáu hội thoại, 12 bài luyện. Kiểm tra: `node tools/qa_english_units.js --units=8,9`, `node tools/qa_persistence.js --units=8,9`, `node tools/qa_study.js`.
 
 Hoàn thiện Unit 10 (68–73), Review 1 (40–43, ôn Unit 1–5), Review 2 (74–77, ôn Unit 6–10). Mỗi phần có sáu đề và trang học từ/phát âm tự lưu. Review có ID `en-r01-deN-v1`/`en-r02-deN-v1`, đặt đúng thứ tự sách; không đánh số thành Unit 11/12. Starter còn lại chưa triển khai. QA: `node tools/qa_english_units.js --topics=u10,r01,r02`; `node tools/qa_persistence.js --topics=u10,r01,r02`.
+
+Unit 11 **Family time** (tập hai, trang 6–11) đã có trong bản nguồn: sáu đề/144 câu, tổng quan, 16 từ/cụm, sáu hội thoại và 12 bài luyện tự lưu. Unit này có 91 file nghe đi kèm, dùng được không cần giọng thiết bị; đang chờ người dùng nghe duyệt và thử trên iPad. Tổng Anh 78 đề/1872 câu; Starter và Units 12–20/Reviews 3–4 chưa triển khai. Nguồn và kiểm chứng: `docs/breakdowns/2026-11-18_UNIT11.md`.

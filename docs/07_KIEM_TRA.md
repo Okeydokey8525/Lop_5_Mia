@@ -148,3 +148,7 @@ Thêm `node tools/qa_english_units.js --units=8,9` và `node tools/qa_persistenc
 `node tools/qa_english_units.js --topics=u10,r01,r02`, `node tools/qa_persistence.js --topics=u10,r01,r02`: 18 đề/108 nghe, draft/best/last/review/reset, ba standalone và 40 trường hợp trang mới/trang chủ. Tham số --units cũ vẫn dùng được. Lookup overview theo metadata, không suy Review thành số Unit. Audit yêu cầu từng đề Review phủ chính xác 1–5 hoặc 6–10 và inventory ảnh tái dùng có whitelist.
 
 `qa_study.js` gồm Units 2–10 và hai Review: 162 từ/cụm, 67 hội thoại, 132 bài luyện, 264 layout/theme; ca did/go, in/at và dấu sở hữu ở các phần mới. Toàn site 108 đề/142 HTML, responsive 142×8×2=2272. Đóng/mở hồ sơ browser thật kiểm riêng en-u10/en-r01/en-r02. Speech mô phỏng không chứng minh phát âm được đánh giá bằng tai; tên riêng Việt đặc biệt cần người lớn nghe.
+
+### Unit 11 và audio đi kèm
+
+Chạy `node tools/qa_english_units.js --units=11`, `node tools/qa_persistence.js --units=11`, `node tools/qa_study.js`; thêm `node tools/qa_recorded_audio.js` và `node tools/qa_recorded_audio.js --webkit` (cần Playwright WebKit). Runner audio kiểm file thật, không có Speech API, có native utterance constructor, ABC, phát chậm, dừng/đổi nhóm và lỗi mạng/thử lại. Toàn site hiện 114 đề/150 HTML, tương ứng 2400 layout/theme trong responsive runner. Không coi WebKit trên máy kiểm tra là xác nhận iPad thật; cần người dùng nghe duyệt.

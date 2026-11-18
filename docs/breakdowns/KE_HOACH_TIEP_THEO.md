@@ -1,6 +1,6 @@
 # Phân rã công việc tiếp theo
 
-Đây là bản đồ công việc, không phải lệnh tự động mở rộng phạm vi. Chủ repo đã giao Unit 2–5 ngày 30/10/2026 rồi Unit 6–7 ngày 05/11/2026; đã làm theo mẫu Unit 1. Đã hoàn thiện Units 1–10 và Review 1–2 theo các lần giao đến 06/11/2026. Starter còn chờ giao; tập hai chưa có nguồn để triển khai.
+Đây là bản đồ công việc, không phải lệnh tự động mở rộng phạm vi. Chủ repo đã giao Unit 2–5 ngày 30/10/2026 rồi Unit 6–7 ngày 05/11/2026; đã làm theo mẫu Unit 1. Đã hoàn thiện Units 1–10 và Review 1–2 theo các lần giao đến 06/11/2026. Starter còn chờ giao. Ngày 18/11 đã kiểm tra sách tập hai mới có và lập [kế hoạch Units 11–20, Review 3–4](2026-11-18_KE_HOACH_TIENG_ANH_TAP2.md); chưa triển khai nội dung hoặc audio mới.
 
 | Công việc | Đầu vào | Đầu ra và điều kiện hoàn tất | Trạng thái |
 |---|---|---|---|
@@ -10,3 +10,5 @@
 | Toán chủ đề 7–8 | SGK Toán tập hai và mục lục thật | Đối chiếu bài/trang, theo docs06; không suy đoán nội dung khi thiếu sách | Chưa có sách |
 
 Trước khi nhận việc: đọc docs01 và phần nguồn liên quan. Sau mỗi đợt: cập nhật trạng thái hiện hành, ghi bằng chứng kiểm tra, giữ lịch sử trong Git hoặc history khi cần giữ snapshot bàn giao; không tạo nhiều file tiến độ trùng nhau.
+
+Cập nhật 18/11/2026: đã nhận giao và làm Unit 11 (xem bàn giao 2026-11-18_UNIT11.md); Units 12–20 và Review 3–4 vẫn chờ giao. Trước khi nhân rộng audio, người dùng nghe duyệt mẫu và thử Unit 11 trên iPad của bé.

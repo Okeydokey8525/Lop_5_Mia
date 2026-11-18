@@ -28,3 +28,7 @@ Nguồn nội dung và ghi nhận trang sách của từng unit nằm cạnh nha
 - [Unit 8–9](breakdowns/2026-11-05_UNIT8_UNIT9.md): phạm vi sách, tranh gốc, đề/nghe/học từ và bằng chứng kiểm chứng.
 
 - [Unit 10 và Review 1–2](breakdowns/2026-11-06_UNIT10_REVIEW1_REVIEW2.md): đọc sách, nội dung tổng hợp, registry Review, lưu bài và QA.
+
+- [Kế hoạch tập hai](breakdowns/2026-11-18_KE_HOACH_TIENG_ANH_TAP2.md): xác nhận sách, Units 11–20/Review 3–4, mẫu nghe và các đợt triển khai; Unit 11 được giao trước, các phần sau chờ giao.
+
+- [Unit 11](breakdowns/2026-11-18_UNIT11.md): sáu đề, học từ/phát âm, âm thanh đi kèm, kiểm tra không có Speech API và giới hạn kiểm chứng iPad.

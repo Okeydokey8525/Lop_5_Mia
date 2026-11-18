@@ -12,17 +12,19 @@ UNITS=[
  dict(n=8,key='u08',dir='Unit8_InOurClassroom',name='In our classroom',pages='56–61',version=1),
  dict(n=9,key='u09',dir='Unit9_OurOutdoorActivities',name='Our outdoor activities',pages='62–67',version=1),
  dict(n=10,key='u10',dir='Unit10_OurSchoolTrip',name='Our school trip',pages='68–73',version=1),
+ dict(n=11,key='u11',dir='Unit11_FamilyTime',name='Family time',pages='6–11',version=1,volume=2),
 ]
 
 REVIEWS=[dict(n='R1',key='r01',dir='Review1_Units1_5',name='Review 1 · Ôn Unit 1–5',label='Review 1',pages='40–43',version=1,kind='review',overview='TongQuan_Review1'),
          dict(n='R2',key='r02',dir='Review2_Units6_10',name='Review 2 · Ôn Unit 6–10',label='Review 2',pages='74–77',version=1,kind='review',overview='TongQuan_Review2')]
-TOPICS=UNITS[:5]+[REVIEWS[0]]+UNITS[5:]+[REVIEWS[1]]
+TOPICS=UNITS[:5]+[REVIEWS[0]]+UNITS[5:10]+[REVIEWS[1]]+UNITS[10:]
 
 
 def label(unit):return unit.get('label',f"Unit {unit['n']}")
 def overview_name(unit):return unit.get('overview',f"TongQuan_Unit{unit['n']}")
 
 DETAILS={
+ 11:dict(topic='Chuyến đi gia đình: hoạt động, người đi cùng và thời gian',lessons={1:'Did you…? và hoạt động ở bãi biển',2:'Gia đình đã làm gì và khi nào?',3:'Nhịp câu, đọc và kể chuyến đi'},colour='#A63C70',bg='#FFE4F0'),
  'R1':dict(topic='Ôn tổng hợp Units 1–5',lessons={1:'Bản thân, nhà ở và bạn bè',2:'Sở thích và nghề nghiệp',3:'Đọc và viết tổng hợp'},colour='#A63C70',bg='#FFE4F0'),
  'R2':dict(topic='Ôn tổng hợp Units 6–10',lessons={1:'Trường lớp và sở thích',2:'Đồ dùng và chuyến đi',3:'Đọc và viết tổng hợp'},colour='#A33876',bg='#FFE5F2'),
  10:dict(topic='Chuyến đi của trường, địa điểm, hoạt động và thời gian',lessons={1:'Đã đi đến đâu?',2:'Đã làm gì?',3:'Tháng, đọc và viết'},colour='#A83A71',bg='#FFE5F0'),
@@ -43,6 +45,7 @@ def test_id(unit,index):
 
 def tests_for(unit):
     descriptions={
+      11:['Làm quen hoạt động trong chuyến đi cùng gia đình.','Nhận biết tranh, cụm từ và động từ quá khứ.','Hỏi Did you…?, What did…do? và When did…? theo thẻ.','Đọc đúng người, thời gian và thứ tự hoạt động trong chuyến đi.','Viết did + nguyên mẫu và câu kể quá khứ theo dữ kiện.','Kết hợp nghe, tranh, hội thoại, đọc và viết về chuyến đi gia đình.'],
       'R1':['Ôn bản thân, nhà ở, bạn bè, sở thích và nghề nghiệp.','Phân biệt từ vựng qua tranh và ngữ cảnh các Unit 1–5.','Ghép đúng loại câu hỏi và câu trả lời theo hồ sơ.','Đọc hồ sơ mới kết hợp địa chỉ, quốc tịch, sở thích và ước mơ.','Viết câu về nhiều thông tin từ cùng hồ sơ giả định.','Kết hợp nghe, đọc và viết trong phạm vi Review 1.'],
       'R2':['Ôn trường lớp, sở thích, đồ dùng và những chuyến đi.','Nhận biết từ vựng và các dạng động từ trong Unit 6–10.','Hỏi đáp vị trí, chủ sở hữu và các chuyến đi đã qua.','Đọc hồ sơ mới, phân biệt yesterday với school trip.','Viết câu vị trí, sở thích, sở hữu và chuyến đi theo thẻ.','Kết hợp nghe, đọc và viết trong phạm vi Review 2.'],
       10:['Làm quen địa điểm, hoạt động và thời gian chuyến đi.','Nhận biết hoạt động qua tranh và các dạng quá khứ.','Hỏi Did they go…?/What did they do…? theo thẻ.','Đọc chuyến đi, phân biệt cùng nơi nhưng khác tháng hoặc hoạt động.','Viết với did/go/went và động từ quá khứ theo thẻ.','Kết hợp nghe, nơi, tháng, hoạt động, đọc và viết.'],
@@ -64,5 +67,5 @@ def catalog():
 
 
 def index_data():
-    return [dict(n=u['n'],badgeLabel='Review' if u.get('kind')=='review' else 'Unit',badge=str(u['n'])[1:] if u.get('kind')=='review' else str(u['n']),dir=u['dir'],name=u['name'],range=f"{label(u)} · Trang {u['pages']}",overview=overview_name(u),
+    return [dict(n=u['n'],badgeLabel='Review' if u.get('kind')=='review' else 'Unit',badge=str(u['n'])[1:] if u.get('kind')=='review' else str(u['n']),volumeHeading='Tập hai' if u['n']==11 else 'Tập một' if u['n']==1 else '',dir=u['dir'],name=u['name'],range=f"{label(u)} · Trang {u['pages']}",overview=overview_name(u),
                  tests=[dict(id=test_id(u,i),file=f'De{i}_{slug}.html',name=name,theme=theme) for i,(slug,name,theme) in enumerate(tests_for(u),1)]) for u in TOPICS]

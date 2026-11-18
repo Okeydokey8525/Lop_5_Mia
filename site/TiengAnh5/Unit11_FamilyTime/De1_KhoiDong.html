@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tiếng Anh 5 · Unit 11 · Đề 1 · Khởi động</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<link rel="stylesheet" href="../../assets/engine.css"><script type="application/json" id="mia-audio-data">{"voice": "Microsoft Zira Desktop", "clips": {"Hello! Let’s listen and learn English.": "../../assets/english/u11/audio/d6be6a8235b16c4af314.wav", "I collected seashells.": "../../assets/english/u11/audio/994c8b3b80f8c3900699.wav", "I took photos with my father.": "../../assets/english/u11/audio/5d6f4a334a3a5665df19.wav", "My family went to Ha Long last weekend. I collected seashells with my brother.": "../../assets/english/u11/audio/b0bc8e92ba009fad0604.wav", "My family went to Nha Trang last summer. I took photos with my father.": "../../assets/english/u11/audio/f92ee223ccdbef357003.wav", "My family went to Singapore yesterday. I bought souvenirs with my mother.": "../../assets/english/u11/audio/0aa6187eb314a13d2ceb.wav", "On Saturday, I took photos with my father. On Sunday, I collected seashells with my brother.": "../../assets/english/u11/audio/ab80fe616149b3b415b6.wav"}}</script><script>// Optional recorded voice for pages with a complete, unit-owned audio manifest.
+(function(){'use strict';
+ const el=document.getElementById('mia-audio-data');if(!el)return;
+ const data=JSON.parse(el.textContent),native=window.speechSynthesis;
+ const voice={name:'Âm thanh có sẵn · Anh Mỹ (Zira)',lang:'en-US',voiceURI:'mia-recorded',localService:true};
+ // Reuse one media element for the whole spelling queue (per-element playback
+ // permission on iPad); only start playback from a learner's button press.
+ const player=new Audio();let sequence=0;
+ function cancel(){sequence++;player.onplaying=player.onended=player.onerror=null;player.pause();if(native)native.cancel();}
+ function speak(u){
+  if(u.voice?.voiceURI!==voice.voiceURI){
+   if(native&&window.SpeechSynthesisUtterance){const v=new SpeechSynthesisUtterance(u.text);for(const k of ['voice','lang','rate','pitch','volume','onstart','onend','onerror'])v[k]=u[k];native.speak(v);}
+   else u.onerror?.({error:'voice-unavailable'});return;
+  }
+  cancel();const token=sequence,src=data.clips[u.text];
+  if(!src){u.onerror?.({error:'audio-unavailable'});return;}
+  const audio=player;let failed=false;
+  const fail=()=>{if(token!==sequence||failed)return;failed=true;cancel();u.onerror?.({error:'audio-unavailable'});};
+  audio.preload='none';audio.src=src;audio.volume=u.volume??1;audio.playbackRate=(u.rate||0.9)/0.9;audio.preservesPitch=true;
+  audio.onplaying=()=>{if(token===sequence)u.onstart?.();};
+  audio.onended=()=>{if(token!==sequence)return;audio.onplaying=audio.onended=audio.onerror=null;u.onend?.();};
+  audio.onerror=fail;try{audio.play().catch(fail);}catch(e){fail();}
+ }
+ window.MiaRecorded={getVoices:()=>[voice,...(native?.getVoices()||[])],cancel,speak,
+  addEventListener:(name,fn)=>native?.addEventListener(name,fn),removeEventListener:(name,fn)=>native?.removeEventListener(name,fn)};
+})();
+</script><script src="../../assets/english/speech.js"></script><link rel="stylesheet" href="../../assets/theme.css"><script src="../../assets/theme.js"></script></head><body>
+<div class="page"><div id="app"></div></div>
+<div class="bar" id="bar" data-mode="run"><div class="bar-in"></div></div>
+<script>
+window.MKEN11=function(questions){return {"decimal": false, "meta": {"subject": "en", "version": 1, "lessonLabel": "Phần", "book": "Tiếng Anh 5 · Global Success · Tập hai", "title": "Unit 11 · Family time", "topic": "Chuyến đi gia đình: hoạt động, người đi cùng và thời gian", "range": "Trang 6–11", "minutes": 40, "tip": "Mỗi đề có 6 câu nghe, chia đều ba mức. Xem lời nghe sẽ ghi nhận đã dùng hỗ trợ, không trừ điểm. Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp."}, "lessons": {"1": "Did you…? và hoạt động ở bãi biển", "2": "Gia đình đã làm gì và khi nào?", "3": "Nhịp câu, đọc và kể chuyến đi"}, "levels": [{"id": "tb", "name": "Mức 1 · Trung bình", "desc": "Nhận biết từ và mẫu câu cơ bản", "stars": 1, "pts": 3}, {"id": "kha", "name": "Mức 2 · Khá", "desc": "Dùng mẫu câu, nối ý và tìm thông tin", "stars": 2, "pts": 5}, {"id": "gioi", "name": "Mức 3 · Giỏi", "desc": "Kết hợp đọc hiểu và viết câu theo dữ liệu", "stars": 3, "pts": 5}],"questions":questions};};
+
+window.TEST_FN=function(H){return MKEN11([
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the activity.",
+  "transcript": "I collected seashells.",
+  "speech": "I collected seashells.",
+  "fields": [
+   {
+    "label": "Activity:",
+    "answer": "collected seashells",
+    "options": [
+     "collected seashells",
+     "took photos",
+     "bought souvenirs",
+     "took a boat trip around the bay"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Activity: collected seashells.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose who was with the speaker.",
+  "transcript": "I took photos with my father.",
+  "speech": "I took photos with my father.",
+  "fields": [
+   {
+    "label": "With:",
+    "answer": "my father",
+    "options": [
+     "my brother",
+     "my father",
+     "my mother",
+     "my family"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: With: my father.",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the picture. Choose the activity.",
+  "why": "Bạn nhỏ đang nhặt vỏ sò.",
+  "lesson": 1,
+  "opts": [
+   "buy souvenirs",
+   "take a boat trip around the bay",
+   "collect seashells",
+   "take photos"
+  ],
+  "answer": 2,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u11/collect-seashells.webp\" alt=\"nhặt vỏ sò\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Swim → swam; take → took; buy → bought.",
+  "lesson": 2,
+  "pairs": [
+   {
+    "left": "swim",
+    "right": "swam"
+   },
+   {
+    "left": "take",
+    "right": "took"
+   },
+   {
+    "left": "buy",
+    "right": "bought"
+   }
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: Did you ___ photos?",
+  "why": "Sau did dùng take nguyên mẫu.",
+  "lesson": 1,
+  "answers": [
+   "take"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Choose the past form of eat.",
+  "why": "Eat → ate.",
+  "lesson": 2,
+  "opts": [
+   "eating",
+   "ate",
+   "eat",
+   "eats"
+  ],
+  "answer": 1,
+  "level": "tb"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Did + you + nguyên mẫu?",
+  "lesson": 1,
+  "items": [
+   "Did",
+   "you",
+   "collect",
+   "seashells?"
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Did you swim? Yes, I ___.",
+  "why": "Did you…? → Yes, I did.",
+  "lesson": 1,
+  "answers": [
+   "did"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Where did this family go?",
+  "why": "Đọc địa điểm trong thẻ.",
+  "lesson": 1,
+  "opts": [
+   "Singapore",
+   "Ha Long",
+   "Nha Trang",
+   "Sydney"
+  ],
+  "answer": 1,
+  "passage": "Speaker: An · Family destination: Ha Long · Time: last weekend · Speaker's activity: collected seashells · With: my brother.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Write the past form of see.",
+  "why": "See → saw.",
+  "lesson": 2,
+  "answers": [
+   "saw"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the time.",
+  "transcript": "My family went to Nha Trang last summer. I took photos with my father.",
+  "speech": "My family went to Nha Trang last summer. I took photos with my father.",
+  "fields": [
+   {
+    "label": "Time:",
+    "answer": "last summer",
+    "options": [
+     "last weekend",
+     "last summer",
+     "yesterday",
+     "last Sunday"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Time: last summer.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the past activity phrase.",
+  "why": "Linh took photos.",
+  "lesson": 2,
+  "answers": [
+   "took photos"
+  ],
+  "exactForm": false,
+  "passage": "Speaker: Linh · Family destination: Nha Trang · Time: last summer · Speaker's activity: took photos · With: my father.",
+  "level": "kha"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Did…do, không dùng did…did.",
+  "lesson": 2,
+  "items": [
+   "What",
+   "did",
+   "your",
+   "family",
+   "do",
+   "there?"
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the destination.",
+  "transcript": "My family went to Singapore yesterday. I bought souvenirs with my mother.",
+  "speech": "My family went to Singapore yesterday. I bought souvenirs with my mother.",
+  "fields": [
+   {
+    "label": "Destination:",
+    "answer": "Singapore",
+    "options": [
+     "Ha Long",
+     "Nha Trang",
+     "Sydney",
+     "Singapore"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Destination: Singapore.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Did you swim? No, I ___. Use the negative of did.",
+  "why": "Did not = didn’t.",
+  "lesson": 1,
+  "answers": [
+   "did not",
+   "didn't"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Đối chiếu hoạt động của Minh.",
+  "lesson": 2,
+  "items": [
+   {
+    "t": "The speaker bought souvenirs.",
+    "a": true
+   },
+   {
+    "t": "The speaker ate seafood.",
+    "a": false
+   }
+  ],
+  "passage": "Speaker: Minh · Family destination: Singapore · Time: yesterday · Speaker's activity: bought souvenirs · With: my mother.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write only who An was with, using the words from the card.",
+  "why": "Thẻ ghi my brother.",
+  "lesson": 1,
+  "answers": [
+   "my brother"
+  ],
+  "exactForm": false,
+  "passage": "Speaker: An · Family destination: Ha Long · Time: last weekend · Speaker's activity: collected seashells · With: my brother.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the time phrase only.",
+  "why": "Thẻ của Linh ghi last summer.",
+  "lesson": 3,
+  "answers": [
+   "last summer"
+  ],
+  "exactForm": false,
+  "passage": "Speaker: Linh · Family destination: Nha Trang · Time: last summer · Speaker's activity: took photos · With: my father.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write a destination sentence starting with My family and including the time.",
+  "why": "Dùng went to + nơi + thời gian.",
+  "lesson": 3,
+  "answers": [
+   "My family went to Ha Long last weekend."
+  ],
+  "exactForm": false,
+  "passage": "Speaker: An · Family destination: Ha Long · Time: last weekend · Speaker's activity: collected seashells · With: my brother.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write the activity sentence starting with I and including who was with you.",
+  "why": "I bought souvenirs with my mother.",
+  "lesson": 3,
+  "answers": [
+   "I bought souvenirs with my mother."
+  ],
+  "exactForm": false,
+  "passage": "Speaker: Minh · Family destination: Singapore · Time: yesterday · Speaker's activity: bought souvenirs · With: my mother.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and find both time and activity.",
+  "transcript": "My family went to Ha Long last weekend. I collected seashells with my brother.",
+  "speech": "My family went to Ha Long last weekend. I collected seashells with my brother.",
+  "fields": [
+   {
+    "label": "Time:",
+    "answer": "last weekend",
+    "options": [
+     "last weekend",
+     "last summer",
+     "yesterday",
+     "last Sunday"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Activity:",
+    "answer": "collected seashells",
+    "options": [
+     "swam",
+     "took photos",
+     "collected seashells",
+     "walked on the beach",
+     "took a boat trip around the bay",
+     "bought souvenirs",
+     "ate seafood",
+     "saw some interesting places"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Time: last weekend; Activity: collected seashells.",
+  "level": "gioi"
+ },
+ {
+  "type": "mc",
+  "stem": "Choose the correct question.",
+  "why": "Sau did dùng buy.",
+  "lesson": 3,
+  "opts": [
+   "Do you bought souvenirs?",
+   "Did you buys souvenirs?",
+   "Did you buy souvenirs?",
+   "Did you bought souvenirs?"
+  ],
+  "answer": 2,
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write the destination sentence, then the activity sentence, using My family and I.",
+  "why": "Lấy nơi, thời gian và người đi cùng từ cùng một thẻ.",
+  "lesson": 3,
+  "answers": [
+   "My family went to Nha Trang last summer. I took photos with my father."
+  ],
+  "exactForm": false,
+  "passage": "Speaker: Linh · Family destination: Nha Trang · Time: last summer · Speaker's activity: took photos · With: my father.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen carefully. Write only the Sunday activity and the companion phrase.",
+  "transcript": "On Saturday, I took photos with my father. On Sunday, I collected seashells with my brother.",
+  "speech": "On Saturday, I took photos with my father. On Sunday, I collected seashells with my brother.",
+  "fields": [
+   {
+    "label": "Sunday activity:",
+    "answer": "collected seashells",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "With:",
+    "answer": "my brother",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Sunday activity: collected seashells; With: my brother.",
+  "level": "gioi"
+ }
+]);};
+
+window.TEST_EXTRA={"id": "en-u11-de1-v1", "title": "Đề 1 · Khởi động", "theme": "Làm quen hoạt động trong chuyến đi cùng gia đình.", "home": "../index.html", "next": "De2_TuVungVaHinhAnh.html"};
+
+</script><script src="../../assets/engine.js"></script></body></html>

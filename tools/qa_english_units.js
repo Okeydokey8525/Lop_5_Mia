@@ -8,7 +8,8 @@ const KEYS=topicArg?topicArg.split('=')[1].split(','):NUMBERS.map(n=>'u'+String(
 assert.ok(KEYS.length&&KEYS.every(k=>/^(u[0-9]{2}|r0[12])$/.test(k))&&new Set(KEYS).size===KEYS.length);
 const BASE=(process.argv.slice(2).find(a=>!a.startsWith('--'))||'http://127.0.0.1:8765/Lop_5_Mia/').replace(/\/?$/,'/');
 const OUT=path.resolve(__dirname,'../artifacts','topics-'+KEYS.join('-')+(BASE.includes('127.0.0.1')?'-local':'-online'));fs.mkdirSync(OUT,{recursive:true});
-function fixture(){const voice={name:'English fixture',lang:'en-GB',voiceURI:'fixture'};window.__speech={calls:[],getVoices:()=>[voice],addEventListener(){},removeEventListener(){},cancel(){},speak(u){this.calls.push({text:u.text,rate:u.rate});u.onstart?.()}};Object.defineProperty(window,'speechSynthesis',{value:__speech});window.SpeechSynthesisUtterance=class{constructor(t){this.text=t}};}
+// Exercise the device-voice branch here; qa_recorded_audio.js tests real files without Speech API.
+function fixture(){Object.defineProperty(window,'MiaRecorded',{get(){return undefined},set(){},configurable:true});const voice={name:'English fixture',lang:'en-GB',voiceURI:'fixture'};window.__speech={calls:[],getVoices:()=>[voice],addEventListener(){},removeEventListener(){},cancel(){},speak(u){this.calls.push({text:u.text,rate:u.rate});u.onstart?.()}};Object.defineProperty(window,'speechSynthesis',{value:__speech});window.SpeechSynthesisUtterance=class{constructor(t){this.text=t}};}
 async function fill(p){await p.evaluate(()=>__quiz.Q.forEach((q,i)=>{const e=document.getElementById('q'+(i+1)),set=(x,v)=>{x.value=v;x.dispatchEvent(new Event('input',{bubbles:true}));x.dispatchEvent(new Event('change',{bubbles:true}))};if(q.type==='listen')q.fields.forEach((f,k)=>set(e.querySelector('[data-listen-field="'+k+'"]'),f.answer));else if(['mc','pic'].includes(q.type)){const x=e.querySelectorAll('input')[q.answer];x.checked=true;x.dispatchEvent(new Event('change',{bubbles:true}))}else if(q.type==='text')set(e.querySelector('.text-in'),q.answers[0]);else if(q.type==='match')q.pairs.forEach((_,k)=>set(e.querySelector('[data-pair="'+k+'"]'),String(k)));else if(q.type==='reorder')q.items.forEach((_,k)=>e.querySelector('[data-add="'+k+'"]').click());else if(q.type==='tf')q.items.forEach((it,k)=>{const x=e.querySelector(`input[name="q${i}_${k}"][value="${it.a?'d':'s'}"]`);x.checked=true;x.dispatchEvent(new Event('change',{bubbles:true}))});}));}
 (async()=>{const b=await chromium.launch();const errors=[];try{
  const p=await b.newPage({viewport:{width:390,height:844},reducedMotion:'reduce'});p.on('pageerror',e=>errors.push(e.message));await p.addInitScript(fixture);
@@ -25,6 +26,10 @@ async function fill(p){await p.evaluate(()=>__quiz.Q.forEach((q,i)=>{const e=doc
   }
   if(t.id==='en-u10-de3-v1'){
    const values=await p.evaluate(()=>{const q=__quiz.Q.find(q=>q.type==='text'&&!q.exactForm&&q.answers[0]==='did not');return [__quiz.textIsCorrect('didn’t',q.answers),__quiz.textIsCorrect('went',q.answers)]});assert.deepEqual(values,[true,false]);
+  }
+  if(t.id==='en-u11-de3-v1'){
+   assert.match(await p.evaluate(()=>window.MKEN11([]).meta.book),/Tập hai/);
+   const variants=await p.evaluate(()=>{const q=__quiz.Q.find(q=>q.type==='text'&&q.exactForm&&q.answers[0]==='I did not swim.');return [__quiz.textIsCorrect('I didn’t swim.',q.answers,true),__quiz.textIsCorrect('I did not swam.',q.answers,true),__quiz.textIsCorrect('I did not swim.',q.answers,true)];});assert.deepEqual(variants,[false,false,true]);
   }
   if(t.id.startsWith('en-r')){
    const scope=await p.evaluate(()=>[...new Set(__quiz.Q.flatMap(q=>q.sourceUnits||[]))].sort((a,b)=>a-b));assert.deepEqual(scope,t.id.startsWith('en-r01')?[1,2,3,4,5]:[6,7,8,9,10]);assert.ok(!(await p.title()).includes('Unit R'));
@@ -51,7 +56,9 @@ async function fill(p){await p.evaluate(()=>__quiz.Q.forEach((q,i)=>{const e=doc
  await p.goto(BASE+'TiengAnh5/index.html');assert.equal(await p.locator('#sDone').textContent(),String(KEYS.length));assert.equal(await p.locator('#sStar').textContent(),String(KEYS.length*3));assert.equal(await p.locator('.topic').count(),unitCount);
  assert.deepEqual(await p.locator('.art text').allTextContents(),['1',...[1,2,3,4].map(k=>String(Math.floor(english.length*k/4+0.5)))],'English staircase milestones must match the current exam count');
  if(KEYS.includes('r01')||KEYS.includes('r02')){
-  assert.deepEqual(await p.locator('.topic').evaluateAll(nodes=>nodes.map(n=>n.id)),['cd1','cd2','cd3','cd4','cd5','cdR1','cd6','cd7','cd8','cd9','cd10','cdR2'],'Reviews must appear in textbook order');
+  const expected=[...new Set(english.map(t=>{const k=t.id.split('-')[1];return k.startsWith('r')?'cdR'+Number(k.slice(1)):'cd'+Number(k.slice(1));}))];
+  assert.deepEqual(expected.slice(0,12),['cd1','cd2','cd3','cd4','cd5','cdR1','cd6','cd7','cd8','cd9','cd10','cdR2'],'Preserve volume-one textbook order');
+  assert.deepEqual(await p.locator('.topic').evaluateAll(nodes=>nodes.map(n=>n.id)),expected,'Topics must follow the catalog textbook order');
   assert.equal(await p.locator('.topic .no small').filter({hasText:'Review'}).count(),2);
  }
  await p.goto(BASE);assert.ok((await p.locator('#english-progress').textContent()).includes(`${KEYS.length}/${english.length} đề · ${KEYS.length*3}/${english.length*3} sao`));

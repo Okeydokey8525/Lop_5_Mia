@@ -45,14 +45,14 @@
   questions.forEach(q=>{const r=state.practice[q.id],el=$('[data-exercise="'+q.id+'"]');if(q.kind==='picture')el.querySelectorAll('input').forEach(i=>i.checked=i.value===(r?.answer||''));else el.querySelector('[data-answer]').value=r?.answer||'';$('#feedback-'+q.id).textContent='';if(r?.checked)feedback(q,r.answer);});progress();filter();storageStatus(false);
  }
  restore();
- const synth=window.speechSynthesis,available=!!(synth&&window.SpeechSynthesisUtterance),select=$('#voice');
+ const synth=window.MiaRecorded||window.speechSynthesis,Utterance=window.MiaRecorded?class{constructor(text){this.text=text;}}:window.SpeechSynthesisUtterance,available=!!(synth&&Utterance),select=$('#voice');
  let voices=[],sequence=0,utterance=null,startTimer,endTimer,gapTimer;
  function clearHighlight(){document.querySelectorAll('[data-letter].active').forEach(el=>el.classList.remove('active'));}
  function playStatus(message){$('#play-status').textContent=message;$('#mini-status').textContent=message;}
  function stop(message){sequence++;clearTimeout(startTimer);clearTimeout(endTimer);clearTimeout(gapTimer);if(available)synth.cancel();utterance=null;clearHighlight();$('#stop').disabled=true;$('#mini-player').hidden=true;if(message)playStatus(message);}
  function populate(){
   const previous=select.value;voices=available?synth.getVoices().filter(v=>/^en(?:[-_]|$)/i.test(v.lang)):[];
-  voices.sort((a,b)=>Number(b.lang==='en-GB')-Number(a.lang==='en-GB')||a.name.localeCompare(b.name));select.replaceChildren();
+  voices.sort((a,b)=>Number(b.voiceURI==='mia-recorded')-Number(a.voiceURI==='mia-recorded')||Number(b.lang==='en-GB')-Number(a.lang==='en-GB')||a.name.localeCompare(b.name));select.replaceChildren();
   voices.forEach(v=>{const o=document.createElement('option');o.value=v.voiceURI;o.textContent=v.name+' · '+v.lang;select.appendChild(o);});
   if(voices.some(v=>v.voiceURI===previous))select.value=previous;
   document.querySelectorAll('[data-audio],[data-say],[data-spell]').forEach(b=>b.disabled=!voices.length);select.disabled=!voices.length;
@@ -65,7 +65,7 @@
   function next(index){
    if(token!==sequence)return;
    if(index===items.length){utterance=null;clearHighlight();$('#stop').disabled=true;$('#mini-player').hidden=true;playStatus(finish||'Đã nghe xong. Em đọc lại một lần nhé!');return;}
-   const item=items[index],u=new SpeechSynthesisUtterance(item.text);utterance=u;u.voice=voice;u.lang=voice.lang;u.rate=slow?0.72:0.9;u.pitch=1;u.volume=1;
+   const item=items[index],u=new Utterance(item.text);utterance=u;u.voice=voice;u.lang=voice.lang;u.rate=slow?0.72:0.9;u.pitch=1;u.volume=1;
    playStatus('Đang chuẩn bị giọng đọc…');
    const fail=()=>{if(token===sequence)stop('Chưa phát được âm thanh. Em chọn giọng khác hoặc xem chữ nhé.');};
    u.onstart=()=>{if(token!==sequence)return;clearTimeout(startTimer);clearHighlight();if(item.letter)$('[data-letter="'+item.letter+'"]').classList.add('active');playStatus(item.letter?'Đang đánh vần: '+item.text:slow?'Đang nghe chậm…':'Đang nghe…');endTimer=setTimeout(fail,60000);};

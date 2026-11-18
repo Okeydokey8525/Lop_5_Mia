@@ -1,0 +1,372 @@
+{
+  "voice": "Microsoft Zira Desktop",
+  "language": "en-US",
+  "rate": -1,
+  "format": "PCM 22050 Hz 16-bit mono",
+  "clips": [
+    {
+      "text": "A",
+      "file": "559aead08264d5795d39.wav"
+    },
+    {
+      "text": "B",
+      "file": "df7e70e5021544f4834b.wav"
+    },
+    {
+      "text": "C",
+      "file": "6b23c0d5f35d1b11f9b6.wav"
+    },
+    {
+      "text": "D",
+      "file": "3f39d5c348e5b79d06e8.wav"
+    },
+    {
+      "text": "Did you buy souvenirs?",
+      "file": "9e8857c4294f67eba549.wav"
+    },
+    {
+      "text": "Did you buy souvenirs? Yes, I did. I bought souvenirs with my father.",
+      "file": "381d24777ae3110a7ef3.wav"
+    },
+    {
+      "text": "Did you swim?",
+      "file": "21e0c9f55677a71974de.wav"
+    },
+    {
+      "text": "Did you swim? Yes, I did. I swam with my mother.",
+      "file": "bbc96f1822ce2501edcf.wav"
+    },
+    {
+      "text": "Did you take photos?",
+      "file": "5d9a4064ee4f96d06437.wav"
+    },
+    {
+      "text": "Did you take photos? No, I did not. I collected seashells.",
+      "file": "5cc7636463142a242c54.wav"
+    },
+    {
+      "text": "E",
+      "file": "a9f51566bd6705f7ea6a.wav"
+    },
+    {
+      "text": "F",
+      "file": "f67ab10ad4e4c53121b6.wav"
+    },
+    {
+      "text": "G",
+      "file": "333e0a1e27815d0ceee5.wav"
+    },
+    {
+      "text": "H",
+      "file": "44bd7ae60f478fae1061.wav"
+    },
+    {
+      "text": "Hello! Let us listen and learn English.",
+      "file": "d049b36b33ea2a1929e2.wav"
+    },
+    {
+      "text": "Hello! Let’s listen and learn English.",
+      "file": "d6be6a8235b16c4af314.wav"
+    },
+    {
+      "text": "I",
+      "file": "a83dd0ccbffe39d071cc.wav"
+    },
+    {
+      "text": "I ate seafood with my family.",
+      "file": "177a2278c1e93ebee570.wav"
+    },
+    {
+      "text": "I ate seafood.",
+      "file": "ee13454b6dcbd233c11f.wav"
+    },
+    {
+      "text": "I bought souvenirs with my mother.",
+      "file": "06ae1320a72e2fc90149.wav"
+    },
+    {
+      "text": "I bought souvenirs.",
+      "file": "f4765bc672f50c8797ef.wav"
+    },
+    {
+      "text": "I collected seashells with my brother.",
+      "file": "f3c5018c88bc3b3a06e2.wav"
+    },
+    {
+      "text": "I collected seashells with my family.",
+      "file": "3cb61a504580365ba619.wav"
+    },
+    {
+      "text": "I collected seashells yesterday.",
+      "file": "8995d6fa4c30e78fcd32.wav"
+    },
+    {
+      "text": "I collected seashells.",
+      "file": "994c8b3b80f8c3900699.wav"
+    },
+    {
+      "text": "I saw some interesting places with my family.",
+      "file": "f733ad3ec94446d0c6e9.wav"
+    },
+    {
+      "text": "I saw some interesting places.",
+      "file": "5fb625f5bca87ba85f0e.wav"
+    },
+    {
+      "text": "I swam with my family.",
+      "file": "9bbadda4ba2d359865c0.wav"
+    },
+    {
+      "text": "I swam with my mother.",
+      "file": "e6cf56ed7b91fa12a7b2.wav"
+    },
+    {
+      "text": "I took a boat trip around the bay with my family.",
+      "file": "819b291b3dd4f2cc2c28.wav"
+    },
+    {
+      "text": "I took a boat trip around the bay.",
+      "file": "57313f68029cd0198a20.wav"
+    },
+    {
+      "text": "I took photos with my family.",
+      "file": "1a96f0b814f332bc1dbf.wav"
+    },
+    {
+      "text": "I took photos with my father.",
+      "file": "5d6f4a334a3a5665df19.wav"
+    },
+    {
+      "text": "I took photos.",
+      "file": "7cd0254ddecf0f33b0ec.wav"
+    },
+    {
+      "text": "I walked on the beach on Saturday.",
+      "file": "cb2167c1ff03afdf6949.wav"
+    },
+    {
+      "text": "I walked on the beach with my family.",
+      "file": "79ccfd446e0ebee4bb63.wav"
+    },
+    {
+      "text": "J",
+      "file": "6da43b944e494e885e69.wav"
+    },
+    {
+      "text": "K",
+      "file": "86be9a55762d316a3026.wav"
+    },
+    {
+      "text": "L",
+      "file": "72dfcfb0c470ac255cde.wav"
+    },
+    {
+      "text": "M",
+      "file": "08f271887ce94707da82.wav"
+    },
+    {
+      "text": "My family went there last summer.",
+      "file": "c94088608c96e5e8d1ef.wav"
+    },
+    {
+      "text": "My family went to Ha Long last Sunday. I took a boat trip around the bay with my family.",
+      "file": "0f23025547e4771f6654.wav"
+    },
+    {
+      "text": "My family went to Ha Long last weekend. I collected seashells with my brother.",
+      "file": "b0bc8e92ba009fad0604.wav"
+    },
+    {
+      "text": "My family went to Nha Trang last Sunday. I ate seafood with my family.",
+      "file": "6caaa61d308391b4d3b9.wav"
+    },
+    {
+      "text": "My family went to Nha Trang last summer. I took photos with my father.",
+      "file": "f92ee223ccdbef357003.wav"
+    },
+    {
+      "text": "My family went to Singapore yesterday. I bought souvenirs with my mother.",
+      "file": "0aa6187eb314a13d2ceb.wav"
+    },
+    {
+      "text": "My family went to Sydney last weekend. I saw some interesting places with my family.",
+      "file": "f0eeab9908f361a89df3.wav"
+    },
+    {
+      "text": "N",
+      "file": "8ce86a6ae65d3692e730.wav"
+    },
+    {
+      "text": "O",
+      "file": "c4694f2e93d5c4e7d51f.wav"
+    },
+    {
+      "text": "On Saturday, I took photos with my father. On Sunday, I collected seashells with my brother.",
+      "file": "ab80fe616149b3b415b6.wav"
+    },
+    {
+      "text": "P",
+      "file": "5c62e091b8c0565f1baf.wav"
+    },
+    {
+      "text": "Q",
+      "file": "4ae81572f06e1b88fd5c.wav"
+    },
+    {
+      "text": "R",
+      "file": "8c2574892063f995fdf7.wav"
+    },
+    {
+      "text": "S",
+      "file": "8de0b3c47f112c59745f.wav"
+    },
+    {
+      "text": "T",
+      "file": "e632b7095b0bf32c260f.wav"
+    },
+    {
+      "text": "U",
+      "file": "a25513c7e0f6eaa80a33.wav"
+    },
+    {
+      "text": "V",
+      "file": "de5a6f78116eca62d7fc.wav"
+    },
+    {
+      "text": "W",
+      "file": "fcb5f40df9be6bae66c1.wav"
+    },
+    {
+      "text": "We ate seafood last weekend.",
+      "file": "b2124e3ca6649a5b9756.wav"
+    },
+    {
+      "text": "We ate seafood.",
+      "file": "92d9675d50cebbef4148.wav"
+    },
+    {
+      "text": "We bought souvenirs last summer.",
+      "file": "8277c7a255c9d5aed83d.wav"
+    },
+    {
+      "text": "We bought souvenirs.",
+      "file": "bf80db787c77b0ce441b.wav"
+    },
+    {
+      "text": "We saw some interesting places last summer.",
+      "file": "6360c71232f06c89b110.wav"
+    },
+    {
+      "text": "We saw some interesting places.",
+      "file": "f0a9da85269bf92b8151.wav"
+    },
+    {
+      "text": "We took a boat trip around the bay.",
+      "file": "b6e2048a2ff751820b15.wav"
+    },
+    {
+      "text": "We took a boat trip last weekend.",
+      "file": "e71ce19af9b158f3e691.wav"
+    },
+    {
+      "text": "What did you do on Sunday?",
+      "file": "501484d9f4667453f369.wav"
+    },
+    {
+      "text": "What did you do on Sunday? I took photos with my brother.",
+      "file": "14832d188d75b016b284.wav"
+    },
+    {
+      "text": "What did your family do there?",
+      "file": "fafbd8234971b14938aa.wav"
+    },
+    {
+      "text": "What did your family do there? We took a boat trip around the bay.",
+      "file": "0390ef571749b66aa928.wav"
+    },
+    {
+      "text": "When did your family go there?",
+      "file": "6744ceae906cd8a22ad7.wav"
+    },
+    {
+      "text": "When did your family go there? We went there last summer.",
+      "file": "2ceca153dbbf9ae6312c.wav"
+    },
+    {
+      "text": "X",
+      "file": "4b68ab3847feda7d6c62.wav"
+    },
+    {
+      "text": "Y",
+      "file": "18f5384d58bcb1bba0bc.wav"
+    },
+    {
+      "text": "Z",
+      "file": "bbeebd879e1dff691854.wav"
+    },
+    {
+      "text": "ate seafood",
+      "file": "9d0c6d843198fe76f6b2.wav"
+    },
+    {
+      "text": "bought souvenirs",
+      "file": "12d3d33d3289837686db.wav"
+    },
+    {
+      "text": "buy souvenirs",
+      "file": "68c8dad1cc032e11361e.wav"
+    },
+    {
+      "text": "collect seashells",
+      "file": "f62624c18211d2d78341.wav"
+    },
+    {
+      "text": "eat seafood",
+      "file": "63e85884eb680d28dbd2.wav"
+    },
+    {
+      "text": "last summer",
+      "file": "427610a05f07c7be7e94.wav"
+    },
+    {
+      "text": "last weekend",
+      "file": "4cb45e6511bdf3e83dc4.wav"
+    },
+    {
+      "text": "on Saturday",
+      "file": "fcaac82d13e4c4bfbd92.wav"
+    },
+    {
+      "text": "see some interesting places",
+      "file": "4d04798b4fb1ea2b7bd1.wav"
+    },
+    {
+      "text": "swam",
+      "file": "0a7aae69a25356b6e806.wav"
+    },
+    {
+      "text": "swim",
+      "file": "d493f8869139bac710b9.wav"
+    },
+    {
+      "text": "take a boat trip around the bay",
+      "file": "b18ad311611601a25e69.wav"
+    },
+    {
+      "text": "take photos",
+      "file": "0f69f5e9568921d746ce.wav"
+    },
+    {
+      "text": "took photos",
+      "file": "e85e0f41f69d77c3418e.wav"
+    },
+    {
+      "text": "walk on the beach",
+      "file": "32ec32dfae37e50b1b76.wav"
+    },
+    {
+      "text": "yesterday",
+      "file": "9523d9fbe79bcf3ee5f9.wav"
+    }
+  ]
+}

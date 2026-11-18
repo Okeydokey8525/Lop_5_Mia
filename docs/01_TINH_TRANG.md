@@ -1,13 +1,14 @@
 # 01 — Tình trạng hiện hành
 
-Cập nhật 06/11/2026. Bản lịch sử trước khi gom tài liệu nằm trong `history/`; không dùng những số liệu cũ làm trạng thái hiện tại.
+Cập nhật bản nguồn 18/11/2026; tình trạng CI/live Unit 11 xem mục cuối. Bản lịch sử trước khi gom tài liệu nằm trong `history/`; không dùng những số liệu cũ làm trạng thái hiện tại.
 
 ## Đã bàn giao
 
 - Website: https://okeydokey8525.github.io/Lop_5_Mia/ — GitHub Pages qua Actions.
 - Toán 5 tập một: 6 chủ đề, 36 đề, mỗi đề 24 câu/100 điểm; ID `cd{n}-de{i}` giữ nguyên.
 - Tiếng Anh 5 tập một: Unit 1–10 và Review 1–2, đặt đúng thứ tự sách. Có 12 tổng quan HTML/PNG +72 đề (1728 câu); mỗi đề 24 câu/100 điểm và sáu nghe (hai mỗi cấp). Units 2–10 và hai Review có học từ/phát âm tự lưu; Unit 1 có mẫu nghe. Chưa chấm nói.
-- Toàn site: 108 đề chính thức, 142 HTML, 18 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
+- Bản nguồn hiện tại thêm Unit 11 tập hai: sáu đề/144 câu, tổng quan và học từ/phát âm có audio đi kèm. Tổng Anh 78 đề/1872 câu.
+- Toàn site: 114 đề chính thức, 150 HTML, 19 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
 - Giao diện hồng anh đào, tối màu tím mận; reader trên màn hình ≤820px, poster để xem/in. Tiến độ theo origin/trình duyệt, không đồng bộ thiết bị.
 - Chủ repo đã xem Unit 1, phản hồi hình khó nhận diện và duyệt mẫu cá heo. Ngày 30/10 đã áp dụng phong cách mới cho đủ 6 tranh ở tổng quan/câu hỏi, giữ nguyên 144 câu và đáp án. Sau đó chủ repo giao Unit 2–3, Unit 4–5 rồi Unit 6–7; đã bổ sung Unit 8–9 theo yêu cầu tiếp theo. đã tiếp tục giao Unit 10, Review 1 và Review 2 ngày 06/11. Chỉ còn Starter trong tập một; chưa triển khai tập hai.
 
@@ -146,3 +147,7 @@ Local toàn site đạt: 90/90 đề 100/100, 118 HTML không lỗi trình duy�
 Đã xuất bản commit `5bba2eb`; [Actions/Pages đạt](https://github.com/Okeydokey8525/Lop_5_Mia/actions/runs/42103227242). CI kiểm toàn bộ bản cuối: 108 đề/142 HTML, 2272 trường hợp responsive, nghe/nháp/tiến độ/Review/học từ. Trên Pages thật, qa_english_units --topics=u10,r01,r02 đạt 18/18 đề 100/100, đủ 108 nghe, giữ nháp/best, chấm phần/reset cách ly, thứ tự thẻ đúng U1–5/R1/U6–10/R2 và nhãn Review. qa_persistence --topics=... đạt đóng/mở browser, xem lại bài nộp, best/last, Back/cross-tab. qa_study live đạt cả 11 trang: 162 chuỗi ABC, 67 hội thoại, 132 bài luyện, lưu sau browser restart và 264 layout/theme, gồm tương thích mẫu Unit 6. Speech trong runner là mô phỏng.
 
 34 tài nguyên live (24 HTML mới, bốn WebP, ba trang chủ/môn, catalog, home.js và study.js) khớp byte bản nguồn; không so byte PNG giữa Windows/Linux. Edge native local: 26 start/end, không error, chỉ chứng minh phát xong; chưa nghe duyệt phát âm bằng tai hay có đánh giá độ khó của học sinh. Báo cáo: artifacts/topics-u10-r01-r02-online/report.json, final-three-online/assets.json, study-full-online/report.json và persistence-online.
+
+## Unit 11 tập hai (18/11/2026)
+
+Đã triển khai Unit 11 theo yêu cầu; nguồn trang in 6–11 và Wordlist 74–75. Có sáu đề/36 nghe, bốn tranh mới, tổng quan HTML/PNG, 16 từ/cụm, sáu hội thoại và 12 bài luyện tự lưu. 91 file WAV tự tạo đi kèm để nghe không cần Speech API; chỉ áp dụng mẫu này cho Unit 11. Người dùng xác nhận bé dùng iPad, nhưng chưa thử trên máy bé/chưa duyệt giọng bằng tai. Bằng chứng và trạng thái CI/live ở [bàn giao Unit 11](breakdowns/2026-11-18_UNIT11.md). Các đoạn ngày 06/11 trở về trước là lịch sử, không phải số liệu hiện hành.

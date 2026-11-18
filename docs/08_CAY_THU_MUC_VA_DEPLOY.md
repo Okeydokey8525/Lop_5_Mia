@@ -92,3 +92,7 @@ Nguồn theme dùng chung tại generator/theme.css và generator/theme.js, xu�
 Bộ nguồn tools/templates/home.{html,css,js}; CSS/JS xuất riêng ra site/assets/home.{css,js}. Build thay __HOME_TESTS__ bằng đúng danh sách sinh catalog.json trước khi viết HTML. Chỉ root index và hai tài nguyên home đổi khi điều chỉnh hiệu ứng trang chọn môn; không sửa nguồn câu hỏi.
 
 Review có thư mục nguồn `english/r01/`, `r02/`, web `TiengAnh5/Review1_Units1_5/`, `Review2_Units6_10/`; ảnh tái dùng từ các Unit trong assets/english/uNN. Registry TOPICS giữ thứ tự theo sách; catalog có kind/topic/overview để runner không suy tên URL từ số Unit.
+
+### Unit 11 tập hai và âm thanh đi kèm (18/11/2026)
+
+Nguồn `english/u11/`, web `TiengAnh5/Unit11_FamilyTime/`. Nguồn WAV/manifest trong `u11/audio/`, trích ra `site/assets/english/u11/audio/`; standalone nhúng audio. `english/recorded.py` và `recorded.js` chỉ được gắn vào trang có manifest, không thay phương thức nghe của Unit cũ. Công cụ tạo WAV `tools/generate_english_audio.ps1` là bước tác giả riêng, không chạy trong CI. CI cài Chromium và WebKit để kiểm file nghe thật. Bản nguồn có 114 đề/150 HTML/19 poster; cập nhật số kiểm chứng ở bàn giao Unit 11.

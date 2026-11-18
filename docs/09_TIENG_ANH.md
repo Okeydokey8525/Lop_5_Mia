@@ -1,6 +1,6 @@
 # 09 — Đặc tả Tiếng Anh 5 (Global Success, Sách học sinh tập 1)
 
-Sách của chủ repo: `C:\LeDucLuong\Mia\tai_lieu\sach\SHS Tiếng anh 5 Global Success - Tập 1.pdf` (83 trang, bản **scan ảnh**, không có lớp chữ; nhà xuất bản Giáo dục Việt Nam & Macmillan Education). File này **không** nằm trong repo. Tập 2 chưa có.
+Sách tập một của chủ repo: `C:\LeDucLuong\Mia\tai_lieu\sach\SHS Tiếng anh 5 Global Success - Tập 1.pdf` (83 trang, bản **scan ảnh**, không có lớp chữ; nhà xuất bản Giáo dục Việt Nam & Macmillan Education). File này **không** nằm trong repo. Cập nhật 18/11/2026: đã có bản scan tập hai 79 trang PDF, xác nhận Units 11–20 và Review 3–4; xem [kế hoạch tập hai](breakdowns/2026-11-18_KE_HOACH_TIENG_ANH_TAP2.md). Đã nhận giao và làm Unit 11 trước, xem mục cập nhật cuối tài liệu; các phần sau vẫn là kế hoạch.
 
 ## Mục lục (đọc từ trang "Book map", trang 4–5)
 | Chủ đề (đề xuất) | Tên | Trang | Cấu trúc câu nổi bật (theo Book map) |
@@ -119,3 +119,7 @@ Mỗi Unit sáu đề/144 câu/36 nghe và tổng quan HTML/PNG. Cả hai có h�
 Đọc trực tiếp 40–43, 68–77. Unit 10: did/go/went, bốn địa danh theo sách, visited the old buildings/planted trees/played games/walked around the lake, No-VEM-ber/De-CEM-ber. Tranh là hoạt động chung, không dùng nhận dạng địa danh thật. Review 1: bản thân, nhà ở, quốc tịch/tính cách, sở thích/nghề; có mở rộng nghề/nơi làm việc/hành động. Review 2: trường lớp, sở thích, sở hữu/vị trí, chuyến đi; có đọc thứ tự sự kiện và loại holiday theo thẻ. Đề và hồ sơ tự soạn, không sao chép bài đọc/audio sách.
 
 Mỗi phần sáu đề/144 câu/36 nghe. Review là bài riêng, dùng key r01/r02; registry TOPICS sắp U1–5, R1, U6–10, R2, trong khi UNITS chỉ giữ mười Unit chính. Catalog có kind/topic/overview; audit kiểm đúng sourceUnits của từng Review. Học từ Unit 10 có 16 từ/cụm, hai Review mỗi phần 14; cùng sáu hội thoại, 12 bài luyện tự lưu. Tổng 12 phần/72 đề/1728 câu. Starter là phần duy nhất chưa làm trong tập một; không đưa tập hai vào phạm vi hiện hành.
+
+## Unit 11 tập hai (18/11/2026)
+
+Đã làm Unit 11 Family time, trang in 6–11, đối chiếu Wordlist 74–75. Trọng tâm: Did you + nguyên mẫu; câu kể swam/took/bought/ate/saw; What did your family do...? và When did...? Sáu đề/144 câu/36 nghe; 16 từ/cụm, sáu hội thoại, 12 bài luyện, tổng quan HTML/PNG và bốn tranh hoạt động mới. Có 91 WAV tạo từ lời tự soạn, phát khi không có giọng thiết bị; giọng Zira Anh Mỹ là mẫu chờ nghe duyệt/iPad thực tế. Tổng hiện hành 13 phần/78 đề/1872 câu. Xem bàn giao 2026-11-18_UNIT11.md; các tổng số phía trên ghi lại lịch sử.

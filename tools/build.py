@@ -2,6 +2,7 @@
 import argparse
 import base64
 import os
+import re
 from pathlib import Path
 import shutil
 import subprocess
@@ -52,6 +53,12 @@ def main():
         target=assets/'english'/name
         target.parent.mkdir(parents=True,exist_ok=True)
         target.write_text(data,encoding='utf-8',newline='\n')
+    recorded_resources={}
+    for source in sorted((GEN/'english').glob('u[0-9][0-9]/audio/*.wav')):
+        relative=Path('english')/source.parent.parent.name/'audio'/source.name
+        target=assets/relative;target.parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(source,target)
+        recorded_resources['data:audio/wav;base64,'+base64.b64encode(source.read_bytes()).decode('ascii')]=relative.as_posix()
     illustrations = {}
     for source in sorted((GEN / "english").glob("u[0-9][0-9]/images/*.webp")):
         relative = Path("english") / source.parent.parent.name / source.name
@@ -94,6 +101,8 @@ def main():
             html=html.replace(embedded,external)
         for embedded, image_path in illustrations.items():
             html = html.replace(embedded, prefix + image_path)
+        if 'id="mia-audio-data"' in html:
+            html=re.sub(r'data:audio/wav;base64,[A-Za-z0-9+/=]+',lambda m:prefix+recorded_resources[m[0]],html)
         if resources["fonts.css"] in html:
             raise ValueError(f"Font extraction failed: {source}")
         target.write_text(html, encoding="utf-8", newline="\n")
