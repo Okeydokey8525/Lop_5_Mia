@@ -4,7 +4,7 @@ Built-in ImageGen: four separate new-image calls, not CLI. Originals retained ou
 
 ## Shared prompt
 
-Use case: illustration-story. Asset: one English vocabulary card for a Vietnamese child aged 10, landscape 3:2. Style: polished children's storybook illustration, rounded organic outlines, soft watercolor/gouache shading, warm cream background, gentle pastel peach pink, mint, teal and lilac. One coherent scene, clearly recognizable at 280px wide, generous margins, centered main subject. No panels, no labels, no letters, no text, no logos, no watermark. 
+Use case: illustration-story. Asset: one English vocabulary card for a Vietnamese child aged 10, landscape 3:2. Style: polished children's storybook illustration, rounded organic outlines, soft watercolor/gouache shading, warm cream background, gentle pastel peach pink, mint, teal and lilac. One coherent scene, clearly recognizable at 280px wide, generous margins, centered main subject. No panels, no labels, no letters, no text, no logos, no watermark.
 
 ## join-a-music-club
 

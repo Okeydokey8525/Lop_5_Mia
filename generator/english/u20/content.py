@@ -42,7 +42,7 @@ def card(p):
 
 
 def passage(p):
-    return f"My name is {p['name']}. Last summer, I {p['past']} with my cousins. This summer, {destination(p)[0].lower() + destination(p)[1:]} My family is going to travel by bus. {activity(p)} I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans."
+    return f"My name is {p['name']}. Last summer, I {p['past']} with my cousins. This summer, {destination(p)} My family is going to travel by bus. {activity(p)} I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans."
 
 
 def shown(q, p):

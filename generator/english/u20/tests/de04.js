@@ -52,7 +52,7 @@ window.TEST_FN=function(H){return MKEN20([
    "An"
   ],
   "exactForm": false,
-  "passage": "My name is An. Last summer, I grew vegetables with my cousins. This summer, i am going to visit Huong River. My family is going to travel by bus. I am going to join a music club. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "passage": "My name is An. Last summer, I grew vegetables with my cousins. This summer, I am going to visit Huong River. My family is going to travel by bus. I am going to join a music club. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
   "level": "tb"
  },
  {
@@ -67,7 +67,7 @@ window.TEST_FN=function(H){return MKEN20([
    "Huong River"
   ],
   "answer": 3,
-  "passage": "My name is An. Last summer, I grew vegetables with my cousins. This summer, i am going to visit Huong River. My family is going to travel by bus. I am going to join a music club. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "passage": "My name is An. Last summer, I grew vegetables with my cousins. This summer, I am going to visit Huong River. My family is going to travel by bus. I am going to join a music club. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
   "level": "tb"
  },
  {
@@ -79,7 +79,7 @@ window.TEST_FN=function(H){return MKEN20([
    "join a music club"
   ],
   "exactForm": false,
-  "passage": "My name is An. Last summer, I grew vegetables with my cousins. This summer, i am going to visit Huong River. My family is going to travel by bus. I am going to join a music club. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "passage": "My name is An. Last summer, I grew vegetables with my cousins. This summer, I am going to visit Huong River. My family is going to travel by bus. I am going to join a music club. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
   "level": "tb"
  },
  {
@@ -97,7 +97,7 @@ window.TEST_FN=function(H){return MKEN20([
     "a": false
    }
   ],
-  "passage": "My name is An. Last summer, I grew vegetables with my cousins. This summer, i am going to visit Huong River. My family is going to travel by bus. I am going to join a music club. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "passage": "My name is An. Last summer, I grew vegetables with my cousins. This summer, I am going to visit Huong River. My family is going to travel by bus. I am going to join a music club. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
   "level": "tb"
  },
  {
@@ -109,7 +109,7 @@ window.TEST_FN=function(H){return MKEN20([
    "Linh"
   ],
   "exactForm": false,
-  "passage": "My name is Linh. Last summer, I joined a music club with my cousins. This summer, i am going to visit Phong Nha Cave. My family is going to travel by bus. I am going to go camping. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "passage": "My name is Linh. Last summer, I joined a music club with my cousins. This summer, I am going to visit Phong Nha Cave. My family is going to travel by bus. I am going to go camping. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
   "level": "tb"
  },
  {
@@ -124,7 +124,7 @@ window.TEST_FN=function(H){return MKEN20([
    "Huong River"
   ],
   "answer": 0,
-  "passage": "My name is Linh. Last summer, I joined a music club with my cousins. This summer, i am going to visit Phong Nha Cave. My family is going to travel by bus. I am going to go camping. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "passage": "My name is Linh. Last summer, I joined a music club with my cousins. This summer, I am going to visit Phong Nha Cave. My family is going to travel by bus. I am going to go camping. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
   "level": "tb"
  },
  {
@@ -136,7 +136,7 @@ window.TEST_FN=function(H){return MKEN20([
    "go camping"
   ],
   "exactForm": false,
-  "passage": "My name is Linh. Last summer, I joined a music club with my cousins. This summer, i am going to visit Phong Nha Cave. My family is going to travel by bus. I am going to go camping. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "passage": "My name is Linh. Last summer, I joined a music club with my cousins. This summer, I am going to visit Phong Nha Cave. My family is going to travel by bus. I am going to go camping. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
   "level": "tb"
  },
  {
@@ -154,7 +154,7 @@ window.TEST_FN=function(H){return MKEN20([
     "a": false
    }
   ],
-  "passage": "My name is Linh. Last summer, I joined a music club with my cousins. This summer, i am going to visit Phong Nha Cave. My family is going to travel by bus. I am going to go camping. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "passage": "My name is Linh. Last summer, I joined a music club with my cousins. This summer, I am going to visit Phong Nha Cave. My family is going to travel by bus. I am going to go camping. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
   "level": "tb"
  },
  {
@@ -188,7 +188,7 @@ window.TEST_FN=function(H){return MKEN20([
    "Minh"
   ],
   "exactForm": false,
-  "passage": "My name is Minh. Last summer, I went camping with my cousins. This summer, i am going to visit Phu Quoc Island. My family is going to travel by bus. I am going to practise swimming. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "passage": "My name is Minh. Last summer, I went camping with my cousins. This summer, I am going to visit Phu Quoc Island. My family is going to travel by bus. I am going to practise swimming. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
   "level": "kha"
  },
  {
@@ -203,7 +203,7 @@ window.TEST_FN=function(H){return MKEN20([
    "Huong River"
   ],
   "answer": 1,
-  "passage": "My name is Minh. Last summer, I went camping with my cousins. This summer, i am going to visit Phu Quoc Island. My family is going to travel by bus. I am going to practise swimming. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "passage": "My name is Minh. Last summer, I went camping with my cousins. This summer, I am going to visit Phu Quoc Island. My family is going to travel by bus. I am going to practise swimming. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
   "level": "kha"
  },
  {
@@ -238,7 +238,7 @@ window.TEST_FN=function(H){return MKEN20([
    "practice swimming"
   ],
   "exactForm": false,
-  "passage": "My name is Minh. Last summer, I went camping with my cousins. This summer, i am going to visit Phu Quoc Island. My family is going to travel by bus. I am going to practise swimming. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "passage": "My name is Minh. Last summer, I went camping with my cousins. This summer, I am going to visit Phu Quoc Island. My family is going to travel by bus. I am going to practise swimming. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
   "level": "kha"
  },
  {
@@ -256,7 +256,7 @@ window.TEST_FN=function(H){return MKEN20([
     "a": false
    }
   ],
-  "passage": "My name is Minh. Last summer, I went camping with my cousins. This summer, i am going to visit Phu Quoc Island. My family is going to travel by bus. I am going to practise swimming. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "passage": "My name is Minh. Last summer, I went camping with my cousins. This summer, I am going to visit Phu Quoc Island. My family is going to travel by bus. I am going to practise swimming. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
   "level": "kha"
  },
  {
@@ -268,7 +268,7 @@ window.TEST_FN=function(H){return MKEN20([
    "Hoa"
   ],
   "exactForm": false,
-  "passage": "My name is Hoa. Last summer, I practised swimming with my cousins. This summer, i am going to visit Dam Sen Aquarium. My family is going to travel by bus. I am going to visit an eco-farm. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "passage": "My name is Hoa. Last summer, I practised swimming with my cousins. This summer, I am going to visit Dam Sen Aquarium. My family is going to travel by bus. I am going to visit an eco-farm. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
   "level": "kha"
  },
  {
@@ -283,7 +283,7 @@ window.TEST_FN=function(H){return MKEN20([
    "Huong River"
   ],
   "answer": 2,
-  "passage": "My name is Hoa. Last summer, I practised swimming with my cousins. This summer, i am going to visit Dam Sen Aquarium. My family is going to travel by bus. I am going to visit an eco-farm. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "passage": "My name is Hoa. Last summer, I practised swimming with my cousins. This summer, I am going to visit Dam Sen Aquarium. My family is going to travel by bus. I am going to visit an eco-farm. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
   "level": "kha"
  },
  {
@@ -295,7 +295,7 @@ window.TEST_FN=function(H){return MKEN20([
    "visit an eco-farm"
   ],
   "exactForm": false,
-  "passage": "My name is Hoa. Last summer, I practised swimming with my cousins. This summer, i am going to visit Dam Sen Aquarium. My family is going to travel by bus. I am going to visit an eco-farm. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "passage": "My name is Hoa. Last summer, I practised swimming with my cousins. This summer, I am going to visit Dam Sen Aquarium. My family is going to travel by bus. I am going to visit an eco-farm. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
   "level": "gioi"
  },
  {
@@ -313,7 +313,7 @@ window.TEST_FN=function(H){return MKEN20([
     "a": false
    }
   ],
-  "passage": "My name is Hoa. Last summer, I practised swimming with my cousins. This summer, i am going to visit Dam Sen Aquarium. My family is going to travel by bus. I am going to visit an eco-farm. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "passage": "My name is Hoa. Last summer, I practised swimming with my cousins. This summer, I am going to visit Dam Sen Aquarium. My family is going to travel by bus. I am going to visit an eco-farm. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
   "level": "gioi"
  },
  {
@@ -365,7 +365,7 @@ window.TEST_FN=function(H){return MKEN20([
    "went camping"
   ],
   "exactForm": false,
-  "passage": "My name is Minh. Last summer, I went camping with my cousins. This summer, i am going to visit Phu Quoc Island. My family is going to travel by bus. I am going to practise swimming. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "passage": "My name is Minh. Last summer, I went camping with my cousins. This summer, I am going to visit Phu Quoc Island. My family is going to travel by bus. I am going to practise swimming. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
   "level": "gioi"
  },
  {
