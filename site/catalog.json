@@ -803,6 +803,102 @@
       "kind": "unit",
       "topic": "u11",
       "overview": "TiengAnh5/Unit11_FamilyTime/TongQuan_Unit11.html"
+    },
+    {
+      "file": "TiengAnh5/Unit12_OurTetHoliday/De1_KhoiDong.html",
+      "id": "en-u12-de1-v1",
+      "subject": "en",
+      "kind": "unit",
+      "topic": "u12",
+      "overview": "TiengAnh5/Unit12_OurTetHoliday/TongQuan_Unit12.html"
+    },
+    {
+      "file": "TiengAnh5/Unit12_OurTetHoliday/De2_TuVungVaHinhAnh.html",
+      "id": "en-u12-de2-v1",
+      "subject": "en",
+      "kind": "unit",
+      "topic": "u12",
+      "overview": "TiengAnh5/Unit12_OurTetHoliday/TongQuan_Unit12.html"
+    },
+    {
+      "file": "TiengAnh5/Unit12_OurTetHoliday/De3_MauCauVaHoiThoai.html",
+      "id": "en-u12-de3-v1",
+      "subject": "en",
+      "kind": "unit",
+      "topic": "u12",
+      "overview": "TiengAnh5/Unit12_OurTetHoliday/TongQuan_Unit12.html"
+    },
+    {
+      "file": "TiengAnh5/Unit12_OurTetHoliday/De4_DocHieu.html",
+      "id": "en-u12-de4-v1",
+      "subject": "en",
+      "kind": "unit",
+      "topic": "u12",
+      "overview": "TiengAnh5/Unit12_OurTetHoliday/TongQuan_Unit12.html"
+    },
+    {
+      "file": "TiengAnh5/Unit12_OurTetHoliday/De5_VietCau.html",
+      "id": "en-u12-de5-v1",
+      "subject": "en",
+      "kind": "unit",
+      "topic": "u12",
+      "overview": "TiengAnh5/Unit12_OurTetHoliday/TongQuan_Unit12.html"
+    },
+    {
+      "file": "TiengAnh5/Unit12_OurTetHoliday/De6_TongHop.html",
+      "id": "en-u12-de6-v1",
+      "subject": "en",
+      "kind": "unit",
+      "topic": "u12",
+      "overview": "TiengAnh5/Unit12_OurTetHoliday/TongQuan_Unit12.html"
+    },
+    {
+      "file": "TiengAnh5/Unit13_OurSpecialDays/De1_KhoiDong.html",
+      "id": "en-u13-de1-v1",
+      "subject": "en",
+      "kind": "unit",
+      "topic": "u13",
+      "overview": "TiengAnh5/Unit13_OurSpecialDays/TongQuan_Unit13.html"
+    },
+    {
+      "file": "TiengAnh5/Unit13_OurSpecialDays/De2_TuVungVaHinhAnh.html",
+      "id": "en-u13-de2-v1",
+      "subject": "en",
+      "kind": "unit",
+      "topic": "u13",
+      "overview": "TiengAnh5/Unit13_OurSpecialDays/TongQuan_Unit13.html"
+    },
+    {
+      "file": "TiengAnh5/Unit13_OurSpecialDays/De3_MauCauVaHoiThoai.html",
+      "id": "en-u13-de3-v1",
+      "subject": "en",
+      "kind": "unit",
+      "topic": "u13",
+      "overview": "TiengAnh5/Unit13_OurSpecialDays/TongQuan_Unit13.html"
+    },
+    {
+      "file": "TiengAnh5/Unit13_OurSpecialDays/De4_DocHieu.html",
+      "id": "en-u13-de4-v1",
+      "subject": "en",
+      "kind": "unit",
+      "topic": "u13",
+      "overview": "TiengAnh5/Unit13_OurSpecialDays/TongQuan_Unit13.html"
+    },
+    {
+      "file": "TiengAnh5/Unit13_OurSpecialDays/De5_VietCau.html",
+      "id": "en-u13-de5-v1",
+      "subject": "en",
+      "kind": "unit",
+      "topic": "u13",
+      "overview": "TiengAnh5/Unit13_OurSpecialDays/TongQuan_Unit13.html"
+    },
+    {
+      "file": "TiengAnh5/Unit13_OurSpecialDays/De6_TongHop.html",
+      "id": "en-u13-de6-v1",
+      "subject": "en",
+      "kind": "unit",
+      "topic": "u13",
+      "overview": "TiengAnh5/Unit13_OurSpecialDays/TongQuan_Unit13.html"
     }
   ]
 }

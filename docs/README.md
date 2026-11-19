@@ -32,3 +32,5 @@ Nguồn nội dung và ghi nhận trang sách của từng unit nằm cạnh nha
 - [Kế hoạch tập hai](breakdowns/2026-11-18_KE_HOACH_TIENG_ANH_TAP2.md): xác nhận sách, Units 11–20/Review 3–4, mẫu nghe và các đợt triển khai; Unit 11 được giao trước, các phần sau chờ giao.
 
 - [Unit 11](breakdowns/2026-11-18_UNIT11.md): sáu đề, học từ/phát âm, âm thanh đi kèm, kiểm tra không có Speech API và giới hạn kiểm chứng iPad.
+
+- [Units 12–13](breakdowns/2026-11-19_UNIT12_UNIT13.md): hai Unit tập hai, will/won’t, ngày đặc biệt/thực đơn, âm thanh kèm bài và đánh vần có dấu câu.

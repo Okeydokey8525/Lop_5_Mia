@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tiếng Anh 5 · Unit 13 · Đề 2 · Từ vựng và hình ảnh</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<link rel="stylesheet" href="../../assets/engine.css"><script type="application/json" id="mia-audio-data">{"voice": "Microsoft Zira Desktop", "clips": {"Hello! Let’s listen and learn English.": "../../assets/english/u13/audio/d6be6a8235b16c4af314.wav", "On Saturday, we will have burgers and water. On Sunday, we will have pizza and apple juice.": "../../assets/english/u13/audio/1d3379f2425917a801ef.wav", "Our party will be on Friday. We will have a party at Mid-Autumn Festival.": "../../assets/english/u13/audio/35db86a0636496fd6d66.wav", "We will have burgers.": "../../assets/english/u13/audio/bdf83d52b2c000a4e38b.wav", "We will have chicken and rice and water at our party.": "../../assets/english/u13/audio/53506ed89919be347ec2.wav", "We will play badminton on Sports Day.": "../../assets/english/u13/audio/444b35141ff6b2bf725d.wav", "We will sing on Teachers’ Day. We will have burgers and milk tea.": "../../assets/english/u13/audio/bde44cf12d6b290340d6.wav"}}</script><script>// Optional recorded voice for pages with a complete, unit-owned audio manifest.
+(function(){'use strict';
+ const el=document.getElementById('mia-audio-data');if(!el)return;
+ const data=JSON.parse(el.textContent),native=window.speechSynthesis;
+ const voice={name:'Âm thanh có sẵn · Anh Mỹ (Zira)',lang:'en-US',voiceURI:'mia-recorded',localService:true};
+ // Reuse one media element for the whole spelling queue (per-element playback
+ // permission on iPad); only start playback from a learner's button press.
+ const player=new Audio();let sequence=0;
+ function cancel(){sequence++;player.onplaying=player.onended=player.onerror=null;player.pause();if(native)native.cancel();}
+ function speak(u){
+  if(u.voice?.voiceURI!==voice.voiceURI){
+   if(native&&window.SpeechSynthesisUtterance){const v=new SpeechSynthesisUtterance(u.text);for(const k of ['voice','lang','rate','pitch','volume','onstart','onend','onerror'])v[k]=u[k];native.speak(v);}
+   else u.onerror?.({error:'voice-unavailable'});return;
+  }
+  cancel();const token=sequence,src=data.clips[u.text];
+  if(!src){u.onerror?.({error:'audio-unavailable'});return;}
+  const audio=player;let failed=false;
+  const fail=()=>{if(token!==sequence||failed)return;failed=true;cancel();u.onerror?.({error:'audio-unavailable'});};
+  audio.preload='none';audio.src=src;audio.volume=u.volume??1;audio.playbackRate=(u.rate||0.9)/0.9;audio.preservesPitch=true;
+  audio.onplaying=()=>{if(token===sequence)u.onstart?.();};
+  audio.onended=()=>{if(token!==sequence)return;audio.onplaying=audio.onended=audio.onerror=null;u.onend?.();};
+  audio.onerror=fail;try{audio.play().catch(fail);}catch(e){fail();}
+ }
+ window.MiaRecorded={getVoices:()=>[voice,...(native?.getVoices()||[])],cancel,speak,
+  addEventListener:(name,fn)=>native?.addEventListener(name,fn),removeEventListener:(name,fn)=>native?.removeEventListener(name,fn)};
+})();
+</script><script src="../../assets/english/speech.js"></script><link rel="stylesheet" href="../../assets/theme.css"><script src="../../assets/theme.js"></script></head><body>
+<div class="page"><div id="app"></div></div>
+<div class="bar" id="bar" data-mode="run"><div class="bar-in"></div></div>
+<script>
+window.MKEN13=function(questions){return {"decimal": false, "meta": {"subject": "en", "version": 1, "lessonLabel": "Phần", "book": "Tiếng Anh 5 · Global Success · Tập hai", "title": "Unit 13 · Our special days", "topic": "Ngày đặc biệt, hoạt động và thực đơn", "range": "Trang 18–23", "minutes": 40, "tip": "Mỗi đề có 6 câu nghe, chia đều ba mức. Xem lời nghe sẽ ghi nhận đã dùng hỗ trợ, không trừ điểm. Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp."}, "lessons": {"1": "What will you do…?", "2": "What food/drinks will you have…?", "3": "Nhịp câu, đọc lời mời và viết"}, "levels": [{"id": "tb", "name": "Mức 1 · Trung bình", "desc": "Nhận biết từ và mẫu câu cơ bản", "stars": 1, "pts": 3}, {"id": "kha", "name": "Mức 2 · Khá", "desc": "Dùng mẫu câu, nối ý và tìm thông tin", "stars": 2, "pts": 5}, {"id": "gioi", "name": "Mức 3 · Giỏi", "desc": "Kết hợp đọc hiểu và viết câu theo dữ liệu", "stars": 3, "pts": 5}],"questions":questions};};
+
+window.TEST_FN=function(H){return MKEN13([
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the food.",
+  "transcript": "We will have burgers.",
+  "speech": "We will have burgers.",
+  "fields": [
+   {
+    "label": "Food:",
+    "answer": "burgers",
+    "options": [
+     "pizza",
+     "burgers",
+     "chicken and rice",
+     "fish and chips"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Food: burgers.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the activity.",
+  "transcript": "We will play badminton on Sports Day.",
+  "speech": "We will play badminton on Sports Day.",
+  "fields": [
+   {
+    "label": "Activity:",
+    "answer": "play badminton",
+    "options": [
+     "dance",
+     "sing",
+     "play badminton",
+     "have a party"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Activity: play badminton.",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the picture. Choose the word.",
+  "why": "Tranh: bánh pizza.",
+  "lesson": 2,
+  "opts": [
+   "burgers",
+   "milk tea",
+   "apple juice",
+   "pizza"
+  ],
+  "answer": 3,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u13/pizza.webp\" alt=\"bánh pizza\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the picture. Choose the word.",
+  "why": "Tranh: bánh mì kẹp thịt.",
+  "lesson": 2,
+  "opts": [
+   "burgers",
+   "milk tea",
+   "apple juice",
+   "pizza"
+  ],
+  "answer": 0,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u13/burgers.webp\" alt=\"bánh mì kẹp thịt\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the picture. Choose the word.",
+  "why": "Tranh: trà sữa.",
+  "lesson": 2,
+  "opts": [
+   "burgers",
+   "milk tea",
+   "apple juice",
+   "pizza"
+  ],
+  "answer": 1,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u13/milk-tea.webp\" alt=\"trà sữa\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the picture. Choose the word.",
+  "why": "Tranh: nước ép táo.",
+  "lesson": 2,
+  "opts": [
+   "burgers",
+   "milk tea",
+   "apple juice",
+   "pizza"
+  ],
+  "answer": 2,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u13/apple-juice.webp\" alt=\"nước ép táo\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: apple ___.",
+  "why": "Apple juice: nước ép táo.",
+  "lesson": 2,
+  "answers": [
+   "juice"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Ba nhóm nghĩa.",
+  "lesson": 2,
+  "pairs": [
+   {
+    "left": "pizza",
+    "right": "food"
+   },
+   {
+    "left": "milk tea",
+    "right": "drink"
+   },
+   {
+    "left": "dance",
+    "right": "activity"
+   }
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Which phrase means “bánh mì kẹp thịt”?",
+  "why": "Burgers.",
+  "lesson": 2,
+  "opts": [
+   "apple juice",
+   "pizza",
+   "burgers",
+   "milk tea"
+  ],
+  "answer": 2,
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: milk ___.",
+  "why": "Milk tea: trà sữa.",
+  "lesson": 2,
+  "answers": [
+   "tea"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the drink.",
+  "transcript": "We will have chicken and rice and water at our party.",
+  "speech": "We will have chicken and rice and water at our party.",
+  "fields": [
+   {
+    "label": "Drink:",
+    "answer": "water",
+    "options": [
+     "apple juice",
+     "milk tea",
+     "lemonade",
+     "water"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Drink: water.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: play bad___. Write the whole word.",
+  "why": "Badminton: cầu lông.",
+  "lesson": 1,
+  "answers": [
+   "badminton"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Food trước drink.",
+  "lesson": 2,
+  "items": [
+   "We",
+   "will",
+   "have",
+   "burgers",
+   "and",
+   "apple",
+   "juice."
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and choose the day of the party.",
+  "transcript": "Our party will be on Friday. We will have a party at Mid-Autumn Festival.",
+  "speech": "Our party will be on Friday. We will have a party at Mid-Autumn Festival.",
+  "fields": [
+   {
+    "label": "Day:",
+    "answer": "Friday",
+    "options": [
+     "Sunday",
+     "Monday",
+     "Saturday",
+     "Friday"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Day: Friday.",
+  "level": "kha"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Các ngày trong bài.",
+  "lesson": 1,
+  "pairs": [
+   {
+    "left": "Children’s Day",
+    "right": "ngày Thiếu nhi"
+   },
+   {
+    "left": "Teachers’ Day",
+    "right": "ngày Nhà giáo"
+   },
+   {
+    "left": "Sports Day",
+    "right": "ngày Thể thao"
+   }
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: Mid-Autumn ___.",
+  "why": "Tết Trung thu.",
+  "lesson": 1,
+  "answers": [
+   "Festival"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the food phrase.",
+  "why": "Fish and chips là đồ ăn.",
+  "lesson": 2,
+  "answers": [
+   "fish and chips"
+  ],
+  "exactForm": false,
+  "passage": "Speaker: Hoa · Event: Mid-Autumn Festival · Activity: have a party · Food: fish and chips · Drink: lemonade · Day: Friday · Place: my home.",
+  "level": "kha"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Đọc đúng nhóm.",
+  "lesson": 2,
+  "items": [
+   {
+    "t": "Lemonade is a drink.",
+    "a": true
+   },
+   {
+    "t": "Burgers is the name of a drink.",
+    "a": false
+   }
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the drink phrase.",
+  "why": "Water, không lấy chicken and rice.",
+  "lesson": 3,
+  "answers": [
+   "water"
+  ],
+  "exactForm": false,
+  "passage": "Speaker: Minh · Event: Sports Day · Activity: play badminton · Food: chicken and rice · Drink: water · Day: Saturday · Place: our school.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the activity phrase.",
+  "why": "Have a party.",
+  "lesson": 3,
+  "answers": [
+   "have a party"
+  ],
+  "exactForm": false,
+  "passage": "Speaker: Hoa · Event: Mid-Autumn Festival · Activity: have a party · Food: fish and chips · Drink: lemonade · Day: Friday · Place: my home.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Choose both food and drink.",
+  "transcript": "We will sing on Teachers’ Day. We will have burgers and milk tea.",
+  "speech": "We will sing on Teachers’ Day. We will have burgers and milk tea.",
+  "fields": [
+   {
+    "label": "Food:",
+    "answer": "burgers",
+    "options": [
+     "pizza",
+     "burgers",
+     "chicken and rice",
+     "fish and chips"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Drink:",
+    "answer": "milk tea",
+    "options": [
+     "apple juice",
+     "milk tea",
+     "lemonade",
+     "water"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Food: burgers; Drink: milk tea.",
+  "level": "gioi"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Đối chiếu cả món và đồ uống.",
+  "lesson": 3,
+  "pairs": [
+   {
+    "left": "An",
+    "right": "pizza / apple juice"
+   },
+   {
+    "left": "Linh",
+    "right": "burgers / milk tea"
+   },
+   {
+    "left": "Minh",
+    "right": "chicken and rice / water"
+   }
+  ],
+  "passage": "Speaker: An · Event: Children’s Day · Activity: dance · Food: pizza · Drink: apple juice · Day: Sunday · Place: my home.\nSpeaker: Linh · Event: Teachers’ Day · Activity: sing · Food: burgers · Drink: milk tea · Day: Monday · Place: our classroom.\nSpeaker: Minh · Event: Sports Day · Activity: play badminton · Food: chicken and rice · Drink: water · Day: Saturday · Place: our school.",
+  "level": "gioi"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "What food hỏi đồ ăn.",
+  "lesson": 3,
+  "items": [
+   "What",
+   "food",
+   "will",
+   "they",
+   "have",
+   "at",
+   "the",
+   "party?"
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Write only the Sunday menu, not the Saturday menu.",
+  "transcript": "On Saturday, we will have burgers and water. On Sunday, we will have pizza and apple juice.",
+  "speech": "On Saturday, we will have burgers and water. On Sunday, we will have pizza and apple juice.",
+  "fields": [
+   {
+    "label": "Sunday food:",
+    "answer": "pizza",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Sunday drink:",
+    "answer": "apple juice",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Sunday food: pizza; Sunday drink: apple juice.",
+  "level": "gioi"
+ }
+]);};
+
+window.TEST_EXTRA={"id": "en-u13-de2-v1", "title": "Đề 2 · Từ vựng và hình ảnh", "theme": "Nhận biết tranh, đồ ăn, đồ uống và hoạt động.", "home": "../index.html", "prev": "De1_KhoiDong.html", "next": "De3_MauCauVaHoiThoai.html"};
+
+</script><script src="../../assets/engine.js"></script></body></html>

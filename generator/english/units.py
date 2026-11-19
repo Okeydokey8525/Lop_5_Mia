@@ -13,6 +13,8 @@ UNITS=[
  dict(n=9,key='u09',dir='Unit9_OurOutdoorActivities',name='Our outdoor activities',pages='62–67',version=1),
  dict(n=10,key='u10',dir='Unit10_OurSchoolTrip',name='Our school trip',pages='68–73',version=1),
  dict(n=11,key='u11',dir='Unit11_FamilyTime',name='Family time',pages='6–11',version=1,volume=2),
+ dict(n=12,key='u12',dir='Unit12_OurTetHoliday',name='Our Tet holiday',pages='12–17',version=1,volume=2),
+ dict(n=13,key='u13',dir='Unit13_OurSpecialDays',name='Our special days',pages='18–23',version=1,volume=2),
 ]
 
 REVIEWS=[dict(n='R1',key='r01',dir='Review1_Units1_5',name='Review 1 · Ôn Unit 1–5',label='Review 1',pages='40–43',version=1,kind='review',overview='TongQuan_Review1'),
@@ -24,6 +26,8 @@ def label(unit):return unit.get('label',f"Unit {unit['n']}")
 def overview_name(unit):return unit.get('overview',f"TongQuan_Unit{unit['n']}")
 
 DETAILS={
+ 12:dict(topic='Chuẩn bị và kế hoạch đón Tết',lessons={1:'Will you…? và chuẩn bị đón Tết',2:'Where will you go…?',3:'Nhịp câu, đọc và viết kế hoạch'},colour='#A63C70',bg='#FFE4F0'),
+ 13:dict(topic='Ngày đặc biệt, hoạt động và thực đơn',lessons={1:'What will you do…?',2:'What food/drinks will you have…?',3:'Nhịp câu, đọc lời mời và viết'},colour='#A63C70',bg='#FFE4F0'),
  11:dict(topic='Chuyến đi gia đình: hoạt động, người đi cùng và thời gian',lessons={1:'Did you…? và hoạt động ở bãi biển',2:'Gia đình đã làm gì và khi nào?',3:'Nhịp câu, đọc và kể chuyến đi'},colour='#A63C70',bg='#FFE4F0'),
  'R1':dict(topic='Ôn tổng hợp Units 1–5',lessons={1:'Bản thân, nhà ở và bạn bè',2:'Sở thích và nghề nghiệp',3:'Đọc và viết tổng hợp'},colour='#A63C70',bg='#FFE4F0'),
  'R2':dict(topic='Ôn tổng hợp Units 6–10',lessons={1:'Trường lớp và sở thích',2:'Đồ dùng và chuyến đi',3:'Đọc và viết tổng hợp'},colour='#A33876',bg='#FFE5F2'),
@@ -45,6 +49,8 @@ def test_id(unit,index):
 
 def tests_for(unit):
     descriptions={
+      12:['Làm quen việc chuẩn bị và nơi đến dịp Tết.','Nhận biết tranh, cụm từ và sự kiện dịp Tết.','Hỏi Will you…? và Where will you go…? theo thẻ.','Đọc đúng người, nơi, việc sẽ làm và không làm.','Viết will/won’t + nguyên mẫu và kế hoạch theo dữ kiện.','Kết hợp nghe, tranh, hội thoại, đọc và viết về Tết.'],
+      13:['Làm quen hoạt động ngày đặc biệt và thực đơn.','Nhận biết tranh, đồ ăn, đồ uống và hoạt động.','Hỏi What will…do? và What food/drinks…have?','Đọc lời mời, ngày, hoạt động và thực đơn theo thẻ.','Viết will + nguyên mẫu, on/at và thực đơn theo dữ kiện.','Kết hợp nghe, tranh, hội thoại, đọc và viết về ngày đặc biệt.'],
       11:['Làm quen hoạt động trong chuyến đi cùng gia đình.','Nhận biết tranh, cụm từ và động từ quá khứ.','Hỏi Did you…?, What did…do? và When did…? theo thẻ.','Đọc đúng người, thời gian và thứ tự hoạt động trong chuyến đi.','Viết did + nguyên mẫu và câu kể quá khứ theo dữ kiện.','Kết hợp nghe, tranh, hội thoại, đọc và viết về chuyến đi gia đình.'],
       'R1':['Ôn bản thân, nhà ở, bạn bè, sở thích và nghề nghiệp.','Phân biệt từ vựng qua tranh và ngữ cảnh các Unit 1–5.','Ghép đúng loại câu hỏi và câu trả lời theo hồ sơ.','Đọc hồ sơ mới kết hợp địa chỉ, quốc tịch, sở thích và ước mơ.','Viết câu về nhiều thông tin từ cùng hồ sơ giả định.','Kết hợp nghe, đọc và viết trong phạm vi Review 1.'],
       'R2':['Ôn trường lớp, sở thích, đồ dùng và những chuyến đi.','Nhận biết từ vựng và các dạng động từ trong Unit 6–10.','Hỏi đáp vị trí, chủ sở hữu và các chuyến đi đã qua.','Đọc hồ sơ mới, phân biệt yesterday với school trip.','Viết câu vị trí, sở thích, sở hữu và chuyến đi theo thẻ.','Kết hợp nghe, đọc và viết trong phạm vi Review 2.'],

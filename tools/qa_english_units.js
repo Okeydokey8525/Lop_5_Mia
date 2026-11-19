@@ -31,6 +31,10 @@ async function fill(p){await p.evaluate(()=>__quiz.Q.forEach((q,i)=>{const e=doc
    assert.match(await p.evaluate(()=>window.MKEN11([]).meta.book),/Tập hai/);
    const variants=await p.evaluate(()=>{const q=__quiz.Q.find(q=>q.type==='text'&&q.exactForm&&q.answers[0]==='I did not swim.');return [__quiz.textIsCorrect('I didn’t swim.',q.answers,true),__quiz.textIsCorrect('I did not swam.',q.answers,true),__quiz.textIsCorrect('I did not swim.',q.answers,true)];});assert.deepEqual(variants,[false,false,true]);
   }
+  if(t.id==='en-u12-de3-v1'||t.id==='en-u13-de3-v1'){
+   const unit=Number(t.id.split('-')[1].slice(1));assert.match(await p.evaluate(n=>window['MKEN'+n]([]).meta.book,unit),/Tập hai/);
+   const forms=await p.evaluate(n=>{const expected=n===12?'I will not buy roses.':'We will have pizza.';const q=__quiz.Q.find(q=>q.type==='text'&&q.exactForm&&q.answers[0]===expected);const short=n===12?'I won’t buy roses.':'We’ll have pizza.';const wrong=n===12?'I will not buys roses.':'We will has pizza.';return [__quiz.textIsCorrect(short,q.answers,true),__quiz.textIsCorrect(wrong,q.answers,true),__quiz.textIsCorrect(expected,q.answers,true)];},unit);assert.deepEqual(forms,[false,false,true]);
+  }
   if(t.id.startsWith('en-r')){
    const scope=await p.evaluate(()=>[...new Set(__quiz.Q.flatMap(q=>q.sourceUnits||[]))].sort((a,b)=>a-b));assert.deepEqual(scope,t.id.startsWith('en-r01')?[1,2,3,4,5]:[6,7,8,9,10]);assert.ok(!(await p.title()).includes('Unit R'));
   }

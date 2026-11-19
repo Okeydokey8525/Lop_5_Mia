@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tiếng Anh 5 · Unit 12 · Đề 5 · Viết câu</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<link rel="stylesheet" href="../../assets/engine.css"><script type="application/json" id="mia-audio-data">{"voice": "Microsoft Zira Desktop", "clips": {"Hello! Let’s listen and learn English.": "../../assets/english/u12/audio/d6be6a8235b16c4af314.wav", "I will do the shopping for Tet.": "../../assets/english/u12/audio/e2b921e6f0e968de4238.wav", "I will do the shopping for Tet. I will go to my grandparents’ house at Tet.": "../../assets/english/u12/audio/14f812c02abd963b33e1.wav", "I will go to a fireworks show at Tet.": "../../assets/english/u12/audio/fd46cf77848db35ffb02.wav", "I will go to my grandparents’ house at Tet. I will go with my mother.": "../../assets/english/u12/audio/6b7de7ab7229f103ed5d.wav", "I will not make banh chung. I will decorate the house for Tet.": "../../assets/english/u12/audio/700d5c5fb7b306c7ff8a.wav", "Nam will do the shopping and go to a flower festival. Mai will decorate the house and go to a fireworks show.": "../../assets/english/u12/audio/86bcdc9a5a8ee6593930.wav"}}</script><script>// Optional recorded voice for pages with a complete, unit-owned audio manifest.
+(function(){'use strict';
+ const el=document.getElementById('mia-audio-data');if(!el)return;
+ const data=JSON.parse(el.textContent),native=window.speechSynthesis;
+ const voice={name:'Âm thanh có sẵn · Anh Mỹ (Zira)',lang:'en-US',voiceURI:'mia-recorded',localService:true};
+ // Reuse one media element for the whole spelling queue (per-element playback
+ // permission on iPad); only start playback from a learner's button press.
+ const player=new Audio();let sequence=0;
+ function cancel(){sequence++;player.onplaying=player.onended=player.onerror=null;player.pause();if(native)native.cancel();}
+ function speak(u){
+  if(u.voice?.voiceURI!==voice.voiceURI){
+   if(native&&window.SpeechSynthesisUtterance){const v=new SpeechSynthesisUtterance(u.text);for(const k of ['voice','lang','rate','pitch','volume','onstart','onend','onerror'])v[k]=u[k];native.speak(v);}
+   else u.onerror?.({error:'voice-unavailable'});return;
+  }
+  cancel();const token=sequence,src=data.clips[u.text];
+  if(!src){u.onerror?.({error:'audio-unavailable'});return;}
+  const audio=player;let failed=false;
+  const fail=()=>{if(token!==sequence||failed)return;failed=true;cancel();u.onerror?.({error:'audio-unavailable'});};
+  audio.preload='none';audio.src=src;audio.volume=u.volume??1;audio.playbackRate=(u.rate||0.9)/0.9;audio.preservesPitch=true;
+  audio.onplaying=()=>{if(token===sequence)u.onstart?.();};
+  audio.onended=()=>{if(token!==sequence)return;audio.onplaying=audio.onended=audio.onerror=null;u.onend?.();};
+  audio.onerror=fail;try{audio.play().catch(fail);}catch(e){fail();}
+ }
+ window.MiaRecorded={getVoices:()=>[voice,...(native?.getVoices()||[])],cancel,speak,
+  addEventListener:(name,fn)=>native?.addEventListener(name,fn),removeEventListener:(name,fn)=>native?.removeEventListener(name,fn)};
+})();
+</script><script src="../../assets/english/speech.js"></script><link rel="stylesheet" href="../../assets/theme.css"><script src="../../assets/theme.js"></script></head><body>
+<div class="page"><div id="app"></div></div>
+<div class="bar" id="bar" data-mode="run"><div class="bar-in"></div></div>
+<script>
+window.MKEN12=function(questions){return {"decimal": false, "meta": {"subject": "en", "version": 1, "lessonLabel": "Phần", "book": "Tiếng Anh 5 · Global Success · Tập hai", "title": "Unit 12 · Our Tet holiday", "topic": "Chuẩn bị và kế hoạch đón Tết", "range": "Trang 12–17", "minutes": 40, "tip": "Mỗi đề có 6 câu nghe, chia đều ba mức. Xem lời nghe sẽ ghi nhận đã dùng hỗ trợ, không trừ điểm. Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp."}, "lessons": {"1": "Will you…? và chuẩn bị đón Tết", "2": "Where will you go…?", "3": "Nhịp câu, đọc và viết kế hoạch"}, "levels": [{"id": "tb", "name": "Mức 1 · Trung bình", "desc": "Nhận biết từ và mẫu câu cơ bản", "stars": 1, "pts": 3}, {"id": "kha", "name": "Mức 2 · Khá", "desc": "Dùng mẫu câu, nối ý và tìm thông tin", "stars": 2, "pts": 5}, {"id": "gioi", "name": "Mức 3 · Giỏi", "desc": "Kết hợp đọc hiểu và viết câu theo dữ liệu", "stars": 3, "pts": 5}],"questions":questions};};
+
+window.TEST_FN=function(H){return MKEN12([
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the activity.",
+  "transcript": "I will do the shopping for Tet.",
+  "speech": "I will do the shopping for Tet.",
+  "fields": [
+   {
+    "label": "Activity:",
+    "answer": "do the shopping",
+    "options": [
+     "decorate the house",
+     "do the shopping",
+     "make spring rolls",
+     "buy a branch of peach blossoms"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Activity: do the shopping.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the place.",
+  "transcript": "I will go to a fireworks show at Tet.",
+  "speech": "I will go to a fireworks show at Tet.",
+  "fields": [
+   {
+    "label": "Place:",
+    "answer": "a fireworks show",
+    "options": [
+     "my grandparents’ house",
+     "a fireworks show",
+     "a New Year party",
+     "a flower festival"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Place: a fireworks show.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: Will you ___ the house?",
+  "why": "Decorate sau will.",
+  "lesson": 1,
+  "answers": [
+   "decorate"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Will + make.",
+  "lesson": 1,
+  "items": [
+   "I",
+   "will",
+   "make",
+   "spring",
+   "rolls",
+   "for",
+   "Tet."
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: She will ___ roses. Use buy.",
+  "why": "Không thêm s.",
+  "lesson": 1,
+  "answers": [
+   "buy"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: We will ___ the shopping.",
+  "why": "Do the shopping.",
+  "lesson": 1,
+  "answers": [
+   "do"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Choose the correct sentence.",
+  "why": "Will + go.",
+  "lesson": 2,
+  "opts": [
+   "He will went to a flower festival.",
+   "He will go to a flower festival.",
+   "He will goes to a flower festival.",
+   "He wills go to a flower festival."
+  ],
+  "answer": 1,
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: Where ___ you go at Tet? Use the future helper.",
+  "why": "Where will you go?",
+  "lesson": 2,
+  "answers": [
+   "will"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Nhớ ba dạng rút gọn.",
+  "lesson": 2,
+  "pairs": [
+   {
+    "left": "I’ll",
+    "right": "I will"
+   },
+   {
+    "left": "won’t",
+    "right": "will not"
+   },
+   {
+    "left": "We’ll",
+    "right": "We will"
+   }
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Will + chủ ngữ + buy.",
+  "lesson": 2,
+  "items": [
+   "Will",
+   "your",
+   "father",
+   "buy",
+   "peach",
+   "blossoms?"
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen. Which activity will the speaker NOT do?",
+  "transcript": "I will not make banh chung. I will decorate the house for Tet.",
+  "speech": "I will not make banh chung. I will decorate the house for Tet.",
+  "fields": [
+   {
+    "label": "Will NOT:",
+    "answer": "make banh chung",
+    "options": [
+     "make banh chung",
+     "buy roses",
+     "do the shopping"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Will NOT: make banh chung.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Rewrite in full: I won’t make banh chung.",
+  "why": "Will not + make.",
+  "lesson": 1,
+  "answers": [
+   "I will not make banh chung."
+  ],
+  "exactForm": true,
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: I will go ___ my grandparents’ house.",
+  "why": "Go to.",
+  "lesson": 2,
+  "answers": [
+   "to"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the companion.",
+  "transcript": "I will go to my grandparents’ house at Tet. I will go with my mother.",
+  "speech": "I will go to my grandparents’ house at Tet. I will go with my mother.",
+  "fields": [
+   {
+    "label": "With:",
+    "answer": "my mother",
+    "options": [
+     "my mother",
+     "my father",
+     "my family",
+     "my brother"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: With: my mother.",
+  "level": "kha"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Đúng hoạt động theo thẻ.",
+  "lesson": 2,
+  "items": [
+   "I",
+   "will",
+   "make",
+   "spring",
+   "rolls",
+   "for",
+   "Tet."
+  ],
+  "passage": "Speaker: Minh · For Tet: make spring rolls · Will NOT: make banh chung · At Tet, go to: a New Year party · With: my family.",
+  "level": "kha"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Will go to.",
+  "lesson": 2,
+  "items": [
+   "We",
+   "will",
+   "go",
+   "to",
+   "a",
+   "New",
+   "Year",
+   "party."
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: We will go to a fireworks show ___ Tet.",
+  "why": "At Tet.",
+  "lesson": 2,
+  "answers": [
+   "at"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Rewrite in full: I’ll do the shopping.",
+  "why": "I’ll = I will.",
+  "lesson": 2,
+  "answers": [
+   "I will do the shopping."
+  ],
+  "exactForm": true,
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write activity for Tet, then destination at Tet. Start each sentence with I will.",
+  "why": "Giữ thứ tự và địa điểm.",
+  "lesson": 3,
+  "answers": [
+   "I will decorate the house for Tet. I will go to my grandparents’ house at Tet.",
+   "I'll decorate the house for Tet. I'll go to my grandparents’ house at Tet."
+  ],
+  "exactForm": false,
+  "passage": "Speaker: An · For Tet: decorate the house · Will NOT: do the shopping · At Tet, go to: my grandparents’ house · With: my mother.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write one negative sentence starting with I will not.",
+  "why": "Dùng mục Will NOT.",
+  "lesson": 3,
+  "answers": [
+   "I will not buy roses.",
+   "I won't buy roses."
+  ],
+  "exactForm": false,
+  "passage": "Speaker: Linh · For Tet: do the shopping · Will NOT: buy roses · At Tet, go to: a fireworks show · With: my father.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Find both activity and place.",
+  "transcript": "I will do the shopping for Tet. I will go to my grandparents’ house at Tet.",
+  "speech": "I will do the shopping for Tet. I will go to my grandparents’ house at Tet.",
+  "fields": [
+   {
+    "label": "Activity:",
+    "answer": "do the shopping",
+    "options": [
+     "decorate the house",
+     "do the shopping",
+     "make spring rolls",
+     "buy a branch of peach blossoms"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Place:",
+    "answer": "my grandparents’ house",
+    "options": [
+     "my grandparents’ house",
+     "a fireworks show",
+     "a New Year party",
+     "a flower festival"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Activity: do the shopping; Place: my grandparents’ house.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write the destination sentence, starting with I will and ending with at Tet.",
+  "why": "A flower festival.",
+  "lesson": 3,
+  "answers": [
+   "I will go to a flower festival at Tet.",
+   "I'll go to a flower festival at Tet."
+  ],
+  "exactForm": false,
+  "passage": "Speaker: Hoa · For Tet: buy a branch of peach blossoms · Will NOT: buy roses · At Tet, go to: a flower festival · With: my brother.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write activity for Tet, then destination at Tet. Start each sentence with I will.",
+  "why": "Không lấy dữ kiện của An.",
+  "lesson": 3,
+  "answers": [
+   "I will do the shopping for Tet. I will go to my grandparents’ house at Tet.",
+   "I'll do the shopping for Tet. I'll go to my grandparents’ house at Tet."
+  ],
+  "exactForm": false,
+  "passage": "Speaker: Nam · For Tet: do the shopping · Will NOT: make spring rolls · At Tet, go to: my grandparents’ house · With: my father.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Write only Mai’s activity and place, not Nam’s.",
+  "transcript": "Nam will do the shopping and go to a flower festival. Mai will decorate the house and go to a fireworks show.",
+  "speech": "Nam will do the shopping and go to a flower festival. Mai will decorate the house and go to a fireworks show.",
+  "fields": [
+   {
+    "label": "Mai’s activity:",
+    "answer": "decorate the house",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Mai’s place:",
+    "answer": "a fireworks show",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Mai’s activity: decorate the house; Mai’s place: a fireworks show.",
+  "level": "gioi"
+ }
+]);};
+
+window.TEST_EXTRA={"id": "en-u12-de5-v1", "title": "Đề 5 · Viết câu", "theme": "Viết will/won’t + nguyên mẫu và kế hoạch theo dữ kiện.", "home": "../index.html", "prev": "De4_DocHieu.html", "next": "De6_TongHop.html"};
+
+</script><script src="../../assets/engine.js"></script></body></html>

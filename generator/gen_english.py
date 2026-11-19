@@ -85,20 +85,20 @@ def main():
             if i>1:extra['prev']=f'De{i-1}_{TESTS[i-2][0]}.html'
             if i<6:extra['next']=f'De{i+1}_{TESTS[i][0]}.html'
             html=quiz_page(f'Tiếng Anh 5 · {label(unit)} · Đề {i} · {name}',data,extra,wrapper)
-            if n==11:
+            if (source/'audio'/'manifest.json').exists():
                 from english.recorded import markup,quiz_texts
-                html=html.replace('</head>',markup('u11',quiz_texts(questions))+'</head>')
+                html=html.replace('</head>',markup(unit['key'],quiz_texts(questions))+'</head>')
             speech='<script>'+(W/'english'/'speech.js').read_text(encoding='utf-8-sig')+'</script>'
             (folder/f'De{i}_{slug}.html').write_text(html.replace('</head>',speech+'</head>'),encoding='utf-8',newline='\n')
         cd=dict(n=n,dir=unit['dir'],name=unit['name'],range=f"{label(unit)} · Trang {unit['pages']}",overview=overview_name(unit),tests=unit_tests,test_ids=[test_id(unit,i) for i in range(1,7)])
         overview=overview_page(f'Tiếng Anh 5 · {label(unit)} · Tổng quan',sheet(unit,content),cd,details['colour'])
         if n!=1:
             study=importlib.import_module(f"english.{unit['key']}.study").render_study()
-            if n==11:
+            if (source/'audio'/'manifest.json').exists():
                 from english.recorded import markup,study_texts
-                config=importlib.import_module('english.u11.study').data()
-                study=study.replace('</head>',markup('u11',study_texts(config))+'</head>')
-                study=study.replace('Giọng có sẵn trên thiết bị. Thiếu giọng Anh thì em vẫn xem chữ và luyện viết được.','Unit 11 có âm thanh đi kèm (giọng máy Anh Mỹ). Em có thể nghe dù máy chưa cài giọng Anh. Nếu lỗi mạng, bấm nghe lại hoặc chọn giọng thiết bị nếu có.')
+                config=importlib.import_module(f"english.{unit['key']}.study").data()
+                study=study.replace('</head>',markup(unit['key'],study_texts(config))+'</head>')
+                study=study.replace('Giọng có sẵn trên thiết bị. Thiếu giọng Anh thì em vẫn xem chữ và luyện viết được.',f'Unit {n} có âm thanh đi kèm (giọng máy Anh Mỹ). Em có thể nghe dù máy chưa cài giọng Anh. Nếu lỗi mạng, bấm nghe lại hoặc chọn giọng thiết bị nếu có.')
             (folder/'HocTuVaPhatAm.html').write_text(study,encoding='utf-8',newline='\n')
             if n==6:(folder/'HocTuVaPhatAm_Mau.html').write_text(study,encoding='utf-8',newline='\n')
             overview=overview.replace('</nav>','</nav><div class="nav"><a href="HocTuVaPhatAm.html">🌸 Học từ, đánh vần và phát âm · '+label(unit)+'</a></div>',1)
@@ -106,7 +106,7 @@ def main():
     count=len(TOPICS)*6
     index=render_index(index_data()).replace('Toán 5','Tiếng Anh 5').replace('Kết nối tri thức với cuộc sống','Global Success')
     index=index.replace('Mỗi đề làm xong là một bậc thang. Leo đủ 36 bậc là em đã chinh phục cả học kì 1 của Tiếng Anh 5.',
-                        'Tập một: Unit 1–10 và Review 1–2. Tập hai: Unit 11 đã sẵn sàng. Mỗi phần có sáu đề và nghe ở ba mức độ. Starter chưa triển khai; Units 2–11 và hai Review có trang học từ/phát âm. Unit 11 có âm thanh đi kèm.')
+                        'Tập một: Unit 1–10 và Review 1–2. Tập hai: Units 11–13 đã sẵn sàng. Mỗi phần có sáu đề và nghe ở ba mức độ. Starter chưa triển khai; Units 2–13 và hai Review có trang học từ/phát âm. Units 11–13 có âm thanh đi kèm.')
     index=index.replace('/ 36 đề',f'/ {count} đề').replace('/ 108 sao',f'/ {count*3} sao')
     milestones={str(old):str(int(count*quarter/4+0.5)) for quarter,old in enumerate([9,18,27,36],1)}
     # One pass: a new milestone (27 for 54 exams) can equal an old label.

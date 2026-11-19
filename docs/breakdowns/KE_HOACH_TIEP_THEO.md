@@ -12,3 +12,5 @@
 Trước khi nhận việc: đọc docs01 và phần nguồn liên quan. Sau mỗi đợt: cập nhật trạng thái hiện hành, ghi bằng chứng kiểm tra, giữ lịch sử trong Git hoặc history khi cần giữ snapshot bàn giao; không tạo nhiều file tiến độ trùng nhau.
 
 Cập nhật 18/11/2026: đã nhận giao và làm Unit 11 (xem bàn giao 2026-11-18_UNIT11.md); Units 12–20 và Review 3–4 vẫn chờ giao. Trước khi nhân rộng audio, người dùng nghe duyệt mẫu và thử Unit 11 trên iPad của bé.
+
+Cập nhật 19/11/2026: chủ repo giao và đã thực hiện Units 12–13, xem 2026-11-19_UNIT12_UNIT13.md. Các dòng trên là lịch sử đợt trước. Bước tiếp theo khi được giao: Units 14–15 (tập hai 24–35), sau đó Review 3; còn bảy Unit 14–20 và hai Review 3–4 = 9 phần/54 đề nếu giữ sáu đề/phần. Chưa coi WebKit tự động là phản hồi nghe từ iPad thật.

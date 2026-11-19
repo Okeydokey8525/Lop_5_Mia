@@ -1,16 +1,16 @@
 # 01 — Tình trạng hiện hành
 
-Cập nhật 18/11/2026; Unit 11 đã xuất bản và kiểm chứng CI/live, xem mục cuối. Bản lịch sử trước khi gom tài liệu nằm trong `history/`; không dùng những số liệu cũ làm trạng thái hiện tại.
+Cập nhật 19/11/2026; đã được giao tiếp Units 12–13, xem bàn giao 2026-11-19_UNIT12_UNIT13.md để phân biệt local/CI/live. Unit 11 đã xuất bản trước đó. Bản lịch sử trước khi gom tài liệu nằm trong `history/`; không dùng những số liệu cũ làm trạng thái hiện tại.
 
 ## Đã bàn giao
 
 - Website: https://okeydokey8525.github.io/Lop_5_Mia/ — GitHub Pages qua Actions.
 - Toán 5 tập một: 6 chủ đề, 36 đề, mỗi đề 24 câu/100 điểm; ID `cd{n}-de{i}` giữ nguyên.
 - Tiếng Anh 5 tập một: Unit 1–10 và Review 1–2, đặt đúng thứ tự sách. Có 12 tổng quan HTML/PNG +72 đề (1728 câu); mỗi đề 24 câu/100 điểm và sáu nghe (hai mỗi cấp). Units 2–10 và hai Review có học từ/phát âm tự lưu; Unit 1 có mẫu nghe. Chưa chấm nói.
-- Bản nguồn hiện tại thêm Unit 11 tập hai: sáu đề/144 câu, tổng quan và học từ/phát âm có audio đi kèm. Tổng Anh 78 đề/1872 câu.
-- Toàn site: 114 đề chính thức, 150 HTML, 19 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
+- Bản nguồn hiện tại có Units 11–13 tập hai: sáu đề/144 câu mỗi Unit, tổng quan và học từ/phát âm có audio đi kèm. Tổng Anh 90 đề/2160 câu.
+- Toàn site: 126 đề chính thức, 166 HTML, 21 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
 - Giao diện hồng anh đào, tối màu tím mận; reader trên màn hình ≤820px, poster để xem/in. Tiến độ theo origin/trình duyệt, không đồng bộ thiết bị.
-- Chủ repo đã xem Unit 1, phản hồi hình khó nhận diện và duyệt mẫu cá heo. Ngày 30/10 đã áp dụng phong cách mới cho đủ 6 tranh ở tổng quan/câu hỏi, giữ nguyên 144 câu và đáp án. Sau đó chủ repo giao Unit 2–3, Unit 4–5 rồi Unit 6–7; đã bổ sung Unit 8–9 theo yêu cầu tiếp theo. đã tiếp tục giao Unit 10, Review 1 và Review 2 ngày 06/11. Chỉ còn Starter trong tập một; chưa triển khai tập hai.
+- Chủ repo đã xem Unit 1, phản hồi hình khó nhận diện và duyệt mẫu cá heo. Ngày 30/10 đã áp dụng phong cách mới cho đủ 6 tranh ở tổng quan/câu hỏi, giữ nguyên 144 câu và đáp án. Sau đó chủ repo giao Unit 2–3, Unit 4–5 rồi Unit 6–7; đã bổ sung Unit 8–9 theo yêu cầu tiếp theo. đã tiếp tục giao Unit 10, Review 1 và Review 2 ngày 06/11. Chỉ còn Starter trong tập một; tập hai đã tiếp tục Units 11–13 theo giao việc mới.
 
 | CĐ Toán | Thư mục | Nội dung | Bài |
 |---|---|---|---|
@@ -153,3 +153,7 @@ Local toàn site đạt: 90/90 đề 100/100, 118 HTML không lỗi trình duy�
 Đã triển khai Unit 11 theo yêu cầu; nguồn trang in 6–11 và Wordlist 74–75. Có sáu đề/36 nghe, bốn tranh mới, tổng quan HTML/PNG, 16 từ/cụm, sáu hội thoại và 12 bài luyện tự lưu. 91 file WAV tự tạo đi kèm để nghe không cần Speech API; chỉ áp dụng mẫu này cho Unit 11. Người dùng xác nhận bé dùng iPad, nhưng chưa thử trên máy bé/chưa duyệt giọng bằng tai. Bằng chứng và trạng thái CI/live ở [bàn giao Unit 11](breakdowns/2026-11-18_UNIT11.md). Các đoạn ngày 06/11 trở về trước là lịch sử, không phải số liệu hiện hành.
 
 Unit 11 đã lên Pages ở commit `b1be9e1`; Actions `44242319906` thành công. Live: sáu đề, lưu bài qua browser restart, 12 bài luyện tự lưu và 91 file nghe thật trên Chromium/WebKit đều đạt; 109 tài nguyên khớp local. Chi tiết/giới hạn iPad ở bàn giao Unit 11.
+
+## Units 12–13 — 19/11/2026
+
+Đã đọc đủ trang in 12–23 và Wordlist 74–75; thêm 12 đề/288 câu, 72 câu nghe, hai tổng quan HTML/PNG, hai trang học (30 từ/cụm, 12 hội thoại, 24 bài luyện), tám tranh và 183 WAV. ID en-u12/u13-deN-v1; khóa học riêng từng Unit. Không thay ngân hàng cũ. Tình trạng kiểm chứng/xuất bản và giới hạn iPad ở [bàn giao](breakdowns/2026-11-19_UNIT12_UNIT13.md). Units 14–20 và Review 3–4 còn lại chưa được giao; không tự mở rộng.

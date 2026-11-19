@@ -58,7 +58,7 @@ def main():
         relative=Path('english')/source.parent.parent.name/'audio'/source.name
         target=assets/relative;target.parent.mkdir(parents=True,exist_ok=True)
         shutil.copyfile(source,target)
-        recorded_resources['data:audio/wav;base64,'+base64.b64encode(source.read_bytes()).decode('ascii')]=relative.as_posix()
+        recorded_resources[(source.parent.parent.name,'data:audio/wav;base64,'+base64.b64encode(source.read_bytes()).decode('ascii'))]=relative.as_posix()
     illustrations = {}
     for source in sorted((GEN / "english").glob("u[0-9][0-9]/images/*.webp")):
         relative = Path("english") / source.parent.parent.name / source.name
@@ -102,7 +102,8 @@ def main():
         for embedded, image_path in illustrations.items():
             html = html.replace(embedded, prefix + image_path)
         if 'id="mia-audio-data"' in html:
-            html=re.sub(r'data:audio/wav;base64,[A-Za-z0-9+/=]+',lambda m:prefix+recorded_resources[m[0]],html)
+            audio_unit='u'+re.match(r'Unit(\d+)_',relative.parts[1])[1].zfill(2)
+            html=re.sub(r'data:audio/wav;base64,[A-Za-z0-9+/=]+',lambda m:prefix+recorded_resources[(audio_unit,m[0])],html)
         if resources["fonts.css"] in html:
             raise ValueError(f"Font extraction failed: {source}")
         target.write_text(html, encoding="utf-8", newline="\n")

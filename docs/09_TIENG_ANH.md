@@ -123,3 +123,9 @@ Mỗi phần sáu đề/144 câu/36 nghe. Review là bài riêng, dùng key r01/
 ## Unit 11 tập hai (18/11/2026)
 
 Đã làm Unit 11 Family time, trang in 6–11, đối chiếu Wordlist 74–75. Trọng tâm: Did you + nguyên mẫu; câu kể swam/took/bought/ate/saw; What did your family do...? và When did...? Sáu đề/144 câu/36 nghe; 16 từ/cụm, sáu hội thoại, 12 bài luyện, tổng quan HTML/PNG và bốn tranh hoạt động mới. Có 91 WAV tạo từ lời tự soạn, phát khi không có giọng thiết bị; giọng Zira Anh Mỹ là mẫu chờ nghe duyệt/iPad thực tế. Tổng hiện hành 13 phần/78 đề/1872 câu. Xem bàn giao 2026-11-18_UNIT11.md; các tổng số phía trên ghi lại lịch sử.
+
+## Units 12–13 — 19/11/2026
+
+Đã đọc đủ tập hai trang in 12–23 và Wordlist 74–75. Unit 12: Will you…?/Where will you go at Tet?, chuẩn bị và nơi đến, will/won’t + nguyên mẫu. Unit 13: What will you do…?/What food/drinks will you have…?, on tên ngày / at Mid-Autumn Festival. Bài đọc/lời mời/thực đơn tự soạn; không suy ngày lễ, hoạt động hoặc thức ăn từ tên sự kiện. NOTES cạnh nguồn ghi phạm vi cụ thể.
+
+Mỗi Unit sáu đề/144 câu/36 nghe, 24 câu/100 điểm (10/8/6). Trang học Unit 12 có 14 từ/cụm, Unit 13 có 16, mỗi trang sáu hội thoại và 12 bài luyện tự lưu. Âm thanh kèm bài 87/96 WAV; ABC bỏ dấu câu nhưng giữ vị trí highlight. Mỗi câu full form giữ yêu cầu viết đầy đủ; dạng khác nhận viết tắt khi tương đương. Tổng Anh 13 Unit + 2 Review = 90 đề/2160 vị trí câu hỏi. Chưa làm Starter, Units 14–20/Reviews 3–4 hoặc bộ kiểm tra học kỳ riêng. Bằng chứng ở bàn giao 2026-11-19_UNIT12_UNIT13.md.

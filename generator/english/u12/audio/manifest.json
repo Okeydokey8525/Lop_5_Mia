@@ -1,0 +1,356 @@
+{
+  "voice": "Microsoft Zira Desktop",
+  "language": "en-US",
+  "rate": -1,
+  "format": "PCM 22050 Hz 16-bit mono",
+  "clips": [
+    {
+      "text": "A",
+      "file": "559aead08264d5795d39.wav"
+    },
+    {
+      "text": "B",
+      "file": "df7e70e5021544f4834b.wav"
+    },
+    {
+      "text": "C",
+      "file": "6b23c0d5f35d1b11f9b6.wav"
+    },
+    {
+      "text": "D",
+      "file": "3f39d5c348e5b79d06e8.wav"
+    },
+    {
+      "text": "E",
+      "file": "a9f51566bd6705f7ea6a.wav"
+    },
+    {
+      "text": "F",
+      "file": "f67ab10ad4e4c53121b6.wav"
+    },
+    {
+      "text": "G",
+      "file": "333e0a1e27815d0ceee5.wav"
+    },
+    {
+      "text": "H",
+      "file": "44bd7ae60f478fae1061.wav"
+    },
+    {
+      "text": "Hello! Let us listen and learn English.",
+      "file": "d049b36b33ea2a1929e2.wav"
+    },
+    {
+      "text": "Hello! Let’s listen and learn English.",
+      "file": "d6be6a8235b16c4af314.wav"
+    },
+    {
+      "text": "I",
+      "file": "a83dd0ccbffe39d071cc.wav"
+    },
+    {
+      "text": "I will buy a branch of peach blossoms for Tet.",
+      "file": "9991cdab8239691654cc.wav"
+    },
+    {
+      "text": "I will buy a branch of peach blossoms for Tet. I will go to a flower festival at Tet.",
+      "file": "0a0a5344fb0505663aed.wav"
+    },
+    {
+      "text": "I will decorate the house for Tet.",
+      "file": "87e9b97a495b207a4b64.wav"
+    },
+    {
+      "text": "I will decorate the house for Tet. I will go to a fireworks show at Tet.",
+      "file": "ebdb937889acdf4075bb.wav"
+    },
+    {
+      "text": "I will decorate the house for Tet. I will go to my grandparents’ house at Tet.",
+      "file": "1cd105ee15bbe6fa506d.wav"
+    },
+    {
+      "text": "I will do the shopping for Tet.",
+      "file": "e2b921e6f0e968de4238.wav"
+    },
+    {
+      "text": "I will do the shopping for Tet. I will go to a fireworks show at Tet.",
+      "file": "d8402b5a968a46865eb1.wav"
+    },
+    {
+      "text": "I will do the shopping for Tet. I will go to my grandparents’ house at Tet.",
+      "file": "14f812c02abd963b33e1.wav"
+    },
+    {
+      "text": "I will go to a New Year party at Tet.",
+      "file": "d6a1703ddc4706c7f6d6.wav"
+    },
+    {
+      "text": "I will go to a New Year party at Tet. I will go with my family.",
+      "file": "ffbf87e12389022b7064.wav"
+    },
+    {
+      "text": "I will go to a fireworks show at Tet.",
+      "file": "fd46cf77848db35ffb02.wav"
+    },
+    {
+      "text": "I will go to a fireworks show at Tet. I will go with my family.",
+      "file": "1812d210d70ba0d61b24.wav"
+    },
+    {
+      "text": "I will go to a fireworks show at Tet. I will go with my father.",
+      "file": "e07f3a9d18edef17993b.wav"
+    },
+    {
+      "text": "I will go to a flower festival at Tet.",
+      "file": "c341007fba7a0da18740.wav"
+    },
+    {
+      "text": "I will go to a flower festival at Tet. I will go with my brother.",
+      "file": "4f257f7bdf537adc6a10.wav"
+    },
+    {
+      "text": "I will go to my grandparents’ house at Tet.",
+      "file": "32f6c7215a59d084660b.wav"
+    },
+    {
+      "text": "I will go to my grandparents’ house at Tet. I will go with my father.",
+      "file": "43aabd7ca29d10d00364.wav"
+    },
+    {
+      "text": "I will go to my grandparents’ house at Tet. I will go with my mother.",
+      "file": "6b7de7ab7229f103ed5d.wav"
+    },
+    {
+      "text": "I will make spring rolls for Tet.",
+      "file": "ae3d16e47ac56adc5c4d.wav"
+    },
+    {
+      "text": "I will make spring rolls for Tet. I will go to a New Year party at Tet.",
+      "file": "7de5a6038ac0159a6e12.wav"
+    },
+    {
+      "text": "I will not buy roses.",
+      "file": "bb6fc581d8bd69e58a0b.wav"
+    },
+    {
+      "text": "I will not buy roses. I will buy a branch of peach blossoms for Tet.",
+      "file": "2c4f0cdf1e67d159aa0d.wav"
+    },
+    {
+      "text": "I will not buy roses. I will do the shopping for Tet.",
+      "file": "c7e888f1b8aa106ea7ca.wav"
+    },
+    {
+      "text": "I will not buy roses. I will do the shopping.",
+      "file": "f1f504989c4a4bb2c86e.wav"
+    },
+    {
+      "text": "I will not do the shopping. I will decorate the house for Tet.",
+      "file": "1b5f16e0e47f67fcea90.wav"
+    },
+    {
+      "text": "I will not make banh chung.",
+      "file": "77b021127c8e8d3a53b1.wav"
+    },
+    {
+      "text": "I will not make banh chung. I will decorate the house for Tet.",
+      "file": "700d5c5fb7b306c7ff8a.wav"
+    },
+    {
+      "text": "I will not make banh chung. I will make spring rolls for Tet.",
+      "file": "f9505f7e99389adfd1b7.wav"
+    },
+    {
+      "text": "I will not make spring rolls. I will do the shopping for Tet.",
+      "file": "92be2b12c05d2cbf59c5.wav"
+    },
+    {
+      "text": "J",
+      "file": "6da43b944e494e885e69.wav"
+    },
+    {
+      "text": "K",
+      "file": "86be9a55762d316a3026.wav"
+    },
+    {
+      "text": "L",
+      "file": "72dfcfb0c470ac255cde.wav"
+    },
+    {
+      "text": "M",
+      "file": "08f271887ce94707da82.wav"
+    },
+    {
+      "text": "My mother will make banh chung.",
+      "file": "f6effbd772991d02a601.wav"
+    },
+    {
+      "text": "N",
+      "file": "8ce86a6ae65d3692e730.wav"
+    },
+    {
+      "text": "Nam will do the shopping and go to a flower festival. Mai will decorate the house and go to a fireworks show.",
+      "file": "86bcdc9a5a8ee6593930.wav"
+    },
+    {
+      "text": "O",
+      "file": "c4694f2e93d5c4e7d51f.wav"
+    },
+    {
+      "text": "P",
+      "file": "5c62e091b8c0565f1baf.wav"
+    },
+    {
+      "text": "Q",
+      "file": "4ae81572f06e1b88fd5c.wav"
+    },
+    {
+      "text": "R",
+      "file": "8c2574892063f995fdf7.wav"
+    },
+    {
+      "text": "S",
+      "file": "8de0b3c47f112c59745f.wav"
+    },
+    {
+      "text": "T",
+      "file": "e632b7095b0bf32c260f.wav"
+    },
+    {
+      "text": "U",
+      "file": "a25513c7e0f6eaa80a33.wav"
+    },
+    {
+      "text": "V",
+      "file": "de5a6f78116eca62d7fc.wav"
+    },
+    {
+      "text": "W",
+      "file": "fcb5f40df9be6bae66c1.wav"
+    },
+    {
+      "text": "We will decorate the house.",
+      "file": "b1d78364a5c64b91d7d6.wav"
+    },
+    {
+      "text": "We will visit our grandparents at Tet.",
+      "file": "5877039c73556ff94de3.wav"
+    },
+    {
+      "text": "What will you do for Tet?",
+      "file": "82d3d103ceef96709fc7.wav"
+    },
+    {
+      "text": "What will you do for Tet? I will do the shopping with my father.",
+      "file": "4e0827f99cd462051260.wav"
+    },
+    {
+      "text": "Where will you go at Tet?",
+      "file": "fd4d30dfbdcaed210547.wav"
+    },
+    {
+      "text": "Where will you go at Tet? I will go to my grandparents’ house.",
+      "file": "f5aaafd7bdc5b07cea8e.wav"
+    },
+    {
+      "text": "Where will your family go at Tet?",
+      "file": "7d8271def6019f4ff121.wav"
+    },
+    {
+      "text": "Where will your family go at Tet? We will go to a New Year party.",
+      "file": "53518505995d1b1d42f1.wav"
+    },
+    {
+      "text": "Will you decorate the house for Tet?",
+      "file": "711576a52dd32a2ed42c.wav"
+    },
+    {
+      "text": "Will you decorate the house for Tet? Yes, I will. I will decorate it with flowers.",
+      "file": "fec9e28fdbb8536e5a31.wav"
+    },
+    {
+      "text": "Will you go to a flower festival?",
+      "file": "33aaa772ac0c88e8009d.wav"
+    },
+    {
+      "text": "Will you go to a flower festival? No, I will not. I will go to a fireworks show.",
+      "file": "2c7364b6bcdbf12016cf.wav"
+    },
+    {
+      "text": "Will you make banh chung?",
+      "file": "a44fbee9b74b58b49bd1.wav"
+    },
+    {
+      "text": "Will you make banh chung? No, I will not. I will make spring rolls.",
+      "file": "f20e363e95c6cfe2ba98.wav"
+    },
+    {
+      "text": "X",
+      "file": "4b68ab3847feda7d6c62.wav"
+    },
+    {
+      "text": "Y",
+      "file": "18f5384d58bcb1bba0bc.wav"
+    },
+    {
+      "text": "Z",
+      "file": "bbeebd879e1dff691854.wav"
+    },
+    {
+      "text": "a New Year party",
+      "file": "f7eb51bbadf76e8bb4c3.wav"
+    },
+    {
+      "text": "a fireworks show",
+      "file": "eb77fa394852e5f11faa.wav"
+    },
+    {
+      "text": "a flower festival",
+      "file": "5bf5361ef7a5c5824109.wav"
+    },
+    {
+      "text": "at Tet",
+      "file": "01c8be25769904364914.wav"
+    },
+    {
+      "text": "buy a branch of peach blossoms",
+      "file": "17c0994412b08363ae66.wav"
+    },
+    {
+      "text": "buy roses",
+      "file": "b7160dd7692f81ed902d.wav"
+    },
+    {
+      "text": "decorate the house",
+      "file": "7f6f17da6c5e636ff976.wav"
+    },
+    {
+      "text": "do the shopping",
+      "file": "8feec4a3c397e777ef33.wav"
+    },
+    {
+      "text": "for Tet",
+      "file": "ef0e04308a82488bdbe1.wav"
+    },
+    {
+      "text": "make banh chung",
+      "file": "b5f373d38c615793d7a1.wav"
+    },
+    {
+      "text": "make spring rolls",
+      "file": "c7a4b8d946a5888f48a8.wav"
+    },
+    {
+      "text": "my grandparents’ house",
+      "file": "b26aa47b1d0400429cf9.wav"
+    },
+    {
+      "text": "will",
+      "file": "bc16f5825a9dafc8c245.wav"
+    },
+    {
+      "text": "will not",
+      "file": "52ccbc4a7617819d554a.wav"
+    }
+  ]
+}

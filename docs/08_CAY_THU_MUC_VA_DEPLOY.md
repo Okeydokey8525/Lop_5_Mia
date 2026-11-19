@@ -96,3 +96,7 @@ Review có thư mục nguồn `english/r01/`, `r02/`, web `TiengAnh5/Review1_Uni
 ### Unit 11 tập hai và âm thanh đi kèm (18/11/2026)
 
 Nguồn `english/u11/`, web `TiengAnh5/Unit11_FamilyTime/`. Nguồn WAV/manifest trong `u11/audio/`, trích ra `site/assets/english/u11/audio/`; standalone nhúng audio. `english/recorded.py` và `recorded.js` chỉ được gắn vào trang có manifest, không thay phương thức nghe của Unit cũ. Công cụ tạo WAV `tools/generate_english_audio.ps1` là bước tác giả riêng, không chạy trong CI. CI cài Chromium và WebKit để kiểm file nghe thật. Bản nguồn có 114 đề/150 HTML/19 poster; cập nhật số kiểm chứng ở bàn giao Unit 11.
+
+### Units 12–13 (19/11/2026)
+
+Nguồn `generator/english/u12/`, `u13/`; web `TiengAnh5/Unit12_OurTetHoliday/`, `Unit13_OurSpecialDays/`. Mỗi nguồn có content/study/overview/NOTES/audio_source, images/PROMPTS, audio/manifest + WAV, common/tests sinh từ Python. Dùng chung recorded.py/js; generator nhận manifest theo Unit, web trích audio trong đúng namespace uNN để clip ABC giống nhau không đổi URL Unit cũ. QA audio nhận `--unit=11|12|13` và `--webkit`. Không thêm thư mục app mới hoặc thư viện runtime. Tổng 126 đề, 166 HTML, 21 poster; chỉ site/ xuất bản.

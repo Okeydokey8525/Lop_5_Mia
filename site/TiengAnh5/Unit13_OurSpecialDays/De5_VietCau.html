@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tiếng Anh 5 · Unit 13 · Đề 5 · Viết câu</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<link rel="stylesheet" href="../../assets/engine.css"><script type="application/json" id="mia-audio-data">{"voice": "Microsoft Zira Desktop", "clips": {"Hello! Let’s listen and learn English.": "../../assets/english/u13/audio/d6be6a8235b16c4af314.wav", "On Saturday, we will have burgers and water. On Sunday, we will have pizza and apple juice.": "../../assets/english/u13/audio/1d3379f2425917a801ef.wav", "Our party will be on Sunday. We will dance on Children’s Day.": "../../assets/english/u13/audio/f1c48ef9fd5db9c572f2.wav", "We will dance on Teachers’ Day.": "../../assets/english/u13/audio/06672a335692c37587bb.wav", "We will have burgers.": "../../assets/english/u13/audio/bdf83d52b2c000a4e38b.wav", "We will have pizza and lemonade at our party.": "../../assets/english/u13/audio/de6ca9520085355904a7.wav", "We will sing on Children’s Day. We will have burgers and water.": "../../assets/english/u13/audio/fcecbf78755dc01e7ca6.wav"}}</script><script>// Optional recorded voice for pages with a complete, unit-owned audio manifest.
+(function(){'use strict';
+ const el=document.getElementById('mia-audio-data');if(!el)return;
+ const data=JSON.parse(el.textContent),native=window.speechSynthesis;
+ const voice={name:'Âm thanh có sẵn · Anh Mỹ (Zira)',lang:'en-US',voiceURI:'mia-recorded',localService:true};
+ // Reuse one media element for the whole spelling queue (per-element playback
+ // permission on iPad); only start playback from a learner's button press.
+ const player=new Audio();let sequence=0;
+ function cancel(){sequence++;player.onplaying=player.onended=player.onerror=null;player.pause();if(native)native.cancel();}
+ function speak(u){
+  if(u.voice?.voiceURI!==voice.voiceURI){
+   if(native&&window.SpeechSynthesisUtterance){const v=new SpeechSynthesisUtterance(u.text);for(const k of ['voice','lang','rate','pitch','volume','onstart','onend','onerror'])v[k]=u[k];native.speak(v);}
+   else u.onerror?.({error:'voice-unavailable'});return;
+  }
+  cancel();const token=sequence,src=data.clips[u.text];
+  if(!src){u.onerror?.({error:'audio-unavailable'});return;}
+  const audio=player;let failed=false;
+  const fail=()=>{if(token!==sequence||failed)return;failed=true;cancel();u.onerror?.({error:'audio-unavailable'});};
+  audio.preload='none';audio.src=src;audio.volume=u.volume??1;audio.playbackRate=(u.rate||0.9)/0.9;audio.preservesPitch=true;
+  audio.onplaying=()=>{if(token===sequence)u.onstart?.();};
+  audio.onended=()=>{if(token!==sequence)return;audio.onplaying=audio.onended=audio.onerror=null;u.onend?.();};
+  audio.onerror=fail;try{audio.play().catch(fail);}catch(e){fail();}
+ }
+ window.MiaRecorded={getVoices:()=>[voice,...(native?.getVoices()||[])],cancel,speak,
+  addEventListener:(name,fn)=>native?.addEventListener(name,fn),removeEventListener:(name,fn)=>native?.removeEventListener(name,fn)};
+})();
+</script><script src="../../assets/english/speech.js"></script><link rel="stylesheet" href="../../assets/theme.css"><script src="../../assets/theme.js"></script></head><body>
+<div class="page"><div id="app"></div></div>
+<div class="bar" id="bar" data-mode="run"><div class="bar-in"></div></div>
+<script>
+window.MKEN13=function(questions){return {"decimal": false, "meta": {"subject": "en", "version": 1, "lessonLabel": "Phần", "book": "Tiếng Anh 5 · Global Success · Tập hai", "title": "Unit 13 · Our special days", "topic": "Ngày đặc biệt, hoạt động và thực đơn", "range": "Trang 18–23", "minutes": 40, "tip": "Mỗi đề có 6 câu nghe, chia đều ba mức. Xem lời nghe sẽ ghi nhận đã dùng hỗ trợ, không trừ điểm. Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp."}, "lessons": {"1": "What will you do…?", "2": "What food/drinks will you have…?", "3": "Nhịp câu, đọc lời mời và viết"}, "levels": [{"id": "tb", "name": "Mức 1 · Trung bình", "desc": "Nhận biết từ và mẫu câu cơ bản", "stars": 1, "pts": 3}, {"id": "kha", "name": "Mức 2 · Khá", "desc": "Dùng mẫu câu, nối ý và tìm thông tin", "stars": 2, "pts": 5}, {"id": "gioi", "name": "Mức 3 · Giỏi", "desc": "Kết hợp đọc hiểu và viết câu theo dữ liệu", "stars": 3, "pts": 5}],"questions":questions};};
+
+window.TEST_FN=function(H){return MKEN13([
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the food.",
+  "transcript": "We will have burgers.",
+  "speech": "We will have burgers.",
+  "fields": [
+   {
+    "label": "Food:",
+    "answer": "burgers",
+    "options": [
+     "pizza",
+     "burgers",
+     "chicken and rice",
+     "fish and chips"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Food: burgers.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the activity.",
+  "transcript": "We will dance on Teachers’ Day.",
+  "speech": "We will dance on Teachers’ Day.",
+  "fields": [
+   {
+    "label": "Activity:",
+    "answer": "dance",
+    "options": [
+     "dance",
+     "sing",
+     "play badminton",
+     "have a party"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Activity: dance.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: We will ___ pizza.",
+  "why": "Will + have.",
+  "lesson": 2,
+  "answers": [
+   "have"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "On + Children’s Day.",
+  "lesson": 1,
+  "items": [
+   "We",
+   "will",
+   "dance",
+   "on",
+   "Children’s",
+   "Day."
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: She will ___ at the party. Use sing.",
+  "why": "Will + nguyên mẫu.",
+  "lesson": 1,
+  "answers": [
+   "sing"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: apple ___.",
+  "why": "Nước ép táo.",
+  "lesson": 2,
+  "answers": [
+   "juice"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Choose the correct question.",
+  "why": "Will + they + have.",
+  "lesson": 2,
+  "opts": [
+   "What drinks will they has?",
+   "What drinks will they having?",
+   "What drinks will they have?",
+   "What drinks they will have?"
+  ],
+  "answer": 2,
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: ___ will you do on Sports Day?",
+  "why": "What will you do?",
+  "lesson": 1,
+  "answers": [
+   "What"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Dạng rút gọn với will.",
+  "lesson": 2,
+  "pairs": [
+   {
+    "left": "We’ll",
+    "right": "We will"
+   },
+   {
+    "left": "They’ll",
+    "right": "They will"
+   },
+   {
+    "left": "I’ll",
+    "right": "I will"
+   }
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "At Mid-Autumn Festival.",
+  "lesson": 2,
+  "items": [
+   "We",
+   "will",
+   "have",
+   "a",
+   "party",
+   "at",
+   "Mid-Autumn",
+   "Festival."
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the drink.",
+  "transcript": "We will have pizza and lemonade at our party.",
+  "speech": "We will have pizza and lemonade at our party.",
+  "fields": [
+   {
+    "label": "Drink:",
+    "answer": "lemonade",
+    "options": [
+     "apple juice",
+     "milk tea",
+     "lemonade",
+     "water"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Drink: lemonade.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Rewrite in full: We’ll have milk tea.",
+  "why": "Giữ nguyên đồ uống.",
+  "lesson": 2,
+  "answers": [
+   "We will have milk tea."
+  ],
+  "exactForm": true,
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: We will sing ___ Teachers’ Day.",
+  "why": "On Teachers’ Day.",
+  "lesson": 1,
+  "answers": [
+   "on"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and choose the day of the party.",
+  "transcript": "Our party will be on Sunday. We will dance on Children’s Day.",
+  "speech": "Our party will be on Sunday. We will dance on Children’s Day.",
+  "fields": [
+   {
+    "label": "Day:",
+    "answer": "Sunday",
+    "options": [
+     "Sunday",
+     "Monday",
+     "Saturday",
+     "Friday"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Day: Sunday.",
+  "level": "kha"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Food trước drink.",
+  "lesson": 2,
+  "items": [
+   "We",
+   "will",
+   "have",
+   "pizza",
+   "and",
+   "apple",
+   "juice."
+  ],
+  "passage": "Speaker: An · Event: Children’s Day · Activity: dance · Food: pizza · Drink: apple juice · Day: Sunday · Place: my home.",
+  "level": "kha"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Food đứng trước will.",
+  "lesson": 2,
+  "items": [
+   "What",
+   "food",
+   "will",
+   "you",
+   "have",
+   "at",
+   "the",
+   "party?"
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: They will play ___. Use the sport cầu lông.",
+  "why": "Play badminton.",
+  "lesson": 1,
+  "answers": [
+   "badminton"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Rewrite in full: They’ll play games.",
+  "why": "They’ll = They will.",
+  "lesson": 2,
+  "answers": [
+   "They will play games."
+  ],
+  "exactForm": true,
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write activity, then menu. Start both with We will; food before drink.",
+  "why": "Khớp tất cả dữ kiện.",
+  "lesson": 3,
+  "answers": [
+   "We will sing on Teachers’ Day. We will have burgers and milk tea.",
+   "We'll sing on Teachers’ Day. We'll have burgers and milk tea."
+  ],
+  "exactForm": false,
+  "passage": "Speaker: Linh · Event: Teachers’ Day · Activity: sing · Food: burgers · Drink: milk tea · Day: Monday · Place: our classroom.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write one menu sentence starting with We will have, with food before drink.",
+  "why": "Chicken and rice / water.",
+  "lesson": 3,
+  "answers": [
+   "We will have chicken and rice and water.",
+   "We'll have chicken and rice and water."
+  ],
+  "exactForm": false,
+  "passage": "Speaker: Minh · Event: Sports Day · Activity: play badminton · Food: chicken and rice · Drink: water · Day: Saturday · Place: our school.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Choose both food and drink.",
+  "transcript": "We will sing on Children’s Day. We will have burgers and water.",
+  "speech": "We will sing on Children’s Day. We will have burgers and water.",
+  "fields": [
+   {
+    "label": "Food:",
+    "answer": "burgers",
+    "options": [
+     "pizza",
+     "burgers",
+     "chicken and rice",
+     "fish and chips"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Drink:",
+    "answer": "water",
+    "options": [
+     "apple juice",
+     "milk tea",
+     "lemonade",
+     "water"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Food: burgers; Drink: water.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write the activity sentence starting with We will.",
+  "why": "Dùng at.",
+  "lesson": 3,
+  "answers": [
+   "We will have a party at Mid-Autumn Festival.",
+   "We'll have a party at Mid-Autumn Festival."
+  ],
+  "exactForm": false,
+  "passage": "Speaker: Hoa · Event: Mid-Autumn Festival · Activity: have a party · Food: fish and chips · Drink: lemonade · Day: Friday · Place: my home.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write activity, then menu. Start both with We will; food before drink.",
+  "why": "Không lấy kế hoạch của An.",
+  "lesson": 3,
+  "answers": [
+   "We will sing on Children’s Day. We will have burgers and water.",
+   "We'll sing on Children’s Day. We'll have burgers and water."
+  ],
+  "exactForm": false,
+  "passage": "Speaker: Nam · Event: Children’s Day · Activity: sing · Food: burgers · Drink: water · Day: Saturday · Place: our classroom.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Write only the Sunday menu, not the Saturday menu.",
+  "transcript": "On Saturday, we will have burgers and water. On Sunday, we will have pizza and apple juice.",
+  "speech": "On Saturday, we will have burgers and water. On Sunday, we will have pizza and apple juice.",
+  "fields": [
+   {
+    "label": "Sunday food:",
+    "answer": "pizza",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Sunday drink:",
+    "answer": "apple juice",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Sunday food: pizza; Sunday drink: apple juice.",
+  "level": "gioi"
+ }
+]);};
+
+window.TEST_EXTRA={"id": "en-u13-de5-v1", "title": "Đề 5 · Viết câu", "theme": "Viết will + nguyên mẫu, on/at và thực đơn theo dữ kiện.", "home": "../index.html", "prev": "De4_DocHieu.html", "next": "De6_TongHop.html"};
+
+</script><script src="../../assets/engine.js"></script></body></html>

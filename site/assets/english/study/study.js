@@ -82,7 +82,7 @@
   else if(b.dataset.hide){const meaning=$('#meaning-'+b.dataset.hide);meaning.hidden=!meaning.hidden;b.setAttribute('aria-expanded',String(!meaning.hidden));b.textContent=meaning.hidden?'Hiện nghĩa để kiểm tra':'Ẩn nghĩa để thử nhớ';}
   else if(b.dataset.mark){const id=b.dataset.mark;flush({word:id,value:state.words[id]===b.dataset.value?null:b.dataset.value});if(reviewOnly&&b.closest('.word-card').hidden){stop();$('#word-title').focus({preventScroll:true});}}
   else if(b.dataset.say)speak([{text:byId[b.dataset.say].word}],b.hasAttribute('data-slow'));
-  else if(b.dataset.spell){const w=byId[b.dataset.spell],letters=Array.from(w.word).flatMap((c,i)=>c===' '?[]:[{text:c.toUpperCase(),letter:w.id+'-'+i,wordEnd:w.word[i+1]===' '}]);speak(letters,false,'Đã đánh vần xong. Bấm Nghe từ/cụm để luyện cách nói tự nhiên.');}
+  else if(b.dataset.spell){const w=byId[b.dataset.spell],letters=Array.from(w.word).flatMap((c,i)=>/[a-z]/i.test(c)?[{text:c.toUpperCase(),letter:w.id+'-'+i,wordEnd:w.word[i+1]===' '}]:[]);speak(letters,false,'Đã đánh vần xong. Bấm Nghe từ/cụm để luyện cách nói tự nhiên.');}
   else if(b.dataset.text)speak([{text:b.dataset.text}],b.hasAttribute('data-slow'),b.hasAttribute('data-turn')?'Đến lượt em: nói câu trả lời của B. Trang không thu âm hoặc chấm giọng.':null);
   else if(b.dataset.check){const q=byQuestion[b.dataset.check],value=answer(q);pending.set(q.id,{answer:value,checked:true,signature:q.signature});flush();feedback(q,value);}
  });

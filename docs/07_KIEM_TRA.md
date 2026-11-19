@@ -152,3 +152,9 @@ Thêm `node tools/qa_english_units.js --units=8,9` và `node tools/qa_persistenc
 ### Unit 11 và audio đi kèm
 
 Chạy `node tools/qa_english_units.js --units=11`, `node tools/qa_persistence.js --units=11`, `node tools/qa_study.js`; thêm `node tools/qa_recorded_audio.js` và `node tools/qa_recorded_audio.js --webkit` (cần Playwright WebKit). Runner audio kiểm file thật, không có Speech API, có native utterance constructor, ABC, phát chậm, dừng/đổi nhóm và lỗi mạng/thử lại. Toàn site hiện 114 đề/150 HTML, tương ứng 2400 layout/theme trong responsive runner. Không coi WebKit trên máy kiểm tra là xác nhận iPad thật; cần người dùng nghe duyệt.
+
+## Units 12–13 và đánh vần dấu câu
+
+Chạy `node tools/qa_english_units.js --units=12,13`, `node tools/qa_persistence.js --units=12,13`, `node tools/qa_study.js` (hoặc `--units=12,13` để kiểm có chọn lọc). QA đề kiểm full form/viết tắt và từ sai như will buys/will has. QA học kiểm will + nguyên mẫu, lưu qua đóng/mở, không tự đánh dấu từ đã thuộc khi chỉ bấm nghe.
+
+`node tools/qa_recorded_audio.js --unit=12` và `--unit=13`, mỗi lệnh thêm một lượt `--webkit`. Kiểm tất cả 87/96 clip là audio không im lặng, phát file thật không Speech API, chậm 0.8, ABC, dừng/chuyển nhóm, lỗi mạng/thử lại, ba cấp nghe. Children’s Day và Mid-Autumn Festival chỉ đánh vần chữ A-Z, không đọc dấu câu. Windows WebKit không xác nhận phát WAV nhúng qua file://; HTTPS và Chromium standalone được kiểm riêng. Phát âm/nhịp tự nhiên và iPad thật cần nghe thử, không suy từ sự kiện ended. CI chạy cả 3 Unit có file nghe; mốc responsive mới 166×8×2 = 2656.
