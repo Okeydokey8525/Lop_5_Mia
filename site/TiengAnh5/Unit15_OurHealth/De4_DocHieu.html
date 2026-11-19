@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tiếng Anh 5 · Unit 15 · Đề 4 · Đọc hiểu</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<link rel="stylesheet" href="../../assets/engine.css"><script type="application/json" id="mia-audio-data">{"voice": "Microsoft Zira Desktop", "clips": {"An says: I have a headache. His partner says: You should have a rest. Linh says: I have a toothache. Her partner says: You should go to the dentist.": "../../assets/english/u15/audio/83bc3dc56a79d5fce8c9.wav", "Hello! Let’s listen and learn English.": "../../assets/english/u15/audio/d6be6a8235b16c4af314.wav", "I have a headache. You should not watch too much TV.": "../../assets/english/u15/audio/be266be70218b9809e30.wav", "I have a stomach ache.": "../../assets/english/u15/audio/5e4619337ce78b6bfc44.wav", "I have a stomach ache. You should go to the doctor.": "../../assets/english/u15/audio/fb6d508c406340f6806b.wav", "Mai says: I have a sore throat. You should drink warm water.": "../../assets/english/u15/audio/cba48a85b97a0930065a.wav", "You should go to the doctor.": "../../assets/english/u15/audio/c969ca8bb3a3ecfa8c53.wav"}}</script><script>// Optional recorded voice for pages with a complete, unit-owned audio manifest.
+(function(){'use strict';
+ const el=document.getElementById('mia-audio-data');if(!el)return;
+ const data=JSON.parse(el.textContent),native=window.speechSynthesis;
+ const voice={name:'Âm thanh có sẵn · Anh Mỹ (Zira)',lang:'en-US',voiceURI:'mia-recorded',localService:true};
+ // Reuse one media element for the whole spelling queue (per-element playback
+ // permission on iPad); only start playback from a learner's button press.
+ const player=new Audio();let sequence=0;
+ function cancel(){sequence++;player.onplaying=player.onended=player.onerror=null;player.pause();if(native)native.cancel();}
+ function speak(u){
+  if(u.voice?.voiceURI!==voice.voiceURI){
+   if(native&&window.SpeechSynthesisUtterance){const v=new SpeechSynthesisUtterance(u.text);for(const k of ['voice','lang','rate','pitch','volume','onstart','onend','onerror'])v[k]=u[k];native.speak(v);}
+   else u.onerror?.({error:'voice-unavailable'});return;
+  }
+  cancel();const token=sequence,src=data.clips[u.text];
+  if(!src){u.onerror?.({error:'audio-unavailable'});return;}
+  const audio=player;let failed=false;
+  const fail=()=>{if(token!==sequence||failed)return;failed=true;cancel();u.onerror?.({error:'audio-unavailable'});};
+  audio.preload='none';audio.src=src;audio.volume=u.volume??1;audio.playbackRate=(u.rate||0.9)/0.9;audio.preservesPitch=true;
+  audio.onplaying=()=>{if(token===sequence)u.onstart?.();};
+  audio.onended=()=>{if(token!==sequence)return;audio.onplaying=audio.onended=audio.onerror=null;u.onend?.();};
+  audio.onerror=fail;try{audio.play().catch(fail);}catch(e){fail();}
+ }
+ window.MiaRecorded={getVoices:()=>[voice,...(native?.getVoices()||[])],cancel,speak,
+  addEventListener:(name,fn)=>native?.addEventListener(name,fn),removeEventListener:(name,fn)=>native?.removeEventListener(name,fn)};
+})();
+</script><script src="../../assets/english/speech.js"></script><link rel="stylesheet" href="../../assets/theme.css"><script src="../../assets/theme.js"></script></head><body>
+<div class="page"><div id="app"></div></div>
+<div class="bar" id="bar" data-mode="run"><div class="bar-in"></div></div>
+<script>
+window.MKEN15=function(questions){return {"decimal": false, "meta": {"subject": "en", "version": 1, "lessonLabel": "Phần", "book": "Tiếng Anh 5 · Global Success · Tập hai", "title": "Unit 15 · Our health", "topic": "Hỏi thăm và lời thoại về sức khỏe", "range": "Trang 30–35", "minutes": 40, "tip": "Mỗi đề có 6 câu nghe, chia đều ba mức. Xem lời nghe sẽ ghi nhận đã dùng hỗ trợ, không trừ điểm. Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp."}, "lessons": {"1": "What’s the matter?", "2": "What should I do?", "3": "Should not, đọc và viết hội thoại"}, "levels": [{"id": "tb", "name": "Mức 1 · Trung bình", "desc": "Nhận biết từ và mẫu câu cơ bản", "stars": 1, "pts": 3}, {"id": "kha", "name": "Mức 2 · Khá", "desc": "Dùng mẫu câu, nối ý và tìm thông tin", "stars": 2, "pts": 5}, {"id": "gioi", "name": "Mức 3 · Giỏi", "desc": "Kết hợp đọc hiểu và viết câu theo dữ liệu", "stars": 3, "pts": 5}],"questions":questions};};
+
+window.TEST_FN=function(H){return MKEN15([
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the health phrase.",
+  "transcript": "I have a stomach ache.",
+  "speech": "I have a stomach ache.",
+  "fields": [
+   {
+    "label": "Health phrase:",
+    "answer": "stomach ache",
+    "options": [
+     "toothache",
+     "headache",
+     "sore throat",
+     "stomach ache"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Health phrase: stomach ache.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the positive verb phrase.",
+  "transcript": "You should go to the doctor.",
+  "speech": "You should go to the doctor.",
+  "fields": [
+   {
+    "label": "Positive line:",
+    "answer": "go to the doctor",
+    "options": [
+     "go to the dentist",
+     "have a rest",
+     "drink warm water",
+     "go to the doctor"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Positive line: go to the doctor.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Who speaks first? Write the name only.",
+  "why": "Tên trước says đầu tiên.",
+  "lesson": 3,
+  "answers": [
+   "An"
+  ],
+  "exactForm": false,
+  "passage": "In our English role-play, An says, ‘I have a headache.’ A partner reads the card and says, ‘You should have a rest. You should not watch too much TV.’ An says, ‘Thanks for your advice.’",
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Which positive line does the partner read?",
+  "why": "Lấy từ hội thoại, không đoán cách chữa.",
+  "lesson": 3,
+  "opts": [
+   "have a rest",
+   "drink warm water",
+   "go to the doctor",
+   "go to the dentist"
+  ],
+  "answer": 0,
+  "passage": "In our English role-play, An says, ‘I have a headache.’ A partner reads the card and says, ‘You should have a rest. You should not watch too much TV.’ An says, ‘Thanks for your advice.’",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the health phrase used by the speaker.",
+  "why": "Đọc câu I have a…",
+  "lesson": 3,
+  "answers": [
+   "headache"
+  ],
+  "exactForm": false,
+  "passage": "In our English role-play, An says, ‘I have a headache.’ A partner reads the card and says, ‘You should have a rest. You should not watch too much TV.’ An says, ‘Thanks for your advice.’",
+  "level": "tb"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Đối chiếu nguyên hội thoại.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "The speaker uses the phrase headache.",
+    "a": true
+   },
+   {
+    "t": "The speaker uses the phrase sore throat.",
+    "a": false
+   }
+  ],
+  "passage": "In our English role-play, An says, ‘I have a headache.’ A partner reads the card and says, ‘You should have a rest. You should not watch too much TV.’ An says, ‘Thanks for your advice.’",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Who speaks first? Write the name only.",
+  "why": "Tên trước says đầu tiên.",
+  "lesson": 3,
+  "answers": [
+   "Linh"
+  ],
+  "exactForm": false,
+  "passage": "In our English role-play, Linh says, ‘I have a toothache.’ A partner reads the card and says, ‘You should go to the dentist. You should not eat ice cream very often.’ Linh says, ‘Thanks for your advice.’",
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Which positive line does the partner read?",
+  "why": "Lấy từ hội thoại, không đoán cách chữa.",
+  "lesson": 3,
+  "opts": [
+   "have a rest",
+   "drink warm water",
+   "go to the doctor",
+   "go to the dentist"
+  ],
+  "answer": 3,
+  "passage": "In our English role-play, Linh says, ‘I have a toothache.’ A partner reads the card and says, ‘You should go to the dentist. You should not eat ice cream very often.’ Linh says, ‘Thanks for your advice.’",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the health phrase used by the speaker.",
+  "why": "Đọc câu I have a…",
+  "lesson": 3,
+  "answers": [
+   "toothache"
+  ],
+  "exactForm": false,
+  "passage": "In our English role-play, Linh says, ‘I have a toothache.’ A partner reads the card and says, ‘You should go to the dentist. You should not eat ice cream very often.’ Linh says, ‘Thanks for your advice.’",
+  "level": "tb"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Đối chiếu nguyên hội thoại.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "The speaker uses the phrase toothache.",
+    "a": true
+   },
+   {
+    "t": "The speaker uses the phrase headache.",
+    "a": false
+   }
+  ],
+  "passage": "In our English role-play, Linh says, ‘I have a toothache.’ A partner reads the card and says, ‘You should go to the dentist. You should not eat ice cream very often.’ Linh says, ‘Thanks for your advice.’",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen. Which negative verb phrase is used?",
+  "transcript": "I have a headache. You should not watch too much TV.",
+  "speech": "I have a headache. You should not watch too much TV.",
+  "fields": [
+   {
+    "label": "Negative line:",
+    "answer": "watch too much TV",
+    "options": [
+     "watch too much TV",
+     "drink cold water",
+     "eat ice cream very often"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Negative line: watch too much TV.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Who speaks first? Write the name only.",
+  "why": "Tên trước says đầu tiên.",
+  "lesson": 3,
+  "answers": [
+   "Minh"
+  ],
+  "exactForm": false,
+  "passage": "In our English role-play, Minh says, ‘I have a sore throat.’ A partner reads the card and says, ‘You should go to the doctor. You should not drink cold water.’ Minh says, ‘Thanks for your advice.’",
+  "level": "kha"
+ },
+ {
+  "type": "mc",
+  "stem": "Which positive line does the partner read?",
+  "why": "Lấy từ hội thoại, không đoán cách chữa.",
+  "lesson": 3,
+  "opts": [
+   "have a rest",
+   "drink warm water",
+   "go to the doctor",
+   "go to the dentist"
+  ],
+  "answer": 2,
+  "passage": "In our English role-play, Minh says, ‘I have a sore throat.’ A partner reads the card and says, ‘You should go to the doctor. You should not drink cold water.’ Minh says, ‘Thanks for your advice.’",
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the speaker’s health phrase.",
+  "transcript": "Mai says: I have a sore throat. You should drink warm water.",
+  "speech": "Mai says: I have a sore throat. You should drink warm water.",
+  "fields": [
+   {
+    "label": "Health phrase:",
+    "answer": "sore throat",
+    "options": [
+     "toothache",
+     "headache",
+     "sore throat",
+     "stomach ache"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Health phrase: sore throat.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the health phrase used by the speaker.",
+  "why": "Đọc câu I have a…",
+  "lesson": 3,
+  "answers": [
+   "sore throat"
+  ],
+  "exactForm": false,
+  "passage": "In our English role-play, Minh says, ‘I have a sore throat.’ A partner reads the card and says, ‘You should go to the doctor. You should not drink cold water.’ Minh says, ‘Thanks for your advice.’",
+  "level": "kha"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Đối chiếu nguyên hội thoại.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "The speaker uses the phrase sore throat.",
+    "a": true
+   },
+   {
+    "t": "The speaker uses the phrase stomach ache.",
+    "a": false
+   }
+  ],
+  "passage": "In our English role-play, Minh says, ‘I have a sore throat.’ A partner reads the card and says, ‘You should go to the doctor. You should not drink cold water.’ Minh says, ‘Thanks for your advice.’",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Who speaks first? Write the name only.",
+  "why": "Tên trước says đầu tiên.",
+  "lesson": 3,
+  "answers": [
+   "Hoa"
+  ],
+  "exactForm": false,
+  "passage": "In our English role-play, Hoa says, ‘I have a stomach ache.’ A partner reads the card and says, ‘You should go to the doctor. You should not drink cold water.’ Hoa says, ‘Thanks for your advice.’",
+  "level": "kha"
+ },
+ {
+  "type": "mc",
+  "stem": "Which positive line does the partner read?",
+  "why": "Lấy từ hội thoại, không đoán cách chữa.",
+  "lesson": 3,
+  "opts": [
+   "have a rest",
+   "drink warm water",
+   "go to the doctor",
+   "go to the dentist"
+  ],
+  "answer": 2,
+  "passage": "In our English role-play, Hoa says, ‘I have a stomach ache.’ A partner reads the card and says, ‘You should go to the doctor. You should not drink cold water.’ Hoa says, ‘Thanks for your advice.’",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the health phrase used by the speaker.",
+  "why": "Đọc câu I have a…",
+  "lesson": 3,
+  "answers": [
+   "stomach ache",
+   "stomachache"
+  ],
+  "exactForm": false,
+  "passage": "In our English role-play, Hoa says, ‘I have a stomach ache.’ A partner reads the card and says, ‘You should go to the doctor. You should not drink cold water.’ Hoa says, ‘Thanks for your advice.’",
+  "level": "gioi"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Đối chiếu nguyên hội thoại.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "The speaker uses the phrase stomach ache.",
+    "a": true
+   },
+   {
+    "t": "The speaker uses the phrase toothache.",
+    "a": false
+   }
+  ],
+  "passage": "In our English role-play, Hoa says, ‘I have a stomach ache.’ A partner reads the card and says, ‘You should go to the doctor. You should not drink cold water.’ Hoa says, ‘Thanks for your advice.’",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Find both the health phrase and the positive verb phrase.",
+  "transcript": "I have a stomach ache. You should go to the doctor.",
+  "speech": "I have a stomach ache. You should go to the doctor.",
+  "fields": [
+   {
+    "label": "Health phrase:",
+    "answer": "stomach ache",
+    "options": [
+     "toothache",
+     "headache",
+     "sore throat",
+     "stomach ache"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Positive line:",
+    "answer": "go to the doctor",
+    "options": [
+     "go to the dentist",
+     "have a rest",
+     "drink warm water",
+     "go to the doctor"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Health phrase: stomach ache; Positive line: go to the doctor.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Who has the headache card with the positive line go to the doctor? Write the name only.",
+  "why": "An và Nam cùng health phrase nhưng khác positive line.",
+  "lesson": 3,
+  "answers": [
+   "Nam"
+  ],
+  "exactForm": false,
+  "passage": "Fictional English role-play · Speaker: An · Pronoun: He · Health phrase: headache · Positive line to practise: have a rest · Negative line to practise: watch too much TV. Use these lines for the language task; do not choose a treatment yourself.\nFictional English role-play · Speaker: Nam · Pronoun: He · Health phrase: headache · Positive line to practise: go to the doctor · Negative line to practise: watch too much TV. Use these lines for the language task; do not choose a treatment yourself.",
+  "level": "gioi"
+ },
+ {
+  "type": "mc",
+  "stem": "What does the partner say last?",
+  "why": "Đọc đúng lượt nói cuối.",
+  "lesson": 3,
+  "opts": [
+   "You are welcome.",
+   "I have a headache.",
+   "What is the matter?",
+   "Thanks for your advice."
+  ],
+  "answer": 0,
+  "passage": "A: What is the matter? B: I have a headache. A: You should have a rest. B: Thanks for your advice. A: You are welcome.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Write only Linh’s health phrase and positive verb phrase, not An’s.",
+  "transcript": "An says: I have a headache. His partner says: You should have a rest. Linh says: I have a toothache. Her partner says: You should go to the dentist.",
+  "speech": "An says: I have a headache. His partner says: You should have a rest. Linh says: I have a toothache. Her partner says: You should go to the dentist.",
+  "fields": [
+   {
+    "label": "Linh’s health phrase:",
+    "answer": "toothache",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Linh’s positive line:",
+    "answer": "go to the dentist",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Linh’s health phrase: toothache; Linh’s positive line: go to the dentist.",
+  "level": "gioi"
+ }
+]);};
+
+window.TEST_EXTRA={"id": "en-u15-de4-v1", "title": "Đề 4 · Đọc hiểu", "theme": "Đọc đúng người và các dòng hội thoại đã giao.", "home": "../index.html", "prev": "De3_MauCauVaHoiThoai.html", "next": "De5_VietCau.html"};
+
+</script><script src="../../assets/engine.js"></script></body></html>

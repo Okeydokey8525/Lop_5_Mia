@@ -1,0 +1,388 @@
+{
+  "voice": "Microsoft Zira Desktop",
+  "language": "en-US",
+  "rate": -1,
+  "format": "PCM 22050 Hz 16-bit mono",
+  "clips": [
+    {
+      "text": "A",
+      "file": "559aead08264d5795d39.wav"
+    },
+    {
+      "text": "An says: I do yoga once a week.",
+      "file": "bc92bf50eb25db89c238.wav"
+    },
+    {
+      "text": "B",
+      "file": "df7e70e5021544f4834b.wav"
+    },
+    {
+      "text": "C",
+      "file": "6b23c0d5f35d1b11f9b6.wav"
+    },
+    {
+      "text": "D",
+      "file": "3f39d5c348e5b79d06e8.wav"
+    },
+    {
+      "text": "Does she drink fresh juice?",
+      "file": "23ba6200882c284eca65.wav"
+    },
+    {
+      "text": "Does she drink fresh juice? Yes, she does. She drinks fresh juice.",
+      "file": "f2c56947377f42868008.wav"
+    },
+    {
+      "text": "E",
+      "file": "a9f51566bd6705f7ea6a.wav"
+    },
+    {
+      "text": "F",
+      "file": "f67ab10ad4e4c53121b6.wav"
+    },
+    {
+      "text": "G",
+      "file": "333e0a1e27815d0ceee5.wav"
+    },
+    {
+      "text": "H",
+      "file": "44bd7ae60f478fae1061.wav"
+    },
+    {
+      "text": "He does yoga once a week.",
+      "file": "1dc88bcc4169acf5eeb9.wav"
+    },
+    {
+      "text": "He does yoga.",
+      "file": "59277166d9aae5eeb36c.wav"
+    },
+    {
+      "text": "He drinks orange juice three times a week.",
+      "file": "44b768e12ec92cb475f7.wav"
+    },
+    {
+      "text": "He drinks orange juice.",
+      "file": "42d60010e998fa3c9780.wav"
+    },
+    {
+      "text": "He eats vegetables.",
+      "file": "545d86e8d0a70c76cdd6.wav"
+    },
+    {
+      "text": "He plays badminton.",
+      "file": "1fe5ecdecec9c6ab19fc.wav"
+    },
+    {
+      "text": "He plays sports regularly.",
+      "file": "f1f0d730d8fd8cd875af.wav"
+    },
+    {
+      "text": "Hello! Let us listen and learn English.",
+      "file": "d049b36b33ea2a1929e2.wav"
+    },
+    {
+      "text": "Hello! Let’s listen and learn English.",
+      "file": "d6be6a8235b16c4af314.wav"
+    },
+    {
+      "text": "Hoa says: I eat vegetables every day.",
+      "file": "6f828077a488fd864518.wav"
+    },
+    {
+      "text": "How does he stay healthy?",
+      "file": "a037e41c94fd51662363.wav"
+    },
+    {
+      "text": "How does he stay healthy? He does morning exercise.",
+      "file": "9e62ce125e8889b27296.wav"
+    },
+    {
+      "text": "How does she stay healthy?",
+      "file": "10e4b43e9d0ee82ed9d5.wav"
+    },
+    {
+      "text": "How does she stay healthy? She eats healthy food.",
+      "file": "6862eec08bca0d968122.wav"
+    },
+    {
+      "text": "How often does he do yoga?",
+      "file": "0629f93e99254597d793.wav"
+    },
+    {
+      "text": "How often does he do yoga? He does yoga once a week.",
+      "file": "15e8f7d933c8d4f8aa22.wav"
+    },
+    {
+      "text": "How often does he play badminton?",
+      "file": "2c236aa645cf68c3b110.wav"
+    },
+    {
+      "text": "How often does he play badminton? Three times a week: on Monday, Wednesday and Friday.",
+      "file": "8c17b8bb02a6d4c677fb.wav"
+    },
+    {
+      "text": "How often does she play badminton?",
+      "file": "381840ffedcdee3b1cb2.wav"
+    },
+    {
+      "text": "How often does she play badminton? She plays badminton twice a week.",
+      "file": "ae0f102c82477297a1e6.wav"
+    },
+    {
+      "text": "I",
+      "file": "a83dd0ccbffe39d071cc.wav"
+    },
+    {
+      "text": "I do yoga once a week.",
+      "file": "7fe4bb76862a5712a7ca.wav"
+    },
+    {
+      "text": "I do yoga twice a week.",
+      "file": "d552f0803f468058c632.wav"
+    },
+    {
+      "text": "I drink orange juice three times a week.",
+      "file": "ed9098f4d2a787fd2370.wav"
+    },
+    {
+      "text": "I eat vegetables every day.",
+      "file": "06dd5e9a7748b9c354fb.wav"
+    },
+    {
+      "text": "I play badminton three times a week, on Monday, Wednesday and Friday.",
+      "file": "f3c29eb334c87cfb90f5.wav"
+    },
+    {
+      "text": "I play badminton three times a week.",
+      "file": "3db816c8b7a5a7e33a13.wav"
+    },
+    {
+      "text": "I play badminton twice a week.",
+      "file": "51102cf6ffb0fc0cdb0c.wav"
+    },
+    {
+      "text": "J",
+      "file": "6da43b944e494e885e69.wav"
+    },
+    {
+      "text": "K",
+      "file": "86be9a55762d316a3026.wav"
+    },
+    {
+      "text": "L",
+      "file": "72dfcfb0c470ac255cde.wav"
+    },
+    {
+      "text": "Linh says: I play badminton twice a week.",
+      "file": "9fd03fd552a322b2ad86.wav"
+    },
+    {
+      "text": "M",
+      "file": "08f271887ce94707da82.wav"
+    },
+    {
+      "text": "Mai says: I play badminton three times a week.",
+      "file": "d406033e41247e15d82e.wav"
+    },
+    {
+      "text": "Minh says: I drink orange juice three times a week.",
+      "file": "a6bc8e31092303d8c318.wav"
+    },
+    {
+      "text": "N",
+      "file": "8ce86a6ae65d3692e730.wav"
+    },
+    {
+      "text": "Nam says: I do yoga once a week. Mai says: I play badminton three times a week.",
+      "file": "3f1190a2a3190702bebe.wav"
+    },
+    {
+      "text": "Nam says: I do yoga twice a week.",
+      "file": "4335bacfb4016ddfeadf.wav"
+    },
+    {
+      "text": "O",
+      "file": "c4694f2e93d5c4e7d51f.wav"
+    },
+    {
+      "text": "P",
+      "file": "5c62e091b8c0565f1baf.wav"
+    },
+    {
+      "text": "Q",
+      "file": "4ae81572f06e1b88fd5c.wav"
+    },
+    {
+      "text": "R",
+      "file": "8c2574892063f995fdf7.wav"
+    },
+    {
+      "text": "S",
+      "file": "8de0b3c47f112c59745f.wav"
+    },
+    {
+      "text": "She does exercise every morning.",
+      "file": "e5230f94c0574d8e1ec9.wav"
+    },
+    {
+      "text": "She does morning exercise.",
+      "file": "a468bd9b68a5fccbd376.wav"
+    },
+    {
+      "text": "She drinks fresh juice.",
+      "file": "92ac070b590f647518c1.wav"
+    },
+    {
+      "text": "She eats healthy food.",
+      "file": "6ae5c151abdc20911115.wav"
+    },
+    {
+      "text": "She eats vegetables every day.",
+      "file": "70a757150180cb694dba.wav"
+    },
+    {
+      "text": "She plays badminton twice a week.",
+      "file": "bc78396ab9ad5f2fb158.wav"
+    },
+    {
+      "text": "She plays sports.",
+      "file": "2768e3c980cca5134701.wav"
+    },
+    {
+      "text": "She wants to stay healthy.",
+      "file": "4e902d6a2c725b8e876a.wav"
+    },
+    {
+      "text": "T",
+      "file": "e632b7095b0bf32c260f.wav"
+    },
+    {
+      "text": "This is An. I do yoga once a week.",
+      "file": "83e2174043c4ab1d3f04.wav"
+    },
+    {
+      "text": "This is Hoa. I eat vegetables every day.",
+      "file": "ef18c0285d2586ff7195.wav"
+    },
+    {
+      "text": "This is Linh. I play badminton twice a week.",
+      "file": "05963b70ad46118151c4.wav"
+    },
+    {
+      "text": "This is Mai. I play badminton three times a week.",
+      "file": "ddb5a6acb9d84602f92e.wav"
+    },
+    {
+      "text": "This is Minh. I drink orange juice three times a week.",
+      "file": "b9b25445a3e3918b0c48.wav"
+    },
+    {
+      "text": "This is Nam. I do yoga twice a week.",
+      "file": "115a8e058d4bfb4308cc.wav"
+    },
+    {
+      "text": "To stay healthy, I do morning exercise.",
+      "file": "f1d636c3a45d4396df9c.wav"
+    },
+    {
+      "text": "To stay healthy, I drink fresh juice.",
+      "file": "25b3c38af9f3676d40da.wav"
+    },
+    {
+      "text": "To stay healthy, I eat healthy food.",
+      "file": "ca8d1a8d2faaaeb57c56.wav"
+    },
+    {
+      "text": "To stay healthy, I play sports.",
+      "file": "bf7c5f0618cc7634e77d.wav"
+    },
+    {
+      "text": "U",
+      "file": "a25513c7e0f6eaa80a33.wav"
+    },
+    {
+      "text": "V",
+      "file": "de5a6f78116eca62d7fc.wav"
+    },
+    {
+      "text": "W",
+      "file": "fcb5f40df9be6bae66c1.wav"
+    },
+    {
+      "text": "X",
+      "file": "4b68ab3847feda7d6c62.wav"
+    },
+    {
+      "text": "Y",
+      "file": "18f5384d58bcb1bba0bc.wav"
+    },
+    {
+      "text": "Z",
+      "file": "bbeebd879e1dff691854.wav"
+    },
+    {
+      "text": "do morning exercise",
+      "file": "af3e8a7a92eca244a69a.wav"
+    },
+    {
+      "text": "do yoga",
+      "file": "a637e8bdc26c4d0afbb5.wav"
+    },
+    {
+      "text": "drink fresh juice",
+      "file": "09edfa03250c1afa4f62.wav"
+    },
+    {
+      "text": "drink orange juice",
+      "file": "a7f9f6a98d43ddaee1fc.wav"
+    },
+    {
+      "text": "eat healthy food",
+      "file": "0479b9b8a6d28b5c849b.wav"
+    },
+    {
+      "text": "eat vegetables",
+      "file": "0c98d4815aa04e464ca7.wav"
+    },
+    {
+      "text": "every day",
+      "file": "ed28f6cae0fa83a36aec.wav"
+    },
+    {
+      "text": "every morning",
+      "file": "267eb4e1a87052c5dcbd.wav"
+    },
+    {
+      "text": "healthy",
+      "file": "87695fdac81728b9d7f2.wav"
+    },
+    {
+      "text": "once a week",
+      "file": "1fde216a9ded242e2f4e.wav"
+    },
+    {
+      "text": "play badminton",
+      "file": "066580e2a5fa20c4eb49.wav"
+    },
+    {
+      "text": "play sports",
+      "file": "694c808e3b24e4736573.wav"
+    },
+    {
+      "text": "regularly",
+      "file": "e7b6fe4a776cea9587f9.wav"
+    },
+    {
+      "text": "stay healthy",
+      "file": "c607f756b6e9014783de.wav"
+    },
+    {
+      "text": "three times a week",
+      "file": "d808b781e5fa4cc8b58e.wav"
+    },
+    {
+      "text": "twice a week",
+      "file": "c492819c7dc9bb867ea8.wav"
+    }
+  ]
+}

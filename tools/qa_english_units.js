@@ -14,6 +14,8 @@ async function fill(p){await p.evaluate(()=>__quiz.Q.forEach((q,i)=>{const e=doc
 (async()=>{const b=await chromium.launch();const errors=[];try{
  const p=await b.newPage({viewport:{width:390,height:844},reducedMotion:'reduce'});p.on('pageerror',e=>errors.push(e.message));await p.addInitScript(fixture);
  const catalog=await (await p.request.get(BASE+'catalog.json')).json(),tests=catalog.tests.filter(t=>KEYS.includes(t.id.split('-')[1]));const english=catalog.tests.filter(t=>t.subject==='en'),unitCount=new Set(english.map(t=>t.id.split('-')[1])).size;assert.equal(tests.length,KEYS.length*6);assert.equal(new Set(catalog.tests.map(t=>t.id)).size,catalog.tests.length);
+ // Updating the published-unit range must not rewrite Unit 1's textbook pages.
+ const firstOverview=await (await p.request.get(BASE+english.find(t=>t.topic==='u01').overview)).text();assert.ok(firstOverview.includes('SGK trang 12–13'));assert.ok(!firstOverview.includes('SGK trang 12–15'));
  for(const t of tests){
   await p.goto(BASE+t.file);assert.equal(await p.locator('.listen-block').count(),6);
   assert.deepEqual(await p.evaluate(()=>['tb','kha','gioi'].map(l=>__quiz.Q.filter(q=>q.type==='listen'&&q.level===l).length)),[2,2,2]);
@@ -34,6 +36,16 @@ async function fill(p){await p.evaluate(()=>__quiz.Q.forEach((q,i)=>{const e=doc
   if(t.id==='en-u12-de3-v1'||t.id==='en-u13-de3-v1'){
    const unit=Number(t.id.split('-')[1].slice(1));assert.match(await p.evaluate(n=>window['MKEN'+n]([]).meta.book,unit),/Tập hai/);
    const forms=await p.evaluate(n=>{const expected=n===12?'I will not buy roses.':'We will have pizza.';const q=__quiz.Q.find(q=>q.type==='text'&&q.exactForm&&q.answers[0]===expected);const short=n===12?'I won’t buy roses.':'We’ll have pizza.';const wrong=n===12?'I will not buys roses.':'We will has pizza.';return [__quiz.textIsCorrect(short,q.answers,true),__quiz.textIsCorrect(wrong,q.answers,true),__quiz.textIsCorrect(expected,q.answers,true)];},unit);assert.deepEqual(forms,[false,false,true]);
+  }
+  if(t.id==='en-u14-de3-v1'||t.id==='en-u15-de3-v1'){
+   const unit=Number(t.id.split('-')[1].slice(1));assert.match(await p.evaluate(n=>window['MKEN'+n]([]).meta.book,unit),/Tập hai/);
+   const forms=await p.evaluate(n=>{const expected=n===14?'He does not play sports.':'You should not watch too much TV.';const q=__quiz.Q.find(q=>q.type==='text'&&q.exactForm&&q.answers[0]===expected);const short=n===14?'He doesn’t play sports.':'You shouldn’t watch too much TV.';const wrong=n===14?'He does not plays sports.':'You should not watches too much TV.';return [__quiz.textIsCorrect(short,q.answers,true),__quiz.textIsCorrect(wrong,q.answers,true),__quiz.textIsCorrect(expected,q.answers,true)];},unit);assert.deepEqual(forms,[false,false,true]);
+  }
+  if(t.id==='en-u14-de1-v1'){
+   const forms=await p.evaluate(()=>{const q=__quiz.Q.find(q=>q.type==='text'&&q.answers[0]==='twice a week');return [__quiz.textIsCorrect('two times a week',q.answers),__quiz.textIsCorrect('three times a week',q.answers)];});assert.deepEqual(forms,[true,false]);
+  }
+  if(t.id==='en-u15-de4-v1'){
+   const forms=await p.evaluate(()=>{const q=__quiz.Q.find(q=>q.type==='text'&&q.answers[0]==='stomach ache');return [__quiz.textIsCorrect('stomachache',q.answers),__quiz.textIsCorrect('headache',q.answers)];});assert.deepEqual(forms,[true,false]);
   }
   if(t.id.startsWith('en-r')){
    const scope=await p.evaluate(()=>[...new Set(__quiz.Q.flatMap(q=>q.sourceUnits||[]))].sort((a,b)=>a-b));assert.deepEqual(scope,t.id.startsWith('en-r01')?[1,2,3,4,5]:[6,7,8,9,10]);assert.ok(!(await p.title()).includes('Unit R'));

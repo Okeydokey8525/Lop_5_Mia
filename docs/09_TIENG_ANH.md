@@ -129,3 +129,11 @@ Mỗi phần sáu đề/144 câu/36 nghe. Review là bài riêng, dùng key r01/
 Đã đọc đủ tập hai trang in 12–23 và Wordlist 74–75. Unit 12: Will you…?/Where will you go at Tet?, chuẩn bị và nơi đến, will/won’t + nguyên mẫu. Unit 13: What will you do…?/What food/drinks will you have…?, on tên ngày / at Mid-Autumn Festival. Bài đọc/lời mời/thực đơn tự soạn; không suy ngày lễ, hoạt động hoặc thức ăn từ tên sự kiện. NOTES cạnh nguồn ghi phạm vi cụ thể.
 
 Mỗi Unit sáu đề/144 câu/36 nghe, 24 câu/100 điểm (10/8/6). Trang học Unit 12 có 14 từ/cụm, Unit 13 có 16, mỗi trang sáu hội thoại và 12 bài luyện tự lưu. Âm thanh kèm bài 87/96 WAV; ABC bỏ dấu câu nhưng giữ vị trí highlight. Mỗi câu full form giữ yêu cầu viết đầy đủ; dạng khác nhận viết tắt khi tương đương. Tổng Anh 13 Unit + 2 Review = 90 đề/2160 vị trí câu hỏi. Chưa làm Starter, Units 14–20/Reviews 3–4 hoặc bộ kiểm tra học kỳ riêng. Bằng chứng ở bàn giao 2026-11-19_UNIT12_UNIT13.md.
+
+## Units14–15 — 19/11/2026
+
+Unit14 Staying healthy (24–29): How does he/she stay healthy?; How often does…?; do/does, play/plays, drink/drinks, eat/eats; once/twice/three times a week/every day. Lịch giả định ghi đủ bảy ngày, một buổi/ngày đã liệt kê; regularly không được gán số cố định. Nhận các biến thể tần suất hợp lệ khi tương đương.
+
+Unit15 Our health (30–35): What’s the matter?; I have/he has; What should I do?; should/should not + nguyên mẫu. Thẻ hội thoại giao sẵn câu, không bắt trẻ chẩn đoán/chọn cách chữa; take some medicine/rinse… được học như cụm từ, không có tên thuốc/liều/công thức pha. Stomach ache/stomachache đều được nhận ở câu điền phù hợp. Full form vẫn không nhận viết tắt.
+
+Mỗi Unit16từ/cụm,6hội thoại,12bài luyện tự lưu;6đề/144câu/36nghe.95/91WAV kèm bài. Đã đọc đủ12trang và Wordlist74–75, NOTES cạnh nguồn. Tổng hiện tại15Unit+2Review=102đề/2448câu; học từ đầy đủ16trang/240từ/97hội thoại/192bài luyện. Review3 chưa được giao trong đợt này.

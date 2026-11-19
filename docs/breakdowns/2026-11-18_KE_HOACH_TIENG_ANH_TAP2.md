@@ -1,6 +1,6 @@
 # Kế hoạch Tiếng Anh 5 Global Success - tập hai
 
-Ngày rà soát: 18/11/2026. Chủ repo đã giao làm Unit 11 trước; xem [bàn giao Unit 11](2026-11-18_UNIT11.md). Ngày 19/11 chủ repo giao tiếp Units 12–13; xem bàn giao 2026-11-19_UNIT12_UNIT13.md. Units 14–20, Review 3–4 vẫn là kế hoạch, chưa được triển khai. Nội dung dưới đây ghi phạm vi và trình tự đã đề xuất.
+Ngày rà soát: 18/11/2026. Chủ repo đã giao làm Unit 11 trước; xem [bàn giao Unit 11](2026-11-18_UNIT11.md). Ngày 19/11 chủ repo giao tiếp Units 12–13; xem bàn giao 2026-11-19_UNIT12_UNIT13.md. Chủ repo tiếp tục giao Units14–15 ngày19/11; xem bàn giao2026-11-19_UNIT14_UNIT15.md. Review3, Units16–20 và Review4 vẫn là kế hoạch, chưa được triển khai. Nội dung dưới đây ghi phạm vi và trình tự đã đề xuất.
 
 ## 1. Nguồn và mức độ kiểm tra
 

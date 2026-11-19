@@ -34,3 +34,5 @@ Nguồn nội dung và ghi nhận trang sách của từng unit nằm cạnh nha
 - [Unit 11](breakdowns/2026-11-18_UNIT11.md): sáu đề, học từ/phát âm, âm thanh đi kèm, kiểm tra không có Speech API và giới hạn kiểm chứng iPad.
 
 - [Units 12–13](breakdowns/2026-11-19_UNIT12_UNIT13.md): hai Unit tập hai, will/won’t, ngày đặc biệt/thực đơn, âm thanh kèm bài và đánh vần có dấu câu.
+
+- [Units14–15](breakdowns/2026-11-19_UNIT14_UNIT15.md): thói quen/tần suất và hội thoại sức khỏe, thẻ giả định, âm thanh kèm bài, lưu bài và QA.

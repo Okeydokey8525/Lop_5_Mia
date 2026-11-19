@@ -158,3 +158,9 @@ Chạy `node tools/qa_english_units.js --units=11`, `node tools/qa_persistence.j
 Chạy `node tools/qa_english_units.js --units=12,13`, `node tools/qa_persistence.js --units=12,13`, `node tools/qa_study.js` (hoặc `--units=12,13` để kiểm có chọn lọc). QA đề kiểm full form/viết tắt và từ sai như will buys/will has. QA học kiểm will + nguyên mẫu, lưu qua đóng/mở, không tự đánh dấu từ đã thuộc khi chỉ bấm nghe.
 
 `node tools/qa_recorded_audio.js --unit=12` và `--unit=13`, mỗi lệnh thêm một lượt `--webkit`. Kiểm tất cả 87/96 clip là audio không im lặng, phát file thật không Speech API, chậm 0.8, ABC, dừng/chuyển nhóm, lỗi mạng/thử lại, ba cấp nghe. Children’s Day và Mid-Autumn Festival chỉ đánh vần chữ A-Z, không đọc dấu câu. Windows WebKit không xác nhận phát WAV nhúng qua file://; HTTPS và Chromium standalone được kiểm riêng. Phát âm/nhịp tự nhiên và iPad thật cần nghe thử, không suy từ sự kiện ended. CI chạy cả 3 Unit có file nghe; mốc responsive mới 166×8×2 = 2656.
+
+## Units14–15 và kiểm nghe có giới hạn song song
+
+Chạy `node tools/qa_english_units.js --units=14,15`, `node tools/qa_persistence.js --units=14,15`, `node tools/qa_study.js --units=14,15` (bỏ chọn để kiểm đầy đủ16trang). Kiểm does + nguyên mẫu, should + nguyên mẫu, full form không nhận viết tắt/từ thêm s; nhận two times a week/stomachache nhưng không nhận tần suất hoặc health phrase sai.
+
+`node tools/qa_recorded_all.js --units=14,15 --jobs=3` chạy bốn gate file nghe thật Chromium/WebKit; `qa_recorded_audio.js --unit=14 [--webkit]` vẫn dùng độc lập như trước. CI gọi batch cho Units11–15,10gate, tối đa3 tiến trình, log/report riêng trong artifacts/audio-batch-local. Bất kỳ child trả lỗi/signal đều khiến gate tổng thất bại; không bỏ kiểm clip, playback, ABC, stop, retry hoặc thiếu Speech API. Responsive toàn site mới182×8×2=2912; full study16trang/240từ/97hội thoại/192bài luyện/384layout. iPad thật và nghe duyệt bằng tai vẫn riêng.

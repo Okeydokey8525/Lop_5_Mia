@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tiếng Anh 5 · Unit 14 · Đề 1 · Khởi động</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<link rel="stylesheet" href="../../assets/engine.css"><script type="application/json" id="mia-audio-data">{"voice": "Microsoft Zira Desktop", "clips": {"An says: I do yoga once a week.": "../../assets/english/u14/audio/bc92bf50eb25db89c238.wav", "Hello! Let’s listen and learn English.": "../../assets/english/u14/audio/d6be6a8235b16c4af314.wav", "I play badminton twice a week.": "../../assets/english/u14/audio/51102cf6ffb0fc0cdb0c.wav", "Minh says: I drink orange juice three times a week.": "../../assets/english/u14/audio/a6bc8e31092303d8c318.wav", "Nam says: I do yoga once a week. Mai says: I play badminton three times a week.": "../../assets/english/u14/audio/3f1190a2a3190702bebe.wav", "This is Linh. I play badminton twice a week.": "../../assets/english/u14/audio/05963b70ad46118151c4.wav", "To stay healthy, I do morning exercise.": "../../assets/english/u14/audio/f1d636c3a45d4396df9c.wav"}}</script><script>// Optional recorded voice for pages with a complete, unit-owned audio manifest.
+(function(){'use strict';
+ const el=document.getElementById('mia-audio-data');if(!el)return;
+ const data=JSON.parse(el.textContent),native=window.speechSynthesis;
+ const voice={name:'Âm thanh có sẵn · Anh Mỹ (Zira)',lang:'en-US',voiceURI:'mia-recorded',localService:true};
+ // Reuse one media element for the whole spelling queue (per-element playback
+ // permission on iPad); only start playback from a learner's button press.
+ const player=new Audio();let sequence=0;
+ function cancel(){sequence++;player.onplaying=player.onended=player.onerror=null;player.pause();if(native)native.cancel();}
+ function speak(u){
+  if(u.voice?.voiceURI!==voice.voiceURI){
+   if(native&&window.SpeechSynthesisUtterance){const v=new SpeechSynthesisUtterance(u.text);for(const k of ['voice','lang','rate','pitch','volume','onstart','onend','onerror'])v[k]=u[k];native.speak(v);}
+   else u.onerror?.({error:'voice-unavailable'});return;
+  }
+  cancel();const token=sequence,src=data.clips[u.text];
+  if(!src){u.onerror?.({error:'audio-unavailable'});return;}
+  const audio=player;let failed=false;
+  const fail=()=>{if(token!==sequence||failed)return;failed=true;cancel();u.onerror?.({error:'audio-unavailable'});};
+  audio.preload='none';audio.src=src;audio.volume=u.volume??1;audio.playbackRate=(u.rate||0.9)/0.9;audio.preservesPitch=true;
+  audio.onplaying=()=>{if(token===sequence)u.onstart?.();};
+  audio.onended=()=>{if(token!==sequence)return;audio.onplaying=audio.onended=audio.onerror=null;u.onend?.();};
+  audio.onerror=fail;try{audio.play().catch(fail);}catch(e){fail();}
+ }
+ window.MiaRecorded={getVoices:()=>[voice,...(native?.getVoices()||[])],cancel,speak,
+  addEventListener:(name,fn)=>native?.addEventListener(name,fn),removeEventListener:(name,fn)=>native?.removeEventListener(name,fn)};
+})();
+</script><script src="../../assets/english/speech.js"></script><link rel="stylesheet" href="../../assets/theme.css"><script src="../../assets/theme.js"></script></head><body>
+<div class="page"><div id="app"></div></div>
+<div class="bar" id="bar" data-mode="run"><div class="bar-in"></div></div>
+<script>
+window.MKEN14=function(questions){return {"decimal": false, "meta": {"subject": "en", "version": 1, "lessonLabel": "Phần", "book": "Tiếng Anh 5 · Global Success · Tập hai", "title": "Unit 14 · Staying healthy", "topic": "Thói quen giữ sức khỏe và tần suất", "range": "Trang 24–29", "minutes": 40, "tip": "Mỗi đề có 6 câu nghe, chia đều ba mức. Xem lời nghe sẽ ghi nhận đã dùng hỗ trợ, không trừ điểm. Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp."}, "lessons": {"1": "How does…stay healthy?", "2": "How often…? và lịch tuần", "3": "Nhịp câu, đọc và viết thói quen"}, "levels": [{"id": "tb", "name": "Mức 1 · Trung bình", "desc": "Nhận biết từ và mẫu câu cơ bản", "stars": 1, "pts": 3}, {"id": "kha", "name": "Mức 2 · Khá", "desc": "Dùng mẫu câu, nối ý và tìm thông tin", "stars": 2, "pts": 5}, {"id": "gioi", "name": "Mức 3 · Giỏi", "desc": "Kết hợp đọc hiểu và viết câu theo dữ liệu", "stars": 3, "pts": 5}],"questions":questions};};
+
+window.TEST_FN=function(H){return MKEN14([
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the habit phrase in base form.",
+  "transcript": "To stay healthy, I do morning exercise.",
+  "speech": "To stay healthy, I do morning exercise.",
+  "fields": [
+   {
+    "label": "Habit:",
+    "answer": "do morning exercise",
+    "options": [
+     "do morning exercise",
+     "play sports",
+     "drink fresh juice",
+     "eat healthy food"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Habit: do morning exercise.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the frequency.",
+  "transcript": "I play badminton twice a week.",
+  "speech": "I play badminton twice a week.",
+  "fields": [
+   {
+    "label": "Frequency:",
+    "answer": "twice a week",
+    "options": [
+     "once a week",
+     "twice a week",
+     "three times a week",
+     "every day"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Frequency: twice a week.",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the picture. Choose the habit.",
+  "why": "Bạn nhỏ đang tập thể dục buổi sáng.",
+  "lesson": 1,
+  "opts": [
+   "play sports",
+   "drink fresh juice",
+   "eat healthy food",
+   "do morning exercise"
+  ],
+  "answer": 3,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u14/do-morning-exercise.webp\" alt=\"tập thể dục buổi sáng\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: How ___ he stay healthy?",
+  "why": "He dùng does trong câu hỏi.",
+  "lesson": 1,
+  "answers": [
+   "does"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "He/she: does, plays, drinks.",
+  "lesson": 2,
+  "pairs": [
+   {
+    "left": "do",
+    "right": "does"
+   },
+   {
+    "left": "play",
+    "right": "plays"
+   },
+   {
+    "left": "drink",
+    "right": "drinks"
+   }
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Choose the correct habit sentence.",
+  "why": "Câu kể với she dùng eats.",
+  "lesson": 1,
+  "opts": [
+   "She eating healthy food.",
+   "She eats healthy food.",
+   "She eat healthy food.",
+   "She does eats healthy food."
+  ],
+  "answer": 1,
+  "level": "tb"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Sau does dùng stay nguyên mẫu.",
+  "lesson": 1,
+  "items": [
+   "How",
+   "does",
+   "she",
+   "stay",
+   "healthy?"
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: He ___ morning exercise. Use do.",
+  "why": "Do → does với he.",
+  "lesson": 1,
+  "answers": [
+   "does"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "How often does An do yoga?",
+  "why": "Một buổi trong tuần → once a week.",
+  "lesson": 2,
+  "opts": [
+   "three times a week",
+   "every day",
+   "once a week",
+   "twice a week"
+  ],
+  "answer": 2,
+  "passage": "Name: An · Pronoun: He · Habit: do morning exercise · Tracked activity: do yoga · Complete seven-day record, one session on each listed day: Monday. No sessions on other days.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: How ___ does she play badminton?",
+  "why": "How often hỏi tần suất.",
+  "lesson": 2,
+  "answers": [
+   "often"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen. Choose the weekly activity in base form.",
+  "transcript": "This is Linh. I play badminton twice a week.",
+  "speech": "This is Linh. I play badminton twice a week.",
+  "fields": [
+   {
+    "label": "Activity:",
+    "answer": "play badminton",
+    "options": [
+     "do yoga",
+     "play badminton",
+     "drink orange juice",
+     "eat vegetables"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Activity: play badminton.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the tracked activity phrase.",
+  "why": "Play badminton.",
+  "lesson": 2,
+  "answers": [
+   "play badminton"
+  ],
+  "exactForm": false,
+  "passage": "Name: Linh · Pronoun: She · Habit: play sports · Tracked activity: play badminton · Complete seven-day record, one session on each listed day: Tuesday, Thursday. No sessions on other days.",
+  "level": "kha"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "He dùng drinks.",
+  "lesson": 1,
+  "items": [
+   "He",
+   "drinks",
+   "fresh",
+   "juice."
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen. Choose the frequency, not the activity.",
+  "transcript": "Minh says: I drink orange juice three times a week.",
+  "speech": "Minh says: I drink orange juice three times a week.",
+  "fields": [
+   {
+    "label": "Frequency:",
+    "answer": "three times a week",
+    "options": [
+     "once a week",
+     "twice a week",
+     "three times a week",
+     "every day"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Frequency: three times a week.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: How often does he ___ yoga?",
+  "why": "Sau does dùng do, không dùng does.",
+  "lesson": 2,
+  "answers": [
+   "do"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Minh có Monday, Wednesday, Friday.",
+  "lesson": 2,
+  "items": [
+   {
+    "t": "The record has three orange-juice sessions.",
+    "a": true
+   },
+   {
+    "t": "The record has a session on Sunday.",
+    "a": false
+   }
+  ],
+  "passage": "Name: Minh · Pronoun: He · Habit: drink fresh juice · Tracked activity: drink orange juice · Complete seven-day record, one session on each listed day: Monday, Wednesday, Friday. No sessions on other days.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the frequency phrase.",
+  "why": "Hai buổi → twice a week.",
+  "lesson": 2,
+  "answers": [
+   "twice a week",
+   "two times a week"
+  ],
+  "exactForm": false,
+  "passage": "Name: Linh · Pronoun: She · Habit: play sports · Tracked activity: play badminton · Complete seven-day record, one session on each listed day: Tuesday, Thursday. No sessions on other days.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: She plays badminton twice a ___.",
+  "why": "Twice a week: hai lần mỗi tuần.",
+  "lesson": 2,
+  "answers": [
+   "week"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the complete tracked-activity sentence, starting with He.",
+  "why": "He does yoga once a week.",
+  "lesson": 3,
+  "answers": [
+   "He does yoga once a week.",
+   "He does yoga one time a week."
+  ],
+  "exactForm": false,
+  "passage": "Name: An · Pronoun: He · Habit: do morning exercise · Tracked activity: do yoga · Complete seven-day record, one session on each listed day: Monday. No sessions on other days.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write the complete tracked-activity sentence, starting with She.",
+  "why": "She plays badminton twice a week.",
+  "lesson": 3,
+  "answers": [
+   "She plays badminton twice a week.",
+   "She plays badminton two times a week."
+  ],
+  "exactForm": false,
+  "passage": "Name: Linh · Pronoun: She · Habit: play sports · Tracked activity: play badminton · Complete seven-day record, one session on each listed day: Tuesday, Thursday. No sessions on other days.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Find both activity and frequency.",
+  "transcript": "An says: I do yoga once a week.",
+  "speech": "An says: I do yoga once a week.",
+  "fields": [
+   {
+    "label": "Activity:",
+    "answer": "do yoga",
+    "options": [
+     "do yoga",
+     "play badminton",
+     "drink orange juice",
+     "eat vegetables"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Frequency:",
+    "answer": "once a week",
+    "options": [
+     "once a week",
+     "twice a week",
+     "three times a week",
+     "every day"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Activity: do yoga; Frequency: once a week.",
+  "level": "gioi"
+ },
+ {
+  "type": "mc",
+  "stem": "Choose the correct question.",
+  "why": "Does + she + eat.",
+  "lesson": 3,
+  "opts": [
+   "How often do she eats vegetables?",
+   "How often she does eat vegetables?",
+   "How often does she eat vegetables?",
+   "How often does she eats vegetables?"
+  ],
+  "answer": 2,
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write two sentences: habit, then tracked activity with frequency. Start both with He.",
+  "why": "Phân biệt habit và tracked activity.",
+  "lesson": 3,
+  "answers": [
+   "He drinks fresh juice. He drinks orange juice three times a week.",
+   "He drinks fresh juice. He drinks orange juice 3 times a week."
+  ],
+  "exactForm": false,
+  "passage": "Name: Minh · Pronoun: He · Habit: drink fresh juice · Tracked activity: drink orange juice · Complete seven-day record, one session on each listed day: Monday, Wednesday, Friday. No sessions on other days.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Write only Mai’s activity and frequency, not Nam’s.",
+  "transcript": "Nam says: I do yoga once a week. Mai says: I play badminton three times a week.",
+  "speech": "Nam says: I do yoga once a week. Mai says: I play badminton three times a week.",
+  "fields": [
+   {
+    "label": "Mai’s activity:",
+    "answer": "play badminton",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Mai’s frequency:",
+    "answer": "three times a week",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Mai’s activity: play badminton; Mai’s frequency: three times a week.",
+  "level": "gioi"
+ }
+]);};
+
+window.TEST_EXTRA={"id": "en-u14-de1-v1", "title": "Đề 1 · Khởi động", "theme": "Làm quen thói quen giữ sức khỏe và tần suất.", "home": "../index.html", "next": "De2_TuVungVaHinhAnh.html"};
+
+</script><script src="../../assets/engine.js"></script></body></html>

@@ -1,0 +1,372 @@
+{
+  "voice": "Microsoft Zira Desktop",
+  "language": "en-US",
+  "rate": -1,
+  "format": "PCM 22050 Hz 16-bit mono",
+  "clips": [
+    {
+      "text": "A",
+      "file": "559aead08264d5795d39.wav"
+    },
+    {
+      "text": "An says: I have a headache. His partner says: You should have a rest. Linh says: I have a toothache. Her partner says: You should go to the dentist.",
+      "file": "83bc3dc56a79d5fce8c9.wav"
+    },
+    {
+      "text": "An says: I have a headache. You should have a rest.",
+      "file": "dcdb5bcf4965ea46d028.wav"
+    },
+    {
+      "text": "Are you OK?",
+      "file": "e6147b914743a34e05f4.wav"
+    },
+    {
+      "text": "Are you OK? I do not feel well. I have a sore throat.",
+      "file": "835880096509a3c941c0.wav"
+    },
+    {
+      "text": "B",
+      "file": "df7e70e5021544f4834b.wav"
+    },
+    {
+      "text": "C",
+      "file": "6b23c0d5f35d1b11f9b6.wav"
+    },
+    {
+      "text": "D",
+      "file": "3f39d5c348e5b79d06e8.wav"
+    },
+    {
+      "text": "E",
+      "file": "a9f51566bd6705f7ea6a.wav"
+    },
+    {
+      "text": "F",
+      "file": "f67ab10ad4e4c53121b6.wav"
+    },
+    {
+      "text": "G",
+      "file": "333e0a1e27815d0ceee5.wav"
+    },
+    {
+      "text": "H",
+      "file": "44bd7ae60f478fae1061.wav"
+    },
+    {
+      "text": "Hello! Let us listen and learn English.",
+      "file": "d049b36b33ea2a1929e2.wav"
+    },
+    {
+      "text": "Hello! Let’s listen and learn English.",
+      "file": "d6be6a8235b16c4af314.wav"
+    },
+    {
+      "text": "Hoa says: I have a stomach ache. You should go to the doctor.",
+      "file": "f658a43cb993ffd26b1a.wav"
+    },
+    {
+      "text": "I",
+      "file": "a83dd0ccbffe39d071cc.wav"
+    },
+    {
+      "text": "I do not feel well",
+      "file": "76a75082867f92211b3c.wav"
+    },
+    {
+      "text": "I do not feel well. I will tell an adult.",
+      "file": "747b904ce6ea9d02cd1c.wav"
+    },
+    {
+      "text": "I have a headache.",
+      "file": "0303528602a4fee28233.wav"
+    },
+    {
+      "text": "I have a headache. You should go to the doctor.",
+      "file": "ea75363b7f1a65924ea5.wav"
+    },
+    {
+      "text": "I have a headache. You should have a rest.",
+      "file": "1200f20f2f76518fe535.wav"
+    },
+    {
+      "text": "I have a headache. You should not watch too much TV.",
+      "file": "be266be70218b9809e30.wav"
+    },
+    {
+      "text": "I have a sore throat.",
+      "file": "3750fea9c41fff4342e4.wav"
+    },
+    {
+      "text": "I have a sore throat. You should drink warm water.",
+      "file": "3cb146130da05f3d9991.wav"
+    },
+    {
+      "text": "I have a sore throat. You should go to the doctor.",
+      "file": "cf6b35185bb7ee5035f1.wav"
+    },
+    {
+      "text": "I have a sore throat. You should not drink cold water.",
+      "file": "6fe6bec2e8310ef486bb.wav"
+    },
+    {
+      "text": "I have a stomach ache.",
+      "file": "5e4619337ce78b6bfc44.wav"
+    },
+    {
+      "text": "I have a stomach ache. You should go to the doctor.",
+      "file": "fb6d508c406340f6806b.wav"
+    },
+    {
+      "text": "I have a stomach ache. You should not drink cold water.",
+      "file": "01d428aca6f5d8a23178.wav"
+    },
+    {
+      "text": "I have a toothache.",
+      "file": "9035c77ae2b659e524fb.wav"
+    },
+    {
+      "text": "I have a toothache. You should go to the dentist.",
+      "file": "050505ef84ac5438941f.wav"
+    },
+    {
+      "text": "I have a toothache. You should not eat ice cream very often.",
+      "file": "eee6861d8ea77d682335.wav"
+    },
+    {
+      "text": "In the role-play, the partner says: You should go to the dentist.",
+      "file": "825d7cf43948fd4db9fb.wav"
+    },
+    {
+      "text": "In the role-play, the partner says: You should have a rest.",
+      "file": "ddfd6b3d1ec43f2f8ec9.wav"
+    },
+    {
+      "text": "J",
+      "file": "6da43b944e494e885e69.wav"
+    },
+    {
+      "text": "K",
+      "file": "86be9a55762d316a3026.wav"
+    },
+    {
+      "text": "L",
+      "file": "72dfcfb0c470ac255cde.wav"
+    },
+    {
+      "text": "Linh says: I have a toothache. You should go to the dentist.",
+      "file": "29f6a455082bba138cfe.wav"
+    },
+    {
+      "text": "M",
+      "file": "08f271887ce94707da82.wav"
+    },
+    {
+      "text": "Mai says: I have a sore throat. You should drink warm water.",
+      "file": "cba48a85b97a0930065a.wav"
+    },
+    {
+      "text": "Minh says: I have a sore throat. You should go to the doctor.",
+      "file": "b7707a87150d4f778c86.wav"
+    },
+    {
+      "text": "N",
+      "file": "8ce86a6ae65d3692e730.wav"
+    },
+    {
+      "text": "Nam says: I have a headache. You should go to the doctor.",
+      "file": "9c38b95a030cc7e3e297.wav"
+    },
+    {
+      "text": "O",
+      "file": "c4694f2e93d5c4e7d51f.wav"
+    },
+    {
+      "text": "Our card says: You should drink warm water.",
+      "file": "65961e22548f9c83fe21.wav"
+    },
+    {
+      "text": "Our card says: You should go to the doctor.",
+      "file": "e51feebd61002b5ca911.wav"
+    },
+    {
+      "text": "Our role-play card says: You should go to the dentist.",
+      "file": "d7a989bd06b826e83e20.wav"
+    },
+    {
+      "text": "P",
+      "file": "5c62e091b8c0565f1baf.wav"
+    },
+    {
+      "text": "Q",
+      "file": "4ae81572f06e1b88fd5c.wav"
+    },
+    {
+      "text": "R",
+      "file": "8c2574892063f995fdf7.wav"
+    },
+    {
+      "text": "S",
+      "file": "8de0b3c47f112c59745f.wav"
+    },
+    {
+      "text": "T",
+      "file": "e632b7095b0bf32c260f.wav"
+    },
+    {
+      "text": "Take some medicine is a phrase in our English lesson. Ask an adult for help.",
+      "file": "4e80ab16ceffc12b95b2.wav"
+    },
+    {
+      "text": "Thanks for your advice",
+      "file": "5250ce1b39ca6617e1b9.wav"
+    },
+    {
+      "text": "Thanks for your advice.",
+      "file": "00b891e1325316f9f79e.wav"
+    },
+    {
+      "text": "Thanks for your advice. You are welcome.",
+      "file": "a0398cef43d98a1d0e4f.wav"
+    },
+    {
+      "text": "The card says: You should not watch too much TV.",
+      "file": "1fe9813b0fb0c1038fec.wav"
+    },
+    {
+      "text": "The negative line on the card is: You should not watch too much TV.",
+      "file": "178124eb45d3ed56e2f5.wav"
+    },
+    {
+      "text": "U",
+      "file": "a25513c7e0f6eaa80a33.wav"
+    },
+    {
+      "text": "V",
+      "file": "de5a6f78116eca62d7fc.wav"
+    },
+    {
+      "text": "W",
+      "file": "fcb5f40df9be6bae66c1.wav"
+    },
+    {
+      "text": "We read the phrase rinse your mouth with salt water in our English lesson.",
+      "file": "a852ed48c08f682abd2a.wav"
+    },
+    {
+      "text": "What does our role-play card say?",
+      "file": "ae94951d833f1a216e16.wav"
+    },
+    {
+      "text": "What does our role-play card say? You should have a rest.",
+      "file": "0ceb8c839bc8bea9a900.wav"
+    },
+    {
+      "text": "What is the matter",
+      "file": "ce0bdb5f8b4869eaa137.wav"
+    },
+    {
+      "text": "What is the matter?",
+      "file": "0dc13300ad6f7348e094.wav"
+    },
+    {
+      "text": "What is the matter? I have a headache.",
+      "file": "76678c479036db57f1de.wav"
+    },
+    {
+      "text": "What is the negative line on our card?",
+      "file": "03d861d7735c372be8c9.wav"
+    },
+    {
+      "text": "What is the negative line on our card? You should not watch too much TV.",
+      "file": "b5cc94eaa138eab166dd.wav"
+    },
+    {
+      "text": "What should I do?",
+      "file": "00eeea79a031c9a27a03.wav"
+    },
+    {
+      "text": "What should I do? Our role-play card says: You should go to the dentist.",
+      "file": "0b53944be92cadc0a0f3.wav"
+    },
+    {
+      "text": "X",
+      "file": "4b68ab3847feda7d6c62.wav"
+    },
+    {
+      "text": "Y",
+      "file": "18f5384d58bcb1bba0bc.wav"
+    },
+    {
+      "text": "You should drink warm water.",
+      "file": "216711a7671180602474.wav"
+    },
+    {
+      "text": "You should go to the dentist.",
+      "file": "b4923852c1764f32743c.wav"
+    },
+    {
+      "text": "You should go to the doctor.",
+      "file": "c969ca8bb3a3ecfa8c53.wav"
+    },
+    {
+      "text": "You should have a rest.",
+      "file": "0af61c743fe5399ce8ed.wav"
+    },
+    {
+      "text": "Z",
+      "file": "bbeebd879e1dff691854.wav"
+    },
+    {
+      "text": "advice",
+      "file": "02c97447687b4871b00a.wav"
+    },
+    {
+      "text": "drink warm water",
+      "file": "00d89478ed80d9e6271b.wav"
+    },
+    {
+      "text": "go to the dentist",
+      "file": "f8bc2260fe158b89a0a2.wav"
+    },
+    {
+      "text": "go to the doctor",
+      "file": "7d31df4d837af3910ff8.wav"
+    },
+    {
+      "text": "have a rest",
+      "file": "c5382b0c32a097008ce8.wav"
+    },
+    {
+      "text": "headache",
+      "file": "cfa9ac1e084975b5d646.wav"
+    },
+    {
+      "text": "rinse your mouth with salt water",
+      "file": "045648e28718aeb61cd1.wav"
+    },
+    {
+      "text": "should",
+      "file": "f86b1f62a8554232b940.wav"
+    },
+    {
+      "text": "should not",
+      "file": "53dd4304a50025e1238d.wav"
+    },
+    {
+      "text": "sore throat",
+      "file": "6035d278aab61595edbd.wav"
+    },
+    {
+      "text": "stomach ache",
+      "file": "eda37db6ca88135125e5.wav"
+    },
+    {
+      "text": "take some medicine",
+      "file": "203a68dd288865bf165a.wav"
+    },
+    {
+      "text": "toothache",
+      "file": "7153a86186dd04c026f5.wav"
+    }
+  ]
+}

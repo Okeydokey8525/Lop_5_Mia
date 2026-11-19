@@ -100,3 +100,7 @@ Nguồn `english/u11/`, web `TiengAnh5/Unit11_FamilyTime/`. Nguồn WAV/manifest
 ### Units 12–13 (19/11/2026)
 
 Nguồn `generator/english/u12/`, `u13/`; web `TiengAnh5/Unit12_OurTetHoliday/`, `Unit13_OurSpecialDays/`. Mỗi nguồn có content/study/overview/NOTES/audio_source, images/PROMPTS, audio/manifest + WAV, common/tests sinh từ Python. Dùng chung recorded.py/js; generator nhận manifest theo Unit, web trích audio trong đúng namespace uNN để clip ABC giống nhau không đổi URL Unit cũ. QA audio nhận `--unit=11|12|13` và `--webkit`. Không thêm thư mục app mới hoặc thư viện runtime. Tổng 126 đề, 166 HTML, 21 poster; chỉ site/ xuất bản.
+
+### Units14–15 — 19/11/2026
+
+Nguồn `generator/english/u14/`, `u15/`; web `TiengAnh5/Unit14_StayingHealthy/`, `Unit15_OurHealth/`. Giữ quy cách content/study/overview/NOTES/audio_source, images/PROMPTS, audio/manifest+WAV và common/tests. Build thường không tạo giọng. Tổng138đề/182HTML/23poster. Công cụ `tools/qa_recorded_all.js` chạy nguyên các gate audio cũ, tối đa3 tiến trình song song trong CI, mỗi Unit/trình duyệt có log riêng; đợi đủ kết quả và trả lỗi nếu bất kỳ gate không đạt. Không giảm nội dung kiểm tra hoặc đổi runtime website.

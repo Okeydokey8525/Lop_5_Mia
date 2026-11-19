@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tiếng Anh 5 · Unit 15 · Đề 2 · Từ vựng và hình ảnh</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<link rel="stylesheet" href="../../assets/engine.css"><script type="application/json" id="mia-audio-data">{"voice": "Microsoft Zira Desktop", "clips": {"An says: I have a headache. His partner says: You should have a rest. Linh says: I have a toothache. Her partner says: You should go to the dentist.": "../../assets/english/u15/audio/83bc3dc56a79d5fce8c9.wav", "Hello! Let’s listen and learn English.": "../../assets/english/u15/audio/d6be6a8235b16c4af314.wav", "Hoa says: I have a stomach ache. You should go to the doctor.": "../../assets/english/u15/audio/f658a43cb993ffd26b1a.wav", "I have a sore throat. You should not drink cold water.": "../../assets/english/u15/audio/6fe6bec2e8310ef486bb.wav", "I have a toothache.": "../../assets/english/u15/audio/9035c77ae2b659e524fb.wav", "I have a toothache. You should go to the dentist.": "../../assets/english/u15/audio/050505ef84ac5438941f.wav", "You should go to the doctor.": "../../assets/english/u15/audio/c969ca8bb3a3ecfa8c53.wav"}}</script><script>// Optional recorded voice for pages with a complete, unit-owned audio manifest.
+(function(){'use strict';
+ const el=document.getElementById('mia-audio-data');if(!el)return;
+ const data=JSON.parse(el.textContent),native=window.speechSynthesis;
+ const voice={name:'Âm thanh có sẵn · Anh Mỹ (Zira)',lang:'en-US',voiceURI:'mia-recorded',localService:true};
+ // Reuse one media element for the whole spelling queue (per-element playback
+ // permission on iPad); only start playback from a learner's button press.
+ const player=new Audio();let sequence=0;
+ function cancel(){sequence++;player.onplaying=player.onended=player.onerror=null;player.pause();if(native)native.cancel();}
+ function speak(u){
+  if(u.voice?.voiceURI!==voice.voiceURI){
+   if(native&&window.SpeechSynthesisUtterance){const v=new SpeechSynthesisUtterance(u.text);for(const k of ['voice','lang','rate','pitch','volume','onstart','onend','onerror'])v[k]=u[k];native.speak(v);}
+   else u.onerror?.({error:'voice-unavailable'});return;
+  }
+  cancel();const token=sequence,src=data.clips[u.text];
+  if(!src){u.onerror?.({error:'audio-unavailable'});return;}
+  const audio=player;let failed=false;
+  const fail=()=>{if(token!==sequence||failed)return;failed=true;cancel();u.onerror?.({error:'audio-unavailable'});};
+  audio.preload='none';audio.src=src;audio.volume=u.volume??1;audio.playbackRate=(u.rate||0.9)/0.9;audio.preservesPitch=true;
+  audio.onplaying=()=>{if(token===sequence)u.onstart?.();};
+  audio.onended=()=>{if(token!==sequence)return;audio.onplaying=audio.onended=audio.onerror=null;u.onend?.();};
+  audio.onerror=fail;try{audio.play().catch(fail);}catch(e){fail();}
+ }
+ window.MiaRecorded={getVoices:()=>[voice,...(native?.getVoices()||[])],cancel,speak,
+  addEventListener:(name,fn)=>native?.addEventListener(name,fn),removeEventListener:(name,fn)=>native?.removeEventListener(name,fn)};
+})();
+</script><script src="../../assets/english/speech.js"></script><link rel="stylesheet" href="../../assets/theme.css"><script src="../../assets/theme.js"></script></head><body>
+<div class="page"><div id="app"></div></div>
+<div class="bar" id="bar" data-mode="run"><div class="bar-in"></div></div>
+<script>
+window.MKEN15=function(questions){return {"decimal": false, "meta": {"subject": "en", "version": 1, "lessonLabel": "Phần", "book": "Tiếng Anh 5 · Global Success · Tập hai", "title": "Unit 15 · Our health", "topic": "Hỏi thăm và lời thoại về sức khỏe", "range": "Trang 30–35", "minutes": 40, "tip": "Mỗi đề có 6 câu nghe, chia đều ba mức. Xem lời nghe sẽ ghi nhận đã dùng hỗ trợ, không trừ điểm. Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp."}, "lessons": {"1": "What’s the matter?", "2": "What should I do?", "3": "Should not, đọc và viết hội thoại"}, "levels": [{"id": "tb", "name": "Mức 1 · Trung bình", "desc": "Nhận biết từ và mẫu câu cơ bản", "stars": 1, "pts": 3}, {"id": "kha", "name": "Mức 2 · Khá", "desc": "Dùng mẫu câu, nối ý và tìm thông tin", "stars": 2, "pts": 5}, {"id": "gioi", "name": "Mức 3 · Giỏi", "desc": "Kết hợp đọc hiểu và viết câu theo dữ liệu", "stars": 3, "pts": 5}],"questions":questions};};
+
+window.TEST_FN=function(H){return MKEN15([
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the health phrase.",
+  "transcript": "I have a toothache.",
+  "speech": "I have a toothache.",
+  "fields": [
+   {
+    "label": "Health phrase:",
+    "answer": "toothache",
+    "options": [
+     "toothache",
+     "headache",
+     "sore throat",
+     "stomach ache"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Health phrase: toothache.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the positive verb phrase.",
+  "transcript": "You should go to the doctor.",
+  "speech": "You should go to the doctor.",
+  "fields": [
+   {
+    "label": "Positive line:",
+    "answer": "go to the doctor",
+    "options": [
+     "go to the dentist",
+     "have a rest",
+     "drink warm water",
+     "go to the doctor"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Positive line: go to the doctor.",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the illustration. Choose the health phrase.",
+  "why": "Tranh: đau răng.",
+  "lesson": 1,
+  "opts": [
+   "toothache",
+   "headache",
+   "sore throat",
+   "stomach ache"
+  ],
+  "answer": 0,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u15/toothache.webp\" alt=\"đau răng\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the illustration. Choose the health phrase.",
+  "why": "Tranh: đau đầu.",
+  "lesson": 1,
+  "opts": [
+   "toothache",
+   "headache",
+   "sore throat",
+   "stomach ache"
+  ],
+  "answer": 1,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u15/headache.webp\" alt=\"đau đầu\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the illustration. Choose the health phrase.",
+  "why": "Tranh: đau họng.",
+  "lesson": 1,
+  "opts": [
+   "toothache",
+   "headache",
+   "sore throat",
+   "stomach ache"
+  ],
+  "answer": 2,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u15/sore-throat.webp\" alt=\"đau họng\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the illustration. Choose the health phrase.",
+  "why": "Tranh: đau bụng.",
+  "lesson": 1,
+  "opts": [
+   "toothache",
+   "headache",
+   "sore throat",
+   "stomach ache"
+  ],
+  "answer": 3,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u15/stomach-ache.webp\" alt=\"đau bụng\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: tooth___. Write the whole word.",
+  "why": "Toothache viết liền.",
+  "lesson": 1,
+  "answers": [
+   "toothache"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Các cụm từ trong bài học.",
+  "lesson": 2,
+  "pairs": [
+   {
+    "left": "go to the dentist",
+    "right": "đến nha sĩ"
+   },
+   {
+    "left": "have a rest",
+    "right": "nghỉ ngơi"
+   },
+   {
+    "left": "drink warm water",
+    "right": "uống nước ấm"
+   }
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Which phrase means “đau bụng”?",
+  "why": "Stomach ache.",
+  "lesson": 1,
+  "opts": [
+   "headache",
+   "sore throat",
+   "stomach ache",
+   "toothache"
+  ],
+  "answer": 2,
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: sore ___.",
+  "why": "Sore throat: đau họng.",
+  "lesson": 1,
+  "answers": [
+   "throat"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen. Which negative verb phrase is used?",
+  "transcript": "I have a sore throat. You should not drink cold water.",
+  "speech": "I have a sore throat. You should not drink cold water.",
+  "fields": [
+   {
+    "label": "Negative line:",
+    "answer": "drink cold water",
+    "options": [
+     "watch too much TV",
+     "drink cold water",
+     "eat ice cream very often"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Negative line: drink cold water.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: Thanks for your ___.",
+  "why": "Advice là lời khuyên.",
+  "lesson": 2,
+  "answers": [
+   "advice"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Should + go.",
+  "lesson": 2,
+  "items": [
+   "You",
+   "should",
+   "go",
+   "to",
+   "the",
+   "doctor."
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the speaker’s health phrase.",
+  "transcript": "Hoa says: I have a stomach ache. You should go to the doctor.",
+  "speech": "Hoa says: I have a stomach ache. You should go to the doctor.",
+  "fields": [
+   {
+    "label": "Health phrase:",
+    "answer": "stomach ache",
+    "options": [
+     "toothache",
+     "headache",
+     "sore throat",
+     "stomach ache"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Health phrase: stomach ache.",
+  "level": "kha"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Nhận nghĩa của từ/cụm.",
+  "lesson": 2,
+  "pairs": [
+   {
+    "left": "should",
+    "right": "nên"
+   },
+   {
+    "left": "should not",
+    "right": "không nên"
+   },
+   {
+    "left": "dentist",
+    "right": "nha sĩ"
+   }
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: have a ___. Use the word meaning sự nghỉ ngơi.",
+  "why": "Have a rest.",
+  "lesson": 2,
+  "answers": [
+   "rest"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the negative verb phrase from the card.",
+  "why": "Eat ice cream very often.",
+  "lesson": 2,
+  "answers": [
+   "eat ice cream very often"
+  ],
+  "exactForm": false,
+  "passage": "Fictional English role-play · Speaker: Linh · Pronoun: She · Health phrase: toothache · Positive line to practise: go to the dentist · Negative line to practise: eat ice cream very often. Use these lines for the language task; do not choose a treatment yourself.",
+  "level": "kha"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Nhớ nghĩa cụm từ; sau should dùng have nguyên mẫu.",
+  "lesson": 2,
+  "items": [
+   {
+    "t": "Take some medicine means dùng thuốc in Vietnamese.",
+    "a": true
+   },
+   {
+    "t": "After should, use has with he.",
+    "a": false
+   }
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the health phrase.",
+  "why": "Stomach ache.",
+  "lesson": 3,
+  "answers": [
+   "stomach ache",
+   "stomachache"
+  ],
+  "exactForm": false,
+  "passage": "Fictional English role-play · Speaker: Hoa · Pronoun: She · Health phrase: stomach ache · Positive line to practise: go to the doctor · Negative line to practise: drink cold water. Use these lines for the language task; do not choose a treatment yourself.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the positive verb phrase.",
+  "why": "Drink warm water theo đúng thẻ.",
+  "lesson": 3,
+  "answers": [
+   "drink warm water"
+  ],
+  "exactForm": false,
+  "passage": "Fictional English role-play · Speaker: Mai · Pronoun: She · Health phrase: sore throat · Positive line to practise: drink warm water · Negative line to practise: drink cold water. Use these lines for the language task; do not choose a treatment yourself.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Find both the health phrase and the positive verb phrase.",
+  "transcript": "I have a toothache. You should go to the dentist.",
+  "speech": "I have a toothache. You should go to the dentist.",
+  "fields": [
+   {
+    "label": "Health phrase:",
+    "answer": "toothache",
+    "options": [
+     "toothache",
+     "headache",
+     "sore throat",
+     "stomach ache"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Positive line:",
+    "answer": "go to the dentist",
+    "options": [
+     "go to the dentist",
+     "have a rest",
+     "drink warm water",
+     "go to the doctor"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Health phrase: toothache; Positive line: go to the dentist.",
+  "level": "gioi"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Đọc cả hai trường trên thẻ.",
+  "lesson": 3,
+  "pairs": [
+   {
+    "left": "An",
+    "right": "headache / have a rest"
+   },
+   {
+    "left": "Linh",
+    "right": "toothache / go to the dentist"
+   },
+   {
+    "left": "Minh",
+    "right": "sore throat / go to the doctor"
+   }
+  ],
+  "passage": "Fictional English role-play · Speaker: An · Pronoun: He · Health phrase: headache · Positive line to practise: have a rest · Negative line to practise: watch too much TV. Use these lines for the language task; do not choose a treatment yourself.\nFictional English role-play · Speaker: Linh · Pronoun: She · Health phrase: toothache · Positive line to practise: go to the dentist · Negative line to practise: eat ice cream very often. Use these lines for the language task; do not choose a treatment yourself.\nFictional English role-play · Speaker: Minh · Pronoun: He · Health phrase: sore throat · Positive line to practise: go to the doctor · Negative line to practise: drink cold water. Use these lines for the language task; do not choose a treatment yourself.",
+  "level": "gioi"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "I don’t = I do not.",
+  "lesson": 3,
+  "items": [
+   "I",
+   "do",
+   "not",
+   "feel",
+   "well."
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Write only Linh’s health phrase and positive verb phrase, not An’s.",
+  "transcript": "An says: I have a headache. His partner says: You should have a rest. Linh says: I have a toothache. Her partner says: You should go to the dentist.",
+  "speech": "An says: I have a headache. His partner says: You should have a rest. Linh says: I have a toothache. Her partner says: You should go to the dentist.",
+  "fields": [
+   {
+    "label": "Linh’s health phrase:",
+    "answer": "toothache",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Linh’s positive line:",
+    "answer": "go to the dentist",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Linh’s health phrase: toothache; Linh’s positive line: go to the dentist.",
+  "level": "gioi"
+ }
+]);};
+
+window.TEST_EXTRA={"id": "en-u15-de2-v1", "title": "Đề 2 · Từ vựng và hình ảnh", "theme": "Nhận biết tranh và các cụm từ trong hội thoại.", "home": "../index.html", "prev": "De1_KhoiDong.html", "next": "De3_MauCauVaHoiThoai.html"};
+
+</script><script src="../../assets/engine.js"></script></body></html>

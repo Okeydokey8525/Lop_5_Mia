@@ -45,13 +45,8 @@ jobs:
           node tools/qa_english_units.js --units=6,7
           node tools/qa_english_units.js --units=8,9
           node tools/qa_english_units.js --topics=u10,r01,r02
-          node tools/qa_english_units.js --units=11,12,13
-          node tools/qa_recorded_audio.js
-          node tools/qa_recorded_audio.js --webkit
-          node tools/qa_recorded_audio.js --unit=12
-          node tools/qa_recorded_audio.js --unit=12 --webkit
-          node tools/qa_recorded_audio.js --unit=13
-          node tools/qa_recorded_audio.js --unit=13 --webkit
+          node tools/qa_english_units.js --units=11,12,13,14,15
+          node tools/qa_recorded_all.js --units=11,12,13,14,15 --jobs=3
           node tools/qa_theme.js
           node tools/qa_home.js
           node tools/qa_drafts.js
@@ -59,7 +54,7 @@ jobs:
           node tools/qa_persistence.js --units=6,7
           node tools/qa_persistence.js --units=8,9
           node tools/qa_persistence.js --topics=u10,r01,r02
-          node tools/qa_persistence.js --units=11,12,13
+          node tools/qa_persistence.js --units=11,12,13,14,15
           node tools/qa_study.js
           node tools/responsive.js --no-shots
       - uses: actions/upload-artifact@v4
