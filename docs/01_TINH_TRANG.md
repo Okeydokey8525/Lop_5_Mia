@@ -1,6 +1,6 @@
 # 01 — Tình trạng hiện hành
 
-Cập nhật 19/11/2026; nguồn Units16–17 đã bổ sung, trạng thái CI/Pages ở bàn giao Units16–17; Units14–15 đã xuất bản trước đó. Xem bàn giao 2026-11-19_UNIT14_UNIT15.md để phân biệt local/CI/live và giới hạn iPad thật. Units11–13 đã xuất bản trước đó. Bản lịch sử trước khi gom tài liệu nằm trong `history/`; không dùng những số liệu cũ làm trạng thái hiện tại.
+Cập nhật 19/11/2026; Units16–17 đã xuất bản, CI và kiểm tra Pages thật đạt; chi tiết ở bàn giao Units16–17; Units14–15 đã xuất bản trước đó. Xem bàn giao 2026-11-19_UNIT14_UNIT15.md để phân biệt local/CI/live và giới hạn iPad thật. Units11–13 đã xuất bản trước đó. Bản lịch sử trước khi gom tài liệu nằm trong `history/`; không dùng những số liệu cũ làm trạng thái hiện tại.
 
 ## Đã bàn giao
 

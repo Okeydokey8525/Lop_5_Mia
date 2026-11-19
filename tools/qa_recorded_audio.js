@@ -40,8 +40,10 @@ function noSpeech(){
     if(key==='fmt ')pcm=view.getUint16(start,true)===1&&view.getUint16(start+14,true)===16;
     if(key==='data'){for(let i=start;i+1<start+size;i+=2)peak=Math.max(peak,Math.abs(view.getInt16(i,true)/32768));}offset=start+size+(size%2);
    }if(!pcm)throw Error('Expected PCM16 WAV');
-   const a=new Audio();a.preload='metadata';const duration=await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('Audio metadata timeout')),10000);a.onloadedmetadata=()=>{clearTimeout(timer);resolve(a.duration);};a.onerror=()=>{clearTimeout(timer);reject(Error('Audio metadata error'));};a.src=src;});a.removeAttribute('src');a.load();return {duration,peak,validation:'PCM16 payload and HTML media metadata'};
-  },src);
+   // Reuse one native metadata player and release its callbacks between clips.
+   // This avoids allocating a new native player for every clip in a long batch.
+   const a=window.__metadataProbe||(window.__metadataProbe=new Audio());a.preload='metadata';const duration=await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('Audio metadata timeout')),10000);a.onloadedmetadata=()=>{clearTimeout(timer);resolve(a.duration);};a.onerror=()=>{clearTimeout(timer);reject(Error('Audio metadata error'));};a.src=src;});a.onloadedmetadata=a.onerror=null;a.pause();a.removeAttribute('src');a.load();return {duration,peak,validation:'PCM16 payload and HTML media metadata'};
+  },src).catch(error=>{throw new Error(`Unit ${unit} clip ${JSON.stringify(text)} (${src}): ${error.message}`,{cause:error});});
   assert.ok(info.duration>0.1&&info.peak>0.001,text);decoded.push({text,...info});
  }
  await p.goto(BASE+study);await p.click('[data-say="'+spec.id+'"]:not([data-slow])');await p.waitForFunction(()=>document.querySelector('#play-status').textContent.includes('Đã nghe xong'));
