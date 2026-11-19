@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tiếng Anh 5 · Unit 19 · Đề 2 · Từ vựng và hình ảnh</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<link rel="stylesheet" href="../../assets/engine.css"><script type="application/json" id="mia-audio-data">{"voice": "Microsoft Zira Desktop", "clips": {"Hello! Let’s listen and learn English.": "../../assets/english/u19/audio/d6be6a8235b16c4af314.wav", "How far is it from my imaginary school to Petronas Twin Towers? It is about twelve kilometres.": "../../assets/english/u19/audio/e5364a22284134974782.wav", "I think it is exciting.": "../../assets/english/u19/audio/28ad96bbdc6b5c0d43a9.wav", "It is about nine kilometres.": "../../assets/english/u19/audio/202dd75674db442e4786.wav", "Sydney Opera House. I think it is beautiful. It is about nine kilometres.": "../../assets/english/u19/audio/7f60deb124815aa1f71a.wav", "These distances are imaginary. Linh says: Hoi An Old Town is exciting. It is about seven kilometres from my school. Nam says: Hoi An Old Town is peaceful. It is about six kilometres from my school.": "../../assets/english/u19/audio/be209f1bf7c9f9530504.wav", "What do you think of Hoi An Old Town? I think it is exciting.": "../../assets/english/u19/audio/40e293f9c65701a40f5a.wav"}}</script><script>// Optional recorded voice for pages with a complete, unit-owned audio manifest.
+(function(){'use strict';
+ const el=document.getElementById('mia-audio-data');if(!el)return;
+ const data=JSON.parse(el.textContent),native=window.speechSynthesis;
+ const voice={name:'Âm thanh có sẵn · Anh Mỹ (Zira)',lang:'en-US',voiceURI:'mia-recorded',localService:true};
+ // Reuse one media element for the whole spelling queue (per-element playback
+ // permission on iPad); only start playback from a learner's button press.
+ const player=new Audio();let sequence=0;
+ function cancel(){sequence++;player.onplaying=player.onended=player.onerror=null;player.pause();if(native)native.cancel();}
+ function speak(u){
+  if(u.voice?.voiceURI!==voice.voiceURI){
+   if(native&&window.SpeechSynthesisUtterance){const v=new SpeechSynthesisUtterance(u.text);for(const k of ['voice','lang','rate','pitch','volume','onstart','onend','onerror'])v[k]=u[k];native.speak(v);}
+   else u.onerror?.({error:'voice-unavailable'});return;
+  }
+  cancel();const token=sequence,src=data.clips[u.text];
+  if(!src){u.onerror?.({error:'audio-unavailable'});return;}
+  const audio=player;let failed=false;
+  const fail=()=>{if(token!==sequence||failed)return;failed=true;cancel();u.onerror?.({error:'audio-unavailable'});};
+  audio.preload='none';audio.src=src;audio.volume=u.volume??1;audio.playbackRate=(u.rate||0.9)/0.9;audio.preservesPitch=true;
+  audio.onplaying=()=>{if(token===sequence)u.onstart?.();};
+  audio.onended=()=>{if(token!==sequence)return;audio.onplaying=audio.onended=audio.onerror=null;u.onend?.();};
+  audio.onerror=fail;try{audio.play().catch(fail);}catch(e){fail();}
+ }
+ window.MiaRecorded={getVoices:()=>[voice,...(native?.getVoices()||[])],cancel,speak,
+  addEventListener:(name,fn)=>native?.addEventListener(name,fn),removeEventListener:(name,fn)=>native?.removeEventListener(name,fn)};
+})();
+</script><script src="../../assets/english/speech.js"></script><link rel="stylesheet" href="../../assets/theme.css"><script src="../../assets/theme.js"></script></head><body>
+<div class="page"><div id="app"></div></div>
+<div class="bar" id="bar" data-mode="run"><div class="bar-in"></div></div>
+<script>
+window.MKEN19=function(questions){return {"decimal": false, "meta": {"subject": "en", "version": 1, "lessonLabel": "Phần", "book": "Tiếng Anh 5 · Global Success · Tập hai", "title": "Unit 19 · Places of interest", "topic": "Địa điểm, cảm nhận và khoảng cách", "range": "Trang 58–63", "minutes": 40, "tip": "Mỗi đề có 6 câu nghe, chia đều ba mức. Xem lời nghe sẽ ghi nhận đã dùng hỗ trợ, không trừ điểm. Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp."}, "lessons": {"1": "What do you think of…?", "2": "How far is it from…to…?", "3": "Ngữ điệu, đọc và viết kỳ nghỉ"}, "levels": [{"id": "tb", "name": "Mức 1 · Trung bình", "desc": "Nhận biết từ và mẫu câu cơ bản", "stars": 1, "pts": 3}, {"id": "kha", "name": "Mức 2 · Khá", "desc": "Dùng mẫu câu, nối ý và tìm thông tin", "stars": 2, "pts": 5}, {"id": "gioi", "name": "Mức 3 · Giỏi", "desc": "Kết hợp đọc hiểu và viết câu theo dữ liệu", "stars": 3, "pts": 5}],"questions":questions};};
+
+window.TEST_FN=function(H){return MKEN19([
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the opinion.",
+  "transcript": "I think it is exciting.",
+  "speech": "I think it is exciting.",
+  "fields": [
+   {
+    "label": "Opinion:",
+    "answer": "exciting",
+    "options": [
+     "peaceful",
+     "exciting",
+     "beautiful",
+     "fantastic"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Opinion: exciting.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the distance phrase.",
+  "transcript": "It is about nine kilometres.",
+  "speech": "It is about nine kilometres.",
+  "fields": [
+   {
+    "label": "Distance:",
+    "answer": "nine kilometres",
+    "options": [
+     "four kilometres",
+     "seven kilometres",
+     "nine kilometres",
+     "twelve kilometres",
+     "six kilometres",
+     "eight kilometres"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Distance: nine kilometres.",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the picture. Choose the type of place.",
+  "why": "Tranh: thác nước",
+  "lesson": 1,
+  "opts": [
+   "lake",
+   "cave",
+   "old town",
+   "waterfall"
+  ],
+  "answer": 3,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u19/waterfall.webp\" alt=\"thác nước\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the picture. Choose the type of place.",
+  "why": "Tranh: hồ",
+  "lesson": 1,
+  "opts": [
+   "lake",
+   "cave",
+   "old town",
+   "waterfall"
+  ],
+  "answer": 0,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u19/lake.webp\" alt=\"hồ\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the picture. Choose the type of place.",
+  "why": "Tranh: hang động",
+  "lesson": 1,
+  "opts": [
+   "lake",
+   "cave",
+   "old town",
+   "waterfall"
+  ],
+  "answer": 1,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u19/cave.webp\" alt=\"hang động\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the picture. Choose the type of place.",
+  "why": "Tranh: phố cổ",
+  "lesson": 1,
+  "opts": [
+   "lake",
+   "cave",
+   "old town",
+   "waterfall"
+  ],
+  "answer": 2,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u19/old-town.webp\" alt=\"phố cổ\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: peace___. Write the whole word meaning yên bình.",
+  "why": "Peaceful.",
+  "lesson": 1,
+  "answers": [
+   "peaceful"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Cảm nhận có thể khác nhau giữa hai người.",
+  "lesson": 2,
+  "pairs": [
+   {
+    "left": "beautiful",
+    "right": "đẹp"
+   },
+   {
+    "left": "exciting",
+    "right": "thú vị, sôi động"
+   },
+   {
+    "left": "fantastic",
+    "right": "tuyệt vời"
+   }
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Which word means khoảng?",
+  "why": "About + số chỉ khoảng cách.",
+  "lesson": 2,
+  "opts": [
+   "about",
+   "from",
+   "near",
+   "far"
+  ],
+  "answer": 0,
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: It is about one ___. Use the singular distance unit.",
+  "why": "One kilometre, không one kilometres.",
+  "lesson": 2,
+  "answers": [
+   "kilometre"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen. Which opinion is given?",
+  "transcript": "What do you think of Hoi An Old Town? I think it is exciting.",
+  "speech": "What do you think of Hoi An Old Town? I think it is exciting.",
+  "fields": [
+   {
+    "label": "Opinion:",
+    "answer": "exciting",
+    "options": [
+     "peaceful",
+     "exciting",
+     "beautiful",
+     "fantastic"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Opinion: exciting.",
+  "level": "kha"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Từ và số trong bài khoảng cách.",
+  "lesson": 2,
+  "pairs": [
+   {
+    "left": "near",
+    "right": "gần"
+   },
+   {
+    "left": "far",
+    "right": "xa"
+   },
+   {
+    "left": "a hundred",
+    "right": "một trăm"
+   }
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Think + it is + tính từ.",
+  "lesson": 1,
+  "items": [
+   "I",
+   "think",
+   "it",
+   "is",
+   "peaceful."
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen. How far is it from the imaginary school to the place?",
+  "transcript": "How far is it from my imaginary school to Petronas Twin Towers? It is about twelve kilometres.",
+  "speech": "How far is it from my imaginary school to Petronas Twin Towers? It is about twelve kilometres.",
+  "fields": [
+   {
+    "label": "Distance:",
+    "answer": "twelve kilometres",
+    "options": [
+     "four kilometres",
+     "seven kilometres",
+     "nine kilometres",
+     "twelve kilometres",
+     "six kilometres",
+     "eight kilometres"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Distance: twelve kilometres.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: It is about four ___. Use the plural of kilometre.",
+  "why": "Số lớn hơn một dùng kilometres.",
+  "lesson": 2,
+  "answers": [
+   "kilometres"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: How far is it ___ our school to the park?",
+  "why": "From…to…",
+  "lesson": 2,
+  "answers": [
+   "from"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the speaker’s opinion word only.",
+  "why": "Hoa nghĩ fantastic.",
+  "lesson": 2,
+  "answers": [
+   "fantastic"
+  ],
+  "exactForm": false,
+  "passage": "Imaginary English practice card, not real geography: Speaker: Hoa · Place: Petronas Twin Towers · Speaker's opinion: fantastic · Distance from this speaker's imaginary school to the place: about twelve kilometres.",
+  "level": "kha"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Phân biệt cảm nhận và khoảng cách.",
+  "lesson": 2,
+  "items": [
+   {
+    "t": "What do you think of asks for an opinion.",
+    "a": true
+   },
+   {
+    "t": "How far asks for a favourite food.",
+    "a": false
+   }
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the opinion in full form, starting with I think.",
+  "why": "Nam và Linh cùng nơi nhưng khác ý kiến.",
+  "lesson": 3,
+  "answers": [
+   "I think it is peaceful."
+  ],
+  "exactForm": true,
+  "passage": "Imaginary English practice card, not real geography: Speaker: Nam · Place: Hoi An Old Town · Speaker's opinion: peaceful · Distance from this speaker's imaginary school to the place: about six kilometres.",
+  "level": "gioi"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Giữ đúng hai đầu from/to.",
+  "lesson": 3,
+  "items": [
+   "How",
+   "far",
+   "is",
+   "it",
+   "from",
+   "here",
+   "to",
+   "the",
+   "old",
+   "town?"
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and find both the opinion and distance in this imaginary plan.",
+  "transcript": "Sydney Opera House. I think it is beautiful. It is about nine kilometres.",
+  "speech": "Sydney Opera House. I think it is beautiful. It is about nine kilometres.",
+  "fields": [
+   {
+    "label": "Opinion:",
+    "answer": "beautiful",
+    "options": [
+     "peaceful",
+     "exciting",
+     "beautiful",
+     "fantastic"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Distance:",
+    "answer": "nine kilometres",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Opinion: beautiful; Distance: nine kilometres.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write the distance answer in words and full form, starting with It is.",
+  "why": "Mai và An cùng nơi nhưng khác điểm xuất phát giả định.",
+  "lesson": 3,
+  "answers": [
+   "It is about eight kilometres."
+  ],
+  "exactForm": true,
+  "passage": "Imaginary English practice card, not real geography: Speaker: Mai · Place: Ban Gioc Waterfall · Speaker's opinion: beautiful · Distance from this speaker's imaginary school to the place: about eight kilometres.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Complete in full form: Petronas Twin Towers are fantastic. I think ___ fantastic.",
+  "why": "Danh từ số nhiều → they are.",
+  "lesson": 3,
+  "answers": [
+   "they are"
+  ],
+  "exactForm": true,
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Write only Nam’s opinion and distance, not Linh’s.",
+  "transcript": "These distances are imaginary. Linh says: Hoi An Old Town is exciting. It is about seven kilometres from my school. Nam says: Hoi An Old Town is peaceful. It is about six kilometres from my school.",
+  "speech": "These distances are imaginary. Linh says: Hoi An Old Town is exciting. It is about seven kilometres from my school. Nam says: Hoi An Old Town is peaceful. It is about six kilometres from my school.",
+  "fields": [
+   {
+    "label": "Nam’s opinion:",
+    "answer": "peaceful",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Nam’s distance:",
+    "answer": "six kilometres",
+    "options": null,
+    "alternatives": [
+     "6 kilometres",
+     "6 km"
+    ]
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Nam’s opinion: peaceful; Nam’s distance: six kilometres.",
+  "level": "gioi"
+ }
+]);};
+
+window.TEST_EXTRA={"id": "en-u19-de2-v1", "title": "Đề 2 · Từ vựng và hình ảnh", "theme": "Nhận biết loại địa điểm, tính từ và đơn vị khoảng cách.", "home": "../index.html", "prev": "De1_KhoiDong.html", "next": "De3_MauCauVaHoiThoai.html"};
+
+</script><script src="../../assets/engine.js"></script></body></html>

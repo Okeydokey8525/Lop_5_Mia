@@ -91,3 +91,5 @@ Starter tập một; nâng Unit 1 thành trang học đầy đủ; thay âm than
 Cập nhật triển khai19/11/2026: đã được giao và bổ sung Units16–17 theo trang40–51, sau Units11–15 đã xuất bản. Xem bàn giao2026-11-19_UNIT16_UNIT17.md cho local/CI/live. Còn Review3, Units18–20 và Review4 (5phần/30đề); không tự triển khai phần chưa giao.
 
 Đợt tiếp19/11/2026: chủ repo giao Unit18; đã bổ sung theo trang52–57. Xem bàn giao2026-11-19_UNIT18.md cho kiểm chứng. Còn Review3, Units19–20, Review4 =4phần/24đề; Starter và bộ kiểm tra học kỳ riêng vẫn chưa làm. Các mốc trước là lịch sử.
+
+Đợt tiếp19/11/2026: chủ repo giao Unit19; đã bổ sung theo trang58–63. Xem bàn giao2026-11-19_UNIT19.md cho kiểm chứng. Còn Review3 + Unit20 + Review4 =3phần/18đề; Starter và bộ kiểm tra học kỳ riêng vẫn chưa làm. Các mốc trước là lịch sử.

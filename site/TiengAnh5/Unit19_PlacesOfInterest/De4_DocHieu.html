@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tiếng Anh 5 · Unit 19 · Đề 4 · Đọc hiểu</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<link rel="stylesheet" href="../../assets/engine.css"><script type="application/json" id="mia-audio-data">{"voice": "Microsoft Zira Desktop", "clips": {"Hello! Let’s listen and learn English.": "../../assets/english/u19/audio/d6be6a8235b16c4af314.wav", "Hoi An Old Town. I think it is peaceful. It is about six kilometres.": "../../assets/english/u19/audio/dc744cb4ffadba479066.wav", "How far is it from my imaginary school to Ban Gioc Waterfall? It is about eight kilometres.": "../../assets/english/u19/audio/1e60dd0605072964e93d.wav", "I think they are fantastic.": "../../assets/english/u19/audio/206a43e56523875b39ec.wav", "It is about six kilometres.": "../../assets/english/u19/audio/923c2daf1901aac1fd9d.wav", "These distances are imaginary. Linh says: Hoi An Old Town is exciting. It is about seven kilometres from my school. Nam says: Hoi An Old Town is peaceful. It is about six kilometres from my school.": "../../assets/english/u19/audio/be209f1bf7c9f9530504.wav", "What do you think of Petronas Twin Towers? I think they are fantastic.": "../../assets/english/u19/audio/7864dee1268d377923d2.wav"}}</script><script>// Optional recorded voice for pages with a complete, unit-owned audio manifest.
+(function(){'use strict';
+ const el=document.getElementById('mia-audio-data');if(!el)return;
+ const data=JSON.parse(el.textContent),native=window.speechSynthesis;
+ const voice={name:'Âm thanh có sẵn · Anh Mỹ (Zira)',lang:'en-US',voiceURI:'mia-recorded',localService:true};
+ // Reuse one media element for the whole spelling queue (per-element playback
+ // permission on iPad); only start playback from a learner's button press.
+ const player=new Audio();let sequence=0;
+ function cancel(){sequence++;player.onplaying=player.onended=player.onerror=null;player.pause();if(native)native.cancel();}
+ function speak(u){
+  if(u.voice?.voiceURI!==voice.voiceURI){
+   if(native&&window.SpeechSynthesisUtterance){const v=new SpeechSynthesisUtterance(u.text);for(const k of ['voice','lang','rate','pitch','volume','onstart','onend','onerror'])v[k]=u[k];native.speak(v);}
+   else u.onerror?.({error:'voice-unavailable'});return;
+  }
+  cancel();const token=sequence,src=data.clips[u.text];
+  if(!src){u.onerror?.({error:'audio-unavailable'});return;}
+  const audio=player;let failed=false;
+  const fail=()=>{if(token!==sequence||failed)return;failed=true;cancel();u.onerror?.({error:'audio-unavailable'});};
+  audio.preload='none';audio.src=src;audio.volume=u.volume??1;audio.playbackRate=(u.rate||0.9)/0.9;audio.preservesPitch=true;
+  audio.onplaying=()=>{if(token===sequence)u.onstart?.();};
+  audio.onended=()=>{if(token!==sequence)return;audio.onplaying=audio.onended=audio.onerror=null;u.onend?.();};
+  audio.onerror=fail;try{audio.play().catch(fail);}catch(e){fail();}
+ }
+ window.MiaRecorded={getVoices:()=>[voice,...(native?.getVoices()||[])],cancel,speak,
+  addEventListener:(name,fn)=>native?.addEventListener(name,fn),removeEventListener:(name,fn)=>native?.removeEventListener(name,fn)};
+})();
+</script><script src="../../assets/english/speech.js"></script><link rel="stylesheet" href="../../assets/theme.css"><script src="../../assets/theme.js"></script></head><body>
+<div class="page"><div id="app"></div></div>
+<div class="bar" id="bar" data-mode="run"><div class="bar-in"></div></div>
+<script>
+window.MKEN19=function(questions){return {"decimal": false, "meta": {"subject": "en", "version": 1, "lessonLabel": "Phần", "book": "Tiếng Anh 5 · Global Success · Tập hai", "title": "Unit 19 · Places of interest", "topic": "Địa điểm, cảm nhận và khoảng cách", "range": "Trang 58–63", "minutes": 40, "tip": "Mỗi đề có 6 câu nghe, chia đều ba mức. Xem lời nghe sẽ ghi nhận đã dùng hỗ trợ, không trừ điểm. Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp."}, "lessons": {"1": "What do you think of…?", "2": "How far is it from…to…?", "3": "Ngữ điệu, đọc và viết kỳ nghỉ"}, "levels": [{"id": "tb", "name": "Mức 1 · Trung bình", "desc": "Nhận biết từ và mẫu câu cơ bản", "stars": 1, "pts": 3}, {"id": "kha", "name": "Mức 2 · Khá", "desc": "Dùng mẫu câu, nối ý và tìm thông tin", "stars": 2, "pts": 5}, {"id": "gioi", "name": "Mức 3 · Giỏi", "desc": "Kết hợp đọc hiểu và viết câu theo dữ liệu", "stars": 3, "pts": 5}],"questions":questions};};
+
+window.TEST_FN=function(H){return MKEN19([
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the opinion.",
+  "transcript": "I think they are fantastic.",
+  "speech": "I think they are fantastic.",
+  "fields": [
+   {
+    "label": "Opinion:",
+    "answer": "fantastic",
+    "options": [
+     "peaceful",
+     "exciting",
+     "beautiful",
+     "fantastic"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Opinion: fantastic.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the distance phrase.",
+  "transcript": "It is about six kilometres.",
+  "speech": "It is about six kilometres.",
+  "fields": [
+   {
+    "label": "Distance:",
+    "answer": "six kilometres",
+    "options": [
+     "four kilometres",
+     "seven kilometres",
+     "nine kilometres",
+     "twelve kilometres",
+     "six kilometres",
+     "eight kilometres"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Distance: six kilometres.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Who is speaking? Write the name only.",
+  "why": "Tên trong đoạn.",
+  "lesson": 3,
+  "answers": [
+   "An"
+  ],
+  "exactForm": false,
+  "passage": "An imaginary holiday plan for English practice: My name is An. I want to visit Ban Gioc Waterfall. I think it is peaceful. It is about four kilometres from my imaginary school. I can get there by bus. I want to take photos there. These distances are made up for this exercise.",
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Which opinion is given?",
+  "why": "Đọc I think…",
+  "lesson": 3,
+  "opts": [
+   "fantastic",
+   "peaceful",
+   "exciting",
+   "beautiful"
+  ],
+  "answer": 1,
+  "passage": "An imaginary holiday plan for English practice: My name is An. I want to visit Ban Gioc Waterfall. I think it is peaceful. It is about four kilometres from my imaginary school. I can get there by bus. I want to take photos there. These distances are made up for this exercise.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "How far is it from the speaker’s imaginary school? Write the distance phrase only.",
+  "why": "Lấy khoảng cách trong đoạn, không tra bản đồ thật.",
+  "lesson": 3,
+  "answers": [
+   "four kilometres"
+  ],
+  "exactForm": false,
+  "passage": "An imaginary holiday plan for English practice: My name is An. I want to visit Ban Gioc Waterfall. I think it is peaceful. It is about four kilometres from my imaginary school. I can get there by bus. I want to take photos there. These distances are made up for this exercise.",
+  "level": "tb"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Chỉ chọn thông tin đã nêu.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "The speaker can get there by bus.",
+    "a": true
+   },
+   {
+    "t": "The speaker wants to buy a new bicycle there.",
+    "a": false
+   }
+  ],
+  "passage": "An imaginary holiday plan for English practice: My name is An. I want to visit Ban Gioc Waterfall. I think it is peaceful. It is about four kilometres from my imaginary school. I can get there by bus. I want to take photos there. These distances are made up for this exercise.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Who is speaking? Write the name only.",
+  "why": "Tên trong đoạn.",
+  "lesson": 3,
+  "answers": [
+   "Linh"
+  ],
+  "exactForm": false,
+  "passage": "An imaginary holiday plan for English practice: My name is Linh. I want to visit Hoi An Old Town. I think it is exciting. It is about seven kilometres from my imaginary school. I can get there by bus. I want to take photos there. These distances are made up for this exercise.",
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Which opinion is given?",
+  "why": "Đọc I think…",
+  "lesson": 3,
+  "opts": [
+   "fantastic",
+   "peaceful",
+   "exciting",
+   "beautiful"
+  ],
+  "answer": 2,
+  "passage": "An imaginary holiday plan for English practice: My name is Linh. I want to visit Hoi An Old Town. I think it is exciting. It is about seven kilometres from my imaginary school. I can get there by bus. I want to take photos there. These distances are made up for this exercise.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "How far is it from the speaker’s imaginary school? Write the distance phrase only.",
+  "why": "Lấy khoảng cách trong đoạn, không tra bản đồ thật.",
+  "lesson": 3,
+  "answers": [
+   "seven kilometres"
+  ],
+  "exactForm": false,
+  "passage": "An imaginary holiday plan for English practice: My name is Linh. I want to visit Hoi An Old Town. I think it is exciting. It is about seven kilometres from my imaginary school. I can get there by bus. I want to take photos there. These distances are made up for this exercise.",
+  "level": "tb"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Chỉ chọn thông tin đã nêu.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "The speaker can get there by bus.",
+    "a": true
+   },
+   {
+    "t": "The speaker wants to buy a new bicycle there.",
+    "a": false
+   }
+  ],
+  "passage": "An imaginary holiday plan for English practice: My name is Linh. I want to visit Hoi An Old Town. I think it is exciting. It is about seven kilometres from my imaginary school. I can get there by bus. I want to take photos there. These distances are made up for this exercise.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen. Which opinion is given?",
+  "transcript": "What do you think of Petronas Twin Towers? I think they are fantastic.",
+  "speech": "What do you think of Petronas Twin Towers? I think they are fantastic.",
+  "fields": [
+   {
+    "label": "Opinion:",
+    "answer": "fantastic",
+    "options": [
+     "peaceful",
+     "exciting",
+     "beautiful",
+     "fantastic"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Opinion: fantastic.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Who is speaking? Write the name only.",
+  "why": "Tên trong đoạn.",
+  "lesson": 3,
+  "answers": [
+   "Minh"
+  ],
+  "exactForm": false,
+  "passage": "An imaginary holiday plan for English practice: My name is Minh. I want to visit Sydney Opera House. I think it is beautiful. It is about nine kilometres from my imaginary school. I can get there by bus. I want to take photos there. These distances are made up for this exercise.",
+  "level": "kha"
+ },
+ {
+  "type": "mc",
+  "stem": "Which opinion is given?",
+  "why": "Đọc I think…",
+  "lesson": 3,
+  "opts": [
+   "fantastic",
+   "peaceful",
+   "exciting",
+   "beautiful"
+  ],
+  "answer": 3,
+  "passage": "An imaginary holiday plan for English practice: My name is Minh. I want to visit Sydney Opera House. I think it is beautiful. It is about nine kilometres from my imaginary school. I can get there by bus. I want to take photos there. These distances are made up for this exercise.",
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen. How far is it from the imaginary school to the place?",
+  "transcript": "How far is it from my imaginary school to Ban Gioc Waterfall? It is about eight kilometres.",
+  "speech": "How far is it from my imaginary school to Ban Gioc Waterfall? It is about eight kilometres.",
+  "fields": [
+   {
+    "label": "Distance:",
+    "answer": "eight kilometres",
+    "options": [
+     "four kilometres",
+     "seven kilometres",
+     "nine kilometres",
+     "twelve kilometres",
+     "six kilometres",
+     "eight kilometres"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Distance: eight kilometres.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "How far is it from the speaker’s imaginary school? Write the distance phrase only.",
+  "why": "Lấy khoảng cách trong đoạn, không tra bản đồ thật.",
+  "lesson": 3,
+  "answers": [
+   "nine kilometres"
+  ],
+  "exactForm": false,
+  "passage": "An imaginary holiday plan for English practice: My name is Minh. I want to visit Sydney Opera House. I think it is beautiful. It is about nine kilometres from my imaginary school. I can get there by bus. I want to take photos there. These distances are made up for this exercise.",
+  "level": "kha"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Chỉ chọn thông tin đã nêu.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "The speaker can get there by bus.",
+    "a": true
+   },
+   {
+    "t": "The speaker wants to buy a new bicycle there.",
+    "a": false
+   }
+  ],
+  "passage": "An imaginary holiday plan for English practice: My name is Minh. I want to visit Sydney Opera House. I think it is beautiful. It is about nine kilometres from my imaginary school. I can get there by bus. I want to take photos there. These distances are made up for this exercise.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Who is speaking? Write the name only.",
+  "why": "Tên trong đoạn.",
+  "lesson": 3,
+  "answers": [
+   "Hoa"
+  ],
+  "exactForm": false,
+  "passage": "An imaginary holiday plan for English practice: My name is Hoa. I want to visit Petronas Twin Towers. I think they are fantastic. It is about twelve kilometres from my imaginary school. I can get there by bus. I want to take photos there. These distances are made up for this exercise.",
+  "level": "kha"
+ },
+ {
+  "type": "mc",
+  "stem": "Which opinion is given?",
+  "why": "Đọc I think…",
+  "lesson": 3,
+  "opts": [
+   "fantastic",
+   "peaceful",
+   "exciting",
+   "beautiful"
+  ],
+  "answer": 0,
+  "passage": "An imaginary holiday plan for English practice: My name is Hoa. I want to visit Petronas Twin Towers. I think they are fantastic. It is about twelve kilometres from my imaginary school. I can get there by bus. I want to take photos there. These distances are made up for this exercise.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "How far is it from the speaker’s imaginary school? Write the distance phrase only.",
+  "why": "Lấy khoảng cách trong đoạn, không tra bản đồ thật.",
+  "lesson": 3,
+  "answers": [
+   "twelve kilometres"
+  ],
+  "exactForm": false,
+  "passage": "An imaginary holiday plan for English practice: My name is Hoa. I want to visit Petronas Twin Towers. I think they are fantastic. It is about twelve kilometres from my imaginary school. I can get there by bus. I want to take photos there. These distances are made up for this exercise.",
+  "level": "gioi"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Chỉ chọn thông tin đã nêu.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "The speaker can get there by bus.",
+    "a": true
+   },
+   {
+    "t": "The speaker wants to buy a new bicycle there.",
+    "a": false
+   }
+  ],
+  "passage": "An imaginary holiday plan for English practice: My name is Hoa. I want to visit Petronas Twin Towers. I think they are fantastic. It is about twelve kilometres from my imaginary school. I can get there by bus. I want to take photos there. These distances are made up for this exercise.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and find both the opinion and distance in this imaginary plan.",
+  "transcript": "Hoi An Old Town. I think it is peaceful. It is about six kilometres.",
+  "speech": "Hoi An Old Town. I think it is peaceful. It is about six kilometres.",
+  "fields": [
+   {
+    "label": "Opinion:",
+    "answer": "peaceful",
+    "options": [
+     "peaceful",
+     "exciting",
+     "beautiful",
+     "fantastic"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Distance:",
+    "answer": "six kilometres",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Opinion: peaceful; Distance: six kilometres.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Both describe Hoi An Old Town. Who thinks it is peaceful? Write the name only.",
+  "why": "Hai người có thể nêu ý kiến khác nhau.",
+  "lesson": 3,
+  "answers": [
+   "Nam"
+  ],
+  "exactForm": false,
+  "passage": "Imaginary English practice card, not real geography: Speaker: Linh · Place: Hoi An Old Town · Speaker's opinion: exciting · Distance from this speaker's imaginary school to the place: about seven kilometres.\nImaginary English practice card, not real geography: Speaker: Nam · Place: Hoi An Old Town · Speaker's opinion: peaceful · Distance from this speaker's imaginary school to the place: about six kilometres.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Along this route, how far is it from the school to the lake via the museum? Write the total distance phrase in words.",
+  "why": "Cộng hai chặng cùng tuyến: 3 + 4 = 7, không phải khoảng cách đường chim bay.",
+  "lesson": 3,
+  "answers": [
+   "seven kilometres",
+   "7 kilometres",
+   "7 km"
+  ],
+  "exactForm": false,
+  "passage": "Imaginary route for English practice: school → museum → lake. Along this route, school to museum is about three kilometres, and museum to lake is about four kilometres. There is no extra leg. Add these two legs to find the distance along this route.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Write only Nam’s opinion and distance, not Linh’s.",
+  "transcript": "These distances are imaginary. Linh says: Hoi An Old Town is exciting. It is about seven kilometres from my school. Nam says: Hoi An Old Town is peaceful. It is about six kilometres from my school.",
+  "speech": "These distances are imaginary. Linh says: Hoi An Old Town is exciting. It is about seven kilometres from my school. Nam says: Hoi An Old Town is peaceful. It is about six kilometres from my school.",
+  "fields": [
+   {
+    "label": "Nam’s opinion:",
+    "answer": "peaceful",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Nam’s distance:",
+    "answer": "six kilometres",
+    "options": null,
+    "alternatives": [
+     "6 kilometres",
+     "6 km"
+    ]
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Nam’s opinion: peaceful; Nam’s distance: six kilometres.",
+  "level": "gioi"
+ }
+]);};
+
+window.TEST_EXTRA={"id": "en-u19-de4-v1", "title": "Đề 4 · Đọc hiểu", "theme": "Đọc đúng ý kiến, người nói, khoảng cách và từng chặng.", "home": "../index.html", "prev": "De3_MauCauVaHoiThoai.html", "next": "De5_VietCau.html"};
+
+</script><script src="../../assets/engine.js"></script></body></html>

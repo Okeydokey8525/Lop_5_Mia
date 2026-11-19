@@ -146,3 +146,7 @@ Mỗi Unit16từ/cụm,6hội thoại,12bài luyện tự lưu;6đề/144câu/36
 ## Unit18 — 19/11/2026
 
 Bổ sung **Means of transport**, tập hai trang52–57:6đề/144câu/36nghe, tổng quan HTML/PNG, học20từ/cụm với6hội thoại/12bài luyện tự lưu,4tranh phương tiện và84WAV. Trọng tâm want to visit, can + get, by phương tiện/on foot; đọc đúng người và từng chặng theo thẻ giả định. TổngAnh18Unit+2Review=120đề/2880câu; toàn site156đề/206HTML/26poster. Study19trang/296từ/115hội thoại/228bài luyện. Trạng thái local/CI/live và nguồn sách ở [bàn giao Unit18](breakdowns/2026-11-19_UNIT18.md). Còn Review3 + Units19–20 + Review4 =4phần/24đề; không tự mở rộng phần chưa được giao.
+
+## Unit19 — 19/11/2026
+
+Bổ sung **Places of interest**, tập hai trang58–63:6đề/144câu/36nghe, tổng quan HTML/PNG, học20từ/cụm với6hội thoại/12bài luyện tự lưu,4tranh loại địa điểm và104WAV. Trọng tâm think of, it is/they are, How far…from…to…, kilometre/kilometres; ngữ điệu Wh xuống. Thẻ khoảng cách/trường giả định, ý kiến theo người nói; cộng chặng trên cùng tuyến. TổngAnh19Unit+2Review=126đề/3024câu; toànsite162đề/214HTML/27poster. Study20trang/316từ/121hội thoại/240luyện. Nguồn và trạng thái kiểm chứng ở [bàn giao Unit19](breakdowns/2026-11-19_UNIT19.md). Còn Review3 + Unit20 + Review4 =3phần/18đề; Starter và bộ kiểm tra học kỳ riêng chưa làm.

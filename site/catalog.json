@@ -1139,6 +1139,54 @@
       "kind": "unit",
       "topic": "u18",
       "overview": "TiengAnh5/Unit18_MeansOfTransport/TongQuan_Unit18.html"
+    },
+    {
+      "file": "TiengAnh5/Unit19_PlacesOfInterest/De1_KhoiDong.html",
+      "id": "en-u19-de1-v1",
+      "subject": "en",
+      "kind": "unit",
+      "topic": "u19",
+      "overview": "TiengAnh5/Unit19_PlacesOfInterest/TongQuan_Unit19.html"
+    },
+    {
+      "file": "TiengAnh5/Unit19_PlacesOfInterest/De2_TuVungVaHinhAnh.html",
+      "id": "en-u19-de2-v1",
+      "subject": "en",
+      "kind": "unit",
+      "topic": "u19",
+      "overview": "TiengAnh5/Unit19_PlacesOfInterest/TongQuan_Unit19.html"
+    },
+    {
+      "file": "TiengAnh5/Unit19_PlacesOfInterest/De3_MauCauVaHoiThoai.html",
+      "id": "en-u19-de3-v1",
+      "subject": "en",
+      "kind": "unit",
+      "topic": "u19",
+      "overview": "TiengAnh5/Unit19_PlacesOfInterest/TongQuan_Unit19.html"
+    },
+    {
+      "file": "TiengAnh5/Unit19_PlacesOfInterest/De4_DocHieu.html",
+      "id": "en-u19-de4-v1",
+      "subject": "en",
+      "kind": "unit",
+      "topic": "u19",
+      "overview": "TiengAnh5/Unit19_PlacesOfInterest/TongQuan_Unit19.html"
+    },
+    {
+      "file": "TiengAnh5/Unit19_PlacesOfInterest/De5_VietCau.html",
+      "id": "en-u19-de5-v1",
+      "subject": "en",
+      "kind": "unit",
+      "topic": "u19",
+      "overview": "TiengAnh5/Unit19_PlacesOfInterest/TongQuan_Unit19.html"
+    },
+    {
+      "file": "TiengAnh5/Unit19_PlacesOfInterest/De6_TongHop.html",
+      "id": "en-u19-de6-v1",
+      "subject": "en",
+      "kind": "unit",
+      "topic": "u19",
+      "overview": "TiengAnh5/Unit19_PlacesOfInterest/TongQuan_Unit19.html"
     }
   ]
 }

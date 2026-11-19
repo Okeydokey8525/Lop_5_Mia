@@ -1,0 +1,424 @@
+{
+  "voice": "Microsoft Zira Desktop",
+  "language": "en-US",
+  "rate": -1,
+  "format": "PCM 22050 Hz 16-bit mono",
+  "clips": [
+    {
+      "text": "A",
+      "file": "559aead08264d5795d39.wav"
+    },
+    {
+      "text": "B",
+      "file": "df7e70e5021544f4834b.wav"
+    },
+    {
+      "text": "Ban Gioc Waterfall",
+      "file": "bc75262d1354907699bd.wav"
+    },
+    {
+      "text": "Ban Gioc Waterfall. I think it is beautiful. It is about eight kilometres.",
+      "file": "c8439c7dd4d10ebaa658.wav"
+    },
+    {
+      "text": "Ban Gioc Waterfall. I think it is peaceful. It is about four kilometres.",
+      "file": "1edbdbda360b04558dcd.wav"
+    },
+    {
+      "text": "C",
+      "file": "6b23c0d5f35d1b11f9b6.wav"
+    },
+    {
+      "text": "D",
+      "file": "3f39d5c348e5b79d06e8.wav"
+    },
+    {
+      "text": "E",
+      "file": "a9f51566bd6705f7ea6a.wav"
+    },
+    {
+      "text": "F",
+      "file": "f67ab10ad4e4c53121b6.wav"
+    },
+    {
+      "text": "G",
+      "file": "333e0a1e27815d0ceee5.wav"
+    },
+    {
+      "text": "H",
+      "file": "44bd7ae60f478fae1061.wav"
+    },
+    {
+      "text": "Hello! Let us listen and learn English.",
+      "file": "d049b36b33ea2a1929e2.wav"
+    },
+    {
+      "text": "Hello! Let’s listen and learn English.",
+      "file": "d6be6a8235b16c4af314.wav"
+    },
+    {
+      "text": "Hoi An Old Town",
+      "file": "af7ca2a215aaf56203f9.wav"
+    },
+    {
+      "text": "Hoi An Old Town. I think it is exciting. It is about seven kilometres.",
+      "file": "3eb002894b14566a7c8f.wav"
+    },
+    {
+      "text": "Hoi An Old Town. I think it is peaceful. It is about six kilometres.",
+      "file": "dc744cb4ffadba479066.wav"
+    },
+    {
+      "text": "How far asks about distance.",
+      "file": "3e3cc838f1fbd74c34e9.wav"
+    },
+    {
+      "text": "How far is it from here to the lake?",
+      "file": "b22860fbd31061f98246.wav"
+    },
+    {
+      "text": "How far is it from here to the lake? It is about four kilometres.",
+      "file": "c3bb946ee2daac7a29e2.wav"
+    },
+    {
+      "text": "How far is it from my imaginary school to Ban Gioc Waterfall? It is about eight kilometres.",
+      "file": "1e60dd0605072964e93d.wav"
+    },
+    {
+      "text": "How far is it from my imaginary school to Ban Gioc Waterfall? It is about four kilometres.",
+      "file": "4381c404d89f69a16ac4.wav"
+    },
+    {
+      "text": "How far is it from my imaginary school to Hoi An Old Town? It is about seven kilometres.",
+      "file": "c7971df3005fff1e28ec.wav"
+    },
+    {
+      "text": "How far is it from my imaginary school to Hoi An Old Town? It is about six kilometres.",
+      "file": "3285d90c87d951165ae3.wav"
+    },
+    {
+      "text": "How far is it from my imaginary school to Petronas Twin Towers? It is about twelve kilometres.",
+      "file": "e5364a22284134974782.wav"
+    },
+    {
+      "text": "How far is it from my imaginary school to Sydney Opera House? It is about nine kilometres.",
+      "file": "d7e72a8c43de128225a8.wav"
+    },
+    {
+      "text": "How far is it from the school to the park?",
+      "file": "5b268e674c96e702ef0d.wav"
+    },
+    {
+      "text": "How far is it from the school to the park? It is about seven kilometres.",
+      "file": "eeda7582cacc265d8122.wav"
+    },
+    {
+      "text": "I",
+      "file": "a83dd0ccbffe39d071cc.wav"
+    },
+    {
+      "text": "I think Petronas Twin Towers are fantastic.",
+      "file": "8ed2e8943f6cdb0ad08d.wav"
+    },
+    {
+      "text": "I think Sydney Opera House is beautiful.",
+      "file": "d0f2df801685f1a610e2.wav"
+    },
+    {
+      "text": "I think it is beautiful.",
+      "file": "cf979bec1d2196773506.wav"
+    },
+    {
+      "text": "I think it is exciting.",
+      "file": "28ad96bbdc6b5c0d43a9.wav"
+    },
+    {
+      "text": "I think it is peaceful.",
+      "file": "660f2d724ad882818045.wav"
+    },
+    {
+      "text": "I think the lake is peaceful.",
+      "file": "92aed34424124d5975a6.wav"
+    },
+    {
+      "text": "I think the lake is peaceful. What do you think of it?",
+      "file": "675948fa7d5112e3007f.wav"
+    },
+    {
+      "text": "I think the lake is peaceful. What do you think of it? I think it is beautiful.",
+      "file": "485e587d8f85f969756f.wav"
+    },
+    {
+      "text": "I think the old town is exciting.",
+      "file": "ed365168188e7133a72e.wav"
+    },
+    {
+      "text": "I think the towers are fantastic.",
+      "file": "437299c6d18cd434fbfb.wav"
+    },
+    {
+      "text": "I think the waterfall is beautiful.",
+      "file": "22cf7729ea9df56ab4f9.wav"
+    },
+    {
+      "text": "I think they are fantastic.",
+      "file": "206a43e56523875b39ec.wav"
+    },
+    {
+      "text": "I want to visit the cave.",
+      "file": "586d8007b6ac01d4488e.wav"
+    },
+    {
+      "text": "I want to visit the lake.",
+      "file": "1218e63c7cab7a91ffd7.wav"
+    },
+    {
+      "text": "I want to visit the old town.",
+      "file": "d151bb007405c2999531.wav"
+    },
+    {
+      "text": "I want to visit the waterfall.",
+      "file": "7729dea55b575c45edd4.wav"
+    },
+    {
+      "text": "It is about eight kilometres.",
+      "file": "f61722a098b34baaddd0.wav"
+    },
+    {
+      "text": "It is about four kilometres.",
+      "file": "1d14be96dd7c91ca6b19.wav"
+    },
+    {
+      "text": "It is about nine kilometres.",
+      "file": "202dd75674db442e4786.wav"
+    },
+    {
+      "text": "It is about one kilometre.",
+      "file": "079d24abc8a34d418fbc.wav"
+    },
+    {
+      "text": "It is about seven kilometres.",
+      "file": "0323689b9e8329b038ee.wav"
+    },
+    {
+      "text": "It is about six kilometres.",
+      "file": "923c2daf1901aac1fd9d.wav"
+    },
+    {
+      "text": "It is about twelve kilometres.",
+      "file": "92967009059a1a443482.wav"
+    },
+    {
+      "text": "J",
+      "file": "6da43b944e494e885e69.wav"
+    },
+    {
+      "text": "K",
+      "file": "86be9a55762d316a3026.wav"
+    },
+    {
+      "text": "L",
+      "file": "72dfcfb0c470ac255cde.wav"
+    },
+    {
+      "text": "Linh thinks the lake is exciting. Nam thinks it is peaceful.",
+      "file": "73e711d75d18baa8489b.wav"
+    },
+    {
+      "text": "M",
+      "file": "08f271887ce94707da82.wav"
+    },
+    {
+      "text": "N",
+      "file": "8ce86a6ae65d3692e730.wav"
+    },
+    {
+      "text": "O",
+      "file": "c4694f2e93d5c4e7d51f.wav"
+    },
+    {
+      "text": "P",
+      "file": "5c62e091b8c0565f1baf.wav"
+    },
+    {
+      "text": "Petronas Twin Towers",
+      "file": "270b2ce4a1f6fcb5f1b6.wav"
+    },
+    {
+      "text": "Petronas Twin Towers. I think they are fantastic. It is about twelve kilometres.",
+      "file": "d5e3411bcf4ef65e3257.wav"
+    },
+    {
+      "text": "Q",
+      "file": "4ae81572f06e1b88fd5c.wav"
+    },
+    {
+      "text": "R",
+      "file": "8c2574892063f995fdf7.wav"
+    },
+    {
+      "text": "S",
+      "file": "8de0b3c47f112c59745f.wav"
+    },
+    {
+      "text": "Sydney Opera House",
+      "file": "2c623c6d9301138ed055.wav"
+    },
+    {
+      "text": "Sydney Opera House. I think it is beautiful. It is about nine kilometres.",
+      "file": "7f60deb124815aa1f71a.wav"
+    },
+    {
+      "text": "T",
+      "file": "e632b7095b0bf32c260f.wav"
+    },
+    {
+      "text": "The card says one hundred kilometres.",
+      "file": "60482096226bae01bd3f.wav"
+    },
+    {
+      "text": "The park is near my home.",
+      "file": "ff6b9ec0a6c0819afe20.wav"
+    },
+    {
+      "text": "There are interesting things to see and do.",
+      "file": "329179848f340e754556.wav"
+    },
+    {
+      "text": "These distances are imaginary. Linh says seven kilometres. Nam says six kilometres.",
+      "file": "a6ea4183b23654a0c484.wav"
+    },
+    {
+      "text": "These distances are imaginary. Linh says: Hoi An Old Town is exciting. It is about seven kilometres from my school. Nam says: Hoi An Old Town is peaceful. It is about six kilometres from my school.",
+      "file": "be209f1bf7c9f9530504.wav"
+    },
+    {
+      "text": "U",
+      "file": "a25513c7e0f6eaa80a33.wav"
+    },
+    {
+      "text": "V",
+      "file": "de5a6f78116eca62d7fc.wav"
+    },
+    {
+      "text": "W",
+      "file": "fcb5f40df9be6bae66c1.wav"
+    },
+    {
+      "text": "What do you think of Ban Gioc Waterfall?",
+      "file": "75e783ee937008d1ec9f.wav"
+    },
+    {
+      "text": "What do you think of Ban Gioc Waterfall? I think it is beautiful.",
+      "file": "360cfa549aa577583110.wav"
+    },
+    {
+      "text": "What do you think of Ban Gioc Waterfall? I think it is peaceful.",
+      "file": "a434ccddc45dc786f0d1.wav"
+    },
+    {
+      "text": "What do you think of Hoi An Old Town?",
+      "file": "abddad64c513e27da6ca.wav"
+    },
+    {
+      "text": "What do you think of Hoi An Old Town? I think it is exciting.",
+      "file": "40e293f9c65701a40f5a.wav"
+    },
+    {
+      "text": "What do you think of Hoi An Old Town? I think it is peaceful.",
+      "file": "fd41790d68f29efc5937.wav"
+    },
+    {
+      "text": "What do you think of Petronas Twin Towers?",
+      "file": "a095595a12fa5c70a1b7.wav"
+    },
+    {
+      "text": "What do you think of Petronas Twin Towers? I think they are fantastic.",
+      "file": "7864dee1268d377923d2.wav"
+    },
+    {
+      "text": "What do you think of Sydney Opera House? I think it is beautiful.",
+      "file": "b51ad8dabefd1d267ed3.wav"
+    },
+    {
+      "text": "What do you think of the lake?",
+      "file": "384625673833023fc156.wav"
+    },
+    {
+      "text": "X",
+      "file": "4b68ab3847feda7d6c62.wav"
+    },
+    {
+      "text": "Y",
+      "file": "18f5384d58bcb1bba0bc.wav"
+    },
+    {
+      "text": "Z",
+      "file": "bbeebd879e1dff691854.wav"
+    },
+    {
+      "text": "about",
+      "file": "a4262e1c9bcbc1721eb3.wav"
+    },
+    {
+      "text": "beautiful",
+      "file": "c6a1427d7119cd3c049d.wav"
+    },
+    {
+      "text": "cave",
+      "file": "b89a199ea81b6a925de7.wav"
+    },
+    {
+      "text": "distance",
+      "file": "63e6ce93e1bcb5122b14.wav"
+    },
+    {
+      "text": "exciting",
+      "file": "5ae666e5b1a641b37709.wav"
+    },
+    {
+      "text": "fantastic",
+      "file": "659c6e8d11873dbc6794.wav"
+    },
+    {
+      "text": "far",
+      "file": "512eea46ceb3921dff43.wav"
+    },
+    {
+      "text": "hundred",
+      "file": "97fe8a374906993133a2.wav"
+    },
+    {
+      "text": "interesting",
+      "file": "637ab2808704d851a93b.wav"
+    },
+    {
+      "text": "kilometre",
+      "file": "875f01c5306fbc2304c8.wav"
+    },
+    {
+      "text": "lake",
+      "file": "6f021f0268d5dd0d4e28.wav"
+    },
+    {
+      "text": "near",
+      "file": "46ba34770bccfde75670.wav"
+    },
+    {
+      "text": "old town",
+      "file": "b3884ac13c0d17d466de.wav"
+    },
+    {
+      "text": "peaceful",
+      "file": "2a4baa647f524b2a9e19.wav"
+    },
+    {
+      "text": "think",
+      "file": "dc2fc19d8fce376c4764.wav"
+    },
+    {
+      "text": "waterfall",
+      "file": "3cb562c897155ca6e376.wav"
+    }
+  ]
+}

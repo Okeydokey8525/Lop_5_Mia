@@ -174,3 +174,7 @@ Metadata trên WindowsWebKit: runner dùng lại một AudioElement và xóa cal
 ## Unit18
 
 `node tools/qa_english_units.js --units=18`, `node tools/qa_persistence.js --units=18`, `node tools/qa_study.js --units=18`, `node tools/qa_recorded_all.js --units=18 --jobs=2`. Gate kiểm full-form cannot, loại can gets và by foot; study trap trip-base loại gets/nhận get. Audio84clip, Chromium/WebKit thật, metadata probe dùng lại1AudioElement. Audit đăng ký4ảnh riêng. CI thêm18 vào Units/persistence, batch16gate audio11–18. Toàn site206HTML/156đề,3296layout; fullstudy19trang/296từ/115hội thoại/228luyện/456layout. Chưa kiểm iPad/human audition.
+
+## Unit19
+
+`node tools/qa_english_units.js --units=19`, `node tools/qa_persistence.js --units=19`, `node tools/qa_study.js --units=19`, `node tools/qa_recorded_all.js --units=19 --jobs=2`. Gate phân biệt they are/they is và it is, không nhận they’re khi full form, cộng cùng tuyến nhận7km/loại4km; study trap place-plural. Audio104clip Chromium/WebKit thật, giữ probe tái dùng và timeout10giây; không giảm gate. CI thêm19 vào units/persistence và batch18gate audio11–19. Toàn site214HTML/162đề,3424layout; fullstudy20trang/316từ/121hội thoại/240luyện/480layout. Chưa kiểm iPad/human audition. Xem bàn giao Unit19 cho kết quả thực chạy.

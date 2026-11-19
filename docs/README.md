@@ -40,3 +40,5 @@ Nguồn nội dung và ghi nhận trang sách của từng unit nằm cạnh nha
 - [Units16–17](breakdowns/2026-11-19_UNIT16_UNIT17.md): mùa/thời tiết/trang phục, nhân vật truyện, did + nguyên mẫu, audio kèm bài và QA.
 
 - [Unit18](breakdowns/2026-11-19_UNIT18.md): nơi muốn tham quan, phương tiện, want to visit/can + get/by/on foot, audio và kiểm chứng.
+
+- [Unit19](breakdowns/2026-11-19_UNIT19.md): địa điểm, cảm nhận, khoảng cách, it is/they are, audio và kiểm chứng.

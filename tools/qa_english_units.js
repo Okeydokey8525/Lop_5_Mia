@@ -58,6 +58,16 @@ async function fill(p){await p.evaluate(()=>__quiz.Q.forEach((q,i)=>{const e=doc
   if(t.id==='en-u18-de1-v1'){
    const forms=await p.evaluate(()=>{const q=__quiz.Q.find(q=>q.type==='text'&&q.answers[0]==='You can get there on foot.');return [__quiz.textIsCorrect('You can get there by foot.',q.answers),__quiz.textIsCorrect('You can get there on foot.',q.answers)];});assert.deepEqual(forms,[false,true]);
   }
+  if(t.id==='en-u19-de3-v1'){
+   assert.match(await p.evaluate(()=>window.MKEN19([]).meta.book),/Tập hai/);
+   const forms=await p.evaluate(()=>{const q=__quiz.Q.find(q=>q.type==='text'&&q.exactForm&&q.answers[0]==='They are fantastic.');return [__quiz.textIsCorrect('They’re fantastic.',q.answers,true),__quiz.textIsCorrect('They is fantastic.',q.answers,true),__quiz.textIsCorrect(q.answers[0],q.answers,true)];});assert.deepEqual(forms,[false,false,true]);
+  }
+  if(t.id==='en-u19-de1-v1'){
+   const forms=await p.evaluate(()=>{const q=__quiz.Q.find(q=>q.type==='text'&&q.exactForm&&q.answers[0]==='I think they are fantastic.');return [__quiz.textIsCorrect('I think it is fantastic.',q.answers,true),__quiz.textIsCorrect(q.answers[0],q.answers,true)];});assert.deepEqual(forms,[false,true]);
+  }
+  if(t.id==='en-u19-de4-v1'){
+   const forms=await p.evaluate(()=>{const q=__quiz.Q.find(q=>q.type==='text'&&q.stem.startsWith('Along this route,')&&q.answers[0]==='seven kilometres');return [__quiz.textIsCorrect('four kilometres',q.answers),__quiz.textIsCorrect('7 km',q.answers),__quiz.textIsCorrect('seven kilometres',q.answers)];});assert.deepEqual(forms,[false,true,true]);
+  }
   if(t.id.startsWith('en-r')){
    const scope=await p.evaluate(()=>[...new Set(__quiz.Q.flatMap(q=>q.sourceUnits||[]))].sort((a,b)=>a-b));assert.deepEqual(scope,t.id.startsWith('en-r01')?[1,2,3,4,5]:[6,7,8,9,10]);assert.ok(!(await p.title()).includes('Unit R'));
   }
