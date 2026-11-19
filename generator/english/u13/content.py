@@ -75,7 +75,7 @@ def vocabulary():return [
 
 def dialogue():
     a,b,c=PROFILES[:3]
-    return [mc('What will you do on Sports Day? Choose an activity answer.',['We will play badminton.','We will have apple juice.','On Saturday.','At our school.'],'We will play badminton.','What…do hỏi hoạt động.'),
+    return [mc('What will you do on Sports Day? Choose a sport activity answer.',['We will play badminton.','We will have apple juice.','On Saturday.','At our school.'],'We will play badminton.','Câu yêu cầu hoạt động thể thao: play badminton.'),
         text('Complete: What food ___ you have at the party?','will','What food will you have?',2),
         reorder('What will you do on Children’s Day?','Will + you + do.'),
         shown(mc('What drinks will they have?',DRINKS,b['drink'],'Tìm mục Drink.',2),b),
