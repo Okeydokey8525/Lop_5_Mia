@@ -164,3 +164,7 @@ Chạy `node tools/qa_english_units.js --units=12,13`, `node tools/qa_persistenc
 Chạy `node tools/qa_english_units.js --units=14,15`, `node tools/qa_persistence.js --units=14,15`, `node tools/qa_study.js --units=14,15` (bỏ chọn để kiểm đầy đủ16trang). Kiểm does + nguyên mẫu, should + nguyên mẫu, full form không nhận viết tắt/từ thêm s; nhận two times a week/stomachache nhưng không nhận tần suất hoặc health phrase sai.
 
 `node tools/qa_recorded_all.js --units=14,15 --jobs=3` chạy bốn gate file nghe thật Chromium/WebKit; `qa_recorded_audio.js --unit=14 [--webkit]` vẫn dùng độc lập như trước. CI gọi batch cho Units11–15,10gate, tối đa3 tiến trình, log/report riêng trong artifacts/audio-batch-local. Bất kỳ child trả lỗi/signal đều khiến gate tổng thất bại; không bỏ kiểm clip, playback, ABC, stop, retry hoặc thiếu Speech API. Responsive toàn site mới182×8×2=2912; full study16trang/240từ/97hội thoại/192bài luyện/384layout. iPad thật và nghe duyệt bằng tai vẫn riêng.
+
+## Units16–17
+
+`node tools/qa_english_units.js --units=16,17`, `node tools/qa_persistence.js --units=16,17`, `node tools/qa_study.js --units=16,17`, `node tools/qa_recorded_all.js --units=16,17 --jobs=3`. Gate full-form loại bỏ It’s/They’re/didn’t khi đề bắt full form; loại câu thiếu is và did ran. Study trap kiểm do + wear và did + run. Audit ảnh đăng ký rõ4ảnh/unit. CI thêm16/17 vào gate Units/persistence và batch14gate audio cho11–17. Responsive hiện198×8×2=3168; full study18trang/276từ/109hội thoại/216bài luyện/432layout. Chưa coi WebKit là iPad thật hoặc kiểm giọng bằng tai.

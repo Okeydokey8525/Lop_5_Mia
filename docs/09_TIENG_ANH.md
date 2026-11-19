@@ -137,3 +137,8 @@ Unit14 Staying healthy (24–29): How does he/she stay healthy?; How often does�
 Unit15 Our health (30–35): What’s the matter?; I have/he has; What should I do?; should/should not + nguyên mẫu. Thẻ hội thoại giao sẵn câu, không bắt trẻ chẩn đoán/chọn cách chữa; take some medicine/rinse… được học như cụm từ, không có tên thuốc/liều/công thức pha. Stomach ache/stomachache đều được nhận ở câu điền phù hợp. Full form vẫn không nhận viết tắt.
 
 Mỗi Unit16từ/cụm,6hội thoại,12bài luyện tự lưu;6đề/144câu/36nghe.95/91WAV kèm bài. Đã đọc đủ12trang và Wordlist74–75, NOTES cạnh nguồn. Tổng hiện tại15Unit+2Review=102đề/2448câu; học từ đầy đủ16trang/240từ/97hội thoại/192bài luyện. Review3 chưa được giao trong đợt này.
+
+
+## Units16–17 — 19/11/2026
+
+Đã bổ sung Unit16 **Seasons and the weather** (tập hai40–45) và Unit17 **Stories for children** (46–51): mỗi Unit6đề/144câu/36nghe, tổng quan HTML/PNG, trang học tự lưu với nghe/chậm/ABC,6hội thoại và12bài luyện. Unit16 có20từ/cụm/98WAV, Unit17 có16từ/cụm/90WAV;8tranh ImageGen mới. Toàn Anh17Unit+2Review=114đề/2736câu; toàn site150đề/198HTML/25poster. Học từ đầy đủ18trang/276từ/109hội thoại/216bài luyện. Xem [bàn giao Units16–17](breakdowns/2026-11-19_UNIT16_UNIT17.md) cho trạng thái local/CI/live và giới hạn iPad thật. Còn **Review3 + Units18–20 + Review4 =5phần/30đề** theo sách; Starter và bộ kiểm tra học kỳ riêng chưa làm.

@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tiếng Anh 5 · Unit 17 · Đề 1 · Khởi động</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<link rel="stylesheet" href="../../assets/engine.css"><script type="application/json" id="mia-audio-data">{"voice": "Microsoft Zira Desktop", "clips": {"An says: My focus character is the ant. He worked hard. Linh says: My focus character is the hare. He ran fast.": "../../assets/english/u17/audio/65b4cee4b69580942b2f.wav", "He ran fast.": "../../assets/english/u17/audio/83fd99baa66455146c03.wav", "He worked hard.": "../../assets/english/u17/audio/31c4a05d6e1988a7cca9.wav", "Hello! Let’s listen and learn English.": "../../assets/english/u17/audio/d6be6a8235b16c4af314.wav", "The focus character is the ant.": "../../assets/english/u17/audio/0f8cbfb8d44883642996.wav", "The focus character is the ant. He worked hard.": "../../assets/english/u17/audio/e6a8c85560fdd79b8ecd.wav", "The main characters are the fox and the crow. The focus character is the crow.": "../../assets/english/u17/audio/61a624a162dd2350b6e2.wav"}}</script><script>// Optional recorded voice for pages with a complete, unit-owned audio manifest.
+(function(){'use strict';
+ const el=document.getElementById('mia-audio-data');if(!el)return;
+ const data=JSON.parse(el.textContent),native=window.speechSynthesis;
+ const voice={name:'Âm thanh có sẵn · Anh Mỹ (Zira)',lang:'en-US',voiceURI:'mia-recorded',localService:true};
+ // Reuse one media element for the whole spelling queue (per-element playback
+ // permission on iPad); only start playback from a learner's button press.
+ const player=new Audio();let sequence=0;
+ function cancel(){sequence++;player.onplaying=player.onended=player.onerror=null;player.pause();if(native)native.cancel();}
+ function speak(u){
+  if(u.voice?.voiceURI!==voice.voiceURI){
+   if(native&&window.SpeechSynthesisUtterance){const v=new SpeechSynthesisUtterance(u.text);for(const k of ['voice','lang','rate','pitch','volume','onstart','onend','onerror'])v[k]=u[k];native.speak(v);}
+   else u.onerror?.({error:'voice-unavailable'});return;
+  }
+  cancel();const token=sequence,src=data.clips[u.text];
+  if(!src){u.onerror?.({error:'audio-unavailable'});return;}
+  const audio=player;let failed=false;
+  const fail=()=>{if(token!==sequence||failed)return;failed=true;cancel();u.onerror?.({error:'audio-unavailable'});};
+  audio.preload='none';audio.src=src;audio.volume=u.volume??1;audio.playbackRate=(u.rate||0.9)/0.9;audio.preservesPitch=true;
+  audio.onplaying=()=>{if(token===sequence)u.onstart?.();};
+  audio.onended=()=>{if(token!==sequence)return;audio.onplaying=audio.onended=audio.onerror=null;u.onend?.();};
+  audio.onerror=fail;try{audio.play().catch(fail);}catch(e){fail();}
+ }
+ window.MiaRecorded={getVoices:()=>[voice,...(native?.getVoices()||[])],cancel,speak,
+  addEventListener:(name,fn)=>native?.addEventListener(name,fn),removeEventListener:(name,fn)=>native?.removeEventListener(name,fn)};
+})();
+</script><script src="../../assets/english/speech.js"></script><link rel="stylesheet" href="../../assets/theme.css"><script src="../../assets/theme.js"></script></head><body>
+<div class="page"><div id="app"></div></div>
+<div class="bar" id="bar" data-mode="run"><div class="bar-in"></div></div>
+<script>
+window.MKEN17=function(questions){return {"decimal": false, "meta": {"subject": "en", "version": 1, "lessonLabel": "Phần", "book": "Tiếng Anh 5 · Global Success · Tập hai", "title": "Unit 17 · Stories for children", "topic": "Nhân vật truyện và hành động đã qua", "range": "Trang 46–51", "minutes": 40, "tip": "Mỗi đề có 6 câu nghe, chia đều ba mức. Xem lời nghe sẽ ghi nhận đã dùng hỗ trợ, không trừ điểm. Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp."}, "lessons": {"1": "Nhân vật chính", "2": "How did…? và cách làm", "3": "Ngữ điệu, đọc và kể"}, "levels": [{"id": "tb", "name": "Mức 1 · Trung bình", "desc": "Nhận biết từ và mẫu câu cơ bản", "stars": 1, "pts": 3}, {"id": "kha", "name": "Mức 2 · Khá", "desc": "Dùng mẫu câu, nối ý và tìm thông tin", "stars": 2, "pts": 5}, {"id": "gioi", "name": "Mức 3 · Giỏi", "desc": "Kết hợp đọc hiểu và viết câu theo dữ liệu", "stars": 3, "pts": 5}],"questions":questions};};
+
+window.TEST_FN=function(H){return MKEN17([
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the character.",
+  "transcript": "The focus character is the ant.",
+  "speech": "The focus character is the ant.",
+  "fields": [
+   {
+    "label": "Character:",
+    "answer": "ant",
+    "options": [
+     "ant",
+     "grasshopper",
+     "tortoise",
+     "hare",
+     "fox",
+     "crow",
+     "Snow White"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Character: ant.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the manner word.",
+  "transcript": "He ran fast.",
+  "speech": "He ran fast.",
+  "fields": [
+   {
+    "label": "Manner:",
+    "answer": "fast",
+    "options": [
+     "well",
+     "hard",
+     "fast",
+     "beautifully"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Manner: fast.",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the picture. Choose the animal.",
+  "why": "Kiến có sáu chân và râu.",
+  "lesson": 1,
+  "opts": [
+   "hare",
+   "ant",
+   "grasshopper",
+   "tortoise"
+  ],
+  "answer": 1,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u17/ant.webp\" alt=\"con kiến\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: Who are the main ___ in the story?",
+  "why": "Main characters.",
+  "lesson": 1,
+  "answers": [
+   "characters"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Phân biệt bốn con vật.",
+  "lesson": 2,
+  "pairs": [
+   {
+    "left": "ant",
+    "right": "con kiến"
+   },
+   {
+    "left": "grasshopper",
+    "right": "con châu chấu"
+   },
+   {
+    "left": "tortoise",
+    "right": "con rùa cạn"
+   },
+   {
+    "left": "hare",
+    "right": "con thỏ rừng"
+   }
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Which character does the reader focus on?",
+  "why": "Focus character.",
+  "lesson": 1,
+  "opts": [
+   "hare",
+   "ant",
+   "grasshopper",
+   "tortoise"
+  ],
+  "answer": 0,
+  "passage": "Original practice card: Reader: Linh · Main characters: the tortoise and the hare · Focus character: hare · Pronoun: He · Action: run · Past action: ran · Manner: fast. Answer from this card, not from another version of the story.",
+  "level": "tb"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "They are + nhân vật.",
+  "lesson": 1,
+  "items": [
+   "They",
+   "are",
+   "the",
+   "fox",
+   "and",
+   "the",
+   "crow."
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: How ___ he work?",
+  "why": "How did + nguyên mẫu.",
+  "lesson": 2,
+  "answers": [
+   "did"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the manner word.",
+  "why": "Manner trên thẻ.",
+  "lesson": 2,
+  "answers": [
+   "well"
+  ],
+  "exactForm": false,
+  "passage": "Original practice card: Reader: Hoa · Main characters: Snow White and the seven dwarfs · Focus character: Snow White · Pronoun: She · Action: cook · Past action: cooked · Manner: well. Answer from this card, not from another version of the story.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: He ___ fast. Use the past form of run.",
+  "why": "Run → ran.",
+  "lesson": 2,
+  "answers": [
+   "ran"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the past action.",
+  "transcript": "He worked hard.",
+  "speech": "He worked hard.",
+  "fields": [
+   {
+    "label": "Past action:",
+    "answer": "worked",
+    "options": [
+     "cooked",
+     "worked",
+     "ran",
+     "sang"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Past action: worked.",
+  "level": "kha"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Động từ hiện tại/quá khứ.",
+  "lesson": 2,
+  "pairs": [
+   {
+    "left": "cook",
+    "right": "cooked"
+   },
+   {
+    "left": "work",
+    "right": "worked"
+   },
+   {
+    "left": "sing",
+    "right": "sang"
+   }
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Worked hard.",
+  "lesson": 2,
+  "items": [
+   "He",
+   "worked",
+   "hard."
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the focus character.",
+  "transcript": "The main characters are the fox and the crow. The focus character is the crow.",
+  "speech": "The main characters are the fox and the crow. The focus character is the crow.",
+  "fields": [
+   {
+    "label": "Focus character:",
+    "answer": "crow",
+    "options": [
+     "ant",
+     "grasshopper",
+     "tortoise",
+     "hare",
+     "fox",
+     "crow",
+     "Snow White"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Focus character: crow.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the focus character.",
+  "why": "Theo thẻ Minh.",
+  "lesson": 2,
+  "answers": [
+   "crow"
+  ],
+  "exactForm": false,
+  "passage": "Original practice card: Reader: Minh · Main characters: the fox and the crow · Focus character: crow · Pronoun: He · Action: sing · Past action: sang · Manner: beautifully. Answer from this card, not from another version of the story.",
+  "level": "kha"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Đọc thẻ An.",
+  "lesson": 2,
+  "items": [
+   {
+    "t": "The focus character is ant.",
+    "a": true
+   },
+   {
+    "t": "The manner word is fast.",
+    "a": false
+   }
+  ],
+  "passage": "Original practice card: Reader: An · Main characters: the ant and the grasshopper · Focus character: ant · Pronoun: He · Action: work · Past action: worked · Manner: hard. Answer from this card, not from another version of the story.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: How did she ___? Use cook.",
+  "why": "Did + cook, không cooked.",
+  "lesson": 2,
+  "answers": [
+   "cook"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "She cooked well.",
+  "lesson": 2,
+  "items": [
+   "She",
+   "cooked",
+   "well."
+  ],
+  "passage": "Original practice card: Reader: Hoa · Main characters: Snow White and the seven dwarfs · Focus character: Snow White · Pronoun: She · Action: cook · Past action: cooked · Manner: well. Answer from this card, not from another version of the story.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the complete past sentence using the pronoun on the card.",
+  "why": "He sang beautifully.",
+  "lesson": 3,
+  "answers": [
+   "He sang beautifully."
+  ],
+  "exactForm": false,
+  "passage": "Original practice card: Reader: Minh · Main characters: the fox and the crow · Focus character: crow · Pronoun: He · Action: sing · Past action: sang · Manner: beautifully. Answer from this card, not from another version of the story.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write the complete How did question using the pronoun and action on the card.",
+  "why": "Did + run.",
+  "lesson": 3,
+  "answers": [
+   "How did he run?"
+  ],
+  "exactForm": false,
+  "passage": "Original practice card: Reader: Linh · Main characters: the tortoise and the hare · Focus character: hare · Pronoun: He · Action: run · Past action: ran · Manner: fast. Answer from this card, not from another version of the story.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Find both character and manner.",
+  "transcript": "The focus character is the ant. He worked hard.",
+  "speech": "The focus character is the ant. He worked hard.",
+  "fields": [
+   {
+    "label": "Character:",
+    "answer": "ant",
+    "options": [
+     "ant",
+     "grasshopper",
+     "tortoise",
+     "hare",
+     "fox",
+     "crow",
+     "Snow White"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Manner:",
+    "answer": "hard",
+    "options": [
+     "well",
+     "hard",
+     "fast",
+     "beautifully"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Character: ant; Manner: hard.",
+  "level": "gioi"
+ },
+ {
+  "type": "mc",
+  "stem": "Choose the correct question.",
+  "why": "Did + sing.",
+  "lesson": 3,
+  "opts": [
+   "How he did sing?",
+   "How did sang he?",
+   "How did he sing?",
+   "How did he sang?"
+  ],
+  "answer": 2,
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write the How did question, then the past answer. Use the pronoun on the card.",
+  "why": "Work trong câu hỏi, worked trong câu kể.",
+  "lesson": 3,
+  "answers": [
+   "How did he work? He worked hard."
+  ],
+  "exactForm": false,
+  "passage": "Original practice card: Reader: An · Main characters: the ant and the grasshopper · Focus character: ant · Pronoun: He · Action: work · Past action: worked · Manner: hard. Answer from this card, not from another version of the story.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Write only Linh’s character and manner, not An’s.",
+  "transcript": "An says: My focus character is the ant. He worked hard. Linh says: My focus character is the hare. He ran fast.",
+  "speech": "An says: My focus character is the ant. He worked hard. Linh says: My focus character is the hare. He ran fast.",
+  "fields": [
+   {
+    "label": "Linh’s character:",
+    "answer": "hare",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Linh’s manner:",
+    "answer": "fast",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Linh’s character: hare; Linh’s manner: fast.",
+  "level": "gioi"
+ }
+]);};
+
+window.TEST_EXTRA={"id": "en-u17-de1-v1", "title": "Đề 1 · Khởi động", "theme": "Làm quen nhân vật và hành động trong truyện.", "home": "../index.html", "next": "De2_TuVungVaHinhAnh.html"};
+
+</script><script src="../../assets/engine.js"></script></body></html>

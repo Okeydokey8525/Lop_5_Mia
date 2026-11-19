@@ -1,0 +1,400 @@
+{
+  "voice": "Microsoft Zira Desktop",
+  "language": "en-US",
+  "rate": -1,
+  "format": "PCM 22050 Hz 16-bit mono",
+  "clips": [
+    {
+      "text": "A",
+      "file": "559aead08264d5795d39.wav"
+    },
+    {
+      "text": "B",
+      "file": "df7e70e5021544f4834b.wav"
+    },
+    {
+      "text": "C",
+      "file": "6b23c0d5f35d1b11f9b6.wav"
+    },
+    {
+      "text": "D",
+      "file": "3f39d5c348e5b79d06e8.wav"
+    },
+    {
+      "text": "E",
+      "file": "a9f51566bd6705f7ea6a.wav"
+    },
+    {
+      "text": "F",
+      "file": "f67ab10ad4e4c53121b6.wav"
+    },
+    {
+      "text": "G",
+      "file": "333e0a1e27815d0ceee5.wav"
+    },
+    {
+      "text": "H",
+      "file": "44bd7ae60f478fae1061.wav"
+    },
+    {
+      "text": "Hello! Let us listen and learn English.",
+      "file": "d049b36b33ea2a1929e2.wav"
+    },
+    {
+      "text": "Hello! Let’s listen and learn English.",
+      "file": "d6be6a8235b16c4af314.wav"
+    },
+    {
+      "text": "Hoa says: It is winter. I wear a jumper. Nam says: It is winter. I wear jeans.",
+      "file": "e55757dd838cefdb02a7.wav"
+    },
+    {
+      "text": "How is the weather in Ha Noi in spring?",
+      "file": "dc655112fef94fb44b47.wav"
+    },
+    {
+      "text": "How is the weather in Ha Noi in spring? It is warm and rainy.",
+      "file": "162002978ce968710bfc.wav"
+    },
+    {
+      "text": "How is the weather in autumn?",
+      "file": "0987fecee9a516bb837c.wav"
+    },
+    {
+      "text": "How is the weather in autumn? It is cool and cloudy.",
+      "file": "e6eb26cacb568d5aab06.wav"
+    },
+    {
+      "text": "I",
+      "file": "a83dd0ccbffe39d071cc.wav"
+    },
+    {
+      "text": "I wear a blouse.",
+      "file": "4c9e7214e0efae40f426.wav"
+    },
+    {
+      "text": "I wear a jumper.",
+      "file": "23600f3b437b08cfa1ab.wav"
+    },
+    {
+      "text": "I wear jeans.",
+      "file": "68bb6de0b11fdca3d4de.wav"
+    },
+    {
+      "text": "I wear trousers.",
+      "file": "268f06dde1ca8096bb2e.wav"
+    },
+    {
+      "text": "In autumn, I usually wear jeans.",
+      "file": "d5d086bc16770ed1b829.wav"
+    },
+    {
+      "text": "In spring, I usually wear a blouse.",
+      "file": "4c97658e38106fa5d19c.wav"
+    },
+    {
+      "text": "In spring, I usually wear a jumper.",
+      "file": "36462173c7ba0438f7da.wav"
+    },
+    {
+      "text": "In summer, I usually wear trousers.",
+      "file": "9ab51c4ecb220d4d17f9.wav"
+    },
+    {
+      "text": "In winter, I usually wear a jumper.",
+      "file": "f092a39bfd2d4930bb43.wav"
+    },
+    {
+      "text": "In winter, I usually wear jeans.",
+      "file": "c487fea0469090d4231e.wav"
+    },
+    {
+      "text": "Is it autumn?",
+      "file": "1af62015a98efc7c86bd.wav"
+    },
+    {
+      "text": "Is it autumn? Yes, it is.",
+      "file": "75da7426bcad8cfb06d5.wav"
+    },
+    {
+      "text": "It is autumn.",
+      "file": "d5cf621d96281e5fad8f.wav"
+    },
+    {
+      "text": "It is autumn. I wear jeans.",
+      "file": "6bf30accce81c2895122.wav"
+    },
+    {
+      "text": "It is autumn. It is cool and cloudy.",
+      "file": "b2d5b6266625b38df831.wav"
+    },
+    {
+      "text": "It is hot and sunny.",
+      "file": "10cce7cba5ff13bee0eb.wav"
+    },
+    {
+      "text": "It is spring.",
+      "file": "4149c14a193c4097be62.wav"
+    },
+    {
+      "text": "It is spring. I wear a blouse.",
+      "file": "e1fcdd61355cc71dbfad.wav"
+    },
+    {
+      "text": "It is spring. I wear a jumper.",
+      "file": "653f35b632252b676d2f.wav"
+    },
+    {
+      "text": "It is spring. It is warm and rainy.",
+      "file": "5a235e755a6617cb80bd.wav"
+    },
+    {
+      "text": "It is summer.",
+      "file": "31160ed5d041a601d8e7.wav"
+    },
+    {
+      "text": "It is summer. I wear trousers.",
+      "file": "9740a33409b336535e42.wav"
+    },
+    {
+      "text": "It is summer. It is hot and sunny.",
+      "file": "a63903b041787e932dbc.wav"
+    },
+    {
+      "text": "It is winter.",
+      "file": "5ff704c6d14a485e7b58.wav"
+    },
+    {
+      "text": "It is winter. I wear a jumper.",
+      "file": "21e9d6dec355f6d9956f.wav"
+    },
+    {
+      "text": "It is winter. I wear jeans.",
+      "file": "d44c323e65cc064c7371.wav"
+    },
+    {
+      "text": "It is winter. It is cold and dry.",
+      "file": "e62f0b28959051ec9b77.wav"
+    },
+    {
+      "text": "J",
+      "file": "6da43b944e494e885e69.wav"
+    },
+    {
+      "text": "K",
+      "file": "86be9a55762d316a3026.wav"
+    },
+    {
+      "text": "L",
+      "file": "72dfcfb0c470ac255cde.wav"
+    },
+    {
+      "text": "M",
+      "file": "08f271887ce94707da82.wav"
+    },
+    {
+      "text": "N",
+      "file": "8ce86a6ae65d3692e730.wav"
+    },
+    {
+      "text": "O",
+      "file": "c4694f2e93d5c4e7d51f.wav"
+    },
+    {
+      "text": "P",
+      "file": "5c62e091b8c0565f1baf.wav"
+    },
+    {
+      "text": "Q",
+      "file": "4ae81572f06e1b88fd5c.wav"
+    },
+    {
+      "text": "R",
+      "file": "8c2574892063f995fdf7.wav"
+    },
+    {
+      "text": "S",
+      "file": "8de0b3c47f112c59745f.wav"
+    },
+    {
+      "text": "T",
+      "file": "e632b7095b0bf32c260f.wav"
+    },
+    {
+      "text": "The weather is cloudy.",
+      "file": "b0c4ceb87ecb565cbea2.wav"
+    },
+    {
+      "text": "The weather is cold.",
+      "file": "9d5398a77b0cccf9c8e8.wav"
+    },
+    {
+      "text": "The weather is cool.",
+      "file": "fdbad6f6071439319b9b.wav"
+    },
+    {
+      "text": "The weather is dry.",
+      "file": "ebc26402b763cc805ebd.wav"
+    },
+    {
+      "text": "The weather is hot.",
+      "file": "7929851962ca268fdca6.wav"
+    },
+    {
+      "text": "The weather is humid.",
+      "file": "2ef25d4eb1daebe7a862.wav"
+    },
+    {
+      "text": "The weather is rainy.",
+      "file": "e2c54da3707b5fd48831.wav"
+    },
+    {
+      "text": "The weather is snowy.",
+      "file": "285f6a180ef521129a52.wav"
+    },
+    {
+      "text": "The weather is sunny.",
+      "file": "bdb6e1bb13381cde857e.wav"
+    },
+    {
+      "text": "The weather is warm.",
+      "file": "31a1f7b4c6276ad20124.wav"
+    },
+    {
+      "text": "The weather is windy.",
+      "file": "9e77cea9864f51f172f2.wav"
+    },
+    {
+      "text": "There is a dry season in the south of Viet Nam.",
+      "file": "fde9053d1763cc3da365.wav"
+    },
+    {
+      "text": "U",
+      "file": "a25513c7e0f6eaa80a33.wav"
+    },
+    {
+      "text": "V",
+      "file": "de5a6f78116eca62d7fc.wav"
+    },
+    {
+      "text": "W",
+      "file": "fcb5f40df9be6bae66c1.wav"
+    },
+    {
+      "text": "What do you usually wear in summer?",
+      "file": "746fda1a5ffe6eda5203.wav"
+    },
+    {
+      "text": "What do you usually wear in summer? I wear trousers.",
+      "file": "9fdf4bbfec181c70d847.wav"
+    },
+    {
+      "text": "What do you usually wear in winter?",
+      "file": "d28ae5df4c8911de7bb8.wav"
+    },
+    {
+      "text": "What do you usually wear in winter? I wear a jumper.",
+      "file": "6a0429ab9cecb878f2c4.wav"
+    },
+    {
+      "text": "What season is it?",
+      "file": "e2e09a5405317e23a709.wav"
+    },
+    {
+      "text": "What season is it? It is spring.",
+      "file": "10c0522245c91ce9fbd6.wav"
+    },
+    {
+      "text": "X",
+      "file": "4b68ab3847feda7d6c62.wav"
+    },
+    {
+      "text": "Y",
+      "file": "18f5384d58bcb1bba0bc.wav"
+    },
+    {
+      "text": "Z",
+      "file": "bbeebd879e1dff691854.wav"
+    },
+    {
+      "text": "a blouse",
+      "file": "3759d6a7a1fac1f9d3a7.wav"
+    },
+    {
+      "text": "a jumper",
+      "file": "cc43e9a3fbcbc6ffb499.wav"
+    },
+    {
+      "text": "autumn",
+      "file": "defae04158b9c17d7b4a.wav"
+    },
+    {
+      "text": "cloudy",
+      "file": "5e9562c786d9ca040985.wav"
+    },
+    {
+      "text": "cold",
+      "file": "e272deecde720ffc773d.wav"
+    },
+    {
+      "text": "cool",
+      "file": "c34045c1a1db8d1b3fca.wav"
+    },
+    {
+      "text": "dry",
+      "file": "b755cb248c3c4a7d94f8.wav"
+    },
+    {
+      "text": "dry season",
+      "file": "000af825700fa56d1ca5.wav"
+    },
+    {
+      "text": "hot",
+      "file": "7f5d1618e7d28cc7bf32.wav"
+    },
+    {
+      "text": "humid",
+      "file": "9656ef3ddd36b9516237.wav"
+    },
+    {
+      "text": "jeans",
+      "file": "3eb874ba01490ab92db6.wav"
+    },
+    {
+      "text": "rainy",
+      "file": "7b9e10dfed0288d691f7.wav"
+    },
+    {
+      "text": "snowy",
+      "file": "99f72d7e511685bae651.wav"
+    },
+    {
+      "text": "spring",
+      "file": "622a494d3ea8c7ba2fed.wav"
+    },
+    {
+      "text": "summer",
+      "file": "e83664255c6963e962bb.wav"
+    },
+    {
+      "text": "sunny",
+      "file": "c2333a7e3a607935c67c.wav"
+    },
+    {
+      "text": "trousers",
+      "file": "1b5f82125c8e908adde3.wav"
+    },
+    {
+      "text": "warm",
+      "file": "0f0aa408c1832abefd06.wav"
+    },
+    {
+      "text": "windy",
+      "file": "87480c5a4819536e47c0.wav"
+    },
+    {
+      "text": "winter",
+      "file": "30c5461fc27b84f1f1ad.wav"
+    }
+  ]
+}

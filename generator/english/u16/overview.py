@@ -1,0 +1,12 @@
+"""Original textbook-grounded overview."""
+from gen_overview import gen_sheet, box
+
+def sheet(unit, content):
+    col = '#A63C70'
+    bg = '#FFE4F0'
+    pictures = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px">' + ''.join(('<figure style="margin:0;min-width:0">' + content.picture(w, 280) + f'<figcaption style="font-weight:700;margin-top:8px">{w}</figcaption></figure>' for w in content.CORE)) + '</div>'
+    lessons = []
+    lessons.append(dict(n=1, title='Mùa và thời tiết', pg='40–41', head='How’s the weather in…?', body=lambda c: box(bg, '<b>spring — warm</b> · <b>summer — hot</b> · <b>autumn — cool</b> · <b>winter — cold</b><br>How’s = How is. <b>It is warm and rainy.</b> Dùng <b>in + mùa</b>.') + box(bg, '<b>sunny</b>: có nắng · <b>rainy</b>: có mưa · <b>cloudy</b>: có mây · <b>dry</b>: khô · <b>humid</b>: ẩm · <b>windy</b>: có gió · <b>snowy</b>: có tuyết.<br>Câu hỏi và đáp án trong đề theo thẻ giả định; không phải dự báo thời tiết.'), col=col, bg=bg, dk='#702344'))
+    lessons.append(dict(n=2, title='Em thường mặc gì?', pg='42–43', head='What do you usually wear in winter?', body=lambda c: pictures + box(bg, '<b>I wear a jumper.</b><br>A blouse: áo kiểu · trousers: quần dài · jeans: quần bò · a jumper: áo len chui đầu.<br><b>Do you wear</b>, không dùng do you wears.') + box(bg, 'Dùng <b>a blouse / a jumper</b>. Với <b>trousers / jeans</b>, không thêm a.<br>Cùng mùa, hai bạn có thể chọn trang phục khác nhau. Đọc đúng trường Usual clothes.'), col=col, bg=bg, dk='#702344'))
+    lessons.append(dict(n=3, title='Ngữ điệu, đọc và viết', pg='44–45', head='Câu kể xuống giọng cuối câu.', body=lambda c: box(bg, '<b>It’s cloudy in autumn. ↘</b><br><b>I wear jeans in winter. ↘</b><br>Phần đọc phân biệt bốn mùa ở miền Bắc và <b>dry season / rainy season</b> ở miền Nam. Không cho mọi nơi cùng một mô hình bốn mùa.') + box(bg, '<b>Thẻ tự soạn:</b> An · spring · warm and rainy · a blouse.<br><b>Viết theo thẻ:</b> It is warm and rainy. I wear a blouse.<br>Tự kiểm tra: có is chưa? Đúng mùa, thời tiết và trang phục chưa? Nghe Giỏi cần lấy hai thông tin đúng người.'), col=col, bg=bg, dk='#702344'))
+    return gen_sheet(16, 'SEASONS AND THE WEATHER', 'Unit 16 · Global Success 5 · Tập hai · Trang 40–45', col, bg, lessons, ['Từ và tranh', 'Mẫu câu và nhịp câu', 'Đọc, nghe và viết'], 'Mỗi ngày thêm một điều em biết.', 'Học từ, nghe chậm, ABC và hội thoại; sáu đề theo ba cấp độ.', 'Nội dung tự soạn, bám Unit 16 · Global Success 5, tập hai')

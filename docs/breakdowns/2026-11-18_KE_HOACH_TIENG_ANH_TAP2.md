@@ -87,3 +87,5 @@ Sau mỗi đợt: cập nhật NOTES, registry, catalog, tổng quan, trang ch�
 Starter tập một; nâng Unit 1 thành trang học đầy đủ; thay âm thanh toàn bộ tập một; tài khoản/đồng bộ; thu âm/chấm nói; các bộ đề giữa kỳ/cuối kỳ riêng. Review không thay thế các bộ đề kiểm tra đó. Phạm vi kiểm tra của trường cần đối chiếu riêng, không mặc định giữa kỳ luôn kết thúc sau năm Unit.
 
 Ước lượng lập ngân sách sơ bộ: một người soạn nội dung và phát triển kiêm QA, khoảng 18-26 ngày công cho mẫu âm thanh, 12 phần và hồi quy; khoảng 4-6 tuần nếu làm 5 ngày/tuần, chưa tính thời gian chờ duyệt. Phần khó nhất là duyệt lời nghe/tranh và đáp án hợp lệ, không phải chỉ chạy generator. Sẽ ước lượng lại sau Unit 11 và phương án audio được duyệt; đây không phải cam kết lịch giao.
+
+Cập nhật triển khai19/11/2026: đã được giao và bổ sung Units16–17 theo trang40–51, sau Units11–15 đã xuất bản. Xem bàn giao2026-11-19_UNIT16_UNIT17.md cho local/CI/live. Còn Review3, Units18–20 và Review4 (5phần/30đề); không tự triển khai phần chưa giao.

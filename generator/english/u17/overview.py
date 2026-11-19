@@ -1,0 +1,12 @@
+"""Original textbook-grounded overview."""
+from gen_overview import gen_sheet, box
+
+def sheet(unit, content):
+    col = '#A63C70'
+    bg = '#FFE4F0'
+    pictures = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px">' + ''.join(('<figure style="margin:0;min-width:0">' + content.picture(w, 280) + f'<figcaption style="font-weight:700;margin-top:8px">{w}</figcaption></figure>' for w in content.CORE)) + '</div>'
+    lessons = []
+    lessons.append(dict(n=1, title='Nhân vật trong truyện', pg='46–47', head='Who are the main characters in the story?', body=lambda c: pictures + box(bg, '<b>They are the ant and the grasshopper.</b><br>The tortoise and the hare · the fox and the crow · Snow White and the seven dwarfs.<br><b>Main characters</b>: nhân vật chính · <b>fairy tale</b>: truyện cổ tích.') + box(bg, 'Ant: kiến · grasshopper: châu chấu · tortoise: rùa cạn · hare: thỏ rừng.<br>Đọc đúng truyện/thẻ được giao. Không đoán người đọc thích nhân vật nào từ tên truyện.'), col=col, bg=bg, dk='#702344'))
+    lessons.append(dict(n=2, title='Hành động đã qua', pg='48–49', head='How did he/she + nguyên mẫu?', body=lambda c: box(bg, '<b>How did he run? — He ran fast.</b><br><b>How did she cook? — She cooked well.</b><br>Work → worked hard · sing → sang beautifully.') + box(bg, 'Sau <b>did</b> dùng <b>run / cook / work / sing</b>. Câu kể dùng <b>ran / cooked / worked / sang</b>.<br>Không dùng did ran hoặc runned. Cách làm: fast / well / hard / beautifully.'), col=col, bg=bg, dk='#702344'))
+    lessons.append(dict(n=3, title='Ngữ điệu, đọc và kể', pg='50–51', head='Câu hỏi Yes/No lên giọng.', body=lambda c: box(bg, '<b>Is this your storybook? ↗</b><br><b>Are you reading a story? ↗</b><br>Nhân vật, việc làm, cách làm và kết thúc phải theo đoạn đọc hiện tại; truyện có nhiều dị bản.') + box(bg, '<b>Thẻ tự soạn:</b> Reader: Linh · focus character: hare · action: run · manner: fast.<br><b>How did he run? He ran fast.</b><br>Đọc kỹ đoạn truyện trước khi trả lời. Nghe Giỏi phân biệt hai người và lấy đủ hai ý.'), col=col, bg=bg, dk='#702344'))
+    return gen_sheet(17, 'STORIES FOR CHILDREN', 'Unit 17 · Global Success 5 · Tập hai · Trang 46–51', col, bg, lessons, ['Từ và tranh', 'Mẫu câu và nhịp câu', 'Đọc, nghe và viết'], 'Mỗi ngày thêm một điều em biết.', 'Học từ, nghe chậm, ABC và hội thoại; sáu đề theo ba cấp độ.', 'Nội dung tự soạn, bám Unit 17 · Global Success 5, tập hai')

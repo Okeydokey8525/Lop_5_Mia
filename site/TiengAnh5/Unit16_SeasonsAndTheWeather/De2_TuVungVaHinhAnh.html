@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tiếng Anh 5 · Unit 16 · Đề 2 · Từ vựng và hình ảnh</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<link rel="stylesheet" href="../../assets/engine.css"><script type="application/json" id="mia-audio-data">{"voice": "Microsoft Zira Desktop", "clips": {"Hello! Let’s listen and learn English.": "../../assets/english/u16/audio/d6be6a8235b16c4af314.wav", "Hoa says: It is winter. I wear a jumper. Nam says: It is winter. I wear jeans.": "../../assets/english/u16/audio/e55757dd838cefdb02a7.wav", "I wear jeans.": "../../assets/english/u16/audio/68bb6de0b11fdca3d4de.wav", "In winter, I usually wear a jumper.": "../../assets/english/u16/audio/f092a39bfd2d4930bb43.wav", "It is autumn. I wear jeans.": "../../assets/english/u16/audio/6bf30accce81c2895122.wav", "It is summer.": "../../assets/english/u16/audio/31160ed5d041a601d8e7.wav", "It is summer. It is hot and sunny.": "../../assets/english/u16/audio/a63903b041787e932dbc.wav"}}</script><script>// Optional recorded voice for pages with a complete, unit-owned audio manifest.
+(function(){'use strict';
+ const el=document.getElementById('mia-audio-data');if(!el)return;
+ const data=JSON.parse(el.textContent),native=window.speechSynthesis;
+ const voice={name:'Âm thanh có sẵn · Anh Mỹ (Zira)',lang:'en-US',voiceURI:'mia-recorded',localService:true};
+ // Reuse one media element for the whole spelling queue (per-element playback
+ // permission on iPad); only start playback from a learner's button press.
+ const player=new Audio();let sequence=0;
+ function cancel(){sequence++;player.onplaying=player.onended=player.onerror=null;player.pause();if(native)native.cancel();}
+ function speak(u){
+  if(u.voice?.voiceURI!==voice.voiceURI){
+   if(native&&window.SpeechSynthesisUtterance){const v=new SpeechSynthesisUtterance(u.text);for(const k of ['voice','lang','rate','pitch','volume','onstart','onend','onerror'])v[k]=u[k];native.speak(v);}
+   else u.onerror?.({error:'voice-unavailable'});return;
+  }
+  cancel();const token=sequence,src=data.clips[u.text];
+  if(!src){u.onerror?.({error:'audio-unavailable'});return;}
+  const audio=player;let failed=false;
+  const fail=()=>{if(token!==sequence||failed)return;failed=true;cancel();u.onerror?.({error:'audio-unavailable'});};
+  audio.preload='none';audio.src=src;audio.volume=u.volume??1;audio.playbackRate=(u.rate||0.9)/0.9;audio.preservesPitch=true;
+  audio.onplaying=()=>{if(token===sequence)u.onstart?.();};
+  audio.onended=()=>{if(token!==sequence)return;audio.onplaying=audio.onended=audio.onerror=null;u.onend?.();};
+  audio.onerror=fail;try{audio.play().catch(fail);}catch(e){fail();}
+ }
+ window.MiaRecorded={getVoices:()=>[voice,...(native?.getVoices()||[])],cancel,speak,
+  addEventListener:(name,fn)=>native?.addEventListener(name,fn),removeEventListener:(name,fn)=>native?.removeEventListener(name,fn)};
+})();
+</script><script src="../../assets/english/speech.js"></script><link rel="stylesheet" href="../../assets/theme.css"><script src="../../assets/theme.js"></script></head><body>
+<div class="page"><div id="app"></div></div>
+<div class="bar" id="bar" data-mode="run"><div class="bar-in"></div></div>
+<script>
+window.MKEN16=function(questions){return {"decimal": false, "meta": {"subject": "en", "version": 1, "lessonLabel": "Phần", "book": "Tiếng Anh 5 · Global Success · Tập hai", "title": "Unit 16 · Seasons and the weather", "topic": "Mùa, thời tiết và trang phục", "range": "Trang 40–45", "minutes": 40, "tip": "Mỗi đề có 6 câu nghe, chia đều ba mức. Xem lời nghe sẽ ghi nhận đã dùng hỗ trợ, không trừ điểm. Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp."}, "lessons": {"1": "Mùa và thời tiết", "2": "Trang phục thường mặc", "3": "Ngữ điệu, đọc và viết"}, "levels": [{"id": "tb", "name": "Mức 1 · Trung bình", "desc": "Nhận biết từ và mẫu câu cơ bản", "stars": 1, "pts": 3}, {"id": "kha", "name": "Mức 2 · Khá", "desc": "Dùng mẫu câu, nối ý và tìm thông tin", "stars": 2, "pts": 5}, {"id": "gioi", "name": "Mức 3 · Giỏi", "desc": "Kết hợp đọc hiểu và viết câu theo dữ liệu", "stars": 3, "pts": 5}],"questions":questions};};
+
+window.TEST_FN=function(H){return MKEN16([
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the season.",
+  "transcript": "It is summer.",
+  "speech": "It is summer.",
+  "fields": [
+   {
+    "label": "Season:",
+    "answer": "summer",
+    "options": [
+     "spring",
+     "summer",
+     "autumn",
+     "winter"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Season: summer.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the clothes.",
+  "transcript": "I wear jeans.",
+  "speech": "I wear jeans.",
+  "fields": [
+   {
+    "label": "Clothes:",
+    "answer": "jeans",
+    "options": [
+     "a blouse",
+     "trousers",
+     "jeans",
+     "a jumper"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Clothes: jeans.",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the picture. Choose the clothes.",
+  "why": "Tranh: áo kiểu",
+  "lesson": 1,
+  "opts": [
+   "a jumper",
+   "a blouse",
+   "trousers",
+   "jeans"
+  ],
+  "answer": 1,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u16/blouse.webp\" alt=\"áo kiểu\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the picture. Choose the clothes.",
+  "why": "Tranh: quần dài",
+  "lesson": 1,
+  "opts": [
+   "a jumper",
+   "a blouse",
+   "trousers",
+   "jeans"
+  ],
+  "answer": 2,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u16/trousers.webp\" alt=\"quần dài\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the picture. Choose the clothes.",
+  "why": "Tranh: quần bò",
+  "lesson": 1,
+  "opts": [
+   "a jumper",
+   "a blouse",
+   "trousers",
+   "jeans"
+  ],
+  "answer": 3,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u16/jeans.webp\" alt=\"quần bò\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the picture. Choose the clothes.",
+  "why": "Tranh: áo len chui đầu",
+  "lesson": 1,
+  "opts": [
+   "a jumper",
+   "a blouse",
+   "trousers",
+   "jeans"
+  ],
+  "answer": 0,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u16/jumper.webp\" alt=\"áo len chui đầu\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Bốn mùa.",
+  "lesson": 2,
+  "pairs": [
+   {
+    "left": "spring",
+    "right": "mùa xuân"
+   },
+   {
+    "left": "summer",
+    "right": "mùa hè"
+   },
+   {
+    "left": "autumn",
+    "right": "mùa thu"
+   },
+   {
+    "left": "winter",
+    "right": "mùa đông"
+   }
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: win___. Write the whole season.",
+  "why": "Winter.",
+  "lesson": 1,
+  "answers": [
+   "winter"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Which word means ẩm?",
+  "why": "Humid.",
+  "lesson": 1,
+  "opts": [
+   "humid",
+   "dry",
+   "snowy",
+   "windy"
+  ],
+  "answer": 0,
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: sun___. Write the whole weather word.",
+  "why": "Sunny.",
+  "lesson": 1,
+  "answers": [
+   "sunny"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the weather.",
+  "transcript": "It is summer. It is hot and sunny.",
+  "speech": "It is summer. It is hot and sunny.",
+  "fields": [
+   {
+    "label": "Weather:",
+    "answer": "hot and sunny",
+    "options": [
+     "warm and rainy",
+     "hot and sunny",
+     "cool and cloudy",
+     "cold and dry"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Weather: hot and sunny.",
+  "level": "kha"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Hai mùa trong phần đọc, không suy rằng mọi nơi đều có bốn mùa.",
+  "lesson": 3,
+  "pairs": [
+   {
+    "left": "dry season",
+    "right": "mùa khô"
+   },
+   {
+    "left": "rainy season",
+    "right": "mùa mưa"
+   },
+   {
+    "left": "snowy",
+    "right": "có tuyết"
+   }
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "In spring.",
+  "lesson": 1,
+  "items": [
+   "It",
+   "is",
+   "warm",
+   "in",
+   "spring."
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the season.",
+  "transcript": "In winter, I usually wear a jumper.",
+  "speech": "In winter, I usually wear a jumper.",
+  "fields": [
+   {
+    "label": "Season:",
+    "answer": "winter",
+    "options": [
+     "spring",
+     "summer",
+     "autumn",
+     "winter"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Season: winter.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: I wear a ___ in winter. Use áo len chui đầu.",
+  "why": "A jumper.",
+  "lesson": 2,
+  "answers": [
+   "jumper"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: I wear ___. Use quần bò.",
+  "why": "Jeans dạng số nhiều.",
+  "lesson": 2,
+  "answers": [
+   "jeans"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Phân biệt loại từ.",
+  "lesson": 2,
+  "items": [
+   {
+    "t": "A blouse is a kind of clothing.",
+    "a": true
+   },
+   {
+    "t": "Humid means dry.",
+    "a": false
+   }
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the weather phrase.",
+  "why": "Cool and cloudy.",
+  "lesson": 2,
+  "answers": [
+   "cool and cloudy"
+  ],
+  "exactForm": false,
+  "passage": "Fictional practice card: Minh · Place: Tokyo · Season: autumn · Weather: cool and cloudy · Usual clothes: jeans. These are the conditions and choice on this card, not a forecast or a rule for everyone.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "How many seasons does this note name? Write one number.",
+  "why": "Dry và rainy là hai mùa.",
+  "lesson": 3,
+  "answers": [
+   "2"
+  ],
+  "exactForm": false,
+  "passage": "This note describes two seasons in the south of Viet Nam: the dry season and the rainy season.",
+  "level": "gioi"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Không thêm a trước trousers.",
+  "lesson": 3,
+  "items": [
+   "I",
+   "wear",
+   "trousers",
+   "in",
+   "summer."
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Find both season and clothes.",
+  "transcript": "It is autumn. I wear jeans.",
+  "speech": "It is autumn. I wear jeans.",
+  "fields": [
+   {
+    "label": "Season:",
+    "answer": "autumn",
+    "options": [
+     "spring",
+     "summer",
+     "autumn",
+     "winter"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Clothes:",
+    "answer": "jeans",
+    "options": [
+     "a blouse",
+     "trousers",
+     "jeans",
+     "a jumper"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Season: autumn; Clothes: jeans.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: How is the weather ___ winter?",
+  "why": "In + mùa.",
+  "lesson": 3,
+  "answers": [
+   "in"
+  ],
+  "exactForm": false,
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write the clothes sentence starting with I.",
+  "why": "I wear a jumper.",
+  "lesson": 3,
+  "answers": [
+   "I wear a jumper."
+  ],
+  "exactForm": false,
+  "passage": "Fictional practice card: Hoa · Place: London · Season: winter · Weather: cold and dry · Usual clothes: a jumper. These are the conditions and choice on this card, not a forecast or a rule for everyone.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Write only Nam’s season and clothes, not Hoa’s.",
+  "transcript": "Hoa says: It is winter. I wear a jumper. Nam says: It is winter. I wear jeans.",
+  "speech": "Hoa says: It is winter. I wear a jumper. Nam says: It is winter. I wear jeans.",
+  "fields": [
+   {
+    "label": "Nam’s season:",
+    "answer": "winter",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Nam’s clothes:",
+    "answer": "jeans",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Nam’s season: winter; Nam’s clothes: jeans.",
+  "level": "gioi"
+ }
+]);};
+
+window.TEST_EXTRA={"id": "en-u16-de2-v1", "title": "Đề 2 · Từ vựng và hình ảnh", "theme": "Nhận biết tranh và từ chỉ mùa, thời tiết, quần áo.", "home": "../index.html", "prev": "De1_KhoiDong.html", "next": "De3_MauCauVaHoiThoai.html"};
+
+</script><script src="../../assets/engine.js"></script></body></html>

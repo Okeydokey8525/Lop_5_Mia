@@ -17,6 +17,8 @@ UNITS=[
  dict(n=13,key='u13',dir='Unit13_OurSpecialDays',name='Our special days',pages='18–23',version=1,volume=2),
  dict(n=14,key='u14',dir='Unit14_StayingHealthy',name='Staying healthy',pages='24–29',version=1,volume=2),
  dict(n=15,key='u15',dir='Unit15_OurHealth',name='Our health',pages='30–35',version=1,volume=2),
+ dict(n=16,key='u16',dir='Unit16_SeasonsAndTheWeather',name='Seasons and the weather',pages='40–45',version=1,volume=2),
+ dict(n=17,key='u17',dir='Unit17_StoriesForChildren',name='Stories for children',pages='46–51',version=1,volume=2),
 ]
 
 REVIEWS=[dict(n='R1',key='r01',dir='Review1_Units1_5',name='Review 1 · Ôn Unit 1–5',label='Review 1',pages='40–43',version=1,kind='review',overview='TongQuan_Review1'),
@@ -28,6 +30,8 @@ def label(unit):return unit.get('label',f"Unit {unit['n']}")
 def overview_name(unit):return unit.get('overview',f"TongQuan_Unit{unit['n']}")
 
 DETAILS={
+ 16:dict(topic="Mùa, thời tiết và trang phục",lessons={1:"Mùa và thời tiết",2:"Trang phục thường mặc",3:"Ngữ điệu, đọc và viết"},colour="#A63C70",bg="#FFE4F0"),
+ 17:dict(topic="Nhân vật truyện và hành động đã qua",lessons={1:"Nhân vật chính",2:"How did…? và cách làm",3:"Ngữ điệu, đọc và kể"},colour="#A63C70",bg="#FFE4F0"),
  14:dict(topic='Thói quen giữ sức khỏe và tần suất',lessons={1:'How does…stay healthy?',2:'How often…? và lịch tuần',3:'Nhịp câu, đọc và viết thói quen'},colour='#A63C70',bg='#FFE4F0'),
  15:dict(topic='Hỏi thăm và lời thoại về sức khỏe',lessons={1:'What’s the matter?',2:'What should I do?',3:'Should not, đọc và viết hội thoại'},colour='#A63C70',bg='#FFE4F0'),
  12:dict(topic='Chuẩn bị và kế hoạch đón Tết',lessons={1:'Will you…? và chuẩn bị đón Tết',2:'Where will you go…?',3:'Nhịp câu, đọc và viết kế hoạch'},colour='#A63C70',bg='#FFE4F0'),
@@ -53,6 +57,8 @@ def test_id(unit,index):
 
 def tests_for(unit):
     descriptions={
+      16:["Làm quen mùa, thời tiết và trang phục.","Nhận biết tranh và từ chỉ mùa, thời tiết, quần áo.","Hỏi thời tiết và trang phục thường mặc.","Đọc đúng người, mùa, thời tiết và trang phục theo thẻ.","Viết is, do + wear và câu theo dữ kiện.","Kết hợp nghe, tranh, hội thoại, đọc và viết về các mùa."],
+      17:["Làm quen nhân vật và hành động trong truyện.","Nhận biết tranh con vật, dạng quá khứ và cách làm.","Hỏi nhân vật chính và How did…? theo thẻ.","Đọc đúng người, nhân vật, hành động và kết thúc.","Viết did + nguyên mẫu và câu kể quá khứ.","Kết hợp nghe, tranh, đọc và kể theo thẻ truyện."],
       14:['Làm quen thói quen giữ sức khỏe và tần suất.','Nhận biết tranh, cụm hoạt động và từ chỉ tần suất.','Hỏi How does…? và How often does…? theo thẻ.','Đọc lịch đủ bảy ngày và tìm đúng người, hoạt động, số buổi.','Viết do/does, động từ thêm s/es và câu tần suất.','Kết hợp nghe, tranh, hội thoại, đọc lịch và viết thói quen.'],
       15:['Làm quen từ chỉ vấn đề sức khỏe trong bài tiếng Anh.','Nhận biết tranh và các cụm từ trong hội thoại.','Hỏi What’s the matter?/What should I do? theo thẻ.','Đọc đúng người và các dòng hội thoại đã giao.','Viết have/has, should và should not + nguyên mẫu.','Kết hợp nghe, tranh, đọc và viết lời thoại quan tâm đến bạn.'],
       12:['Làm quen việc chuẩn bị và nơi đến dịp Tết.','Nhận biết tranh, cụm từ và sự kiện dịp Tết.','Hỏi Will you…? và Where will you go…? theo thẻ.','Đọc đúng người, nơi, việc sẽ làm và không làm.','Viết will/won’t + nguyên mẫu và kế hoạch theo dữ kiện.','Kết hợp nghe, tranh, hội thoại, đọc và viết về Tết.'],

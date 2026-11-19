@@ -1,0 +1,368 @@
+{
+  "voice": "Microsoft Zira Desktop",
+  "language": "en-US",
+  "rate": -1,
+  "format": "PCM 22050 Hz 16-bit mono",
+  "clips": [
+    {
+      "text": "A",
+      "file": "559aead08264d5795d39.wav"
+    },
+    {
+      "text": "An says: My focus character is the ant. He worked hard. Linh says: My focus character is the hare. He ran fast.",
+      "file": "65b4cee4b69580942b2f.wav"
+    },
+    {
+      "text": "B",
+      "file": "df7e70e5021544f4834b.wav"
+    },
+    {
+      "text": "C",
+      "file": "6b23c0d5f35d1b11f9b6.wav"
+    },
+    {
+      "text": "D",
+      "file": "3f39d5c348e5b79d06e8.wav"
+    },
+    {
+      "text": "Do you like the story?",
+      "file": "1d8f8b8424e866dcbc7e.wav"
+    },
+    {
+      "text": "Do you like the story? Yes, I do. I like the ant.",
+      "file": "87fa8c60cb42a3fa2500.wav"
+    },
+    {
+      "text": "E",
+      "file": "a9f51566bd6705f7ea6a.wav"
+    },
+    {
+      "text": "F",
+      "file": "f67ab10ad4e4c53121b6.wav"
+    },
+    {
+      "text": "G",
+      "file": "333e0a1e27815d0ceee5.wav"
+    },
+    {
+      "text": "H",
+      "file": "44bd7ae60f478fae1061.wav"
+    },
+    {
+      "text": "He ran fast.",
+      "file": "83fd99baa66455146c03.wav"
+    },
+    {
+      "text": "He sang beautifully.",
+      "file": "7805927e3d166d31da22.wav"
+    },
+    {
+      "text": "He worked hard.",
+      "file": "31c4a05d6e1988a7cca9.wav"
+    },
+    {
+      "text": "Hello! Let us listen and learn English.",
+      "file": "d049b36b33ea2a1929e2.wav"
+    },
+    {
+      "text": "Hello! Let’s listen and learn English.",
+      "file": "d6be6a8235b16c4af314.wav"
+    },
+    {
+      "text": "How did he run?",
+      "file": "2cad167bd9ee3d07437a.wav"
+    },
+    {
+      "text": "How did he run? He ran fast.",
+      "file": "77bf88fb41eb627136c9.wav"
+    },
+    {
+      "text": "How did she cook?",
+      "file": "7d067e2b67b018515a8f.wav"
+    },
+    {
+      "text": "How did she cook? She cooked well.",
+      "file": "23ebcb21f833266d9898.wav"
+    },
+    {
+      "text": "I",
+      "file": "a83dd0ccbffe39d071cc.wav"
+    },
+    {
+      "text": "I am reading a fairy tale.",
+      "file": "4ff63af0662c4a1fbd69.wav"
+    },
+    {
+      "text": "Is this your storybook?",
+      "file": "3e30397fab8fa9b4299e.wav"
+    },
+    {
+      "text": "Is this your storybook? Yes, it is.",
+      "file": "fea2efe96a81ba55ff5a.wav"
+    },
+    {
+      "text": "J",
+      "file": "6da43b944e494e885e69.wav"
+    },
+    {
+      "text": "K",
+      "file": "86be9a55762d316a3026.wav"
+    },
+    {
+      "text": "L",
+      "file": "72dfcfb0c470ac255cde.wav"
+    },
+    {
+      "text": "M",
+      "file": "08f271887ce94707da82.wav"
+    },
+    {
+      "text": "N",
+      "file": "8ce86a6ae65d3692e730.wav"
+    },
+    {
+      "text": "O",
+      "file": "c4694f2e93d5c4e7d51f.wav"
+    },
+    {
+      "text": "P",
+      "file": "5c62e091b8c0565f1baf.wav"
+    },
+    {
+      "text": "Q",
+      "file": "4ae81572f06e1b88fd5c.wav"
+    },
+    {
+      "text": "R",
+      "file": "8c2574892063f995fdf7.wav"
+    },
+    {
+      "text": "S",
+      "file": "8de0b3c47f112c59745f.wav"
+    },
+    {
+      "text": "She cooked well.",
+      "file": "2925fcacffc1925ae1b1.wav"
+    },
+    {
+      "text": "Snow White",
+      "file": "29fcc6a616a3e5bf4d6b.wav"
+    },
+    {
+      "text": "Snow White cooked well.",
+      "file": "5daab6b6a5865514f226.wav"
+    },
+    {
+      "text": "T",
+      "file": "e632b7095b0bf32c260f.wav"
+    },
+    {
+      "text": "The ant is a main character.",
+      "file": "3336e01a0629fa8f7902.wav"
+    },
+    {
+      "text": "The crow is in the story.",
+      "file": "68d88cc16b2fc8e8c78e.wav"
+    },
+    {
+      "text": "The focus character is Snow White.",
+      "file": "5c5082dc44e0ae71adc2.wav"
+    },
+    {
+      "text": "The focus character is Snow White. She cooked well.",
+      "file": "051f5ed9840b3549a6f7.wav"
+    },
+    {
+      "text": "The focus character is the ant.",
+      "file": "0f8cbfb8d44883642996.wav"
+    },
+    {
+      "text": "The focus character is the ant. He worked hard.",
+      "file": "e6a8c85560fdd79b8ecd.wav"
+    },
+    {
+      "text": "The focus character is the crow.",
+      "file": "935c737ba5447919a9d4.wav"
+    },
+    {
+      "text": "The focus character is the crow. He sang beautifully.",
+      "file": "6185e8ab31593c831ced.wav"
+    },
+    {
+      "text": "The focus character is the grasshopper.",
+      "file": "3fb8b1be9f7cf2063eec.wav"
+    },
+    {
+      "text": "The focus character is the grasshopper. He sang beautifully.",
+      "file": "2b742e36387eed5d2ec3.wav"
+    },
+    {
+      "text": "The focus character is the hare.",
+      "file": "7b9b4c79724f340a1fdd.wav"
+    },
+    {
+      "text": "The focus character is the hare. He ran fast.",
+      "file": "853a61740bdd47475708.wav"
+    },
+    {
+      "text": "The focus character is the tortoise.",
+      "file": "842809df1894c0f0bd63.wav"
+    },
+    {
+      "text": "The focus character is the tortoise. He worked hard.",
+      "file": "3dab74ac626f306edacb.wav"
+    },
+    {
+      "text": "The fox is in the story.",
+      "file": "a15cf3f94cabcf085b7f.wav"
+    },
+    {
+      "text": "The grasshopper is a main character.",
+      "file": "56dec86147b95ada90c2.wav"
+    },
+    {
+      "text": "The hare is a main character.",
+      "file": "814a1d80f3027f2aeeea.wav"
+    },
+    {
+      "text": "The hare stopped to sleep. The tortoise won the race.",
+      "file": "99b919b02e6aa44751ce.wav"
+    },
+    {
+      "text": "The main characters are Snow White and the seven dwarfs. The focus character is Snow White.",
+      "file": "c936a6383a196012a293.wav"
+    },
+    {
+      "text": "The main characters are the ant and the grasshopper. The focus character is the ant.",
+      "file": "fa3c2c8244deaa4ba22b.wav"
+    },
+    {
+      "text": "The main characters are the ant and the grasshopper. The focus character is the grasshopper.",
+      "file": "71c04c906d8406b609ba.wav"
+    },
+    {
+      "text": "The main characters are the fox and the crow. The focus character is the crow.",
+      "file": "61a624a162dd2350b6e2.wav"
+    },
+    {
+      "text": "The main characters are the tortoise and the hare. The focus character is the hare.",
+      "file": "fef190f39f65a9b0b795.wav"
+    },
+    {
+      "text": "The main characters are the tortoise and the hare. The focus character is the tortoise.",
+      "file": "d618185e8c5fc0a1ff83.wav"
+    },
+    {
+      "text": "The seven dwarfs are in the story.",
+      "file": "36dec4093cd5c0dd6b7e.wav"
+    },
+    {
+      "text": "The tortoise is a main character.",
+      "file": "7daf2b818a0be7ee42a2.wav"
+    },
+    {
+      "text": "The tortoise won the race.",
+      "file": "15460a1438d8ab268151.wav"
+    },
+    {
+      "text": "U",
+      "file": "a25513c7e0f6eaa80a33.wav"
+    },
+    {
+      "text": "V",
+      "file": "de5a6f78116eca62d7fc.wav"
+    },
+    {
+      "text": "W",
+      "file": "fcb5f40df9be6bae66c1.wav"
+    },
+    {
+      "text": "Who are the main characters in the story?",
+      "file": "23340f510ae11002299a.wav"
+    },
+    {
+      "text": "Who are the main characters in the story? They are the ant and the grasshopper.",
+      "file": "f571c385ad1a5fb29f99.wav"
+    },
+    {
+      "text": "Who are the main characters?",
+      "file": "f9137251dcca5b980c33.wav"
+    },
+    {
+      "text": "Who are the main characters? They are the tortoise and the hare.",
+      "file": "102afc576ad5efbe5ab3.wav"
+    },
+    {
+      "text": "X",
+      "file": "4b68ab3847feda7d6c62.wav"
+    },
+    {
+      "text": "Y",
+      "file": "18f5384d58bcb1bba0bc.wav"
+    },
+    {
+      "text": "Z",
+      "file": "bbeebd879e1dff691854.wav"
+    },
+    {
+      "text": "ant",
+      "file": "67a333356cdc566e6e34.wav"
+    },
+    {
+      "text": "cooked well",
+      "file": "6e16434c56b96ff95dc8.wav"
+    },
+    {
+      "text": "crow",
+      "file": "851d49d3087657e97153.wav"
+    },
+    {
+      "text": "fairy tale",
+      "file": "8fcf7a1ea43b7391240a.wav"
+    },
+    {
+      "text": "fox",
+      "file": "776cb326ab0cd5f0a974.wav"
+    },
+    {
+      "text": "grasshopper",
+      "file": "b7f22419aacf0eae9563.wav"
+    },
+    {
+      "text": "hare",
+      "file": "e39f1cde9e9c4fac32cd.wav"
+    },
+    {
+      "text": "main characters",
+      "file": "e829438ed42f801feb3e.wav"
+    },
+    {
+      "text": "ran fast",
+      "file": "38b88f9d13dc6cadcf81.wav"
+    },
+    {
+      "text": "sang beautifully",
+      "file": "40687d005cdad9d8a221.wav"
+    },
+    {
+      "text": "seven dwarfs",
+      "file": "b9ad5d1d9c5d5774845e.wav"
+    },
+    {
+      "text": "storybook",
+      "file": "14d45cd393c6e1d24679.wav"
+    },
+    {
+      "text": "tortoise",
+      "file": "224ec67c8947961173b4.wav"
+    },
+    {
+      "text": "won the race",
+      "file": "1e4d8862d60866cc6004.wav"
+    },
+    {
+      "text": "worked hard",
+      "file": "3789232f1cf3d64dd1a0.wav"
+    }
+  ]
+}

@@ -104,3 +104,8 @@ Nguồn `generator/english/u12/`, `u13/`; web `TiengAnh5/Unit12_OurTetHoliday/`,
 ### Units14–15 — 19/11/2026
 
 Nguồn `generator/english/u14/`, `u15/`; web `TiengAnh5/Unit14_StayingHealthy/`, `Unit15_OurHealth/`. Giữ quy cách content/study/overview/NOTES/audio_source, images/PROMPTS, audio/manifest+WAV và common/tests. Build thường không tạo giọng. Tổng138đề/182HTML/23poster. Công cụ `tools/qa_recorded_all.js` chạy nguyên các gate audio cũ, tối đa3 tiến trình song song trong CI, mỗi Unit/trình duyệt có log riêng; đợi đủ kết quả và trả lỗi nếu bất kỳ gate không đạt. Không giảm nội dung kiểm tra hoặc đổi runtime website.
+
+
+## Units16–17 — 19/11/2026
+
+Đã bổ sung Unit16 **Seasons and the weather** (tập hai40–45) và Unit17 **Stories for children** (46–51): mỗi Unit6đề/144câu/36nghe, tổng quan HTML/PNG, trang học tự lưu với nghe/chậm/ABC,6hội thoại và12bài luyện. Unit16 có20từ/cụm/98WAV, Unit17 có16từ/cụm/90WAV;8tranh ImageGen mới. Toàn Anh17Unit+2Review=114đề/2736câu; toàn site150đề/198HTML/25poster. Học từ đầy đủ18trang/276từ/109hội thoại/216bài luyện. Xem [bàn giao Units16–17](breakdowns/2026-11-19_UNIT16_UNIT17.md) cho trạng thái local/CI/live và giới hạn iPad thật. Còn **Review3 + Units18–20 + Review4 =5phần/30đề** theo sách; Starter và bộ kiểm tra học kỳ riêng chưa làm.

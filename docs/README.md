@@ -36,3 +36,5 @@ Nguồn nội dung và ghi nhận trang sách của từng unit nằm cạnh nha
 - [Units 12–13](breakdowns/2026-11-19_UNIT12_UNIT13.md): hai Unit tập hai, will/won’t, ngày đặc biệt/thực đơn, âm thanh kèm bài và đánh vần có dấu câu.
 
 - [Units14–15](breakdowns/2026-11-19_UNIT14_UNIT15.md): thói quen/tần suất và hội thoại sức khỏe, thẻ giả định, âm thanh kèm bài, lưu bài và QA.
+
+- [Units16–17](breakdowns/2026-11-19_UNIT16_UNIT17.md): mùa/thời tiết/trang phục, nhân vật truyện, did + nguyên mẫu, audio kèm bài và QA.
