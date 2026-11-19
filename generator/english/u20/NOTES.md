@@ -16,6 +16,8 @@ Keep **I am / he, she is / you, we, they are going to + base verb**, visit + pla
 
 Profiles are original fictional plans. Repeated destinations with different people/activities prevent matching by place alone. Reading questions distinguish the main activity, extra language-learning plan, transport, and last-summer action. Autograded writing specifies the speaker, sentence order and opening; free writing and the poster project remain guided activities for adult feedback. The site does not record or grade speaking or open essays.
 
+Content review caught lowercasing the initial `I` when joining a generated sentence after `This summer,`. Keep the English pronoun `I` capitalized even inside a sentence. Do not apply generic initial-letter lowercasing to complete English phrases; successful scoring QA alone does not catch this language error.
+
 ## Study, artwork and audio
 
 `study.py`: 20 words/phrases, three groups (activities/places/plans), six dialogues, 12 practice tasks with separate saved progress. Stable new keys: `en-u20-deN-v1`, `mia5:learn:en-u20-v1`. Existing units’ keys remain unchanged.
