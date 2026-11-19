@@ -18,3 +18,5 @@ Cập nhật 19/11/2026: chủ repo giao và đã thực hiện Units 12–13, x
 Đợt tiếp19/11/2026: đã được giao Units14–15, xem bàn giao2026-11-19_UNIT14_UNIT15.md. Các mốc trên là lịch sử. Phần còn lại tập hai: **Review3 + Units16–20 + Review4 =7phần/42đề** nếu sáu đề/phần. Chỉ tiếp khi được giao; Review3 cần đủ Units11–15 và Extension36–39 theo sách, không thay bộ kiểm tra giữa/cuối kỳ riêng.
 
 Đợt tiếp19/11/2026: chủ repo giao và đã bổ sung Units16–17; xem2026-11-19_UNIT16_UNIT17.md. Còn Review3 + Units18–20 + Review4 =5phần/30đề. Không tự mở rộng Review3 hoặc bộ kiểm tra học kỳ riêng. Các mốc phía trên là lịch sử.
+
+Đợt tiếp19/11/2026: chủ repo giao Unit18; đã bổ sung theo trang52–57. Xem bàn giao2026-11-19_UNIT18.md cho kiểm chứng. Còn Review3, Units19–20, Review4 =4phần/24đề; Starter và bộ kiểm tra học kỳ riêng vẫn chưa làm. Các mốc trước là lịch sử.

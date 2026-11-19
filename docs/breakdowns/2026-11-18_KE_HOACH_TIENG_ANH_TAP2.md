@@ -89,3 +89,5 @@ Starter tập một; nâng Unit 1 thành trang học đầy đủ; thay âm than
 Ước lượng lập ngân sách sơ bộ: một người soạn nội dung và phát triển kiêm QA, khoảng 18-26 ngày công cho mẫu âm thanh, 12 phần và hồi quy; khoảng 4-6 tuần nếu làm 5 ngày/tuần, chưa tính thời gian chờ duyệt. Phần khó nhất là duyệt lời nghe/tranh và đáp án hợp lệ, không phải chỉ chạy generator. Sẽ ước lượng lại sau Unit 11 và phương án audio được duyệt; đây không phải cam kết lịch giao.
 
 Cập nhật triển khai19/11/2026: đã được giao và bổ sung Units16–17 theo trang40–51, sau Units11–15 đã xuất bản. Xem bàn giao2026-11-19_UNIT16_UNIT17.md cho local/CI/live. Còn Review3, Units18–20 và Review4 (5phần/30đề); không tự triển khai phần chưa giao.
+
+Đợt tiếp19/11/2026: chủ repo giao Unit18; đã bổ sung theo trang52–57. Xem bàn giao2026-11-19_UNIT18.md cho kiểm chứng. Còn Review3, Units19–20, Review4 =4phần/24đề; Starter và bộ kiểm tra học kỳ riêng vẫn chưa làm. Các mốc trước là lịch sử.

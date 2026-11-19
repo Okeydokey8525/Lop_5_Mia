@@ -33,7 +33,7 @@ Workflow chỉ xuất bản `site/` sau khi build và QA đạt. Không đưa PD
 
 Tiến độ không đồng bộ thiết bị, trình duyệt hoặc từ bản mở file/local sang Pages. Chưa có phản hồi làm thử của học sinh để đánh giá độ khó.
 
-Trang Tiếng Anh: https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/. Toàn site hiện 150 đề chính thức và 198 trang HTML; QA dùng `site/catalog.json` để phát hiện thiếu hoặc thừa đề.
+Trang Tiếng Anh: https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/. Toàn site hiện 156 đề chính thức và 206 trang HTML; QA dùng `site/catalog.json` để phát hiện thiếu hoặc thừa đề.
 
 Bài học sau sửa Unit 1 và kế hoạch tiếp theo nằm trong `docs/breakdowns/`; quy trình tranh ở `docs/playbooks/TRANH_MINH_HOA.md`; skill dự án ở `.agents/skills/mia-learning-illustrations/SKILL.md`. Cây máy/repo hiện hành nằm trong docs/08, snapshot cũ ở docs/history.
 
@@ -68,3 +68,7 @@ Units 14 **Staying healthy** (trang 24–29) và 15 **Our health** (30–35), t�
 ## Units16–17 — 19/11/2026
 
 Đã xuất bản và kiểm tra CI/Pages thật Unit16 **Seasons and the weather** (tập hai40–45) và Unit17 **Stories for children** (46–51): mỗi Unit6đề/144câu/36nghe, tổng quan HTML/PNG, trang học tự lưu với nghe/chậm/ABC,6hội thoại và12bài luyện. Unit16 có20từ/cụm/98WAV, Unit17 có16từ/cụm/90WAV;8tranh ImageGen mới. Toàn Anh17Unit+2Review=114đề/2736câu; toàn site150đề/198HTML/25poster. Học từ đầy đủ18trang/276từ/109hội thoại/216bài luyện. Xem [bàn giao Units16–17](docs/breakdowns/2026-11-19_UNIT16_UNIT17.md) cho trạng thái local/CI/live và giới hạn iPad thật. Còn **Review3 + Units18–20 + Review4 =5phần/30đề** theo sách; Starter và bộ kiểm tra học kỳ riêng chưa làm.
+
+## Unit18 — 19/11/2026
+
+Bổ sung **Means of transport**, tập hai trang52–57:6đề/144câu/36nghe, tổng quan HTML/PNG, học20từ/cụm với6hội thoại/12bài luyện tự lưu,4tranh phương tiện và84WAV. Trọng tâm want to visit, can + get, by phương tiện/on foot; đọc đúng người và từng chặng theo thẻ giả định. TổngAnh18Unit+2Review=120đề/2880câu; toàn site156đề/206HTML/26poster. Study19trang/296từ/115hội thoại/228bài luyện. Trạng thái local/CI/live và nguồn sách ở [bàn giao Unit18](docs/breakdowns/2026-11-19_UNIT18.md). Còn Review3 + Units19–20 + Review4 =4phần/24đề; không tự mở rộng phần chưa được giao.

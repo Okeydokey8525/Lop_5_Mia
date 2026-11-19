@@ -1,0 +1,344 @@
+{
+  "voice": "Microsoft Zira Desktop",
+  "language": "en-US",
+  "rate": -1,
+  "format": "PCM 22050 Hz 16-bit mono",
+  "clips": [
+    {
+      "text": "A",
+      "file": "559aead08264d5795d39.wav"
+    },
+    {
+      "text": "B",
+      "file": "df7e70e5021544f4834b.wav"
+    },
+    {
+      "text": "C",
+      "file": "6b23c0d5f35d1b11f9b6.wav"
+    },
+    {
+      "text": "Can I get there by boat?",
+      "file": "49f5f49a02a8e06c7dbe.wav"
+    },
+    {
+      "text": "D",
+      "file": "3f39d5c348e5b79d06e8.wav"
+    },
+    {
+      "text": "Dragon Bridge",
+      "file": "87e1c5fce1ce40ef2663.wav"
+    },
+    {
+      "text": "E",
+      "file": "a9f51566bd6705f7ea6a.wav"
+    },
+    {
+      "text": "Excuse me! How can I get to the aquarium?",
+      "file": "1610ac0b3eca2573d2d2.wav"
+    },
+    {
+      "text": "Excuse me! How can I get to the aquarium? You can get there by bus.",
+      "file": "7c4f575747a42c9ab417.wav"
+    },
+    {
+      "text": "Excuse me! I am lost.",
+      "file": "d9fa9f8c5ac4aa4383f2.wav"
+    },
+    {
+      "text": "F",
+      "file": "f67ab10ad4e4c53121b6.wav"
+    },
+    {
+      "text": "First, we visit the museum by bus. Then, we go to the island by boat.",
+      "file": "95ff5029b3f0b03e342a.wav"
+    },
+    {
+      "text": "G",
+      "file": "333e0a1e27815d0ceee5.wav"
+    },
+    {
+      "text": "H",
+      "file": "44bd7ae60f478fae1061.wav"
+    },
+    {
+      "text": "Ha Noi Opera House",
+      "file": "c275c833566e020d7ddb.wav"
+    },
+    {
+      "text": "Hello! Let us listen and learn English.",
+      "file": "d049b36b33ea2a1929e2.wav"
+    },
+    {
+      "text": "Hello! Let’s listen and learn English.",
+      "file": "d6be6a8235b16c4af314.wav"
+    },
+    {
+      "text": "Ho Chi Minh City Museum",
+      "file": "d1a6004da366a8d45e61.wav"
+    },
+    {
+      "text": "How can I get there?",
+      "file": "ef4708c61d9951d1e3b3.wav"
+    },
+    {
+      "text": "How can I get there? You can get there by bus.",
+      "file": "49c67a78a70b4037115c.wav"
+    },
+    {
+      "text": "How can I get to the museum?",
+      "file": "89f77fd755c57e6c3fdc.wav"
+    },
+    {
+      "text": "How can I get to the museum? You can get there on foot.",
+      "file": "a35753bb7927c963f43e.wav"
+    },
+    {
+      "text": "I",
+      "file": "a83dd0ccbffe39d071cc.wav"
+    },
+    {
+      "text": "I want to visit Dragon Bridge.",
+      "file": "a0f774792df0014a0f41.wav"
+    },
+    {
+      "text": "I want to visit Dragon Bridge. You can get there by bicycle.",
+      "file": "bb91216c18f9c3b77139.wav"
+    },
+    {
+      "text": "I want to visit Dragon Bridge. You can get there by bus.",
+      "file": "20840db3a0ce5d86c37f.wav"
+    },
+    {
+      "text": "I want to visit Ha Noi Opera House.",
+      "file": "dfc242e1844e63cb92a3.wav"
+    },
+    {
+      "text": "I want to visit Ha Noi Opera House. You can get there by bus.",
+      "file": "c3f00be322e2b6169cd9.wav"
+    },
+    {
+      "text": "I want to visit Ha Noi Opera House. You can get there on foot.",
+      "file": "c6339a7daefd460d81a7.wav"
+    },
+    {
+      "text": "I want to visit Ho Chi Minh City Museum.",
+      "file": "33da4fe90b0c49277084.wav"
+    },
+    {
+      "text": "I want to visit Ho Chi Minh City Museum. You can get there on foot.",
+      "file": "9e232ba43e42e1394c49.wav"
+    },
+    {
+      "text": "I want to visit Ngo Mon Square.",
+      "file": "549ba0985d2e0ee47e8d.wav"
+    },
+    {
+      "text": "I want to visit Ngo Mon Square. You can get there by taxi.",
+      "file": "4c13ca4c267e158969e9.wav"
+    },
+    {
+      "text": "I want to visit the aquarium.",
+      "file": "d5561d3abf0c0da31d7a.wav"
+    },
+    {
+      "text": "I want to visit the island.",
+      "file": "b296e8b56f7a500d9851.wav"
+    },
+    {
+      "text": "I want to visit the pagoda.",
+      "file": "0ee7f22eae085b4d3881.wav"
+    },
+    {
+      "text": "I want to visit the water park.",
+      "file": "ef9cbeafb576efae7de7.wav"
+    },
+    {
+      "text": "Is it far from here?",
+      "file": "ca30a5afb5127a970f56.wav"
+    },
+    {
+      "text": "Is it far from here? No, it is not. We can walk there.",
+      "file": "f14cca0010efc3f6fe92.wav"
+    },
+    {
+      "text": "J",
+      "file": "6da43b944e494e885e69.wav"
+    },
+    {
+      "text": "K",
+      "file": "86be9a55762d316a3026.wav"
+    },
+    {
+      "text": "L",
+      "file": "72dfcfb0c470ac255cde.wav"
+    },
+    {
+      "text": "Linh says: I want to visit Dragon Bridge. I can get there by bicycle. Nam says: I want to visit Dragon Bridge. I can get there by bus.",
+      "file": "dedf27005af80ee6a25a.wav"
+    },
+    {
+      "text": "M",
+      "file": "08f271887ce94707da82.wav"
+    },
+    {
+      "text": "N",
+      "file": "8ce86a6ae65d3692e730.wav"
+    },
+    {
+      "text": "Ngo Mon Square",
+      "file": "68aba2a86e78d935406a.wav"
+    },
+    {
+      "text": "O",
+      "file": "c4694f2e93d5c4e7d51f.wav"
+    },
+    {
+      "text": "P",
+      "file": "5c62e091b8c0565f1baf.wav"
+    },
+    {
+      "text": "Q",
+      "file": "4ae81572f06e1b88fd5c.wav"
+    },
+    {
+      "text": "R",
+      "file": "8c2574892063f995fdf7.wav"
+    },
+    {
+      "text": "S",
+      "file": "8de0b3c47f112c59745f.wav"
+    },
+    {
+      "text": "T",
+      "file": "e632b7095b0bf32c260f.wav"
+    },
+    {
+      "text": "The bus stop is over there.",
+      "file": "ff65e1c3cb94c0774eb3.wav"
+    },
+    {
+      "text": "U",
+      "file": "a25513c7e0f6eaa80a33.wav"
+    },
+    {
+      "text": "V",
+      "file": "de5a6f78116eca62d7fc.wav"
+    },
+    {
+      "text": "W",
+      "file": "fcb5f40df9be6bae66c1.wav"
+    },
+    {
+      "text": "We can go by train.",
+      "file": "68d88aaf532756a54f9f.wav"
+    },
+    {
+      "text": "We can go to the island by ferry.",
+      "file": "c304cc441cdcacc35502.wav"
+    },
+    {
+      "text": "Where do you want to visit?",
+      "file": "c04c890f4976056af181.wav"
+    },
+    {
+      "text": "Where do you want to visit? I want to visit Dragon Bridge.",
+      "file": "1f359cb41eb7bb1e0a62.wav"
+    },
+    {
+      "text": "Where do you want to visit? I want to visit Ha Noi Opera House.",
+      "file": "695556c251f997cc2db8.wav"
+    },
+    {
+      "text": "X",
+      "file": "4b68ab3847feda7d6c62.wav"
+    },
+    {
+      "text": "Y",
+      "file": "18f5384d58bcb1bba0bc.wav"
+    },
+    {
+      "text": "You can get there by bicycle.",
+      "file": "96897d9871ef5632aa76.wav"
+    },
+    {
+      "text": "You can get there by bus.",
+      "file": "94a2fe3550b24f3a4182.wav"
+    },
+    {
+      "text": "You can get there by taxi.",
+      "file": "2991c5d1499194923bca.wav"
+    },
+    {
+      "text": "You can get there on foot.",
+      "file": "7d53001b03847a1cd96b.wav"
+    },
+    {
+      "text": "Z",
+      "file": "bbeebd879e1dff691854.wav"
+    },
+    {
+      "text": "aquarium",
+      "file": "cfb685eeca5933543873.wav"
+    },
+    {
+      "text": "bicycle",
+      "file": "d29af8a2e160dd867fe4.wav"
+    },
+    {
+      "text": "boat",
+      "file": "25cdb46d8d2115a24eb1.wav"
+    },
+    {
+      "text": "bus",
+      "file": "04e027e4990a203f4899.wav"
+    },
+    {
+      "text": "bus stop",
+      "file": "6168d576bc095d58a1de.wav"
+    },
+    {
+      "text": "far",
+      "file": "512eea46ceb3921dff43.wav"
+    },
+    {
+      "text": "ferry",
+      "file": "e9087d0b20d80d3e12bc.wav"
+    },
+    {
+      "text": "get to",
+      "file": "dc2a9e6da2f55adf5a4b.wav"
+    },
+    {
+      "text": "island",
+      "file": "28cd2c5c15d13978a6bc.wav"
+    },
+    {
+      "text": "lost",
+      "file": "76f75e6129fe30135bd4.wav"
+    },
+    {
+      "text": "on foot",
+      "file": "e984cac918a1a738045a.wav"
+    },
+    {
+      "text": "pagoda",
+      "file": "1dfbd562946f2e7a29bf.wav"
+    },
+    {
+      "text": "taxi",
+      "file": "12796d3d5f4e132385f8.wav"
+    },
+    {
+      "text": "train",
+      "file": "116f54c41d0405dbb10e.wav"
+    },
+    {
+      "text": "visit",
+      "file": "f0e68ac26df2184062ae.wav"
+    },
+    {
+      "text": "water park",
+      "file": "4efae59453e3d30a2134.wav"
+    }
+  ]
+}

@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tiếng Anh 5 · Unit 18 · Đề 4 · Đọc hiểu</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<link rel="stylesheet" href="../../assets/engine.css"><script type="application/json" id="mia-audio-data">{"voice": "Microsoft Zira Desktop", "clips": {"Hello! Let’s listen and learn English.": "../../assets/english/u18/audio/d6be6a8235b16c4af314.wav", "I want to visit Dragon Bridge.": "../../assets/english/u18/audio/a0f774792df0014a0f41.wav", "I want to visit Dragon Bridge. You can get there by bus.": "../../assets/english/u18/audio/20840db3a0ce5d86c37f.wav", "I want to visit Ha Noi Opera House. You can get there on foot.": "../../assets/english/u18/audio/c6339a7daefd460d81a7.wav", "I want to visit Ho Chi Minh City Museum. You can get there on foot.": "../../assets/english/u18/audio/9e232ba43e42e1394c49.wav", "Linh says: I want to visit Dragon Bridge. I can get there by bicycle. Nam says: I want to visit Dragon Bridge. I can get there by bus.": "../../assets/english/u18/audio/dedf27005af80ee6a25a.wav", "You can get there on foot.": "../../assets/english/u18/audio/7d53001b03847a1cd96b.wav"}}</script><script>// Optional recorded voice for pages with a complete, unit-owned audio manifest.
+(function(){'use strict';
+ const el=document.getElementById('mia-audio-data');if(!el)return;
+ const data=JSON.parse(el.textContent),native=window.speechSynthesis;
+ const voice={name:'Âm thanh có sẵn · Anh Mỹ (Zira)',lang:'en-US',voiceURI:'mia-recorded',localService:true};
+ // Reuse one media element for the whole spelling queue (per-element playback
+ // permission on iPad); only start playback from a learner's button press.
+ const player=new Audio();let sequence=0;
+ function cancel(){sequence++;player.onplaying=player.onended=player.onerror=null;player.pause();if(native)native.cancel();}
+ function speak(u){
+  if(u.voice?.voiceURI!==voice.voiceURI){
+   if(native&&window.SpeechSynthesisUtterance){const v=new SpeechSynthesisUtterance(u.text);for(const k of ['voice','lang','rate','pitch','volume','onstart','onend','onerror'])v[k]=u[k];native.speak(v);}
+   else u.onerror?.({error:'voice-unavailable'});return;
+  }
+  cancel();const token=sequence,src=data.clips[u.text];
+  if(!src){u.onerror?.({error:'audio-unavailable'});return;}
+  const audio=player;let failed=false;
+  const fail=()=>{if(token!==sequence||failed)return;failed=true;cancel();u.onerror?.({error:'audio-unavailable'});};
+  audio.preload='none';audio.src=src;audio.volume=u.volume??1;audio.playbackRate=(u.rate||0.9)/0.9;audio.preservesPitch=true;
+  audio.onplaying=()=>{if(token===sequence)u.onstart?.();};
+  audio.onended=()=>{if(token!==sequence)return;audio.onplaying=audio.onended=audio.onerror=null;u.onend?.();};
+  audio.onerror=fail;try{audio.play().catch(fail);}catch(e){fail();}
+ }
+ window.MiaRecorded={getVoices:()=>[voice,...(native?.getVoices()||[])],cancel,speak,
+  addEventListener:(name,fn)=>native?.addEventListener(name,fn),removeEventListener:(name,fn)=>native?.removeEventListener(name,fn)};
+})();
+</script><script src="../../assets/english/speech.js"></script><link rel="stylesheet" href="../../assets/theme.css"><script src="../../assets/theme.js"></script></head><body>
+<div class="page"><div id="app"></div></div>
+<div class="bar" id="bar" data-mode="run"><div class="bar-in"></div></div>
+<script>
+window.MKEN18=function(questions){return {"decimal": false, "meta": {"subject": "en", "version": 1, "lessonLabel": "Phần", "book": "Tiếng Anh 5 · Global Success · Tập hai", "title": "Unit 18 · Means of transport", "topic": "Nơi muốn đến và phương tiện đi lại", "range": "Trang 52–57", "minutes": 40, "tip": "Mỗi đề có 6 câu nghe, chia đều ba mức. Xem lời nghe sẽ ghi nhận đã dùng hỗ trợ, không trừ điểm. Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp."}, "lessons": {"1": "Where do you want to visit?", "2": "How can I get to…?", "3": "Ngữ điệu, đọc và viết chuyến đi"}, "levels": [{"id": "tb", "name": "Mức 1 · Trung bình", "desc": "Nhận biết từ và mẫu câu cơ bản", "stars": 1, "pts": 3}, {"id": "kha", "name": "Mức 2 · Khá", "desc": "Dùng mẫu câu, nối ý và tìm thông tin", "stars": 2, "pts": 5}, {"id": "gioi", "name": "Mức 3 · Giỏi", "desc": "Kết hợp đọc hiểu và viết câu theo dữ liệu", "stars": 3, "pts": 5}],"questions":questions};};
+
+window.TEST_FN=function(H){return MKEN18([
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the transport phrase.",
+  "transcript": "You can get there on foot.",
+  "speech": "You can get there on foot.",
+  "fields": [
+   {
+    "label": "Transport:",
+    "answer": "on foot",
+    "options": [
+     "by bus",
+     "by bicycle",
+     "by taxi",
+     "on foot"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Transport: on foot.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the destination.",
+  "transcript": "I want to visit Dragon Bridge.",
+  "speech": "I want to visit Dragon Bridge.",
+  "fields": [
+   {
+    "label": "Destination:",
+    "answer": "Dragon Bridge",
+    "options": [
+     "Ha Noi Opera House",
+     "Dragon Bridge",
+     "Ngo Mon Square",
+     "Ho Chi Minh City Museum"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Destination: Dragon Bridge.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Who is speaking? Write the name only.",
+  "why": "Tên người nói.",
+  "lesson": 3,
+  "answers": [
+   "An"
+  ],
+  "exactForm": false,
+  "passage": "Hello! I am An. I want to visit Ha Noi Opera House. I ask a friend how to get there. My friend says: You can get there by bus. I say: Thank you so much!",
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Which destination is named?",
+  "why": "Đọc I want to visit…",
+  "lesson": 3,
+  "opts": [
+   "Dragon Bridge",
+   "Ngo Mon Square",
+   "Ho Chi Minh City Museum",
+   "Ha Noi Opera House"
+  ],
+  "answer": 3,
+  "passage": "Hello! I am An. I want to visit Ha Noi Opera House. I ask a friend how to get there. My friend says: You can get there by bus. I say: Thank you so much!",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the transport phrase.",
+  "why": "You can get there…",
+  "lesson": 3,
+  "answers": [
+   "by bus"
+  ],
+  "exactForm": false,
+  "passage": "Hello! I am An. I want to visit Ha Noi Opera House. I ask a friend how to get there. My friend says: You can get there by bus. I say: Thank you so much!",
+  "level": "tb"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Theo đoạn, không đoán đường đi thật.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "The way to travel is by bus.",
+    "a": true
+   },
+   {
+    "t": "The way to travel is by bicycle.",
+    "a": false
+   }
+  ],
+  "passage": "Hello! I am An. I want to visit Ha Noi Opera House. I ask a friend how to get there. My friend says: You can get there by bus. I say: Thank you so much!",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Who is speaking? Write the name only.",
+  "why": "Tên người nói.",
+  "lesson": 3,
+  "answers": [
+   "Linh"
+  ],
+  "exactForm": false,
+  "passage": "Hello! I am Linh. I want to visit Dragon Bridge. I ask a friend how to get there. My friend says: You can get there by bicycle. I say: Thank you so much!",
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Which destination is named?",
+  "why": "Đọc I want to visit…",
+  "lesson": 3,
+  "opts": [
+   "Dragon Bridge",
+   "Ngo Mon Square",
+   "Ho Chi Minh City Museum",
+   "Ha Noi Opera House"
+  ],
+  "answer": 0,
+  "passage": "Hello! I am Linh. I want to visit Dragon Bridge. I ask a friend how to get there. My friend says: You can get there by bicycle. I say: Thank you so much!",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the transport phrase.",
+  "why": "You can get there…",
+  "lesson": 3,
+  "answers": [
+   "by bicycle"
+  ],
+  "exactForm": false,
+  "passage": "Hello! I am Linh. I want to visit Dragon Bridge. I ask a friend how to get there. My friend says: You can get there by bicycle. I say: Thank you so much!",
+  "level": "tb"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Theo đoạn, không đoán đường đi thật.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "The way to travel is by bicycle.",
+    "a": true
+   },
+   {
+    "t": "The way to travel is by taxi.",
+    "a": false
+   }
+  ],
+  "passage": "Hello! I am Linh. I want to visit Dragon Bridge. I ask a friend how to get there. My friend says: You can get there by bicycle. I say: Thank you so much!",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen. Which transport phrase is used?",
+  "transcript": "I want to visit Ho Chi Minh City Museum. You can get there on foot.",
+  "speech": "I want to visit Ho Chi Minh City Museum. You can get there on foot.",
+  "fields": [
+   {
+    "label": "Transport:",
+    "answer": "on foot",
+    "options": [
+     "by bus",
+     "by bicycle",
+     "by taxi",
+     "on foot"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Transport: on foot.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Who is speaking? Write the name only.",
+  "why": "Tên người nói.",
+  "lesson": 3,
+  "answers": [
+   "Minh"
+  ],
+  "exactForm": false,
+  "passage": "Hello! I am Minh. I want to visit Ngo Mon Square. I ask a friend how to get there. My friend says: You can get there by taxi. I say: Thank you so much!",
+  "level": "kha"
+ },
+ {
+  "type": "mc",
+  "stem": "Which destination is named?",
+  "why": "Đọc I want to visit…",
+  "lesson": 3,
+  "opts": [
+   "Dragon Bridge",
+   "Ngo Mon Square",
+   "Ho Chi Minh City Museum",
+   "Ha Noi Opera House"
+  ],
+  "answer": 1,
+  "passage": "Hello! I am Minh. I want to visit Ngo Mon Square. I ask a friend how to get there. My friend says: You can get there by taxi. I say: Thank you so much!",
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen. Which destination is named?",
+  "transcript": "I want to visit Ha Noi Opera House. You can get there on foot.",
+  "speech": "I want to visit Ha Noi Opera House. You can get there on foot.",
+  "fields": [
+   {
+    "label": "Destination:",
+    "answer": "Ha Noi Opera House",
+    "options": [
+     "Ha Noi Opera House",
+     "Dragon Bridge",
+     "Ngo Mon Square",
+     "Ho Chi Minh City Museum"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Destination: Ha Noi Opera House.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the transport phrase.",
+  "why": "You can get there…",
+  "lesson": 3,
+  "answers": [
+   "by taxi"
+  ],
+  "exactForm": false,
+  "passage": "Hello! I am Minh. I want to visit Ngo Mon Square. I ask a friend how to get there. My friend says: You can get there by taxi. I say: Thank you so much!",
+  "level": "kha"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Theo đoạn, không đoán đường đi thật.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "The way to travel is by taxi.",
+    "a": true
+   },
+   {
+    "t": "The way to travel is on foot.",
+    "a": false
+   }
+  ],
+  "passage": "Hello! I am Minh. I want to visit Ngo Mon Square. I ask a friend how to get there. My friend says: You can get there by taxi. I say: Thank you so much!",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Who is speaking? Write the name only.",
+  "why": "Tên người nói.",
+  "lesson": 3,
+  "answers": [
+   "Hoa"
+  ],
+  "exactForm": false,
+  "passage": "Hello! I am Hoa. I want to visit Ho Chi Minh City Museum. I ask a friend how to get there. My friend says: You can get there on foot. I say: Thank you so much!",
+  "level": "kha"
+ },
+ {
+  "type": "mc",
+  "stem": "Which destination is named?",
+  "why": "Đọc I want to visit…",
+  "lesson": 3,
+  "opts": [
+   "Dragon Bridge",
+   "Ngo Mon Square",
+   "Ho Chi Minh City Museum",
+   "Ha Noi Opera House"
+  ],
+  "answer": 2,
+  "passage": "Hello! I am Hoa. I want to visit Ho Chi Minh City Museum. I ask a friend how to get there. My friend says: You can get there on foot. I say: Thank you so much!",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the transport phrase.",
+  "why": "You can get there…",
+  "lesson": 3,
+  "answers": [
+   "on foot"
+  ],
+  "exactForm": false,
+  "passage": "Hello! I am Hoa. I want to visit Ho Chi Minh City Museum. I ask a friend how to get there. My friend says: You can get there on foot. I say: Thank you so much!",
+  "level": "gioi"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Theo đoạn, không đoán đường đi thật.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "The way to travel is on foot.",
+    "a": true
+   },
+   {
+    "t": "The way to travel is by bus.",
+    "a": false
+   }
+  ],
+  "passage": "Hello! I am Hoa. I want to visit Ho Chi Minh City Museum. I ask a friend how to get there. My friend says: You can get there on foot. I say: Thank you so much!",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and find both destination and transport.",
+  "transcript": "I want to visit Dragon Bridge. You can get there by bus.",
+  "speech": "I want to visit Dragon Bridge. You can get there by bus.",
+  "fields": [
+   {
+    "label": "Destination:",
+    "answer": "Dragon Bridge",
+    "options": [
+     "Ha Noi Opera House",
+     "Dragon Bridge",
+     "Ngo Mon Square",
+     "Ho Chi Minh City Museum"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Transport:",
+    "answer": "by bus",
+    "options": [
+     "by bus",
+     "by bicycle",
+     "by taxi",
+     "on foot"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Destination: Dragon Bridge; Transport: by bus.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Both want to visit Dragon Bridge. Who travels by bus? Write the name only.",
+  "why": "Linh và Nam có cùng nơi đến nhưng khác phương tiện.",
+  "lesson": 3,
+  "answers": [
+   "Nam"
+  ],
+  "exactForm": false,
+  "passage": "Fictional English practice card: Traveller: Linh · Destination: Dragon Bridge · Transport: by bicycle. Use this card, not a real route map.\nFictional English practice card: Traveller: Nam · Destination: Dragon Bridge · Transport: by bus. Use this card, not a real route map.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Which transport takes the group to the island? Write the vehicle word only.",
+  "why": "Chặng cuối đi ferry, không phải bus.",
+  "lesson": 3,
+  "answers": [
+   "ferry"
+  ],
+  "exactForm": false,
+  "passage": "An original fictional morning plan: First, we visit the museum by bus. Next, we walk to the lake. Finally, we go to the island by ferry. We stay together with an adult.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Write only Nam’s destination and transport, not Linh’s.",
+  "transcript": "Linh says: I want to visit Dragon Bridge. I can get there by bicycle. Nam says: I want to visit Dragon Bridge. I can get there by bus.",
+  "speech": "Linh says: I want to visit Dragon Bridge. I can get there by bicycle. Nam says: I want to visit Dragon Bridge. I can get there by bus.",
+  "fields": [
+   {
+    "label": "Nam’s destination:",
+    "answer": "Dragon Bridge",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Nam’s transport:",
+    "answer": "by bus",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Nam’s destination: Dragon Bridge; Nam’s transport: by bus.",
+  "level": "gioi"
+ }
+]);};
+
+window.TEST_EXTRA={"id": "en-u18-de4-v1", "title": "Đề 4 · Đọc hiểu", "theme": "Đọc đúng người, nơi đến, phương tiện và từng chặng.", "home": "../index.html", "prev": "De3_MauCauVaHoiThoai.html", "next": "De5_VietCau.html"};
+
+</script><script src="../../assets/engine.js"></script></body></html>

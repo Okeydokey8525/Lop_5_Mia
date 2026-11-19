@@ -51,6 +51,13 @@ async function fill(p){await p.evaluate(()=>__quiz.Q.forEach((q,i)=>{const e=doc
    const n=Number(t.id.split('-')[1].slice(1));assert.match(await p.evaluate(n=>window['MKEN'+n]([]).meta.book,n),/Tập hai/);
    const forms=await p.evaluate(n=>{const expected=n===16?'It is cold and dry.':'He did not run fast.';const q=__quiz.Q.find(q=>q.type==='text'&&q.exactForm&&q.answers[0]===expected);const short=n===16?'It’s cold and dry.':'He didn’t run fast.';const wrong=n===16?'It cold and dry.':'He did not ran fast.';return [__quiz.textIsCorrect(short,q.answers,true),__quiz.textIsCorrect(wrong,q.answers,true),__quiz.textIsCorrect(expected,q.answers,true)];},n);assert.deepEqual(forms,[false,false,true]);
   }
+  if(t.id==='en-u18-de3-v1'){
+   assert.match(await p.evaluate(()=>window.MKEN18([]).meta.book),/Tập hai/);
+   const forms=await p.evaluate(()=>{const q=__quiz.Q.find(q=>q.type==='text'&&q.exactForm&&q.answers[0]==='I cannot get there by bus.');return [__quiz.textIsCorrect('I can’t get there by bus.',q.answers,true),__quiz.textIsCorrect('I cannot gets there by bus.',q.answers,true),__quiz.textIsCorrect(q.answers[0],q.answers,true)];});assert.deepEqual(forms,[false,false,true]);
+  }
+  if(t.id==='en-u18-de1-v1'){
+   const forms=await p.evaluate(()=>{const q=__quiz.Q.find(q=>q.type==='text'&&q.answers[0]==='You can get there on foot.');return [__quiz.textIsCorrect('You can get there by foot.',q.answers),__quiz.textIsCorrect('You can get there on foot.',q.answers)];});assert.deepEqual(forms,[false,true]);
+  }
   if(t.id.startsWith('en-r')){
    const scope=await p.evaluate(()=>[...new Set(__quiz.Q.flatMap(q=>q.sourceUnits||[]))].sort((a,b)=>a-b));assert.deepEqual(scope,t.id.startsWith('en-r01')?[1,2,3,4,5]:[6,7,8,9,10]);assert.ok(!(await p.title()).includes('Unit R'));
   }

@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tiếng Anh 5 · Unit 18 · Đề 3 · Mẫu câu và hội thoại</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<link rel="stylesheet" href="../../assets/engine.css"><script type="application/json" id="mia-audio-data">{"voice": "Microsoft Zira Desktop", "clips": {"Hello! Let’s listen and learn English.": "../../assets/english/u18/audio/d6be6a8235b16c4af314.wav", "I want to visit Dragon Bridge. You can get there by bus.": "../../assets/english/u18/audio/20840db3a0ce5d86c37f.wav", "I want to visit Ho Chi Minh City Museum.": "../../assets/english/u18/audio/33da4fe90b0c49277084.wav", "I want to visit Ho Chi Minh City Museum. You can get there on foot.": "../../assets/english/u18/audio/9e232ba43e42e1394c49.wav", "I want to visit Ngo Mon Square. You can get there by taxi.": "../../assets/english/u18/audio/4c13ca4c267e158969e9.wav", "Linh says: I want to visit Dragon Bridge. I can get there by bicycle. Nam says: I want to visit Dragon Bridge. I can get there by bus.": "../../assets/english/u18/audio/dedf27005af80ee6a25a.wav", "You can get there by taxi.": "../../assets/english/u18/audio/2991c5d1499194923bca.wav"}}</script><script>// Optional recorded voice for pages with a complete, unit-owned audio manifest.
+(function(){'use strict';
+ const el=document.getElementById('mia-audio-data');if(!el)return;
+ const data=JSON.parse(el.textContent),native=window.speechSynthesis;
+ const voice={name:'Âm thanh có sẵn · Anh Mỹ (Zira)',lang:'en-US',voiceURI:'mia-recorded',localService:true};
+ // Reuse one media element for the whole spelling queue (per-element playback
+ // permission on iPad); only start playback from a learner's button press.
+ const player=new Audio();let sequence=0;
+ function cancel(){sequence++;player.onplaying=player.onended=player.onerror=null;player.pause();if(native)native.cancel();}
+ function speak(u){
+  if(u.voice?.voiceURI!==voice.voiceURI){
+   if(native&&window.SpeechSynthesisUtterance){const v=new SpeechSynthesisUtterance(u.text);for(const k of ['voice','lang','rate','pitch','volume','onstart','onend','onerror'])v[k]=u[k];native.speak(v);}
+   else u.onerror?.({error:'voice-unavailable'});return;
+  }
+  cancel();const token=sequence,src=data.clips[u.text];
+  if(!src){u.onerror?.({error:'audio-unavailable'});return;}
+  const audio=player;let failed=false;
+  const fail=()=>{if(token!==sequence||failed)return;failed=true;cancel();u.onerror?.({error:'audio-unavailable'});};
+  audio.preload='none';audio.src=src;audio.volume=u.volume??1;audio.playbackRate=(u.rate||0.9)/0.9;audio.preservesPitch=true;
+  audio.onplaying=()=>{if(token===sequence)u.onstart?.();};
+  audio.onended=()=>{if(token!==sequence)return;audio.onplaying=audio.onended=audio.onerror=null;u.onend?.();};
+  audio.onerror=fail;try{audio.play().catch(fail);}catch(e){fail();}
+ }
+ window.MiaRecorded={getVoices:()=>[voice,...(native?.getVoices()||[])],cancel,speak,
+  addEventListener:(name,fn)=>native?.addEventListener(name,fn),removeEventListener:(name,fn)=>native?.removeEventListener(name,fn)};
+})();
+</script><script src="../../assets/english/speech.js"></script><link rel="stylesheet" href="../../assets/theme.css"><script src="../../assets/theme.js"></script></head><body>
+<div class="page"><div id="app"></div></div>
+<div class="bar" id="bar" data-mode="run"><div class="bar-in"></div></div>
+<script>
+window.MKEN18=function(questions){return {"decimal": false, "meta": {"subject": "en", "version": 1, "lessonLabel": "Phần", "book": "Tiếng Anh 5 · Global Success · Tập hai", "title": "Unit 18 · Means of transport", "topic": "Nơi muốn đến và phương tiện đi lại", "range": "Trang 52–57", "minutes": 40, "tip": "Mỗi đề có 6 câu nghe, chia đều ba mức. Xem lời nghe sẽ ghi nhận đã dùng hỗ trợ, không trừ điểm. Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp."}, "lessons": {"1": "Where do you want to visit?", "2": "How can I get to…?", "3": "Ngữ điệu, đọc và viết chuyến đi"}, "levels": [{"id": "tb", "name": "Mức 1 · Trung bình", "desc": "Nhận biết từ và mẫu câu cơ bản", "stars": 1, "pts": 3}, {"id": "kha", "name": "Mức 2 · Khá", "desc": "Dùng mẫu câu, nối ý và tìm thông tin", "stars": 2, "pts": 5}, {"id": "gioi", "name": "Mức 3 · Giỏi", "desc": "Kết hợp đọc hiểu và viết câu theo dữ liệu", "stars": 3, "pts": 5}],"questions":questions};};
+
+window.TEST_FN=function(H){return MKEN18([
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the transport phrase.",
+  "transcript": "You can get there by taxi.",
+  "speech": "You can get there by taxi.",
+  "fields": [
+   {
+    "label": "Transport:",
+    "answer": "by taxi",
+    "options": [
+     "by bus",
+     "by bicycle",
+     "by taxi",
+     "on foot"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Transport: by taxi.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the destination.",
+  "transcript": "I want to visit Ho Chi Minh City Museum.",
+  "speech": "I want to visit Ho Chi Minh City Museum.",
+  "fields": [
+   {
+    "label": "Destination:",
+    "answer": "Ho Chi Minh City Museum",
+    "options": [
+     "Ha Noi Opera House",
+     "Dragon Bridge",
+     "Ngo Mon Square",
+     "Ho Chi Minh City Museum"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Destination: Ho Chi Minh City Museum.",
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Choose the question asking about a destination.",
+  "why": "Where hỏi nơi muốn đến.",
+  "lesson": 1,
+  "opts": [
+   "How did he run?",
+   "Where do you want to visit?",
+   "What do you wear?",
+   "Who is the main character?"
+  ],
+  "answer": 1,
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: How ___ I get there?",
+  "why": "Can I.",
+  "lesson": 2,
+  "answers": [
+   "can"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Can + get.",
+  "lesson": 2,
+  "items": [
+   "You",
+   "can",
+   "get",
+   "there",
+   "by",
+   "bus."
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Choose the transport phrase on the card.",
+  "why": "Đọc thẻ Linh.",
+  "lesson": 2,
+  "opts": [
+   "by bus",
+   "by bicycle",
+   "by taxi",
+   "on foot"
+  ],
+  "answer": 1,
+  "passage": "Fictional English practice card: Traveller: Linh · Destination: Dragon Bridge · Transport: by bicycle. Use this card, not a real route map.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Rewrite in full: I can’t get there by bus.",
+  "why": "Can’t = cannot.",
+  "lesson": 1,
+  "answers": [
+   "I cannot get there by bus."
+  ],
+  "exactForm": true,
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: I want ___ visit Dragon Bridge.",
+  "why": "Want to + visit.",
+  "lesson": 1,
+  "answers": [
+   "to"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Give the destination sentence starting with I want.",
+  "why": "Đọc thẻ An.",
+  "lesson": 1,
+  "answers": [
+   "I want to visit Ha Noi Opera House."
+  ],
+  "exactForm": false,
+  "passage": "Fictional English practice card: Traveller: An · Destination: Ha Noi Opera House · Transport: by bus. Use this card, not a real route map.",
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Where does Hoa want to visit?",
+  "why": "Theo thẻ Hoa.",
+  "lesson": 1,
+  "opts": [
+   "Dragon Bridge",
+   "Ngo Mon Square",
+   "Ho Chi Minh City Museum",
+   "Ha Noi Opera House"
+  ],
+  "answer": 2,
+  "passage": "Fictional English practice card: Traveller: Hoa · Destination: Ho Chi Minh City Museum · Transport: on foot. Use this card, not a real route map.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen. Which transport phrase is used?",
+  "transcript": "I want to visit Ngo Mon Square. You can get there by taxi.",
+  "speech": "I want to visit Ngo Mon Square. You can get there by taxi.",
+  "fields": [
+   {
+    "label": "Transport:",
+    "answer": "by taxi",
+    "options": [
+     "by bus",
+     "by bicycle",
+     "by taxi",
+     "on foot"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Transport: by taxi.",
+  "level": "kha"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Get to + nơi đến.",
+  "lesson": 2,
+  "items": [
+   "How",
+   "can",
+   "I",
+   "get",
+   "to",
+   "Ngo",
+   "Mon",
+   "Square?"
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Rewrite in full: It’s far from here.",
+  "why": "It’s = It is.",
+  "lesson": 2,
+  "answers": [
+   "It is far from here."
+  ],
+  "exactForm": true,
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen. Which destination is named?",
+  "transcript": "I want to visit Dragon Bridge. You can get there by bus.",
+  "speech": "I want to visit Dragon Bridge. You can get there by bus.",
+  "fields": [
+   {
+    "label": "Destination:",
+    "answer": "Dragon Bridge",
+    "options": [
+     "Ha Noi Opera House",
+     "Dragon Bridge",
+     "Ngo Mon Square",
+     "Ho Chi Minh City Museum"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Destination: Dragon Bridge.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: You can ___ there on foot. Use get.",
+  "why": "Can + get.",
+  "lesson": 2,
+  "answers": [
+   "get"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Ghép theo chức năng lời nói.",
+  "lesson": 2,
+  "pairs": [
+   {
+    "left": "Where do you want to visit?",
+    "right": "I want to visit Dragon Bridge."
+   },
+   {
+    "left": "How can I get there?",
+    "right": "You can get there by bicycle."
+   },
+   {
+    "left": "Thank you so much!",
+    "right": "You are welcome."
+   }
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the complete travel answer starting with You can.",
+  "why": "Theo thẻ Minh.",
+  "lesson": 2,
+  "answers": [
+   "You can get there by taxi."
+  ],
+  "exactForm": false,
+  "passage": "Fictional English practice card: Traveller: Minh · Destination: Ngo Mon Square · Transport: by taxi. Use this card, not a real route map.",
+  "level": "kha"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Sau can dùng get.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "Can I get is a correct question pattern.",
+    "a": true
+   },
+   {
+    "t": "Can I gets is correct.",
+    "a": false
+   }
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write destination then travel answer, starting with I want and You can.",
+  "why": "On foot theo thẻ.",
+  "lesson": 3,
+  "answers": [
+   "I want to visit Ho Chi Minh City Museum. You can get there on foot."
+  ],
+  "exactForm": false,
+  "passage": "Fictional English practice card: Traveller: Hoa · Destination: Ho Chi Minh City Museum · Transport: on foot. Use this card, not a real route map.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Rewrite in full: We’ll get there by train.",
+  "why": "We’ll = We will.",
+  "lesson": 3,
+  "answers": [
+   "We will get there by train."
+  ],
+  "exactForm": true,
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and find both destination and transport.",
+  "transcript": "I want to visit Ho Chi Minh City Museum. You can get there on foot.",
+  "speech": "I want to visit Ho Chi Minh City Museum. You can get there on foot.",
+  "fields": [
+   {
+    "label": "Destination:",
+    "answer": "Ho Chi Minh City Museum",
+    "options": [
+     "Ha Noi Opera House",
+     "Dragon Bridge",
+     "Ngo Mon Square",
+     "Ho Chi Minh City Museum"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Transport:",
+    "answer": "on foot",
+    "options": [
+     "by bus",
+     "by bicycle",
+     "by taxi",
+     "on foot"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Destination: Ho Chi Minh City Museum; Transport: on foot.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write the complete travel answer starting with You can.",
+  "why": "Cùng địa danh với An nhưng khác cách đi.",
+  "lesson": 3,
+  "answers": [
+   "You can get there on foot."
+  ],
+  "exactForm": false,
+  "passage": "Fictional English practice card: Traveller: Mai · Destination: Ha Noi Opera House · Transport: on foot. Use this card, not a real route map.",
+  "level": "gioi"
+ },
+ {
+  "type": "mc",
+  "stem": "Choose the correct sentence.",
+  "why": "Can + get; on foot.",
+  "lesson": 3,
+  "opts": [
+   "You can get there by foot.",
+   "You can get there on foot.",
+   "You can gets there on foot.",
+   "You can to get there on foot."
+  ],
+  "answer": 1,
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Write only Nam’s destination and transport, not Linh’s.",
+  "transcript": "Linh says: I want to visit Dragon Bridge. I can get there by bicycle. Nam says: I want to visit Dragon Bridge. I can get there by bus.",
+  "speech": "Linh says: I want to visit Dragon Bridge. I can get there by bicycle. Nam says: I want to visit Dragon Bridge. I can get there by bus.",
+  "fields": [
+   {
+    "label": "Nam’s destination:",
+    "answer": "Dragon Bridge",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Nam’s transport:",
+    "answer": "by bus",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Nam’s destination: Dragon Bridge; Nam’s transport: by bus.",
+  "level": "gioi"
+ }
+]);};
+
+window.TEST_EXTRA={"id": "en-u18-de3-v1", "title": "Đề 3 · Mẫu câu và hội thoại", "theme": "Hỏi nơi muốn tham quan và cách đến đó.", "home": "../index.html", "prev": "De2_TuVungVaHinhAnh.html", "next": "De4_DocHieu.html"};
+
+</script><script src="../../assets/engine.js"></script></body></html>
