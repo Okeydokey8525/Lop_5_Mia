@@ -1,0 +1,388 @@
+{
+  "voice": "Microsoft Zira Desktop",
+  "language": "en-US",
+  "rate": -1,
+  "format": "PCM 22050 Hz 16-bit mono",
+  "clips": [
+    {
+      "text": "A",
+      "file": "559aead08264d5795d39.wav"
+    },
+    {
+      "text": "B",
+      "file": "df7e70e5021544f4834b.wav"
+    },
+    {
+      "text": "C",
+      "file": "6b23c0d5f35d1b11f9b6.wav"
+    },
+    {
+      "text": "D",
+      "file": "3f39d5c348e5b79d06e8.wav"
+    },
+    {
+      "text": "Dam Sen Aquarium",
+      "file": "0d11fea6441fd7a50bd5.wav"
+    },
+    {
+      "text": "E",
+      "file": "a9f51566bd6705f7ea6a.wav"
+    },
+    {
+      "text": "F",
+      "file": "f67ab10ad4e4c53121b6.wav"
+    },
+    {
+      "text": "G",
+      "file": "333e0a1e27815d0ceee5.wav"
+    },
+    {
+      "text": "H",
+      "file": "44bd7ae60f478fae1061.wav"
+    },
+    {
+      "text": "He is going to visit Phu Quoc Island.",
+      "file": "c06093e632220e6c2493.wav"
+    },
+    {
+      "text": "Hello! Let us listen and learn English.",
+      "file": "d049b36b33ea2a1929e2.wav"
+    },
+    {
+      "text": "Hello! Let’s listen and learn English.",
+      "file": "d6be6a8235b16c4af314.wav"
+    },
+    {
+      "text": "Huong River",
+      "file": "1a73745c978147869f32.wav"
+    },
+    {
+      "text": "I",
+      "file": "a83dd0ccbffe39d071cc.wav"
+    },
+    {
+      "text": "I am going to go camping this summer.",
+      "file": "998962f961335b203c4b.wav"
+    },
+    {
+      "text": "I am going to go camping.",
+      "file": "0bbba0dd018288b377fe.wav"
+    },
+    {
+      "text": "I am going to join a music club.",
+      "file": "3b807846dc467fb2e505.wav"
+    },
+    {
+      "text": "I am going to learn a new language with my friends.",
+      "file": "f5a683acd756d166d6bc.wav"
+    },
+    {
+      "text": "I am going to learn to play the guitar.",
+      "file": "ffc027f80aa8ce13fd7d.wav"
+    },
+    {
+      "text": "I am going to practise swimming.",
+      "file": "b9a38f783c1f6d0322a7.wav"
+    },
+    {
+      "text": "I am going to visit Huong River.",
+      "file": "43c4711146212795bb44.wav"
+    },
+    {
+      "text": "I am going to visit an eco-farm.",
+      "file": "91cce2d2f554c4c45af2.wav"
+    },
+    {
+      "text": "I am going to visit the river.",
+      "file": "c64c7ab6a714b55dd94b.wav"
+    },
+    {
+      "text": "J",
+      "file": "6da43b944e494e885e69.wav"
+    },
+    {
+      "text": "K",
+      "file": "86be9a55762d316a3026.wav"
+    },
+    {
+      "text": "L",
+      "file": "72dfcfb0c470ac255cde.wav"
+    },
+    {
+      "text": "Last summer, I grew vegetables.",
+      "file": "1f14e5eef73c3257e00a.wav"
+    },
+    {
+      "text": "Last summer, Minh went camping. This summer, he is going to practise swimming.",
+      "file": "cf44bb62c5fad7ca96a2.wav"
+    },
+    {
+      "text": "M",
+      "file": "08f271887ce94707da82.wav"
+    },
+    {
+      "text": "Mai is going to visit Huong River. Nam is going to visit Phong Nha Cave.",
+      "file": "434eff9c40092922886a.wav"
+    },
+    {
+      "text": "My name is An. This summer, I am going to visit Huong River. I am going to join a music club.",
+      "file": "e78c095d298ec7ce2289.wav"
+    },
+    {
+      "text": "My name is Hoa. This summer, I am going to visit Dam Sen Aquarium. I am going to visit an eco-farm.",
+      "file": "876c2fe805d3664b503b.wav"
+    },
+    {
+      "text": "My name is Linh. This summer, I am going to visit Phong Nha Cave. I am going to go camping.",
+      "file": "4601698875f93e547166.wav"
+    },
+    {
+      "text": "My name is Mai. This summer, I am going to visit Huong River. I am going to visit an eco-farm.",
+      "file": "a71276645d520ef569be.wav"
+    },
+    {
+      "text": "My name is Minh. Last summer, I went camping. This summer, I am going to visit Phu Quoc Island. I am going to practise swimming.",
+      "file": "420a47689ea2f73a265c.wav"
+    },
+    {
+      "text": "My name is Minh. This summer, I am going to visit Phu Quoc Island. I am going to practise swimming.",
+      "file": "6517a0f49478613f587e.wav"
+    },
+    {
+      "text": "My name is Nam. This summer, I am going to visit Phong Nha Cave. I am going to join a music club.",
+      "file": "84330a69d06b412bc5ec.wav"
+    },
+    {
+      "text": "N",
+      "file": "8ce86a6ae65d3692e730.wav"
+    },
+    {
+      "text": "O",
+      "file": "c4694f2e93d5c4e7d51f.wav"
+    },
+    {
+      "text": "Our summer holidays start next week.",
+      "file": "ad70be1bb10539df8453.wav"
+    },
+    {
+      "text": "P",
+      "file": "5c62e091b8c0565f1baf.wav"
+    },
+    {
+      "text": "Phong Nha Cave",
+      "file": "d1fc3f164421f3565510.wav"
+    },
+    {
+      "text": "Phu Quoc Island",
+      "file": "0a7502700f51242c4a9f.wav"
+    },
+    {
+      "text": "Q",
+      "file": "4ae81572f06e1b88fd5c.wav"
+    },
+    {
+      "text": "R",
+      "file": "8c2574892063f995fdf7.wav"
+    },
+    {
+      "text": "S",
+      "file": "8de0b3c47f112c59745f.wav"
+    },
+    {
+      "text": "She is going to visit an aquarium.",
+      "file": "2ca824f97f2b160a2fff.wav"
+    },
+    {
+      "text": "T",
+      "file": "e632b7095b0bf32c260f.wav"
+    },
+    {
+      "text": "They are going to visit Dam Sen Aquarium.",
+      "file": "f13bdc01f203ca1ee21f.wav"
+    },
+    {
+      "text": "They are going to visit an island.",
+      "file": "40d640f46ed0bbdfcb51.wav"
+    },
+    {
+      "text": "This is my summer plan.",
+      "file": "feb5ae596df43c93d534.wav"
+    },
+    {
+      "text": "U",
+      "file": "a25513c7e0f6eaa80a33.wav"
+    },
+    {
+      "text": "V",
+      "file": "de5a6f78116eca62d7fc.wav"
+    },
+    {
+      "text": "W",
+      "file": "fcb5f40df9be6bae66c1.wav"
+    },
+    {
+      "text": "We are going to grow vegetables on an eco-farm.",
+      "file": "0390ac0567b83f567c47.wav"
+    },
+    {
+      "text": "We are going to visit Phong Nha Cave.",
+      "file": "2d7b73119ebe3094afc6.wav"
+    },
+    {
+      "text": "We are going to visit a cave.",
+      "file": "834a2ce537c4ba5f70ba.wav"
+    },
+    {
+      "text": "We are going to visit the aquarium next week.",
+      "file": "7c48c5eeb8edd7995541.wav"
+    },
+    {
+      "text": "What are we going to do this summer?",
+      "file": "ab19a77eab689a676f46.wav"
+    },
+    {
+      "text": "What are we going to do this summer? We are going to learn a new language.",
+      "file": "7ed83c09cbf55cad8007.wav"
+    },
+    {
+      "text": "What are you going to do this summer?",
+      "file": "78b610c8b83116853803.wav"
+    },
+    {
+      "text": "What are you going to do this summer? I am going to go camping.",
+      "file": "a328114343d85bdcfd80.wav"
+    },
+    {
+      "text": "What are you going to do this summer? I am going to join a music club.",
+      "file": "56391725899f46531c09.wav"
+    },
+    {
+      "text": "What are you going to do this summer? I am going to practise swimming.",
+      "file": "b30cf5d33b51a800d64f.wav"
+    },
+    {
+      "text": "What are you going to do this summer? I am going to visit an eco-farm.",
+      "file": "08632288ca047b93c65a.wav"
+    },
+    {
+      "text": "What did you do last summer?",
+      "file": "4487911f6a1440936450.wav"
+    },
+    {
+      "text": "What did you do last summer? I went camping. This summer, I am going to visit an eco-farm.",
+      "file": "d2723b9d557b9ea111ec.wav"
+    },
+    {
+      "text": "What is Hoa going to do this summer?",
+      "file": "fa26be1fe2c463702c52.wav"
+    },
+    {
+      "text": "What is Hoa going to do this summer? She is going to practise swimming.",
+      "file": "c9e9c867838c92561ea3.wav"
+    },
+    {
+      "text": "Where are they going to visit this summer?",
+      "file": "029c3fcb0ae52436a5c3.wav"
+    },
+    {
+      "text": "Where are they going to visit this summer? They are going to visit Phong Nha Cave.",
+      "file": "d5769dd356966bf94c29.wav"
+    },
+    {
+      "text": "Where are you going to visit this summer?",
+      "file": "106da91e67603140d189.wav"
+    },
+    {
+      "text": "Where are you going to visit this summer? I am going to visit Dam Sen Aquarium.",
+      "file": "cf92e747339b58aa46ac.wav"
+    },
+    {
+      "text": "Where are you going to visit this summer? I am going to visit Huong River.",
+      "file": "359a190891f096f20b4a.wav"
+    },
+    {
+      "text": "Where are you going to visit this summer? I am going to visit Phong Nha Cave.",
+      "file": "90f985d1dd50fb184a7f.wav"
+    },
+    {
+      "text": "Where are you going to visit this summer? I am going to visit Phu Quoc Island.",
+      "file": "66b17d1bba9d3715af30.wav"
+    },
+    {
+      "text": "X",
+      "file": "4b68ab3847feda7d6c62.wav"
+    },
+    {
+      "text": "Y",
+      "file": "18f5384d58bcb1bba0bc.wav"
+    },
+    {
+      "text": "Z",
+      "file": "bbeebd879e1dff691854.wav"
+    },
+    {
+      "text": "aquarium",
+      "file": "cfb685eeca5933543873.wav"
+    },
+    {
+      "text": "cave",
+      "file": "b89a199ea81b6a925de7.wav"
+    },
+    {
+      "text": "go camping",
+      "file": "44404281b2078fad7d1c.wav"
+    },
+    {
+      "text": "grow vegetables",
+      "file": "ef99a1e916d4a620c554.wav"
+    },
+    {
+      "text": "island",
+      "file": "28cd2c5c15d13978a6bc.wav"
+    },
+    {
+      "text": "join a music club",
+      "file": "d17043f8a07971905b4d.wav"
+    },
+    {
+      "text": "last summer",
+      "file": "427610a05f07c7be7e94.wav"
+    },
+    {
+      "text": "learn",
+      "file": "6a8da52e920664ef15b3.wav"
+    },
+    {
+      "text": "learn a new language",
+      "file": "4b80cd7d28248c9610bc.wav"
+    },
+    {
+      "text": "next week",
+      "file": "326d83d3d43bbef39ef7.wav"
+    },
+    {
+      "text": "plan",
+      "file": "64879f7d6b960a019097.wav"
+    },
+    {
+      "text": "practise swimming",
+      "file": "df085ab53006bed17236.wav"
+    },
+    {
+      "text": "river",
+      "file": "5f5a8ed8f139be6df7cf.wav"
+    },
+    {
+      "text": "summer holidays",
+      "file": "5d8b35e065615336a6ae.wav"
+    },
+    {
+      "text": "this summer",
+      "file": "f57471a3fcf40aba631a.wav"
+    },
+    {
+      "text": "visit an eco-farm",
+      "file": "85e448e2b3a6917bf841.wav"
+    }
+  ]
+}

@@ -178,3 +178,9 @@ Metadata trên WindowsWebKit: runner dùng lại một AudioElement và xóa cal
 ## Unit19
 
 `node tools/qa_english_units.js --units=19`, `node tools/qa_persistence.js --units=19`, `node tools/qa_study.js --units=19`, `node tools/qa_recorded_all.js --units=19 --jobs=2`. Gate phân biệt they are/they is và it is, không nhận they’re khi full form, cộng cùng tuyến nhận7km/loại4km; study trap place-plural. Audio104clip Chromium/WebKit thật, giữ probe tái dùng và timeout10giây; không giảm gate. CI thêm19 vào units/persistence và batch18gate audio11–19. Toàn site214HTML/162đề,3424layout; fullstudy20trang/316từ/121hội thoại/240luyện/480layout. Chưa kiểm iPad/human audition. Xem bàn giao Unit19 cho kết quả thực chạy.
+
+## Unit 20 — kế hoạch nghỉ hè
+
+Chạy `node tools/qa_english_units.js --units=20`, `node tools/qa_persistence.js --units=20`, `node tools/qa_study.js --units=20`, `node tools/qa_recorded_all.js --units=20 --jobs=2`. Kiểm đúng am/is/are going to, nguyên mẫu (không joined/went/goes), full form, last summer/this summer và cùng nơi khác người/kế hoạch. Nguồn `u20/NOTES.md`; nghiệm thu ở bàn giao Unit 20.
+
+Toàn site hiện 168 đề / 222 HTML / 28 tổng quan; responsive cần 3552 tổ hợp. Study đầy đủ 21 trang / 336 từ-cụm / 127 hội thoại / 252 bài luyện, 504 layout/theme. CI giữ các kiểm tra cũ và thêm Unit 20: audio thật 20 lượt cho Units 11–20 × Chromium/WebKit. Audio U20 phải đủ 95 WAV nguồn/site và không thiếu/thừa. Kiểm tra không có Speech API, native utterance constructor, nghe thường/chậm, ABC, dừng/đổi nhóm/pagehide/lỗi-thử lại và ba mức đề. Kiểm browser không thay kiểm iPad thật hoặc người nghe duyệt giọng.

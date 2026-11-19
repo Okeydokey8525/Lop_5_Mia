@@ -21,6 +21,7 @@ UNITS=[
  dict(n=17,key='u17',dir='Unit17_StoriesForChildren',name='Stories for children',pages='46–51',version=1,volume=2),
  dict(n=18,key='u18',dir='Unit18_MeansOfTransport',name='Means of transport',pages='52–57',version=1,volume=2),
  dict(n=19,key='u19',dir='Unit19_PlacesOfInterest',name='Places of interest',pages='58–63',version=1,volume=2),
+ dict(n=20,key='u20',dir='Unit20_OurSummerHolidays',name='Our summer holidays',pages='64–69',version=1,volume=2),
 ]
 
 REVIEWS=[dict(n='R1',key='r01',dir='Review1_Units1_5',name='Review 1 · Ôn Unit 1–5',label='Review 1',pages='40–43',version=1,kind='review',overview='TongQuan_Review1'),
@@ -32,6 +33,7 @@ def label(unit):return unit.get('label',f"Unit {unit['n']}")
 def overview_name(unit):return unit.get('overview',f"TongQuan_Unit{unit['n']}")
 
 DETAILS={
+ 20:dict(topic="Kế hoạch nghỉ hè: nơi đến và hoạt động",lessons={1:"Where are you going to visit?",2:"What are you going to do?",3:"Ngữ điệu, đọc và viết kế hoạch"},colour="#A63C70",bg="#FFE4F0"),
  19:dict(topic="Địa điểm, cảm nhận và khoảng cách",lessons={1:"What do you think of…?",2:"How far is it from…to…?",3:"Ngữ điệu, đọc và viết kỳ nghỉ"},colour="#A63C70",bg="#FFE4F0"),
  18:dict(topic="Nơi muốn đến và phương tiện đi lại",lessons={1:"Where do you want to visit?",2:"How can I get to…?",3:"Ngữ điệu, đọc và viết chuyến đi"},colour="#A63C70",bg="#FFE4F0"),
  16:dict(topic="Mùa, thời tiết và trang phục",lessons={1:"Mùa và thời tiết",2:"Trang phục thường mặc",3:"Ngữ điệu, đọc và viết"},colour="#A63C70",bg="#FFE4F0"),
@@ -61,6 +63,7 @@ def test_id(unit,index):
 
 def tests_for(unit):
     descriptions={
+      20:["Làm quen nơi sẽ tham quan và hoạt động nghỉ hè.","Nhận biết tranh hoạt động, địa điểm và mốc thời gian.","Hỏi Where…visit?/What…do? với am/is/are going to.","Đọc đúng người, nơi, kế hoạch mới và việc hè năm ngoái.","Viết going to + nguyên mẫu và kế hoạch theo thẻ.","Kết hợp nghe, tranh, hội thoại, đọc và viết kế hoạch hè."],
       19:["Làm quen địa điểm, cảm nhận và khoảng cách.","Nhận biết loại địa điểm, tính từ và đơn vị khoảng cách.","Hỏi cảm nhận và khoảng cách; dùng it is/they are.","Đọc đúng ý kiến, người nói, khoảng cách và từng chặng.","Viết think of, from…to… và câu theo thẻ.","Kết hợp nghe, tranh, hội thoại, đọc và viết kỳ nghỉ."],
       18:["Làm quen nơi muốn đến và phương tiện đi lại.","Nhận biết tranh phương tiện và từ chỉ địa điểm.","Hỏi nơi muốn tham quan và cách đến đó.","Đọc đúng người, nơi đến, phương tiện và từng chặng.","Viết want to visit, can + get, by/on foot.","Kết hợp nghe, tranh, hội thoại, đọc và viết kế hoạch."],
       16:["Làm quen mùa, thời tiết và trang phục.","Nhận biết tranh và từ chỉ mùa, thời tiết, quần áo.","Hỏi thời tiết và trang phục thường mặc.","Đọc đúng người, mùa, thời tiết và trang phục theo thẻ.","Viết is, do + wear và câu theo dữ kiện.","Kết hợp nghe, tranh, hội thoại, đọc và viết về các mùa."],

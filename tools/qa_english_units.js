@@ -68,6 +68,16 @@ async function fill(p){await p.evaluate(()=>__quiz.Q.forEach((q,i)=>{const e=doc
   if(t.id==='en-u19-de4-v1'){
    const forms=await p.evaluate(()=>{const q=__quiz.Q.find(q=>q.type==='text'&&q.stem.startsWith('Along this route,')&&q.answers[0]==='seven kilometres');return [__quiz.textIsCorrect('four kilometres',q.answers),__quiz.textIsCorrect('7 km',q.answers),__quiz.textIsCorrect('seven kilometres',q.answers)];});assert.deepEqual(forms,[false,true,true]);
   }
+  if(t.id==='en-u20-de3-v1'){
+   assert.match(await p.evaluate(()=>window.MKEN20([]).meta.book),/Tập hai/);
+   const forms=await p.evaluate(()=>{const q=__quiz.Q.find(q=>q.type==='text'&&q.exactForm&&q.answers[0]==='She is going to practise swimming.');return [__quiz.textIsCorrect('She’s going to practise swimming.',q.answers,true),__quiz.textIsCorrect('She are going to practise swimming.',q.answers,true),__quiz.textIsCorrect(q.answers[0],q.answers,true)];});assert.deepEqual(forms,[false,false,true]);
+  }
+  if(t.id==='en-u20-de2-v1'){
+   const forms=await p.evaluate(()=>{const q=__quiz.Q.find(q=>q.type==='text'&&q.answers[0]==='go');return [__quiz.textIsCorrect('went',q.answers),__quiz.textIsCorrect('goes',q.answers),__quiz.textIsCorrect('go',q.answers)];});assert.deepEqual(forms,[false,false,true]);
+  }
+  if(t.id==='en-u20-de4-v1'){
+   const forms=await p.evaluate(()=>{const q=__quiz.Q.find(q=>q.type==='text'&&q.stem.startsWith('Write only what Minh did last summer'));return [__quiz.textIsCorrect('practise swimming',q.answers),__quiz.textIsCorrect('went camping',q.answers)];});assert.deepEqual(forms,[false,true]);
+  }
   if(t.id.startsWith('en-r')){
    const scope=await p.evaluate(()=>[...new Set(__quiz.Q.flatMap(q=>q.sourceUnits||[]))].sort((a,b)=>a-b));assert.deepEqual(scope,t.id.startsWith('en-r01')?[1,2,3,4,5]:[6,7,8,9,10]);assert.ok(!(await p.title()).includes('Unit R'));
   }

@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tiếng Anh 5 · Unit 20 · Đề 2 · Từ vựng và hình ảnh</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<link rel="stylesheet" href="../../assets/engine.css"><script type="application/json" id="mia-audio-data">{"voice": "Microsoft Zira Desktop", "clips": {"Hello! Let’s listen and learn English.": "../../assets/english/u20/audio/d6be6a8235b16c4af314.wav", "My name is Minh. Last summer, I went camping. This summer, I am going to visit Phu Quoc Island. I am going to practise swimming.": "../../assets/english/u20/audio/420a47689ea2f73a265c.wav", "My name is Minh. This summer, I am going to visit Phu Quoc Island. I am going to practise swimming.": "../../assets/english/u20/audio/6517a0f49478613f587e.wav", "Phong Nha Cave": "../../assets/english/u20/audio/d1fc3f164421f3565510.wav", "What are you going to do this summer? I am going to visit an eco-farm.": "../../assets/english/u20/audio/08632288ca047b93c65a.wav", "Where are you going to visit this summer? I am going to visit Phong Nha Cave.": "../../assets/english/u20/audio/90f985d1dd50fb184a7f.wav", "practise swimming": "../../assets/english/u20/audio/df085ab53006bed17236.wav"}}</script><script>// Optional recorded voice for pages with a complete, unit-owned audio manifest.
+(function(){'use strict';
+ const el=document.getElementById('mia-audio-data');if(!el)return;
+ const data=JSON.parse(el.textContent),native=window.speechSynthesis;
+ const voice={name:'Âm thanh có sẵn · Anh Mỹ (Zira)',lang:'en-US',voiceURI:'mia-recorded',localService:true};
+ // Reuse one media element for the whole spelling queue (per-element playback
+ // permission on iPad); only start playback from a learner's button press.
+ const player=new Audio();let sequence=0;
+ function cancel(){sequence++;player.onplaying=player.onended=player.onerror=null;player.pause();if(native)native.cancel();}
+ function speak(u){
+  if(u.voice?.voiceURI!==voice.voiceURI){
+   if(native&&window.SpeechSynthesisUtterance){const v=new SpeechSynthesisUtterance(u.text);for(const k of ['voice','lang','rate','pitch','volume','onstart','onend','onerror'])v[k]=u[k];native.speak(v);}
+   else u.onerror?.({error:'voice-unavailable'});return;
+  }
+  cancel();const token=sequence,src=data.clips[u.text];
+  if(!src){u.onerror?.({error:'audio-unavailable'});return;}
+  const audio=player;let failed=false;
+  const fail=()=>{if(token!==sequence||failed)return;failed=true;cancel();u.onerror?.({error:'audio-unavailable'});};
+  audio.preload='none';audio.src=src;audio.volume=u.volume??1;audio.playbackRate=(u.rate||0.9)/0.9;audio.preservesPitch=true;
+  audio.onplaying=()=>{if(token===sequence)u.onstart?.();};
+  audio.onended=()=>{if(token!==sequence)return;audio.onplaying=audio.onended=audio.onerror=null;u.onend?.();};
+  audio.onerror=fail;try{audio.play().catch(fail);}catch(e){fail();}
+ }
+ window.MiaRecorded={getVoices:()=>[voice,...(native?.getVoices()||[])],cancel,speak,
+  addEventListener:(name,fn)=>native?.addEventListener(name,fn),removeEventListener:(name,fn)=>native?.removeEventListener(name,fn)};
+})();
+</script><script src="../../assets/english/speech.js"></script><link rel="stylesheet" href="../../assets/theme.css"><script src="../../assets/theme.js"></script></head><body>
+<div class="page"><div id="app"></div></div>
+<div class="bar" id="bar" data-mode="run"><div class="bar-in"></div></div>
+<script>
+window.MKEN20=function(questions){return {"decimal": false, "meta": {"subject": "en", "version": 1, "lessonLabel": "Phần", "book": "Tiếng Anh 5 · Global Success · Tập hai", "title": "Unit 20 · Our summer holidays", "topic": "Kế hoạch nghỉ hè: nơi đến và hoạt động", "range": "Trang 64–69", "minutes": 40, "tip": "Mỗi đề có 6 câu nghe, chia đều ba mức. Xem lời nghe sẽ ghi nhận đã dùng hỗ trợ, không trừ điểm. Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp."}, "lessons": {"1": "Where are you going to visit?", "2": "What are you going to do?", "3": "Ngữ điệu, đọc và viết kế hoạch"}, "levels": [{"id": "tb", "name": "Mức 1 · Trung bình", "desc": "Nhận biết từ và mẫu câu cơ bản", "stars": 1, "pts": 3}, {"id": "kha", "name": "Mức 2 · Khá", "desc": "Dùng mẫu câu, nối ý và tìm thông tin", "stars": 2, "pts": 5}, {"id": "gioi", "name": "Mức 3 · Giỏi", "desc": "Kết hợp đọc hiểu và viết câu theo dữ liệu", "stars": 3, "pts": 5}],"questions":questions};};
+
+window.TEST_FN=function(H){return MKEN20([
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the place.",
+  "transcript": "Phong Nha Cave",
+  "speech": "Phong Nha Cave",
+  "fields": [
+   {
+    "label": "Place:",
+    "answer": "Phong Nha Cave",
+    "options": [
+     "Huong River",
+     "Phong Nha Cave",
+     "Phu Quoc Island",
+     "Dam Sen Aquarium"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Place: Phong Nha Cave.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the activity.",
+  "transcript": "practise swimming",
+  "speech": "practise swimming",
+  "fields": [
+   {
+    "label": "Activity:",
+    "answer": "practise swimming",
+    "options": [
+     "join a music club",
+     "go camping",
+     "visit an eco-farm",
+     "practise swimming"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Activity: practise swimming.",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the picture. Choose the activity.",
+  "why": "Tranh: tham gia câu lạc bộ âm nhạc",
+  "lesson": 2,
+  "opts": [
+   "visit an eco-farm",
+   "practise swimming",
+   "join a music club",
+   "go camping"
+  ],
+  "answer": 2,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u20/join-a-music-club.webp\" alt=\"tham gia câu lạc bộ âm nhạc\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the picture. Choose the activity.",
+  "why": "Tranh: đi cắm trại",
+  "lesson": 2,
+  "opts": [
+   "visit an eco-farm",
+   "practise swimming",
+   "join a music club",
+   "go camping"
+  ],
+  "answer": 3,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u20/go-camping.webp\" alt=\"đi cắm trại\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the picture. Choose the activity.",
+  "why": "Tranh: tham quan trang trại sinh thái",
+  "lesson": 2,
+  "opts": [
+   "visit an eco-farm",
+   "practise swimming",
+   "join a music club",
+   "go camping"
+  ],
+  "answer": 0,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u20/visit-an-eco-farm.webp\" alt=\"tham quan trang trại sinh thái\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Look at the picture. Choose the activity.",
+  "why": "Tranh: luyện bơi",
+  "lesson": 2,
+  "opts": [
+   "visit an eco-farm",
+   "practise swimming",
+   "join a music club",
+   "go camping"
+  ],
+  "answer": 1,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u20/practise-swimming.webp\" alt=\"luyện bơi\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: I am going to join a music ___.",
+  "why": "A music club: câu lạc bộ âm nhạc.",
+  "lesson": 2,
+  "answers": [
+   "club"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Các loại địa điểm.",
+  "lesson": 2,
+  "pairs": [
+   {
+    "left": "river",
+    "right": "sông"
+   },
+   {
+    "left": "island",
+    "right": "đảo"
+   },
+   {
+    "left": "aquarium",
+    "right": "thủy cung"
+   }
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: I am going to visit ___ eco-farm. Choose a or an.",
+  "why": "Eco bắt đầu bằng âm nguyên âm.",
+  "lesson": 2,
+  "answers": [
+   "an"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: I am going to ___ camping. Use the base form of went.",
+  "why": "Going to + go, không went.",
+  "lesson": 2,
+  "answers": [
+   "go"
+  ],
+  "exactForm": false,
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen. Where is the speaker going to visit this summer?",
+  "transcript": "Where are you going to visit this summer? I am going to visit Phong Nha Cave.",
+  "speech": "Where are you going to visit this summer? I am going to visit Phong Nha Cave.",
+  "fields": [
+   {
+    "label": "Place:",
+    "answer": "Phong Nha Cave",
+    "options": [
+     "Huong River",
+     "Phong Nha Cave",
+     "Phu Quoc Island",
+     "Dam Sen Aquarium"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Place: Phong Nha Cave.",
+  "level": "kha"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Tìm mốc thời gian trước khi chọn câu.",
+  "lesson": 2,
+  "pairs": [
+   {
+    "left": "this summer",
+    "right": "mùa hè này"
+   },
+   {
+    "left": "last summer",
+    "right": "mùa hè năm ngoái"
+   },
+   {
+    "left": "next week",
+    "right": "tuần tới"
+   }
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Practise + swimming.",
+  "lesson": 2,
+  "items": [
+   "I",
+   "am",
+   "going",
+   "to",
+   "practise",
+   "swimming."
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen. What is the speaker going to do this summer?",
+  "transcript": "What are you going to do this summer? I am going to visit an eco-farm.",
+  "speech": "What are you going to do this summer? I am going to visit an eco-farm.",
+  "fields": [
+   {
+    "label": "Activity:",
+    "answer": "visit an eco-farm",
+    "options": [
+     "join a music club",
+     "go camping",
+     "visit an eco-farm",
+     "practise swimming"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Activity: visit an eco-farm.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: I am going to grow ___ on an eco-farm. Use the plural of vegetable.",
+  "why": "Grow vegetables: trồng rau.",
+  "lesson": 2,
+  "answers": [
+   "vegetables"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: I am going to learn a new ___. It means ngôn ngữ.",
+  "why": "Learn a new language.",
+  "lesson": 3,
+  "answers": [
+   "language"
+  ],
+  "exactForm": false,
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the place name only for Nam’s plan this summer.",
+  "why": "Đọc đúng thẻ Nam.",
+  "lesson": 1,
+  "answers": [
+   "Phong Nha Cave"
+  ],
+  "exactForm": false,
+  "passage": "Original summer plan card: Name: Nam · Pronoun: He · This summer: visit Phong Nha Cave; join a music club · Last summer: went camping.",
+  "level": "kha"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Place và mốc thời gian.",
+  "lesson": 2,
+  "items": [
+   {
+    "t": "Visit an aquarium is a plan about a place to visit.",
+    "a": true
+   },
+   {
+    "t": "Last summer means mùa hè này.",
+    "a": false
+   }
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write Mai’s activity sentence in full form, starting with I am.",
+  "why": "Không lấy hoạt động của An dù cùng Huong River.",
+  "lesson": 3,
+  "answers": [
+   "I am going to visit an eco-farm."
+  ],
+  "exactForm": true,
+  "passage": "Original summer plan card: Name: Mai · Pronoun: She · This summer: visit Huong River; visit an eco-farm · Last summer: joined a music club.",
+  "level": "gioi"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Where + are you going to visit.",
+  "lesson": 3,
+  "items": [
+   "Where",
+   "are",
+   "you",
+   "going",
+   "to",
+   "visit",
+   "this",
+   "summer?"
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and find the destination and activity for this summer.",
+  "transcript": "My name is Minh. This summer, I am going to visit Phu Quoc Island. I am going to practise swimming.",
+  "speech": "My name is Minh. This summer, I am going to visit Phu Quoc Island. I am going to practise swimming.",
+  "fields": [
+   {
+    "label": "Place:",
+    "answer": "Phu Quoc Island",
+    "options": [
+     "Huong River",
+     "Phong Nha Cave",
+     "Phu Quoc Island",
+     "Dam Sen Aquarium"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Activity:",
+    "answer": "practise swimming",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Place: Phu Quoc Island; Activity: practise swimming.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Complete in full form: They ___ to take photos. Use be + going.",
+  "why": "They are going, không they is going.",
+  "lesson": 3,
+  "answers": [
+   "are going"
+  ],
+  "exactForm": true,
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Rewrite in full: I’m going to join a music club.",
+  "why": "I’m = I am.",
+  "lesson": 3,
+  "answers": [
+   "I am going to join a music club."
+  ],
+  "exactForm": true,
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Write only Minh’s plans for this summer, not last summer.",
+  "transcript": "My name is Minh. Last summer, I went camping. This summer, I am going to visit Phu Quoc Island. I am going to practise swimming.",
+  "speech": "My name is Minh. Last summer, I went camping. This summer, I am going to visit Phu Quoc Island. I am going to practise swimming.",
+  "fields": [
+   {
+    "label": "Place this summer:",
+    "answer": "Phu Quoc Island",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Activity this summer:",
+    "answer": "practise swimming",
+    "options": null,
+    "alternatives": [
+     "practice swimming"
+    ]
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Place this summer: Phu Quoc Island; Activity this summer: practise swimming.",
+  "level": "gioi"
+ }
+]);};
+
+window.TEST_EXTRA={"id": "en-u20-de2-v1", "title": "Đề 2 · Từ vựng và hình ảnh", "theme": "Nhận biết tranh hoạt động, địa điểm và mốc thời gian.", "home": "../index.html", "prev": "De1_KhoiDong.html", "next": "De3_MauCauVaHoiThoai.html"};
+
+</script><script src="../../assets/engine.js"></script></body></html>

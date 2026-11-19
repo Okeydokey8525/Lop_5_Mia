@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tiếng Anh 5 · Unit 20 · Đề 4 · Đọc hiểu</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<link rel="stylesheet" href="../../assets/engine.css"><script type="application/json" id="mia-audio-data">{"voice": "Microsoft Zira Desktop", "clips": {"Dam Sen Aquarium": "../../assets/english/u20/audio/0d11fea6441fd7a50bd5.wav", "Hello! Let’s listen and learn English.": "../../assets/english/u20/audio/d6be6a8235b16c4af314.wav", "My name is Minh. Last summer, I went camping. This summer, I am going to visit Phu Quoc Island. I am going to practise swimming.": "../../assets/english/u20/audio/420a47689ea2f73a265c.wav", "My name is Nam. This summer, I am going to visit Phong Nha Cave. I am going to join a music club.": "../../assets/english/u20/audio/84330a69d06b412bc5ec.wav", "What are you going to do this summer? I am going to visit an eco-farm.": "../../assets/english/u20/audio/08632288ca047b93c65a.wav", "Where are you going to visit this summer? I am going to visit Dam Sen Aquarium.": "../../assets/english/u20/audio/cf92e747339b58aa46ac.wav", "join a music club": "../../assets/english/u20/audio/d17043f8a07971905b4d.wav"}}</script><script>// Optional recorded voice for pages with a complete, unit-owned audio manifest.
+(function(){'use strict';
+ const el=document.getElementById('mia-audio-data');if(!el)return;
+ const data=JSON.parse(el.textContent),native=window.speechSynthesis;
+ const voice={name:'Âm thanh có sẵn · Anh Mỹ (Zira)',lang:'en-US',voiceURI:'mia-recorded',localService:true};
+ // Reuse one media element for the whole spelling queue (per-element playback
+ // permission on iPad); only start playback from a learner's button press.
+ const player=new Audio();let sequence=0;
+ function cancel(){sequence++;player.onplaying=player.onended=player.onerror=null;player.pause();if(native)native.cancel();}
+ function speak(u){
+  if(u.voice?.voiceURI!==voice.voiceURI){
+   if(native&&window.SpeechSynthesisUtterance){const v=new SpeechSynthesisUtterance(u.text);for(const k of ['voice','lang','rate','pitch','volume','onstart','onend','onerror'])v[k]=u[k];native.speak(v);}
+   else u.onerror?.({error:'voice-unavailable'});return;
+  }
+  cancel();const token=sequence,src=data.clips[u.text];
+  if(!src){u.onerror?.({error:'audio-unavailable'});return;}
+  const audio=player;let failed=false;
+  const fail=()=>{if(token!==sequence||failed)return;failed=true;cancel();u.onerror?.({error:'audio-unavailable'});};
+  audio.preload='none';audio.src=src;audio.volume=u.volume??1;audio.playbackRate=(u.rate||0.9)/0.9;audio.preservesPitch=true;
+  audio.onplaying=()=>{if(token===sequence)u.onstart?.();};
+  audio.onended=()=>{if(token!==sequence)return;audio.onplaying=audio.onended=audio.onerror=null;u.onend?.();};
+  audio.onerror=fail;try{audio.play().catch(fail);}catch(e){fail();}
+ }
+ window.MiaRecorded={getVoices:()=>[voice,...(native?.getVoices()||[])],cancel,speak,
+  addEventListener:(name,fn)=>native?.addEventListener(name,fn),removeEventListener:(name,fn)=>native?.removeEventListener(name,fn)};
+})();
+</script><script src="../../assets/english/speech.js"></script><link rel="stylesheet" href="../../assets/theme.css"><script src="../../assets/theme.js"></script></head><body>
+<div class="page"><div id="app"></div></div>
+<div class="bar" id="bar" data-mode="run"><div class="bar-in"></div></div>
+<script>
+window.MKEN20=function(questions){return {"decimal": false, "meta": {"subject": "en", "version": 1, "lessonLabel": "Phần", "book": "Tiếng Anh 5 · Global Success · Tập hai", "title": "Unit 20 · Our summer holidays", "topic": "Kế hoạch nghỉ hè: nơi đến và hoạt động", "range": "Trang 64–69", "minutes": 40, "tip": "Mỗi đề có 6 câu nghe, chia đều ba mức. Xem lời nghe sẽ ghi nhận đã dùng hỗ trợ, không trừ điểm. Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp."}, "lessons": {"1": "Where are you going to visit?", "2": "What are you going to do?", "3": "Ngữ điệu, đọc và viết kế hoạch"}, "levels": [{"id": "tb", "name": "Mức 1 · Trung bình", "desc": "Nhận biết từ và mẫu câu cơ bản", "stars": 1, "pts": 3}, {"id": "kha", "name": "Mức 2 · Khá", "desc": "Dùng mẫu câu, nối ý và tìm thông tin", "stars": 2, "pts": 5}, {"id": "gioi", "name": "Mức 3 · Giỏi", "desc": "Kết hợp đọc hiểu và viết câu theo dữ liệu", "stars": 3, "pts": 5}],"questions":questions};};
+
+window.TEST_FN=function(H){return MKEN20([
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the place.",
+  "transcript": "Dam Sen Aquarium",
+  "speech": "Dam Sen Aquarium",
+  "fields": [
+   {
+    "label": "Place:",
+    "answer": "Dam Sen Aquarium",
+    "options": [
+     "Huong River",
+     "Phong Nha Cave",
+     "Phu Quoc Island",
+     "Dam Sen Aquarium"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Place: Dam Sen Aquarium.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the activity.",
+  "transcript": "join a music club",
+  "speech": "join a music club",
+  "fields": [
+   {
+    "label": "Activity:",
+    "answer": "join a music club",
+    "options": [
+     "join a music club",
+     "go camping",
+     "visit an eco-farm",
+     "practise swimming"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Activity: join a music club.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Who is speaking? Write the name only.",
+  "why": "Tên ở đầu đoạn.",
+  "lesson": 3,
+  "answers": [
+   "An"
+  ],
+  "exactForm": false,
+  "passage": "My name is An. Last summer, I grew vegetables with my cousins. This summer, i am going to visit Huong River. My family is going to travel by bus. I am going to join a music club. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Where is the speaker going to visit this summer?",
+  "why": "Tìm going to visit.",
+  "lesson": 3,
+  "opts": [
+   "Phong Nha Cave",
+   "Phu Quoc Island",
+   "Dam Sen Aquarium",
+   "Huong River"
+  ],
+  "answer": 3,
+  "passage": "My name is An. Last summer, I grew vegetables with my cousins. This summer, i am going to visit Huong River. My family is going to travel by bus. I am going to join a music club. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Besides learning a language and taking photos, what is the speaker going to do this summer? Write the activity phrase only.",
+  "why": "Tìm kế hoạch sau câu nói về phương tiện; không lấy việc hè năm ngoái.",
+  "lesson": 3,
+  "answers": [
+   "join a music club"
+  ],
+  "exactForm": false,
+  "passage": "My name is An. Last summer, I grew vegetables with my cousins. This summer, i am going to visit Huong River. My family is going to travel by bus. I am going to join a music club. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "level": "tb"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "By bus; with friends, không alone.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "The family is going to travel by bus.",
+    "a": true
+   },
+   {
+    "t": "The speaker is going to learn a new language alone.",
+    "a": false
+   }
+  ],
+  "passage": "My name is An. Last summer, I grew vegetables with my cousins. This summer, i am going to visit Huong River. My family is going to travel by bus. I am going to join a music club. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Who is speaking? Write the name only.",
+  "why": "Tên ở đầu đoạn.",
+  "lesson": 3,
+  "answers": [
+   "Linh"
+  ],
+  "exactForm": false,
+  "passage": "My name is Linh. Last summer, I joined a music club with my cousins. This summer, i am going to visit Phong Nha Cave. My family is going to travel by bus. I am going to go camping. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Where is the speaker going to visit this summer?",
+  "why": "Tìm going to visit.",
+  "lesson": 3,
+  "opts": [
+   "Phong Nha Cave",
+   "Phu Quoc Island",
+   "Dam Sen Aquarium",
+   "Huong River"
+  ],
+  "answer": 0,
+  "passage": "My name is Linh. Last summer, I joined a music club with my cousins. This summer, i am going to visit Phong Nha Cave. My family is going to travel by bus. I am going to go camping. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Besides learning a language and taking photos, what is the speaker going to do this summer? Write the activity phrase only.",
+  "why": "Tìm kế hoạch sau câu nói về phương tiện; không lấy việc hè năm ngoái.",
+  "lesson": 3,
+  "answers": [
+   "go camping"
+  ],
+  "exactForm": false,
+  "passage": "My name is Linh. Last summer, I joined a music club with my cousins. This summer, i am going to visit Phong Nha Cave. My family is going to travel by bus. I am going to go camping. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "level": "tb"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "By bus; with friends, không alone.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "The family is going to travel by bus.",
+    "a": true
+   },
+   {
+    "t": "The speaker is going to learn a new language alone.",
+    "a": false
+   }
+  ],
+  "passage": "My name is Linh. Last summer, I joined a music club with my cousins. This summer, i am going to visit Phong Nha Cave. My family is going to travel by bus. I am going to go camping. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen. Where is the speaker going to visit this summer?",
+  "transcript": "Where are you going to visit this summer? I am going to visit Dam Sen Aquarium.",
+  "speech": "Where are you going to visit this summer? I am going to visit Dam Sen Aquarium.",
+  "fields": [
+   {
+    "label": "Place:",
+    "answer": "Dam Sen Aquarium",
+    "options": [
+     "Huong River",
+     "Phong Nha Cave",
+     "Phu Quoc Island",
+     "Dam Sen Aquarium"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Place: Dam Sen Aquarium.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Who is speaking? Write the name only.",
+  "why": "Tên ở đầu đoạn.",
+  "lesson": 3,
+  "answers": [
+   "Minh"
+  ],
+  "exactForm": false,
+  "passage": "My name is Minh. Last summer, I went camping with my cousins. This summer, i am going to visit Phu Quoc Island. My family is going to travel by bus. I am going to practise swimming. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "level": "kha"
+ },
+ {
+  "type": "mc",
+  "stem": "Where is the speaker going to visit this summer?",
+  "why": "Tìm going to visit.",
+  "lesson": 3,
+  "opts": [
+   "Phong Nha Cave",
+   "Phu Quoc Island",
+   "Dam Sen Aquarium",
+   "Huong River"
+  ],
+  "answer": 1,
+  "passage": "My name is Minh. Last summer, I went camping with my cousins. This summer, i am going to visit Phu Quoc Island. My family is going to travel by bus. I am going to practise swimming. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen. What is the speaker going to do this summer?",
+  "transcript": "What are you going to do this summer? I am going to visit an eco-farm.",
+  "speech": "What are you going to do this summer? I am going to visit an eco-farm.",
+  "fields": [
+   {
+    "label": "Activity:",
+    "answer": "visit an eco-farm",
+    "options": [
+     "join a music club",
+     "go camping",
+     "visit an eco-farm",
+     "practise swimming"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Activity: visit an eco-farm.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Besides learning a language and taking photos, what is the speaker going to do this summer? Write the activity phrase only.",
+  "why": "Tìm kế hoạch sau câu nói về phương tiện; không lấy việc hè năm ngoái.",
+  "lesson": 3,
+  "answers": [
+   "practise swimming",
+   "practice swimming"
+  ],
+  "exactForm": false,
+  "passage": "My name is Minh. Last summer, I went camping with my cousins. This summer, i am going to visit Phu Quoc Island. My family is going to travel by bus. I am going to practise swimming. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "level": "kha"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "By bus; with friends, không alone.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "The family is going to travel by bus.",
+    "a": true
+   },
+   {
+    "t": "The speaker is going to learn a new language alone.",
+    "a": false
+   }
+  ],
+  "passage": "My name is Minh. Last summer, I went camping with my cousins. This summer, i am going to visit Phu Quoc Island. My family is going to travel by bus. I am going to practise swimming. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Who is speaking? Write the name only.",
+  "why": "Tên ở đầu đoạn.",
+  "lesson": 3,
+  "answers": [
+   "Hoa"
+  ],
+  "exactForm": false,
+  "passage": "My name is Hoa. Last summer, I practised swimming with my cousins. This summer, i am going to visit Dam Sen Aquarium. My family is going to travel by bus. I am going to visit an eco-farm. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "level": "kha"
+ },
+ {
+  "type": "mc",
+  "stem": "Where is the speaker going to visit this summer?",
+  "why": "Tìm going to visit.",
+  "lesson": 3,
+  "opts": [
+   "Phong Nha Cave",
+   "Phu Quoc Island",
+   "Dam Sen Aquarium",
+   "Huong River"
+  ],
+  "answer": 2,
+  "passage": "My name is Hoa. Last summer, I practised swimming with my cousins. This summer, i am going to visit Dam Sen Aquarium. My family is going to travel by bus. I am going to visit an eco-farm. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Besides learning a language and taking photos, what is the speaker going to do this summer? Write the activity phrase only.",
+  "why": "Tìm kế hoạch sau câu nói về phương tiện; không lấy việc hè năm ngoái.",
+  "lesson": 3,
+  "answers": [
+   "visit an eco-farm"
+  ],
+  "exactForm": false,
+  "passage": "My name is Hoa. Last summer, I practised swimming with my cousins. This summer, i am going to visit Dam Sen Aquarium. My family is going to travel by bus. I am going to visit an eco-farm. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "level": "gioi"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "By bus; with friends, không alone.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "The family is going to travel by bus.",
+    "a": true
+   },
+   {
+    "t": "The speaker is going to learn a new language alone.",
+    "a": false
+   }
+  ],
+  "passage": "My name is Hoa. Last summer, I practised swimming with my cousins. This summer, i am going to visit Dam Sen Aquarium. My family is going to travel by bus. I am going to visit an eco-farm. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and find the destination and activity for this summer.",
+  "transcript": "My name is Nam. This summer, I am going to visit Phong Nha Cave. I am going to join a music club.",
+  "speech": "My name is Nam. This summer, I am going to visit Phong Nha Cave. I am going to join a music club.",
+  "fields": [
+   {
+    "label": "Place:",
+    "answer": "Phong Nha Cave",
+    "options": [
+     "Huong River",
+     "Phong Nha Cave",
+     "Phu Quoc Island",
+     "Dam Sen Aquarium"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Activity:",
+    "answer": "join a music club",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Place: Phong Nha Cave; Activity: join a music club.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Both plan to visit Phong Nha Cave. Who is going to join a music club? Write the name only.",
+  "why": "Linh sẽ cắm trại, Nam sẽ tham gia câu lạc bộ.",
+  "lesson": 3,
+  "answers": [
+   "Nam"
+  ],
+  "exactForm": false,
+  "passage": "Original summer plan card: Name: Linh · Pronoun: She · This summer: visit Phong Nha Cave; go camping · Last summer: joined a music club.\nOriginal summer plan card: Name: Nam · Pronoun: He · This summer: visit Phong Nha Cave; join a music club · Last summer: went camping.",
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write only what Minh did last summer, using the past activity phrase.",
+  "why": "Last summer: went camping; this summer: practise swimming.",
+  "lesson": 3,
+  "answers": [
+   "went camping"
+  ],
+  "exactForm": false,
+  "passage": "My name is Minh. Last summer, I went camping with my cousins. This summer, i am going to visit Phu Quoc Island. My family is going to travel by bus. I am going to practise swimming. I am also going to learn a new language with my friends. We are going to take photos during our holiday. I am excited about our plans.",
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen. Write only Minh’s plans for this summer, not last summer.",
+  "transcript": "My name is Minh. Last summer, I went camping. This summer, I am going to visit Phu Quoc Island. I am going to practise swimming.",
+  "speech": "My name is Minh. Last summer, I went camping. This summer, I am going to visit Phu Quoc Island. I am going to practise swimming.",
+  "fields": [
+   {
+    "label": "Place this summer:",
+    "answer": "Phu Quoc Island",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Activity this summer:",
+    "answer": "practise swimming",
+    "options": null,
+    "alternatives": [
+     "practice swimming"
+    ]
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Place this summer: Phu Quoc Island; Activity this summer: practise swimming.",
+  "level": "gioi"
+ }
+]);};
+
+window.TEST_EXTRA={"id": "en-u20-de4-v1", "title": "Đề 4 · Đọc hiểu", "theme": "Đọc đúng người, nơi, kế hoạch mới và việc hè năm ngoái.", "home": "../index.html", "prev": "De3_MauCauVaHoiThoai.html", "next": "De5_VietCau.html"};
+
+</script><script src="../../assets/engine.js"></script></body></html>

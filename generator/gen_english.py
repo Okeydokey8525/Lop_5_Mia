@@ -106,7 +106,7 @@ def main():
     count=len(TOPICS)*6
     index=render_index(index_data()).replace('Toán 5','Tiếng Anh 5').replace('Kết nối tri thức với cuộc sống','Global Success')
     index=index.replace('Mỗi đề làm xong là một bậc thang. Leo đủ 36 bậc là em đã chinh phục cả học kì 1 của Tiếng Anh 5.',
-                        'Tập một: Unit 1–10 và Review 1–2. Tập hai: Units 11–19 đã sẵn sàng. Mỗi phần có sáu đề và nghe ở ba mức độ. Starter chưa triển khai; Units 2–19 và hai Review có trang học từ/phát âm. Units 11–19 có âm thanh đi kèm.')
+                        'Tập một: Unit 1–10 và Review 1–2. Tập hai: Units 11–20 đã sẵn sàng. Mỗi phần có sáu đề và nghe ở ba mức độ. Starter chưa triển khai; Units 2–20 và hai Review có trang học từ/phát âm. Units 11–20 có âm thanh đi kèm.')
     index=index.replace('/ 36 đề',f'/ {count} đề').replace('/ 108 sao',f'/ {count*3} sao')
     milestones={str(old):str(int(count*quarter/4+0.5)) for quarter,old in enumerate([9,18,27,36],1)}
     # One pass: a new milestone (27 for 54 exams) can equal an old label.

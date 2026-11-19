@@ -22,3 +22,10 @@ Cập nhật 19/11/2026: chủ repo giao và đã thực hiện Units 12–13, x
 Đợt tiếp19/11/2026: chủ repo giao Unit18; đã bổ sung theo trang52–57. Xem bàn giao2026-11-19_UNIT18.md cho kiểm chứng. Còn Review3, Units19–20, Review4 =4phần/24đề; Starter và bộ kiểm tra học kỳ riêng vẫn chưa làm. Các mốc trước là lịch sử.
 
 Đợt tiếp19/11/2026: chủ repo giao Unit19; đã bổ sung theo trang58–63. Xem bàn giao2026-11-19_UNIT19.md cho kiểm chứng. Còn Review3 + Unit20 + Review4 =3phần/18đề; Starter và bộ kiểm tra học kỳ riêng vẫn chưa làm. Các mốc trước là lịch sử.
+
+
+## Unit 20 — 19/11/2026
+
+Bổ sung **Our summer holidays**, tập hai trang 64–69: sáu đề / 144 câu / 36 câu nghe, tổng quan HTML/PNG, 20 từ-cụm với sáu hội thoại và 12 bài luyện tự lưu, bốn tranh hoạt động và 95 WAV kèm bài. Trọng tâm Where…going to visit?/What…going to do?, am/is/are going to + nguyên mẫu; phân biệt last summer và this summer.
+
+Tổng Anh: 20 Unit + 2 Review = **132 đề / 3168 câu**. Toàn site: **168 đề / 222 HTML / 28 tổng quan HTML-PNG**. Study: 21 trang / 336 từ-cụm / 127 hội thoại / 252 bài luyện. Nguồn và trạng thái kiểm chứng: [bàn giao Unit 20](2026-11-19_UNIT20.md). Còn **Review 3 + Review 4 = hai phần / 12 đề**; Starter và bộ kiểm tra học kỳ riêng chưa làm. Không coi đủ 20 Unit là đã hoàn thành các phần ôn tập và kiểm tra.

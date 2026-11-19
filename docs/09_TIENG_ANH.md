@@ -150,3 +150,10 @@ Bổ sung **Means of transport**, tập hai trang52–57:6đề/144câu/36nghe, 
 ## Unit19 — 19/11/2026
 
 Bổ sung **Places of interest**, tập hai trang58–63:6đề/144câu/36nghe, tổng quan HTML/PNG, học20từ/cụm với6hội thoại/12bài luyện tự lưu,4tranh loại địa điểm và104WAV. Trọng tâm think of, it is/they are, How far…from…to…, kilometre/kilometres; ngữ điệu Wh xuống. Thẻ khoảng cách/trường giả định, ý kiến theo người nói; cộng chặng trên cùng tuyến. TổngAnh19Unit+2Review=126đề/3024câu; toànsite162đề/214HTML/27poster. Study20trang/316từ/121hội thoại/240luyện. Nguồn và trạng thái kiểm chứng ở [bàn giao Unit19](breakdowns/2026-11-19_UNIT19.md). Còn Review3 + Unit20 + Review4 =3phần/18đề; Starter và bộ kiểm tra học kỳ riêng chưa làm.
+
+
+## Unit 20 — 19/11/2026
+
+Bổ sung **Our summer holidays**, tập hai trang 64–69: sáu đề / 144 câu / 36 câu nghe, tổng quan HTML/PNG, 20 từ-cụm với sáu hội thoại và 12 bài luyện tự lưu, bốn tranh hoạt động và 95 WAV kèm bài. Trọng tâm Where…going to visit?/What…going to do?, am/is/are going to + nguyên mẫu; phân biệt last summer và this summer.
+
+Tổng Anh: 20 Unit + 2 Review = **132 đề / 3168 câu**. Toàn site: **168 đề / 222 HTML / 28 tổng quan HTML-PNG**. Study: 21 trang / 336 từ-cụm / 127 hội thoại / 252 bài luyện. Nguồn và trạng thái kiểm chứng: [bàn giao Unit 20](breakdowns/2026-11-19_UNIT20.md). Còn **Review 3 + Review 4 = hai phần / 12 đề**; Starter và bộ kiểm tra học kỳ riêng chưa làm. Không coi đủ 20 Unit là đã hoàn thành các phần ôn tập và kiểm tra.

@@ -42,3 +42,5 @@ Nguồn nội dung và ghi nhận trang sách của từng unit nằm cạnh nha
 - [Unit18](breakdowns/2026-11-19_UNIT18.md): nơi muốn tham quan, phương tiện, want to visit/can + get/by/on foot, audio và kiểm chứng.
 
 - [Unit19](breakdowns/2026-11-19_UNIT19.md): địa điểm, cảm nhận, khoảng cách, it is/they are, audio và kiểm chứng.
+
+- [Unit 20](breakdowns/2026-11-19_UNIT20.md): kế hoạch nghỉ hè, going to, nơi/hoạt động, phân biệt hè năm ngoái và hè này; audio và kiểm chứng.
