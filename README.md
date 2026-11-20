@@ -5,7 +5,7 @@ Góc luyện tập lớp 5 cho Mia, chạy bằng website tĩnh và lưu điểm
 - Toán 5, Kết nối tri thức với cuộc sống, tập một: 6 chủ đề, 36 đề; mỗi đề 24 câu, 100 điểm.
 - Tiếng Anh 5, Global Success, tập một: Unit 1–10 và Review 1–2, 12 tổng quan + 72 đề (1728 câu), có nghe ở ba cấp.
 - Tiếng Anh tập hai: Units 11–20 và Review 3–4; cộng hai tập 144 đề/3456 câu, 24 tổng quan. Starter và bốn bộ kiểm tra giữa/cuối kỳ riêng chưa triển khai.
-- Toán tập hai: chủ đề 7–8, thêm 12 đề/288 câu; tổng Toán 8 chủ đề/48 đề/1152 câu. PDF hiện có thiếu phần sau, xem [bàn giao](docs/breakdowns/2026-11-20_TOAN_CHUDE7_CHUDE8.md).
+- Toán tập hai: chủ đề 7–10, thêm 24 đề/576 câu; tổng Toán 10 chủ đề/60 đề/1440 câu. Đã nhận PDF đầy đủ; [bàn giao mới](docs/breakdowns/2026-11-20_TOAN_CHUDE9_CHUDE10.md).
 
 ## Xem và phát triển
 

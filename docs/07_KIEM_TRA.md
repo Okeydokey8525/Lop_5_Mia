@@ -202,4 +202,6 @@ Bổ sung python tools/audit_math_volume2.py để giải độc lập các quan
 
 ## Toán chủ đề 9–10
 
+Cài hai trình duyệt trước: `npx --prefix generator playwright install chromium webkit`.
+
 Chạy `python tools/audit_math910.py`, `node tools/qa_math910.js`, thêm `--webkit`, và `node tools/qa_persistence.js --math=9,10`. Audit từ văn bản xuất bằng Fraction, gấp hình khai triển 3D; hộp không nắp/mặt tiếp xúc; đổi đơn vị; thời gian qua ngày và làm tròn. Hai trình duyệt làm đủ 12 đề, xem lại/lưu, từ chối nhầm diện tích–thể tích, phút thành giờ và tính cả nghỉ vào vận tốc lúc chạy. Đóng/mở profile thật để kiểm lưu; không xem reload là đủ. Giữ cổng cũ 7–8. Toàn site dự kiến 204 đề/266 HTML, responsive 4256 tổ hợp; ghi kết quả thực tế trong bàn giao, không coi các số dự kiến là đã pass.
