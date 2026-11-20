@@ -27,6 +27,7 @@ jobs:
       - run: node tools/build.js --regenerate
       - run: node generator/audit.js
       - run: python tools/audit_math_volume2.py
+      - run: python tools/audit_math910.py
       - run: python tools/check_links.py
       - name: Browser regression under the project URL prefix
         shell: bash
@@ -55,6 +56,9 @@ jobs:
           node tools/qa_persistence.js --math=7,8
           node tools/qa_math_volume2.js
           node tools/qa_math_volume2.js --webkit
+          node tools/qa_math910.js
+          node tools/qa_math910.js --webkit
+          node tools/qa_persistence.js --math=9,10
           node tools/qa_persistence.js --units=6,7
           node tools/qa_persistence.js --units=8,9
           node tools/qa_persistence.js --topics=u10,r01,r02,r03,r04

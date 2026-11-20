@@ -33,7 +33,7 @@ async function main(){const b=await (browserName==='webkit'?webkit:chromium).lau
   if(BASE.includes('127.0.0.1')&&browserName==='chromium'){await p.goto(pathToFileURL(path.join(ROOT,'generator/out',t.file)).href);await fill(p);await p.click('#goBtn');assert.match(await p.locator('.score').textContent(),/100\s*\/\s*100/);}
  }
  await p.goto(BASE+'Toan5/index.html');assert.equal(await p.locator('#sDone').textContent(),'12');
- assert.match(await p.locator('#topics').textContent(),/Tập hai · Chủ đề 7–8/);
+ assert.match(await p.locator('#topics').textContent(),/Tập hai · Chủ đề 7–10/);
  assert.equal(await p.locator('#cd7 .stop.done,#cd8 .stop.done').count(),12);
  // Reset only mathematics; English remains isolated.
  await p.evaluate(()=>localStorage.setItem('mia5:en-u01-de1-v2',JSON.stringify({best:80,max:100,tries:1})));

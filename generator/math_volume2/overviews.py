@@ -48,4 +48,5 @@ def sheets(gen_sheet):
             'Xem từng bài rồi luyện sáu đề, từ nhận biết đến vận dụng nhiều bước. Bài làm được lưu trên trình duyệt này.',
             f'Bám sách Toán 5, tập hai (Kết nối tri thức với cuộc sống), trang {4 if cd==7 else 30}–{29 if cd==7 else 39}. Ví dụ và bài tập tự soạn.')
         output.append((cd,sheet,col))
-    return output
+    from .overviews910 import sheets as extra_sheets
+    return output + extra_sheets(gen_sheet)

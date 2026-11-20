@@ -84,3 +84,7 @@ Bổ sung **Places of interest**, tập hai trang58–63:6đề/144câu/36nghe, 
 Bổ sung **Our summer holidays**, tập hai trang 64–69: sáu đề / 144 câu / 36 câu nghe, tổng quan HTML/PNG, 20 từ-cụm với sáu hội thoại và 12 bài luyện tự lưu, bốn tranh hoạt động và 95 WAV kèm bài. Trọng tâm Where…going to visit?/What…going to do?, am/is/are going to + nguyên mẫu; phân biệt last summer và this summer.
 
 Tổng Anh: 20 Unit + 2 Review = **132 đề / 3168 câu**. Toàn site: **168 đề / 222 HTML / 28 tổng quan HTML-PNG**. Study: 21 trang / 336 từ-cụm / 127 hội thoại / 252 bài luyện. Nguồn và trạng thái kiểm chứng: [bàn giao Unit 20](docs/breakdowns/2026-11-19_UNIT20.md). Còn **Review 3 + Review 4 = hai phần / 12 đề**; Starter và bộ kiểm tra học kỳ riêng chưa làm. Không coi đủ 20 Unit là đã hoàn thành các phần ôn tập và kiểm tra.
+
+## Toán tập hai — chủ đề 9–10
+
+Thêm Bài 49–62: diện tích/thể tích hình khối và thời gian/vận tốc/chuyển động đều. Toán có 10 chủ đề/60 đề/1440 câu; toàn site 204 đề/266 HTML/34 tổng quan. Nguồn và kiểm chứng: [bàn giao Toán 9–10](docs/breakdowns/2026-11-20_TOAN_CHUDE9_CHUDE10.md). Bản sách đầy đủ đã nhận; 11–12 chưa triển khai.

@@ -1,6 +1,8 @@
 // Independent value calculation for existing order questions. Unknown forms fail.
 function value(text,stem=''){
   const s=String(text).replace(/\u00a0/g,' ').replace(/,/g,'.').replace(/−/g,'-').trim();
+  const duration=/([\d.]+)\s*(giờ|phút|giây|tuần|ngày)/g,dt=[...s.matchAll(duration)];
+  if(dt.length&&s.replace(duration,'').trim()==='')return dt.reduce((sum,m)=>sum+Number(m[1])*({'giờ':3600,'phút':60,'giây':1,'tuần':604800,'ngày':86400}[m[2]]),0);
   if(/^[\d\s.]+$/.test(s))return Number(s.replace(/\s/g,''));
   const fraction=s.match(/^\{(?:(\d+)\s+)?(\d+)\/(\d+)\}$/);
   if(fraction)return Number(fraction[1]||0)+Number(fraction[2])/Number(fraction[3]);

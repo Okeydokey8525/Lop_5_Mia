@@ -31,3 +31,7 @@
 - `node tools/qa_persistence.js --math=7,8`: đóng/mở thật profile, đáp án/kết quả/best/last, nháp, Back và cập nhật tab khác, storage đầy.
 - Bài học khi xem bản đầu: CSS engine mặc định SVG chỉ 112px, làm sơ đồ tỉ số quá nhỏ. Hình mới đặt chiều rộng riêng và max-width 100%; phải xem ảnh trên điện thoại, không chỉ kiểm tra không tràn.
 - Trạng thái local/CI/live và giới hạn học sinh thật ghi trong bàn giao `docs/breakdowns/2026-11-20_TOAN_CHUDE7_CHUDE8.md`.
+
+## Cập nhật nguồn sau đợt 7–8
+
+Đã nhận PDF đầy đủ 138 trang khi làm 9–10. Thông tin thiếu sách phía trên là trạng thái lúc làm 7–8; xem NOTES910.md cho nguồn mới.

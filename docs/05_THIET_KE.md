@@ -107,3 +107,7 @@ Giữ hồng sáng. Unit 10 #A83A71/#FFE5F0; Review 1 #A63C70/#FFE4F0; Review 2 
 ## Toán tập hai — màu chủ đề 7–8 (20/11/2026)
 
 Giữ giao diện hồng sáng chung. Poster/thẻ chủ đề 7 dùng #A15B27/#FFF0DF; chủ đề 8 #316F87/#E2F3F8. Thẻ tối lần lượt #F2C49E/#453229 và #B7DFEA/#283C45. SVG toán dùng nét currentColor và màu nền tương thích; đặt kích thước rõ, không để CSS mặc định 112px làm nhỏ sơ đồ.
+
+## Toán chủ đề 9–10
+
+Khung hồng sáng giữ nguyên. Chủ đề 9: #8C5079/#F9E9F3, tối #E8B9D8/#412C3C; chủ đề 10: #486A9B/#EAF0FA, tối #BAD0F3/#293749. Hình khai triển có chú thích A–D; sơ đồ hộp và tuyến đường ghi số đo rõ, không yêu cầu đo trên màn hình.

@@ -42,3 +42,7 @@ Tổng Anh: **20 Unit + 4 Review = 144 đề/3456 câu**. Toàn site **180 đề
 ## Toán tập hai — 20/11/2026
 
 Đã nhận sách và được giao chủ đề 7–8, đã xuất bản 12 đề, local/CI/Pages thật đạt; xem 2026-11-20_TOAN_CHUDE7_CHUDE8.md. Bản PDF hiện chỉ đến trang in 67, đủ chủ đề 7–9 nhưng thiếu phần sau; chưa tự triển khai 9–12.
+
+## Toán 9–10 — đợt tiếp theo 20/11/2026
+
+Đã được giao hai chủ đề tiếp theo, đã nhận PDF đầy đủ 138 trang. Soạn Bài 49–62 theo trang đã đọc; giữ sáu đề/ba mức và lưu bài. Xem bàn giao TOAN_CHUDE9_CHUDE10 và NOTES910 cho trạng thái kiểm chứng. Chủ đề 11–12 chưa triển khai; không còn bị chặn bởi thiếu sách.

@@ -4,7 +4,7 @@ process.chdir(__dirname);
 const H={angles:()=>'',table:(head,rows)=>JSON.stringify({head,rows}),rect:()=>'',numline:()=>'',n:x=>{const neg=x<0,p=String(Math.abs(x)).split('.');return (neg?'-':'')+p[0].replace(/\B(?=(\d{3})+(?!\d))/g,' ')+(p[1]?','+p[1]:'')}};
 let bad=0;
 let checked=0;
-for(const cd of (process.argv[2]||'1,2,3,4,5,6,7,8').split(',').map(Number)) for(let i=1;i<=6;i++){ if(!fs.existsSync(`tests/cd${cd}/de0${i}.js`)){console.error('MISSING',cd,i);bad++;continue;}
+for(const cd of (process.argv[2]||'1,2,3,4,5,6,7,8,9,10').split(',').map(Number)) for(let i=1;i<=6;i++){ if(!fs.existsSync(`tests/cd${cd}/de0${i}.js`)){console.error('MISSING',cd,i);bad++;continue;}
   checked++;
   const f=`tests/cd${cd}/de0${i}.js`; const ctx={}; ctx.window=ctx;
   vm.createContext(ctx); vm.runInContext(fs.readFileSync(`common/cd${cd}.js`,'utf8')+fs.readFileSync(f,'utf8'),ctx);

@@ -185,14 +185,14 @@ def render_index(subject_data):
 
 if __name__ == '__main__':
     data[0]['volumeHeading']='Tập một · Chủ đề 1–6'
-    data[6]['volumeHeading']='Tập hai · Chủ đề 7–8 đã sẵn sàng'
+    data[6]['volumeHeading']='Tập hai · Chủ đề 7–10 đã sẵn sàng'
     result=render_index(data)
     count=sum(len(cd['tests']) for cd in data)
-    result=result.replace('Leo đủ 36 bậc là em đã chinh phục cả học kì 1 của Toán 5.', 'Ôn tập một và bắt đầu tập hai với chủ đề 7–8. Các chủ đề 9–12 chưa triển khai.')
+    result=result.replace('Leo đủ 36 bậc là em đã chinh phục cả học kì 1 của Toán 5.', 'Ôn tập một và tập hai với chủ đề 7–10. Các chủ đề 11–12 chưa triển khai.')
     result=result.replace('/ 36 đề',f'/ {count} đề').replace('/ 108 sao',f'/ {count*3} sao')
     import re
     marks={str(old):str(round(count*q/4)) for q,old in enumerate([9,18,27,36],1)}
     result=re.sub(r'(?<=>)(9|18|27|36)(?=</text>)',lambda m:marks[m[0]],result)
-    result=result.replace('</head>','<style>:root{--c7:#A15B27;--c7s:#FFF0DF;--c8:#316F87;--c8s:#E2F3F8}html[data-theme="dark"]{--c7:#F2C49E;--c7s:#453229;--c8:#B7DFEA;--c8s:#283C45}</style></head>')
+    result=result.replace('</head>','<style>:root{--c7:#A15B27;--c7s:#FFF0DF;--c8:#316F87;--c8s:#E2F3F8;--c9:#8C5079;--c9s:#F9E9F3;--c10:#486A9B;--c10s:#EAF0FA}html[data-theme="dark"]{--c7:#F2C49E;--c7s:#453229;--c8:#B7DFEA;--c8s:#283C45;--c9:#E8B9D8;--c9s:#412C3C;--c10:#BAD0F3;--c10s:#293749}</style></head>')
     out=W/'out'/ROOT; out.mkdir(parents=True,exist_ok=True)
     (out/'index.html').write_text(result,encoding='utf-8',newline='\n'); print('index',len(result)//1024,'KB')

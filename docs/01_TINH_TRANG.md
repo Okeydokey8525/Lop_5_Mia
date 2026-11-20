@@ -1,14 +1,14 @@
 # 01 — Tình trạng hiện hành
 
-Cập nhật 20/11/2026; Toán chủ đề 7–8 đã xuất bản, local/CI và Pages thật đạt (xem bàn giao Toán 7–8); Review 3–4 đã xuất bản, local/CI và kiểm tra Pages thật đều đạt (xem bàn giao Review 3–4); Unit 20 đã xuất bản, CI và kiểm tra Pages thật đạt (xem bàn giao Unit 20); Unit19 đã xuất bản, CI và kiểm tra Pages thật đạt (xem bàn giao Unit19); Unit18 đã xuất bản, CI và kiểm tra Pages thật đạt (xem bàn giao Unit18); Units16–17 đã xuất bản, CI và kiểm tra Pages thật đạt; chi tiết ở bàn giao Units16–17; Units14–15 đã xuất bản trước đó. Xem bàn giao 2026-11-19_UNIT14_UNIT15.md để phân biệt local/CI/live và giới hạn iPad thật. Units11–13 đã xuất bản trước đó. Bản lịch sử trước khi gom tài liệu nằm trong `history/`; không dùng những số liệu cũ làm trạng thái hiện tại.
+Cập nhật 20/11/2026; chủ đề 9–10 đang kiểm chứng trước xuất bản; Toán chủ đề 7–8 đã xuất bản, local/CI và Pages thật đạt (xem bàn giao Toán 7–8); Review 3–4 đã xuất bản, local/CI và kiểm tra Pages thật đều đạt (xem bàn giao Review 3–4); Unit 20 đã xuất bản, CI và kiểm tra Pages thật đạt (xem bàn giao Unit 20); Unit19 đã xuất bản, CI và kiểm tra Pages thật đạt (xem bàn giao Unit19); Unit18 đã xuất bản, CI và kiểm tra Pages thật đạt (xem bàn giao Unit18); Units16–17 đã xuất bản, CI và kiểm tra Pages thật đạt; chi tiết ở bàn giao Units16–17; Units14–15 đã xuất bản trước đó. Xem bàn giao 2026-11-19_UNIT14_UNIT15.md để phân biệt local/CI/live và giới hạn iPad thật. Units11–13 đã xuất bản trước đó. Bản lịch sử trước khi gom tài liệu nằm trong `history/`; không dùng những số liệu cũ làm trạng thái hiện tại.
 
 ## Đã bàn giao
 
 - Website: https://okeydokey8525.github.io/Lop_5_Mia/ — GitHub Pages qua Actions.
-- Toán 5: tập một 6 chủ đề/36 đề; thêm chủ đề 7–8 tập hai, tổng 8 chủ đề/48 đề/1152 câu. Mỗi đề 24 câu/100 điểm; ID cũ giữ nguyên. Xem [bàn giao Toán 7–8](breakdowns/2026-11-20_TOAN_CHUDE7_CHUDE8.md) cho kiểm chứng.
+- Toán 5: tập một 6 chủ đề/36 đề; thêm chủ đề 7–10 tập hai, tổng 10 chủ đề/60 đề/1440 câu. Mỗi đề 24 câu/100 điểm; ID cũ giữ nguyên. Xem [bàn giao Toán 7–8](breakdowns/2026-11-20_TOAN_CHUDE7_CHUDE8.md) cho kiểm chứng.
 - Tiếng Anh 5 tập một: Unit 1–10 và Review 1–2, đặt đúng thứ tự sách. Có 12 tổng quan HTML/PNG +72 đề (1728 câu); mỗi đề 24 câu/100 điểm và sáu nghe (hai mỗi cấp). Units 2–10 và hai Review có học từ/phát âm tự lưu; Unit 1 có mẫu nghe. Chưa chấm nói.
 - Bản nguồn hiện tại có Units 11–20 và Review 3–4 tập hai: sáu đề/144 câu mỗi phần, tổng quan và học từ/phát âm có audio đi kèm. Tổng Anh 144 đề/3456 câu, 20 Unit + 4 Review. Study đầy đủ 23 trang/372 từ-cụm/139 hội thoại/276 bài luyện (Unit 1 vẫn dùng mẫu nghe).
-- Toàn site: 192 đề chính thức, 252 HTML, 32 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
+- Toàn site: 204 đề chính thức, 266 HTML, 34 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
 - Giao diện hồng anh đào, tối màu tím mận; reader trên màn hình ≤820px, poster để xem/in. Tiến độ theo origin/trình duyệt, không đồng bộ thiết bị.
 - Chủ repo đã xem Unit 1, phản hồi hình khó nhận diện và duyệt mẫu cá heo. Ngày 30/10 đã áp dụng phong cách mới cho đủ 6 tranh ở tổng quan/câu hỏi, giữ nguyên 144 câu và đáp án. Sau đó chủ repo giao Unit 2–3, Unit 4–5 rồi Unit 6–7; đã bổ sung Unit 8–9 theo yêu cầu tiếp theo. đã tiếp tục giao Unit 10, Review 1 và Review 2 ngày 06/11. Chỉ còn Starter trong tập một; tập hai đã tiếp tục Units 11–13 theo giao việc mới.
 
@@ -56,7 +56,7 @@ Chỉ tiếp tục Starter/Unit/Review khác khi chủ repo giao. Pipeline Anh h
 
 ## Đầu vào còn thiếu
 
-- Toán tập hai: đã có PDF 70 trang, phần bài học dừng ở trang in 67. Đủ chủ đề 7–9; cần bổ sung phần còn lại của chủ đề 10 và bài học chủ đề 11–12. Chủ đề 7–8 đã xuất bản và kiểm chứng local/CI/Pages thật.
+- Toán tập hai: đã nhận PDF đầy đủ 138 trang (xem NOTES910). Chủ đề 9–10 đã soạn, đang kiểm chứng; 11–12 chưa được giao triển khai. Nguồn thiếu 70 trang chỉ còn là thông tin lịch sử.
 - Tiếng Anh tập hai: đã có sách và hoàn thành Units 11–20, Review 3–4; các dòng thiếu sách ở bản lịch sử không còn là trạng thái hiện hành.
 - Phản hồi học sinh về mức độ khó và câu chưa rõ: chưa có.
 

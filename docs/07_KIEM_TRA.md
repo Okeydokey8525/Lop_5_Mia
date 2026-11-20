@@ -199,3 +199,7 @@ Audit yêu cầu đúng phạm vi năm Unit cho từng Review và danh sách tra
 ## Toán chủ đề 7–8 (20/11/2026)
 
 Bổ sung python tools/audit_math_volume2.py để giải độc lập các quan hệ từ JSON câu hỏi đã sinh; node tools/qa_math_volume2.js (thêm --webkit) để thử nhập sai tỉ số/phần trăm/hệ số đổi thể tích và reader; node tools/qa_persistence.js --math=7,8 để đóng/mở profile thật. Toàn site hiện 192 đề/252 HTML; kiểm responsive tám chiều rộng và hai theme. Không dùng audit tự điền đúng để thay thế rà soát nội dung hoặc học sinh thử.
+
+## Toán chủ đề 9–10
+
+Chạy `python tools/audit_math910.py`, `node tools/qa_math910.js`, thêm `--webkit`, và `node tools/qa_persistence.js --math=9,10`. Audit từ văn bản xuất bằng Fraction, gấp hình khai triển 3D; hộp không nắp/mặt tiếp xúc; đổi đơn vị; thời gian qua ngày và làm tròn. Hai trình duyệt làm đủ 12 đề, xem lại/lưu, từ chối nhầm diện tích–thể tích, phút thành giờ và tính cả nghỉ vào vận tốc lúc chạy. Đóng/mở profile thật để kiểm lưu; không xem reload là đủ. Giữ cổng cũ 7–8. Toàn site dự kiến 204 đề/266 HTML, responsive 4256 tổ hợp; ghi kết quả thực tế trong bàn giao, không coi các số dự kiến là đã pass.

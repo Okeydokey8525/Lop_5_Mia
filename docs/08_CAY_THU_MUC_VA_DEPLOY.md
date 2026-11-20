@@ -136,3 +136,7 @@ Tổng Anh: **20 Unit + 4 Review = 144 đề/3456 câu**. Toàn site **180 đề
 ## Quyết định Toán tập hai (20/11/2026)
 
 Giữ cây hiện tại, thêm generator/math_volume2/{content.py,overviews.py,NOTES.md} và gen_math_volume2.py. Script sinh common/cd7.js, cd8.js và tests/cd7, cd8; tools/build.py --regenerate gọi cùng pipeline. Site thêm Toan5/ChuDe7_TiSoVaBaiToanLienQuan và ChuDe8_TheTichDonViDoTheTich. Không tạo cây src cạnh tranh. PDF và ảnh render kiểm nguồn ở ngoài repo, không deploy.
+
+## Toán chủ đề 9–10 — 20/11/2026
+
+Giữ cấu trúc math_volume2, thêm topics910.py/overviews910.py/NOTES910.md; không tạo pipeline riêng. site/Toan5/ChuDe9_DienTichVaTheTichHinhKhoi và ChuDe10_ThoiGianVaChuyenDong có tổng quan HTML/PNG + sáu đề mỗi thư mục. Registry cfg, catalog và trang chọn môn có 60 đề Toán, toàn site 204 đề/266 HTML/34 poster. PDF đầy đủ 138 trang ở ngoài repo; giữ bản cũ để truy nguồn. 11–12 chưa triển khai.

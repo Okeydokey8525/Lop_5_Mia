@@ -3,7 +3,7 @@ const {pathToFileURL}=require('node:url');
 const { chromium } = require('playwright'); const path=require('path');
 (async()=>{
  const b=await chromium.launch();
- for(const [dir,name] of [['ChuDe1_OnTapVaBoSung','TongQuan_ChuDe1'],['ChuDe2_SoThapPhan','TongQuan_ChuDe2'],['ChuDe3_DonViDoDienTich','TongQuan_ChuDe3'],['ChuDe4_PhepTinhSoThapPhan','TongQuan_ChuDe4'],['ChuDe5_HinhPhangChuViDienTich','TongQuan_ChuDe5'],['ChuDe6_OnTapHocKi1','TongQuan_ChuDe6'],['ChuDe7_TiSoVaBaiToanLienQuan','TongQuan_ChuDe7'],['ChuDe8_TheTichDonViDoTheTich','TongQuan_ChuDe8']]){
+ for(const [dir,name] of [['ChuDe1_OnTapVaBoSung','TongQuan_ChuDe1'],['ChuDe2_SoThapPhan','TongQuan_ChuDe2'],['ChuDe3_DonViDoDienTich','TongQuan_ChuDe3'],['ChuDe4_PhepTinhSoThapPhan','TongQuan_ChuDe4'],['ChuDe5_HinhPhangChuViDienTich','TongQuan_ChuDe5'],['ChuDe6_OnTapHocKi1','TongQuan_ChuDe6'],['ChuDe7_TiSoVaBaiToanLienQuan','TongQuan_ChuDe7'],['ChuDe8_TheTichDonViDoTheTich','TongQuan_ChuDe8'],['ChuDe9_DienTichVaTheTichHinhKhoi','TongQuan_ChuDe9'],['ChuDe10_ThoiGianVaChuyenDong','TongQuan_ChuDe10']]){
   const f=path.resolve(`out/Toan5/${dir}/${name}.html`);
   const p=await b.newPage({viewport:{width:1080,height:1000}});
   await p.goto(pathToFileURL(f).href); await p.waitForTimeout(800);

@@ -73,4 +73,22 @@ CDS=[
    ('KhoHangGonGang','Kho hàng gọn gàng','Đếm theo lớp, ghép hoặc tháo khối và so sánh.'),
    ('ThuThachTheTich','Thử thách thể tích','Tổng hợp nhiều bước với thể tích và bảng giá giả định.'),
   ]},
+ {'n':9,'dir':'ChuDe9_DienTichVaTheTichHinhKhoi','name':'Diện tích và thể tích của một số hình khối','range':'Bài 49 đến Bài 55 · Tập hai','mk':'cd9','overview':'TongQuan_ChuDe9',
+  'tests':[
+   ('KhoiDong','Khởi động','Hình khai triển, diện tích và thể tích cơ bản.'),
+   ('XuongHopQua','Xưởng hộp quà','Gấp hộp, tính bìa và xếp khít các hộp nhỏ.'),
+   ('BeCaVaBinhNuoc','Bể cá và bình nước','Hộp không nắp, thể tích nước và vật chìm.'),
+   ('GocBepSangTao','Góc bếp sáng tạo','Phủ các mặt bánh, ghép và cắt khối.'),
+   ('KhoHangVaMoHinh','Kho hàng và mô hình','Diện tích ngoài, xếp hộp và đổi đơn vị.'),
+   ('ThuThachHinhKhoi','Thử thách hình khối','Tổng hợp nhiều bước với sơn, nước và hình ghép.'),
+  ]},
+ {'n':10,'dir':'ChuDe10_ThoiGianVaChuyenDong','name':'Số đo thời gian, vận tốc và chuyển động đều','range':'Bài 56 đến Bài 62 · Tập hai','mk':'cd10','overview':'TongQuan_ChuDe10',
+  'tests':[
+   ('KhoiDong','Khởi động','Đổi đơn vị, tính thời gian và ba công thức chuyển động.'),
+   ('LichTrinhCuaEm','Lịch trình của em','Giờ bắt đầu, giờ kết thúc và thời gian nghỉ.'),
+   ('NgayHoiTheThao','Ngày hội thể thao','Đo quãng đường, thời gian và tính vận tốc.'),
+   ('ChuyenXeThamQuan','Chuyến xe tham quan','Chặng đi, chặng về và lựa chọn tuyến đường.'),
+   ('HanhTrinhGiaoHang','Hành trình giao hàng','Nhiều chặng, điểm dừng và giờ đến.'),
+   ('ThuThachChuyenDong','Thử thách chuyển động','Tổng hợp qua nửa đêm, vận tốc trung bình và đơn vị.'),
+  ]},
 ]
