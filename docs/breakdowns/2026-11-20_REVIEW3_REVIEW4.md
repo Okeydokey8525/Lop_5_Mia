@@ -38,7 +38,7 @@ Build trích audio theo cả Unit và Review; mở tác giả/QA audio để ch�
 
 ## Kiểm chứng
 
-Đang kiểm chứng. Log local ở `artifacts/reviews34-local/`, runner hai Review ở `artifacts/topics-r03-r04-local/`; audio ở `artifacts/unitR3-local[-webkit]/` và `unitR4-local[-webkit]/`. Sẽ ghi kết quả thực chạy, commit/CI và địa chỉ Pages sau khi đạt; chưa coi nguồn đã viết là đã xuất bản.
+Đã hoàn tất local, CI và kiểm tra Pages thật; kết quả và thời điểm xác nhận ở các mục cuối. Log local ở `artifacts/reviews34-local/`, runner hai Review ở `artifacts/topics-r03-r04-local/`; audio ở `artifacts/unitR3-local[-webkit]/` và `unitR4-local[-webkit]/`. Báo cáo phân biệt bản nguồn, kiểm tra local, CI và Pages thật.
 
 ## Bài học đã áp dụng
 
@@ -51,3 +51,39 @@ Build trích audio theo cả Unit và Review; mở tác giả/QA audio để ch�
 ## Còn lại ngoài đợt
 
 Starter tập một; nâng Unit 1 thành study đầy đủ; bốn bộ kiểm tra giữa HK1/cuối HK1/giữa HK2/cuối HK2 riêng; thay audio tập một; đồng bộ thiết bị/tài khoản; thu âm/chấm nói. Đã hoàn thành các Unit/Review không có nghĩa đã có đủ những mục này. Bé từng được báo đang học Unit 3; không mặc định Review 3–4 là phần cần làm ngay.
+
+
+## Kiểm chứng local của bản tính năng
+
+- Build sạch từ nguồn: `node tools/build.js --regenerate`, đủ 30 PNG. Audit Toán 36 đề + Anh 144 đề/3456 câu, không lỗi. 2060 tham chiếu đúng hoa/thường.
+- Toàn site: **180/180 đề đạt 100/100**, 238 HTML không lỗi trình duyệt; sai/điểm phần/biến thể/reset cách ly đạt. **3808** tổ hợp trang/kích thước/theme không tràn ngang. Theme 238 trang và trang chủ 10 trường hợp đạt.
+- Runner riêng: 12 đề mới/72 nghe, full form/did + take/be going to/on foot, nháp/best/điểm phần/tổng/reset/standalone đạt. Hồi quy Unit 10 + Review 1–2 thêm 18 đề/108 nghe đạt với bộ QA đã mở rộng.
+- Persistence dùng hồ sơ trình duyệt trên đĩa: đóng/mở lại, đáp án đã nộp/xem lại, best/last, Back và cập nhật giữa tab đều đạt cho cả hai Review.
+- Study: 36 từ, 12 hội thoại, 24 bài, lưu đáp án sau đóng/mở, sửa signature chỉ xóa câu liên quan, khóa cách ly, blocked storage/no voice, 48 layout đạt. Phần này mô phỏng giọng.
+- Audio thật: Chromium và WebKit mỗi trình duyệt đều kiểm đủ 105+102 WAV, giải mã/metadata và PCM không im lặng; phát trên app không Speech API, native constructor, thường/chậm, ABC, hủy hàng đợi, đổi nhóm, lỗi/thử lại và ba cấp nghe đề. Chromium standalone phát đạt; Windows WebKit chỉ xác nhận nhúng đủ audio, chưa phát file URL. Pagehide được kiểm tra cho việc lưu nháp study; chưa có assertion riêng về dừng audio đang phát khi pagehide.
+- Đã xem tám ảnh nguồn, tám thẻ câu hỏi điện thoại, hai poster, hai reader điện thoại, study sáng/tối. Source inventory đúng 207 WAV/29.707.414 byte; file hash theo text, đúng manifest, không clip thừa.
+- Mười nhóm local exit 0; bằng chứng `qa-results.json`, `source-inventory.json`, log từng nhóm và bản sao study/audio-batch trong `artifacts/reviews34-local/`. Chưa coi local là CI hoặc Pages; chưa nghe duyệt bằng tai hay thử iPad của bé.
+
+
+## CI và Pages đã xác nhận
+
+Xác nhận hoàn tất: **2026-11-20T13:35:55+07:00**. Commit tính năng `52cee0c85557288c225133599bccc8235a256773`. [Actions 44642906838](https://github.com/Okeydokey8525/Lop_5_Mia/actions/runs/44642906838), attempt 1, build và deploy đều success trên đúng commit. Pages triển khai lúc 07:32 ngày 20/11/2026 (UTC+7).
+
+CI chạy lại toàn bộ nguồn và gate: 180/180 đề đạt 100/100, 238 HTML, 2060 tham chiếu đúng, 3808 trường hợp responsive; 23 trang study với 372 từ-cụm/139 hội thoại/276 bài/552 layout; 24 gate audio thật (Units 11–20 và Review 3–4 × Chromium/WebKit), gồm đủ 105 và 102 clip của hai Review. Log `artifacts/reviews34-online/ci-run.log`, trạng thái/head/job tại `ci.json`.
+
+Kiểm tra trên HTTPS Pages:
+
+- **237 tài nguyên khớp byte** bản nguồn: 16 HTML hai Review, 207 WAV, tám tranh tái dùng và sáu tài nguyên chung/index/catalog. PNG không so byte giữa Windows/Linux vì môi trường font/render khác nhau.
+- 12/12 đề mới đạt 100/100; đủ 72 câu nghe; nháp/điểm phần/best/reset cách ly, full form và phân biệt hoạt động/nơi đến, nơi trên bản đồ/nơi dự định hè đều đạt. Phần chức năng này mô phỏng giọng; gate audio bên dưới dùng phát thật.
+- Hồ sơ trình duyệt trên đĩa đóng/mở lại giữ đáp án, xem lại bài đã nộp, best/last; Back và cập nhật giữa tab đạt.
+- Study 36 từ/12 hội thoại/24 bài/48 layout; lưu sau đóng/mở, signature guard, cách ly khóa và tình huống giọng/storage bị chặn đạt (giọng mô phỏng).
+- Audio thật: cả Chromium lẫn WebKit đều đạt toàn bộ 105+102 clip, không Speech API, giải mã/PCM có âm thanh, phát thường/chậm, ABC, hủy hàng đợi/đổi nhóm, lỗi/thử lại và nghe đề ba mức.
+
+Bằng chứng tổng hợp: `artifacts/reviews34-online/release.json`, `assets.json`, `study-report.json`, `audio-batch-report.json`, log reviews/persistence/study/audio và `artifacts/unitR3-online[-webkit]/audio-report.json`, `unitR4-online[-webkit]/audio-report.json`. Phiên trước bị ngắt khi CI đang chạy, chưa nghiệm thu online; lượt tiếp đã xác nhận CI xong và chạy lại nghiệm thu từ đầu. Không có sửa runtime hoặc giảm gate sau commit tính năng.
+
+Đường dẫn:
+
+- [Review 3 · Units 11–15](https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/Review3_Units11_15/TongQuan_Review3.html)
+- [Review 4 · Units 16–20](https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/Review4_Units16_20/TongQuan_Review4.html)
+
+Chưa nghe duyệt bằng tai, chưa có kết quả từ chính iPad của bé, chưa chấm phát âm/bài luận. Tiến độ vẫn theo cùng origin/thiết bị/trình duyệt; không đồng bộ tài khoản. Starter và bốn bộ kiểm tra giữa/cuối kỳ riêng vẫn ngoài đợt này.
