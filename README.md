@@ -4,6 +4,7 @@ Góc luyện tập lớp 5 cho Mia, chạy bằng website tĩnh và lưu điểm
 
 - Toán 5, Kết nối tri thức với cuộc sống, tập một: 6 chủ đề, 36 đề; mỗi đề 24 câu, 100 điểm.
 - Tiếng Anh 5, Global Success, tập một: Unit 1–10 và Review 1–2, 12 tổng quan + 72 đề (1728 câu), có nghe ở ba cấp.
+- Tiếng Anh tập hai: Units 11–20 và Review 3–4; cộng hai tập 144 đề/3456 câu, 24 tổng quan. Starter và bốn bộ kiểm tra giữa/cuối kỳ riêng chưa triển khai.
 - Toán học kì 2: chờ sách.
 
 ## Xem và phát triển
@@ -33,7 +34,7 @@ Workflow chỉ xuất bản `site/` sau khi build và QA đạt. Không đưa PD
 
 Tiến độ không đồng bộ thiết bị, trình duyệt hoặc từ bản mở file/local sang Pages. Chưa có phản hồi làm thử của học sinh để đánh giá độ khó.
 
-Trang Tiếng Anh: https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/. Toàn site hiện 162 đề chính thức và 214 trang HTML; QA dùng `site/catalog.json` để phát hiện thiếu hoặc thừa đề.
+Trang Tiếng Anh: https://okeydokey8525.github.io/Lop_5_Mia/TiengAnh5/. Toàn site hiện 180 đề chính thức và 238 trang HTML; QA dùng `site/catalog.json` để phát hiện thiếu hoặc thừa đề.
 
 Bài học sau sửa Unit 1 và kế hoạch tiếp theo nằm trong `docs/breakdowns/`; quy trình tranh ở `docs/playbooks/TRANH_MINH_HOA.md`; skill dự án ở `.agents/skills/mia-learning-illustrations/SKILL.md`. Cây máy/repo hiện hành nằm trong docs/08, snapshot cũ ở docs/history.
 

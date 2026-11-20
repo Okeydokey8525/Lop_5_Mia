@@ -1,14 +1,14 @@
 # 01 — Tình trạng hiện hành
 
-Cập nhật 20/11/2026; Unit 20 đã xuất bản, CI và kiểm tra Pages thật đạt (xem bàn giao Unit 20); Unit19 đã xuất bản, CI và kiểm tra Pages thật đạt (xem bàn giao Unit19); Unit18 đã xuất bản, CI và kiểm tra Pages thật đạt (xem bàn giao Unit18); Units16–17 đã xuất bản, CI và kiểm tra Pages thật đạt; chi tiết ở bàn giao Units16–17; Units14–15 đã xuất bản trước đó. Xem bàn giao 2026-11-19_UNIT14_UNIT15.md để phân biệt local/CI/live và giới hạn iPad thật. Units11–13 đã xuất bản trước đó. Bản lịch sử trước khi gom tài liệu nằm trong `history/`; không dùng những số liệu cũ làm trạng thái hiện tại.
+Cập nhật 20/11/2026; Review 3–4 đã bổ sung nguồn, đang kiểm chứng local/CI/Pages (xem bàn giao Review 3–4); Unit 20 đã xuất bản, CI và kiểm tra Pages thật đạt (xem bàn giao Unit 20); Unit19 đã xuất bản, CI và kiểm tra Pages thật đạt (xem bàn giao Unit19); Unit18 đã xuất bản, CI và kiểm tra Pages thật đạt (xem bàn giao Unit18); Units16–17 đã xuất bản, CI và kiểm tra Pages thật đạt; chi tiết ở bàn giao Units16–17; Units14–15 đã xuất bản trước đó. Xem bàn giao 2026-11-19_UNIT14_UNIT15.md để phân biệt local/CI/live và giới hạn iPad thật. Units11–13 đã xuất bản trước đó. Bản lịch sử trước khi gom tài liệu nằm trong `history/`; không dùng những số liệu cũ làm trạng thái hiện tại.
 
 ## Đã bàn giao
 
 - Website: https://okeydokey8525.github.io/Lop_5_Mia/ — GitHub Pages qua Actions.
 - Toán 5 tập một: 6 chủ đề, 36 đề, mỗi đề 24 câu/100 điểm; ID `cd{n}-de{i}` giữ nguyên.
 - Tiếng Anh 5 tập một: Unit 1–10 và Review 1–2, đặt đúng thứ tự sách. Có 12 tổng quan HTML/PNG +72 đề (1728 câu); mỗi đề 24 câu/100 điểm và sáu nghe (hai mỗi cấp). Units 2–10 và hai Review có học từ/phát âm tự lưu; Unit 1 có mẫu nghe. Chưa chấm nói.
-- Bản nguồn hiện tại có Units 11–20 tập hai: sáu đề/144 câu mỗi Unit, tổng quan và học từ/phát âm có audio đi kèm. Tổng Anh 132 đề/3168 câu.
-- Toàn site: 168 đề chính thức, 222 HTML, 28 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
+- Bản nguồn hiện tại có Units 11–20 và Review 3–4 tập hai: sáu đề/144 câu mỗi phần, tổng quan và học từ/phát âm có audio đi kèm. Tổng Anh 144 đề/3456 câu, 20 Unit + 4 Review. Study đầy đủ 23 trang/372 từ-cụm/139 hội thoại/276 bài luyện (Unit 1 vẫn dùng mẫu nghe).
+- Toàn site: 180 đề chính thức, 238 HTML, 30 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
 - Giao diện hồng anh đào, tối màu tím mận; reader trên màn hình ≤820px, poster để xem/in. Tiến độ theo origin/trình duyệt, không đồng bộ thiết bị.
 - Chủ repo đã xem Unit 1, phản hồi hình khó nhận diện và duyệt mẫu cá heo. Ngày 30/10 đã áp dụng phong cách mới cho đủ 6 tranh ở tổng quan/câu hỏi, giữ nguyên 144 câu và đáp án. Sau đó chủ repo giao Unit 2–3, Unit 4–5 rồi Unit 6–7; đã bổ sung Unit 8–9 theo yêu cầu tiếp theo. đã tiếp tục giao Unit 10, Review 1 và Review 2 ngày 06/11. Chỉ còn Starter trong tập một; tập hai đã tiếp tục Units 11–13 theo giao việc mới.
 
@@ -177,3 +177,11 @@ Bổ sung **Means of transport**, tập hai trang52–57:6đề/144câu/36nghe, 
 Bổ sung **Our summer holidays**, tập hai trang 64–69: sáu đề / 144 câu / 36 câu nghe, tổng quan HTML/PNG, 20 từ-cụm với sáu hội thoại và 12 bài luyện tự lưu, bốn tranh hoạt động và 95 WAV kèm bài. Trọng tâm Where…going to visit?/What…going to do?, am/is/are going to + nguyên mẫu; phân biệt last summer và this summer.
 
 Tổng Anh: 20 Unit + 2 Review = **132 đề / 3168 câu**. Toàn site: **168 đề / 222 HTML / 28 tổng quan HTML-PNG**. Study: 21 trang / 336 từ-cụm / 127 hội thoại / 252 bài luyện. Nguồn và trạng thái kiểm chứng: [bàn giao Unit 20](breakdowns/2026-11-19_UNIT20.md). Còn **Review 3 + Review 4 = hai phần / 12 đề**; Starter và bộ kiểm tra học kỳ riêng chưa làm. Không coi đủ 20 Unit là đã hoàn thành các phần ôn tập và kiểm tra.
+
+## Review 3–4 — 20/11/2026
+
+Theo giao việc tiếp phần ôn tập, bổ sung Review 3 (Units 11–15, trang 36–39) và Review 4 (Units 16–20, trang 70–73). Đã đọc riêng đủ tám trang Review/Extension trong PDF tập hai ngoài repo; không tạo Unit 21. Thêm 12 đề/288 câu/72 nghe; hai tổng quan HTML/PNG; hai trang học từ, ABC và phát âm, mỗi trang 18 từ-cụm/sáu hội thoại/12 luyện tự lưu; 207 WAV (Review 3: 105, Review 4: 102). Tái dùng tám tranh đã có, không sao chép scan sách.
+
+Review 3 phân biệt did/will/does/should; Extension nhóm thực phẩm riêng. Review 4 ôn thời tiết, truyện, phương tiện, khoảng cách, cảm nhận, be going to; Extension thể loại truyện riêng. Mỗi đề đủ năm sourceUnits theo phạm vi; ID en-r03/en-r04-deN-v1, khóa học riêng. Không đổi ID/câu hỏi/đáp án các phần cũ.
+
+Tổng Anh: **20 Unit + 4 Review = 144 đề/3456 câu**. Toàn site **180 đề/238 HTML/30 tổng quan HTML-PNG**. Study **23 trang/372 từ-cụm/139 hội thoại/276 bài/552 layout**. Nguồn và kiểm chứng: [bàn giao Review 3–4](breakdowns/2026-11-20_REVIEW3_REVIEW4.md). Starter, nâng Unit 1 thành study đầy đủ và bốn bộ kiểm tra giữa/cuối kỳ riêng vẫn chưa triển khai; Review không thay thế đề kiểm tra trường.

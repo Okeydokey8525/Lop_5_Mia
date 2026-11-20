@@ -54,7 +54,7 @@ def main():
         target.parent.mkdir(parents=True,exist_ok=True)
         target.write_text(data,encoding='utf-8',newline='\n')
     recorded_resources={}
-    for source in sorted((GEN/'english').glob('u[0-9][0-9]/audio/*.wav')):
+    for source in sorted(list((GEN/'english').glob('u[0-9][0-9]/audio/*.wav'))+list((GEN/'english').glob('r0[34]/audio/*.wav'))):
         relative=Path('english')/source.parent.parent.name/'audio'/source.name
         target=assets/relative;target.parent.mkdir(parents=True,exist_ok=True)
         shutil.copyfile(source,target)
@@ -102,7 +102,9 @@ def main():
         for embedded, image_path in illustrations.items():
             html = html.replace(embedded, prefix + image_path)
         if 'id="mia-audio-data"' in html:
-            audio_unit='u'+re.match(r'Unit(\d+)_',relative.parts[1])[1].zfill(2)
+            audio_topic=re.fullmatch(r'(Unit|Review)(\d+)_.+',relative.parts[1])
+            if not audio_topic:raise ValueError(f'Unknown audio topic folder: {relative.parts[1]}')
+            audio_unit=('u' if audio_topic[1]=='Unit' else 'r')+audio_topic[2].zfill(2)
             html=re.sub(r'data:audio/wav;base64,[A-Za-z0-9+/=]+',lambda m:prefix+recorded_resources[(audio_unit,m[0])],html)
         if resources["fonts.css"] in html:
             raise ValueError(f"Font extraction failed: {source}")

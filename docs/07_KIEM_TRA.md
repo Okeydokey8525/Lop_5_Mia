@@ -184,3 +184,14 @@ Metadata trên WindowsWebKit: runner dùng lại một AudioElement và xóa cal
 Chạy `node tools/qa_english_units.js --units=20`, `node tools/qa_persistence.js --units=20`, `node tools/qa_study.js --units=20`, `node tools/qa_recorded_all.js --units=20 --jobs=2`. Kiểm đúng am/is/are going to, nguyên mẫu (không joined/went/goes), full form, last summer/this summer và cùng nơi khác người/kế hoạch. Nguồn `u20/NOTES.md`; nghiệm thu ở bàn giao Unit 20.
 
 Toàn site hiện 168 đề / 222 HTML / 28 tổng quan; responsive cần 3552 tổ hợp. Study đầy đủ 21 trang / 336 từ-cụm / 127 hội thoại / 252 bài luyện, 504 layout/theme. CI giữ các kiểm tra cũ và thêm Unit 20: audio thật 20 lượt cho Units 11–20 × Chromium/WebKit. Audio U20 phải đủ 95 WAV nguồn/site và không thiếu/thừa. Kiểm tra không có Speech API, native utterance constructor, nghe thường/chậm, ABC, dừng/đổi nhóm/pagehide/lỗi-thử lại và ba mức đề. Kiểm browser không thay kiểm iPad thật hoặc người nghe duyệt giọng.
+
+## Review 3–4 (20/11/2026)
+
+```text
+node tools/qa_english_units.js --topics=r03,r04
+node tools/qa_persistence.js --topics=r03,r04
+node tools/qa_study.js --units=R3,R4
+node tools/qa_recorded_all.js --units=R3,R4 --jobs=2
+```
+
+Audit yêu cầu đúng phạm vi năm Unit cho từng Review và danh sách tranh tái dùng cụ thể. CI chạy cả hai Review trong bài chính/persistence/study/audio Chromium-WebKit. Build trích audio cho cả Unit/Review; không để data URI dài trong bản web. Kiểm tra nghe không Speech API, phát thật/giải mã tất cả 207 clip, ABC, stop/đổi nhóm/pagehide/lỗi-thử lại; không coi mock hoặc WebKit desktop là nghe duyệt/iPad thật. Xem bàn giao Review 3–4 để biết số kiểm tra thực đạt.

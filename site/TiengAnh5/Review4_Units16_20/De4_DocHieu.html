@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tiếng Anh 5 · Review 4 · Đề 4 · Đọc hiểu</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<link rel="stylesheet" href="../../assets/engine.css"><script type="application/json" id="mia-audio-data">{"voice": "Microsoft Zira Desktop", "clips": {"Hello! Let’s listen and learn English.": "../../assets/english/r04/audio/d6be6a8235b16c4af314.wav", "I want to visit the lake. I can get there by taxi.": "../../assets/english/r04/audio/b5ac6ea9fa6ea44de343.wav", "In my story, the hare ran fast. This summer, I am going to practise swimming.": "../../assets/english/r04/audio/4a15e64e2bac25241f56.wav", "In my story, the tortoise walked slowly.": "../../assets/english/r04/audio/1cbe7d80cd63dbc2ae76.wav", "In my weather diary, it is cool and windy.": "../../assets/english/r04/audio/2259f37b38d8757136d0.wav", "It is cool and windy today. I think the old town is beautiful.": "../../assets/english/r04/audio/6c63b316d49e5e439ce1.wav", "On my imaginary map, it is three kilometres from my home to the waterfall. This summer, I am going to visit an eco-farm.": "../../assets/english/r04/audio/6b5ddd40f530186d987f.wav"}}</script><script>// Optional recorded voice for pages with a complete, unit-owned audio manifest.
+(function(){'use strict';
+ const el=document.getElementById('mia-audio-data');if(!el)return;
+ const data=JSON.parse(el.textContent),native=window.speechSynthesis;
+ const voice={name:'Âm thanh có sẵn · Anh Mỹ (Zira)',lang:'en-US',voiceURI:'mia-recorded',localService:true};
+ // Reuse one media element for the whole spelling queue (per-element playback
+ // permission on iPad); only start playback from a learner's button press.
+ const player=new Audio();let sequence=0;
+ function cancel(){sequence++;player.onplaying=player.onended=player.onerror=null;player.pause();if(native)native.cancel();}
+ function speak(u){
+  if(u.voice?.voiceURI!==voice.voiceURI){
+   if(native&&window.SpeechSynthesisUtterance){const v=new SpeechSynthesisUtterance(u.text);for(const k of ['voice','lang','rate','pitch','volume','onstart','onend','onerror'])v[k]=u[k];native.speak(v);}
+   else u.onerror?.({error:'voice-unavailable'});return;
+  }
+  cancel();const token=sequence,src=data.clips[u.text];
+  if(!src){u.onerror?.({error:'audio-unavailable'});return;}
+  const audio=player;let failed=false;
+  const fail=()=>{if(token!==sequence||failed)return;failed=true;cancel();u.onerror?.({error:'audio-unavailable'});};
+  audio.preload='none';audio.src=src;audio.volume=u.volume??1;audio.playbackRate=(u.rate||0.9)/0.9;audio.preservesPitch=true;
+  audio.onplaying=()=>{if(token===sequence)u.onstart?.();};
+  audio.onended=()=>{if(token!==sequence)return;audio.onplaying=audio.onended=audio.onerror=null;u.onend?.();};
+  audio.onerror=fail;try{audio.play().catch(fail);}catch(e){fail();}
+ }
+ window.MiaRecorded={getVoices:()=>[voice,...(native?.getVoices()||[])],cancel,speak,
+  addEventListener:(name,fn)=>native?.addEventListener(name,fn),removeEventListener:(name,fn)=>native?.removeEventListener(name,fn)};
+})();
+</script><script src="../../assets/english/speech.js"></script><link rel="stylesheet" href="../../assets/theme.css"><script src="../../assets/theme.js"></script></head><body>
+<div class="page"><div id="app"></div></div>
+<div class="bar" id="bar" data-mode="run"><div class="bar-in"></div></div>
+<script>
+window.MKENR4=function(questions){return {"decimal": false, "meta": {"subject": "en", "version": 1, "lessonLabel": "Phần", "book": "Tiếng Anh 5 · Global Success · Tập hai", "title": "Review 4 · Ôn Unit 16–20", "topic": "Ôn tổng hợp Units 16–20", "range": "Trang 70–73", "minutes": 40, "tip": "Mỗi đề có 6 câu nghe, chia đều ba mức. Xem lời nghe sẽ ghi nhận đã dùng hỗ trợ, không trừ điểm. Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp."}, "lessons": {"1": "Thời tiết và truyện", "2": "Chuyến đi và kế hoạch", "3": "Đọc và viết tổng hợp"}, "levels": [{"id": "tb", "name": "Mức 1 · Trung bình", "desc": "Nhận biết từ và mẫu câu cơ bản", "stars": 1, "pts": 3}, {"id": "kha", "name": "Mức 2 · Khá", "desc": "Dùng mẫu câu, nối ý và tìm thông tin", "stars": 2, "pts": 5}, {"id": "gioi", "name": "Mức 3 · Giỏi", "desc": "Kết hợp đọc hiểu và viết câu theo dữ liệu", "stars": 3, "pts": 5}],"questions":questions};};
+
+window.TEST_FN=function(H){return MKENR4([
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the weather.",
+  "transcript": "In my weather diary, it is cool and windy.",
+  "speech": "In my weather diary, it is cool and windy.",
+  "fields": [
+   {
+    "label": "Weather:",
+    "answer": "cool and windy",
+    "options": [
+     "cold and dry",
+     "hot and sunny",
+     "warm and rainy",
+     "cool and windy"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Weather: cool and windy.",
+  "sourceUnits": [
+   16
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the main character.",
+  "transcript": "In my story, the tortoise walked slowly.",
+  "speech": "In my story, the tortoise walked slowly.",
+  "fields": [
+   {
+    "label": "Character:",
+    "answer": "tortoise",
+    "options": [
+     "tortoise",
+     "hare",
+     "ant",
+     "grasshopper"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Character: tortoise.",
+  "sourceUnits": [
+   17
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Đọc thời tiết trong đúng nhật ký.",
+  "lesson": 2,
+  "items": [
+   {
+    "t": "The diary says it is cool and windy.",
+    "a": true
+   },
+   {
+    "t": "The diary says it is cold and dry.",
+    "a": false
+   }
+  ],
+  "passage": "My name is Hoa. In my weather diary, it is cool and windy. In this weather, I usually wear a jacket and trousers. In my little story, the grasshopper sang beautifully. I want to visit the old town. I can get there by bus. On my imaginary map, it is nine kilometres from my home to the old town. I think it is beautiful. This summer, I am going to visit Huong River. I am also going to join a music club during the holidays.",
+  "sourceUnits": [
+   16
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "mc",
+  "stem": "Who is the main animal character?",
+  "why": "Lấy nhân vật trong truyện tự soạn.",
+  "lesson": 1,
+  "opts": [
+   "ant",
+   "grasshopper",
+   "tortoise",
+   "hare"
+  ],
+  "answer": 1,
+  "passage": "My name is Hoa. In my weather diary, it is cool and windy. In this weather, I usually wear a jacket and trousers. In my little story, the grasshopper sang beautifully. I want to visit the old town. I can get there by bus. On my imaginary map, it is nine kilometres from my home to the old town. I think it is beautiful. This summer, I am going to visit Huong River. I am also going to join a music club during the holidays.",
+  "sourceUnits": [
+   17
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Write the full transport phrase, including by or on.",
+  "why": "By + phương tiện; on foot.",
+  "lesson": 2,
+  "answers": [
+   "by bus"
+  ],
+  "exactForm": false,
+  "passage": "My name is Hoa. In my weather diary, it is cool and windy. In this weather, I usually wear a jacket and trousers. In my little story, the grasshopper sang beautifully. I want to visit the old town. I can get there by bus. On my imaginary map, it is nine kilometres from my home to the old town. I think it is beautiful. This summer, I am going to visit Huong River. I am also going to join a music club during the holidays.",
+  "sourceUnits": [
+   18
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Write the imaginary distance in words.",
+  "why": "Khoảng cách trong bản đồ giả định, không phải số liệu thực.",
+  "lesson": 2,
+  "answers": [
+   "nine kilometres"
+  ],
+  "exactForm": false,
+  "passage": "My name is Hoa. In my weather diary, it is cool and windy. In this weather, I usually wear a jacket and trousers. In my little story, the grasshopper sang beautifully. I want to visit the old town. I can get there by bus. On my imaginary map, it is nine kilometres from my home to the old town. I think it is beautiful. This summer, I am going to visit Huong River. I am also going to join a music club during the holidays.",
+  "sourceUnits": [
+   19
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the summer activity phrase, after going to.",
+  "why": "Lấy dự định hè, không lấy hành động của nhân vật truyện.",
+  "lesson": 3,
+  "answers": [
+   "join a music club"
+  ],
+  "exactForm": false,
+  "passage": "My name is Hoa. In my weather diary, it is cool and windy. In this weather, I usually wear a jacket and trousers. In my little story, the grasshopper sang beautifully. I want to visit the old town. I can get there by bus. On my imaginary map, it is nine kilometres from my home to the old town. I think it is beautiful. This summer, I am going to visit Huong River. I am also going to join a music club during the holidays.",
+  "sourceUnits": [
+   20
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the summer destination, not the place on the imaginary map.",
+  "why": "Tìm going to visit trong kế hoạch hè, không lấy want to visit.",
+  "lesson": 3,
+  "answers": [
+   "Huong River"
+  ],
+  "exactForm": false,
+  "passage": "My name is Hoa. In my weather diary, it is cool and windy. In this weather, I usually wear a jacket and trousers. In my little story, the grasshopper sang beautifully. I want to visit the old town. I can get there by bus. On my imaginary map, it is nine kilometres from my home to the old town. I think it is beautiful. This summer, I am going to visit Huong River. I am also going to join a music club during the holidays.",
+  "sourceUnits": [
+   20
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Write the weather phrase only.",
+  "why": "Đọc diary, không suy khí hậu của cả nơi.",
+  "lesson": 1,
+  "answers": [
+   "cold and dry"
+  ],
+  "exactForm": false,
+  "passage": "My name is Nam. In my weather diary, it is cold and dry. In this weather, I usually wear a jumper and trousers. In my little story, the tortoise walked slowly. I want to visit the waterfall. I can get there by bicycle. On my imaginary map, it is three kilometres from my home to the waterfall. I think it is peaceful. This summer, I am going to visit Phu Quoc Island. I am also going to visit an eco-farm during the holidays.",
+  "sourceUnits": [
+   16
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Write the main animal character only.",
+  "why": "Đọc my little story.",
+  "lesson": 1,
+  "answers": [
+   "tortoise"
+  ],
+  "exactForm": false,
+  "passage": "My name is Nam. In my weather diary, it is cold and dry. In this weather, I usually wear a jumper and trousers. In my little story, the tortoise walked slowly. I want to visit the waterfall. I can get there by bicycle. On my imaginary map, it is three kilometres from my home to the waterfall. I think it is peaceful. This summer, I am going to visit Phu Quoc Island. I am also going to visit an eco-farm during the holidays.",
+  "sourceUnits": [
+   17
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and find the transport.",
+  "transcript": "I want to visit the lake. I can get there by taxi.",
+  "speech": "I want to visit the lake. I can get there by taxi.",
+  "fields": [
+   {
+    "label": "Transport:",
+    "answer": "by taxi",
+    "options": [
+     "by bus",
+     "by bicycle",
+     "by taxi",
+     "on foot"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Transport: by taxi.",
+  "sourceUnits": [
+   18
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the full transport phrase, including by or on.",
+  "why": "By + phương tiện; on foot.",
+  "lesson": 2,
+  "answers": [
+   "by bicycle"
+  ],
+  "exactForm": false,
+  "passage": "My name is Nam. In my weather diary, it is cold and dry. In this weather, I usually wear a jumper and trousers. In my little story, the tortoise walked slowly. I want to visit the waterfall. I can get there by bicycle. On my imaginary map, it is three kilometres from my home to the waterfall. I think it is peaceful. This summer, I am going to visit Phu Quoc Island. I am also going to visit an eco-farm during the holidays.",
+  "sourceUnits": [
+   18
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the imaginary distance in words.",
+  "why": "Khoảng cách trong bản đồ giả định, không phải số liệu thực.",
+  "lesson": 2,
+  "answers": [
+   "three kilometres"
+  ],
+  "exactForm": false,
+  "passage": "My name is Nam. In my weather diary, it is cold and dry. In this weather, I usually wear a jumper and trousers. In my little story, the tortoise walked slowly. I want to visit the waterfall. I can get there by bicycle. On my imaginary map, it is three kilometres from my home to the waterfall. I think it is peaceful. This summer, I am going to visit Phu Quoc Island. I am also going to visit an eco-farm during the holidays.",
+  "sourceUnits": [
+   19
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen for the opinion, not the weather.",
+  "transcript": "It is cool and windy today. I think the old town is beautiful.",
+  "speech": "It is cool and windy today. I think the old town is beautiful.",
+  "fields": [
+   {
+    "label": "Opinion:",
+    "answer": "beautiful",
+    "options": [
+     "beautiful",
+     "peaceful",
+     "fantastic",
+     "interesting"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Opinion: beautiful.",
+  "sourceUnits": [
+   16,
+   19
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the summer activity phrase, after going to.",
+  "why": "Lấy dự định hè, không lấy hành động của nhân vật truyện.",
+  "lesson": 3,
+  "answers": [
+   "visit an eco-farm"
+  ],
+  "exactForm": false,
+  "passage": "My name is Nam. In my weather diary, it is cold and dry. In this weather, I usually wear a jumper and trousers. In my little story, the tortoise walked slowly. I want to visit the waterfall. I can get there by bicycle. On my imaginary map, it is three kilometres from my home to the waterfall. I think it is peaceful. This summer, I am going to visit Phu Quoc Island. I am also going to visit an eco-farm during the holidays.",
+  "sourceUnits": [
+   20
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the place opinion adjective only.",
+  "why": "Đúng ý kiến của người kể.",
+  "lesson": 3,
+  "answers": [
+   "peaceful"
+  ],
+  "exactForm": false,
+  "passage": "My name is Nam. In my weather diary, it is cold and dry. In this weather, I usually wear a jumper and trousers. In my little story, the tortoise walked slowly. I want to visit the waterfall. I can get there by bicycle. On my imaginary map, it is three kilometres from my home to the waterfall. I think it is peaceful. This summer, I am going to visit Phu Quoc Island. I am also going to visit an eco-farm during the holidays.",
+  "sourceUnits": [
+   19
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the weather phrase only.",
+  "why": "Đọc diary, không suy khí hậu của cả nơi.",
+  "lesson": 1,
+  "answers": [
+   "hot and sunny"
+  ],
+  "exactForm": false,
+  "passage": "My name is Mai. In my weather diary, it is hot and sunny. In this weather, I usually wear a T-shirt and shorts. In my little story, the hare ran fast. I want to visit the lake. I can get there by taxi. On my imaginary map, it is five kilometres from my home to the lake. I think it is fantastic. This summer, I am going to visit Dam Sen Aquarium. I am also going to practise swimming during the holidays.",
+  "sourceUnits": [
+   16
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the main animal character only.",
+  "why": "Đọc my little story.",
+  "lesson": 1,
+  "answers": [
+   "hare"
+  ],
+  "exactForm": false,
+  "passage": "My name is Mai. In my weather diary, it is hot and sunny. In this weather, I usually wear a T-shirt and shorts. In my little story, the hare ran fast. I want to visit the lake. I can get there by taxi. On my imaginary map, it is five kilometres from my home to the lake. I think it is fantastic. This summer, I am going to visit Dam Sen Aquarium. I am also going to practise swimming during the holidays.",
+  "sourceUnits": [
+   17
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the full transport phrase, including by or on.",
+  "why": "By + phương tiện; on foot.",
+  "lesson": 2,
+  "answers": [
+   "by taxi"
+  ],
+  "exactForm": false,
+  "passage": "My name is Mai. In my weather diary, it is hot and sunny. In this weather, I usually wear a T-shirt and shorts. In my little story, the hare ran fast. I want to visit the lake. I can get there by taxi. On my imaginary map, it is five kilometres from my home to the lake. I think it is fantastic. This summer, I am going to visit Dam Sen Aquarium. I am also going to practise swimming during the holidays.",
+  "sourceUnits": [
+   18
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write the imaginary distance in words.",
+  "why": "Khoảng cách trong bản đồ giả định, không phải số liệu thực.",
+  "lesson": 2,
+  "answers": [
+   "five kilometres"
+  ],
+  "exactForm": false,
+  "passage": "My name is Mai. In my weather diary, it is hot and sunny. In this weather, I usually wear a T-shirt and shorts. In my little story, the hare ran fast. I want to visit the lake. I can get there by taxi. On my imaginary map, it is five kilometres from my home to the lake. I think it is fantastic. This summer, I am going to visit Dam Sen Aquarium. I am also going to practise swimming during the holidays.",
+  "sourceUnits": [
+   19
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen for imaginary distance and summer activity.",
+  "transcript": "On my imaginary map, it is three kilometres from my home to the waterfall. This summer, I am going to visit an eco-farm.",
+  "speech": "On my imaginary map, it is three kilometres from my home to the waterfall. This summer, I am going to visit an eco-farm.",
+  "fields": [
+   {
+    "label": "Distance:",
+    "answer": "three kilometres",
+    "options": [
+     "three kilometres",
+     "five kilometres",
+     "seven kilometres",
+     "nine kilometres"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Summer activity:",
+    "answer": "visit an eco-farm",
+    "options": [
+     "go camping",
+     "join a music club",
+     "visit an eco-farm",
+     "practise swimming"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Distance: three kilometres; Summer activity: visit an eco-farm.",
+  "sourceUnits": [
+   19,
+   20
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the summer activity phrase, after going to.",
+  "why": "Lấy dự định hè, không lấy hành động của nhân vật truyện.",
+  "lesson": 3,
+  "answers": [
+   "practise swimming",
+   "practice swimming"
+  ],
+  "exactForm": false,
+  "passage": "My name is Mai. In my weather diary, it is hot and sunny. In this weather, I usually wear a T-shirt and shorts. In my little story, the hare ran fast. I want to visit the lake. I can get there by taxi. On my imaginary map, it is five kilometres from my home to the lake. I think it is fantastic. This summer, I am going to visit Dam Sen Aquarium. I am also going to practise swimming during the holidays.",
+  "sourceUnits": [
+   20
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write the place opinion adjective only.",
+  "why": "Đúng ý kiến của người kể.",
+  "lesson": 3,
+  "answers": [
+   "fantastic"
+  ],
+  "exactForm": false,
+  "passage": "My name is Mai. In my weather diary, it is hot and sunny. In this weather, I usually wear a T-shirt and shorts. In my little story, the hare ran fast. I want to visit the lake. I can get there by taxi. On my imaginary map, it is five kilometres from my home to the lake. I think it is fantastic. This summer, I am going to visit Dam Sen Aquarium. I am also going to practise swimming during the holidays.",
+  "sourceUnits": [
+   19
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and write the story action, then the new summer activity.",
+  "transcript": "In my story, the hare ran fast. This summer, I am going to practise swimming.",
+  "speech": "In my story, the hare ran fast. This summer, I am going to practise swimming.",
+  "fields": [
+   {
+    "label": "Story action:",
+    "answer": "ran fast",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Summer activity:",
+    "answer": "practise swimming",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Story action: ran fast; Summer activity: practise swimming.",
+  "sourceUnits": [
+   17,
+   20
+  ],
+  "level": "gioi"
+ }
+]);};
+
+window.TEST_EXTRA={"id": "en-r04-de4-v1", "title": "Đề 4 · Đọc hiểu", "theme": "Đọc đúng người, truyện, nơi, phương tiện và dự định.", "home": "../index.html", "prev": "De3_MauCauVaHoiThoai.html", "next": "De5_VietCau.html"};
+
+</script><script src="../../assets/engine.js"></script></body></html>

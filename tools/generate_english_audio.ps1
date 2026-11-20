@@ -1,7 +1,7 @@
 # Authoring only: no runtime dependency on System.Speech or voice installation.
 param([string]$Unit = 'u11', [switch]$Force)
 $ErrorActionPreference = 'Stop'
-if ($Unit -notmatch '^u[0-9]{2}$') { throw 'Invalid unit key' }
+if ($Unit -notmatch '^(u[0-9]{2}|r0[34])$') { throw 'Invalid unit/review key' }
 $miaAudioFolder = Join-Path $PSScriptRoot "../generator/english/$Unit/audio"
 $miaManifest = Get-Content -LiteralPath (Join-Path $miaAudioFolder 'manifest.json') -Raw -Encoding UTF8 | ConvertFrom-Json
 Add-Type -AssemblyName System.Speech

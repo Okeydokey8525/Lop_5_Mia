@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tiếng Anh 5 · Review 3 · Đề 6 · Tổng hợp</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<link rel="stylesheet" href="../../assets/engine.css"><script type="application/json" id="mia-audio-data">{"voice": "Microsoft Zira Desktop", "clips": {"At Tet, I will do the shopping.": "../../assets/english/r03/audio/7127d9d7cee54cf5aa31.wav", "At our party, we will have burgers and lemonade.": "../../assets/english/r03/audio/7b366acadf970f0a2e1c.wav", "Hello! Let’s listen and learn English.": "../../assets/english/r03/audio/d6be6a8235b16c4af314.wav", "In our English role-play, An says, I have a headache. The partner says, You should have a rest.": "../../assets/english/r03/audio/cc2a6ddb6db5e8d803b2.wav", "Last weekend, I collected seashells. At Tet, I will make spring rolls.": "../../assets/english/r03/audio/7c3e0a4c72e2197b77b5.wav", "My brother does morning exercise twice a week.": "../../assets/english/r03/audio/a933ac355800454067c5.wav", "On my last family trip, I collected seashells.": "../../assets/english/r03/audio/010bd615985c1c4d9798.wav"}}</script><script>// Optional recorded voice for pages with a complete, unit-owned audio manifest.
+(function(){'use strict';
+ const el=document.getElementById('mia-audio-data');if(!el)return;
+ const data=JSON.parse(el.textContent),native=window.speechSynthesis;
+ const voice={name:'Âm thanh có sẵn · Anh Mỹ (Zira)',lang:'en-US',voiceURI:'mia-recorded',localService:true};
+ // Reuse one media element for the whole spelling queue (per-element playback
+ // permission on iPad); only start playback from a learner's button press.
+ const player=new Audio();let sequence=0;
+ function cancel(){sequence++;player.onplaying=player.onended=player.onerror=null;player.pause();if(native)native.cancel();}
+ function speak(u){
+  if(u.voice?.voiceURI!==voice.voiceURI){
+   if(native&&window.SpeechSynthesisUtterance){const v=new SpeechSynthesisUtterance(u.text);for(const k of ['voice','lang','rate','pitch','volume','onstart','onend','onerror'])v[k]=u[k];native.speak(v);}
+   else u.onerror?.({error:'voice-unavailable'});return;
+  }
+  cancel();const token=sequence,src=data.clips[u.text];
+  if(!src){u.onerror?.({error:'audio-unavailable'});return;}
+  const audio=player;let failed=false;
+  const fail=()=>{if(token!==sequence||failed)return;failed=true;cancel();u.onerror?.({error:'audio-unavailable'});};
+  audio.preload='none';audio.src=src;audio.volume=u.volume??1;audio.playbackRate=(u.rate||0.9)/0.9;audio.preservesPitch=true;
+  audio.onplaying=()=>{if(token===sequence)u.onstart?.();};
+  audio.onended=()=>{if(token!==sequence)return;audio.onplaying=audio.onended=audio.onerror=null;u.onend?.();};
+  audio.onerror=fail;try{audio.play().catch(fail);}catch(e){fail();}
+ }
+ window.MiaRecorded={getVoices:()=>[voice,...(native?.getVoices()||[])],cancel,speak,
+  addEventListener:(name,fn)=>native?.addEventListener(name,fn),removeEventListener:(name,fn)=>native?.removeEventListener(name,fn)};
+})();
+</script><script src="../../assets/english/speech.js"></script><link rel="stylesheet" href="../../assets/theme.css"><script src="../../assets/theme.js"></script></head><body>
+<div class="page"><div id="app"></div></div>
+<div class="bar" id="bar" data-mode="run"><div class="bar-in"></div></div>
+<script>
+window.MKENR3=function(questions){return {"decimal": false, "meta": {"subject": "en", "version": 1, "lessonLabel": "Phần", "book": "Tiếng Anh 5 · Global Success · Tập hai", "title": "Review 3 · Ôn Unit 11–15", "topic": "Ôn tổng hợp Units 11–15", "range": "Trang 36–39", "minutes": 40, "tip": "Mỗi đề có 6 câu nghe, chia đều ba mức. Xem lời nghe sẽ ghi nhận đã dùng hỗ trợ, không trừ điểm. Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp."}, "lessons": {"1": "Chuyến đi và kế hoạch", "2": "Thói quen và lời thoại", "3": "Đọc và viết tổng hợp"}, "levels": [{"id": "tb", "name": "Mức 1 · Trung bình", "desc": "Nhận biết từ và mẫu câu cơ bản", "stars": 1, "pts": 3}, {"id": "kha", "name": "Mức 2 · Khá", "desc": "Dùng mẫu câu, nối ý và tìm thông tin", "stars": 2, "pts": 5}, {"id": "gioi", "name": "Mức 3 · Giỏi", "desc": "Kết hợp đọc hiểu và viết câu theo dữ liệu", "stars": 3, "pts": 5}],"questions":questions};};
+
+window.TEST_FN=function(H){return MKENR3([
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the last-trip activity.",
+  "transcript": "On my last family trip, I collected seashells.",
+  "speech": "On my last family trip, I collected seashells.",
+  "fields": [
+   {
+    "label": "Activity:",
+    "answer": "collected seashells",
+    "options": [
+     "took photos",
+     "collected seashells",
+     "bought souvenirs",
+     "took a boat trip"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Activity: collected seashells.",
+  "sourceUnits": [
+   11
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the Tet plan.",
+  "transcript": "At Tet, I will do the shopping.",
+  "speech": "At Tet, I will do the shopping.",
+  "fields": [
+   {
+    "label": "Plan:",
+    "answer": "do the shopping",
+    "options": [
+     "decorate the house",
+     "do the shopping",
+     "make spring rolls",
+     "buy peach blossoms"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Plan: do the shopping.",
+  "sourceUnits": [
+   12
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Choose the activity in the picture.",
+  "why": "Chụp ảnh, không phải kế hoạch suy ra từ ảnh.",
+  "lesson": 1,
+  "opts": [
+   "decorate the house",
+   "pizza",
+   "do morning exercise",
+   "take photos"
+  ],
+  "answer": 3,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u11/take-photos.webp\" alt=\"chụp ảnh\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "sourceUnits": [
+   11
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Choose the phrase for this picture.",
+  "why": "Nhận ra chủ thể trong tranh.",
+  "lesson": 1,
+  "opts": [
+   "pizza",
+   "do morning exercise",
+   "take photos",
+   "decorate the house"
+  ],
+  "answer": 3,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u12/decorate-the-house.webp\" alt=\"trang trí nhà\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "sourceUnits": [
+   12
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "What drink will you have? Start with We will have.",
+  "why": "What drink hỏi đồ uống.",
+  "lesson": 1,
+  "answers": [
+   "We will have lemonade.",
+   "We'll have lemonade."
+  ],
+  "exactForm": false,
+  "passage": "Fictional profile: Mai · Last family trip: collected seashells · Tet plan: make spring rolls · Tet place: a New Year party · Special-day activity: have a party · Party food: burgers · Party drink: lemonade · Habit: does morning exercise · Frequency: twice a week · Health role-play: toothache · Advice line: go to the dentist.",
+  "sourceUnits": [
+   13
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "How often does the brother do the habit? Write the frequency phrase.",
+  "why": "Đọc tần suất của anh/em trai, không phải lời thoại.",
+  "lesson": 2,
+  "answers": [
+   "twice a week",
+   "two times a week"
+  ],
+  "exactForm": false,
+  "passage": "My name is Mai. On my last family trip, I collected seashells. At Tet, I will make spring rolls. I will go to a New Year party. On our special day next week, we will have a party. At our party, we will have burgers and lemonade. My brother does morning exercise twice a week. In our English role-play, I say, 'I have a toothache.' My partner says, 'You should go to the dentist.'",
+  "sourceUnits": [
+   14
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Write the role-play health problem, starting with I have.",
+  "why": "I have a…; không tự chẩn đoán.",
+  "lesson": 3,
+  "answers": [
+   "I have a toothache."
+  ],
+  "exactForm": false,
+  "passage": "Fictional profile: Mai · Last family trip: collected seashells · Tet plan: make spring rolls · Tet place: a New Year party · Special-day activity: have a party · Party food: burgers · Party drink: lemonade · Habit: does morning exercise · Frequency: twice a week · Health role-play: toothache · Advice line: go to the dentist.",
+  "sourceUnits": [
+   15
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Ghép nghĩa theo mốc thời gian.",
+  "lesson": 2,
+  "pairs": [
+   {
+    "left": "took photos",
+    "right": "đã chụp ảnh"
+   },
+   {
+    "left": "will buy",
+    "right": "sẽ mua"
+   },
+   {
+    "left": "twice a week",
+    "right": "hai lần mỗi tuần"
+   }
+  ],
+  "sourceUnits": [
+   11,
+   12,
+   14
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: Did you ___ souvenirs?",
+  "why": "Did + buy.",
+  "lesson": 1,
+  "answers": [
+   "buy"
+  ],
+  "exactForm": false,
+  "sourceUnits": [
+   11
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "How does the brother stay healthy? Write only his habit phrase.",
+  "why": "Lấy Habit, không lấy Frequency.",
+  "lesson": 2,
+  "answers": [
+   "plays sports"
+  ],
+  "exactForm": false,
+  "passage": "Fictional profile: An · Last family trip: took photos · Tet plan: do the shopping · Tet place: a flower festival · Special-day activity: dance · Party food: pizza · Party drink: milk tea · Habit: plays sports · Frequency: once a week · Health role-play: headache · Advice line: have a rest.",
+  "sourceUnits": [
+   14
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and choose the party drink.",
+  "transcript": "At our party, we will have burgers and lemonade.",
+  "speech": "At our party, we will have burgers and lemonade.",
+  "fields": [
+   {
+    "label": "Drink:",
+    "answer": "lemonade",
+    "options": [
+     "apple juice",
+     "milk tea",
+     "lemonade",
+     "orange juice"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Drink: lemonade.",
+  "sourceUnits": [
+   13
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the party food, then the drink, joined by and.",
+  "why": "Đúng đồ ăn và đồ uống của cùng người.",
+  "lesson": 2,
+  "answers": [
+   "pizza and milk tea"
+  ],
+  "exactForm": false,
+  "passage": "My name is An. On my last family trip, I took photos. At Tet, I will do the shopping. I will go to a flower festival. On our special day next week, we will dance. At our party, we will have pizza and milk tea. My brother plays sports once a week. In our English role-play, I say, 'I have a headache.' My partner says, 'You should have a rest.'",
+  "sourceUnits": [
+   13
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the brother’s habit and frequency, starting with He.",
+  "why": "He + động từ thêm s/es + tần suất.",
+  "lesson": 2,
+  "answers": [
+   "He plays sports once a week."
+  ],
+  "exactForm": false,
+  "passage": "Fictional profile: An · Last family trip: took photos · Tet plan: do the shopping · Tet place: a flower festival · Special-day activity: dance · Party food: pizza · Party drink: milk tea · Habit: plays sports · Frequency: once a week · Health role-play: headache · Advice line: have a rest.",
+  "sourceUnits": [
+   14
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen for the brother’s frequency.",
+  "transcript": "My brother does morning exercise twice a week.",
+  "speech": "My brother does morning exercise twice a week.",
+  "fields": [
+   {
+    "label": "Frequency:",
+    "answer": "twice a week",
+    "options": [
+     "once a week",
+     "twice a week",
+     "three times a week",
+     "every day"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Frequency: twice a week.",
+  "sourceUnits": [
+   14
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "mc",
+  "stem": "Where will this pupil go at Tet?",
+  "why": "Đọc Tet place, không lấy Tet plan.",
+  "lesson": 2,
+  "opts": [
+   "a flower festival",
+   "a fireworks show",
+   "a New Year party",
+   "my grandparents’ house"
+  ],
+  "answer": 0,
+  "passage": "Fictional profile: An · Last family trip: took photos · Tet plan: do the shopping · Tet place: a flower festival · Special-day activity: dance · Party food: pizza · Party drink: milk tea · Habit: plays sports · Frequency: once a week · Health role-play: headache · Advice line: have a rest.",
+  "sourceUnits": [
+   12
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: He ___ morning exercise. Use do.",
+  "why": "He does morning exercise.",
+  "lesson": 2,
+  "answers": [
+   "does"
+  ],
+  "exactForm": false,
+  "sourceUnits": [
+   14
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the advice line, starting with You.",
+  "why": "Theo lời thoại trong thẻ.",
+  "lesson": 2,
+  "answers": [
+   "You should go to the dentist."
+  ],
+  "exactForm": false,
+  "passage": "Fictional profile: Linh · Last family trip: collected seashells · Tet plan: make spring rolls · Tet place: a fireworks show · Special-day activity: play badminton · Party food: burgers · Party drink: lemonade · Habit: does morning exercise · Frequency: twice a week · Health role-play: toothache · Advice line: go to the dentist.",
+  "sourceUnits": [
+   15
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the Tet plan activity phrase.",
+  "why": "At Tet, I will + hoạt động.",
+  "lesson": 1,
+  "answers": [
+   "make spring rolls"
+  ],
+  "exactForm": false,
+  "passage": "My name is Linh. On my last family trip, I collected seashells. At Tet, I will make spring rolls. I will go to a fireworks show. On our special day next week, we will play badminton. At our party, we will have burgers and lemonade. My brother does morning exercise twice a week. In our English role-play, I say, 'I have a toothache.' My partner says, 'You should go to the dentist.'",
+  "sourceUnits": [
+   12
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the party menu sentence: start with We will have; food before drink.",
+  "why": "Đúng hai món và đúng thứ tự.",
+  "lesson": 2,
+  "answers": [
+   "We will have burgers and lemonade.",
+   "We'll have burgers and lemonade."
+  ],
+  "exactForm": false,
+  "passage": "Fictional profile: Linh · Last family trip: collected seashells · Tet plan: make spring rolls · Tet place: a fireworks show · Special-day activity: play badminton · Party food: burgers · Party drink: lemonade · Habit: does morning exercise · Frequency: twice a week · Health role-play: toothache · Advice line: go to the dentist.",
+  "sourceUnits": [
+   13
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write the role-play advice, starting with You.",
+  "why": "Theo lời thoại, không suy ra một cách chữa bệnh.",
+  "lesson": 3,
+  "answers": [
+   "You should have a rest."
+  ],
+  "exactForm": false,
+  "passage": "Fictional profile: An · Last family trip: took photos · Tet plan: do the shopping · Tet place: a flower festival · Special-day activity: dance · Party food: pizza · Party drink: milk tea · Habit: plays sports · Frequency: once a week · Health role-play: headache · Advice line: have a rest.",
+  "sourceUnits": [
+   15
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and find the role-play problem and advice.",
+  "transcript": "In our English role-play, An says, I have a headache. The partner says, You should have a rest.",
+  "speech": "In our English role-play, An says, I have a headache. The partner says, You should have a rest.",
+  "fields": [
+   {
+    "label": "Problem:",
+    "answer": "headache",
+    "options": [
+     "headache",
+     "toothache",
+     "sore throat",
+     "stomach ache"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Advice phrase:",
+    "answer": "have a rest",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Problem: headache; Advice phrase: have a rest.",
+  "sourceUnits": [
+   15
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write the brother’s habit and frequency, starting with He.",
+  "why": "Đúng habit và frequency.",
+  "lesson": 3,
+  "answers": [
+   "He does morning exercise twice a week."
+  ],
+  "exactForm": false,
+  "passage": "Fictional profile: Mai · Last family trip: collected seashells · Tet plan: make spring rolls · Tet place: a New Year party · Special-day activity: have a party · Party food: burgers · Party drink: lemonade · Habit: does morning exercise · Frequency: twice a week · Health role-play: toothache · Advice line: go to the dentist.",
+  "sourceUnits": [
+   14
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: What ___ your family do last weekend?",
+  "why": "Last weekend đã qua; What did…do?",
+  "lesson": 3,
+  "answers": [
+   "did"
+  ],
+  "exactForm": false,
+  "sourceUnits": [
+   11
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and write the past activity, then the Tet plan.",
+  "transcript": "Last weekend, I collected seashells. At Tet, I will make spring rolls.",
+  "speech": "Last weekend, I collected seashells. At Tet, I will make spring rolls.",
+  "fields": [
+   {
+    "label": "Past activity:",
+    "answer": "collected seashells",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Tet plan:",
+    "answer": "make spring rolls",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Past activity: collected seashells; Tet plan: make spring rolls.",
+  "sourceUnits": [
+   11,
+   12
+  ],
+  "level": "gioi"
+ }
+]);};
+
+window.TEST_EXTRA={"id": "en-r03-de6-v1", "title": "Đề 6 · Tổng hợp", "theme": "Kết hợp nghe, đọc và viết trong phạm vi Units 11–15.", "home": "../index.html", "prev": "De5_VietCau.html"};
+
+</script><script src="../../assets/engine.js"></script></body></html>

@@ -98,7 +98,7 @@ def main():
                 from english.recorded import markup,study_texts
                 config=importlib.import_module(f"english.{unit['key']}.study").data()
                 study=study.replace('</head>',markup(unit['key'],study_texts(config))+'</head>')
-                study=study.replace('Giọng có sẵn trên thiết bị. Thiếu giọng Anh thì em vẫn xem chữ và luyện viết được.',f'Unit {n} có âm thanh đi kèm (giọng máy Anh Mỹ). Em có thể nghe dù máy chưa cài giọng Anh. Nếu lỗi mạng, bấm nghe lại hoặc chọn giọng thiết bị nếu có.')
+                study=study.replace('Giọng có sẵn trên thiết bị. Thiếu giọng Anh thì em vẫn xem chữ và luyện viết được.',f'{label(unit)} có âm thanh đi kèm (giọng máy Anh Mỹ). Em có thể nghe dù máy chưa cài giọng Anh. Nếu lỗi mạng, bấm nghe lại hoặc chọn giọng thiết bị nếu có.')
             (folder/'HocTuVaPhatAm.html').write_text(study,encoding='utf-8',newline='\n')
             if n==6:(folder/'HocTuVaPhatAm_Mau.html').write_text(study,encoding='utf-8',newline='\n')
             overview=overview.replace('</nav>','</nav><div class="nav"><a href="HocTuVaPhatAm.html">🌸 Học từ, đánh vần và phát âm · '+label(unit)+'</a></div>',1)
@@ -106,7 +106,7 @@ def main():
     count=len(TOPICS)*6
     index=render_index(index_data()).replace('Toán 5','Tiếng Anh 5').replace('Kết nối tri thức với cuộc sống','Global Success')
     index=index.replace('Mỗi đề làm xong là một bậc thang. Leo đủ 36 bậc là em đã chinh phục cả học kì 1 của Tiếng Anh 5.',
-                        'Tập một: Unit 1–10 và Review 1–2. Tập hai: Units 11–20 đã sẵn sàng. Mỗi phần có sáu đề và nghe ở ba mức độ. Starter chưa triển khai; Units 2–20 và hai Review có trang học từ/phát âm. Units 11–20 có âm thanh đi kèm.')
+                        'Tập một: Unit 1–10 và Review 1–2. Tập hai: Units 11–20 và Review 3–4 đã sẵn sàng. Mỗi phần có sáu đề và nghe ở ba mức độ. Starter chưa triển khai; Units 2–20 và bốn Review có trang học từ/phát âm. Units 11–20 và Review 3–4 có âm thanh đi kèm.')
     index=index.replace('/ 36 đề',f'/ {count} đề').replace('/ 108 sao',f'/ {count*3} sao')
     milestones={str(old):str(int(count*quarter/4+0.5)) for quarter,old in enumerate([9,18,27,36],1)}
     # One pass: a new milestone (27 for 54 exams) can equal an old label.

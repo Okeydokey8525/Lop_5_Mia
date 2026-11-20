@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tiếng Anh 5 · Review 4 · Đề 2 · Từ vựng và hình ảnh</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<link rel="stylesheet" href="../../assets/engine.css"><script type="application/json" id="mia-audio-data">{"voice": "Microsoft Zira Desktop", "clips": {"Hello! Let’s listen and learn English.": "../../assets/english/r04/audio/d6be6a8235b16c4af314.wav", "I want to visit the old town. I can get there by bus.": "../../assets/english/r04/audio/e06ba049e7422e3b07c2.wav", "In my story, the ant worked hard.": "../../assets/english/r04/audio/942a011b5489e692f63a.wav", "In my story, the grasshopper sang beautifully. This summer, I am going to join a music club.": "../../assets/english/r04/audio/b93cc3b620e6aaa3d8f0.wav", "In my weather diary, it is hot and sunny.": "../../assets/english/r04/audio/8cb2cad85d83837368e5.wav", "It is hot and sunny today. I think the lake is fantastic.": "../../assets/english/r04/audio/babea8611a70e26de07d.wav", "On my imaginary map, it is seven kilometres from my home to the cave. This summer, I am going to go camping.": "../../assets/english/r04/audio/c59d50e75f5f194cc1fa.wav"}}</script><script>// Optional recorded voice for pages with a complete, unit-owned audio manifest.
+(function(){'use strict';
+ const el=document.getElementById('mia-audio-data');if(!el)return;
+ const data=JSON.parse(el.textContent),native=window.speechSynthesis;
+ const voice={name:'Âm thanh có sẵn · Anh Mỹ (Zira)',lang:'en-US',voiceURI:'mia-recorded',localService:true};
+ // Reuse one media element for the whole spelling queue (per-element playback
+ // permission on iPad); only start playback from a learner's button press.
+ const player=new Audio();let sequence=0;
+ function cancel(){sequence++;player.onplaying=player.onended=player.onerror=null;player.pause();if(native)native.cancel();}
+ function speak(u){
+  if(u.voice?.voiceURI!==voice.voiceURI){
+   if(native&&window.SpeechSynthesisUtterance){const v=new SpeechSynthesisUtterance(u.text);for(const k of ['voice','lang','rate','pitch','volume','onstart','onend','onerror'])v[k]=u[k];native.speak(v);}
+   else u.onerror?.({error:'voice-unavailable'});return;
+  }
+  cancel();const token=sequence,src=data.clips[u.text];
+  if(!src){u.onerror?.({error:'audio-unavailable'});return;}
+  const audio=player;let failed=false;
+  const fail=()=>{if(token!==sequence||failed)return;failed=true;cancel();u.onerror?.({error:'audio-unavailable'});};
+  audio.preload='none';audio.src=src;audio.volume=u.volume??1;audio.playbackRate=(u.rate||0.9)/0.9;audio.preservesPitch=true;
+  audio.onplaying=()=>{if(token===sequence)u.onstart?.();};
+  audio.onended=()=>{if(token!==sequence)return;audio.onplaying=audio.onended=audio.onerror=null;u.onend?.();};
+  audio.onerror=fail;try{audio.play().catch(fail);}catch(e){fail();}
+ }
+ window.MiaRecorded={getVoices:()=>[voice,...(native?.getVoices()||[])],cancel,speak,
+  addEventListener:(name,fn)=>native?.addEventListener(name,fn),removeEventListener:(name,fn)=>native?.removeEventListener(name,fn)};
+})();
+</script><script src="../../assets/english/speech.js"></script><link rel="stylesheet" href="../../assets/theme.css"><script src="../../assets/theme.js"></script></head><body>
+<div class="page"><div id="app"></div></div>
+<div class="bar" id="bar" data-mode="run"><div class="bar-in"></div></div>
+<script>
+window.MKENR4=function(questions){return {"decimal": false, "meta": {"subject": "en", "version": 1, "lessonLabel": "Phần", "book": "Tiếng Anh 5 · Global Success · Tập hai", "title": "Review 4 · Ôn Unit 16–20", "topic": "Ôn tổng hợp Units 16–20", "range": "Trang 70–73", "minutes": 40, "tip": "Mỗi đề có 6 câu nghe, chia đều ba mức. Xem lời nghe sẽ ghi nhận đã dùng hỗ trợ, không trừ điểm. Đọc gợi ý trước khi trả lời. Câu nối dùng ô chọn; câu sắp xếp thì bấm từng từ. Ô điền chữ không phân biệt hoa/thường; xem lời giải sau khi nộp."}, "lessons": {"1": "Thời tiết và truyện", "2": "Chuyến đi và kế hoạch", "3": "Đọc và viết tổng hợp"}, "levels": [{"id": "tb", "name": "Mức 1 · Trung bình", "desc": "Nhận biết từ và mẫu câu cơ bản", "stars": 1, "pts": 3}, {"id": "kha", "name": "Mức 2 · Khá", "desc": "Dùng mẫu câu, nối ý và tìm thông tin", "stars": 2, "pts": 5}, {"id": "gioi", "name": "Mức 3 · Giỏi", "desc": "Kết hợp đọc hiểu và viết câu theo dữ liệu", "stars": 3, "pts": 5}],"questions":questions};};
+
+window.TEST_FN=function(H){return MKENR4([
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the weather.",
+  "transcript": "In my weather diary, it is hot and sunny.",
+  "speech": "In my weather diary, it is hot and sunny.",
+  "fields": [
+   {
+    "label": "Weather:",
+    "answer": "hot and sunny",
+    "options": [
+     "cold and dry",
+     "hot and sunny",
+     "warm and rainy",
+     "cool and windy"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Weather: hot and sunny.",
+  "sourceUnits": [
+   16
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 1,
+  "stem": "Listen and choose the main character.",
+  "transcript": "In my story, the ant worked hard.",
+  "speech": "In my story, the ant worked hard.",
+  "fields": [
+   {
+    "label": "Character:",
+    "answer": "ant",
+    "options": [
+     "tortoise",
+     "hare",
+     "ant",
+     "grasshopper"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Character: ant.",
+  "sourceUnits": [
+   17
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Choose the phrase for this picture.",
+  "why": "Nhận ra đúng chủ thể, không đoán địa danh.",
+  "lesson": 1,
+  "opts": [
+   "waterfall",
+   "go camping",
+   "tortoise",
+   "bus"
+  ],
+  "answer": 2,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u17/tortoise.webp\" alt=\"con rùa cạn\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "sourceUnits": [
+   17
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Choose the phrase for this picture.",
+  "why": "Nhận ra đúng chủ thể, không đoán địa danh.",
+  "lesson": 1,
+  "opts": [
+   "waterfall",
+   "go camping",
+   "tortoise",
+   "bus"
+  ],
+  "answer": 3,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u18/bus.webp\" alt=\"bằng xe buýt\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "sourceUnits": [
+   18
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Choose the phrase for this picture.",
+  "why": "Nhận ra đúng chủ thể, không đoán địa danh.",
+  "lesson": 1,
+  "opts": [
+   "waterfall",
+   "go camping",
+   "tortoise",
+   "bus"
+  ],
+  "answer": 0,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u19/waterfall.webp\" alt=\"thác nước\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "sourceUnits": [
+   19
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "pic",
+  "stem": "Choose the phrase for this picture.",
+  "why": "Nhận ra đúng chủ thể, không đoán địa danh.",
+  "lesson": 1,
+  "opts": [
+   "waterfall",
+   "go camping",
+   "tortoise",
+   "bus"
+  ],
+  "answer": 1,
+  "fig": "<div class=\"fig en-figure\"><img src=\"../../assets/english/u20/go-camping.webp\" alt=\"đi cắm trại\" width=\"768\" height=\"512\" style=\"width:320px;max-width:100%;height:auto;display:block;border-radius:12px\" decoding=\"async\"></div>",
+  "sourceUnits": [
+   20
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the summer activity phrase.",
+  "why": "Đọc Summer activity.",
+  "lesson": 1,
+  "answers": [
+   "practise swimming",
+   "practice swimming"
+  ],
+  "exactForm": false,
+  "passage": "Fictional profile: Linh · Weather on this card: hot and sunny · Usual clothes in this weather: a T-shirt and shorts · Story character: hare · Story action: ran fast · Place to visit: the lake · Transport: by taxi · Imaginary distance from home: five kilometres · Opinion: fantastic · Summer destination: Phu Quoc Island · Summer activity: practise swimming.",
+  "sourceUnits": [
+   20
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "match",
+  "stem": "Match each item with the correct answer.",
+  "why": "Ghép từ ôn ba Unit.",
+  "lesson": 2,
+  "pairs": [
+   {
+    "left": "windy",
+    "right": "có gió"
+   },
+   {
+    "left": "walked slowly",
+    "right": "đã đi chậm"
+   },
+   {
+    "left": "on foot",
+    "right": "đi bộ"
+   }
+  ],
+  "sourceUnits": [
+   16,
+   17,
+   18
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: How did the hare ___? Use run.",
+  "why": "Did + run.",
+  "lesson": 1,
+  "answers": [
+   "run"
+  ],
+  "exactForm": false,
+  "sourceUnits": [
+   17
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: She is going to ___ a music club.",
+  "why": "Going to + join.",
+  "lesson": 1,
+  "answers": [
+   "join"
+  ],
+  "exactForm": false,
+  "sourceUnits": [
+   20
+  ],
+  "level": "tb"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen and find the transport.",
+  "transcript": "I want to visit the old town. I can get there by bus.",
+  "speech": "I want to visit the old town. I can get there by bus.",
+  "fields": [
+   {
+    "label": "Transport:",
+    "answer": "by bus",
+    "options": [
+     "by bus",
+     "by bicycle",
+     "by taxi",
+     "on foot"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Transport: by bus.",
+  "sourceUnits": [
+   18
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the full transport phrase.",
+  "why": "Giữ by/on.",
+  "lesson": 2,
+  "answers": [
+   "on foot"
+  ],
+  "exactForm": false,
+  "passage": "Fictional profile: Minh · Weather on this card: warm and rainy · Usual clothes in this weather: a blouse and jeans · Story character: ant · Story action: worked hard · Place to visit: the cave · Transport: on foot · Imaginary distance from home: seven kilometres · Opinion: interesting · Summer destination: Dam Sen Aquarium · Summer activity: go camping.",
+  "sourceUnits": [
+   18
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "reorder",
+  "stem": "Put the words in order.",
+  "why": "Một nơi dùng it is.",
+  "lesson": 2,
+  "items": [
+   "I",
+   "think",
+   "it",
+   "is",
+   "fantastic."
+  ],
+  "sourceUnits": [
+   19
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "listen",
+  "lesson": 2,
+  "stem": "Listen for the opinion, not the weather.",
+  "transcript": "It is hot and sunny today. I think the lake is fantastic.",
+  "speech": "It is hot and sunny today. I think the lake is fantastic.",
+  "fields": [
+   {
+    "label": "Opinion:",
+    "answer": "fantastic",
+    "options": [
+     "beautiful",
+     "peaceful",
+     "fantastic",
+     "interesting"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Opinion: fantastic.",
+  "sourceUnits": [
+   16,
+   19
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write only the usual clothes phrase.",
+  "why": "Theo thẻ, không suy ra mọi mùa giống nhau.",
+  "lesson": 2,
+  "answers": [
+   "a blouse and jeans"
+  ],
+  "exactForm": false,
+  "passage": "Fictional profile: Minh · Weather on this card: warm and rainy · Usual clothes in this weather: a blouse and jeans · Story character: ant · Story action: worked hard · Place to visit: the cave · Transport: on foot · Imaginary distance from home: seven kilometres · Opinion: interesting · Summer destination: Dam Sen Aquarium · Summer activity: go camping.",
+  "sourceUnits": [
+   16
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Complete: We can get there ___ foot.",
+  "why": "On foot, không by foot.",
+  "lesson": 2,
+  "answers": [
+   "on"
+  ],
+  "exactForm": false,
+  "sourceUnits": [
+   18
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "mc",
+  "stem": "Extension: Which story type is on the card?",
+  "why": "Đọc nhãn thể loại trong thẻ, không cần biết tác phẩm ngoài bài.",
+  "lesson": 2,
+  "opts": [
+   "adventure story",
+   "mystery story",
+   "history story",
+   "spooky story"
+  ],
+  "answer": 1,
+  "passage": "Original reading card: Title: The Missing Red Kite. Type: mystery story. Two friends look for clues to find their kite.",
+  "sourceUnits": [
+   17
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "tf",
+  "stem": "Read and choose True (Đúng) or False (Sai).",
+  "why": "Phân biệt việc đã qua với kế hoạch mới.",
+  "lesson": 3,
+  "items": [
+   {
+    "t": "This summer can introduce a new plan.",
+    "a": true
+   },
+   {
+    "t": "Last summer always means a future plan.",
+    "a": false
+   }
+  ],
+  "sourceUnits": [
+   17,
+   20
+  ],
+  "level": "kha"
+ },
+ {
+  "type": "text",
+  "stem": "Write the story sentence, starting with The.",
+  "why": "Dùng quá khứ theo truyện.",
+  "lesson": 3,
+  "answers": [
+   "The grasshopper sang beautifully."
+  ],
+  "exactForm": false,
+  "passage": "Fictional profile: Hoa · Weather on this card: cool and windy · Usual clothes in this weather: a jacket and trousers · Story character: grasshopper · Story action: sang beautifully · Place to visit: the old town · Transport: by bus · Imaginary distance from home: nine kilometres · Opinion: beautiful · Summer destination: Huong River · Summer activity: join a music club.",
+  "sourceUnits": [
+   17
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write the plan sentence, starting with I am going to.",
+  "why": "Đúng chủ ngữ và nguyên mẫu.",
+  "lesson": 3,
+  "answers": [
+   "I am going to go camping.",
+   "I'm going to go camping.",
+   "I'm going to go camping."
+  ],
+  "exactForm": false,
+  "passage": "Fictional profile: Minh · Weather on this card: warm and rainy · Usual clothes in this weather: a blouse and jeans · Story character: ant · Story action: worked hard · Place to visit: the cave · Transport: on foot · Imaginary distance from home: seven kilometres · Opinion: interesting · Summer destination: Dam Sen Aquarium · Summer activity: go camping.",
+  "sourceUnits": [
+   20
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen for imaginary distance and summer activity.",
+  "transcript": "On my imaginary map, it is seven kilometres from my home to the cave. This summer, I am going to go camping.",
+  "speech": "On my imaginary map, it is seven kilometres from my home to the cave. This summer, I am going to go camping.",
+  "fields": [
+   {
+    "label": "Distance:",
+    "answer": "seven kilometres",
+    "options": [
+     "three kilometres",
+     "five kilometres",
+     "seven kilometres",
+     "nine kilometres"
+    ],
+    "alternatives": []
+   },
+   {
+    "label": "Summer activity:",
+    "answer": "go camping",
+    "options": [
+     "go camping",
+     "join a music club",
+     "visit an eco-farm",
+     "practise swimming"
+    ],
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Distance: seven kilometres; Summer activity: go camping.",
+  "sourceUnits": [
+   19,
+   20
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write the opinion sentence, starting with I think it.",
+  "why": "Ý kiến theo người, không có đáp án cảm nhận duy nhất.",
+  "lesson": 3,
+  "answers": [
+   "I think it is fantastic.",
+   "I think it's fantastic."
+  ],
+  "exactForm": false,
+  "passage": "Fictional profile: Linh · Weather on this card: hot and sunny · Usual clothes in this weather: a T-shirt and shorts · Story character: hare · Story action: ran fast · Place to visit: the lake · Transport: by taxi · Imaginary distance from home: five kilometres · Opinion: fantastic · Summer destination: Phu Quoc Island · Summer activity: practise swimming.",
+  "sourceUnits": [
+   19
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "text",
+  "stem": "Write weather then clothes: start with It, then I usually wear.",
+  "why": "Tìm đủ hai thông tin.",
+  "lesson": 3,
+  "answers": [
+   "It is cool and windy. I usually wear a jacket and trousers.",
+   "It's cool and windy. I usually wear a jacket and trousers."
+  ],
+  "exactForm": false,
+  "passage": "Fictional profile: Hoa · Weather on this card: cool and windy · Usual clothes in this weather: a jacket and trousers · Story character: grasshopper · Story action: sang beautifully · Place to visit: the old town · Transport: by bus · Imaginary distance from home: nine kilometres · Opinion: beautiful · Summer destination: Huong River · Summer activity: join a music club.",
+  "sourceUnits": [
+   16
+  ],
+  "level": "gioi"
+ },
+ {
+  "type": "listen",
+  "lesson": 3,
+  "stem": "Listen and write the story action, then the new summer activity.",
+  "transcript": "In my story, the grasshopper sang beautifully. This summer, I am going to join a music club.",
+  "speech": "In my story, the grasshopper sang beautifully. This summer, I am going to join a music club.",
+  "fields": [
+   {
+    "label": "Story action:",
+    "answer": "sang beautifully",
+    "options": null,
+    "alternatives": []
+   },
+   {
+    "label": "Summer activity:",
+    "answer": "join a music club",
+    "options": null,
+    "alternatives": []
+   }
+  ],
+  "why": "Thông tin trong lời nghe: Story action: sang beautifully; Summer activity: join a music club.",
+  "sourceUnits": [
+   17,
+   20
+  ],
+  "level": "gioi"
+ }
+]);};
+
+window.TEST_EXTRA={"id": "en-r04-de2-v1", "title": "Đề 2 · Từ vựng và hình ảnh", "theme": "Ôn qua tranh và từ; Extension thể loại truyện ghi riêng.", "home": "../index.html", "prev": "De1_KhoiDong.html", "next": "De3_MauCauVaHoiThoai.html"};
+
+</script><script src="../../assets/engine.js"></script></body></html>

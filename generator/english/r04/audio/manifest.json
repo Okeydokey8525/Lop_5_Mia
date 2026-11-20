@@ -1,0 +1,416 @@
+{
+  "voice": "Microsoft Zira Desktop",
+  "language": "en-US",
+  "rate": -1,
+  "format": "PCM 22050 Hz 16-bit mono",
+  "clips": [
+    {
+      "text": "A",
+      "file": "559aead08264d5795d39.wav"
+    },
+    {
+      "text": "B",
+      "file": "df7e70e5021544f4834b.wav"
+    },
+    {
+      "text": "C",
+      "file": "6b23c0d5f35d1b11f9b6.wav"
+    },
+    {
+      "text": "D",
+      "file": "3f39d5c348e5b79d06e8.wav"
+    },
+    {
+      "text": "E",
+      "file": "a9f51566bd6705f7ea6a.wav"
+    },
+    {
+      "text": "F",
+      "file": "f67ab10ad4e4c53121b6.wav"
+    },
+    {
+      "text": "G",
+      "file": "333e0a1e27815d0ceee5.wav"
+    },
+    {
+      "text": "H",
+      "file": "44bd7ae60f478fae1061.wav"
+    },
+    {
+      "text": "Hello! Let us listen and learn English.",
+      "file": "d049b36b33ea2a1929e2.wav"
+    },
+    {
+      "text": "Hello! Let’s listen and learn English.",
+      "file": "d6be6a8235b16c4af314.wav"
+    },
+    {
+      "text": "How can I get to the lake?",
+      "file": "daa4957deebca6a44103.wav"
+    },
+    {
+      "text": "How can I get to the lake? You can get there by bus. On this imaginary map, it is five kilometres away.",
+      "file": "bd4bdc175bca4abd6856.wav"
+    },
+    {
+      "text": "How did the tortoise walk?",
+      "file": "2e46185184d1b9dfb888.wav"
+    },
+    {
+      "text": "How did the tortoise walk? It walked slowly.",
+      "file": "4357787e86ddfe936224.wav"
+    },
+    {
+      "text": "I",
+      "file": "a83dd0ccbffe39d071cc.wav"
+    },
+    {
+      "text": "I am going to go camping this summer.",
+      "file": "998962f961335b203c4b.wav"
+    },
+    {
+      "text": "I think the lake is peaceful.",
+      "file": "92aed34424124d5975a6.wav"
+    },
+    {
+      "text": "I think the waterfall is beautiful.",
+      "file": "22cf7729ea9df56ab4f9.wav"
+    },
+    {
+      "text": "I usually wear a jumper in cold weather.",
+      "file": "b5670527c6d09c080d22.wav"
+    },
+    {
+      "text": "I want to visit the cave. I can get there on foot.",
+      "file": "f0cc8223738c45f6903e.wav"
+    },
+    {
+      "text": "I want to visit the lake. I can get there by taxi.",
+      "file": "b5ac6ea9fa6ea44de343.wav"
+    },
+    {
+      "text": "I want to visit the old town. I can get there by bus.",
+      "file": "e06ba049e7422e3b07c2.wav"
+    },
+    {
+      "text": "I want to visit the waterfall. I can get there by bicycle.",
+      "file": "3eec96783d9204bf9660.wav"
+    },
+    {
+      "text": "I want to visit the waterfall. I can get there by bus.",
+      "file": "c4383f7d6dbe2fd0b6b7.wav"
+    },
+    {
+      "text": "In my little story, the hare ran fast.",
+      "file": "a22261ab753bc83b38cb.wav"
+    },
+    {
+      "text": "In my little story, the tortoise walked slowly.",
+      "file": "c16debc6117476de40e6.wav"
+    },
+    {
+      "text": "In my story, the ant worked hard.",
+      "file": "942a011b5489e692f63a.wav"
+    },
+    {
+      "text": "In my story, the ant worked hard. This summer, I am going to go camping.",
+      "file": "4482592d5abee659ad8e.wav"
+    },
+    {
+      "text": "In my story, the grasshopper sang beautifully.",
+      "file": "5a431ad101d68e76fc0f.wav"
+    },
+    {
+      "text": "In my story, the grasshopper sang beautifully. This summer, I am going to join a music club.",
+      "file": "b93cc3b620e6aaa3d8f0.wav"
+    },
+    {
+      "text": "In my story, the hare ran fast.",
+      "file": "2eab3366b59beab2c3a6.wav"
+    },
+    {
+      "text": "In my story, the hare ran fast. This summer, I am going to practise swimming.",
+      "file": "4a15e64e2bac25241f56.wav"
+    },
+    {
+      "text": "In my story, the tortoise walked slowly.",
+      "file": "1cbe7d80cd63dbc2ae76.wav"
+    },
+    {
+      "text": "In my story, the tortoise walked slowly. This summer, I am going to visit an eco-farm.",
+      "file": "51d4cb84faef61b5662d.wav"
+    },
+    {
+      "text": "In my weather diary, it is cold and dry.",
+      "file": "e3d3ddfd97cc1c98305e.wav"
+    },
+    {
+      "text": "In my weather diary, it is cool and windy.",
+      "file": "2259f37b38d8757136d0.wav"
+    },
+    {
+      "text": "In my weather diary, it is hot and sunny.",
+      "file": "8cb2cad85d83837368e5.wav"
+    },
+    {
+      "text": "In my weather diary, it is warm and rainy.",
+      "file": "8d3a020e33e1274096f3.wav"
+    },
+    {
+      "text": "It is cold and dry today. I think the waterfall is peaceful.",
+      "file": "df51faeaad8b09f9be65.wav"
+    },
+    {
+      "text": "It is cool and windy in my weather diary.",
+      "file": "ac96ddd2a0ac3cbb9cb7.wav"
+    },
+    {
+      "text": "It is cool and windy today. I think the old town is beautiful.",
+      "file": "6c63b316d49e5e439ce1.wav"
+    },
+    {
+      "text": "It is hot and sunny today. I think the lake is fantastic.",
+      "file": "babea8611a70e26de07d.wav"
+    },
+    {
+      "text": "It is warm and rainy today. I think the cave is interesting.",
+      "file": "7d4d0cffe43ed79086a2.wav"
+    },
+    {
+      "text": "J",
+      "file": "6da43b944e494e885e69.wav"
+    },
+    {
+      "text": "K",
+      "file": "86be9a55762d316a3026.wav"
+    },
+    {
+      "text": "L",
+      "file": "72dfcfb0c470ac255cde.wav"
+    },
+    {
+      "text": "M",
+      "file": "08f271887ce94707da82.wav"
+    },
+    {
+      "text": "N",
+      "file": "8ce86a6ae65d3692e730.wav"
+    },
+    {
+      "text": "O",
+      "file": "c4694f2e93d5c4e7d51f.wav"
+    },
+    {
+      "text": "On my imaginary map, it is five kilometres away.",
+      "file": "54deca125998d9b65e96.wav"
+    },
+    {
+      "text": "On my imaginary map, it is five kilometres from my home to the lake. This summer, I am going to practise swimming.",
+      "file": "f10e6336dfe044afbeb4.wav"
+    },
+    {
+      "text": "On my imaginary map, it is nine kilometres from my home to the old town. This summer, I am going to join a music club.",
+      "file": "17c55ea0e5295ea4a98d.wav"
+    },
+    {
+      "text": "On my imaginary map, it is seven kilometres from my home to the cave. This summer, I am going to go camping.",
+      "file": "c59d50e75f5f194cc1fa.wav"
+    },
+    {
+      "text": "On my imaginary map, it is three kilometres from my home to the waterfall. This summer, I am going to visit an eco-farm.",
+      "file": "6b5ddd40f530186d987f.wav"
+    },
+    {
+      "text": "P",
+      "file": "5c62e091b8c0565f1baf.wav"
+    },
+    {
+      "text": "Q",
+      "file": "4ae81572f06e1b88fd5c.wav"
+    },
+    {
+      "text": "R",
+      "file": "8c2574892063f995fdf7.wav"
+    },
+    {
+      "text": "S",
+      "file": "8de0b3c47f112c59745f.wav"
+    },
+    {
+      "text": "She is going to join a music club.",
+      "file": "8406b6091f952f8e4fa6.wav"
+    },
+    {
+      "text": "T",
+      "file": "e632b7095b0bf32c260f.wav"
+    },
+    {
+      "text": "The card says this is a history story.",
+      "file": "47b4a3584f5988203fa2.wav"
+    },
+    {
+      "text": "The card says this is a mystery story.",
+      "file": "05aa5504371d5b79a55a.wav"
+    },
+    {
+      "text": "The card says this is a spooky story.",
+      "file": "80079a2d7f1c6fb5a4e2.wav"
+    },
+    {
+      "text": "The card says this is an adventure story.",
+      "file": "3bce72b899249a1b2270.wav"
+    },
+    {
+      "text": "The hare ran fast.",
+      "file": "715a3dd34a609a23fb1c.wav"
+    },
+    {
+      "text": "The reading card says this is a history story.",
+      "file": "8f3430b418805a99c979.wav"
+    },
+    {
+      "text": "The tortoise walked slowly.",
+      "file": "4ffde9cf80c6fe42c6b4.wav"
+    },
+    {
+      "text": "U",
+      "file": "a25513c7e0f6eaa80a33.wav"
+    },
+    {
+      "text": "V",
+      "file": "de5a6f78116eca62d7fc.wav"
+    },
+    {
+      "text": "W",
+      "file": "fcb5f40df9be6bae66c1.wav"
+    },
+    {
+      "text": "We are going to practise swimming.",
+      "file": "ceb2054293ea9f179997.wav"
+    },
+    {
+      "text": "What are you going to do this summer?",
+      "file": "78b610c8b83116853803.wav"
+    },
+    {
+      "text": "What are you going to do this summer? I am going to join a music club.",
+      "file": "56391725899f46531c09.wav"
+    },
+    {
+      "text": "What do you usually wear in cold weather?",
+      "file": "9d393580bf6885945be8.wav"
+    },
+    {
+      "text": "What do you usually wear in cold weather? I usually wear a jumper and trousers.",
+      "file": "ad3bb0c67ee168b34727.wav"
+    },
+    {
+      "text": "What type of stories do you like?",
+      "file": "fc4414293dfeb4309578.wav"
+    },
+    {
+      "text": "What type of stories do you like? I like adventure stories because I think they are exciting.",
+      "file": "5cefe212ef66731a38cf.wav"
+    },
+    {
+      "text": "What type of story is it?",
+      "file": "7d04a3010c037abe0108.wav"
+    },
+    {
+      "text": "What type of story is it? The card says it is a mystery story.",
+      "file": "b7c92cb244cf825928cf.wav"
+    },
+    {
+      "text": "X",
+      "file": "4b68ab3847feda7d6c62.wav"
+    },
+    {
+      "text": "Y",
+      "file": "18f5384d58bcb1bba0bc.wav"
+    },
+    {
+      "text": "You can get there by bus.",
+      "file": "94a2fe3550b24f3a4182.wav"
+    },
+    {
+      "text": "You can get there on foot.",
+      "file": "7d53001b03847a1cd96b.wav"
+    },
+    {
+      "text": "Z",
+      "file": "bbeebd879e1dff691854.wav"
+    },
+    {
+      "text": "adventure story",
+      "file": "cd6ee74be8b32f2371be.wav"
+    },
+    {
+      "text": "bus",
+      "file": "04e027e4990a203f4899.wav"
+    },
+    {
+      "text": "go camping",
+      "file": "44404281b2078fad7d1c.wav"
+    },
+    {
+      "text": "hare",
+      "file": "e39f1cde9e9c4fac32cd.wav"
+    },
+    {
+      "text": "history story",
+      "file": "95b7ab0323eb0ef67519.wav"
+    },
+    {
+      "text": "join a music club",
+      "file": "d17043f8a07971905b4d.wav"
+    },
+    {
+      "text": "jumper",
+      "file": "f7360ea7ebd04b36aed3.wav"
+    },
+    {
+      "text": "kilometres",
+      "file": "3b1b9e5018e78e0c5db8.wav"
+    },
+    {
+      "text": "mystery story",
+      "file": "c0a34b395fa5af994e0c.wav"
+    },
+    {
+      "text": "on foot",
+      "file": "e984cac918a1a738045a.wav"
+    },
+    {
+      "text": "peaceful",
+      "file": "2a4baa647f524b2a9e19.wav"
+    },
+    {
+      "text": "practise swimming",
+      "file": "df085ab53006bed17236.wav"
+    },
+    {
+      "text": "ran fast",
+      "file": "38b88f9d13dc6cadcf81.wav"
+    },
+    {
+      "text": "spooky story",
+      "file": "6a82b30375117374f489.wav"
+    },
+    {
+      "text": "tortoise",
+      "file": "224ec67c8947961173b4.wav"
+    },
+    {
+      "text": "walked slowly",
+      "file": "5f50bd00a5372e7c949a.wav"
+    },
+    {
+      "text": "waterfall",
+      "file": "3cb562c897155ca6e376.wav"
+    },
+    {
+      "text": "windy",
+      "file": "87480c5a4819536e47c0.wav"
+    }
+  ]
+}

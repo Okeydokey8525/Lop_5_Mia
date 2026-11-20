@@ -25,14 +25,18 @@ UNITS=[
 ]
 
 REVIEWS=[dict(n='R1',key='r01',dir='Review1_Units1_5',name='Review 1 · Ôn Unit 1–5',label='Review 1',pages='40–43',version=1,kind='review',overview='TongQuan_Review1'),
-         dict(n='R2',key='r02',dir='Review2_Units6_10',name='Review 2 · Ôn Unit 6–10',label='Review 2',pages='74–77',version=1,kind='review',overview='TongQuan_Review2')]
-TOPICS=UNITS[:5]+[REVIEWS[0]]+UNITS[5:10]+[REVIEWS[1]]+UNITS[10:]
+         dict(n='R2',key='r02',dir='Review2_Units6_10',name='Review 2 · Ôn Unit 6–10',label='Review 2',pages='74–77',version=1,kind='review',overview='TongQuan_Review2'),
+         dict(n='R3',key='r03',dir='Review3_Units11_15',name='Review 3 · Ôn Unit 11–15',label='Review 3',pages='36–39',version=1,kind='review',overview='TongQuan_Review3',volume=2),
+         dict(n='R4',key='r04',dir='Review4_Units16_20',name='Review 4 · Ôn Unit 16–20',label='Review 4',pages='70–73',version=1,kind='review',overview='TongQuan_Review4',volume=2)]
+TOPICS=UNITS[:5]+[REVIEWS[0]]+UNITS[5:10]+[REVIEWS[1]]+UNITS[10:15]+[REVIEWS[2]]+UNITS[15:]+[REVIEWS[3]]
 
 
 def label(unit):return unit.get('label',f"Unit {unit['n']}")
 def overview_name(unit):return unit.get('overview',f"TongQuan_Unit{unit['n']}")
 
 DETAILS={
+ 'R3':dict(topic='Ôn tổng hợp Units 11–15',lessons={1:'Chuyến đi và kế hoạch',2:'Thói quen và lời thoại',3:'Đọc và viết tổng hợp'},colour='#A63C70',bg='#FFE4F0'),
+ 'R4':dict(topic='Ôn tổng hợp Units 16–20',lessons={1:'Thời tiết và truyện',2:'Chuyến đi và kế hoạch',3:'Đọc và viết tổng hợp'},colour='#A63C70',bg='#FFE4F0'),
  20:dict(topic="Kế hoạch nghỉ hè: nơi đến và hoạt động",lessons={1:"Where are you going to visit?",2:"What are you going to do?",3:"Ngữ điệu, đọc và viết kế hoạch"},colour="#A63C70",bg="#FFE4F0"),
  19:dict(topic="Địa điểm, cảm nhận và khoảng cách",lessons={1:"What do you think of…?",2:"How far is it from…to…?",3:"Ngữ điệu, đọc và viết kỳ nghỉ"},colour="#A63C70",bg="#FFE4F0"),
  18:dict(topic="Nơi muốn đến và phương tiện đi lại",lessons={1:"Where do you want to visit?",2:"How can I get to…?",3:"Ngữ điệu, đọc và viết chuyến đi"},colour="#A63C70",bg="#FFE4F0"),
@@ -63,6 +67,8 @@ def test_id(unit,index):
 
 def tests_for(unit):
     descriptions={
+      'R3':['Ôn chuyện gia đình, Tết, ngày đặc biệt, thói quen và lời thoại sức khỏe.','Ôn qua tranh và từ; Extension nhóm thực phẩm ghi riêng.','Phân biệt did, will, does và should trong hỏi đáp.','Đọc đúng người, việc đã qua, kế hoạch, tần suất và lời thoại.','Viết câu theo thẻ, phân biệt quá khứ và tương lai.','Kết hợp nghe, đọc và viết trong phạm vi Units 11–15.'],
+      'R4':['Ôn thời tiết, truyện, phương tiện, địa điểm và kế hoạch hè.','Ôn qua tranh và từ; Extension thể loại truyện ghi riêng.','Hỏi thời tiết, nhân vật, cách đi, khoảng cách và kế hoạch.','Đọc đúng người, truyện, nơi, phương tiện và dự định.','Viết câu với did, can và am/is/are going to.','Kết hợp nghe, đọc và viết trong phạm vi Units 16–20.'],
       20:["Làm quen nơi sẽ tham quan và hoạt động nghỉ hè.","Nhận biết tranh hoạt động, địa điểm và mốc thời gian.","Hỏi Where…visit?/What…do? với am/is/are going to.","Đọc đúng người, nơi, kế hoạch mới và việc hè năm ngoái.","Viết going to + nguyên mẫu và kế hoạch theo thẻ.","Kết hợp nghe, tranh, hội thoại, đọc và viết kế hoạch hè."],
       19:["Làm quen địa điểm, cảm nhận và khoảng cách.","Nhận biết loại địa điểm, tính từ và đơn vị khoảng cách.","Hỏi cảm nhận và khoảng cách; dùng it is/they are.","Đọc đúng ý kiến, người nói, khoảng cách và từng chặng.","Viết think of, from…to… và câu theo thẻ.","Kết hợp nghe, tranh, hội thoại, đọc và viết kỳ nghỉ."],
       18:["Làm quen nơi muốn đến và phương tiện đi lại.","Nhận biết tranh phương tiện và từ chỉ địa điểm.","Hỏi nơi muốn tham quan và cách đến đó.","Đọc đúng người, nơi đến, phương tiện và từng chặng.","Viết want to visit, can + get, by/on foot.","Kết hợp nghe, tranh, hội thoại, đọc và viết kế hoạch."],

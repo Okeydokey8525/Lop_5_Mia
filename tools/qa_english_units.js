@@ -5,7 +5,7 @@ const NUMBERS=(process.argv.find(a=>a.startsWith('--units='))||'--units=2,3').sp
 assert.ok(NUMBERS.length&&NUMBERS.every(n=>Number.isInteger(n)&&n>=2)&&new Set(NUMBERS).size===NUMBERS.length);
 const topicArg=process.argv.find(a=>a.startsWith('--topics='));
 const KEYS=topicArg?topicArg.split('=')[1].split(','):NUMBERS.map(n=>'u'+String(n).padStart(2,'0'));
-assert.ok(KEYS.length&&KEYS.every(k=>/^(u[0-9]{2}|r0[12])$/.test(k))&&new Set(KEYS).size===KEYS.length);
+assert.ok(KEYS.length&&KEYS.every(k=>/^(u[0-9]{2}|r0[1-4])$/.test(k))&&new Set(KEYS).size===KEYS.length);
 const BASE=(process.argv.slice(2).find(a=>!a.startsWith('--'))||'http://127.0.0.1:8765/Lop_5_Mia/').replace(/\/?$/,'/');
 const OUT=path.resolve(__dirname,'../artifacts','topics-'+KEYS.join('-')+(BASE.includes('127.0.0.1')?'-local':'-online'));fs.mkdirSync(OUT,{recursive:true});
 // Exercise the device-voice branch here; qa_recorded_audio.js tests real files without Speech API.
@@ -79,7 +79,24 @@ async function fill(p){await p.evaluate(()=>__quiz.Q.forEach((q,i)=>{const e=doc
    const forms=await p.evaluate(()=>{const q=__quiz.Q.find(q=>q.type==='text'&&q.stem.startsWith('Write only what Minh did last summer'));return [__quiz.textIsCorrect('practise swimming',q.answers),__quiz.textIsCorrect('went camping',q.answers)];});assert.deepEqual(forms,[false,true]);
   }
   if(t.id.startsWith('en-r')){
-   const scope=await p.evaluate(()=>[...new Set(__quiz.Q.flatMap(q=>q.sourceUnits||[]))].sort((a,b)=>a-b));assert.deepEqual(scope,t.id.startsWith('en-r01')?[1,2,3,4,5]:[6,7,8,9,10]);assert.ok(!(await p.title()).includes('Unit R'));
+   const start=(Number(t.id.split('-')[1].slice(1))-1)*5+1;
+   const scope=await p.evaluate(()=>[...new Set(__quiz.Q.flatMap(q=>q.sourceUnits||[]))].sort((a,b)=>a-b));assert.deepEqual(scope,Array.from({length:5},(_,i)=>start+i));assert.ok(!(await p.title()).includes('Unit R'));
+   assert.ok(await p.evaluate(()=>__quiz.Q.every(q=>q.sourceUnits?.length)),'Every review question must declare its scope');
+  }
+  if(t.id==='en-r03-de3-v1'||t.id==='en-r04-de3-v1'){
+   const forms=await p.evaluate(id=>{
+    const r3=id.includes('r03'),q=__quiz.Q.find(q=>q.type==='text'&&q.exactForm&&q.answers[0]===(r3?'I did not take photos.':'I am going to go camping.'));
+    return [__quiz.textIsCorrect(r3?'I didn’t take photos.':'I’m going to go camping.',q.answers,true),__quiz.textIsCorrect(r3?'I did not took photos.':'I are going to go camping.',q.answers,true),__quiz.textIsCorrect(q.answers[0],q.answers,true)];
+   },t.id);assert.deepEqual(forms,[false,false,true]);
+  }
+  if(t.id==='en-r04-de1-v1'){
+   const forms=await p.evaluate(()=>{const q=__quiz.Q.find(q=>q.type==='text'&&q.stem.includes('___ foot'));return [__quiz.textIsCorrect('by',q.answers),__quiz.textIsCorrect('on',q.answers)];});assert.deepEqual(forms,[false,true]);
+  }
+  if(t.id==='en-r03-de3-v1'){
+   const forms=await p.evaluate(()=>{const q=__quiz.Q.find(q=>q.type==='text'&&q.stem.startsWith('Where will you go at Tet?'));return [__quiz.textIsCorrect('I will decorate the house.',q.answers),__quiz.textIsCorrect(q.answers[0],q.answers)];});assert.deepEqual(forms,[false,true]);
+  }
+  if(t.id==='en-r04-de4-v1'){
+   const forms=await p.evaluate(()=>{const q=__quiz.Q.find(q=>q.type==='text'&&q.stem.startsWith('Write only the summer destination'));return [__quiz.textIsCorrect('the old town',q.answers),__quiz.textIsCorrect(q.answers[0],q.answers)];});assert.deepEqual(forms,[false,true]);
   }
   if(t.id==='en-u08-de3-v1'){
    const forms=await p.evaluate(()=>{const owner=__quiz.Q.find(q=>q.type==='text'&&q.answers[0]==="It is An's."),full=__quiz.Q.find(q=>q.type==='text'&&q.exactForm&&q.answers[0].startsWith('They are'));return [__quiz.textIsCorrect('It’s An’s.',owner.answers),__quiz.textIsCorrect('It is An.',owner.answers),__quiz.textIsCorrect(full.answers[0].replace('They are','They’re'),full.answers,true)]});assert.deepEqual(forms,[true,false,false]);
@@ -102,11 +119,12 @@ async function fill(p){await p.evaluate(()=>__quiz.Q.forEach((q,i)=>{const e=doc
  }
  await p.goto(BASE+'TiengAnh5/index.html');assert.equal(await p.locator('#sDone').textContent(),String(KEYS.length));assert.equal(await p.locator('#sStar').textContent(),String(KEYS.length*3));assert.equal(await p.locator('.topic').count(),unitCount);
  assert.deepEqual(await p.locator('.art text').allTextContents(),['1',...[1,2,3,4].map(k=>String(Math.floor(english.length*k/4+0.5)))],'English staircase milestones must match the current exam count');
- if(KEYS.includes('r01')||KEYS.includes('r02')){
+ if(KEYS.some(k=>k.startsWith('r'))){
   const expected=[...new Set(english.map(t=>{const k=t.id.split('-')[1];return k.startsWith('r')?'cdR'+Number(k.slice(1)):'cd'+Number(k.slice(1));}))];
   assert.deepEqual(expected.slice(0,12),['cd1','cd2','cd3','cd4','cd5','cdR1','cd6','cd7','cd8','cd9','cd10','cdR2'],'Preserve volume-one textbook order');
   assert.deepEqual(await p.locator('.topic').evaluateAll(nodes=>nodes.map(n=>n.id)),expected,'Topics must follow the catalog textbook order');
-  assert.equal(await p.locator('.topic .no small').filter({hasText:'Review'}).count(),2);
+  assert.equal(await p.locator('.topic .no small').filter({hasText:'Review'}).count(),new Set(english.filter(t=>t.kind==='review').map(t=>t.topic)).size);
+  assert.deepEqual(expected.slice(12),['cd11','cd12','cd13','cd14','cd15','cdR3','cd16','cd17','cd18','cd19','cd20','cdR4'],'Preserve volume-two textbook order');
  }
  await p.goto(BASE);assert.ok((await p.locator('#english-progress').textContent()).includes(`${KEYS.length}/${english.length} đề · ${KEYS.length*3}/${english.length*3} sao`));
  // Reset English must clear new IDs/drafts, while preserving maths and legacy results.

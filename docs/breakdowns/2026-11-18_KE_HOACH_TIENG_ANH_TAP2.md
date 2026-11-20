@@ -1,6 +1,6 @@
 # Kế hoạch Tiếng Anh 5 Global Success - tập hai
 
-Ngày rà soát: 18/11/2026. Chủ repo đã giao làm Unit 11 trước; xem [bàn giao Unit 11](2026-11-18_UNIT11.md). Ngày 19/11 chủ repo giao tiếp Units 12–13; xem bàn giao 2026-11-19_UNIT12_UNIT13.md. Chủ repo tiếp tục giao Units14–15 ngày19/11; xem bàn giao2026-11-19_UNIT14_UNIT15.md. Review3, Units16–20 và Review4 vẫn là kế hoạch, chưa được triển khai. Nội dung dưới đây ghi phạm vi và trình tự đã đề xuất.
+Kế hoạch gốc rà ngày 18/11/2026. Cập nhật 20/11: đã được giao và bổ sung nguồn Units 11–20, Review 3–4; xem các bàn giao tương ứng và [bàn giao Review 3–4](2026-11-20_REVIEW3_REVIEW4.md) để phân biệt local/CI/Pages. Các bảng trình tự và mốc ngày cũ dưới đây là lịch sử kế hoạch, không phải danh sách phần còn thiếu hiện tại.
 
 ## 1. Nguồn và mức độ kiểm tra
 
@@ -100,3 +100,11 @@ Cập nhật triển khai19/11/2026: đã được giao và bổ sung Units16–
 Bổ sung **Our summer holidays**, tập hai trang 64–69: sáu đề / 144 câu / 36 câu nghe, tổng quan HTML/PNG, 20 từ-cụm với sáu hội thoại và 12 bài luyện tự lưu, bốn tranh hoạt động và 95 WAV kèm bài. Trọng tâm Where…going to visit?/What…going to do?, am/is/are going to + nguyên mẫu; phân biệt last summer và this summer.
 
 Tổng Anh: 20 Unit + 2 Review = **132 đề / 3168 câu**. Toàn site: **168 đề / 222 HTML / 28 tổng quan HTML-PNG**. Study: 21 trang / 336 từ-cụm / 127 hội thoại / 252 bài luyện. Nguồn và trạng thái kiểm chứng: [bàn giao Unit 20](2026-11-19_UNIT20.md). Còn **Review 3 + Review 4 = hai phần / 12 đề**; Starter và bộ kiểm tra học kỳ riêng chưa làm. Không coi đủ 20 Unit là đã hoàn thành các phần ôn tập và kiểm tra.
+
+## Review 3–4 — 20/11/2026
+
+Theo giao việc tiếp phần ôn tập, bổ sung Review 3 (Units 11–15, trang 36–39) và Review 4 (Units 16–20, trang 70–73). Đã đọc riêng đủ tám trang Review/Extension trong PDF tập hai ngoài repo; không tạo Unit 21. Thêm 12 đề/288 câu/72 nghe; hai tổng quan HTML/PNG; hai trang học từ, ABC và phát âm, mỗi trang 18 từ-cụm/sáu hội thoại/12 luyện tự lưu; 207 WAV (Review 3: 105, Review 4: 102). Tái dùng tám tranh đã có, không sao chép scan sách.
+
+Review 3 phân biệt did/will/does/should; Extension nhóm thực phẩm riêng. Review 4 ôn thời tiết, truyện, phương tiện, khoảng cách, cảm nhận, be going to; Extension thể loại truyện riêng. Mỗi đề đủ năm sourceUnits theo phạm vi; ID en-r03/en-r04-deN-v1, khóa học riêng. Không đổi ID/câu hỏi/đáp án các phần cũ.
+
+Tổng Anh: **20 Unit + 4 Review = 144 đề/3456 câu**. Toàn site **180 đề/238 HTML/30 tổng quan HTML-PNG**. Study **23 trang/372 từ-cụm/139 hội thoại/276 bài/552 layout**. Nguồn và kiểm chứng: [bàn giao Review 3–4](2026-11-20_REVIEW3_REVIEW4.md). Starter, nâng Unit 1 thành study đầy đủ và bốn bộ kiểm tra giữa/cuối kỳ riêng vẫn chưa triển khai; Review không thay thế đề kiểm tra trường.
