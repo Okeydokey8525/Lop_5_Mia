@@ -1,6 +1,6 @@
 # 01 — Tình trạng hiện hành
 
-Cập nhật 20/11/2026; Review 3–4 đã xuất bản, local/CI và kiểm tra Pages thật đều đạt (xem bàn giao Review 3–4); Unit 20 đã xuất bản, CI và kiểm tra Pages thật đạt (xem bàn giao Unit 20); Unit19 đã xuất bản, CI và kiểm tra Pages thật đạt (xem bàn giao Unit19); Unit18 đã xuất bản, CI và kiểm tra Pages thật đạt (xem bàn giao Unit18); Units16–17 đã xuất bản, CI và kiểm tra Pages thật đạt; chi tiết ở bàn giao Units16–17; Units14–15 đã xuất bản trước đó. Xem bàn giao 2026-11-19_UNIT14_UNIT15.md để phân biệt local/CI/live và giới hạn iPad thật. Units11–13 đã xuất bản trước đó. Bản lịch sử trước khi gom tài liệu nằm trong `history/`; không dùng những số liệu cũ làm trạng thái hiện tại.
+Cập nhật 20/11/2026; Toán chủ đề 7–8 đã xuất bản, local/CI và Pages thật đạt (xem bàn giao Toán 7–8); Review 3–4 đã xuất bản, local/CI và kiểm tra Pages thật đều đạt (xem bàn giao Review 3–4); Unit 20 đã xuất bản, CI và kiểm tra Pages thật đạt (xem bàn giao Unit 20); Unit19 đã xuất bản, CI và kiểm tra Pages thật đạt (xem bàn giao Unit19); Unit18 đã xuất bản, CI và kiểm tra Pages thật đạt (xem bàn giao Unit18); Units16–17 đã xuất bản, CI và kiểm tra Pages thật đạt; chi tiết ở bàn giao Units16–17; Units14–15 đã xuất bản trước đó. Xem bàn giao 2026-11-19_UNIT14_UNIT15.md để phân biệt local/CI/live và giới hạn iPad thật. Units11–13 đã xuất bản trước đó. Bản lịch sử trước khi gom tài liệu nằm trong `history/`; không dùng những số liệu cũ làm trạng thái hiện tại.
 
 ## Đã bàn giao
 
@@ -56,7 +56,7 @@ Chỉ tiếp tục Starter/Unit/Review khác khi chủ repo giao. Pipeline Anh h
 
 ## Đầu vào còn thiếu
 
-- Toán tập hai: đã có PDF 70 trang, phần bài học dừng ở trang in 67. Đủ chủ đề 7–9; cần bổ sung phần còn lại của chủ đề 10 và bài học chủ đề 11–12. Chủ đề 7–8 đang được hoàn tất theo giao việc.
+- Toán tập hai: đã có PDF 70 trang, phần bài học dừng ở trang in 67. Đủ chủ đề 7–9; cần bổ sung phần còn lại của chủ đề 10 và bài học chủ đề 11–12. Chủ đề 7–8 đã xuất bản và kiểm chứng local/CI/Pages thật.
 - Tiếng Anh tập hai: đã có sách và hoàn thành Units 11–20, Review 3–4; các dòng thiếu sách ở bản lịch sử không còn là trạng thái hiện hành.
 - Phản hồi học sinh về mức độ khó và câu chưa rõ: chưa có.
 

@@ -26,7 +26,7 @@ Local đã đạt toàn bộ 11 nhóm kiểm tra trên bản build cuối:
 - Lưu bài: profile Chromium đóng/mở thật, khôi phục đáp án và xem lại không tăng lượt; best/last, Back, cập nhật tab khác, nháp, reset cách ly, storage đầy đều đạt cho cd7-de1/cd8-de1. Engine nháp và theme/home hồi quy đạt.
 - Đã xem hai poster đầy đủ (cắt từng đoạn để đọc), reader điện thoại và hai sơ đồ trong đề. Kiểm kê xác nhận không thay đổi file câu hỏi/wrapper cũ hoặc trang Anh; ba file site cũ thay đổi chỉ là index Toán, index chung và catalog.
 
-Bằng chứng local: artifacts/math78-local/qa-results.json, source-inventory.json, full-report.json, responsive-report.json, các report Chromium/WebKit/persistence và log từng nhóm. CI và web thật còn chờ triển khai; không coi local là đã xuất bản.
+Bằng chứng local: artifacts/math78-local/qa-results.json, source-inventory.json, full-report.json, responsive-report.json, các report Chromium/WebKit/persistence và log từng nhóm. CI và web thật đã hoàn tất; xem bằng chứng xuất bản dưới đây.
 
 ## Giới hạn và phần tiếp theo
 
@@ -34,3 +34,19 @@ Bằng chứng local: artifacts/math78-local/qa-results.json, source-inventory.j
 - Máy tính cầm tay dùng riêng hoặc ứng dụng; chưa có máy tính nhúng.
 - Bản sách đủ phạm vi chủ đề 9 nhưng chưa được giao triển khai; chủ đề 10 chỉ có phần đầu, 11–12 thiếu trang bài học.
 - Không đổi hoặc commit hai thay đổi có sẵn trước tác vụ: AGENTS.md và kế hoạch ôn Anh cả năm chưa được theo dõi.
+
+
+## Xuất bản và kiểm chứng web thật
+
+- Hoàn tất kiểm chứng: 2026-11-20T18:51:48+07:00. Commit tính năng `379b365859749b2efb8ea532ef648376505baa90`; [Actions 44713616271](https://github.com/Okeydokey8525/Lop_5_Mia/actions/runs/44713616271), attempt 1, build và deploy đều success.
+- CI Linux build lại từ nguồn; audit 288 câu mới, toàn site 192/192 đề, hai trình duyệt cho 12 đề mới, kiểm lưu bài riêng chủ đề 7–8 và 4032 tổ hợp responsive đều đạt. Các cổng QA Anh/audio/học từ cũ vẫn chạy, không bị bỏ qua.
+- Trên HTTPS thật: 28 tài nguyên khớp byte bản local (14 HTML mới, các index/catalog, một đề Toán cũ và tài nguyên dùng chung); hai poster PNG giải mã được, rộng 1080px. Không so byte PNG giữa Windows và Linux.
+- Chromium và WebKit đều đạt 12/12 đề, kiểm đáp án sai điển hình, xem lại kết quả và 16 bố cục tổng quan mỗi trình duyệt. Trang chọn môn và thống kê mới đạt kiểm tra home.
+- Profile Chromium đóng/mở lại trên đúng origin HTTPS: giữ đáp án/best/last, xem lại không tăng lượt, Back/cross-tab và nháp, storage đầy đều đạt. Thử trong profile QA riêng, không đụng dữ liệu trình duyệt của bé.
+- Bằng chứng: artifacts/math78-online/release.json, ci.json, ci-run.log, assets.json, chromium-report.json, webkit-report.json, persistence-report.json và log từng nhóm. Ảnh web thật ở artifacts/math78-online-chromium và -webkit.
+- Chưa kiểm trên iPad thật hoặc cho học sinh đánh giá độ khó; lưu vẫn theo thiết bị/trình duyệt/origin.
+
+Địa chỉ:
+
+- https://okeydokey8525.github.io/Lop_5_Mia/Toan5/ChuDe7_TiSoVaBaiToanLienQuan/TongQuan_ChuDe7.html
+- https://okeydokey8525.github.io/Lop_5_Mia/Toan5/ChuDe8_TheTichDonViDoTheTich/TongQuan_ChuDe8.html
