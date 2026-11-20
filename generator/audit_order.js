@@ -6,8 +6,8 @@ function value(text,stem=''){
   if(fraction)return Number(fraction[1]||0)+Number(fraction[2])/Number(fraction[3]);
   const expression=s.replace(/\s/g,'').match(/^([\d.]+)([+\-×:])([\d.]+)$/);
   if(expression){const a=Number(expression[1]),b=Number(expression[3]);return {'+':()=>a+b,'-':()=>a-b,'×':()=>a*b,':':()=>a/b}[expression[2]]();}
-  const units={'km²':1e6,ha:1e4,'m²':1,'dm²':.01,'cm²':.0001,km:1000,m:1,dm:.1,cm:.01,mm:.001,'tấn':1000,'tạ':100,'yến':10,kg:1,g:.001,l:1,ml:.001};
-  const measure=/([\d.]+(?:\s+\d{3})*)\s*(km²|cm²|dm²|m²|ha|km|dm|cm|mm|ml|kg|tấn|tạ|yến|m|g|l)/g;
+  const units={'m³':1e6,'dm³':1000,'cm³':1,'km²':1e6,ha:1e4,'m²':1,'dm²':.01,'cm²':.0001,km:1000,m:1,dm:.1,cm:.01,mm:.001,'tấn':1000,'tạ':100,'yến':10,kg:1,g:.001,l:1,ml:.001};
+  const measure=/([\d.]+(?:\s+\d{3})*)\s*(cm³|dm³|m³|km²|cm²|dm²|m²|ha|km|dm|cm|mm|ml|kg|tấn|tạ|yến|m|g|l)/g;
   const parts=[...s.matchAll(measure)];
   if(parts.length&&s.replace(measure,'').trim()==='')return parts.reduce((n,p)=>n+Number(p[1].replace(/\s/g,''))*units[p[2]],0);
   const n=[...s.matchAll(/\d+(?:\.\d+)?/g)].map(m=>Number(m[0]));

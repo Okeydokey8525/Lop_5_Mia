@@ -46,3 +46,5 @@ Nguồn nội dung và ghi nhận trang sách của từng unit nằm cạnh nha
 - [Review 3–4](breakdowns/2026-11-20_REVIEW3_REVIEW4.md): ôn Units 11–15/16–20, Extension riêng, nghe kèm bài và kiểm chứng.
 
 - [Unit 20](breakdowns/2026-11-19_UNIT20.md): kế hoạch nghỉ hè, going to, nơi/hoạt động, phân biệt hè năm ngoái và hè này; audio và kiểm chứng.
+
+- [Toán chủ đề 7–8](breakdowns/2026-11-20_TOAN_CHUDE7_CHUDE8.md): nguồn tập hai, tỉ số/thể tích, 12 đề và kiểm chứng.

@@ -13,7 +13,7 @@ Thêm một mục vào `CDS`: `n`, `dir` (`ChuDe{n}_...` không dấu), `name`, 
 Sao chép `common/cd5.js` rồi sửa: tên hàm `MK{n}`, `meta` (`book`, `title`, `topic`, `range`, `minutes`, `tip`), `lessons` (số bài → tên bài), 3 mức (`tb`/`kha`/`gioi`, 3/5/5 điểm). `decimal:true` nếu đề có số thập phân.
 
 ## 3. Sinh đề
-Viết `g{n}_de01.py ... de06.py`, dùng chung thư viện `g4lib/g5lib` (hoặc tạo `gNlib.py` kế thừa). Cuối mỗi file gọi `write(i, Q)` (hoặc `write5/write6`; thêm `writeN` cho chủ đề mới và truyền `cd=n`). Quy tắc: đáp án và `why` được tính từ cùng biến.
+Nguồn hiện hành chủ đề 7–8 nằm trong `generator/math_volume2/content.py`, wrapper sinh bằng `gen_math_volume2.py` và tổng quan ở `math_volume2/overviews.py`. Khi mở rộng dùng cùng registry và thêm bài/trang đã đọc. Các chủ đề cũ viết `g{n}_de01.py ... de06.py`, dùng chung thư viện `g4lib/g5lib` (hoặc tạo `gNlib.py` kế thừa). Cuối mỗi file gọi `write(i, Q)` (hoặc `write5/write6`; thêm `writeN` cho chủ đề mới và truyền `cd=n`). Quy tắc: đáp án và `why` được tính từ cùng biến.
 
 ## 4. Trang tổng quan
 Viết `LESSONS{n}` + `cd{n}_sheet()` trong `gen_overview.py`, thêm màu mới vào danh sách vòng lặp cuối file. Màu khác 6 màu đã dùng (`docs/05_THIET_KE.md`).

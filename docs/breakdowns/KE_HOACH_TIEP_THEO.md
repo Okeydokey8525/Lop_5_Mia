@@ -38,3 +38,7 @@ Theo giao việc tiếp phần ôn tập, bổ sung Review 3 (Units 11–15, tra
 Review 3 phân biệt did/will/does/should; Extension nhóm thực phẩm riêng. Review 4 ôn thời tiết, truyện, phương tiện, khoảng cách, cảm nhận, be going to; Extension thể loại truyện riêng. Mỗi đề đủ năm sourceUnits theo phạm vi; ID en-r03/en-r04-deN-v1, khóa học riêng. Không đổi ID/câu hỏi/đáp án các phần cũ.
 
 Tổng Anh: **20 Unit + 4 Review = 144 đề/3456 câu**. Toàn site **180 đề/238 HTML/30 tổng quan HTML-PNG**. Study **23 trang/372 từ-cụm/139 hội thoại/276 bài/552 layout**. Nguồn và kiểm chứng: [bàn giao Review 3–4](2026-11-20_REVIEW3_REVIEW4.md). Starter, nâng Unit 1 thành study đầy đủ và bốn bộ kiểm tra giữa/cuối kỳ riêng vẫn chưa triển khai; Review không thay thế đề kiểm tra trường.
+
+## Toán tập hai — 20/11/2026
+
+Đã nhận sách và được giao chủ đề 7–8, đang kiểm chứng bản triển khai 12 đề; xem 2026-11-20_TOAN_CHUDE7_CHUDE8.md. Bản PDF hiện chỉ đến trang in 67, đủ chủ đề 7–9 nhưng thiếu phần sau; chưa tự triển khai 9–12.

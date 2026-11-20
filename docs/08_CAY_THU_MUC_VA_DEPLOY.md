@@ -132,3 +132,7 @@ Theo giao việc tiếp phần ôn tập, bổ sung Review 3 (Units 11–15, tra
 Review 3 phân biệt did/will/does/should; Extension nhóm thực phẩm riêng. Review 4 ôn thời tiết, truyện, phương tiện, khoảng cách, cảm nhận, be going to; Extension thể loại truyện riêng. Mỗi đề đủ năm sourceUnits theo phạm vi; ID en-r03/en-r04-deN-v1, khóa học riêng. Không đổi ID/câu hỏi/đáp án các phần cũ.
 
 Tổng Anh: **20 Unit + 4 Review = 144 đề/3456 câu**. Toàn site **180 đề/238 HTML/30 tổng quan HTML-PNG**. Study **23 trang/372 từ-cụm/139 hội thoại/276 bài/552 layout**. Nguồn và kiểm chứng: [bàn giao Review 3–4](breakdowns/2026-11-20_REVIEW3_REVIEW4.md). Starter, nâng Unit 1 thành study đầy đủ và bốn bộ kiểm tra giữa/cuối kỳ riêng vẫn chưa triển khai; Review không thay thế đề kiểm tra trường.
+
+## Quyết định Toán tập hai (20/11/2026)
+
+Giữ cây hiện tại, thêm generator/math_volume2/{content.py,overviews.py,NOTES.md} và gen_math_volume2.py. Script sinh common/cd7.js, cd8.js và tests/cd7, cd8; tools/build.py --regenerate gọi cùng pipeline. Site thêm Toan5/ChuDe7_TiSoVaBaiToanLienQuan và ChuDe8_TheTichDonViDoTheTich. Không tạo cây src cạnh tranh. PDF và ảnh render kiểm nguồn ở ngoài repo, không deploy.

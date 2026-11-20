@@ -22,11 +22,12 @@ def main():
     parser.add_argument("--standalone", action="store_true",
                         help="Keep self-contained HTML in generator/out/{Toan5,TiengAnh5}; do not update site")
     parser.add_argument("--regenerate", action="store_true",
-                        help="Regenerate available Python question sources (topics 4-6)")
+                        help="Regenerate available Python question sources (topics 4-8)")
     args = parser.parse_args()
     if args.regenerate:
         for script in sorted(GEN.glob("g[456]_de*.py")):
             run(script.name)
+        run("gen_math_volume2.py")
     for script in ("build_all.py", "gen_overview.py", "gen_index.py", "gen_english.py"):
         run(script)
     theme_resources={name:(GEN/name).read_text(encoding='utf-8-sig') for name in ['theme.css','theme.js']}

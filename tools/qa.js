@@ -6,6 +6,7 @@ const {chromium}=requireGenerator('playwright');
 const ROOT=path.resolve(__dirname,'..'),SITE=path.join(ROOT,'site');
 const CATALOG=JSON.parse(fs.readFileSync(path.join(SITE,'catalog.json'),'utf8'));
 const BASE=(process.argv.slice(2).find(a=>!a.startsWith('--'))||'http://127.0.0.1:8765/Lop_5_Mia/').replace(/\/?$/,'/');
+const MATH_COUNT=CATALOG.tests.filter(t=>t.subject==='math').length;
 const SHOTS=!process.argv.includes('--no-shots');
 const OUT=path.join(ROOT,'artifacts',BASE.includes('127.0.0.1')?'local':'online');
 fs.mkdirSync(OUT,{recursive:true});
@@ -108,9 +109,9 @@ async function main(){
       }
     }
     assert.deepEqual(results.map(r=>r.file).sort(),CATALOG.tests.map(t=>t.file).sort());
-    await go('Toan5/index.html');assert.equal(await page.locator('#sDone').textContent(),'36');assert.equal(await page.locator('#sStar').textContent(),'108');assert.equal(await page.locator('#sBest').textContent(),'100');
-    await go('index.html');assert.match(await page.locator('#math-progress').textContent(),/36\/36/);
-    await page.reload();assert.match(await page.locator('#math-progress').textContent(),/108\/108/);
+    await go('Toan5/index.html');assert.equal(await page.locator('#sDone').textContent(),String(MATH_COUNT));assert.equal(await page.locator('#sStar').textContent(),String(MATH_COUNT*3));assert.equal(await page.locator('#sBest').textContent(),'100');
+    await go('index.html');assert.ok((await page.locator('#math-progress').textContent()).includes(`${MATH_COUNT}/${MATH_COUNT}`));
+    await page.reload();assert.ok((await page.locator('#math-progress').textContent()).includes(`${MATH_COUNT*3}/${MATH_COUNT*3}`));
     const enCount=CATALOG.tests.filter(t=>t.subject==='en').length;
     assert.ok((await page.locator('#english-progress').textContent()).includes(`${enCount}/${enCount} đề`));
     await go('TiengAnh5/index.html');assert.equal(await page.locator('#sDone').textContent(),String(enCount));assert.equal(await page.locator('#sStar').textContent(),String(enCount*3));
@@ -142,10 +143,10 @@ async function main(){
     await page.reload();assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('mia5:cd1-de1')).tries),3);
     await go('TiengAnh5/index.html');await page.click('#reset');await page.click('#yes');
     assert.equal(await page.locator('#sDone').textContent(),'0');
-    assert.equal(await page.evaluate(()=>Object.keys(localStorage).filter(k=>k.startsWith('mia5:cd')).length),36);
+    assert.equal(await page.evaluate(()=>Object.keys(localStorage).filter(k=>k.startsWith('mia5:cd')).length),MATH_COUNT);
     // Fresh visitor state and light/dark mode of the shared home page.
     const fresh=await browser.newContext({viewport:{width:400,height:900},colorScheme:'dark'}),p=await fresh.newPage();
-    await p.goto(BASE);await overflow(p);assert.match(await p.locator('#math-progress').textContent(),/108 sao/);
+    await p.goto(BASE);await overflow(p);assert.ok((await p.locator('#math-progress').textContent()).includes(`${MATH_COUNT*3} sao`));
     if(SHOTS)await p.screenshot({path:path.join(OUT,'home-dark-mobile.png'),fullPage:true});
     await fresh.close();
     assert.deepEqual(errors,[]);

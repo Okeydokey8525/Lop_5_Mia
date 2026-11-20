@@ -103,3 +103,7 @@ Giữ theme hồng sáng và reader/poster. Unit 8 accent #A33372 / nền #FFE3F
 ### Unit 10 và hai Review (06/11/2026)
 
 Giữ hồng sáng. Unit 10 #A83A71/#FFE5F0; Review 1 #A63C70/#FFE4F0; Review 2 #A33876/#FFE5F2. Badge Review 1/2, không gọi Unit 11/12. Màu thẻ lấy thứ tự TOPICS để chèn Review 1 sau Unit 5 không làm lệch màu các Unit sau. Bốn tranh hoạt động mới WebP 768×512, prompt cạnh nguồn; Review tái dùng ảnh. Các trang học dùng label/overview tùy chủ đề, không tạo link TongQuan_UnitR1/R2.
+
+## Toán tập hai — màu chủ đề 7–8 (20/11/2026)
+
+Giữ giao diện hồng sáng chung. Poster/thẻ chủ đề 7 dùng #A15B27/#FFF0DF; chủ đề 8 #316F87/#E2F3F8. Thẻ tối lần lượt #F2C49E/#453229 và #B7DFEA/#283C45. SVG toán dùng nét currentColor và màu nền tương thích; đặt kích thước rõ, không để CSS mặc định 112px làm nhỏ sơ đồ.

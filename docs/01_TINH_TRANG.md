@@ -5,10 +5,10 @@ Cập nhật 20/11/2026; Review 3–4 đã xuất bản, local/CI và kiểm tra
 ## Đã bàn giao
 
 - Website: https://okeydokey8525.github.io/Lop_5_Mia/ — GitHub Pages qua Actions.
-- Toán 5 tập một: 6 chủ đề, 36 đề, mỗi đề 24 câu/100 điểm; ID `cd{n}-de{i}` giữ nguyên.
+- Toán 5: tập một 6 chủ đề/36 đề; thêm chủ đề 7–8 tập hai, tổng 8 chủ đề/48 đề/1152 câu. Mỗi đề 24 câu/100 điểm; ID cũ giữ nguyên. Xem [bàn giao Toán 7–8](breakdowns/2026-11-20_TOAN_CHUDE7_CHUDE8.md) cho kiểm chứng.
 - Tiếng Anh 5 tập một: Unit 1–10 và Review 1–2, đặt đúng thứ tự sách. Có 12 tổng quan HTML/PNG +72 đề (1728 câu); mỗi đề 24 câu/100 điểm và sáu nghe (hai mỗi cấp). Units 2–10 và hai Review có học từ/phát âm tự lưu; Unit 1 có mẫu nghe. Chưa chấm nói.
 - Bản nguồn hiện tại có Units 11–20 và Review 3–4 tập hai: sáu đề/144 câu mỗi phần, tổng quan và học từ/phát âm có audio đi kèm. Tổng Anh 144 đề/3456 câu, 20 Unit + 4 Review. Study đầy đủ 23 trang/372 từ-cụm/139 hội thoại/276 bài luyện (Unit 1 vẫn dùng mẫu nghe).
-- Toàn site: 180 đề chính thức, 238 HTML, 30 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
+- Toàn site: 192 đề chính thức, 252 HTML, 32 tổng quan HTML/PNG. Danh sách đề có nguồn chính là `site/catalog.json`.
 - Giao diện hồng anh đào, tối màu tím mận; reader trên màn hình ≤820px, poster để xem/in. Tiến độ theo origin/trình duyệt, không đồng bộ thiết bị.
 - Chủ repo đã xem Unit 1, phản hồi hình khó nhận diện và duyệt mẫu cá heo. Ngày 30/10 đã áp dụng phong cách mới cho đủ 6 tranh ở tổng quan/câu hỏi, giữ nguyên 144 câu và đáp án. Sau đó chủ repo giao Unit 2–3, Unit 4–5 rồi Unit 6–7; đã bổ sung Unit 8–9 theo yêu cầu tiếp theo. đã tiếp tục giao Unit 10, Review 1 và Review 2 ngày 06/11. Chỉ còn Starter trong tập một; tập hai đã tiếp tục Units 11–13 theo giao việc mới.
 
@@ -20,6 +20,8 @@ Cập nhật 20/11/2026; Review 3–4 đã xuất bản, local/CI và kiểm tra
 | 4 | `ChuDe4_PhepTinhSoThapPhan` | Các phép tính với số thập phân | 19–24 |
 | 5 | `ChuDe5_HinhPhangChuViDienTich` | Một số hình phẳng, chu vi và diện tích | 25–29 |
 | 6 | `ChuDe6_OnTapHocKi1` | Ôn tập học kì 1 | 30–35 |
+| 7 | `ChuDe7_TiSoVaBaiToanLienQuan` | Tỉ số và các bài toán liên quan · Tập hai | 36–44 |
+| 8 | `ChuDe8_TheTichDonViDoTheTich` | Thể tích. Đơn vị đo thể tích · Tập hai | 45–48 |
 
 ## Unit 4–5 — kiểm chứng hiện hành
 
@@ -54,8 +56,8 @@ Chỉ tiếp tục Starter/Unit/Review khác khi chủ repo giao. Pipeline Anh h
 
 ## Đầu vào còn thiếu
 
-- Toán học kì 2: chưa có PDF, danh sách chủ đề/bài/số trang; chưa làm chủ đề 7–8.
-- Tiếng Anh 5 tập hai: chưa có sách.
+- Toán tập hai: đã có PDF 70 trang, phần bài học dừng ở trang in 67. Đủ chủ đề 7–9; cần bổ sung phần còn lại của chủ đề 10 và bài học chủ đề 11–12. Chủ đề 7–8 đang được hoàn tất theo giao việc.
+- Tiếng Anh tập hai: đã có sách và hoàn thành Units 11–20, Review 3–4; các dòng thiếu sách ở bản lịch sử không còn là trạng thái hiện hành.
 - Phản hồi học sinh về mức độ khó và câu chưa rõ: chưa có.
 
 ## Mẫu nghe ba cấp — 30/10/2026

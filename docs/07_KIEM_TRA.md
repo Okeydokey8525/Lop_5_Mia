@@ -195,3 +195,7 @@ node tools/qa_recorded_all.js --units=R3,R4 --jobs=2
 ```
 
 Audit yêu cầu đúng phạm vi năm Unit cho từng Review và danh sách tranh tái dùng cụ thể. CI chạy cả hai Review trong bài chính/persistence/study/audio Chromium-WebKit. Build trích audio cho cả Unit/Review; không để data URI dài trong bản web. Kiểm tra nghe không Speech API, phát thật/giải mã tất cả 207 clip, ABC, stop/đổi nhóm/pagehide/lỗi-thử lại; không coi mock hoặc WebKit desktop là nghe duyệt/iPad thật. Xem bàn giao Review 3–4 để biết số kiểm tra thực đạt.
+
+## Toán chủ đề 7–8 (20/11/2026)
+
+Bổ sung python tools/audit_math_volume2.py để giải độc lập các quan hệ từ JSON câu hỏi đã sinh; node tools/qa_math_volume2.js (thêm --webkit) để thử nhập sai tỉ số/phần trăm/hệ số đổi thể tích và reader; node tools/qa_persistence.js --math=7,8 để đóng/mở profile thật. Toàn site hiện 192 đề/252 HTML; kiểm responsive tám chiều rộng và hai theme. Không dùng audit tự điền đúng để thay thế rà soát nội dung hoặc học sinh thử.

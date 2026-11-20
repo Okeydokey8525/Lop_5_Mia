@@ -295,7 +295,9 @@ def cd6_sheet():
      'Nhìn lại toàn bộ kiến thức học kì 1.','Số thập phân, các phép tính, hình phẳng, đo lường, phân số. Làm xong sáu đề này là em đã sẵn sàng cho bài kiểm tra cuối kì.','Theo sách Toán 5, tập một (Kết nối tri thức với cuộc sống), Chủ đề 6')
 
 if __name__ == '__main__':
-    for cd,sheet,color in [(CDS[0],cd1_sheet(),'#B83F6B'),(CDS[1],cd2_sheet(),'#94523F'),(CDS[2],cd3_sheet(),'#3E7266'),(CDS[3],cd4_sheet(),'#77528F'),(CDS[4],cd5_sheet(),'#4A6F9D'),(CDS[5],cd6_sheet(),'#955077')]:
+    from math_volume2.overviews import sheets
+    extra=[(next(cd for cd in CDS if cd['n']==num),sheet,col) for num,sheet,col in sheets(gen_sheet)]
+    for cd,sheet,color in [(CDS[0],cd1_sheet(),'#B83F6B'),(CDS[1],cd2_sheet(),'#94523F'),(CDS[2],cd3_sheet(),'#3E7266'),(CDS[3],cd4_sheet(),'#77528F'),(CDS[4],cd5_sheet(),'#4A6F9D'),(CDS[5],cd6_sheet(),'#955077')]+extra:
         d=W/'out'/ROOT/cd['dir']; d.mkdir(parents=True,exist_ok=True)
         (d/(cd['overview']+'.html')).write_text(page(f"Toán 5 · Chủ đề {cd['n']} · Tổng quan",sheet,cd,color),encoding='utf-8',newline='\n')
     print('ok')

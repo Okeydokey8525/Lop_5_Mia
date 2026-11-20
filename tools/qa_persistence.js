@@ -9,6 +9,8 @@ const selection=process.argv.find(a=>a.startsWith('--units='));
 if(selection){const tests=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../site/catalog.json'),'utf8')).tests;fixtures=selection.split('=')[1].split(',').map(Number).map(n=>{assert.ok(Number.isInteger(n)&&n>=1);const t=tests.find(t=>t.id.startsWith('en-u'+String(n).padStart(2,'0')+'-de1-'));assert.ok(t,'Unknown unit '+n);const [subject,dir,file]=t.file.split('/');return {subject,file:dir+'/'+file,overview:dir+'/TongQuan_Unit'+n+'.html',id:t.id};});}
 const topics=process.argv.find(a=>a.startsWith('--topics='));
 if(topics){const tests=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../site/catalog.json'),'utf8')).tests;fixtures=topics.split('=')[1].split(',').map(key=>{const t=tests.find(t=>t.id.startsWith('en-'+key+'-de1-'));assert.ok(t,'Unknown topic '+key);const [subject,dir,file]=t.file.split('/');return {subject,file:dir+'/'+file,overview:t.overview.split('/').slice(1).join('/'),id:t.id};});}
+const mathSelection=process.argv.find(a=>a.startsWith('--math='));
+if(mathSelection){const tests=require('../site/catalog.json').tests;fixtures=mathSelection.split('=')[1].split(',').map(Number).map(n=>{const t=tests.find(t=>t.id==='cd'+n+'-de1');assert.ok(t,'Unknown math topic '+n);const [subject,dir,file]=t.file.split('/');return {subject,file:dir+'/'+file,overview:dir+'/TongQuan_ChuDe'+n+'.html',id:t.id};});}
 async function fillCorrect(page,mode='all'){
   await page.evaluate(mode=>{
     window.__quiz.Q.forEach((q,i)=>{

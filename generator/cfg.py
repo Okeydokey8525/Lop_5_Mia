@@ -55,4 +55,22 @@ CDS=[
    ('DoLuongVaDoiDonVi','Đo lường và đổi đơn vị','Chiều dài, khối lượng, diện tích và các phép tính với số đo.'),
    ('TongOnCuoiKi','Tổng ôn cuối kì','Đề tổng hợp: phân số, hỗn số, số thập phân, hình học và bài toán thực tế.'),
   ]},
+ {'n':7,'dir':'ChuDe7_TiSoVaBaiToanLienQuan','name':'Tỉ số và các bài toán liên quan','range':'Bài 36 đến Bài 44 · Tập hai','mk':'cd7','overview':'TongQuan_ChuDe7',
+  'tests':[
+   ('KhoiDong','Khởi động','Nhận biết tỉ số, bản đồ, tổng–tỉ, hiệu–tỉ và phần trăm.'),
+   ('HoiChoCuaLop','Hội chợ của lớp','Thiệp, túi vải, tiền bán hàng và điều kiện giảm giá.'),
+   ('VuonCayNho','Vườn cây nhỏ','Chia cây theo tỉ số, sơ đồ vườn và tính phần trăm.'),
+   ('NgayHoiTheThao','Ngày hội thể thao','Cờ, đồ dùng thể thao và các nhóm theo tỉ số.'),
+   ('ChuyenDiKhamPha','Chuyến đi khám phá','Vé, bản đồ giả định và mua đồ cho chuyến đi.'),
+   ('DuAnXanh','Dự án xanh của lớp','Tổng hợp nhiều bước: thu gom, kế hoạch và chi tiêu.'),
+  ]},
+ {'n':8,'dir':'ChuDe8_TheTichDonViDoTheTich','name':'Thể tích. Đơn vị đo thể tích','range':'Bài 45 đến Bài 48 · Tập hai','mk':'cd8','overview':'TongQuan_ChuDe8',
+  'tests':[
+   ('KhoiDong','Khởi động','Nhận biết thể tích, đếm khối và đổi đơn vị.'),
+   ('PhongThiNghiemNho','Phòng thí nghiệm nhỏ','Khối mẫu, chai, cốc và lượng nước.'),
+   ('GianHangDoDung','Gian hàng đồ dùng','So sánh hộp và chuyển đổi các đơn vị thể tích.'),
+   ('NuocChoVuonCay','Nước cho vườn cây','Bảng tưới nước, đổi đơn vị và phần còn trống.'),
+   ('KhoHangGonGang','Kho hàng gọn gàng','Đếm theo lớp, ghép hoặc tháo khối và so sánh.'),
+   ('ThuThachTheTich','Thử thách thể tích','Tổng hợp nhiều bước với thể tích và bảng giá giả định.'),
+  ]},
 ]
